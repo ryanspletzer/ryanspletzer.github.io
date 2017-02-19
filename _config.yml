@@ -19,11 +19,11 @@ share:
   email: true
 
 social:
-  github: streetturtle
-  stackoverflow: ''
-  linkedin:
-  instagram: ''
-  lastfm: ''
+  github: ryanspletzer
+  twitter: ryanspletzer
+  stackoverflow: ryanspletzer
+  linkedin: ryanspletzer
+  instagram: ryanspletzer
   rss: feed.xml
 
 # Google Analytics key, leave blank to ignore
