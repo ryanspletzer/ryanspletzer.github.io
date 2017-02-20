@@ -1,3 +1,6 @@
+html {
+  position: relative; }
+
 body {
   padding-top: 80px;
   color: #dddddd;

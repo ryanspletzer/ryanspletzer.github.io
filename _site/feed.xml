@@ -7,6 +7,40 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Hello World</title>
+				<description>&lt;h2 id=&quot;this-is-a-website&quot;&gt;This is a Website&lt;/h2&gt;
+
+&lt;p&gt;Fancy meeting you here.&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;The content of this theme is distributed and licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/legalcode&quot;&gt;Creative Commons Attribution 4.0 License&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This license lets others distribute, remix, tweak, and build upon your work,&lt;br /&gt;
+even commercially, as long as they credit you for the original creation. This&lt;br /&gt;
+is the most accommodating of licenses offered. Recommended for maximum&lt;br /&gt;
+dissemination and use of licensed materials.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In other words: you can do anything you want with this theme on any site, just please&lt;br /&gt;
+provide a link to the original theme on github.&lt;/p&gt;
+
+&lt;p&gt;This theme includes the following files which are the properties of their&lt;br /&gt;
+respective owners:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;js/bootstrap.min.js - &lt;a href=&quot;http://getbootstrap.com&quot;&gt;bootstrap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;css/bootstrap.min.css - &lt;a href=&quot;http://getbootstrap.com&quot;&gt;bootstrap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;js/jquery.min.js - &lt;a href=&quot;https://jquery.com&quot;&gt;jquery&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sun, 19 Feb 2017 07:00:00 -0500</pubDate>
+				<link>http://localhost:4000/2017/02/hello-world</link>
+				<guid isPermaLink="true">http://localhost:4000/2017/02/hello-world</guid>
+			</item>
+		
+			<item>
 				<title>Jekyll Dark Clean Theme</title>
 				<description>&lt;p&gt;Here is a sample post for Jekyll-Clean-Dark theme.&lt;/p&gt;
 
