@@ -11,12 +11,13 @@ url: http://localhost:4000
 baseurl: ''
 
 share:
-  facebook: true
   twitter: true
+  facebook: true
   gplus: true
   linkedin: true
-  pinterest: true
+  reddit: true
   email: true
+  pinterest: false
 
 social:
   github: ryanspletzer
