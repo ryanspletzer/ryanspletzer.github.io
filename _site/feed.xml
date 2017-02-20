@@ -7,10 +7,16 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>Hello World</title>
-				<description>&lt;h2 id=&quot;this-is-a-website&quot;&gt;This is a Website&lt;/h2&gt;
+				<title>It's a new site!</title>
+				<description>&lt;p&gt;Fancy meeting you here.&lt;/p&gt;
 
-&lt;p&gt;Fancy meeting you here.&lt;/p&gt;
+&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h2&gt;
+
+&lt;h2 id=&quot;cloudflare&quot;&gt;CloudFlare&lt;/h2&gt;
+
+&lt;h2 id=&quot;site-design&quot;&gt;Site Design&lt;/h2&gt;
+
+&lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 

@@ -1,15 +1,24 @@
 ---
 layout: post
-title: "Hello World"
+title: "It's a new site!"
 date: 2017-02-19 12:00:00
 description: Fancy meeting you here.
+share: true
 tags: 
- - installation
+ - Jekyll
+ - GitHub Pages
+ - CloudFlare
 ---
 
-## This is a Website
-
 Fancy meeting you here.
+
+## Jekyll
+
+## CloudFlare
+
+## Site Design
+
+## Open Source
 
 ## License
 
