@@ -7,39 +7,75 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>It's a new site!</title>
-				<description>&lt;p&gt;Fancy meeting you here.&lt;/p&gt;
+				<title>Hello World</title>
+				<description>&lt;p&gt;Welcome, my friend. If you’re reading this now, it means you’ve found my blog,
+and hopefully this is the perpetual last one I’ll have. I expect designs to
+change over time but this content should be around forever. Getting this stood
+up has been long overdue, but it is finally here, and boy am I ready to share
+some cool stuff with all of you.&lt;/p&gt;
 
-&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h2&gt;
+&lt;p&gt;But to level set: No, this site will not blow your mind or change your outlook
+on life. It’s a developer blog. You’ve seen these before. Moving along…&lt;/p&gt;
+
+&lt;p&gt;Let’s figure out how we got here and the rationale for how I decided to make and
+host this thing (so that I can remember it all years from now).&lt;/p&gt;
+
+&lt;h2 id=&quot;backstory&quot;&gt;Backstory&lt;/h2&gt;
+
+&lt;p&gt;I first made my own personal static website back in college in the
+pre-responsive web design days, back when I was looking for a my first full-time
+job. It was static and had a couple basic pages and that was it. That site got
+very embarrassing after a while. I finally decided to take it down and just
+forward my domain to an about.me page while I worked on getting a new blog-based
+site up.&lt;/p&gt;
+
+&lt;p&gt;I deliberated over many options, from fully custom developed and hosted on
+&lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; (perhaps backed by something like
+&lt;a href=&quot;http://www.orchardproject.net/&quot;&gt;Orchard CMS&lt;/a&gt;), to paid services like
+&lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;, but finally landed with what you see before you
+now.&lt;/p&gt;
+
+&lt;p&gt;This is definitely a first pass at it and I fully expect things, especially the
+design, to change over time, but I wanted to get started and establish a
+presence so I can write content about some of the things I see day to day in the
+software development and DevOps spheres.&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll--github-pages&quot;&gt;Jekyll + GitHub Pages&lt;/h2&gt;
+
+&lt;p&gt;Yes, I did the typical developer thing and wen with a
+&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;-generated site hosted on GitHub pages. This
+required me to roll up my sleeves and get a Linux VM up at home (chose Ubuntu
+so I could VNC to the nice Unity desktop for serving Jekyll in a browser), so I
+could use the Ruby-based Jekyll tools through the terminal. You can get Jekyll
+working on Windows but I’m a big believer in using the tools where they’re meant
+to be used – Linux just works better in this case. Hopefully someday
+&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;Bash on Ubuntu on Windows&lt;/a&gt; gets fully fleshed out and I won’t need a VM anymore!)&lt;/p&gt;
+
+&lt;p&gt;Jekyll isn’t the only static site generator out there, I was also deliberating
+about using a generator called &lt;a href=&quot;https://github.com/Code52/pretzel&quot;&gt;Pretzel&lt;/a&gt;,
+which is a little more friendly to Windows-native folks and has some items that
+are familiar to those who write .NET. But ultimately Jekyll seemed to be the
+most widely used solution in this space and in the interest of sticking with
+something that is widely known and I could probably find answers about in the
+event I hit a snag, I decided to go with Jekyll.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
+
+&lt;p&gt;Hand in hand with Jekyll is &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. This made
+a lot of sense as a choice especially because I spend a lot of my time on
+GitHub, and not only that, the hosting is free, and you can also set up your own
+custom domain name in front of it.&lt;/p&gt;
 
 &lt;h2 id=&quot;cloudflare&quot;&gt;CloudFlare&lt;/h2&gt;
+
+&lt;h2 id=&quot;disqus&quot;&gt;Disqus&lt;/h2&gt;
+
+&lt;p&gt;I’m using Disqus for comments. Because why not.&lt;/p&gt;
 
 &lt;h2 id=&quot;site-design&quot;&gt;Site Design&lt;/h2&gt;
 
 &lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;
 
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;The content of this theme is distributed and licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/legalcode&quot;&gt;Creative Commons Attribution 4.0 License&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This license lets others distribute, remix, tweak, and build upon your work,&lt;br /&gt;
-even commercially, as long as they credit you for the original creation. This&lt;br /&gt;
-is the most accommodating of licenses offered. Recommended for maximum&lt;br /&gt;
-dissemination and use of licensed materials.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In other words: you can do anything you want with this theme on any site, just please&lt;br /&gt;
-provide a link to the original theme on github.&lt;/p&gt;
-
-&lt;p&gt;This theme includes the following files which are the properties of their&lt;br /&gt;
-respective owners:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;js/bootstrap.min.js - &lt;a href=&quot;http://getbootstrap.com&quot;&gt;bootstrap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;css/bootstrap.min.css - &lt;a href=&quot;http://getbootstrap.com&quot;&gt;bootstrap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;js/jquery.min.js - &lt;a href=&quot;https://jquery.com&quot;&gt;jquery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
 				<pubDate>Sun, 19 Feb 2017 07:00:00 -0500</pubDate>
 				<link>http://localhost:4000/2017/02/hello-world</link>
@@ -131,11 +167,11 @@ respective owners:&lt;/p&gt;
 
 &lt;p&gt;Example of keyboard shortcuts in a terminal:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;A&lt;/code&gt; = move cursor to beginning of line&lt;br /&gt;
-&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;E&lt;/code&gt; = move cursor to end of line&lt;br /&gt;
-&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;C&lt;/code&gt; = kills the current process.&lt;br /&gt;
-&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;Z&lt;/code&gt; = sends the current process to the background.&lt;br /&gt;
-&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;D&lt;/code&gt; = logs you out.&lt;br /&gt;
+&lt;p&gt;&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;A&lt;/code&gt; = move cursor to beginning of line
+&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;E&lt;/code&gt; = move cursor to end of line
+&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;C&lt;/code&gt; = kills the current process.
+&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;Z&lt;/code&gt; = sends the current process to the background.
+&lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;D&lt;/code&gt; = logs you out.
 &lt;code class=&quot;key highlighter-rouge&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;key highlighter-rouge&quot;&gt;R&lt;/code&gt; = finds the last command matching the entered letters.&lt;/p&gt;
 </description>
 				<pubDate>Wed, 02 Nov 2016 12:25:06 -0400</pubDate>
@@ -286,7 +322,7 @@ respective owners:&lt;/p&gt;
 				<title>Be social</title>
 				<description>&lt;h1 id=&quot;social-icons&quot;&gt;Social icons&lt;/h1&gt;
 
-&lt;p&gt;You can have social icons which could lead to your social profile.&lt;br /&gt;
+&lt;p&gt;You can have social icons which could lead to your social profile.
 Out-of-the box it has:&lt;/p&gt;
 
 &lt;ul class=&quot;social-media&quot;&gt;
@@ -294,7 +330,7 @@ Out-of-the box it has:&lt;/p&gt;
     &lt;a title=&quot;Github&quot; href=&quot;https://github.com/ryanspletzer&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-github fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a title=&quot;StackOverflow&quot; href=&quot;http://stackoverflow.com/users/1252056/ryanspletzer&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-stack-overflow fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;a title=&quot;StackOverflow&quot; href=&quot;http://stackoverflow.com/users/1252056/2356308/ryan-spletzer&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-stack-overflow fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a title=&quot;LinkedIn&quot; href=&quot;https://www.linkedin.com/in/ryanspletzer&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;fa fa-linkedin fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
@@ -330,7 +366,7 @@ Out-of-the box it has:&lt;/p&gt;
 
 &lt;h1 id=&quot;share-buttons&quot;&gt;Share buttons&lt;/h1&gt;
 
-&lt;p&gt;This theme comes with built-in share buttons. You can see them in the bottom of this post.&lt;br /&gt;
+&lt;p&gt;This theme comes with built-in share buttons. You can see them in the bottom of this post.
 To turn them on in the header of your post add:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yml&quot; data-lang=&quot;yml&quot;&gt;&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
@@ -441,7 +477,7 @@ To turn them on in the header of your post add:&lt;/p&gt;
 				<title>Installation</title>
 				<description>&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
-&lt;p&gt;If you dont’t have your own blog you can clone this repository and put your articles in a &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder.&lt;br /&gt;
+&lt;p&gt;If you dont’t have your own blog you can clone this repository and put your articles in a &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder.
 If you already have your own blog then I think you can clone this repository and copy-paste content keeping your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder.&lt;/p&gt;
 
 &lt;p&gt;After you will have to set up your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
@@ -451,16 +487,16 @@ If you already have your own blog then I think you can clone this repository and
 &lt;p&gt;The content of this theme is distributed and licensed under a &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/legalcode&quot;&gt;Creative Commons Attribution 4.0 License&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;This license lets others distribute, remix, tweak, and build upon your work,&lt;br /&gt;
-even commercially, as long as they credit you for the original creation. This&lt;br /&gt;
-is the most accommodating of licenses offered. Recommended for maximum&lt;br /&gt;
+  &lt;p&gt;This license lets others distribute, remix, tweak, and build upon your work,
+even commercially, as long as they credit you for the original creation. This
+is the most accommodating of licenses offered. Recommended for maximum
 dissemination and use of licensed materials.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In other words: you can do anything you want with this theme on any site, just please&lt;br /&gt;
+&lt;p&gt;In other words: you can do anything you want with this theme on any site, just please
 provide a link to the original theme on github.&lt;/p&gt;
 
-&lt;p&gt;This theme includes the following files which are the properties of their&lt;br /&gt;
+&lt;p&gt;This theme includes the following files which are the properties of their
 respective owners:&lt;/p&gt;
 
 &lt;ul&gt;

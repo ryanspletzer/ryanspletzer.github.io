@@ -6,7 +6,7 @@
             <div class="col-md-8">
               <div class="article">
                 <div class="well">
-                  <h1><a href="{{ site.url | append:site.baseurl | append:page.url }}">{{ page.title }}</a></h1>
+                  <h1><a href="{{ site.baseurl | append:page.url }}">{{ page.title }}</a></h1>
                   <div class="post-meta">
                     <div class="post-time">
                       <i class="fa fa-calendar"></i>
@@ -14,7 +14,7 @@
                     </div>
                     <ul>
                       {% for tag in page.tags %}
-                        <li><a href="{{ site.url | append:site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
+                        <li><a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
                       {% endfor %}
                     </ul>
                   </div>

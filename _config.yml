@@ -22,7 +22,7 @@ share:
 social:
   github: ryanspletzer
   twitter: ryanspletzer
-  stackoverflow: ryanspletzer
+  stackoverflow: 2356308/ryan-spletzer
   linkedin: ryanspletzer
   instagram: ryanspletzer
   rss: feed.xml
@@ -36,7 +36,7 @@ yandex_metrica:
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
 # setting below must also be true. Individual posts can override 'comments' to
 # disable on a post-by-post basis
-disqus: ryanspletzer
+disqus: www-spletzer-com
 comments: true
 
 permalink: /:year/:month/:title
@@ -49,6 +49,6 @@ permalink: /:year/:month/:title
 markdown: kramdown
 kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
-  hard_wrap: true
+  hard_wrap: false
 
 exclude: ['README.md', 'LICENSE']

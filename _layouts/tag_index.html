@@ -10,7 +10,7 @@ layout: page
           {% if tag == page.tag %}
           <li class="archive_list">
             <time>{{ post.date | date_to_string }}</time>
-            <a class="archive_list_article_link" href='{{post.url | prepend:site.baseurl | prepend:site.url}}'>{{post.title}}</a>
+            <a class="archive_list_article_link" href='{{post.url | prepend:site.baseurl }}'>{{post.title}}</a>
             <p>{{post.description}}</p>
           </li>
           {% endif %}
