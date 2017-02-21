@@ -54,14 +54,14 @@ so I could VNC to the nice Unity desktop for serving Jekyll in a browser), so I
 could use the Ruby-based Jekyll tools through the terminal. You can get Jekyll
 working on Windows but I’m a big believer in using the tools where they’re meant
 to be used – Linux just works better in this case. Hopefully someday
-&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;Bash on Ubuntu on Windows&lt;/a&gt; gets fully fleshed out and I won’t need a VM anymore!)&lt;/p&gt;
+&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;Bash on Ubuntu on Windows&lt;/a&gt; gets fully fleshed out and I won’t need a VM anymore!&lt;/p&gt;
 
 &lt;p&gt;Jekyll isn’t the only static site generator out there, I was also deliberating
 about using a generator called &lt;a href=&quot;https://github.com/Code52/pretzel&quot;&gt;Pretzel&lt;/a&gt;,
 which is a little more friendly to Windows-native folks and has some items that
 are familiar to those who write .NET. But ultimately Jekyll seemed to be the
 most widely used solution in this space and in the interest of sticking with
-something that is widely known and I could probably find answers about in the
+something that is widely known and so I could probably find answers about in the
 event I hit a snag, I decided to go with Jekyll.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;

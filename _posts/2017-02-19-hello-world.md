@@ -59,14 +59,14 @@ working on Windows but I'm a big believer in using the tools where they're meant
 to be used -- Linux just works better in this case. Hopefully someday
 [Bash on Ubuntu on Windows](
     https://msdn.microsoft.com/en-us/commandline/wsl/about
-) gets fully fleshed out and I won't need a VM anymore!)
+) gets fully fleshed out and I won't need a VM anymore!
 
 Jekyll isn't the only static site generator out there, I was also deliberating
 about using a generator called [Pretzel](https://github.com/Code52/pretzel),
 which is a little more friendly to Windows-native folks and has some items that
 are familiar to those who write .NET. But ultimately Jekyll seemed to be the
 most widely used solution in this space and in the interest of sticking with
-something that is widely known and I could probably find answers about in the
+something that is widely known and so I could probably find answers about in the
 event I hit a snag, I decided to go with Jekyll.
 
 ## GitHub Pages
