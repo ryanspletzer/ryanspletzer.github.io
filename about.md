@@ -4,9 +4,9 @@ title: About
 
 ---
 
-# About
-
 ![img]({{ site.baseurl }}/images/ryan_about.jpg){: .center-image }
+
+# About
 
 I'm Ryan Spletzer, a Software Developer in Information Research within R&D at Dow Chemical.
 
