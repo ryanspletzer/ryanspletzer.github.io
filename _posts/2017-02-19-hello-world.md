@@ -84,9 +84,10 @@ brings me to...
 I was hoping to leverage [CloudFlare](https://www.cloudflare.com/) when I was
 looking at the Ghost solution, but it turns out it also works in conjunction
 with GitHub pages by fronting it with its own CDN. By using an SSL cert
-generated via Let's Encrypt, I'm able to having an end to end hosting solution
+from CloudFlare, I'm able to having an end to end hosting solution
 for this blog with custom domain name and TLS, without needing to break the
-bank.
+bank. (I would have loved to have taken the time to figure out a Let's Encrypt
+certificate at this point but I'll save that for a rainy day.)
 
 ## Disqus
 
