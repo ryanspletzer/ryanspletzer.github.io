@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World"
 date: 2017-02-19 12:00:00
-description: This has been a long time coming.
+description: This has been a long time coming, but after a few years I finally have a new blog.
 share: true
 comments: true
 tags:
@@ -11,14 +11,19 @@ tags:
  - CloudFlare
 ---
 
+![img]({{ site.baseurl }}/images/GAC_LifeAquatic.jpg){: .center-image }
+
+## Introduction
+
 Welcome, my friend. If you're reading this now, it means you've found my blog,
 and hopefully this is the perpetual last one I'll have. I expect designs to
 change over time but this content should be around forever. Getting this stood
 up has been long overdue, but it is finally here, and boy am I ready to share
 some cool stuff with all of you.
 
-But to level set: No, this site will not blow your mind or change your outlook
-on life. It's a developer blog. You've seen these before. Moving along...
+But to level set: No, this site will win any awards or blow your mind or change
+your outlook on life. It's a simple developer blog. You've seen these before.
+Moving along...
 
 Let's figure out how we got here and the rationale for how I decided to make and
 host this thing (so that I can remember it all years from now).
@@ -43,7 +48,7 @@ design, to change over time, but I wanted to get started and establish a
 presence so I can write content about some of the things I see day to day in the
 software development and DevOps spheres.
 
-## Jekyll + GitHub Pages
+## Jekyll
 
 Yes, I did the typical developer thing and wen with a
 [Jekyll](https://jekyllrb.com/)-generated site hosted on GitHub pages. This
@@ -67,20 +72,41 @@ event I hit a snag, I decided to go with Jekyll.
 ## GitHub Pages
 
 Hand in hand with Jekyll is [GitHub Pages](https://pages.github.com/). This made
-a lot of sense as a choice especially because I spend a lot of my time on
-GitHub, and not only that, the hosting is free, and you can also set up your own
-custom domain name in front of it.
+a lot of sense as a choice, especially because I spend a lot of my time on
+GitHub, and using Git. And not only that, the hosting is free, and you can also
+set up your own custom domain name in front of it, even with SSL/TLS.
+
+But GitHub doesn't support custom domains with SSL/TLS out-of-the-box, which
+brings me to...
 
 ## CloudFlare
 
-
+I was hoping to leverage [CloudFlare](https://www.cloudflare.com/) when I was
+looking at the Ghost solution, but it turns out it also works in conjunction
+with GitHub pages by fronting it with its own CDN. By using an SSL cert
+generated via Let's Encrypt, I'm able to having an end to end hosting solution
+for this blog with custom domain name and TLS, without needing to break the
+bank.
 
 ## Disqus
 
-I'm using Disqus for comments. Because why not.
+Oh and I'm using [Disqus](https://disqus.com) for comments. Because why not.
 
 ## Site Design
 
+This site's theme is a slightly tweaked version of
+[Jekyll Clean Dark](https://github.com/streetturtle/jekyll-clean-dark) by Peter
+Makhov. It will probably change over time but one of the great things about this
+general toolset is the ability to get up and running quickly, and this certainly
+has been a much quicker experience than when I've worked on my own sites in the
+past.
+
 ## Open Source
 
-
+Everything you see here is open source and available in a [public GitHub
+repository named ryanspletzer.github.io](
+    https://github.com/ryanspletzer/ryanspletzer.github.io
+). I maintain a fork of the fundamental changes I've made to Jekyll Clean Dark
+theme over at [this repository](
+    https://github.com/ryanspletzer/jekyll-clean-dark
+) as well.

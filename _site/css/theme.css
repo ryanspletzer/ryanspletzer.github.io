@@ -209,9 +209,17 @@ nav.navbar.shrink {
   color: #35B4DE; }
 
 .navbar-inverse .navbar-brand {
+  color: #FFF; }
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
   color: #35B4DE; }
 
 .navbar-inverse .navbar-nav > li > a {
+  color: #FFF; }
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
   color: #35B4DE; }
 
 nav.shrink a {

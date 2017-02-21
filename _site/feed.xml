@@ -8,14 +8,19 @@
 		
 			<item>
 				<title>Hello World</title>
-				<description>&lt;p&gt;Welcome, my friend. If you’re reading this now, it means you’ve found my blog,
+				<description>&lt;p&gt;&lt;img src=&quot;/images/GAC_LifeAquatic.jpg&quot; alt=&quot;img&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Welcome, my friend. If you’re reading this now, it means you’ve found my blog,
 and hopefully this is the perpetual last one I’ll have. I expect designs to
 change over time but this content should be around forever. Getting this stood
 up has been long overdue, but it is finally here, and boy am I ready to share
 some cool stuff with all of you.&lt;/p&gt;
 
-&lt;p&gt;But to level set: No, this site will not blow your mind or change your outlook
-on life. It’s a developer blog. You’ve seen these before. Moving along…&lt;/p&gt;
+&lt;p&gt;But to level set: No, this site will win any awards or blow your mind or change
+your outlook on life. It’s a simple developer blog. You’ve seen these before.
+Moving along…&lt;/p&gt;
 
 &lt;p&gt;Let’s figure out how we got here and the rationale for how I decided to make and
 host this thing (so that I can remember it all years from now).&lt;/p&gt;
@@ -40,7 +45,7 @@ design, to change over time, but I wanted to get started and establish a
 presence so I can write content about some of the things I see day to day in the
 software development and DevOps spheres.&lt;/p&gt;
 
-&lt;h2 id=&quot;jekyll--github-pages&quot;&gt;Jekyll + GitHub Pages&lt;/h2&gt;
+&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h2&gt;
 
 &lt;p&gt;Yes, I did the typical developer thing and wen with a
 &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;-generated site hosted on GitHub pages. This
@@ -62,20 +67,40 @@ event I hit a snag, I decided to go with Jekyll.&lt;/p&gt;
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
 
 &lt;p&gt;Hand in hand with Jekyll is &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. This made
-a lot of sense as a choice especially because I spend a lot of my time on
-GitHub, and not only that, the hosting is free, and you can also set up your own
-custom domain name in front of it.&lt;/p&gt;
+a lot of sense as a choice, especially because I spend a lot of my time on
+GitHub, and using Git. And not only that, the hosting is free, and you can also
+set up your own custom domain name in front of it, even with SSL/TLS.&lt;/p&gt;
+
+&lt;p&gt;But GitHub doesn’t support custom domains with SSL/TLS out-of-the-box, which
+brings me to…&lt;/p&gt;
 
 &lt;h2 id=&quot;cloudflare&quot;&gt;CloudFlare&lt;/h2&gt;
 
+&lt;p&gt;I was hoping to leverage &lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;CloudFlare&lt;/a&gt; when I was
+looking at the Ghost solution, but it turns out it also works in conjunction
+with GitHub pages by fronting it with its own CDN. By using an SSL cert
+generated via Let’s Encrypt, I’m able to having an end to end hosting solution
+for this blog with custom domain name and TLS, without needing to break the
+bank.&lt;/p&gt;
+
 &lt;h2 id=&quot;disqus&quot;&gt;Disqus&lt;/h2&gt;
 
-&lt;p&gt;I’m using Disqus for comments. Because why not.&lt;/p&gt;
+&lt;p&gt;Oh and I’m using &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt; for comments. Because why not.&lt;/p&gt;
 
 &lt;h2 id=&quot;site-design&quot;&gt;Site Design&lt;/h2&gt;
 
+&lt;p&gt;This site’s theme is a slightly tweaked version of
+&lt;a href=&quot;https://github.com/streetturtle/jekyll-clean-dark&quot;&gt;Jekyll Clean Dark&lt;/a&gt; by Peter
+Makhov. It will probably change over time but one of the great things about this
+general toolset is the ability to get up and running quickly, and this certainly
+has been a much quicker experience than when I’ve worked on my own sites in the
+past.&lt;/p&gt;
+
 &lt;h2 id=&quot;open-source&quot;&gt;Open Source&lt;/h2&gt;
 
+&lt;p&gt;Everything you see here is open source and available in a &lt;a href=&quot;https://github.com/ryanspletzer/ryanspletzer.github.io&quot;&gt;public GitHub
+repository named ryanspletzer.github.io&lt;/a&gt;. I maintain a fork of the fundamental changes I’ve made to Jekyll Clean Dark
+theme over at &lt;a href=&quot;https://github.com/ryanspletzer/jekyll-clean-dark&quot;&gt;this repository&lt;/a&gt; as well.&lt;/p&gt;
 </description>
 				<pubDate>Sun, 19 Feb 2017 07:00:00 -0500</pubDate>
 				<link>http://localhost:4000/2017/02/hello-world</link>

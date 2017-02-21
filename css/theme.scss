@@ -262,10 +262,18 @@ nav.navbar.shrink {
   color: $accent-color;
 }
 .navbar-inverse .navbar-brand {
-  color: $accent-color
+  color: #FFF;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: $accent-color;
 }
 .navbar-inverse .navbar-nav>li>a {
-  color: $accent-color
+  color: #FFF;
+}
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+  color: $accent-color;
 }
 nav.shrink a {
   padding-top: 10px !important;
