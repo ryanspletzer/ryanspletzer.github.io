@@ -10,23 +10,28 @@ layout: page
   </h2>
 
   <div class="post-meta">
-  <div class="post-time">
-    <i class="fa fa-calendar"></i>
-    <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
+    <div class="post-time">
+      <i class="fa fa-calendar"></i>
+      <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time>
+    </div>
+    <ul>
+      {% for tag in post.tags %}
+      <li><a href="{{site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
-  <ul>
-    {% for tag in post.tags %}
-    <li><a href="{{site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
 
   <div class="post-descr">
+    {% if post.header != nil %}
+    <p>
+      <img src="{{ post.header }}" class=".center-image" />
+    </p>
+    {% endif %}
     <p>
       {{ post.description }}
     </p>
   </div>
-  {% endfor %}
+{% endfor %}
 
 
 <div class="post-footer">
