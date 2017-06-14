@@ -10,7 +10,7 @@ title: About
 
 I'm Ryan Spletzer, a Software Developer in Information Research within R&D at Dow Chemical.
 
-I've had experience in backend and frontend development, mostly in the .NET and ASP.NET stacks, and I am of the biggest PowerShell fans you'll ever meet.
+I've had experience in backend and frontend development, mostly in the .NET and ASP.NET stacks, and I am one of the biggest PowerShell fans you'll ever meet.
 
 I'm currently neck-deep in DevOps and automating everything I can using tools like PowerShell DSC on Windows and Chef on Linux, both on-premises and in the Cloud.
 
