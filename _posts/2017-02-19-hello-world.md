@@ -13,7 +13,7 @@ tags:
  - CloudFlare
 ---
 
-![img]({{ site.baseurl }}/images/GAC_LifeAquatic.jpg){: .center-image }
+![img]({{ site.url }}/images/GAC_LifeAquatic.jpg){: .center-image }
 
 ## Introduction
 
