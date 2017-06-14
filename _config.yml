@@ -1,6 +1,9 @@
 # Jekyll configuration
 
 name: Ryan Spletzer
+title: Ryan Spletzer
+author: Ryan Spletzer
+email: ryanspletzer@gmail.com
 description: Software Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
