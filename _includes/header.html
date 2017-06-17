@@ -2,11 +2,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>
-    {{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}
-  </title>
-  <meta name="theme-color" content="#222222" />
+  <title>{{ site.name }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+  <meta name="theme-color" content="#222222">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:locale" content="en_us">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}">
+  <meta name="og:url" content="{{ site.url | append:page.url }}">
+  <meta name="og:site_name" content="{{ site.name }}">
+  {% if page.header %}
+  <meta name="og:image" content="{{ site.url | append:page.header }}">
+  {% endif %}
+  {% if page.headerwidth and page.headerheight  %}
+  <meta name="og:image:width" content="{{ site.url | append:page.headerwidth }}">
+  <meta name="og:image:height" content="{{ site.url | append:page.headerheight }}">
+  {% endif %}
+  {% if page.description %}
+  <meta name="og:description" content="{{ page.description }}">
+  {% endif %}
   <script src="{{ site.baseurl}}/js/jquery.min.js"></script>
   <script src="{{ site.baseurl}}/js/bootstrap.min.js"></script>
   <script src="{{ site.baseurl}}/js/header.js"></script>
