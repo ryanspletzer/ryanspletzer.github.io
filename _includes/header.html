@@ -7,18 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="og:locale" content="en_us">
   <meta name="og:type" content="website">
-  <meta name="og:title" content="{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}">
+  <meta name="og:title" content="{% if page.title %}{{ page.title }}{% endif %} | {{ site.name }}">
   <meta name="og:url" content="{{ site.url | append:page.url }}">
   <meta name="og:site_name" content="{{ site.name }}">
   {% if page.header %}
   <meta name="og:image" content="{{ site.url | append:page.header }}">
   {% endif %}
   {% if page.headerwidth and page.headerheight  %}
-  <meta name="og:image:width" content="{{ site.url | append:page.headerwidth }}">
-  <meta name="og:image:height" content="{{ site.url | append:page.headerheight }}">
+  <meta name="og:image:width" content="{{ page.headerwidth }}">
+  <meta name="og:image:height" content="{{ page.headerheight }}">
   {% endif %}
   {% if page.description %}
   <meta name="og:description" content="{{ page.description }}">
+  {% endif %}
+  {% if page.header %}
+  <meta name="twitter:image" content="{{ site.url | append:page.header }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+  <meta name="twitter:site" content="@{{ site.social.twitter}}">
+  <meta name="twitter:creator" content="@{{ site.social.twitter}}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% endif %} | {{ site.name }}">
+  {% if page.description %}
+  <meta name="twitter:description" content="{{ page.description }}">
   {% endif %}
   <script src="{{ site.baseurl}}/js/jquery.min.js"></script>
   <script src="{{ site.baseurl}}/js/bootstrap.min.js"></script>
