@@ -1,0 +1,423 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World | Ryan Spletzer</title>
+  <meta name="theme-color" content="#222222">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="og:locale" content="en_us">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="Hello World | Ryan Spletzer">
+  <meta name="og:url" content="http://localhost:4000/2017/02/hello-world">
+  <meta name="og:site_name" content="Ryan Spletzer">
+  
+  <meta name="og:image" content="http://localhost:4000/images/GAC_LifeAquatic.jpg">
+  
+  
+  <meta name="og:image:width" content="793">
+  <meta name="og:image:height" content="397">
+  
+  
+  <meta name="og:description" content="This has been a long time coming, but after a few years I finally have a new blog.">
+  
+  
+  <meta name="twitter:image" content="http://localhost:4000/images/GAC_LifeAquatic.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@ryanspletzer">
+  <meta name="twitter:creator" content="@ryanspletzer">
+  <meta name="twitter:title" content="Hello World | Ryan Spletzer">
+  
+  <meta name="twitter:description" content="This has been a long time coming, but after a few years I finally have a new blog.">
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/toc.js"></script>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/theme.css" rel="stylesheet">
+  <link href="/css/syntax.css" rel="stylesheet">
+  <link href="/css/solarized-dark.css" rel="stylesheet">
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="canonical" href="http://localhost:4000/2017/02/hello-world">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-92338338-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+  
+
+
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: ['Ubuntu::latin']
+      }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Ryan Spletzer</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">/home</a></li>
+          <li><a href="/archive.html">/archive</a></li>
+          <li><a href="/tags.html">/tags</a></li>
+          <li><a href="/about.html">/about</a></li>
+          <li><a href="/linkfarm.html">/linkfarm</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="wrapper">
+      <div class="content">
+        <div class="container container-center">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="article">
+                <div class="well">
+                  <h1><a href="/2017/02/hello-world">Hello World</a></h1>
+                  <div class="post-meta">
+                    <div class="post-time">
+                      <i class="fa fa-calendar"></i>
+                      <time>19 Feb 2017</time>
+                    </div>
+                    <ul>
+                      
+                        <li><a href="/tag/Jekyll">Jekyll</a></li>
+                      
+                        <li><a href="/tag/GitHub Pages">GitHub Pages</a></li>
+                      
+                        <li><a href="/tag/CloudFlare">CloudFlare</a></li>
+                      
+                    </ul>
+                  </div>
+                  <div class="post-content">
+                    <div id="toc" class="toc"></div>
+                    <p><img src="http://localhost:4000/images/GAC_LifeAquatic.jpg" alt="img" class="center-image" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome, my friend. If you’re reading this now, it means you’ve found my blog,
+and hopefully this is the perpetual last one I’ll have. I expect designs to
+change over time but this content should be around forever. Getting this stood
+up has been long overdue, but it is finally here, and boy am I ready to share
+some cool stuff with all of you.</p>
+
+<p>But to level set: No, this site will not win any awards or blow your mind or
+change your outlook on life. It’s a simple developer blog. You’ve seen these
+before. Moving along…</p>
+
+<p>Let’s figure out how we got here and the rationale for how I decided to make and
+host this thing (so that I can remember it all years from now).</p>
+
+<h2 id="backstory">Backstory</h2>
+
+<p>I first made my own personal static website back in college in the
+pre-responsive web design days, back when I was looking for a my first full-time
+job. It had a couple basic pages and that was it. That site got very
+embarrassing after a while. I finally decided to take it down and just forward
+my domain to an about.me page while I worked on getting a new blog-based site
+up.</p>
+
+<p>I deliberated over many options, from fully custom developed and hosted on
+<a href="https://azure.microsoft.com">Azure</a> (perhaps backed by something like
+<a href="http://www.orchardproject.net/">Orchard CMS</a>), to paid services like
+<a href="https://ghost.org/">Ghost</a>, but finally landed with what you see before you
+now.</p>
+
+<p>At the time of this initial writing, this site is definitely in a ‘first pass’
+mode and I fully expect aspects of it, especially the design, to change over
+time, but  I wanted to get started and establish a presence so I can write
+content about some of the things I see day to day in the software development
+and DevOps spheres.</p>
+
+<h2 id="jekyll">Jekyll</h2>
+
+<p>Yes, I did the typical developer thing and wen with a
+<a href="https://jekyllrb.com/">Jekyll</a>-generated site hosted on GitHub pages. This
+required me to roll up my sleeves and get a Linux VM up at home (chose Ubuntu
+so I could VNC to the nice Unity desktop for serving Jekyll in a browser), so I
+could use the Ruby-based Jekyll tools through the terminal. You can get Jekyll
+working on Windows but I’m a big believer in using the tools where they’re meant
+to be used – Linux just works better in this case. Hopefully someday
+<a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows</a> gets fully fleshed out and I won’t need a VM anymore!</p>
+
+<p>(Update 6/13/2017: Jekyll works on Windows Subsystem for Linux now!
+<a href="https://github.com/ryanspletzer/Scripts/blob/dev/Bash/WSL%20Ubuntu%2016.04
+/JekyllSetup.sh">These bash lines</a> will get you going.)</p>
+
+<p>Jekyll isn’t the only static site generator out there, I was also deliberating
+about using a generator called <a href="https://github.com/Code52/pretzel">Pretzel</a>,
+which is a little more friendly to Windows-native folks and has some items that
+are familiar to those who write .NET. But ultimately Jekyll seemed to be the
+most widely used solution in this space, and in the interest of sticking with
+something that is widely known, and so I could probably find answers about in
+the event I hit a snag, I decided to go with Jekyll.</p>
+
+<h2 id="github-pages">GitHub Pages</h2>
+
+<p>Hand in hand with Jekyll is <a href="https://pages.github.com/">GitHub Pages</a>. This made
+a lot of sense as a choice, especially because I spend a lot of my time on
+GitHub, and using Git. And not only that, the hosting is free, and you can also
+set up your own custom domain name in front of it, even with SSL/TLS.</p>
+
+<p>But GitHub doesn’t support custom domains with SSL/TLS out-of-the-box, which
+brings me to…</p>
+
+<h2 id="cloudflare">CloudFlare</h2>
+
+<p>I was hoping to leverage <a href="https://www.cloudflare.com/">CloudFlare</a> when I was
+looking at the Ghost solution, but it turns out it also works in conjunction
+with GitHub pages by fronting it with its own CDN. By using an SSL cert
+from CloudFlare, I’m able to have an end to end hosting solution for this blog
+with custom domain name and TLS, without needing to break the bank. (I would
+have loved to have taken the time to figure out a Let’s Encrypt certificate at
+this point, but I’ll save that for a rainy day.)</p>
+
+<h2 id="disqus">Disqus</h2>
+
+<p>Oh and I’m using <a href="https://disqus.com">Disqus</a> for comments. Because why not.</p>
+
+<h2 id="site-design">Site Design</h2>
+
+<p>This site’s theme is a slightly tweaked version of <a href="https://github.com/streetturtle/jekyll-clean-dark">Jekyll Clean Dark</a> by Peter Makhov. It will probably change over time, but one of the great
+things about this general Jekyll toolset is the ability to get up and running
+quickly, and this certainly has been a much quicker experience than when I’ve
+worked on my own sites in the past.</p>
+
+<h2 id="open-source">Open Source</h2>
+
+<p>Everything you see here is open source and available in a <a href="https://github.com/ryanspletzer/ryanspletzer.github.io">public GitHub
+repository named ryanspletzer.github.io</a>. I maintain a fork of the fundamental changes I’ve made to Jekyll Clean Dark
+theme over at <a href="https://github.com/ryanspletzer/jekyll-clean-dark">this repository</a> as well.</p>
+
+                    
+
+<div class="share-bar">
+  <ul class="share-buttons">
+    
+    <li class="share-twitter">
+      <a href="https://twitter.com/intent/tweet?url=http://localhost:4000/2017/02/hello-world&text=Hello World" target="_blank" title="Tweet">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+    
+    <li class="share-facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/02/hello-world" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+    
+    <li class="share-google-plus">
+      <a href="https://plus.google.com/share?url=http://localhost:4000/2017/02/hello-world" target="_blank" title="Share on Google Plus">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-google-plus fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+    
+    <li class="share-linkedin">
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2017/02/hello-world&title=Hello World&summary=This has been a long time coming, but after a few years I finally have a new blog.&source=" target="_blank" title="Share on LinkedIn">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle-thin fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+    
+
+    
+    <li class="share-reddit">
+      <a href="http://reddit.com/submit?urlhttp://localhost:4000/2017/02/hello-world=&description=This has been a long time coming, but after a few years I finally have a new blog." target="_blank" title="Share on Reddit">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle-thin fa-stack-2x"></i>
+          <i class="fa fa-reddit fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+    
+    <li class="share-envelope">
+      <a href="mailto:?&subject=Hello World&body=This has been a long time coming, but after a few years I finally have a new blog. http://localhost:4000/2017/02/hello-world" target="_blank" title="Email">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle-thin fa-stack-2x"></i>
+          <i class="fa fa-envelope-o fa-stack-1x"></i>
+        </span>
+      </a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+                  </div>
+                  
+                  <div id="disqus_thread">
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 hidden-xs">
+              <div class="sidebar ">
+  <h2>Recent Posts</h2>
+  <ul>
+    
+    <li><a href="/2017/02/hello-world">Hello World</a></li>
+    
+  </ul>
+</div>
+
+<div class="sidebar">
+  <h2>Tags</h2>
+  <ul class="sideBarTags">
+    
+    
+    <li>
+      <a href="/tag/CloudFlare" data-toggle="tooltip" data-placement="right" title="1">
+        <span>CloudFlare</span></a></li>
+    
+    <li>
+      <a href="/tag/GitHub Pages" data-toggle="tooltip" data-placement="right" title="1">
+        <span>GitHub Pages</span></a></li>
+    
+    <li>
+      <a href="/tag/Jekyll" data-toggle="tooltip" data-placement="right" title="1">
+        <span>Jekyll</span></a></li>
+    
+  </ul>
+</div>
+
+            </div>
+          </div>
+        </div>
+        
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'www-spletzer-com'; // required: replace example with your forum shortname
+  var disqus_identifier = "/2017/02/hello-world";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+    </div>
+        <footer class="footer-distributed">
+      <div class="container">
+        <div class="footer">
+          <p>Ryan Spletzer &copy; 2017</p>
+          <h6>Follow me</h6>
+
+<ul class="social-media">
+
+  
+    <li>
+      <a title="ryanspletzer on Github" href="https://github.com/ryanspletzer" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    </li>
+  
+
+  
+    <li>
+      <a title="ryanspletzer on Twitter" href="https://twitter.com/ryanspletzer" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+    </li>
+  
+
+  
+    <li>
+      <a title="2356308/ryan-spletzer on StackOverflow" href="https://stackoverflow.com/users/2356308/ryan-spletzer" target="_blank"><i class="fa fa-stack-overflow fa-2x"></i></a>
+    </li>
+  
+
+  
+    <li>
+      <a title="ryanspletzer on LinkedIn" href="https://www.linkedin.com/in/ryanspletzer" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+    </li>
+  
+
+  
+    <li>
+      <a title="ryanspletzer on Instagram" href="https://instagram.com/ryanspletzer" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+    </li>
+  
+
+  
+
+  
+    <li>
+      <a title="feed.xml RSS" href="/feed.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a>
+    </li>
+  
+
+</ul>
+
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
