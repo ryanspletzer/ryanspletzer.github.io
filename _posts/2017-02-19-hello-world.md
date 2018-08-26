@@ -68,7 +68,7 @@ to be used -- Linux just works better in this case. Hopefully someday
 
 (Update 6/13/2017: Jekyll works on Windows Subsystem for Linux now!
 [These bash lines](
-    https://github.com/ryanspletzer/Scripts/blob/dev/Bash/WSL%20Ubuntu%2016.04
+    https://github.com/ryanspletzer/Scripts/blob/master/Bash/WSL%20Ubuntu%2016.04
 /JekyllSetup.sh
 ) will get you going.)
 

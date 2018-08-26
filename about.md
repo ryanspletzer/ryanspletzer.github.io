@@ -8,19 +8,12 @@ title: About
 
 # About
 
-I'm Ryan Spletzer, a Software Developer and DevOps practitioner in Information
-Research (IR) within R&D at Dow Chemical.
+I'm Ryan Spletzer, a Software and DevOps Engineer in Directory Services at
+Autodesk.
 
-I've had experience in backend and frontend development, mostly in the .NET and
-ASP.NET (increasingly Core) stacks, and I am one of the biggest PowerShell fans
-you'll ever meet.
-
-I'm neck-deep in DevOps, and automating everything I can using tools like
-PowerShell DSC on Windows and Chef on Linux, both on-premises and in the Cloud.
-
-I takes a craftsmanship approach to software and strive towards best design
-patterns and mastering the full stack, utilizing tools that enable automated
-release pipelines and continuous delivery.
+I've had experience in backend and (some) frontend development, mostly in the
+.NET and .NET Core stacks, and I am one of the biggest PowerShell fans you'll
+ever meet.
 
 ## Open source
 
@@ -28,30 +21,45 @@ I enjoy working on and contributing to open source projects and would encourage
 anyone interested to peruse my [GitHub](https://github.com/ryanspletzer)
 account.
 
+## Autodesk
+
+In April of 2018, I joined Autodesk in Novi, Michigan, as part of the newly
+formed Directory Services team.
+
+The team is on a DevOps journey to automate and continuously improve Active
+Directory, Azure AD and related services. This is being achieved with a
+combination of CI/CD with VSTS, which deliver automations around these products
+with Azure and AWS services, as well as with the development of new self-service
+API's which increase developer productivty, and can be leveraged as an
+integration platform by other products and systems.
+
 ## Dow Chemical
 
-Since graduating college from Michigan State University in 2012 with a degree in
+After graduating college from Michigan State University in 2012 with a degree in
 Supply Chain Management and Minors in Computer Science and Information
-Technology, I have worked at The Dow Chemical Company in Midland, Michigan.
+Technology, I worked at The Dow Chemical Company in Midland, Michigan until
+March 2018.
 
-In my current role as R&D Software Developer, I help to create research-driven
-applications and solutions on the Information Research Systems Development
-team.
+My last role at Dow was as an R&D Software Developer, where I helped to create
+research-driven applications and solutions on the Information Research / Systems
+Development team.
 
-In addition to project work, I own and manage our Team Foundation Server (TFS)
-instance for Information Research and collaborate with our Information Systems
-group on co-administrating Dow's enterprise Visual Studio Team Services (VSTS)
-instance. I help drive improvements to our processes, promote usage of source
-control (primarily Git), package management and automated builds / releases, and
-help to organize work item tracking for the group.
+In addition to project work, I owned and managed our Team Foundation Server
+(TFS) instance for Information Research and broader R&D, and collaborated with
+our Information Systems group and co-administrated Dow's Enterprise Visual
+Studio Team Services (VSTS) instance. I helped to drive improvements to our
+processes, promote usage of source control (primarily Git), package management
+and automated builds / releases, and helped to organize work item tracking in
+the form of Scrum / Kanban boards for the group.
 
-I also own and manage Information Research's Web Farm, driving automation
+I also owned and managed Information Research's Web Farm, driving automation
 improvements with PowerShell DSC and implementing key architectural services
 like AMQP message queueing, worker services and scheduled batch jobs.
 
-Dow is increasingly using Azure, and as a result I currently manage Information
+Dow began increasingly using Azure, and as a result I managed Information
 Research's Azure subscription and created the logical organization and security
-model of the resources we currently use.
+model of the resources we currently use, which other groups in the company
+adopted as well.
 
 In my first role in Dow's Information Systems department, I developed custom
 SharePoint and .NET solutions and applications as part of the Collaboration
