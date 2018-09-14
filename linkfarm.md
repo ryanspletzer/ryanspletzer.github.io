@@ -74,13 +74,13 @@ following convention based on the project, so that at least within a given proje
 that vary per project are, brackets opening on the same line and the use of backticks.
 
 * [Getting Started with PowerShell Desired State Configuration (DSC)](
-    https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672)
-- A great course for PowerShell DSC and PowerShell in general -- lots of great tidbits shared throughout by Jeffrey
+    https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672) -
+A great course for PowerShell DSC and PowerShell in general -- lots of great tidbits shared throughout by Jeffrey
 Snover, the inventor of PowerShell.
 
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](
-    https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702)
-- Another great course to get deeper on PowerShell DSC and PowerShell in general.
+    https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702) -
+Another great course to get deeper on PowerShell DSC and PowerShell in general.
 
 * [The DSC Book by Don Jones et al.](https://leanpub.com/the-dsc-book) - A good evergreen book on PowerShell Desired
 State Configuration that continues to be updated. This book helps to fill in a lot of gaps an answer a lot of the niche
@@ -107,13 +107,13 @@ network security and flips them on their head, and presents a model of what mode
 looks like - an earth-shattering book.
 
 * [Learn SQL Server in a Month of Lunches](
-    https://www.manning.com/books/learn-sql-server-administration-in-a-month-of-lunches)
-- I began to get into a series of "Month of Lunches book" around certain tools and products I used every day but wanted
+    https://www.manning.com/books/learn-sql-server-administration-in-a-month-of-lunches) -
+I began to get into a series of "Month of Lunches book" around certain tools and products I used every day but wanted
 to round out my knowledge base on. This was one of them, gives a good, no-nonsense introduction to managing SQL Server.
 
 * [Learn Active Directory in a Month of Lunches](
-    https://www.manning.com/books/learn-active-directory-management-in-a-month-of-lunches)
-- Similarly I wanted to round out my knowledge in Active Directory and this book was great for that.
+    https://www.manning.com/books/learn-active-directory-management-in-a-month-of-lunches) -
+Similarly I wanted to round out my knowledge in Active Directory and this book was great for that.
 
 * [Learn Windows IIS in a Month of Lunches](https://www.manning.com/books/learn-windows-iis-in-a-month-of-lunches) -
 Similarly I wanted to rout out my knowledge of IIS and this book was great for that.
@@ -145,8 +145,9 @@ whitepaper that outlines a Release Pipeline Model that's especially oriented aro
 Code, using tools like PowerShell DSC and Chef.
 
 * [The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/) - The logical successor to The Phoenix
-Project. I had begun reading this book and we are currently reading this book as a team, but I can already tell it will
-go into the "earth-shattering" category and thus is already worthy of this list prior to finishing it.
+Project, but more of a straight-forward handbook instead of a novel. I had begun reading this book and we read this book
+as a team, and I can say confidently tell it goes into the "earth-shattering" category and thus is very worthy of this
+list.
 
 ## Health
 
