@@ -145,9 +145,8 @@ whitepaper that outlines a Release Pipeline Model that's especially oriented aro
 Code, using tools like PowerShell DSC and Chef.
 
 * [The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/) - The logical successor to The Phoenix
-Project, but more of a straight-forward handbook instead of a novel. I had begun reading this book and we read this book
-as a team, and I can say confidently tell it goes into the "earth-shattering" category and thus is very worthy of this
-list.
+Project, but more of a straight-forward handbook instead of a novel. We read this book as a team, and I can say
+confidently that it goes into the "earth-shattering" category and thus is very worthy of this list.
 
 ## Health
 
