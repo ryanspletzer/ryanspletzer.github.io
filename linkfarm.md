@@ -148,6 +148,14 @@ Code, using tools like PowerShell DSC and Chef.
 Project, but more of a straight-forward handbook instead of a novel. We read this book as a team, and I can say
 confidently that it goes into the "earth-shattering" category and thus is very worthy of this list.
 
+* [Learning the bash Shell: Unix Shell Programming](
+    https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell-ebook/dp/B0043GXMSY) - I'm not going to lie, bash is
+arcane, especially coming from PowerShell where everything is beautiful and nothing hurts. And I would probably reach
+for Python if I had to do some serious scripting / programing on the *nix side, but alas you do run across the need to
+interpret and make bash shell scripts from time to time (if only to wrap / invoke other things) and this book finally
+got me a semi-competent understanding of the bash shell (and its siblings ksh, zsh, fish etc.). I'm using zsh most of
+the time interactively now with the "oh my zsh" extensions, but writing scripts targeting bash.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
