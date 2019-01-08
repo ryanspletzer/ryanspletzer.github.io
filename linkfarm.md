@@ -156,6 +156,16 @@ interpret and make bash shell scripts from time to time (if only to wrap / invok
 got me a semi-competent understanding of the bash shell (and its siblings ksh, zsh, fish etc.). I'm using zsh most of
 the time interactively now with the "oh my zsh" extensions, but writing scripts targeting bash.
 
+* [Applied Cryptography: Protocols, Algorithms, and Source Code in C](
+    https://www.amazon.com/Applied-Cryptography-Protocols-Algorithms-Source/dp/0471117099) - This book is a great primer
+on wrapping your head around the underpinnings of how cryptography works. Reading the entirety is not necessary, as many
+of the described algorithms in the book have gone by the wayside over the years since it was written in the 90's, but
+there are a number there that help to establish a good footing for future cryptographic study and application.
+
+* [It Doesn't Have to Be Crazy at Work](https://www.amazon.com/Doesnt-Have-Be-Crazy-Work/dp/0062874780) - This is a very
+thought-provoking work that will have you questioning many of the modern-day practices in companies. Overdrawn hours and
+unrealistic expectations fly in the face of a lot of the sensible approaches outlined in this book. Highly recommend it.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
