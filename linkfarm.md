@@ -166,6 +166,14 @@ there are a number there that help to establish a good footing for future crypto
 thought-provoking work that will have you questioning many of the modern-day practices in companies. Overdrawn hours and
 unrealistic expectations fly in the face of a lot of the sensible approaches outlined in this book. Highly recommend it.
 
+* [Effective Monitoring and Alerting: For Web Operations](
+    https://www.amazon.com/Effective-Monitoring-Alerting-Web-Operations/dp/1449333524) - This book starts out with
+slightly run-of-the-mill content on Monitoring and Alerting, and then you get to Chapter 4... and it rocks your socks
+off. This book is not just filled with knowledge on monitoring and alerting at scale, it is filled with *wisdom*. Real
+world experience with these scenarios can be hard to come by. Systems that start small at some point suddenly find
+themselves in need of scale, and montioring and alerting has to scale with it. This book demystifies how to do this with
+tons of rules of thumb that are born out of tried and tested patterns. I highly recommend this book.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
