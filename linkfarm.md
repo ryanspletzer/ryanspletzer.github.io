@@ -86,6 +86,9 @@ Another great course to get deeper on PowerShell DSC and PowerShell in general.
 State Configuration that continues to be updated. This book helps to fill in a lot of gaps an answer a lot of the niche
 questions about PowerShell DSC.
 
+* [The Imposter's Handbook](https://www.bigmachine.io/products/the-imposters-handbook) - A great read for someone like
+myself who did not get a computer science major in undergrad.
+
 * [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](
     https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592) - Another earth-shattering book. A
 necessary read for any DevOps practitioner.
@@ -194,3 +197,20 @@ in the ketogenic lifestyle or thinking about starting the ketogenic diet.
 the first place I heard about the concept of low carb and ketosis, and though I didn't understand it years ago when I
 first read it, and I don't necessarily follow the "Slow Carb" diet Tim lays out (I stay pretty much low carb *most* of
 the time), it has a lot of concepts that were ahead of its time. Still worth a read.
+
+## Other
+
+These are books of any other category that don't fit above.
+
+* [Make Time: How to Focus on What Matters Every Day](https://maketime.blog/) - Great book about how to focus on what
+matters. In particular the advice around how to reduce social media consumption has been great. I've gained a lot of
+cycles back because of techniques in this book.
+
+* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing](
+    https://konmari.com/products/the-life-changing-magic-of-tidying-up) - Not to be a typical millenial... I first
+started hearing about Marie Kondo well before her Netflix show, and I would highly recommend reading the books to help
+frame the reasons behind the methods.
+
+* [Spark Joy](https://konmari.com/products/spark-joy) - A great practical guide and addition to Marie's first book above
+for people like me who just never knew how to fold a shirt (or anything) well before. After getting rid of all the
+excess this comes in very handy for helping to organize well.
