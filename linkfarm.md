@@ -214,3 +214,8 @@ frame the reasons behind the methods.
 * [Spark Joy](https://konmari.com/products/spark-joy) - A great practical guide and addition to Marie's first book above
 for people like me who just never knew how to fold a shirt (or anything) well before. After getting rid of all the
 excess this comes in very handy for helping to organize well.
+
+* [Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs](
+    https://www.whatmatters.com/book) - I first encountered this concept when our company was adopting OKRs and this
+book was a recommended read, and I recommend it as well. You'll get the idea early on in the book and much of the latter
+part dives into specific success stories.
