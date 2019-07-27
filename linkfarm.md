@@ -177,6 +177,16 @@ world experience with these scenarios can be hard to come by. Systems that start
 themselves in need of scale, and montioring and alerting has to scale with it. This book demystifies how to do this with
 tons of rules of thumb that are born out of tried and tested patterns. I highly recommend this book.
 
+* [Scrum: The Art of Doing Twice the Work in Half the Time](https://www.scruminc.com/new-scrum-the-book/) - I'm very
+much into going to the source for the best information, and when I found out from a colleague that there was a book by
+the creator of Scrum about Scrum, I knew I had to read it. Many organizations will take Scrum and transmogrify it
+according to their interpretations (which is fine), but IMHO it's best to build up one's own understanding of Scrum from
+the source, and I think this is the closest you'll get to that source.
+
+* [The Pester Book](https://leanpub.com/pesterbook) - I had this in my queue for a while and finally got around to
+reading it when we started using Pester for various scenarios at work. It's really the best dive into how to use it
+short of perhaps watching Pluralsight videos by the author. (I prefer the written word whenever possible.)
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
