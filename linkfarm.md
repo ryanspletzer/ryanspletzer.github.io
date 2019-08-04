@@ -187,6 +187,10 @@ the source, and I think this is the closest you'll get to that source.
 reading it when we started using Pester for various scenarios at work. It's really the best dive into how to use it
 short of perhaps watching Pluralsight videos by the author. (I prefer the written word whenever possible.)
 
+* [Effective C#: 50 Specific Ways to Improve Your C#](http://www.thebillwagner.com/Resources/EffectiveCS) - There are
+some real gems in this book to pick up. Not all of these 50 will be mind-blowing but there's enough here that it goes
+on the recommended list. Reading More Effective C# next.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
