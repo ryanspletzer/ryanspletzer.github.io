@@ -191,6 +191,11 @@ short of perhaps watching Pluralsight videos by the author. (I prefer the writte
 some real gems in this book to pick up. Not all of these 50 will be mind-blowing but there's enough here that it goes
 on the recommended list. Reading More Effective C# next.
 
+* [DNS and BIND](http://shop.oreilly.com/product/9780596100575.do) - I'm not going to lie, this book is a long slog. But
+if you can power through it, you will come out the other end with a much better understanding of the underpinnings of
+DNS, and have a new appreciation of just how much hidden complexity exists beneath a system that has the seemingly
+simplistic job of mapping domain names to IP addresses.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
