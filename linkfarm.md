@@ -203,6 +203,10 @@ if you can power through it, you will come out the other end with a much better 
 DNS, and have a new appreciation of just how much hidden complexity exists beneath a system that has the seemingly
 simplistic job of mapping domain names to IP addresses.
 
+* [Semantic Versioning](https://semver.org/) - I debated adding this to the list but decided that I should, as I feel
+that the concepts expressed here are extremely important and should be understood broadly by developers, especially in
+the context of separating "marketing versions" of software and packages from their actual package versions.
+
 ## Health
 
 Over the course of 2016 and now into 2017 and beyond I started taking health seriously. In particular I lost 40 pounds
