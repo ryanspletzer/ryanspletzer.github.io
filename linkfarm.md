@@ -191,6 +191,13 @@ short of perhaps watching Pluralsight videos by the author. (I prefer the writte
 some real gems in this book to pick up. Not all of these 50 will be mind-blowing but there's enough here that it goes
 on the recommended list. Reading More Effective C# next.
 
+* [Just for Fun: The Story of an Accidental Revolutionary](https://www.harpercollins.com/9780066620732/just-for-fun/) -
+This book won't change the way you program or add large hidden facet of technical understanding to your repertoire, but
+it is still very interesting nonetheless. The autobiography of Linus Torvalds provides some very interesting insights
+into the history of the various operating systems of the time. One interesting concept I appreciated was his description
+of how the basic sys calls serve as the basic building blocks upon which you can do everything else in the OS, and how
+this idea of composability of simple things to make complex things is very important.
+
 * [DNS and BIND](http://shop.oreilly.com/product/9780596100575.do) - I'm not going to lie, this book is a long slog. But
 if you can power through it, you will come out the other end with a much better understanding of the underpinnings of
 DNS, and have a new appreciation of just how much hidden complexity exists beneath a system that has the seemingly
