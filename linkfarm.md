@@ -189,7 +189,10 @@ short of perhaps watching Pluralsight videos by the author. (I prefer the writte
 
 * [Effective C#: 50 Specific Ways to Improve Your C#](http://www.thebillwagner.com/Resources/EffectiveCS) - There are
 some real gems in this book to pick up. Not all of these 50 will be mind-blowing but there's enough here that it goes
-on the recommended list. Reading More Effective C# next.
+on the recommended list.
+
+* [More Effective C#: 50 Specific Ways to Improve your C#](http://thebillwagner.com/resources/moreeffectivecs) - Similar
+to the first Effective C# book, there are some items in here that are very helpful.
 
 * [Just for Fun: The Story of an Accidental Revolutionary](https://www.harpercollins.com/9780066620732/just-for-fun/) -
 This book won't change the way you program or add large hidden facet of technical understanding to your repertoire, but
