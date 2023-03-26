@@ -212,6 +212,9 @@ I've read them:
   Operator Pattern which is the foundation for the service mesh frameworks like Istio and Open Service Mesh, as well as
   new emergent patterns for running stateful workloads on Kubernetes.
 
+* [API by Design](https://apibydesign.com/) - A fantastic read from a former colleague that will get you thinking about
+  API complexity and entropy and how to manage it to create quality APIs.
+
 * [OpenAPI](https://www.openapis.org) - The OpenAPI spec has become one of the most important aspects of modern API
   development.
 
