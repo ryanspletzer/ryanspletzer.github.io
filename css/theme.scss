@@ -39,11 +39,15 @@ html {
   min-height: 100%;
 }
 body {
-  font-size: 16px;
+  font-size: 19px;
   padding-top: 80px;
+  line-height: 1.75;
   color: $font-color;
   background: $background-color url(./pics/triangles.png);
   //background: $background-color url(./pics/squares.png); // Another good pattern for background
+}
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .well {
   background-color: $post-panel-color;
@@ -322,11 +326,12 @@ nav.shrink .navbar-toggle {
 
 .footer p {
   margin: 0px;
+  font: normal 19px sans-serif;
 }
 
 .footer-distributed {
   background-color: $footer-background-color;
-  font: normal 16px sans-serif;
+  font: normal 19px sans-serif;
   padding: 20px 25px;
   margin-top: 80px;
   text-align: center;
