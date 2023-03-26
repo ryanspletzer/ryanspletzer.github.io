@@ -59,15 +59,12 @@ so I could VNC to the nice Unity desktop for serving Jekyll in a browser), so I
 could use the Ruby-based Jekyll tools through the terminal. You can get Jekyll
 working on Windows but I'm a big believer in using the tools where they're meant
 to be used -- Linux just works better in this case. Hopefully someday
-[Bash on Ubuntu on Windows](
-    <https://msdn.microsoft.com/en-us/commandline/wsl/about>
-) gets fully fleshed out and I won't need a VM anymore!
+[Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/about)
+gets fully fleshed out and I won't need a VM anymore!
 
 (Update 6/13/2017: Jekyll works on Windows Subsystem for Linux now!
-[These bash lines](
-    <https://github.com/ryanspletzer/Scripts/blob/master/Bash/WSL%20Ubuntu%2016.04>
-/JekyllSetup.sh
-) will get you going.)
+[These bash lines](https://github.com/ryanspletzer/Scripts/blob/master/Bash/WSL%20Ubuntu%2016.04>/JekyllSetup.sh) will
+get you going.)
 
 Jekyll isn't the only static site generator out there, I was also deliberating
 about using a generator called [Pretzel](https://github.com/Code52/pretzel),
@@ -103,19 +100,15 @@ Oh and I'm using [Disqus](https://disqus.com) for comments. Because why not.
 
 ## Site Design
 
-This site's theme is a slightly tweaked version of [Jekyll Clean Dark](
-    <https://github.com/streetturtle/jekyll-clean-dark>
-) by Peter Makhov. It will probably change over time, but one of the great
-things about this general Jekyll toolset is the ability to get up and running
+This site's theme is a slightly tweaked version of
+[Jekyll Clean Dark](https://github.com/streetturtle/jekyll-clean-dark) by Peter Makhov. It will probably change over
+time, but one of the great things about this general Jekyll toolset is the ability to get up and running
 quickly, and this certainly has been a much quicker experience than when I've
 worked on my own sites in the past.
 
 ## Open Source
 
 Everything you see here is open source and available in a [public GitHub
-repository named ryanspletzer.github.io](
-    <https://github.com/ryanspletzer/ryanspletzer.github.io>
-). I maintain a fork of the fundamental changes I've made to Jekyll Clean Dark
-theme over at [this repository](
-    <https://github.com/ryanspletzer/jekyll-clean-dark>
-) as well.
+repository named ryanspletzer.github.io](https://github.com/ryanspletzer/ryanspletzer.github.io). I maintain a fork of
+the fundamental changes I've made to Jekyll Clean Dark
+theme over at [this repository](https://github.com/ryanspletzer/jekyll-clean-dark) as well.
