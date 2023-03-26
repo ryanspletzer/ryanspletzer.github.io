@@ -13,7 +13,7 @@
   {% if page.header %}
   <meta name="og:image" content="{{ site.url | append:page.header }}">
   {% endif %}
-  {% if page.headerwidth and page.headerheight  %}
+  {% if page.headerwidth and page.headerheight %}
   <meta name="og:image:width" content="{{ page.headerwidth }}">
   <meta name="og:image:height" content="{{ page.headerheight }}">
   {% endif %}
@@ -42,6 +42,7 @@
   <link href="{{ site.baseurl}}/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="canonical" href="{{ site.url | append:page.url }}">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel-="me" href="https://hachyderm.io/@ryanspletzer">
 </head>
 
 <body>
@@ -49,21 +50,21 @@
   {% include google-analytics.html %}
   {% include yandex-metrica.html %}
 
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: {
-        families: ['Ubuntu::latin']
-      }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
+  <script type=" text/javascript">
+  WebFontConfig = {
+  google: {
+  families: ['Ubuntu::latin']
+  }
+  };
+  (function () {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+  })();
   </script>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -78,11 +79,12 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="{{ site.baseurl}}/">/home</a></li>
-          <li><a href="{{ site.baseurl}}/archive.html">/archive</a></li>
-          <li><a href="{{ site.baseurl}}/tags.html">/tags</a></li>
-          <li><a href="{{ site.baseurl}}/about.html">/about</a></li>
-          <li><a href="{{ site.baseurl}}/linkfarm.html">/linkfarm</a></li>
+          <li><a href="{{ site.baseurl}}/">home</a></li>
+          <li><a href="{{ site.baseurl}}/archive.html">archive</a></li>
+          <li><a href="{{ site.baseurl}}/tags.html">tags</a></li>
+          <li><a href="{{ site.baseurl}}/about.html">about</a></li>
+          <li><a href="{{ site.baseurl}}/linkfarm.html">linkfarm</a></li>
+          <li><a href="{{ site.baseurl}}/feed.xml">rss</a></li>
         </ul>
       </div>
     </div>
