@@ -84,6 +84,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Zsh
 - iTerm
 - Windows Terminal
+- Terminal Customization
+- Terminal History Prompts
 - VDI
 - Splunk
 - DNS
@@ -103,6 +105,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Cost Optimization
 - Windows
 - macOS
+- Parallels
 - C#
 - .NET
 - ASP.NET
@@ -132,6 +135,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - MVC
 - MVVM
 - Docker
+- MSDN and Visual Studio Enterprise Licensing
 - Microsoft SQL Server
 - SQL Server Management Studio
 - Database Design
@@ -172,6 +176,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Azure Load Balancer
 - Azure WAF
 - Azure Application Insights
+- Azure Information Protection
 - Regular Expressions
 - Scrum
 - Open-source
@@ -179,13 +184,16 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Kubernetes
 - Service Meshes like Istio, Open Service Mesh
 - Microsoft 365
+- Microsoft Licensing
 - SharePoint Online
 - Exchange Online
 - Microsoft Graph
 - Power BI
+- Data Loss Prevention
 - Search
 - Python
 - Windows Server
+- Hyper-V
 - Remote Desktop
 - IIS
 - SOX
