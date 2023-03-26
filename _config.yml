@@ -25,17 +25,21 @@ share:
 
 social:
   github: ryanspletzer
-  twitter: ryanspletzer
-  stackoverflow: 2356308/ryan-spletzer
   linkedin: ryanspletzer
-  instagram: ryanspletzer
   rss: feed.xml
+
+links:
+  - text: Mastodon
+    url: https://spletzer.com/@ryan
+  - text: LinkedIn
+    url: https://www.linkedin.com/in/ryanspletzer/
+  - text: GitHub
+    url: https://github.com/ryanspletzer
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: UA-92338338-1
 # Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
 yandex_metrica:
-
 
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
 # setting below must also be true. Individual posts can override 'comments' to
@@ -55,5 +59,4 @@ kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: false
 
-exclude: ['README.md', 'LICENSE']
-
+exclude: ["README.md", "LICENSE"]

@@ -4,69 +4,256 @@ title: About
 
 ---
 
-![img]({{ site.baseurl }}/images/ryan_about.jpg){: .center-image }
-
 # About
 
-I'm Ryan Spletzer, a Software and DevOps Engineer in Directory Services at
-Autodesk.
+I'm a Principal Software Engineer at [Autodesk](https://www.autodesk.com). I try my best to blog here as well as post my
+thoughts to [LinkedIn](https://www.linkedin.com/in/ryanspletzer/) and [Mastodon](https://spletzer.com/@ryan). I dabble
+and aspire to do more open-source side projects on [GitHub](https://github.com/ryanspletzer) whenever I find this
+elusive thing called "free time."
 
-I've had experience in backend and (some) frontend development, mostly in the
-.NET and .NET Core stacks, and I am one of the biggest PowerShell fans you'll
-ever meet.
+## Bio
 
-## Open source
+I received a bachelor's degree in Supply Chain Management along with minors in Computer Science and Information
+Technology from Michigan State University in 2012, and I will be forever kicking myself and living with imposter
+syndrome for having not gotten a full degree in Computer Science.
 
-I enjoy working on and contributing to open source projects and would encourage
-anyone interested to peruse my [GitHub](https://github.com/ryanspletzer)
-account.
+I was a software engineer at Dow Chemical from 2012 to 2014 in Information Systems working on SharePoint development
+and from 2014 to 2018 in R&D working on applications for research and running our source control and CI/CD environments
+(Git with TFS / Azure DevOps) and managing our cloud Azure environment, amongst other things. This is where I learned to
+love PowerShell.
 
-## Autodesk
+In 2018 I joined Autodesk as a software engineer on the newly formed Directory Services team to automate infrastructure
+in AWS and Azure and create automation and self-service for employees around all things Active Directory and Azure AD
+and Identity and Access Management. Since then our team has grown in scope to include Collaboration and Network
+automation use cases and work on FedRAMP compliance initiatives as well as involvement in Autodesk's internal delivery
+platforms and open-source initiatives.
 
-In April of 2018, I joined Autodesk in Novi, Michigan, as part of the newly
-formed Directory Services team.
+## Things I Think About
 
-The team is on a DevOps journey to automate and continuously improve Active
-Directory, Azure AD and related services. This is being achieved with a
-combination of CI/CD with VSTS, which deliver automations around these products
-with Azure and AWS services, as well as with the development of new self-service
-API's which increase developer productivty, and can be leveraged as an
-integration platform by other products and systems.
+Some of these are skills, some of them tools, some of them are other things, but in the interest of not trying to break
+them down by category, this is a non-comprehensive set of things I think about, in no particular order:
 
-## Dow Chemical
-
-After graduating college from Michigan State University in 2012 with a degree in
-Supply Chain Management and Minors in Computer Science and Information
-Technology, I worked at The Dow Chemical Company in Midland, Michigan until
-March 2018.
-
-My last role at Dow was as an R&D Software Developer, where I helped to create
-research-driven applications and solutions on the Information Research / Systems
-Development team.
-
-In addition to project work, I owned and managed our Team Foundation Server
-(TFS) instance for Information Research and broader R&D, and collaborated with
-our Information Systems group and co-administrated Dow's Enterprise Visual
-Studio Team Services (VSTS) instance. I helped to drive improvements to our
-processes, promote usage of source control (primarily Git), package management
-and automated builds / releases, and helped to organize work item tracking in
-the form of Scrum / Kanban boards for the group.
-
-I also owned and managed Information Research's Web Farm, driving automation
-improvements with PowerShell DSC and implementing key architectural services
-like AMQP message queueing, worker services and scheduled batch jobs.
-
-Dow began increasingly using Azure, and as a result I managed Information
-Research's Azure subscription and created the logical organization and security
-model of the resources we currently use, which other groups in the company
-adopted as well.
-
-In my first role in Dow's Information Systems department, I developed custom
-SharePoint and .NET solutions and applications as part of the Collaboration
-team. During this time I also had the opportunity work on the rollout of major
-implementations of SharePoint (FAST) Search 2010 and SharePoint Search 2013. I
-also helped to support and create branding solutions and tools for managing
-SharePoint 2013 upgrades in Office 365 Dedicated. While in the group, I got my
-first exposure to managing TFS when rolling out an Enterprise TFS 2012 instance.
-This role was also where I first learned major architectural and software
-design patterns and gained key concepts around Application Lifecycle Management.
+- Software Engineering
+- Infrastructure as Code (IaC)
+- Version Control
+- SDLC
+- SOA
+- Git
+- Git Credential Manager
+- Git LFS
+- Git Shallow Clones and Sparse Checkouts
+- Git commit signing
+- Continuous Integration and Continuous Delivery
+- Portable CI
+- Design Patterns
+- Domain Driven Design
+- CQRS
+- Event Sourcing
+- Even Driven Architectures
+- Algorithms
+- Android
+- iOS
+- Architecture
+- Integration
+- Identity
+- Identity and Access Management (IAM)
+- Decentralized Identity
+- Verifiable Credentials
+- Security
+- Testing
+- Unit Testing
+- Integration Testing
+- Serverless
+- Serverless Framework
+- Terraform
+- OpenAPI
+- JSONSchema
+- OData
+- GraphQL
+- Scripting
+- PowerShell
+- PowerShell Desired State Configuration (DSC)
+- PowerShell Module / Script Development and Distribution
+- NuGet
+- PowerShell Gallery
+- Chocolatey
+- Homebrew
+- Pester
+- Dev Machine Setup Scripts
+- Bash
+- Zsh
+- iTerm
+- Windows Terminal
+- VDI
+- Splunk
+- DNS
+- DNSSEC
+- DNS over TLS
+- DNS over HTTPS
+- Networking
+- Zero Trust
+- Security
+- Cryptography
+- DevOps
+- SRE
+- Monitoring
+- Observability
+- Performance
+- Optimization
+- Cost Optimization
+- Windows
+- macOS
+- C#
+- .NET
+- ASP.NET
+- Entity Framework
+- Microservices
+- Cross-platform Development
+- Visual Studio Code
+- Visual Studio
+- PKI
+- SSL/TLS, mTLS
+- Code Signing
+- Active Directory
+- Quest ARS
+- NTLM / Kerberos
+- HashiCorp Vault
+- Packer
+- Spinnaker
+- Artifactory
+- Azure AD
+- MSAL (Microsoft Authentication Library)
+- CSS
+- JavaScript
+- TypeScrip
+- Node
+- JSON
+- XML
+- MVC
+- MVVM
+- Docker
+- Microsoft SQL Server
+- SQL Server Management Studio
+- Database Design
+- Database Normalization
+- Azure Data Studio
+- MongoDB
+- Scaling
+- Azure
+- Azure Bicep
+- az CLI
+- Azure DevOps
+- GitHub
+- GitHub Actions
+- GitHub Codespaces
+- GitHub Package Management
+- GitHub Container Registry
+- GitHub Copilot
+- ChatGPT
+- Middleware
+- Azure PowerShell
+- Azure Functions
+- Azure API Management
+- Azure Functions
+- Azure Automation
+- Azure Service Bus
+- Log Analytics
+- Azure Storage including Blobs, Queues, Tables, etc.
+- Logic Apps
+- Azure Virtual Machines and Virtual Machine Scale Sets
+- Azure Key Vault
+- Azure DNS
+- Azure Front Door
+- Azure AKS
+- Azure RBAC
+- Azure Managed Identities
+- Azure Service Principals
+- Azure ARM
+- Azure Load Balancer
+- Azure WAF
+- Azure Application Insights
+- Regular Expressions
+- Scrum
+- Open-source
+- Cosmos DB
+- Kubernetes
+- Service Meshes like Istio, Open Service Mesh
+- Microsoft 365
+- SharePoint Online
+- Exchange Online
+- Microsoft Graph
+- Power BI
+- Search
+- Python
+- Windows Server
+- Remote Desktop
+- IIS
+- SOX
+- SOC2
+- FedRAMP
+- PowerShell Remoting
+- Troubleshooting
+- Sysinternals
+- ILSpy
+- Fiddler
+- Wireshark
+- Profiling
+- Tracing
+- Linux
+- nginx
+- WSL
+- SSH
+- AWS
+- AWS CLI
+- AWS PowerShell
+- AWS CloudFormation
+- AWS CloudFront
+- AWS Lambda
+- AWS API Gateway
+- AWS S3
+- AWS EC2
+- AWS Auto Scaling Groups
+- AWS SNS
+- AWS SQS
+- AWS DynamoDB
+- AWS Route 53
+- AWS SSM
+- AWS Secrets Manager
+- AWS EKS
+- AWS SAM
+- AWS ELB
+- AWS WAF
+- AWS Certificate Manager
+- AWS X-Ray
+- AWS KMS
+- AWS IAM
+- AWS CloudWatch
+- AWS CloudTrail
+- High Availability
+- Regional Failover
+- Latency Based Routing
+- OpenID Connect / OAuth 2.0
+- JWT and related specs
+- SAML
+- Video Editing
+- Photo Editing
+- Audio Editing
+- Photography
+- Videography
+- Audio Recording
+- Photoshop
+- Premiere Pro
+- Media Formats
+- Video Games
+- Music
+- Guitar
+- Writing
+- Diagramming
+- Communicating
+- Presenting and Speaking
+- Mentorship and Sponsorship
+- Setting Technical Direction
+- Being Glue
+- Exploration
+- Organizational Design
+- Team Topologies

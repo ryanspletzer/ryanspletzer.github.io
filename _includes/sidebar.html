@@ -1,4 +1,13 @@
-<div class="sidebar ">
+<div class="sidebar well">
+  <h2>Elsewhere Online</h2>
+  <ul>
+    {% for link in site.links%}
+    <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="sidebar well">
   <h2>Recent Posts</h2>
   <ul>
     {% for post in site.posts limit:5 %}
@@ -7,14 +16,16 @@
   </ul>
 </div>
 
-<div class="sidebar">
+<div class="sidebar well">
   <h2>Tags</h2>
-  <ul class="sideBarTags">
+  <ul>
     {% assign tags = (site.tags | sort:0) %}
     {% for tag in tags %}
     <li>
-      <a href="{{ site.baseurl}}/tag/{{ tag[0] }}" data-toggle="tooltip" data-placement="right" title="{{ tag[1].size }}">
-        <span>{{tag[0] }}</span></a></li>
+      <a href="{{ site.baseurl}}/tag/{{ tag[0] }}" data-toggle="tooltip" data-placement="right"
+        title="{{ tag[1].size }}">
+        <span>{{tag[0] }}</span></a>
+    </li>
     {% endfor %}
   </ul>
 </div>

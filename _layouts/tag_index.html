@@ -6,15 +6,15 @@ layout: page
     <h2 class="post_title">{{page.title}}</h2>
     <ul>
       {% for post in site.posts %}
-        {% for tag in post.tags %}
-          {% if tag == page.tag %}
-          <li class="archive_list">
-            <time>{{ post.date | date_to_string }}</time>
-            <a class="archive_list_article_link" href='{{post.url | prepend:site.baseurl }}'>{{post.title}}</a>
-            <p>{{post.description}}</p>
-          </li>
-          {% endif %}
-        {% endfor %}
+      {% for tag in post.tags %}
+      {% if tag == page.tag %}
+      <li class="archive_list">
+        <time>{{ post.date | date_to_string }}</time>
+        <a class="archive_list_article_link" href='{{post.url | prepend:site.baseurl }}'>{{post.title}}</a>
+        <p>{{post.description}}</p>
+      </li>
+      {% endif %}
+      {% endfor %}
       {% endfor %}
     </ul>
   </div>

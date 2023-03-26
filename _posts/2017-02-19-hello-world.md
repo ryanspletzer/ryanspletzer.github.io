@@ -4,7 +4,6 @@ title: Hello World
 date: 2017-02-19 12:00:00
 description: This has been a long time coming, but after a few years I finally
     have a new blog.
-header: "/images/GAC_LifeAquatic.jpg"
 headerwidth: 793
 headerheight: 397
 share: true
@@ -14,8 +13,6 @@ tags:
  - GitHub Pages
  - CloudFlare
 ---
-
-![img]({{ site.url }}/images/GAC_LifeAquatic.jpg){: .center-image }
 
 ## Introduction
 
@@ -63,12 +60,12 @@ could use the Ruby-based Jekyll tools through the terminal. You can get Jekyll
 working on Windows but I'm a big believer in using the tools where they're meant
 to be used -- Linux just works better in this case. Hopefully someday
 [Bash on Ubuntu on Windows](
-    https://msdn.microsoft.com/en-us/commandline/wsl/about
+    <https://msdn.microsoft.com/en-us/commandline/wsl/about>
 ) gets fully fleshed out and I won't need a VM anymore!
 
 (Update 6/13/2017: Jekyll works on Windows Subsystem for Linux now!
 [These bash lines](
-    https://github.com/ryanspletzer/Scripts/blob/master/Bash/WSL%20Ubuntu%2016.04
+    <https://github.com/ryanspletzer/Scripts/blob/master/Bash/WSL%20Ubuntu%2016.04>
 /JekyllSetup.sh
 ) will get you going.)
 
@@ -107,7 +104,7 @@ Oh and I'm using [Disqus](https://disqus.com) for comments. Because why not.
 ## Site Design
 
 This site's theme is a slightly tweaked version of [Jekyll Clean Dark](
-    https://github.com/streetturtle/jekyll-clean-dark
+    <https://github.com/streetturtle/jekyll-clean-dark>
 ) by Peter Makhov. It will probably change over time, but one of the great
 things about this general Jekyll toolset is the ability to get up and running
 quickly, and this certainly has been a much quicker experience than when I've
@@ -117,8 +114,8 @@ worked on my own sites in the past.
 
 Everything you see here is open source and available in a [public GitHub
 repository named ryanspletzer.github.io](
-    https://github.com/ryanspletzer/ryanspletzer.github.io
+    <https://github.com/ryanspletzer/ryanspletzer.github.io>
 ). I maintain a fork of the fundamental changes I've made to Jekyll Clean Dark
 theme over at [this repository](
-    https://github.com/ryanspletzer/jekyll-clean-dark
+    <https://github.com/ryanspletzer/jekyll-clean-dark>
 ) as well.

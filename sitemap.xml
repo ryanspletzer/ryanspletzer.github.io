@@ -11,6 +11,10 @@ layout: null
         <loc>{{ "/about.html" | prepend: site.url }}</loc>
     </url>
 
+    <url>
+        <loc>{{ "/linkfarm.html" | prepend: site.url }}</loc>
+    </url>
+
     {% for post in site.posts %}
     <url>
         <loc>{{ site.url }}{{ post.url }}</loc>
