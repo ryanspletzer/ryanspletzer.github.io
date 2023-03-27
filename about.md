@@ -4,8 +4,6 @@ title: About
 
 ---
 
-# About
-
 I'm a Principal Software Engineer at [Autodesk](https://www.autodesk.com). I try my best to blog here as well as post my
 thoughts to [LinkedIn](https://www.linkedin.com/in/ryanspletzer/) and [Mastodon](https://spletzer.com/@ryan). I dabble
 and aspire to do more open-source side projects on [GitHub](https://github.com/ryanspletzer) whenever I find this
