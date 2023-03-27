@@ -200,6 +200,14 @@ ul.sideBarTags {
 .article h1 {
   margin-top: 10px;
 }
+.article .post-content p,
+.article .post-content ul,
+.article .post-content ol {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.article .post-meta ul {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .article .well {
   padding-bottom: 60px;
 }

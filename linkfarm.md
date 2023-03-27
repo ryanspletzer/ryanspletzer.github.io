@@ -4,8 +4,6 @@ title: Linkfarm
 
 ---
 
-# Linkfarm
-
 ## Software Engineering and Technology
 
 These are what I believe to be important and seminal works and that I refer to often. Presented in roughly the order
