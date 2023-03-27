@@ -64,7 +64,8 @@ API gateway services, or identity plane concepts like IAM Roles or Managed Ident
 Dynamo or Cosmos DB?
 
 There are more aspects to think through than this, but in my experience, your entry points like API gateways, the way
-you do authentication/authorization, and the way you do database workloads, all have to be thoroughly re-thought.
+you do authentication/authorization amongst cloud resources, and the way you do database workloads, all have to be
+thoroughly re-thought.
 
 Even if you are using more database protocols like MySQL or Mongo or others, it may be backed by a cloud-native service
 like Aurora or DocumentDB which did a lot of heavy lifting for you. And I literally mean heavy -- data is the heaviest
