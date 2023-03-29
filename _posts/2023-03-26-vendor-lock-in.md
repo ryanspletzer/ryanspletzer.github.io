@@ -14,7 +14,7 @@ Do you use an API of any kind? Congratulations, you have vendor lock-in.
 
 Now that I have your attention, let's dig into what I mean...
 
-## What is Vendor Lock-In
+## What is Vendor Lock-In?
 
 Companies spend an awful lot of time fretting about this concept called "vendor lock-in."
 

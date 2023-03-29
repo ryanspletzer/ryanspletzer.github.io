@@ -41,6 +41,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Git LFS
 - Git Shallow Clones and Sparse Checkouts
 - Git commit signing
+- GPG
 - Continuous Integration and Continuous Delivery
 - Portable CI
 - Design Patterns
@@ -86,6 +87,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Terminal History Prompts
 - VDI
 - Splunk
+- DHCP
 - DNS
 - DNSSEC
 - DNS over TLS
@@ -123,6 +125,16 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Spinnaker
 - Artifactory
 - Azure AD
+- Conditional Access
+- Privileged Identity Management
+- Entitlement Management
+- Identity Protection
+- Password Protection
+- MFA
+- Phishing Resistant Credential
+- FIDO2
+- WebAuthn
+- YubiKeys
 - MSAL (Microsoft Authentication Library)
 - CSS
 - JavaScript
@@ -159,6 +171,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Azure Functions
 - Azure Automation
 - Azure Service Bus
+- Azure Bastion
+- Bastion Hosts and Jump Boxes
 - Log Analytics
 - Azure Storage including Blobs, Queues, Tables, etc.
 - Logic Apps
@@ -193,6 +207,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Windows Server
 - Hyper-V
 - Remote Desktop
+- Remote Desktop Gateway
 - IIS
 - SOX
 - SOC2
@@ -209,6 +224,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - nginx
 - WSL
 - SSH
+- ACME Protocal from Let's Encrypt
 - AWS
 - AWS CLI
 - AWS PowerShell
@@ -235,12 +251,14 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - AWS IAM
 - AWS CloudWatch
 - AWS CloudTrail
+- AWS EventBridge
 - High Availability
 - Regional Failover
 - Latency Based Routing
 - OpenID Connect / OAuth 2.0
 - JWT and related specs
 - SAML
+- Raspberry Pis
 - Video Editing
 - Photo Editing
 - Audio Editing

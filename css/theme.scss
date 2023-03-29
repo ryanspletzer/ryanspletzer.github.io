@@ -179,6 +179,7 @@ ul.share-buttons {
 .sidebar ul {
   list-style-type: none;
   padding-inline-start: 0px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .sidebar li {
   margin-top: .7em;
@@ -223,6 +224,7 @@ div.post-meta {
   border-color: #666666;
   border-style: solid;
   margin: 0 0 20px;
+  display: flow-root;
   ul {
     display: inline;
     padding-left: 0;
@@ -275,7 +277,6 @@ nav a {
   padding-bottom: 20px !important;
   @include transition(color 0.31s);
   font-size: 18px;
-  font-family: Ubuntu;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
