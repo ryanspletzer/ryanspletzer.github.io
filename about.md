@@ -112,6 +112,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - .NET
 - ASP.NET
 - Entity Framework
+- ORMs
 - Microservices
 - Cross-platform Development
 - Visual Studio Code
