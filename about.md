@@ -67,6 +67,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Terraform
 - OpenAPI
 - JSONSchema
+- Collection+JSON
 - OData
 - GraphQL
 - Scripting
@@ -92,6 +93,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - DNSSEC
 - DNS over TLS
 - DNS over HTTPS
+- BIND
 - Networking
 - Zero Trust
 - Security
@@ -224,6 +226,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - nginx
 - WSL
 - SSH
+- API Design
+- API Complexity
 - ACME Protocal from Let's Encrypt
 - AWS
 - AWS CLI
@@ -274,6 +278,10 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Writing
 - Diagramming
 - Communicating
+- Agile
+- Scrum
+- Whether or not we're living in a [post-scrum world](https://blog.pragmaticengineer.com/project-management-at-big-tech/)
+- Kanban
 - Presenting and Speaking
 - Mentorship and Sponsorship
 - Setting Technical Direction
