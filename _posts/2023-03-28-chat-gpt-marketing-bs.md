@@ -24,6 +24,6 @@ Meanwhile over in ChatGPT, I plug in a prompt of a similar nature, and can get n
 this, but also what specific group policies it recommends setting, even down to the individual registry keys behind
 those policies.
 
-One of the amazing things about this tool its ability to cut through the layers of cruft, to get you to the actual
+One of the amazing things about this tool is its ability to cut through the layers of cruft, to get you to the actual
 answers you're after very quickly. It's powerful, and saves a lot of crafting the right search queries with whatever
 Google Fu you possess.
