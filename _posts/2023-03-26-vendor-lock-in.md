@@ -4,10 +4,10 @@ title: Vendor Lock-in
 date: 2023-03-26 00:00:00
 description: Do you use an API of any kind? Congratulations, you have vendor lock-in.
 tags:
- - Vendor Lock-in
- - Cloud-Native
- - Multi-Cloud
- - Cloud-Agnostic
+ - vendor-lock-in
+ - cloud-native
+ - multi-cloud
+ - cloud-agnostic
 ---
 
 Do you use an API of any kind? Congratulations, you have vendor lock-in.

@@ -6,8 +6,8 @@ description: >
   There are some things that I search in real search engines that have real answers out there, but the top 10 results
   from Google and Bing are all marketing silliness.
 tags:
- - ChatGPT
- - Marketing
+ - chatgpt
+ - marketing
 ---
 
 There are some things that I search in real search engines that have real answers out there, but the top 10 results from

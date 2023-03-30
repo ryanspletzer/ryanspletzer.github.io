@@ -9,9 +9,9 @@ headerheight: 397
 share: true
 comments: true
 tags:
- - Jekyll
- - GitHub Pages
- - CloudFlare
+ - jekyll
+ - gitHub-pages
+ - cloudflare
 ---
 
 ## Introduction
