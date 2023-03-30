@@ -10,7 +10,7 @@ share: true
 comments: true
 tags:
  - jekyll
- - gitHub-pages
+ - github-pages
  - cloudflare
 ---
 
