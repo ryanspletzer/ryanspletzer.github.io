@@ -47,7 +47,7 @@ yandex_metrica:
 disqus: www-spletzer-com
 comments: true
 
-permalink: /:year/:month/:title
+permalink: /:year/:month/:title/
 
 plugins:
   - jekyll-gist
