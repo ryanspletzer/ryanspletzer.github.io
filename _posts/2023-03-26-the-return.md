@@ -10,8 +10,6 @@ tags:
 
 Getting started is hard.
 
-{% gist ed713666ecd2a891c266f915f63929c5 %}
-
 When I first created my site in 2017 I had lofty ambitions as to the frequency with which I would write posts here.
 
 Things got busy with work and life and I did not exactly follow through on that.
