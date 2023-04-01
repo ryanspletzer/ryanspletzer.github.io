@@ -8,11 +8,19 @@ layout: null
     </url>
 
     <url>
-        <loc>{{ "/about.html" | prepend: site.url }}</loc>
+        <loc>{{ "/archive/" | prepend: site.url }}</loc>
     </url>
 
     <url>
-        <loc>{{ "/linkfarm.html" | prepend: site.url }}</loc>
+        <loc>{{ "/tags/" | prepend: site.url }}</loc>
+    </url>
+
+    <url>
+        <loc>{{ "/about/" | prepend: site.url }}</loc>
+    </url>
+
+    <url>
+        <loc>{{ "/linkfarm/" | prepend: site.url }}</loc>
     </url>
 
     {% for post in site.posts %}
