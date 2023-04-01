@@ -27,7 +27,7 @@ $accent-color: #35B4DE;  // bluish
 $font-color: rgb(231, 233, 234);
 $background-color: #292929;
 $post-panel-color: #222;
-$footer-background-color: #292c2f;
+$footer-background-color: #222;
 $note-color: #87CEFA;
 $warning-color: #ffff00;
 
@@ -40,10 +40,9 @@ html {
 }
 body {
   font-size: 19px;
-  padding-top: 80px;
   line-height: 1.75;
   color: $font-color;
-  background: $background-color url(./pics/triangles.png);
+  background: $background-color url(./pics/squares.png);
   //background: $background-color url(./pics/squares.png); // Another good pattern for background
 }
 p {
@@ -283,6 +282,7 @@ nav a {
 nav.navbar {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
+  border-radius: 0px;
 }
 nav.navbar.shrink {
   min-height: 15px;
