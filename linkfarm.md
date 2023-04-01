@@ -201,6 +201,9 @@ I've read them:
   DNS, and have a new appreciation of just how much hidden complexity exists beneath a system that has the seemingly
   simplistic job of mapping domain names to IP addresses.
 
+* [The Laws of Identity](https://www.identityblog.com/?p=352) - These laws from Kim Cameron are a foundational and
+  seminal read for anyone doing any type of work in the identity and access management space in technology.
+
 * [Semantic Versioning](https://semver.org) - I debated adding this to the list but decided that I should, as I feel
   that the concepts expressed here are extremely important and should be understood broadly by developers, especially in
   the context of separating "marketing versions" of software and packages from their actual package versions.
