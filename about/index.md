@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: about.html
+permalink: /about/
 ---
 
 I'm a Principal Software Engineer at [Autodesk](https://www.autodesk.com). I try my best to blog here as well as post my

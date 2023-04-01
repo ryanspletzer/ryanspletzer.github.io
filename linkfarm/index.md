@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Linkfarm
-permalink: linkfarm.html
+permalink: /linkfarm/
 ---
 
 ## Software Engineering and Technology

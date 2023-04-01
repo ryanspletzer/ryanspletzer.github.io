@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tags
-permalink: tags.html
+permalink: /tags/
 ---
 
 {% capture tags %}
