@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Linkfarm
-
+permalink: linkfarm.html
 ---
 
 ## Software Engineering and Technology
@@ -191,7 +191,7 @@ I've read them:
   insights into the history of the various operating systems of the time. One interesting concept I appreciated was his
   description of how the basic sys calls serve as the basic building blocks upon which you can do everything else in the
   OS, and how this idea of composability of simple things to make complex things is very important.
-  
+
 * [Instructional Design for Mortals: Creating Better Adult Learning](https://www.amazon.sg/Instructional-Design-Mortals-Creating-Learning/dp/1983165867) -
   Was once in print but hard to find now, but if you can get a copy I highly recommend this. It walks through the various
   levels of learning and how to design instructional material for professional adults in the working world.
