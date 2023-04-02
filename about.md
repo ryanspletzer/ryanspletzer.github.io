@@ -229,7 +229,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - SSH
 - API Design
 - API Complexity
-- ACME Protocal from Let's Encrypt
+- ACME Protocol from Let's Encrypt
 - AWS
 - AWS CLI
 - AWS PowerShell
