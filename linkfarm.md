@@ -232,6 +232,9 @@ I've read them:
 * [Collection+JSON](https://github.com/collection-json/spec) - This is an interesting concept, and while I haven't run
   into a use cases for it much, it's a good concept to keep in mind.
 
+* [RESTful JSON](https://restfuljson.org/) - An approach to including URLs in JSON in an effort to lower the barrier to
+  implement hypermedia approaches in APIs.
+
 * [Shell of an Idea](https://leanpub.com/shell-of-an-idea) - A great book on the origins and design philosophy behind
   the PowerShell language and ecosystem.
 
