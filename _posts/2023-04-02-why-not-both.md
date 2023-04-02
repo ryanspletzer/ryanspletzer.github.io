@@ -34,4 +34,4 @@ that use case for 5-10% of the population is eating up _more_ than 5-10% of your
 Try this "[Why Not Both?](https://knowyourmeme.com/memes/why-not-both-why-dont-we-have-both)" thought process in your
 day-to-day work and see where it gets you. It will not always pan out, but you may wind up being surprised just how easy
 it is to accept that there is more than one way of doing something, and how accepting and embracing that enables you to
-move past a number of repeat conversations,s and frees up time to move into new territory and problems to solve.
+move past a number of repeat conversations, and frees up time to move into new territory and problems to solve.
