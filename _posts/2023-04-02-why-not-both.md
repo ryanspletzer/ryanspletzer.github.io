@@ -26,10 +26,10 @@ while also not resulting in unnecessary additional financial cost to the busines
 that, you'll wind up with more supported pathways that enable more of the personas to accomplish their jobs in the ways
 tha best fit their scenario.
 
-Ask yourself this: even if it's a 5-10% use case that you feel should not be supported, think about all the time you
-spend continuously re-justifying to yourself and your stakeholders why you don't support that 5-10% use case, when if
-you just did, you'd avoid this entirely and move on to other more value-added work. I'm willing to bet that use case for
-5-10% of the population is eating up _more_ than 5-10% of your time talking about it.
+Ask yourself this: even if it's a 5-10% use case that you feel should not be supported, think about the disproportionate
+amount of time you spend continuously re-justifying to yourself and your stakeholders why you don't support that 5-10%
+use case, when if you just did, you'd avoid this entirely and move on to other more value-added work. I'm willing to be
+that use case for 5-10% of the population is eating up _more_ than 5-10% of your time talking about it.
 
 Try this "[Why Not Both?](https://knowyourmeme.com/memes/why-not-both-why-dont-we-have-both)" thought process in your
 day-to-day work and see where it gets you. It will not always pan out, but you may wind up being surprised just how easy
