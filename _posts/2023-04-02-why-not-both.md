@@ -24,7 +24,7 @@ pathway for all the possible consumers of it. Instead, I think we should in gene
 pathways that meet all of our non-functional requirements around security, compliance, etc. for a given scenario --
 while also not resulting in unnecessary additional financial cost to the business -- with the thought process being
 that, you'll wind up with more supported pathways that enable more of the personas to accomplish their jobs in the ways
-tha best fit their scenario.
+that best fit their scenario.
 
 Ask yourself this: even if it's a 5-10% use case that you feel should not be supported, think about the disproportionate
 amount of time you spend continuously re-justifying to yourself and your stakeholders why you don't support that 5-10%
