@@ -130,6 +130,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Azure AD
 - Conditional Access
 - Privileged Identity Management
+- Privileged Access Management
 - Entitlement Management
 - Identity Protection
 - Password Protection
