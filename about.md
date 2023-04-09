@@ -228,6 +228,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - nginx
 - WSL
 - SSH
+- RDP
+- VNC
 - API Design
 - API Complexity
 - Caching
