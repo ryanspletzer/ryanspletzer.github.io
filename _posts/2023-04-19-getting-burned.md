@@ -14,32 +14,38 @@ tags:
 The year was 2013. I was less than one year into my first job, and Google had just released
 [Google Glass](https://en.wikipedia.org/wiki/Google_Glass).
 
-This was no ordinary product release -- in order to get your hands on this elusive new piece of technology, you needed
-to enter the "Glass Explorer" program, and fork out a cash buy-in to get in on the beta.
+This was no ordinary product release. In order to get your hands on this elusive new piece of technology, you needed to
+enter the "Glass Explorer" program, and fork out a cash buy-in to get in on the beta.
 
 I wound up acquiring this device through that program, and it resulted in about two weeks of novelty and looking like a
-total dork, and the inception of a [colorful term](https://www.techopedia.com/definition/30095/glasshole) to describe
-folks that went in on this.
+total dork, and the inception of a [colorful term](https://www.techopedia.com/definition/30095/glasshole).
 
-Fast forward to the year 2023, and Google Glass in all its variations is now discontinued. I still have it in a drawer
-somewhere to show to future generations. Maybe it will make the rounds at _Antiques Roadshow_ one day.
+Fast forward to the year 2023, and Google Glass in all its variations is now discontinued. I still have my device in a
+drawer somewhere to show to future generations. Maybe it will make the rounds at _Antiques Roadshow_ one day.
 
-We should have seen the warnings signs: you only need talk to some veteran technologists in the industry and they will
-be quick to enlighten you about tales regarding [VRML](https://en.wikipedia.org/wiki/VRML) and other early attempts at
-VR, AR and overall XR.
+The warnings signs were there: you only need talk to some veteran technologists in the industry and they will be quick
+to enlighten you about tales regarding [VRML](https://en.wikipedia.org/wiki/VRML) and other early attempts at VR, AR
+and overall XR (extended reality).
 
-This story is ultimately not about VR. It's about a lesson in healthy skepticism.
+It's one thing for a software product to be discontinued, since the barrier to entry is often low, and the barrier to
+exit is usually similarly low. But a the experience of a hardware product being discontinued, especially one you paid
+money for and which promised to change your life, tends to stick with you more.
 
-Recent rise and falls of cryptocurrency, web3, NFTs, the metaverse [and more](https://en.wikipedia.org/wiki/FTX),
-coupled with a current (real or perceived) economic slowdown, are teaching us all a new round of healthy skepticism
-lessons. And that's just about things that actually exist -- it turns out, some things
-[don't](https://en.wikipedia.org/wiki/Theranos).
+While I feel XR will have very viable real-world applications in the future (beyond gaming), the lesson that I carry
+with me from being an early adopter of it and other emergent technologies is one of retaining a healthy skepticism. 
 
-Then there's a whole other realm of technologies that were potentially game-changing, but just ahead of their time.
+Recent rise and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse and
+[more](https://en.wikipedia.org/wiki/FTX), coupled with a current (real or perceived) economic slowdown, are teaching
+us all a new round of healthy skepticism lessons. And that's just about things that actually exist -- it turns out,
+some things [don't](https://en.wikipedia.org/wiki/Theranos).
+
+Then there's a whole other realm of technologies that were potentially ground-breaking, but just ahead of their time.
 People forget about [Ping](https://en.wikipedia.org/wiki/ITunes_Ping), the "social network for music" from Apple. If
-you look at Spotify today, it fills much of that niche. (There are a laundry list of these that I won't go into, but
-instead will ask the reader to prompt ChatGPT: "What's a list of software and hardware technologies that are now dead
-but were ahead of their time?")
+you look at Spotify today, it fills much of that niche. Remember
+[Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? Meet [Notion](https://www.notion.so/), and competitors to it
+like [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop). (There are a laundry list of these that I won't
+go into, but instead will ask the reader to prompt ChatGPT: "What's a list of software and hardware technologies that
+are now dead but were ahead of their time?")
 
 Speaking of ChatGPT: this appears to be a game-changing technology that's making us all forget about the web3 delirium
 of the last few years. But, it remains to be seen whether it, too, will someday become passé that's so built into
@@ -48,7 +54,7 @@ that people wind up losing their taste for them. Microsoft is integrating AI ass
 realization of the original intentions of Clippy, but how many people will wind up creating the same-feeling artifacts
 with these types of tools to the point where we yearn for something a little bit more human again?
 
-Who's to say, this is just me pontificating. As I know from past experience, it could go in multiple different
+Who can really tell -- this is just me conjecturing. As I know from past experience, it could go in multiple different
 directions.
 
 That all being said, it is our job as technologists to perform technical exploration regardless of if a given
