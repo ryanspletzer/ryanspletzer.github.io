@@ -14,7 +14,7 @@ The year was 2013, I was less than one year into my first post-college job, and 
 [Google Glass](https://en.wikipedia.org/wiki/Google_Glass).
 
 This was no ordinary product release -- in order to get your hands on this elusive new piece of technology, you needed
-to enter the "Glass Explorer" program, and fork out a large cash buy-in to get in on the beta.
+to enter the "Glass Explorer" program, and fork out a cash buy-in to get in on the beta.
 
 I wound up acquiring this device through that program, and it resulted in about two weeks of novelty and looking like
 a total dork, and the inception of a [colorful term](https://www.techopedia.com/definition/30095/glasshole) to describe
