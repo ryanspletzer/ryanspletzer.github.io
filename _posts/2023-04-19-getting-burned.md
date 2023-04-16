@@ -3,14 +3,14 @@ layout: post
 title: Getting Burned
 date: 2023-04-17 1:00:00
 description: >
-  The year was 2013, I was less than one year into my first job, and Google had just released Google Glass.
+  The year was 2013, I was less than one year into my first post-college job, and Google had just released Google Glass.
 tags:
  - cutting-edge
  - bleeding-edge
  - technical-exploration
 ---
 
-The year was 2013, I was less than one year into my first job post-college, and Google had just released
+The year was 2013, I was less than one year into my first post-college job, and Google had just released
 [Google Glass](https://en.wikipedia.org/wiki/Google_Glass).
 
 This was no ordinary product release -- in order to get your hands on this elusive new piece of technology, you needed
