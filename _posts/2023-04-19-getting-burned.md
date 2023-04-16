@@ -35,7 +35,7 @@ While I feel XR will have very viable real-world applications in the future (bey
 lesson that I carry with me from being an early adopter of it and other emergent technologies is this: retain a healthy
 skepticism.
 
-Recent rise and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse hype and
+Recent rises and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse hype and
 [more](https://en.wikipedia.org/wiki/FTX), coupled with a current economic slowdown, are teaching us all a new round
 of healthy skepticism lessons. And that's just about things that actually exist -- it turns out, some things
 [don't](https://en.wikipedia.org/wiki/Theranos).
