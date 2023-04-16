@@ -47,6 +47,8 @@ realization of the original intentions of Clippy.
 
 That all being said, it is our job as technologists to perform technical exploration regardless of if a given
 technology is going somewhere or not. The [decentralized identity](https://identity.foundation/) standards and
-verifiable credentials technologies hold a lot of promise, but it's still early days.
+verifiable credentials technologies hold a lot of promise, some of which is starting to come to
+[fruition](https://www.linkedin.com/pulse/linkedins-new-verification-features-include-clear-entra-rodriguez), and while I
+personally believe these standards are part of our collective future, it's still early days.
 
 No question about it, [I am ready to get hurt again](https://tvgag.com/gag/no-question-about-it/).
