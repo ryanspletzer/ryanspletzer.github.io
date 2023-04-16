@@ -28,11 +28,12 @@ to enlighten you about tales regarding [VRML](https://en.wikipedia.org/wiki/VRML
 and overall XR (extended reality).
 
 It's one thing for a software product to be discontinued, since the barrier to entry is often low, and the barrier to
-exit is usually similarly low. But a the experience of a hardware product being discontinued, especially one you paid
+exit is usually similarly low. But the experience of a hardware product being discontinued, especially one you paid
 money for and which promised to change your life, tends to stick with you more.
 
 While I feel XR will have very viable real-world applications in the future (beyond gaming), the lesson that I carry
-with me from being an early adopter of it and other emergent technologies is one of retaining a healthy skepticism. 
+with me from being an early adopter of it and other emergent technologies is this: retain a healthy skepticism.
+(Keyword: healthy.)
 
 Recent rise and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse and
 [more](https://en.wikipedia.org/wiki/FTX), coupled with a current (real or perceived) economic slowdown, are teaching
@@ -42,13 +43,12 @@ some things [don't](https://en.wikipedia.org/wiki/Theranos).
 Then there's a whole other realm of technologies that were potentially ground-breaking, but just ahead of their time.
 People forget about [Ping](https://en.wikipedia.org/wiki/ITunes_Ping), the "social network for music" from Apple. If
 you look at Spotify today, it fills much of that niche. Remember
-[Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? Meet [Notion](https://www.notion.so/), and competitors to it
-like [Microsoft Loop](https://www.microsoft.com/en-us/microsoft-loop). (There are a laundry list of these that I won't
-go into, but instead will ask the reader to prompt ChatGPT: "What's a list of software and hardware technologies that
-are now dead but were ahead of their time?")
+[Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? Meet Notion, and competitors to it like Microsoft Loop.
+(There are a laundry list of these that I won't go into, but instead will ask the reader to prompt ChatGPT: "What's a
+list of software and hardware technologies that are now dead but were ahead of their time?")
 
 Speaking of ChatGPT: this appears to be a game-changing technology that's making us all forget about the web3 delirium
-of the last few years. But, it remains to be seen whether it, too, will someday become passé that's so built into
+of the last few years. But, it remains to be seen whether it, too, will someday become passé and so built into
 everything we use that we take it for granted, or whether we'll become "saturated" by a deluge of AI-generated things
 that people wind up losing their taste for them. Microsoft is integrating AI assistance into Office now in the ultimate
 realization of the original intentions of Clippy, but how many people will wind up creating the same-feeling artifacts
@@ -57,7 +57,7 @@ with these types of tools to the point where we yearn for something a little bit
 Who can really tell -- this is just me conjecturing. As I know from past experience, it could go in multiple different
 directions.
 
-That all being said, it is our job as technologists to perform technical exploration regardless of if a given
+Despite that, it is our job as technologists to perform technical exploration regardless of if a given
 technology is going somewhere or not. The [decentralized identity](https://identity.foundation/) standards and
 verifiable credentials technologies hold a lot of promise, some of which is starting to come to
 [fruition](https://www.linkedin.com/pulse/linkedins-new-verification-features-include-clear-entra-rodriguez), and while
