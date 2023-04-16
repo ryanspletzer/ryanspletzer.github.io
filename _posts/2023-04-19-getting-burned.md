@@ -43,8 +43,8 @@ some things [don't](https://en.wikipedia.org/wiki/Theranos).
 Then there's a whole other realm of technologies that were potentially ground-breaking, but just ahead of their time.
 People forget about [Ping](https://en.wikipedia.org/wiki/ITunes_Ping), the "social network for music" from Apple. If
 you look at Spotify today, it fills much of that niche. Remember
-[Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? Meet Notion, and competitors to it like Microsoft Loop.
-(There are a laundry list of these that I won't go into, but instead will ask the reader to prompt ChatGPT: "What's a
+[Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? See Notion, and competitors to it like Microsoft Loop.
+(There is a laundry list of these that I won't go into, but instead will ask the reader to prompt ChatGPT: "What's a
 list of software and hardware technologies that are now dead but were ahead of their time?")
 
 Speaking of ChatGPT: this appears to be a game-changing technology that's making us all forget about the web3 delirium
