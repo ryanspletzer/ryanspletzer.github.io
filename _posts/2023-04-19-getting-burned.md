@@ -31,9 +31,8 @@ It's one thing for a software product to be discontinued, since the barrier to e
 exit is usually similarly low. But the experience of a hardware product being discontinued, especially one you paid
 money for, tends to stick with you more.
 
-While I feel XR will have very viable real-world applications in the future (beyond gaming), the broader point and
-lesson that I carry with me from being an early adopter of it and other emergent technologies is this: retain a healthy
-skepticism.
+While I feel XR has very viable real-world applications (beyond gaming), the broader point and lesson that I carry with
+me from being an early adopter of it and other emergent technologies is this: retain a healthy skepticism.
 
 Recent rises and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse hype and
 [more](https://en.wikipedia.org/wiki/FTX), coupled with a current economic slowdown, are teaching us all a new round
