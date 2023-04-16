@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting Burned
-date: 2023-04-17 1:00:00
+date: 2023-04-17 13:00:00
 description: >
   The year was 2013, I was less than one year into my first post-college job, and Google had just released Google Glass.
 tags:
