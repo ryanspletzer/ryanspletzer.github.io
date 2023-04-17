@@ -23,14 +23,6 @@ total dork, and the inception of a [colorful term](https://www.techopedia.com/de
 Fast forward to the year 2023, and Google Glass in all its variations is now discontinued. I still have my device in a
 drawer somewhere to show to future generations. Maybe it will make the rounds at _Antiques Roadshow_ one day.
 
-The warnings signs were there: you only need talk to some veteran technologists in the industry and they will be quick
-to enlighten you with tales regarding [VRML](https://en.wikipedia.org/wiki/VRML) and other early attempts at VR, AR and
-overall XR (extended reality).
-
-It's one thing for a software product to be discontinued, since the barrier to entry is often low, and the barrier to
-exit is usually similarly low. But the experience of a hardware product being discontinued, especially one you paid
-money for, tends to stick with you more.
-
 While I feel XR has very viable real-world applications (beyond gaming), the broader point and lesson that I carry with
 me from being an early adopter of it and other emergent technologies is this: retain a healthy skepticism.
 
@@ -39,7 +31,7 @@ Recent rises and falls of cryptocurrencies and exchanges, web3, NFTs, the metave
 of healthy skepticism lessons. And that's just about things that actually exist -- it turns out, some things
 [don't](https://en.wikipedia.org/wiki/Theranos).
 
-Then there is a whole other realm of technologies that were potentially ground-breaking, but just ahead of their time.
+An offshoot of these examples are technologies that were potentially ground-breaking, but just ahead of their time.
 People forget about [Ping](https://en.wikipedia.org/wiki/ITunes_Ping), the "social network for music," from Apple. If
 you look at Spotify today, it fills much of that niche. Remember
 [Google Wave](https://en.wikipedia.org/wiki/Google_Wave)? Meet Notion, and its competitors like Microsoft Loop.
@@ -59,5 +51,5 @@ technologies hold a lot of promise, some of which is starting to come to
 [fruition](https://www.linkedin.com/pulse/linkedins-new-verification-features-include-clear-entra-rodriguez), and while
 I personally believe these standards will play some part in our collective futures, it's still early days.
 
-I've gotten burned in the past, but no question about it,
-[I am ready to get hurt again](https://tvgag.com/gag/no-question-about-it/).
+I've gotten burned in the past, but
+[no question about it, I am ready to get hurt again](https://tvgag.com/gag/no-question-about-it/).
