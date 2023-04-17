@@ -14,17 +14,15 @@ tags:
 The year was 2013. I was less than one year into my first job, and Google had just released
 [Google Glass](https://en.wikipedia.org/wiki/Google_Glass).
 
-This was no ordinary product release. In order to get your hands on this elusive new piece of technology, you needed to
-enter the "Glass Explorer" program, and fork out a cash buy-in to get in on the beta.
-
-I wound up acquiring this device through that program, and it resulted in about two weeks of novelty and looking like a
-total dork, and the inception of a [colorful term](https://www.techopedia.com/definition/30095/glasshole).
+I wound up acquiring this device through the "Glass Explorer" program, and it resulted in about two weeks of novelty
+and looking like a total dork, and the inception of a
+[colorful term](https://www.techopedia.com/definition/30095/glasshole).
 
 Fast forward to the year 2023, and Google Glass in all its variations is now discontinued. I still have my device in a
 drawer somewhere to show to future generations. Maybe it will make the rounds at _Antiques Roadshow_ one day.
 
-While I feel XR has very viable real-world applications (beyond gaming), the broader point and lesson that I carry with
-me from being an early adopter of it and other emergent technologies is this: retain a healthy skepticism.
+Being an early adopter of various emergent technologies over the years has taught me that healthy skepticism is, well,
+_healthy_.
 
 Recent rises and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse hype and
 [more](https://en.wikipedia.org/wiki/FTX), coupled with a current economic slowdown, are teaching us all a new round
