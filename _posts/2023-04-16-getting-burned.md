@@ -44,8 +44,8 @@ realization of the original intentions of Clippy, but how many people will wind 
 with these types of tools to the point where we yearn for something a little bit more human again?
 
 Despite that, it is still our job as technologists to take that healthy skepticism forward and perform technical
-exploration. The [decentralized identity](https://identity.foundation/) standards and verifiable credentials
-technologies hold a lot of promise, some of which is starting to come to
+exploration. Recently I've been exploring the [decentralized identity](https://identity.foundation/) standards and
+verifiable credentials technologies that appear to hold a lot of promise, some of which is starting to come to
 [fruition](https://www.linkedin.com/pulse/linkedins-new-verification-features-include-clear-entra-rodriguez), and while
 I personally believe these standards will play some part in our collective futures, it's still early days.
 
