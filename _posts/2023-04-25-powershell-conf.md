@@ -42,10 +42,12 @@ I remember early on watching the Microsoft Virtual Academy courses from Jason He
 * [Getting Started with PowerShell Desired State Configuration (DSC)](https://learn.microsoft.com/en-us/shows/getting-started-with-powershell-dsc/)
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](https://learn.microsoft.com/en-us/shows/advanced-powershell-dsc-and-custom-resources/)
 
-These courses and PowerShell in general changed my life and the trajectory of my career in ways that are difficult to
-fully appreciate. I started asking questions like: "why can't we automate the setup of that server? Why can't we script
-out the creation of those cloud resources?" And more. These are things we take for granted today, but were
-game-changing at the time. Azure and AWS were much more nascent than they are today, and everyone was trying to wrap
-their heads around this new earth-shattering concepts called "DevOps."
+Learning PowerShell through these courses changed my life.
+
+PowerShell altered the trajectory of my career in ways that are difficult to fully appreciate. I started asking
+questions like: "why can't we automate the setup of that server? Why can't we script out the creation of those cloud
+resources?" And more. These are things we take for granted today, but were game-changing at the time. Azure and AWS
+were much more nascent than they are today, and everyone was trying to wrap their heads around this new
+earth-shattering concepts called "DevOps."
 
 
