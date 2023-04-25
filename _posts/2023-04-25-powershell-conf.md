@@ -48,6 +48,6 @@ PowerShell altered the trajectory of my career in ways that are difficult to ful
 questions like: "why can't we automate the setup of that server? Why can't we script out the creation of those cloud
 resources?" And more. These are things we take for granted today, but were game-changing at the time. Azure and AWS
 were much more nascent than they are today, and everyone was trying to wrap their heads around this new
-earth-shattering concepts called "DevOps."
+earth-shattering concepts called "DevOp."
 
 
