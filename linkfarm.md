@@ -67,11 +67,11 @@ I've read them:
   things that vary per project are, brackets opening on the same line and the use of backticks.
 
 * [Getting Started with PowerShell Desired State Configuration (DSC)](
-  <https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672>) -
+  https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672) -
   A great course for PowerShell DSC and PowerShell in general.
 
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](
-  <https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702>) -
+  https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702) -
   Another great course to get deeper on PowerShell DSC and PowerShell in general.
 
 * [The DSC Book by Don Jones et al.](https://leanpub.com/the-dsc-book) - A good evergreen book on PowerShell Desired
