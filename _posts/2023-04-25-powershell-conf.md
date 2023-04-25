@@ -11,11 +11,12 @@ tags:
  - devops
 ---
 
-This week I am at a conference I've admired from afar but have not yet had the chance to go to, until now: the
-[PowerShell + DevOps Global Summit](https://powershellsummit.org/).
+This week I am at a conference I've admired from afar but have not yet had the chance to go to, until now:
+
+The [PowerShell + DevOps Global Summit](https://powershellsummit.org/).
 
 If you've talked to me at any point, you likely know that PowerShell is a really important language and ecosystem for
-me, and was a real launching point in my career.
+me, and was a real inflection point in my career.
 
 Back in 2014 I was at my first job doing SharePoint Server development in C# -- which was the _hippest_, _coolest_ type
 of development a young software engineer could ask to do, especially in the era where mobile apps were exploding. :) But
@@ -42,5 +43,9 @@ I remember early on watching the Microsoft Virtual Academy courses from Jason He
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](https://learn.microsoft.com/en-us/shows/advanced-powershell-dsc-and-custom-resources/)
 
 These courses and PowerShell in general changed my life and the trajectory of my career in ways that are difficult to
-fully appreciate. I started asking questions like, why can't we automate the setup of that server? Why can't we script
-out the creation of those cloud resources? These are things we take for granted today, but were game-changing at the time.
+fully appreciate. I started asking questions like: "why can't we automate the setup of that server? Why can't we script
+out the creation of those cloud resources?" And more. These are things we take for granted today, but were
+game-changing at the time. Azure and AWS were much more nascent than they are today, and everyone was trying to wrap
+their heads around this new earth-shattering concepts called "DevOps."
+
+
