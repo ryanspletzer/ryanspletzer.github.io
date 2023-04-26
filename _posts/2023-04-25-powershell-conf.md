@@ -46,8 +46,20 @@ Learning PowerShell through these courses changed my life.
 
 PowerShell altered the trajectory of my career in ways that are difficult to fully appreciate. I started asking
 questions like: "why can't we automate the setup of that server? Why can't we script out the creation of those cloud
-resources?" And more. These are things we take for granted today, but were game-changing at the time. Azure and AWS
-were much more nascent than they are today, and everyone was trying to wrap their heads around this new
-earth-shattering concepts called "DevOp."
+resources?" And more. These are things we take for granted today, but were game-changing at the time. Azure and AWS were
+much more nascent than they are today, and everyone was trying to wrap their heads around this new earth-shattering
+concepts called "DevOps."
 
+Were it not for PowerShell, I'd be a humble C# developer that is still utterly dependent on the full Visual Studio IDE
+and little to no ability to all the surrounding things that it takes to delivery infrastructure and software atop it.
+PowerShell took me beyond the IDE and into the terminal (which, let's be frank, is where most of us are at today), and
+got me introduced to some of the tools that inspired it like bash, zsh and more.
 
+Fast forward to today: PowerShell is so much more than a Windows-only tool, it's now cross-platform! Windows, macOS, and
+Linux, and I and other team members actively write PowerShell that supports all platforms. It's the ultimate "glue" tool
+for tying things together. Need to write a webhook endpoint to trigger CI from your GitHub repo? PowerShell's got your
+back. Need that quick script to fix some data in your systems? PowerShell. I could continue, but you get the idea.
+
+Bot only is it "glue," PowerShell can be a serious development language, too. As a concrete example, my team is
+currently looking into developing a wrapper API for Exchange Online PowerShell in Azure Functions so we can manage
+objects there with a nicer REST-based approach.
