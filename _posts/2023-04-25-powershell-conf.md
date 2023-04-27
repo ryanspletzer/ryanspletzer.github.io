@@ -46,7 +46,7 @@ Learning PowerShell through these courses _changed my life_ (and I got to tell t
 It altered the trajectory of my career in ways that are difficult to fully appreciate. I started asking questions like:
 "Why can't we automate the setup of that server? Why can't we script out the creation of those cloud resources?" And
 more. These are things we take for granted today, but were game-changing at the time. Azure and AWS were much more
-nascent than they are today, and everyone was trying to wrap their heads around this new earth-shattering concepts
+nascent than they are today, and everyone was trying to wrap their heads around this new earth-shattering concept
 called "DevOps."
 
 Were it not for PowerShell, I'd be a humble C# developer that is still utterly dependent on a different set of mouse
