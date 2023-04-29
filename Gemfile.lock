@@ -3,6 +3,8 @@ GEM
   specs:
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    colorator (1.1.0)
+    concurrent-ruby (1.2.2)
     faraday (2.7.4)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -34,9 +36,12 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-22
 
 DEPENDENCIES
+  colorator
+  concurrent-ruby
   jekyll-gist
   jekyll-watch
   kramdown-parser-gfm
