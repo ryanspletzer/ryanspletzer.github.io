@@ -1,0 +1,35 @@
+---
+layout: post
+title: Replatforming
+date: 2023-05-01 00:00:00
+description: >
+  There was a time when FTP'ing your web app code to the server was state-of-the-art.
+tags:
+  - platform-engineering
+---
+
+There was a time when FTP'ing your web app code to the server was state-of-the-art.
+
+I remember that time. It was quaint.
+
+Are you in a continuous state of replatforming?
+
+What homogenous vs heterogenous co's look like
+
+What tech vs non-tech companies look like
+
+Non-tech has a curious lack of platform in most cases -- and this is usually fine
+
+Tech can also lack platform. Have it one good authority that certain companies in our industry basically have a philosophy of "teams can do whatever they want, because we do not want to hinder innovation"
+
+Tech can have platform but it can be as simple as "we have version control and CI/CD and patterns and practices and templates -- use it."
+
+Then there's the ultimate layer of an actually orchestration platform that takes care of a lot of the setup and ongoing maintenance, provides a layer of abstraction.
+
+This one is interesting -- works well for homogenous companies with singular product focuses, especially ones that dogfood their own products (looking at you, slack and GitHub), but what about others?
+
+Acquisitions will be in a constant state of replatforming, and there will be friction in some cases -- in others, no issue.
+
+Back to my why not both post, ensure you have multiple promotion processes and ways of doing things for platform, and learn from your acquisitions -- chances are they have some things they've learned that are state of they are that we can leverage.
+
+Be open minded. Evolve the platform. Don't stick to antiquated thinking. We're all learning here.
