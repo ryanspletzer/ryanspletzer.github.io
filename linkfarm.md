@@ -6,8 +6,8 @@ permalink: /linkfarm/
 
 ## Software Engineering and Technology
 
-These are what I believe to be important and seminal works and that I refer to often. Presented in roughly the order
-I've read them:
+These are what I believe to be important and seminal works that I refer to often. Presented in roughly the order I've
+read them:
 
 * [Design Patterns](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) - This is a
   foundational read, and though there are some patterns from this book that are dated, many stand the test of time.
@@ -247,9 +247,7 @@ I've read them:
   Engineers and Managers for navigating organizational challenges and working with senior leadership at your company.
   
 * [The Art of Leadership: Small Things, Done Well](https://www.amazon.com/dp/1492045691) - I really enjoyed going
-  through Michael Lopp's 30 things in this book, and the way it's laid out. In my experience I've run into a number of
-  folks in management who don't take the time to learn how to be a leader, and that results in many not-so-great
-  people managers -- but the same is true of individual contributors as well. Leadership can come from anywhere, and
+  through Michael Lopp's 30 things in this book, and the way it's laid out. Leadership can come from anywhere, and
   because of that, whether you are in management or not, I strongly implore you to read this one.
 
 ## Other
