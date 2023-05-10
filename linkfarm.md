@@ -245,10 +245,14 @@ read them:
   essential book for both aspiring and current Staff Engineers as well as Engineering Managers, as it provides good
   perspective from your manager's point of view for the former, as well as lots of helpful tools for both Staff
   Engineers and Managers for navigating organizational challenges and working with senior leadership at your company.
-  
+
 * [The Art of Leadership: Small Things, Done Well](https://www.amazon.com/dp/1492045691) - I really enjoyed going
   through Michael Lopp's 30 things in this book, and the way it's laid out. Leadership can come from anywhere, and
   because of that, whether you are in management or not, I strongly implore you to read this one.
+
+* [Managing Humans: More Biting and Humorous Tales of a Software Engineering Manager](https://www.amazon.com/dp/1484271157/) -
+  Another good read from Michael Lopp that has yet more expanded advice on engineering management and leading at
+  organizations.
 
 ## Other
 
