@@ -168,9 +168,11 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - GitHub Container Registry
 - GitHub Copilot
 - ChatGPT
+- DALL-E
 - Middleware
 - Azure PowerShell
 - Azure Functions
+- Azure OpenAI Service
 - Azure API Management
 - Azure Functions
 - Azure Automation
