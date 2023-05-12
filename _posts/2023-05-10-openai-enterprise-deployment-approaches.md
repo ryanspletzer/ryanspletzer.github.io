@@ -80,7 +80,7 @@ collectively identify a use case like a shared customer support trained service 
 products.
 
 IT teams may need to offer different types of services and models catered to different parts of the business like
-Marketing, Finance, HR, Sales and more, trained on specific data sets for those functions: also, they may want to create
+Marketing, Finance, HR, Sales, and more, trained on specific data sets for those functions; also, they may want to create
 a shared general purpose set of services that employees at large may consume, like an overall support chat, which could
 combine data sets from various disciplines within the company.
 
