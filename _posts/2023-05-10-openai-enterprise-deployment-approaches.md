@@ -51,7 +51,7 @@ you gain by using the Azure OpenAI variant.
 
 If your enterprise decides that it wants to invest in Azure OpenAI as a capability for the company, a number of
 follow-up considerations come into play, but one of the big ones revolves around a core premise of shared services
-versus distributed discrete services, and depending on your company, you will likely wind up with a mix of both.
+versus distributed discrete services, and depending on your company makeup, you will likely wind up with a mix of both.
 
 I think it may help to make an analogy: Many enterprises have CI/CD setups, and there is a model that often emerges
 where a central group of folks maintain a centralized pool of build agents, but various engineering teams are still
