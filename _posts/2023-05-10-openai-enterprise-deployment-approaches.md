@@ -93,5 +93,5 @@ In much the same way in 2008 when everyone wanted corporate email on their iPhon
 trends like CI/CD become widespread and normalized, so too will everyone will want and expect contextual AI assistance
 in and around our tools, and the arrangement of backing services that we create will play a big part in that. I believe
 that it will take a mix of shared and distributed use case-specific deployments to get there. And I also believe that
-success in further fine-tuning these services' models with training data from the enterprise will require a previously
-unseen and elevated level of partership amongst all the functions within an organization.
+success in further fine-tuning these services' models with training data from the enterprise will require an
+unprecedented and elevated level of partership amongst all the functions within an organization.
