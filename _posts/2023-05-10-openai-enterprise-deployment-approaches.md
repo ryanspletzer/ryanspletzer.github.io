@@ -66,9 +66,13 @@ it is my belief that history will repeat itself and we'll wind up with a mix of 
 services much like the centralized and distributed CI/CD model.
 
 The reality is, unless you're a smaller company that's planning to only offer a general ChatGPT experience to the
-company that is the same for everyone, the chances are high they your going to want to offer different flavors of these
-services for different use cases, or will need to provide duplicate copies of these services to different personas for
-purposes of divvying up cost centers and billing.
+company that is the same for everyone, the chances are high that you're going to want to offer different flavors of
+these services for different use cases, or will need to provide duplicate copies of these services to different personas
+for purposes of divvying up cost centers and billing. Further, the question of whether or not these services all land in
+the same or several Azure subscriptions is one of organizational topology and design and to some degree cost allocation
+as well, since subscriptions are a billing boundary, but I certainly can see models for large enterprises where you wind
+up with multiple Azure subscriptions for these services, versus pooling them all in a relatively small static set of
+subscriptions.
 
 Product teams at a company may need to offer different types of services and models to customers that are primed and
 trained by different data sets, which would necessitate separate discrete backend services; also, the product teams may
