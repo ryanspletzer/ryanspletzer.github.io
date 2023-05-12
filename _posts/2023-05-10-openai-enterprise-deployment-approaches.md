@@ -1,0 +1,95 @@
+---
+layout: post
+title: OpenAI Enterprise Deployment Approaches
+date: 2023-05-10 00:00:00
+description: >
+  I wanted to capture some thoughts on deployment approaches for OpenAI in a large enterprise.
+tags:
+ - openai
+ - azure
+---
+
+I wanted to capture some thoughts on deployment approaches for OpenAI in a large enterprise.
+
+Or rather, I want to take a stab at it -- given the short amount of time this service has been out there at the time of
+this writing and the amount of times these conversations about this seem to be popping up recently, I'm bound to get
+something slightly incorrect, but absolute preciseness is at times the enemy of progress... So someone has to give it
+a try.
+
+## Open AI vs. Azure OpenAI
+
+One important up-front consideration is the distinction between public OpenAI service and the Azure OpenAI service.
+
+From a deployment model standpoint, it's a familiar story: there's a consumer/prosumer SaaS version of OpenAI's ChatGPT
+and DALL-E and more, and these are inherently multi-tenant. There is not _yet_ a standalone business offering on their
+SaaS version. However, they do have a private cloud provider hosted version of the service with more controls on Azure.
+
+To draw an analogy, this is not unlike a number of SaaS services that offer consumer/prosumer SaaS (think SendGrid
+Free/Essentials), business SaaS (think SendGrid Pro/Premier), and cloud provider marketplace versions of the product
+(think SendGrid from AWS Marketplace or Azure Marketplace).
+
+For enterprises who are getting serious about using OpenAI, they will want to take a long look at the
+[Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service) service, which is a private
+cloud provider offering that offers a number of additional levels of control.
+
+## Levels of Additional Control Offered by Azure OpenAI
+
+One level of additional control is the option to not have your user's prompts fed upstream to the public OpenAI service.
+With the ChatGPT version at chat.openai.com, your interactions with the service can be used in an anonymized way to
+improve the service -- which is fine and dandy, until you realize that your organization's confidential and proprietary
+data is likely not something you want floating around the OpenAI ether.
+
+Another level of control is deciding whether your users own prompts are used as feedback to your private instance's
+model to further fine-tune it -- that's a business decision that is now up to you.
+
+You can further choose whether or not Microsoft is allowed to view prompts and completions, and many orgs with highly
+confidential data may want to go with this opt out of this approach.
+
+There are other examples like having control over what conversation history you store, the ability to make the service
+available over a private network via an Azure Virtual Network, and more.
+[This post](https://msandbu.org/openai-vs-azure-openai/) gives a pretty good breakdown, and though not comprehensive, it
+gives you a good idea of the various aspects of control you gain by using the Azure OpenAI variant.
+
+## Azure OpenAI Deployment Topologies and Approaches
+
+If your enterprise decides that it wants to invest in Azure OpenAI as a capability for the company, a number of
+follow-up considerations come into play, but one of the big ones revolves around a central premise of shared services
+versus distributed discrete services, and depending on your company, you will likely wind up with a mix of both.
+
+I think it may help to make an analogy: Many enterprises have CI/CD setups, and there is a model with that often emerges
+where a central group of folks maintain a central group of build agents, but various engineering teams are still
+empowered to deploy their own agents in a distributed fashion which they have full control of to meet their needs.
+
+There are likely other services beyond CI/CD that fall into this bucket, but the reason I try to draw this analogy is
+that a shared central pool of build agents and sets of distributed build agents run by discrete teams is a similar type
+of model that I foresee happening for OpenAI, and specifically Azure OpenAI.
+
+It might be tempting to think that all the employees in your company could share one central Azure OpenAI service, but
+it is my belief that history will repeat itself and we'll wind up with a mix of centralized as well as distributed
+services much like the centralized and distributed CI/CD model.
+
+The reality is, unless you're a smaller company that's planning to only offer a general ChatGPT experience to the
+company that is the same for everyone, the chances are high they your going to want to offer different flavors of these
+services for different use cases, or will need to provide duplicate copies of these services to different personas for
+purposes of cost centers and billing.
+
+Product teams at a company may need to offer different types of services and models to customers that are primed and
+trained by different data sets, which would necessitate separate discrete backend services; also, the product teams may
+collectively identify a use case like a shared customer support trained service that could be leveraged by multiple
+products.
+
+IT teams may need to offer different types of services and models catered to different parts of the business like
+Marketing, Finance, HR, Sales and more, trained on specific data sets for those functions: also, they may want to create
+a shared general purpose set of services that employees at large may consume, like an overall support chat, which could
+combine data sets from various disciplines within the company.
+
+We could come up with many variations of these setups, but I think that starts to paint a picture that these services
+will permeate the fabric of our companies, in ways far beyond a simple single hosted service for all to use, and likely
+much more in the ways that things like VMs, containers, orchestrators, and other technology trends have in the past.
+
+In much the same way in 2008 when everyone wanted corporate email on their iPhones, and in the same way that technology
+trends CI/CD become widespread and normalized, so too will everyone will want and expect contextual AI assistance in our
+tools, and the arrangement of backing services that we create will play a big part of that; I believe that it will
+take a mix of shared and use case-specific deployments to get there, and I also believe that success in further
+fine-tuning these services' models with training data will require a previously unseen elevated level of partership
+amongst all the functions within an organization.
