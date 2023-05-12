@@ -84,10 +84,11 @@ Marketing, Finance, HR, Sales, and more, trained on specific data sets for those
 a shared general purpose set of services that employees at large may consume, like an overall support chat, which could
 combine data sets from various disciplines within the company.
 
-We could come up with many variations of these setups depending on the makeup of a give company, but I think this starts
-to paint a picture of how these services might permeate the fabric of our companies, in ways far beyond a simple single
-hosted service for all to use with only one central group running and supporting it, and likely much more in the ways
-that things like VMs, containers, orchestrators, and other technology trends have come into the picture in the past.
+We could come up with many variations of these setups depending on the makeup of a given company, but I think this
+starts to paint a picture of how these services might permeate the fabric of our companies, in ways far beyond a simple
+single hosted service for all to use with only one central group running and supporting it, and likely much more in the
+ways that things like VMs, containers, orchestrators, and other technology trends have come into the picture in the
+past.
 
 In much the same way in 2008 when everyone wanted corporate email on their iPhones, and in the same way that technology
 trends like CI/CD become widespread and normalized, so too will everyone will want and expect contextual AI assistance
