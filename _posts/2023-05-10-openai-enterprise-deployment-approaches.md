@@ -15,7 +15,7 @@ Or rather, I want to take a stab at it -- given the short amount of time this se
 writing, I'm bound to get something slightly incorrect, but absolute preciseness is not always possible, and these
 conversations seem to be popping up a lot recently... So someone has to give it a try.
 
-## Open AI vs. Azure OpenAI
+## OpenAI vs. Azure OpenAI
 
 One important up-front consideration is the distinction between the public OpenAI service and the Azure OpenAI service.
 
