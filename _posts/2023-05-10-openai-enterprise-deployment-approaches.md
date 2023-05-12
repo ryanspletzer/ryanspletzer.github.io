@@ -12,16 +12,15 @@ tags:
 I wanted to capture some thoughts on deployment approaches for OpenAI in a large enterprise.
 
 Or rather, I want to take a stab at it -- given the short amount of time this service has been out there at the time of
-this writing and the amount of times these conversations about this seem to be popping up recently, I'm bound to get
-something slightly incorrect, but absolute preciseness is at times the enemy of progress... So someone has to give it
-a try.
+this writing, I'm bound to get something slightly incorrect, but absolute preciseness is at times the enemy of progress,
+and these conversations seem to be popping up a lot recently,... So someone has to give it a try.
 
 ## Open AI vs. Azure OpenAI
 
-One important up-front consideration is the distinction between public OpenAI service and the Azure OpenAI service.
+One important up-front consideration is the distinction between the public OpenAI service and the Azure OpenAI service.
 
 From a deployment model standpoint, it's a familiar story: there's a consumer/prosumer SaaS version of OpenAI's ChatGPT
-and DALL-E and more, and these are inherently multi-tenant. There is not _yet_ a standalone business offering on their
+and DALL-E and more, and these are inherently multi-tenant. There is not _yet_ a standalone business offering for their
 SaaS version. However, they do have a private cloud provider hosted version of the service with more controls on Azure.
 
 To draw an analogy, this is not unlike a number of SaaS services that offer consumer/prosumer SaaS (think SendGrid
@@ -34,18 +33,15 @@ cloud provider offering that offers a number of additional levels of control.
 
 ## Levels of Additional Control Offered by Azure OpenAI
 
-One level of additional control is the option to not have your user's prompts fed upstream to the public OpenAI service.
+One level of additional control is the option to not have your users' prompts fed upstream to the public OpenAI service.
 With the ChatGPT version at chat.openai.com, your interactions with the service can be used in an anonymized way to
 improve the service -- which is fine and dandy, until you realize that your organization's confidential and proprietary
 data is likely not something you want floating around the OpenAI ether.
 
-Another level of control is deciding whether your users own prompts are used as feedback to your private instance's
-model to further fine-tune it -- that's a business decision that is now up to you.
-
 You can further choose whether or not Microsoft is allowed to view prompts and completions, and many orgs with highly
 confidential data may want to go with this opt out of this approach.
 
-There are other examples like having control over what conversation history you store, the ability to make the service
+There are other examples like having control over what chat history you store, the ability to make the service
 available over a private network via an Azure Virtual Network, and more.
 [This post](https://msandbu.org/openai-vs-azure-openai/) gives a pretty good breakdown, and though not comprehensive, it
 gives you a good idea of the various aspects of control you gain by using the Azure OpenAI variant.
@@ -91,5 +87,5 @@ In much the same way in 2008 when everyone wanted corporate email on their iPhon
 trends CI/CD become widespread and normalized, so too will everyone will want and expect contextual AI assistance in our
 tools, and the arrangement of backing services that we create will play a big part of that; I believe that it will
 take a mix of shared and use case-specific deployments to get there, and I also believe that success in further
-fine-tuning these services' models with training data will require a previously unseen elevated level of partership
+fine-tuning these services' models with training data will require a previously unseen and elevated level of partership
 amongst all the functions within an organization.
