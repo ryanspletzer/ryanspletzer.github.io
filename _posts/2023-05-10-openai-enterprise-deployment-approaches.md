@@ -71,8 +71,8 @@ these services for different use cases, or will need to provide duplicate copies
 for purposes of divvying up cost centers and billing. Further, the question of whether or not these services all land in
 the same or several Azure subscriptions is one of organizational topology and design and to some degree cost allocation
 as well, since subscriptions are a billing boundary, but I certainly can see models for large enterprises where you wind
-up with multiple Azure subscriptions for these services, versus pooling them all in a relatively small static set of
-subscriptions.
+up with multiple Azure subscriptions owned by different teams for these services, versus pooling them all in a
+relatively small static set of subscriptions.
 
 Product teams at a company may need to offer different types of services and models to customers that are primed and
 trained by different data sets, which would necessitate separate discrete backend services; also, the product teams may
