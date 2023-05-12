@@ -55,7 +55,7 @@ versus distributed discrete services, and depending on your company, you will li
 
 I think it may help to make an analogy: Many enterprises have CI/CD setups, and there is a model that often emerges
 where a central group of folks maintain a centralized pool of build agents, but various engineering teams are still
-empowered to deploy their own build agents in a distributed fashion which they can customize of to meet their needs.
+empowered to deploy their own build agents in a distributed fashion which they can customize to meet their needs.
 
 There are likely other services beyond CI/CD that fall into this pattern, but the reason I try to draw this analogy is
 that a shared central pool of build agents and distributed pools of build agents run by discrete teams is a similar type
