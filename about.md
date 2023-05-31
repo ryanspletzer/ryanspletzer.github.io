@@ -170,6 +170,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - ChatGPT
 - DALL-E
 - Middleware
+- Retry Strategies
 - Azure PowerShell
 - Azure Functions
 - Azure OpenAI Service
