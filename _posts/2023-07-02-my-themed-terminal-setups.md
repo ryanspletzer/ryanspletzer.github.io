@@ -29,6 +29,8 @@ this which I recommend checking out, as they were the original inspiration for m
 
 If you're interested in getting a similarly themed setup, read on...
 
+![Terminal](/images/terminal.png)
+
 ## Package Managers
 
 I use package managers for everything -- [Chocolatey](https://community.chocolatey.org/) on Windows
