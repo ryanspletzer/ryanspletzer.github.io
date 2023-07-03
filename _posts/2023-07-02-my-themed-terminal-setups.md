@@ -62,7 +62,7 @@ A few things I want to note about these dotfiles:
 
 * On macOS, I've got dotfiles for PowerShell (pwsh), zsh, and bash. I'm most familiar with PowerShell so the most robust
   setup is there, and it is my default shell on mac. If you have notes about how to make my zsh and bash setups better,
-  send me a message, but have tried to replicate a lot of the auto-complete/history setups there similar to what I have
+  send me a message, but I've tried to replicate a lot of the auto-complete/history setups there similar to what I have
   in PowerShell, but I consider PowerShell to be the best setup I've been able to get so
 * On Windows, it's a bit of an insane story with the number of places that PowerShell profiles can be when you're using
   OneDrive personal and/or OneDrive for Business (since PowerShell looks for the profile in the Documents direcory and
@@ -100,8 +100,8 @@ so that's handy.
 I use PowerShell everywhere, even on macOS. You may be fine with just zsh, and that's ok. If you want to use PowerShell,
 install it via [Homebrew](https://formulae.brew.sh/cask/powershell).
 
-I go a radical step further on macOS and set this as my default shell. I've seen people also do this on Linux as their
-daily driver who are living their best life.
+I go a radical step further on macOS and set this as my default shell. I've also seen people set PowerShell as their
+default shell on Linux as their daily driver on a physical workstation, and they are living their best life.
 
 ### 3. iTerm2
 
