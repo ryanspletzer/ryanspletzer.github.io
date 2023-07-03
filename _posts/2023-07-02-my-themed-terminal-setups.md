@@ -149,7 +149,7 @@ new version on the gallery yet. In the meantime, I applied a patch from another 
 that branch is an update to `build.ps1` to add a Publish step, to publish to a local PSRepository I set up. To do that,
 you can make a directory in home at `~/PSRepository`, and run:
 
-```
+```powershell
 Register-PSRepository -Name Local -SourceLocation /Users/<yourusername>/PSRepository -PublishLocation /Users/<yourusername>/PSRepository -InstallationPolicy Trusted
 ```
 
