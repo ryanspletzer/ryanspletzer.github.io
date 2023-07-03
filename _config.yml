@@ -65,3 +65,7 @@ kramdown:
   hard_wrap: false
 
 exclude: ["README.md", "LICENSE"]
+
+sass:
+    sass_dir: _sass
+    style: compressed

@@ -1,5 +1,3 @@
----
----
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
@@ -42,8 +40,7 @@ body {
   font-size: 19px;
   line-height: 1.75;
   color: $font-color;
-  background: $background-color url(./pics/squares.png);
-  //background: $background-color url(./pics/squares.png); // Another good pattern for background
+  background: $background-color url(/assets/images/squares.png);
 }
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
