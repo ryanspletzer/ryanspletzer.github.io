@@ -33,7 +33,7 @@ If you're interested in getting a similarly themed setup, read on...
 
 ## Package Managers
 
-I use package managers for everything -- [Chocolatey](https://community.chocolatey.org/) on Windows
+I use package managers for everything -- [Chocolatey](https://community.chocolatey.org/) on Windows and
 [Homebrew](https://brew.sh/) on macOS. (I'll probably get into
 [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) at some point, just not yet.)
 
