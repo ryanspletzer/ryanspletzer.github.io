@@ -162,7 +162,7 @@ Then run the following to "publish" the module to your local repository:
 ./build.ps1 -PSGalleryApiKey (get-credential abc) -Verbose
 ```
 
-Then Install the module from your local repository:
+Then "install" the module from your local repository:
 
 ```powershell
 Install-Module -Name Terminal-Icons -Repository Local
@@ -173,17 +173,17 @@ through Homebrew, until a new version of Terminal-Icons is published to the gall
 
 ### 7. PSReadline and Other Interactive Prompt Helpers for zsh, bash
 
-If you're using PowerShell you'll want to get the latest
+If you're using PowerShell, you'll want to get the latest
 [PSReadline](https://www.powershellgallery.com/packages/PSReadLine) and add some things to your profile to get
 predictive autocomplete from history in a list view. (Once installed see the profile in the repos above for how to turn
 this on.)
 
 I have similar setups for zsh and bash via these Homebrew packages, though in playing around I may have turned some of
-them off. Try installing these and taking a look at my `.zshrc` and `.bashrc` and related files in the macOS repo above
-to get an idea of the current setup for these. Oh also you'll want to get the latest bash from Homebrew, because the
-built-in bash in macOS is old and won't handle most things. (Though these days I don't use bash much on macOS, just
-pwsh and zsh.) I'm open to feedback on how to make these zsh and bash setups better since I'm not a deep expert in this
-area, so if you think this can be improved, shoot me a message.
+them off by commenting them out of the rc dotfiles. Try installing these and taking a look at my `.zshrc` and `.bashrc`
+and related files in the macOS repo above to get an idea of the current setup for these. Oh also you'll want to get the
+latest bash from Homebrew, because the built-in bash in macOS is old and won't handle most things. (Though these days I
+don't use bash much on macOS, just pwsh and zsh.) I'm open to feedback on how to make these zsh and bash setups better
+since I'm not a deep expert in this area, so if you think this can be improved, shoot me a message.
 
 ```text
 bash-completion@2
@@ -238,7 +238,7 @@ both macOS and Windows.
 ### 6. Extra: Terminal-Icons for Windows
 
 These steps are largely the same as macOS (see above). Get
-[Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons) and add the necessary item to your profile
+[Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons) and add the necessary lines to your profile
 (example in repos above).
 
 Note that on Windows the `ls` command in PowerShell is an alias for `Get-ChildItem` so running that will show you all
