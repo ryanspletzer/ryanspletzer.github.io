@@ -183,7 +183,7 @@ them off by commenting them out of the rc dotfiles. Try installing these and tak
 and related files in the macOS repo above to get an idea of the current setup for these. Oh also you'll want to get the
 latest bash from Homebrew, because the built-in bash in macOS is old and won't handle most things. (Though these days I
 don't use bash much on macOS, just pwsh and zsh.) I'm open to feedback on how to make these zsh and bash setups better
-since I'm not a deep expert in this area, so if you think this can be improved, shoot me a message.
+since I'm not a deep expert in this area, so if you think this can be improved, send me a message.
 
 ```text
 bash-completion@2
