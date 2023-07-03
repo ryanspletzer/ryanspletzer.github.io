@@ -29,7 +29,7 @@ this which I recommend checking out, as they were the original inspiration for m
 
 If you're interested in getting a similarly themed setup, read on...
 
-![My Themed Terminal](/images/my-themed-terminal.png)
+![My Themed Terminal](/assets/images/my-themed-terminal.png)
 
 ## Package Managers
 
