@@ -150,7 +150,7 @@ that branch is an update to `build.ps1` to add a Publish step, to publish to a l
 you can make a directory in home at `~/PSRepository`, and run:
 
 ```powershell
-Register-PSRepository -Name Local -SourceLocation /Users/<yourusername>/PSRepository -PublishLocation /Users/<yourusername>/PSRepository -InstallationPolicy Trusted
+Register-PSRepository -Name Local -SourceLocation /Users/yourusername/PSRepository -PublishLocation /Users/yourusername/PSRepository -InstallationPolicy Trusted
 ```
 
 Then run the following to "publish" the module to your local repository:
