@@ -63,7 +63,8 @@ A few things I want to note about these dotfiles:
 * On macOS, I've got dotfiles for PowerShell (pwsh), zsh, and bash. I'm most familiar with PowerShell so the most robust
   setup is there, and it is my default shell on mac. If you have notes about how to make my zsh and bash setups better,
   send me a message, but I've tried to replicate a lot of the auto-complete/history setups there similar to what I have
-  in PowerShell, but I consider PowerShell to be the best setup I've been able to get so
+  in PowerShell, but I consider PowerShell to be the best setup I've been able to get, so much of the focus of this post
+  is around that.
 * On Windows, it's a bit of an insane story with the number of places that PowerShell profiles can be when you're using
   OneDrive personal and/or OneDrive for Business (since PowerShell looks for the profile in the Documents direcory and
   adding OneDrive to the mix likely moves where that directory is), so in order to accommodate whatever Windows machine
@@ -111,12 +112,12 @@ First off, on mac, get yourself a better terminal. I use [iTerm2](https://iterm2
 ### 4. Nerd Fonts for macOS
 
 Next, install some [Nerd Fonts](https://www.nerdfonts.com/) -- you'll need these for special icons in your prompt. I use
-Cascadia Code (which for reasons I'll spare has a different name for the actual font name). If you wish you can install
-all the different Nerd Fonts with a helper script like
+Cascadia Code (which, for reasons I'll spare, has a different name for the actual font name). If you wish you can
+install all the different Nerd Fonts with a helper script like
 [this](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e), or just install the one you want.
 
-Note that as of Nerd Fonts 3 you'll find a number of icons have moved in terms of their names so I customized the Oh My
-Posh theme (more on that in a second) to fix a number of things there based on one of the default themes. I can't say
+Note that, as of Nerd Fonts 3, you'll find a number of icons have moved in terms of their names, so I customized the Oh
+My Posh theme (more on that in a second) to fix a number of things there based on one of the default themes. I can't say
 I've hit 100% of the icons I might run into, but I've at least fixed what I've found so far through using it for a
 while.
 
@@ -140,9 +141,9 @@ This applies only to PowerShell: there's a great module called
 [Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons) which you can install from the
 PowerShell Gallery, and doing so will give you some nice icons when listing items in the current directory.
 
-Note that to see this on macOS you have to run Get-ChildItem, since your regular `ls` call on that platform uses the
-native binary. (On Windows with PowerShell running `ls` will show the icons, since in that shell on Windows `ls` is an
-alias for the `Get-ChildItem` cmdlet.)
+Note that to see this on macOS you have to run `Get-ChildItem` (or its shorthand alias, `gci`), since your regular `ls`
+call on that platform uses the native binary. (On Windows with PowerShell running `ls` will show the icons, since in
+that shell on Windows `ls` is an alias for the `Get-ChildItem` cmdlet.)
 
 One caveat: at the time of this writing, Nerd Fonts 3 was pretty new on the scene, and Terminal-Icons had not yet
 released a new version to the PowerShell Gallery; the commits to fix this are in trunk in that repo, there's just not a
@@ -175,15 +176,15 @@ through Homebrew, until a new version of Terminal-Icons is published to the gall
 
 If you're using PowerShell, you'll want to get the latest
 [PSReadline](https://www.powershellgallery.com/packages/PSReadLine) and add some things to your profile to get
-predictive autocomplete from history in a list view. (Once installed see the profile in the repos above for how to turn
-this on.)
+predictive autocomplete from history in a list view. (Once you have this installed, see the profile in the repos above
+for how to turn this on.)
 
-I have similar setups for zsh and bash via these Homebrew packages, though in playing around I may have turned some of
-them off by commenting them out of the rc dotfiles. Try installing these and taking a look at my `.zshrc` and `.bashrc`
-and related files in the macOS repo above to get an idea of the current setup for these. Oh also you'll want to get the
-latest bash from Homebrew, because the built-in bash in macOS is old and won't handle most things. (Though these days I
-don't use bash much on macOS, just pwsh and zsh.) I'm open to feedback on how to make these zsh and bash setups better
-since I'm not a deep expert in this area, so if you think this can be improved, send me a message.
+I have similar setups for zsh and bash via these Homebrew packages below, though in playing around I may have turned
+some of them off by commenting them out of the rc dotfiles. Try installing these and taking a look at my `.zshrc` and
+`.bashrc` and related files in the macOS repo above to get an idea of the current setup for these. Oh also you'll want
+to get the latest bash from Homebrew, because the built-in bash in macOS is old and won't handle most things. (Though
+these days I don't use bash much on macOS, just pwsh and zsh.) I'm open to feedback on how to make these zsh and bash
+setups better since I'm not a deep expert in this area, so if you think this can be improved, send me a message.
 
 ```text
 bash-completion@2
@@ -197,8 +198,8 @@ zsh-syntax-highlighting
 
 ### 8. Put Dotfiles in Place for macOS
 
-The last step is to put your dotfiles in place. I have example .zshrc, .bashrc and PowerShell profile files in the repos
-linked above, as well as the Oh My Posh JSON theme files.
+The last step is to put your dotfiles in place. I have example `.zshrc`, `.bashrc`, and PowerShell profile files in the
+repos linked above, as well as the Oh My Posh JSON theme files.
 
 ## Windows
 
@@ -218,13 +219,14 @@ grab the latest PowerShell, ideally by installing it via
 
 ### 3. Windows Terminal
 
-[Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) is already the default on the
-latest Windows 11 builds, but if you're not on one of those builds or on Windows 10, you'll have to go get this from the
-app store.
+[Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) is already the default
+terminal on the latest Windows 11 builds, but if you're not on one of those builds or are on Windows 10, you'll have to
+go get this from the app store.
 
 ### 4. Nerd Fonts for Windows
 
-Install one via Chocolatey -- I like [Cascadia Code](https://community.chocolatey.org/packages/nerd-fonts-CascadiaCode).
+Install your preferred Nerd Font via Chocolatey -- I like
+[Cascadia Code](https://community.chocolatey.org/packages/nerd-fonts-CascadiaCode).
 
 Once installed, set it as your font in Windows Terminal.
 
@@ -241,12 +243,12 @@ These steps are largely the same as macOS (see above). Get
 [Terminal-Icons](https://www.powershellgallery.com/packages/Terminal-Icons) and add the necessary lines to your profile
 (example in repos above).
 
-Note that on Windows the `ls` command in PowerShell is an alias for `Get-ChildItem` so running that will show you all
-the fancy icons when listing items in a directory.
+Note that on Windows the `ls` command in PowerShell is an alias for `Get-ChildItem`, so running that will show you all
+the fancy icons when listing items in a directory. Same thing for `dir`.
 
 ### 7. PSReadline Interactive Prompt Helpers
 
-This is largely the same as for macOS above. Get the latest
+This is largely the same as for macOS above. Install the latest
 [PSReadline](https://www.powershellgallery.com/packages/PSReadLine) module in PowerShell.
 
 ### 8. Put Dotfiles in Place for Windows
