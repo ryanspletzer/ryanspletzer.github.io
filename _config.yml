@@ -35,8 +35,8 @@ links:
     url: https://www.linkedin.com/in/ryanspletzer/
   - text: GitHub
     url: https://github.com/ryanspletzer
-  - text: Bluesky (@ryanspletzer.bsky.social)
-    url: https://bsky.social
+  - text: Bluesky
+    url: https://bsky.app/profile/ryanspletzer.bsky.social
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: UA-92338338-1
