@@ -254,6 +254,23 @@ read them:
   Another good read from Michael Lopp that has yet more expanded advice on engineering management and leading at
   organizations.
 
+* [Being Geek: The Software Developer's Career Handbook](https://www.amazon.com/dp/0596155409) - Another good read from
+  Michael Lopp, this one being slightly less engineering management focused and speaking more directly to the individual
+  contributor.
+
+* [Get to the Point!: Sharpen Your Message and Make Your Words Matter](https://www.amazon.com/dp/1523094117) - While not
+  strictly a "tech" book, this is still a very good read for people in tech (and all) industries, because no matter
+  where you work, you're going to have to present at some point, and you want to be able to deliver a clear message to
+  your audience. This is a fun short read with lots of great tips around this.
+
+* [Team Topologies: Organizing Business and Technology Teams for Fast Flow](https://teamtopologies.com/book) - A very
+  great book for not just managers but anyone who wants to understand how to align teams in ways to help organizations
+  deliver. I personally resonated with a lot of the items around SRE and DevOps and Platform teams, and more.
+
+* [Project Zero Trust: A Story about a Strategy for Aligning Security and the Business](https://www.amazon.com/dp/1119884845) -
+  This book is goofy at times and is not on the same story level as Phoenix Project, but nonetheless walks through a
+  number of key concepts when trying to pursue a Zero Trust Architecture at any organization.
+
 ## Other
 
 These are books of any other category that don't fit above.
