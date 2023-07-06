@@ -145,33 +145,6 @@ Note that to see this on macOS you have to run `Get-ChildItem` (or its shorthand
 call on that platform uses the native binary. (On Windows with PowerShell running `ls` will show the icons, since in
 that shell on Windows `ls` is an alias for the `Get-ChildItem` cmdlet.)
 
-One caveat: at the time of this writing, Nerd Fonts 3 was pretty new on the scene, and Terminal-Icons had not yet
-released a new version to the PowerShell Gallery; the commits to fix this are in trunk in that repo, there's just not a
-new version on the gallery yet. In the meantime, I applied a patch from another PR and put it into a fork
-[here](https://github.com/ryanspletzer/Terminal-Icons/tree/feature/nf-3-patch), which can be cloned locally. Part of
-that branch is an update to `build.ps1` to add a Publish step, to publish to a local PSRepository I set up. To do that,
-you can make a directory in home at `~/PSRepository`, and run:
-
-```powershell
-Register-PSRepository -Name Local -SourceLocation /Users/yourusername/PSRepository -PublishLocation /Users/yourusername/PSRepository -InstallationPolicy Trusted
-```
-
-Then run the following to "publish" the module to your local repository:
-
-```powershell
-# This will prompt for a credential -- just give it something fake.
-./build.ps1 -PSGalleryApiKey (get-credential abc) -Verbose
-```
-
-Then "install" the module from your local repository:
-
-```powershell
-Install-Module -Name Terminal-Icons -Repository Local
-```
-
-If you don't want to go through all that, you can just install the latest version of your desired font from Nerd Fonts 2
-through Homebrew, until a new version of Terminal-Icons is published to the gallery.
-
 ### 7. PSReadline and Other Interactive Prompt Helpers for zsh, bash
 
 If you're using PowerShell, you'll want to get the latest
