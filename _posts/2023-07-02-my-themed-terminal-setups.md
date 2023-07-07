@@ -66,7 +66,7 @@ A few things I want to note about these dotfiles:
   in PowerShell, but I consider PowerShell to be the best setup I've been able to get, so much of the focus of this post
   is around that.
 * On Windows, it's a bit of an insane story with the number of places that PowerShell profiles can be when you're using
-  OneDrive personal and/or OneDrive for Business (since PowerShell looks for the profile in the Documents direcory and
+  OneDrive personal and/or OneDrive for Business (since PowerShell looks for the profile in the Documents directory and
   adding OneDrive to the mix likely moves where that directory is), so in order to accommodate whatever Windows machine
   I'm on, I've put my PowerShell profile in the standard location for PowerShell 7+, and simply dot-source that profile
   from all the other potential profile locations. This also results in a really insane `.gitignore` file on that
