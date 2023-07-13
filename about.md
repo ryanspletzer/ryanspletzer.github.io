@@ -142,6 +142,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - YubiKeys
 - MSAL (Microsoft Authentication Library)
 - CSS
+- SCSS
 - Bootstrap
 - JavaScript
 - TypeScript
