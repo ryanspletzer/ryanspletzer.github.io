@@ -58,6 +58,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Identity and Access Management (IAM)
 - Decentralized Identity
 - Verifiable Credentials
+- Identity Verification
 - Security
 - Testing
 - Unit Testing
@@ -141,8 +142,9 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - YubiKeys
 - MSAL (Microsoft Authentication Library)
 - CSS
+- Bootstrap
 - JavaScript
-- TypeScrip
+- TypeScript
 - Node
 - JSON
 - XML
