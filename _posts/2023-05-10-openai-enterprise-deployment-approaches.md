@@ -91,8 +91,8 @@ ways that things like VMs, containers, orchestrators, and other technology trend
 past.
 
 In much the same way in 2008 when everyone wanted corporate email on their iPhones, and in the same way that technology
-trends like CI/CD become widespread and normalized, so too will everyones want and expect contextual AI assistance in
+trends like CI/CD become widespread and normalized, so too will everyone want and expect contextual AI assistance in
 and around our tools, and the arrangement of backing services that we create will play a big part in that. I believe
 that it will take a mix of shared and distributed use case-specific deployments to get there. And I also believe that
 success in further fine-tuning these services' models with training data from the enterprise will require an
-unprecedented and elevated level of partership amongst all the functions within an organization.
+unprecedented and elevated level of partnership amongst all the functions within an organization.
