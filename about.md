@@ -174,6 +174,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - DALL-E
 - Middleware
 - Retry Strategies
+- Generative AI
+- OpenAI
 - Azure PowerShell
 - Azure Functions
 - Azure OpenAI Service
