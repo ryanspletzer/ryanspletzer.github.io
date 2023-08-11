@@ -414,6 +414,53 @@ nav.shrink .navbar-toggle {
 }
 
 //********************************************************
+//            Table
+//********************************************************
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #202020;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  margin: 0 0 10px;
+}
+
+table th,
+table td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #2a2a2a;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #252525;
+}
+
+table tr:hover {
+  background-color: #353535;
+  cursor: pointer;
+}
+
+table a {
+  color: #00bcd4; /* You can choose any color for links */
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* You can further style specific elements or add more CSS as needed */
+
+
+//********************************************************
 //            Gist Dark Mode
 //********************************************************
 
