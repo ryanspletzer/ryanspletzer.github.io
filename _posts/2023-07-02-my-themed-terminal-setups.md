@@ -128,7 +128,8 @@ Once you have your preferred font installed, change iTerm2 to use it under Setti
 [Oh My Posh](https://ohmyposh.dev/) is an amazing prompt theming engine for any shell. It started as a theming engine
 for PowerShell, then grew from there. I've found it to be _better_ than Oh My Zsh, Oh My Bash, and Oh My Fish, for all
 the shells I use, and I love that it is a one-stop-shop solution versus trying to theme individual shells. (I stopped
-trying to set up Fish a while back since between zsh, bash, and PowerShell, I have enough shells.)
+trying to set up Fish a while back since between zsh, bash, and PowerShell, I have enough shells.) Update: I set up
+oh-my-posh with Fish, too.
 
 Install Oh My Posh via [Homebrew](https://formulae.brew.sh/formula/oh-my-posh).
 
