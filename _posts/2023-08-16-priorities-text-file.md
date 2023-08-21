@@ -51,4 +51,8 @@ over-complicate something as basic as keeping track of what I'm doing.
 As an added bonus, keeping it on my desktop keeps it within a very short reach helps me load it up semi-instantly
 without worrying about waiting for a heavier program like OneNote, or the browser where I have to subsequently navigate
 to a web page -- on top of simplicity, time-to-first-edit is another key aspect to ensuring your priority tracking stays
-viable and can scale during busy times.
+viable and can scale during hectic and busy time periods.
+
+With a sea of productivity tracking tools out there, there is definitely no "one size fits all," but I would challenge
+you to think through if your tracking is as simple as it can be, and ensure that your methodology and tools are working
+_for_ you, rather that you working for the tool.
