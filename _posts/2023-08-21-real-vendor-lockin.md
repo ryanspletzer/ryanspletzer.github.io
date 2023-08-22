@@ -31,7 +31,7 @@ development talent towards building a solution for this particular use case; but
 that many products have a limited talent base behind them, if any.
 
 Before purchasing a product, here's a test: Can you realistically advertise a job role specifically for that product?
-For instance, "{Insert-Product-Name-Here} Engineer". If you can't, reconsider the decision. And even if you can, think
+For instance, "{Insert-Product-Name-Here} Engineer." If you can't, reconsider the decision. And even if you can, think
 about the depth of that talent pool.
 
 In the case of the product alluded to above, it merely added a layer on top of a cloud provider's services, and at
