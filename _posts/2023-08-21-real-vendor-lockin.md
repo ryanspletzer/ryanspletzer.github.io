@@ -26,9 +26,9 @@ engineering maintenance from building a solution in-house. However, there are as
 good intent from vendors long-term – assumptions that aren't always valid.
 
 Another factor is the skill set attached to a product. If your product expert(s) leave, is there a readily available
-talent pool to fill the gap? Initially, it might seem easier not to hire developers or not use your existing development
-talent towards building a solution for this particular use case; but it's also important to keep in mind that many
-products have a limited talent base behind them, if any.
+talent pool to fill the gap? Initially, it might seem easier to not to hire developers or to not use your existing
+development talent towards building a solution for this particular use case; but it's also important to keep in mind
+that many products have a limited talent base behind them, if any.
 
 Before purchasing a product, here's a test: Can you realistically advertise a job role specifically for that product?
 For instance, "{Insert-Product-Name-Here} Engineer". If you can't, reconsider the decision. And even if you can, think
