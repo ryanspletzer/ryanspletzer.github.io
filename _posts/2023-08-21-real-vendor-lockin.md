@@ -11,8 +11,9 @@ tags:
  - build-vs-buy
 ---
 
-In a previous post, I discussed the topic of [vendor lock-in](./2023-03-26-vendor-lock-in.md) with cloud providers, and
-why I thought it was over-emphasized. I'd like to further highlight my stance using a real-life example of _actual_
+In a previous post, I discussed the topic of
+[vendor lock-in]([../2023-03-26-vendor-lock-in](https://www.spletzer.com/2023/03/vendor-lock-in/) with cloud providers,
+and why I thought it was over-emphasized. I'd like to further highlight my stance using a real-life example of _actual_
 vendor lock-in which, in my opinion, is more concerning.
 
 We recently realized that a product we had in our environment was raising their prices to a point where it was
