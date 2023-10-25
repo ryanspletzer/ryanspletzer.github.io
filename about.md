@@ -26,6 +26,8 @@ and Identity and Access Management. Since then our team has grown in scope to in
 automation use cases and work on FedRAMP compliance initiatives as well as involvement in Autodesk's internal delivery
 platforms and open-source initiatives.
 
+As we speak I am currently getting deep on data and working on AI solutions.
+
 ## Things I Think About
 
 Some of these are skills, some of them tools, some of them are other things, but in the interest of not trying to break
@@ -157,6 +159,9 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - SQL Server Management Studio
 - Database Design
 - Database Normalization
+- Data Engineering
+- Data Platforms
+- Data Mesh
 - Azure Data Studio
 - MongoDB
 - Scaling
@@ -174,6 +179,9 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - DALL-E
 - Middleware
 - Retry Strategies
+- Machine Learning
+- AI
+- Anomaly Detection
 - Generative AI
 - OpenAI
 - Azure PowerShell
