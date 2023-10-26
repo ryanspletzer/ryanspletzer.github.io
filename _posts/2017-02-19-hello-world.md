@@ -2,8 +2,7 @@
 layout: post
 title: Hello World
 date: 2017-02-19 12:00:00
-description: This has been a long time coming, but after a few years I finally
-    have a new blog.
+description: This has been a long time coming, but after a few years I finally have a new blog.
 headerwidth: 793
 headerheight: 397
 share: true
