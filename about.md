@@ -73,6 +73,9 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Collection+JSON
 - OData
 - GraphQL
+- Server-sent Events (SSE)
+- Websockets
+- gRPC
 - Scripting
 - PowerShell
 - PowerShell Desired State Configuration (DSC)
