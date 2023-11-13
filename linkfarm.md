@@ -264,18 +264,22 @@ These are books of any other category that don't fit above.
   matters. In particular the advice around how to reduce social media consumption has been great. I've gained a lot of
   cycles back because of techniques in this book.
 
-* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing](https://konmari.com/products/the-life-changing-magic-of-tidying-up) - Not to be a typical millenial... I first
-  started hearing about Marie Kondo well before her Netflix show, and I would highly recommend reading the books to help
-  frame the reasons behind the methods.
+* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing](https://konmari.com/products/the-life-changing-magic-of-tidying-up) -
+  Not to be a typical millennial... I first started hearing about Marie Kondo well before her Netflix show, and I would
+  highly recommend reading the books to help frame the reasons behind the methods.
 
 * [Spark Joy](https://konmari.com/products/spark-joy) - A great practical guide and addition to Marie's first book above
-for people like me who just never knew how to fold a shirt (or anything) well before. After getting rid of all the
-excess this comes in very handy for helping to organize well.
+  for people like me who just never knew how to fold a shirt (or anything) well before. After getting rid of all the
+  excess via the KonMari, this comes in very handy for helping to well organize what is important.
 
-* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing](https://www.amazon.com/Life-Changing-Magic-Tidying-Decluttering-Organizing/dp/1607747308) - The follow-up to Mari's
-  first book is a very helpful guide on tidying, and finally taught me out to fold a shirt the right way.
+* [Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs](https://www.whatmatters.com/book) -
+  I first encountered this concept when our company was adopting OKRs and this book was a recommended read, and I
+  recommend it as well. You'll get the idea early on in the book and much of the latter part dives into specific success
+  stories. OKR's can be abused and misused, but regardless it's important to understand the methodology behind them.
 
-* [Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs](https://www.whatmatters.com/book) - I first encountered this concept when our company was adopting OKRs and this
-  book was a recommended read, and I recommend it as well. You'll get the idea early on in the book and much of the
-  latter part dives into specific success stories. OKR's can be abused and misused, but regardless it's important to
-  understand the methodology behind them.
+* [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential](https://www.buildingasecondbrain.com/) -
+  I read David Allen's classic _Getting Things Done_, and while the ideas put forward in that book still resonate, Tiago
+  Forte's approach feels like a much more modern equivalent of that, with the advent of new technologies like
+  note-taking apps and the ability to search (whereas Allen's book was written in a paper era). I found the PARA and
+  CODE methodologies, and discussions on creativity through divergence and convergence, resonated very strongly with me,
+  and as a result I re-organized and re-oriented my note-taking approaches with these practices.
