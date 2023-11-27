@@ -256,6 +256,11 @@ read them:
   This book is goofy at times and is not on the same story level as Phoenix Project, but nonetheless walks through a
   number of key concepts when trying to pursue a Zero Trust Architecture at any organization.
 
+* [Working in Public: The Making and Maintenance of Open Source Software](https://www.amazon.com/dp/0578675862) -
+  This is a fascinating deep dive into everything that goes into creating and, critically, maintaining open source
+  software, with a special takeaway on the economics of how a finite amount of attention plays into how maintainers
+  approach the care and feeding of their open source projects.
+
 ## Other
 
 These are books of any other category that don't fit above.
