@@ -88,6 +88,17 @@ read them:
 * [Pro Git](https://git-scm.com/book/en/v2) - aka the Git Book. You only need to know a handful of commands to get going
   as a normal Git user, but if you really want to understand the full breadth of the tool you need to read this book.
 
+* [OpenID Connect Specifications](https://openid.net/specs/openid-connect-core-1_0.html) - and
+  [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) and [JWT](https://datatracker.ietf.org/doc/html/rfc7519)
+  and [related OpenID Connect specifications](https://openid.net/developers/specs/). (Yes, I really read all of these.)
+  Few things have influenced my career in a positive way than reading these specs, because no matter what you are
+  working on, two things hold true: you are communicating over a network, and you need to authenticate over that
+  network. Thus, this to me was a very critical read to inform on how I can use and design systems and services in a
+  proper way with proper authentication and authorization. These specs are widespread, but not well understood, so if
+  you want to do yourself a favor and accelerate your career and enhance your systems design approaches, read these
+  specs. (As an aside, when I read these in the ~2016 time frame, there weren't many great trainings available on the
+  subject, so I had to go to the source.)
+
 * [Mastering Regular Expressions](http://shop.oreilly.com/product/9780596528126.do) - No, I have not mastered them, they
   are still hard. But, I at least have a better idea around DFA's and NFA's and how the different engines work having
   read this book.
