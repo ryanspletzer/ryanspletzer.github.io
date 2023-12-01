@@ -3,7 +3,7 @@ layout: post
 title: The Power of the Code Name
 date: 2023-12-01 00:00:00
 description: >
-  Whether for your your team, or for your product or service, a designated code name provides maximum flexibility in the
+  Whether for your team, or for your product or service, a designated code name provides maximum flexibility in the
   face of what is an ever-present constant in our lives: change.
 tags:
  - code-names
@@ -11,7 +11,7 @@ tags:
  - service-design
 ---
 
-Whether for your your team, or for your product or service, a designated code name provides maximum flexibility in the
+Whether for your team, or for your product or service, a designated code name provides maximum flexibility in the
 face of what is an ever-present constant in our lives: change.
 
 Based on my experience, there are a few things I can assure you that will change in your tenure at a company:
