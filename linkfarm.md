@@ -299,3 +299,8 @@ These are books of any other category that don't fit above.
   note-taking apps and the ability to search (whereas Allen's book was written in a paper era). I found the PARA and
   CODE methodologies, and discussions on creativity through divergence and convergence, resonated very strongly with me,
   and as a result I re-organized and re-oriented my note-taking approaches with these practices.
+
+* [Surrounded by Idiots: The Four Types of Human Behavior and How to Effectively Communicate with Each in Business (and in Life)](
+  https://www.amazon.com/Surrounded-Idiots-Behavior-Effectively-Communicate/dp/1250179947) - Learning about different
+  behavior profiles (red, yellow, green, blue) and how to adapt to them is a very interesting and useful concept that I
+  find myself using in day-to-day life now.
