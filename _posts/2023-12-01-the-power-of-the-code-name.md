@@ -14,7 +14,7 @@ tags:
 Whether for your your team, or for your product or service, a designated code name provides maximum flexibility in the
 face of what is an ever-present constant in our lives: change.
 
-Based on my experience, there are a couple things I can assure you that will change in your tenure at a company:
+Based on my experience, there are a few things I can assure you that will change in your tenure at a company:
 
 - Your team name will change.
 - Your department name will change.
