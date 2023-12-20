@@ -286,6 +286,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Latency Based Routing
 - OpenID Connect / OAuth 2.0
 - JWT and related specs
+- SCIM
 - SAML
 - Raspberry Pis
 - Video Editing
