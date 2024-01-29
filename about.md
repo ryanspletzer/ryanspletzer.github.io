@@ -47,6 +47,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - GPG
 - Continuous Integration and Continuous Delivery
 - Portable CI
+- GitOps
 - Design Patterns
 - Domain Driven Design
 - CQRS
