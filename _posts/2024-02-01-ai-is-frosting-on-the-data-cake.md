@@ -58,7 +58,7 @@ landscape is
 [Fundamentals of Data Engineering](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/).
 
 There is no one size fits all for data architecture. Below is a non-complete set of questions you could ask about your
-own organization to get a sense of what types of data architectures for different company make-ups make sense:
+own organization to get a sense of what types of data architectures for different organizations make sense:
 
 * How small or large is your company?
 * How many customers do you have?
