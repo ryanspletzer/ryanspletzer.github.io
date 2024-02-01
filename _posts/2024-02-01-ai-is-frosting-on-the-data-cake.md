@@ -3,7 +3,7 @@ layout: post
 title: AI is Frosting on the Data Cake
 date: 2024-02-01 00:00:00
 description: >
-  Chefs have a saying: _mise en place_, or "putting in place." This is a great analogy and philosophy for data in an
+  Chefs have a saying: mise en place, or "putting in place." This is a great analogy and philosophy for data in an
   enterprise as well...
 tags:
  - ai
