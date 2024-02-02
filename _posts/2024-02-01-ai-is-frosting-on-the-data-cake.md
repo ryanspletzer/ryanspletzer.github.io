@@ -39,8 +39,8 @@ aware of, and therefore tossing _all_ your possible data ingredients into a give
 weird-tasting results.
 
 To that end, it's really important to think about which data is ripe for the plucking, and come up with systems to
-ensure freshness and evict stale items, or at a minimum provide some heuristics or approaches signal to downstream data
-pipelines when certain items shouldn't be incorporated into the mix.
+ensure freshness and evict stale items, or at a minimum provide some heuristics or approaches to signal to downstream
+data pipelines when certain items shouldn't be incorporated into the mix.
 
 This freshness problem has interesting ramifications when it comes to training models: if you train a model on data that
 becomes stale, what are the consequences of that? Will it entail retraining? Can you train over what's been previously
