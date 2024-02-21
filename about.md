@@ -49,6 +49,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Portable CI
 - GitOps
 - Design Patterns
+- Systems Design
 - Domain Driven Design
 - CQRS
 - Event Sourcing
