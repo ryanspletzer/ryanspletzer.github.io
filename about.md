@@ -144,7 +144,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Identity Protection
 - Password Protection
 - MFA
-- Phishing Resistant Credential
+- Phishing Resistant Credentials
 - FIDO2
 - WebAuthn
 - YubiKeys
