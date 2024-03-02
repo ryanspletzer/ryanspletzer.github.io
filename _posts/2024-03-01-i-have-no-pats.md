@@ -3,8 +3,8 @@ layout: post
 title: I Have No PATs
 date: 2024-03-01 00:00:00
 description: >
-  I have pushed the content of this blog post to GitHub Pages with zero use of a personal access token, or even an SSH
-  key.
+  I have pushed the content of this blog post to GitHub Pages with zero use of a personal access token (fine-grained or
+  otherwise) or even an SSH key.
 
   How is this possible?
 tags:
