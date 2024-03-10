@@ -272,6 +272,12 @@ read them:
   software, with a special takeaway on the economics of how a finite amount of attention plays into how maintainers
   approach the care and feeding of their open source projects.
 
+* [Fundamentals of Data Engineering](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/) - This
+  book provided a great and relatively recent overview of the landscape of data engineering, covering generation and
+  storage through ingestion and storage, transformation and serving, and many surrounding aspects like security and
+  data management and more. I highly recommend this read for those looking to get into the field, which is a very
+  important one as an upstream facilitator for AI/ML initiatives.
+
 ## Other
 
 These are books of any other category that don't fit above.
