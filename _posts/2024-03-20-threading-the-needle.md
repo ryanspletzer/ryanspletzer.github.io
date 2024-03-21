@@ -47,9 +47,9 @@ unacceptable way to stakeholders, be that an engineer or business user at your c
 
 In order to deliver high risk systems, you need to spend time in low risk environments.
 
-You often don’t even need to spend time implementing the whole system those low risk environments — often just building
-select parts of a system can help answer key open questions that keeps everyone comfortable in the direction of the
-project.
+You often don’t even need to spend time implementing the whole system in those low risk environments — often just
+building select parts of a system can help answer key open questions that keeps everyone comfortable in the direction of
+the project.
 
 Spending more time in experimentation and proofs of concept not only helps to de-risk your technology decisions, it can
 also help to ensure that you wind up in a more strategic destination that not only meets your technology goals, but your
