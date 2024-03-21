@@ -40,7 +40,7 @@ essential.
 
 Too often I still see, even in this day and age, a desire to design on paper and “hope for the best” and leave things to
 fate, to some degree. In my experience, the devil is still truly in the details, and while that first 90% of your design
-on paper may go just fine, is that last often unexpected 10% that you wind up toiling over at the worst time in a
+on paper may go just fine, it is that last often unexpected 10% that you wind up toiling over at the worst time in a
 project cycle, near the end… Interestingly, that last 10% can often be not a technical constraint, but a human one:
 sure, your design meets all the requirements, but it turns out it creates a terrible UX for the end user in some
 unacceptable way to stakeholders, be that an engineer or business user at your company, or even an external customer.
