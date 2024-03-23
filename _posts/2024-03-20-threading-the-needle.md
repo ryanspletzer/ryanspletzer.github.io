@@ -34,7 +34,7 @@ providers and SaaS services, many of which offer various free trial options or p
 numerous ways to spin up even short lived ephemeral environments to test theories and reinforce approaches.
 
 Coming up with solid system designs is a little bit of luck and heuristics and leaning on past experiences, but to truly
-“thread the needle” and wind up with resilient designs that are not only achievable but also _desirable_, and to meet
+“thread the needle” and wind up with resilient designs that are not only achievable but also _desirable_, and that meet
 both your technological and experience goals (amongst others), I believe that experimentation and proofs of concept are
 essential.
 
