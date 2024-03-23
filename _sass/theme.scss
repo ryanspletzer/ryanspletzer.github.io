@@ -1409,3 +1409,32 @@ green     #859900  operators, other keywords
     line-height: 1.8;
   }
 }
+@media (max-width: 1000px) {
+  div.post-meta .post-time {
+    display: block;
+  }
+  div.post-meta ul {
+    float: left;
+  }
+  div.post-meta ul>li {
+    padding: 0 10px 5px 0px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .navbar-nav {
+    float: left;
+  }
+}
+@media (max-width: 455px) {
+  .navbar .navbar-nav {
+    padding-left: 5px;
+  }
+  .nav > li > a {
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 430px) {
+  .nav > li > a {
+    padding: 8px 8px;
+  }
+}
