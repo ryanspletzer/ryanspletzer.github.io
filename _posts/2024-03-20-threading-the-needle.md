@@ -10,7 +10,7 @@ description: >
 
 tags:
  - waterfall
- - proof-of-concepts
+ - proofs-of-concept
  - experimentation
  - agile
 ---
