@@ -216,7 +216,6 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Azure Application Insights
 - Azure Information Protection
 - Regular Expressions
-- Scrum
 - Open-source
 - Cosmos DB
 - Kubernetes
