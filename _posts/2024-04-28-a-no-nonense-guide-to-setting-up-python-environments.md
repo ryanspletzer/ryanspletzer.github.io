@@ -64,7 +64,7 @@ this writing. (Apple notably stopped bundling Python 3 with the base operating s
 You more than likely want to be able to try newer versions than that which comes with the Xcode tools -- for example,
 the version on my machine is 3.9.6, but the latest version available is 3.12.3.
 
-One way to get a new version of Python is to install it via homebrew directly, but *you do not have to do it this
+One way to get a new version of Python is to install it via Homebrew directly, but *you do not have to do it this
 way* -- instead you can install it via `pyenv` explicitly.
 
 However, do note that the Python versions available via `pyenv` may lag slightly behind the latest available version
