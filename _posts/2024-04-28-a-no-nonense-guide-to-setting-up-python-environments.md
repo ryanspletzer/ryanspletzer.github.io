@@ -40,9 +40,10 @@ forming your own opinions, to give you an opinionated way to quickly get started
 I will break things down between macOS, Linux, and Windows.
 
 I will also say up-front that your preferred methodology may not match this, as you may be using different tools or
-techniques like containerization with Docker or tools like Conda or `pipenv`; if you already have your own preferred way
-to set up Python environments, then this guide isn't really for you. 🙂 (And I even reserve the right to change my mind
-later as my own practices and opinions evolve.)
+techniques like containerization with Docker or tools like Conda or `venv` or `pipenv` or the standalone `virtualenv`
+tools (even if some of these don't handle multiple Python versions); if you already have your own preferred way to set
+up Python environments, then this guide isn't really for you. 🙂 (And I even reserve the right to change my mind later
+as my own practices and opinions evolve.)
 
 Sidebar: Containerization is quite handy regardless, because quite often the target for where you're going to run these
 Python workloads is a container-based one; but even then, having native Python environments on your native OS platform
@@ -78,8 +79,8 @@ via Homebrew is a little too far ahead for your tastes, or if dependent tools ar
 a newer version.
 
 With that all said, here's how you directly install a version of Python via Homebrew, noting that this will change the
-global `python3` that is on your path away from the built-in system Python that ships with macOS -- again, _YOU DON'T
-HAVE TO DO THIS_, this is just for illustration:
+global `python3` that is on your path away from the built-in system Python that ships with macOS Xcode tools -- again,
+_YOU DON'T HAVE TO DO THIS_, this is just for illustration:
 
 ```bash
 # ***YOU DON'T* HAVE TO DO THIS*** -- you can install the latest version of Python via pyenv later, but there may be a
@@ -197,10 +198,11 @@ To be totally honest, getting Python going on Windows is the weirdest of the bun
 to consider using Windows Subsystem for Linux (in which case, follow the steps above for your desired Linux distribution
 in WSL); but in any case, the steps are below if you choose to pursue creating Python virtual environments on Windows.
 
-First of all, install [Chocolatey](https://chocolatey.org/install) if you haven't already. (Sorry WinGet fans, I couldn't find
-the desired packages with that tool...)
+First of all, install [Chocolatey](https://chocolatey.org/install) if you haven't already. (Sorry WinGet fans, I
+couldn't find the desired packages with that tool...)
 
-Then install [pyenv-win](https://github.com/pyenv-win/pyenv-win) (with the caveat that you need to run this step as Administrator):
+Then install [pyenv-win](https://github.com/pyenv-win/pyenv-win) (with the caveat that you need to run this step as
+Administrator):
 
 ```powershell
 # Install pyenv-win, need to run this as administrator
@@ -297,4 +299,5 @@ In the future I may update this blog post with more content on how to get this a
 aforementioned repo does have really good documentation and steps to get this going.
 
 On top of WSL as an option on Windows, this is also a very good option to use, in lieu of the quirks of using
-`pyenv-win` and `pyenv-win-venv` on Windows.
+`pyenv-win` and `pyenv-win-venv` on Windows, and not only that, this approach works on every OS platform out there,
+assuming you use Visual Studio Code as your IDE.
