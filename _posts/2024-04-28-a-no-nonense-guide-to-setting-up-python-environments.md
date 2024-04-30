@@ -220,7 +220,7 @@ Also note that you may need to create a PowerShell profile file if it doesn't ex
 opening a terminal in a given directory (which, there are huge caveats with auto-activation on Windows, see the code
 steps further below). Also note that if you're using the built-in Windows PowerShell, if you want this to work in the
 newer PowerShell versions you'll need to update the profile for that shell as well (or vice versa, if you do this in
-newer PowerShell you may need to update your profile in old PowerShell, too.)
+newer PowerShell you may need to update your profile in old Windows PowerShell, too.)
 
 ```powershell
 # Set the execution policy to Bypass if needed -- run this as administrator
