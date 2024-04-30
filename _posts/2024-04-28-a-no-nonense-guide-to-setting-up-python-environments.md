@@ -298,6 +298,6 @@ In the future I may update this blog post with more content on how to get this a
 [README.md](https://github.com/microsoft/vscode-dev-containers/blob/main/containers/python-3/README.md) from the
 aforementioned repo does have really good documentation and steps to get this going.
 
-On top of WSL as an option on Windows, this is also a very good option to use, in lieu of the quirks of using
-`pyenv-win` and `pyenv-win-venv` on Windows, and not only that, this approach works on every OS platform out there,
-assuming you use Visual Studio Code as your IDE.
+On top of WSL as an option on Windows, this Visual Studio Code Dev Container approach is also a very good option to use,
+in lieu of the quirks of using `pyenv-win` and `pyenv-win-venv` on Windows; and not only that, this approach also works
+on every OS platform out there, assuming you use Visual Studio Code as your IDE.
