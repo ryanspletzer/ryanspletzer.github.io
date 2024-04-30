@@ -1,12 +1,12 @@
 ---
 layout: post
 title: A No-Nonsense Guide to Setting Up Python Environments
-date: 2024-03-20 00:00:00
+date: 2024-04-29 00:00:00
 description: >
   Python has become the lingua franca for developing various AI/ML solutions (and more), but getting started with
   setting up a proper Python environment can be tricky and involve several hours of research or asking colleagues how
   they go about it, and many "getting started with Python" guides tend to gloss over these aspects, which is why I hope
-  in this post to give a quick no-nonsense, guide to setting up Python environments.
+  in this post to give a no-nonsense, guide to setting up Python environments.
 
 tags:
  - python
