@@ -26,8 +26,7 @@ and Identity and Access Management. Since then our team has grown in scope to in
 automation use cases and work on FedRAMP compliance initiatives as well as involvement in Autodesk's internal delivery
 platforms and open-source initiatives.
 
-As we speak I am currently getting deep on data and working on AI solutions as part of Autodesk's Enterprise AI
-Productivity team.
+As we speak I am currently getting deep on data and working on AI solutions as part of Autodesk's Enterprise AI team.
 
 ## Things I Think About
 
