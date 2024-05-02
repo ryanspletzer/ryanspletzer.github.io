@@ -62,7 +62,7 @@ Tools, which is relevant in that installing Xcode Command Line Tools also instal
 this writing. (Apple notably stopped bundling Python 3 with the base operating system in favor of this approach.)
 
 You more than likely want to be able to try newer versions than that which comes with the Xcode tools -- for example,
-the version on my machine is 3.9.6, but the latest version available is 3.12.3.
+the version on my machine that came with XCode tools is 3.9.6, but the latest version available is 3.12.3.
 
 One way to get a new version of Python is to install it via Homebrew directly, but *you do not have to do it this
 way* -- instead you can install it via `pyenv` explicitly.
@@ -220,7 +220,7 @@ Also note that you may need to create a PowerShell profile file if it doesn't ex
 opening a terminal in a given directory (which, there are huge caveats with auto-activation on Windows, see the code
 steps further below). Also note that if you're using the built-in Windows PowerShell, if you want this to work in the
 newer PowerShell versions you'll need to update the profile for that shell as well (or vice versa, if you do this in
-newer PowerShell you may need to update your profile in old Windows PowerShell, too.)
+newer PowerShell you may need to update your profile in old Windows PowerShell, too).
 
 ```powershell
 # Set the execution policy to Bypass if needed -- run this as administrator
