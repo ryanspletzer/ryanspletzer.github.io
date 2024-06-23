@@ -278,6 +278,11 @@ read them:
   data management and more. I highly recommend this read for those looking to get into the field, which is a very
   important one as an upstream facilitator for AI/ML initiatives.
 
+* [The Engineering Executive's Primer: Impactful Technical Leadership](
+  https://www.oreilly.com/library/view/the-engineering-executives/9781098149475/) - This is another wonderful book from
+  Will Larson that is a natural follow-up to his previous books Staff Engineer and Elegant Puzzle, which covers many
+  practical approaches and sets of guidance for operating as an engineering executive.
+
 ## Other
 
 These are books of any other category that don't fit above.
