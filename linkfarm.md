@@ -283,6 +283,10 @@ read them:
   Will Larson that is a natural follow-up to his previous books Staff Engineer and Elegant Puzzle, which covers many
   practical approaches and sets of guidance for operating as an engineering executive.
 
+* [Data Mesh: Delivering Data-Driven Value at Scale](https://www.amazon.com/gp/product/1492092398) - I really
+  appreciated this book that walks through the principles and approaches to Data Mesh from the person who coined the
+  concept itself. It goes much deeper than online sources and I appreciated the insights and real world tips throughout.
+
 ## Other
 
 These are books of any other category that don't fit above.
