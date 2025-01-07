@@ -16,18 +16,22 @@ I received a bachelor's degree in Supply Chain Management along with minors in C
 Technology from Michigan State University in 2012, and I will be forever kicking myself and living with imposter
 syndrome for having not gotten a full degree in Computer Science.
 
-I was a software engineer at Dow Chemical from 2012 to 2014 in Information Systems working on SharePoint development
+I was a software engineer at Dow Chemical from 2012 to 2014 in Information Systems working on SharePoint development,
 and from 2014 to 2018 in R&D working on applications for research and running our source control and CI/CD environments
 (Git with TFS / Azure DevOps) and managing our cloud Azure environment, amongst other things. This is where I learned to
 love PowerShell.
 
 In 2018 I joined Autodesk as a software engineer on the newly formed Directory Services team to automate infrastructure
-in AWS and Azure and create automation and self-service for employees around all things Active Directory and Azure AD
-and Identity and Access Management. Since then our team has grown in scope to include Collaboration and Network
-automation use cases and work on FedRAMP compliance initiatives as well as involvement in Autodesk's internal delivery
-platforms and open-source initiatives.
+in AWS and Azure and create automation and self-service for employees around all things Active Directory and Entra ID
+(the artist formerly known as "Azure AD") and Identity and Access Management. Our team grew in scope and was renamed to
+Productivity & Network Automation, and in addition to Identity automation we took on Collaboration and Network
+automation use cases and work on FedRAMP compliance initiatives, and I proceeded to get more involved in Autodesk's
+internal delivery platforms and open-source initiatives.
 
-As we speak I am currently getting deep on data and working on AI solutions as part of Autodesk's Enterprise AI team.
+Our team name changed one more time in 2023 to Enterprise AI after we built an internal version of ChatGPT for the
+company backed by Azure OpenAI, and we pivoted our focus over to AI initiatives for the enterprise. As we speak I am
+currently getting deep on data and AI solutions and participating in broader company-wide platform initiatives for
+Autodesk.
 
 ## Things I Think About
 
