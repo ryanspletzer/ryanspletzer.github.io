@@ -319,3 +319,8 @@ These are books of any other category that don't fit above.
   https://www.amazon.com/Surrounded-Idiots-Behavior-Effectively-Communicate/dp/1250179947) - Learning about different
   behavior profiles (red, yellow, green, blue) and how to adapt to them is a very interesting and useful concept that I
   find myself using in day-to-day life now.
+
+* [Outlive: The Science and Art of Longevity](https://peterattiamd.com/outlive/) - Nearing 35 I realized I needed to
+  take certain aspects of health more seriously, and Dr. Peter Attia's book helped to frame how I should be looking at
+  preventative measures for insulin-related issues, diseases like atherosclerosis, cancer and various dementias, and how
+  to take steps with exercise, nutrition and sleep to increase healthspan.
