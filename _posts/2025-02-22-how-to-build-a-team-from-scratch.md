@@ -15,10 +15,11 @@ I often see avoidable missteps when people try to build a brand-new engineering 
 are a few rules of thumb that can help. I work in the software engineering field, so I approach this mostly from that
 perspective; however, this advice likely applies to other professional domains as well.
 
-Opportunities to start a brand-new team from scratch can be exceedingly rare. More often, a manager inherits an existing
-team or joins a new company where the team is already established. (As an aside: I believe breaking up well-functioning,
-"jelled" teams should be a last resort —- unless the team's success and growth require splitting it to accommodate
-another manager for ideal team sizes. More on that below.)
+Opportunities to start a brand-new team from scratch can be rare. More often, a manager inherits an existing team
+through various means like joining a new company where the team is already established, or perhaps even experiences a
+reorg where folks from multiple teams are split off and merged together. (As an aside: I believe breaking up
+well-functioning, "jelled" teams should be a last resort —- unless the team's success and growth require splitting it to
+accommodate another manager for ideal team sizes. More on that below.)
 
 However, if you do have the golden opportunity to build a team from the ground up, this advice is for you.
 
