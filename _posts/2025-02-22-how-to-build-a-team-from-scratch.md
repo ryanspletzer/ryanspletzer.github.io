@@ -111,7 +111,7 @@ being overwhelmed if those contractors leave.
 ## Wrap-Up
 
 These rules of thumb are just that: guidelines I have postulated over the course of my career in different industries and
-team sizes. I have personally been a member of a teams as small as a size of one, and larger than fifteen. There is no
+team sizes. I have personally been a member of teams as small as a size of one, and larger than fifteen. There is no
 "one-size-fits-all" approach to building a team, but I believe that if you:
 
 * Aim to make your first hire a senior engineer,
