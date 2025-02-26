@@ -19,7 +19,7 @@ Opportunities to start a brand-new team from scratch can be rare. More often, a 
 through various means like joining a new company where the team is already established, or perhaps even experiences a
 reorg where folks from multiple teams are split off and merged together, or is handed a set of team members through some
 other set of circumstances that are outside of their control. (As an aside: I believe as a management practice that
-breaking up well-functioning, "jelled" teams should be a last resort —- unless the team's success and growth require
+breaking up well-functioning, "jelled" teams should be a last resort -- unless the team's success and growth require
 splitting it to accommodate another manager for ideal team sizes. More on that below.)
 
 If you do find yourself with the golden opportunity to build a team from the ground up, this advice is for you.
