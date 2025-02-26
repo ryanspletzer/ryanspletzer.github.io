@@ -56,7 +56,7 @@ hiring subsequent team members_. That is why the first hire on your team is so c
 As
 [Satya Nadella](https://nextbigideaclub.com/magazine/conversation-microsofts-ceo-on-the-power-of-being-a-learn-it-all/17851/)
 points out, it is best to seek out hires who are "learn-it-alls," instead of "know-it-alls." Avoid limiting your
-searches to people who have hyper-specific skills with a single framework or tool. If someone is adept at learning, the
+searches to people who have hyper-specific skills with a single framework or tool. If someone is adept at learning, they
 can pick up the tools you actually use.
 
 The reality is that none of us uses the exact same tools and frameworks for years on end (and if you are, then I have a
