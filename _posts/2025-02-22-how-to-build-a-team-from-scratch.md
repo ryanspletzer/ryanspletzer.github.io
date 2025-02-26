@@ -3,17 +3,17 @@ layout: post
 title: How to Build a Team from Scratch
 date: 2025-02-22 00:00:00
 description: >
-  I often see avoidable missteps when people try to build a brand-new engineering team from scratch, and I believe there
-  are a few rules of thumb that can help.
+  I have observed several avoidable missteps when people try to build a brand-new engineering team from scratch, and I
+  believe there are a few rules of thumb that can help.
 
 tags:
  - team-building
  - hiring
 ---
 
-I often see avoidable missteps when people try to build a brand-new engineering team from scratch, and I believe there
-are a few rules of thumb that can help. I work in the software engineering field, so I approach this mostly from that
-perspective; however, this advice likely applies to other professional domains as well.
+I have observed several avoidable missteps when people try to build a brand-new engineering team from scratch, and I
+believe there are a few rules of thumb that can help. I work in the software engineering field, so I approach this
+mostly from that perspective; however, this advice likely applies to other professional domains as well.
 
 Opportunities to start a brand-new team from scratch can be rare. More often, a manager inherits an existing team
 through various means like joining a new company where the team is already established, or perhaps even experiences a
