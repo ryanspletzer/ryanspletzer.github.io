@@ -33,8 +33,8 @@ select and hire their first few team members for long-term success.
 I realize as I write this that this is an idealized take on this problem, and that every manager out there is dealing
 with a set of constraints they have to work within, with the biggest one likely being budget. Understand that I am
 sympathetic to those constraints, as I have witnessed them first-hand in hiring processes throughout the years. This
-post serves as a sort of set of recommendations for engineering managers, who should consider adapting this advice their
-own environment.
+post serves as a sort of set of recommendations for engineering managers, who should consider adapting this advice for
+their own environment.
 
 ## Make Your First Hire a Senior Engineer
 
