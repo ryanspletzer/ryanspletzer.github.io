@@ -2,5 +2,5 @@
 ---
 
 // Imports
-@import "bootstrap.min";
-@import "theme";
+@use "bootstrap.min" as *;
+@use "theme" as *;
