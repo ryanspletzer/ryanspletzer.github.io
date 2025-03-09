@@ -287,6 +287,19 @@ read them:
   appreciated this book that walks through the principles and approaches to Data Mesh from the person who coined the
   concept itself. It goes much deeper than online sources and I appreciated the insights and real world tips throughout.
 
+* [Solving the Bottom Turtle — a SPIFFE Way to Establish Trust in Your Infrastructure via Universal Identity](
+  https://spiffe.io/pdf/Solving-the-bottom-turtle-SPIFFE-SPIRE-Book.pdf) - For several years during my career focusing
+  on Identity, I from time to time had to field questions about automated password / credential rotation. I ran into the
+  same realities as the authors of the SPIFFE standard and SPIRE implementation, in that the only way to accomplish
+  automated credential rotation with traditional means was to introduce yet _another_ credential to rotate the initial
+  credential (or perhaps several initial credentials), and then you have to worry about protecting that credential which
+  effectively "owns" those other credential(s), and worry about rotating that credential, too. It becomes "turtles all
+  the way down." This is why SPIFFE and its implementation SPIRE resonate very strongly with me. Efforts at several
+  large tech companies led to the development of a common standard that uses attestations about the hosting environment
+  to derive workload identity and further, enable cryptographic authentication based purely on that identity without the
+  need of managing static credentials, which finally solves for the "bottom turtle" credential and opens up new, better
+  possibilities for managing service identity at scale.
+
 ## Other
 
 These are books of any other category that don't fit above.
