@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Zero to Trusted: SPIFFE and SPIRE, Demystified'
-date: 2025-03-24 00:00:00
+date: 2025-03-25 00:00:00
 description: >
   I vividly remember one of the first tasks my engineering manager handed me: figure out how to automate rotating the
   client_secret for an App Registration in Entra ID (the product formerly known as Azure AD).
