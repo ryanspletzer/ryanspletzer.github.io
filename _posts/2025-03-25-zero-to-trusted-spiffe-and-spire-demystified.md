@@ -235,7 +235,7 @@ this.
 
 This process above is how the process works for _workload_ attestation, but at this point you may be asking: "How does
 the SPIRE server trust the SPIRE agent in the first place?" This happens prior to workload attestation, through a
-process called "node attestation,"" and we'll cover how this works in a couple of common scenarios, on EC2 and on
+process called "node attestation," and we'll cover how this works in a couple of common scenarios, on EC2 and on
 Kubernetes.
 
 ### SPIRE Agent Node Attestation on EC2
