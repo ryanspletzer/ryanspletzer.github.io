@@ -193,8 +193,8 @@ Under the hood, SPIRE can:
 
 Attestation essentially means, "Prove you're really running where you say you're running." For example, on AWS, SPIRE
 can verify a workload by checking the digitally signed metadata document from AWS that confirms your EC2 virtual machine
-is indeed in a valid AWS environment. Similarly it can key off of other metadata in Kubernetes based environments to
-attest identity, and as mentioned above with some additional effort it can even be done in serverless scenarios. This
+is indeed in a valid AWS environment. Similarly it can key off of other metadata in Kubernetes-based environments to
+attest identity; and as mentioned above, with some additional effort, it can even be done in serverless scenarios. This
 check is automated and short-lived, meaning we trust the environment itself to confirm identity rather than a human
 copying secrets around, and we re-attest this at desired enough frequencies to ensure that the attestations are "fresh,"
 as are the issued SVIDs that follow.
@@ -203,9 +203,9 @@ The upshot of all this is that instead of injecting a user-managed secret, each 
 verifiable identity tied directly to the environment it runs in. It's effectively removing the manual secret from the
 equation and replacing it with an automatic, environment-based trust anchor.
 
-Imagine you deploy a microservice in Kubernetes. When it starts, the SPIRE Agent inside that node verifies the Pod's
-identity (using something like the Kubernetes Service Account token or Pod labels). The agent says: "Yes, this is the
-real `Service A` Pod in the `production` namespace," and it issues a short-lived SVID certificate with the SPIFFE ID
+Imagine you deploy a microservice in Kubernetes. When it starts, the SPIRE agent inside that node verifies the pod's
+identity (using something like the Kubernetes Service Account token or pod labels). The agent says: "Yes, this is the
+real `Service A` pod in the `production` namespace," and it issues a short-lived SVID certificate with the SPIFFE ID
 `spiffe://mycompany.com/prod/serviceA`. Now `Service A` can make an mTLS connection to `Service B`. `Service B` sees the
 `spiffe://mycompany.com/prod/serviceA` identity in the certificate and decides whether to trust it based on policies
 you've set. _No manual secrets required_.
@@ -215,9 +215,9 @@ Let's walk through that step-by-step with a concrete example:
 1. **Deploy**: You push your container image to your Kubernetes cluster. (This could happen many different ways, but for
    sake of illustration, let's say it's a typical Kubernetes
    [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).)
-2. **Attestation**: The SPIRE Agent on that node check a pod's Kubernetes labels, service account token, or node
+2. **Attestation**: The SPIRE agent on that node checks a pod's Kubernetes labels, service account token, or node
    identity to confirm your service really is "Service A."*
-3. **SVID Issuance**: The SPIRE Agent requests a short-lived certificate from the SPIRE Server on your service's behalf.
+3. **SVID Issuance**: The SPIRE agent requests a short-lived certificate from the SPIRE Server on your service's behalf.
    This SVID in effect is your "workload identity."
 4. **mTLS**: "Service A" initiates a mutually authenticated TLS connection to "Service B," presenting the SVID as proof
    of identity. "Service B" verifies the certificate is valid and from a trusted SPIFFE domain.
@@ -240,18 +240,18 @@ Kubernetes.
 
 ### SPIRE Agent Node Attestation on EC2
 
-When you run a SPIRE Agent on an EC2 instance, it uses AWS-specific signals to verify that the instance is real and
+When you run a SPIRE agent on an EC2 instance, it uses AWS-specific signals to verify that the instance is real and
 belongs to your AWS account. Typically, SPIRE reads a digitally signed instance identity document from the EC2 metadata
 service -- along with temporary AWS credentials or a signature unique to that instance -- to prove to the SPIRE Server
-that "Yes, this Agent really is running on an authentic EC2 instance in our AWS account." Once verified, the Agent is
+that "Yes, this agent really is running on an authentic EC2 instance in our AWS account." Once verified, the agent is
 allowed to issue valid SVIDs to workloads on that host.
 
 ### SPIRE Agent Node Attestation on Kubernetes
 
-In a Kubernetes environment, the SPIRE Agent checks one or more Kubernetes tokens or node properties to ensure it's
-running on a trusted node within a legitimate cluster. For example, the Agent might validate the node's API server
-certificate or use the Kubernetes service account token assigned to the SPIRE Agent's Pod. This cryptographic token
-tells the SPIRE Server, "I'm a recognized Kubernetes node within this cluster," and once that's confirmed, the Agent can
+In a Kubernetes environment, the SPIRE agent checks one or more Kubernetes tokens or node properties to ensure it's
+running on a trusted node within a legitimate cluster. For example, the agent might validate the node's API server
+certificate or use the Kubernetes service account token assigned to the SPIRE agent's pod. This cryptographic token
+tells the SPIRE Server, "I'm a recognized Kubernetes node within this cluster," and once that's confirmed, the agent can
 issue SVIDs to the containers for the pods on that node.
 
 ## Anchor Trust (and Authentication) in the Environment
@@ -278,9 +278,12 @@ Once you have cryptographically provable identities for your workloads, you can 
 * Which cross-environment calls are allowed?
 * What exactly does "production" mean in terms of trust?
 
-Humans still need to define the rules and specify exactly which services trust each other, but the underlying
-credentials and authentication are handled automatically, so you're not messing around with manual secrets or multi-step
-rotations.
+Humans still need to define the rules and specify exactly which services are authorized to each other, and that may
+involve your own logic in your services to determine authorization (which is _slightly_ outside the scope of
+SPIFFE/SPIRE, and it will vary based on your scenario, but there are well-known projects like
+[Open Policy Agent](https://www.openpolicyagent.org/) to take a look at for sophisticated approaches to authorization);
+however, the underlying credentials and authentication are handled automatically, so you're not messing around with
+manual secrets or multi-step rotations.
 
 ## SPIFFE is Spiffy
 
@@ -294,8 +297,8 @@ As the reference implementation, SPIRE does the heavy lifting of making SPIFFE a
 
 * It boots up agents (node agents) that run on each machine/VM/node.
 * Those agents validate workloads (workload attestation).
-* They issue SVIDs with short lifetimes so that every service request or mTLS handshake gets a fresh, automatically
-  rotated credential.
+* They issue SVIDs with short lifetimes so that every service request or mTLS handshake uses a a very fresh,
+  automatically rotated credential.
 
 In short, SPIRE weaves a dynamic web of trust across your environment.
 
