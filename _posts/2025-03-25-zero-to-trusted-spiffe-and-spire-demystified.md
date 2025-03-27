@@ -42,7 +42,7 @@ microservices, zero-trust principles (such as short-lived certificates and envir
 increasingly critical for reducing the blast radius of breaches and eliminating the risk of long-lived secrets.
 
 Before jumping into the magical solutions that SPIFFE and its implementation SPIRE provide on this front, let's first
-talk about the actual problems involved with the logistics involved with a secret string that a person is entrusted with
+talk about the actual problems and logistics involved with a secret string that a person is entrusted with
 handling and putting into service in an environment.
 
 I need to apologize because the following descriptions are deliberately going to be painful and will describe the web
