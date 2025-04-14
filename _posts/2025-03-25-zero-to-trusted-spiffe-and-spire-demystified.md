@@ -130,10 +130,10 @@ pitfalls of distributing and rotating secrets manually. The SPIFFE standard defi
 2. How to issue and validate these identities in a cryptographically verifiable way without needing to inject long-lived
    secret strings.
 
-The concept originated from folks at Netflix, Meta, and other high-scale tech companies who learned firsthand that
-manually distributing secrets doesn't scale or remain secure in a dynamic microservices world. They took inspiration
-from their various homegrown solutions to this problem and distilled it up into a standard that is generalized and open
-that technologists at other companies could adopt.
+The concept originated from folks at high-scale tech companies like Scytale (now owned by Hewlett Packard Enterprise),
+Netflix, Google, Pinterest, and Amazon, who learned firsthand that manually distributing secrets doesn't scale or remain
+secure in a dynamic microservices world. They took inspiration from their various homegrown solutions to this problem
+and distilled it up into a standard that is generalized and open that technologists at other companies could adopt.
 
 Instead of trusting humans and portals to move secrets around, SPIFFE relies on:
 
