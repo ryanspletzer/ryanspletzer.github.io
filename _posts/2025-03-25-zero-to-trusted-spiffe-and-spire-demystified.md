@@ -120,8 +120,8 @@ credentials. SPIFFE tackles a complementary problem: it removes certain secrets 
 certificates. In some cases, you'll still have secrets for legacy apps, but now you can centralize or reduce them over
 time as more services adopt SPIFFE-based identities.
 
-SPIFFE is an open standard for secure service identity, meant to free us from many of the pitfalls of distributing and
-rotating secrets manually. The SPIFFE standard defines:
+SPIFFE is an open standard that is part of the CNCF for secure service identity, meant to free us from many of the
+pitfalls of distributing and rotating secrets manually. The SPIFFE standard defines:
 
 1. How to identify workloads (anything running in your environment, across cloud providers or data centers, from a
    container to a VM, or -- with some elbow grease -- even potentially
@@ -175,8 +175,8 @@ renews SVIDs under the hood, engineers don't have to schedule or script rotation
 ## So, What Does SPIRE Do?
 
 [SPIRE](https://spiffe.io/docs/latest/spire-about/spire-concepts/) (the SPIFFE Runtime Environment) is an open-source
-implementation of the SPIFFE standards. It handles the bootstrapping and management of workload identities according to
-SPIFFE specifications. It is composed of:
+implementation of the SPIFFE standards, also under the CNCF umbrella. It handles the bootstrapping and management of
+workload identities according to SPIFFE specifications. It is composed of:
 
 * **SPIRE Server**: The "brain" that signs and issues SVIDs.
 * **SPIRE Agents**: Lightweight daemons running alongside your workloads (on VMs, Kubernetes nodes, etc.) that attest
@@ -269,6 +269,18 @@ model shifts responsibility from:
 ... to an *automatic identity issuance* that authenticates workloads based on where and how they run. Your environment,
 plus SPIRE, effectively says: "Yes, this is the real `Service A` on the real cluster `us-east-1-prod`," and it hands out
 a short-lived credential that `Service A` can use to prove its identity to `Service B`.
+
+### Trust Domains and Federation
+
+With SPIFFE/SPIRE, each identity is rooted in a *trust domain* -- often represented as a DNS-like name. For instance,
+`spiffe://prod.mycompany.com` might represent your production workloads. A second domain, `spiffe://dev.mycompany.com,`
+might represent development environments.
+
+By default, workloads in one trust domain do *not* trust workloads from another. This is an important security control,
+because it prevents, for example, a dev environment from presenting valid credentials to prod. If you need cross-domain
+service calls (say, your SaaS platform at `spiffe://saas.com` trusting `spiffe://enterpriseA.local`), you can set up
+*SPIFFE Federation* to explicitly share trust anchors between those two domains. That way, you can keep distinct
+environments separate, while still allowing well-defined interoperability where it's needed.
 
 ## Authorization Still Comes from You
 
