@@ -159,7 +159,8 @@ For the uninitiated, here's a quick terminology guide:
 
 An SVID is just a short-lived X.509 certificate with a SPIFFE ID inside one if its fields -- like
 `spiffe://mycompany.com/prod/serviceA` -- that can be used to establish mutual TLS (mTLS) between workloads. Once its
-lifetime expires (often minutes or hours), the workload automatically fetches a fresh SVID from SPIRE.
+lifetime approaches expiration (often minutes or hours), the SPIRE agent automatically fetches a fresh SVID from SPIRE
+server for the workload to retrieve. (More on that in a moment.)
 
 While certificate-based SVIDs have more advantages, there are also mechanisms to issue JWT-based SVIDs for scenarios
 where certificates are not a good fit. One of the notable downsides to JWT SVIDs is that they cannot be used to
