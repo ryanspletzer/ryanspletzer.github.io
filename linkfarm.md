@@ -300,6 +300,20 @@ read them:
   need of managing static credentials, which finally solves for the "bottom turtle" credential and opens up new, better
   possibilities for managing service identity at scale.
 
+* [Deep Learning - Foundations and Concepts](https://www.bishopbook.com/) - This book is a dense look into the field of
+  Deep Learning and it pulls no punches with regards to the math that is involved behind many of the models we are using
+  today. For those looking to get into the theory behind the models, this book will help lay that foundation.
+
+* [Making Friends with Machine Learning](https://www.youtube.com/playlist?list=PLRKtJ4IpxJpDxl0NTvNYQWKCYzHNuy2xG) -
+  This is a phenomenal set of talks from Cassie Kozyrkov at Google that slightly pre-date the AI boom, but are
+  nonetheless very, very relevant in today's AI/ML world. For someone like me who only got into the AI space recently,
+  this set of videos (recommended by a colleague) really helped to lay the foundation for how to go about the
+  step-by-step methodology of a machine learning project.
+
+* [Neural networks - 1blue3brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) - This is a
+  wonderful series of YouTube videos that depicts visually what is happening inside of today's advanced transformer
+  models.
+
 ## Other
 
 These are books of any other category that don't fit above.
