@@ -64,7 +64,7 @@ consequences can be severe. Early on, we suffered from an embarrassing misconfig
 handled file share permissions. We had indexed content from a network file share, and we expected our search crawler to
 respect the file share's **SMB permissions** so that users only saw results they were allowed to access. Unfortunately, the
 crawler relied solely on **NTFS file system permissions** and ignored the stricter SMB share permissions. The result? For a
-brief window, you could discover documents in search that they couldn't actually open (and shouldn't have even known
+brief window, a user could discover documents in search that they couldn't actually open (and shouldn't have even known
 existed). We thankfully caught and rectified this before search went to broader release for the company, but nonetheless
 it was a **face-palm moment** which underscored how **unforgiving the security aspect of search can be**.
 
