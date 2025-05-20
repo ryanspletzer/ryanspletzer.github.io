@@ -80,7 +80,7 @@ etc. – and constant vigilance. Our takeaway was sobering: you can spend months
 only to have a minor security oversight erode all trust in the search tool. We learned to treat security as a
 first-class requirement in every search project, double-checking configurations and involving our security team early
 and often. Nothing about the security profile of enterprise search in any way compared to a broad web search like Google
-where all the web content was inherently public and accessible (with some exceptions - you may need a subscription for
+where all the web content was inherently public and accessible (with some exceptions – you may need a subscription for
 getting to New York Times, for example).
 
 ## One Size Doesn't Fit All: Tailoring Search to Diverse Needs
@@ -95,7 +95,7 @@ they cared about. We quickly realized that if we tried to funnel all users throu
 page, many would end up frustrated with irrelevant results or too much noise. The solution was to **create custom search
 experiences** tailored to major user segments, that targeted subsets of content sources and provided relevant search
 facets (aka filters) based on metadata that was catered to those use cases. (Interestingly these same lessons tend to
-apply well for scoped RAG agents, too - but that's a discussion for another blog post.)
+apply well for scoped RAG agents, too – but that's a discussion for another blog post.)
 
 Using SharePoint's capabilities, we built out multiple **search verticals** – essentially, separate search result pages
 or views, each tuned for a specific context. For example, we made a "formulation search" page for researchers that
@@ -142,8 +142,8 @@ retrieve a mess.
 
 In the past, many companies also invested in **taxonomy design** – controlled vocabularies and category structures for
 their content. That practice, too, has faded in some places, but its importance is returning as we grapple with
-ever-growing information, and especially as we try to inform AI about our content (and in an interesting turn of events,
-LLMs may actually be able to help us apply these labels retroactively). A good taxonomy (with a governance process to
+ever-growing information, and especially as we try to inform AI about our content. (And in an interesting turn of events,
+LLMs may actually be able to help us apply these labels retroactively.) A good taxonomy (with a governance process to
 maintain it) helps ensure that, for instance, all documents about "HR Policies" are actually labeled consistently, or that a
 search for "CEO" also finds pages tagged "Executive Management." **Tagging and classification** might sound
 old-fashioned, but it significantly improves findability. In fact, content management experts note that
@@ -154,14 +154,14 @@ populate it with key business terms and synonyms, as that effectively would have
 our company's lingo, as well as provided a means for content creators in the company to tag and classify content in-line
 with available terms from the term store.
 
-The broader point is that **the need curation hasn't truly gone away** – it's just taken on new forms. Even if we don't
-have full-time "search librarians" on staff, the work still needs to be done by someone. In our case it was an ad-hoc
-mix of IT, content owners, and enthusiastic volunteers who cared about findability. Together we played the role of the
-old information architects: pruning ROT (redundant, outdated, trivial content), organizing content repositories, and
-creating contextual **search scopes** that guided users. These efforts underscore an enduring truth: _you can't have
+The broader point is that **the need for curation hasn't truly gone away** – it's just taken on new forms. Even if we
+don't have full-time "search librarians" on staff, the work still needs to be done by someone. In our case it was an
+ad-hoc mix of IT, content owners, and enthusiastic volunteers who cared about findability. Together we played the role
+of the old information architects: pruning ROT (redundant, outdated, trivial content), organizing content repositories,
+and creating contextual **search scopes** that guided users. These efforts underscore an enduring truth: _you can't have
 great search without investing in your information architecture_. Technology can assist, but **it will never replace the
 need to curate, organize, and maintain your knowledge base**. This need to curate can even extend to addressing
-over-sharing in the enterprise, per our discussion above - even if the content produced is not sensitive, over-sharing
+over-sharing in the enterprise, per our discussion above – even if the content produced is not sensitive, over-sharing
 can inevitably introduce irrelevant content into the index, and things like term stores can help raise the bar of what
 is needed for high quality content to be boosted in search results.
 
@@ -176,7 +176,7 @@ using some of these AI-driven tools now, backed by search, and guess what we fou
 force.
 
 RAG is essentially a two-step dance: first _retrieve_ relevant content from your corpus (which typically has been
-chunked and vectorized with embeddings into some type of vector search database for semantic retrieval - the details of
+chunked and vectorized with embeddings into some type of vector search database for semantic retrieval – the details of
 which I won't delve into here), then generate an answer using that content. That first step is just enterprise search by
 another name – which means if your **content is disorganized or low-quality**, the AI will retrieve garbage and then
 eloquently tell you something based on garbage. We've seen an AI system confidently answer a query with outdated policy
