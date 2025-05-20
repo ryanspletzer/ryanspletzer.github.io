@@ -1,11 +1,9 @@
 ---
 layout: post
 title: Enterprise Search and the Myth of the Silver Bullet
-date: 2025-04-23 00:00:00
+date: 2025-05-19 00:00:00
 description: >
-  "We'll just drop an **agent** in Slack and call it ChatOps." Five minutes later someone else chimed in about wiring
-  up a "chatbot assistant." By the time the meeting ended, every noun in the English language had apparently become
-  sentient. Fast-forward to today and the vocabulary hasn't gotten any clearer—only louder.
+  Enterprise Search has always been a hard problem – one that lacks any "silver bullet" solution.
 tags:
  - enterprise-search
  - ai
