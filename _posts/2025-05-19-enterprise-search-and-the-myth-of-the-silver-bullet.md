@@ -199,7 +199,7 @@ becomes immediately obvious when an AI spews out a flawed answer. The bottom lin
 enterprise search still apply, even as technology evolves**. Whether a user is reading a search results page or a
 chatbot's answer, the behind-the-scenes work to make that answer useful is largely the same. This is also why RAG
 solutions that focus on a small scope of high quality information tend to perform very well! But if you broaden that to
-the entire corpus of your company, the water gets muddier, and so to the results of RAG.
+the entire corpus of your company, the water gets muddier, and so do the results of RAG.
 
 ## Conclusion: No Silver Bullet, Just Hard-Won Excellence
 
