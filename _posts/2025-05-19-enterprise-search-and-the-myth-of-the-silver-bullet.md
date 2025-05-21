@@ -162,8 +162,8 @@ and creating contextual **search scopes** that guided users. These efforts under
 great search without investing in your information architecture_. Technology can assist, but **it will never replace the
 need to curate, organize, and maintain your knowledge base**. This need to curate can even extend to addressing
 over-sharing in the enterprise, per our discussion above – even if the content produced is not sensitive, over-sharing
-can inevitably introduce irrelevant content into the index, and things like term stores can help raise the bar of what
-is needed for high quality content to be boosted in search results.
+can inevitably introduce irrelevant content into the index for more people to see, and things like term stores can help
+raise the bar of what is needed for high quality content to be boosted in search results.
 
 ## New Tech, Same Lessons: AI and RAG Won't Eliminate the Basics
 
@@ -206,7 +206,7 @@ the entire corpus of your company, the water gets muddier, and so do the results
 Reflecting on this journey – from GSA to FAST to modern AI-driven search – the clear takeaway is that **enterprise
 search is a marathon, not a sprint**. There will always be new tools and clever algorithms, but none of them absolve us
 from understanding our content and our users. There is **no one-size-fits-all fix**, no single purchase or upgrade that
-will suddenly make all information findable (no, not even [Glean](https://www.glean.com/)). The organizations that
+will suddenly make all information findable. (No, not even [Glean](https://www.glean.com/).) The organizations that
 succeed in enterprise search are the ones that **treat it as an ongoing discipline**: part technology, part content
 strategy, part user education. In my experience, success has come from a blend of **the right technology choices,
 diligent content curation, careful security and governance, and continuous tuning based on user feedback**. When all those
