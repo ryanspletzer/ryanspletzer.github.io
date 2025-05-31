@@ -320,3 +320,16 @@ Your future self—and your security team—will thank you.
 
 Ultimately, context is everything — not just in prompts, but in the infrastructure that serves them. Let's make our MCP
 tools as context-aware as the models they power.
+
+## Bonus: A2A and ACP Protocols
+
+Hot on the heels of MCP are the new
+[A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) and
+[ACP](https://agentcommunicationprotocol.dev/introduction/welcome) protocols which can be used to complement MCP, and
+while I won't delve into the details of those in this blog post, I'll just note that both require similar authentication
+and authorization considerations to be enterprise-grade and production-worthy, and I may delve more into specifics
+around those in a future blog post—I wrote this post mostly to address a lot of FUD (Fear, Uncertainty, and Doubt)
+around how MCP servers and their Authn/AuthZ (or lack thereof), and should the need arise I can take a similar stab at
+addressing A2A and ACP. The world of AI is moving fast, and on the one hand it is great that we are getting open
+standards and specs so quickly, but on the other hand it will take a little time for them to become fully "fleshed out"
+with enterprise-grade patterns and practices!
