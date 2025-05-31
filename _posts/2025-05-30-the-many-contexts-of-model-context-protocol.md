@@ -1,0 +1,322 @@
+---
+layout: post
+title: The Many Contexts of Model Context Protocol
+date: 2025-05-30 00:00:00
+description: >
+  Or: why "where" your MCP server runs matters just as much as "what" it does.
+tags:
+ - ai
+ - model-context-protocol
+---
+
+Or: why "where" your MCP server runs matters just as much as "what" it does.
+
+**TL;DR** Running an MCP Server on `localhost` is a night-and-day difference compared to running one remotely.
+
+**Local** == single user, implicit trust, almost zero auth to the server.
+
+**Remote** == multi-user, explicit trust, real authentication to the server, security trimming, token exchange, and all
+the headaches (and rewards) that come with it.
+
+![A digital illustration titled "The Many Contexts of Model Context Protocol" shows a central AI model icon connected by
+lines to four surrounding icons: a desktop computer (local context), a cloud server (remote/server context), an office
+building (enterprise or multi-tenant context), and a person (user context). Each icon is enclosed in a circle with
+colorful backgrounds, symbolizing different deployment and usage contexts of MCP servers.](
+  /assets/images/the-many-contexts-of-model-context-protocol.png)
+
+## 1. Introduction – Context in Two Senses
+
+When people hear _Model Context Protocol (MCP)_, they usually think about the data context an LLM needs—documents,
+code, tickets, whatever.
+
+Less obvious, but just as important, is the _deployment_ context in which the MCP server itself lives.
+
+* **Local sandbox**: One dev, one laptop, one loopback interface.
+* **Remote service**: Many users, many clients, many downstream systems, and a permanent address on the public internet
+  (or barring that, at least on your private network).
+
+Those two worlds demand radically different security and architecture choices.
+
+MCP has only existed as a "thing" since late 2024, and has only really got popular (and only got serious with auth
+specs) as of the last couple of months, and the mere ~6 or so months of its existence is part of the reason why the
+state of affairs with respect to running these in advanced remote scenarios is relatively immature. (Yes, I said it --
+for those on the agentic hype trains, don't @ me.)
+
+## 2. Local MCP – The Joy of Single-User Simplicity
+
+I am going to pick on the [GitHub MCP Server](https://github.com/github/github-mcp-server) as an example, because
+despite it being relatively popular, with GitHub being one of the first things developers would likely want to connect
+to with agentic tools, it is imbued with all the naïveté I've observed in the MCP servers that I've reviewed thus far,
+making it effectively a non-starter for sophisticated enterprises who would wish to run it remotely (unless you applied
+some serious elbow grease -- more on that later).
+
+Running the GitHub MCP Server locally could like the following:
+
+```bash
+# Provide your GitHub (preferably Fine-Grained) Personal Access Token
+read -rsp "GitHub PAT: " GITHUB_PERSONAL_ACCESS_TOKEN
+
+# Run the GitHub MCP Server
+docker run --rm -i \
+  -e GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_PERSONAL_ACCESS_TOKEN \
+  ghcr.io/github/github-mcp-server:latest
+```
+
+![GitHub MCP Server stdio screenshot](/assets/images/github-mcp-server-stdio.png)
+
+You'll notice that last message: `GitHub MCP Server running on stdio`
+
+`stdio` stands for "Standard Input/Output" and represents an inter-process communication approach to providing an MCP
+Server to a local MCP client like Visual Studio Code.
+
+`stdio` only is feasible for local scenarios, so that leads us to the next logical question: how would we make the
+GitHub MCP server available over HTTP / SSE (Server-Sent Events) transport, or the even _more_ modern
+[Streamable HTTP](https://github.com/github/github-mcp-server/issues/2) transport (which literally was conjured up
+alongside the MCP specs in teh last few months)?
+
+The answer to this question illustrates a key point: The GitHub MCP Server
+_[doesn't support this](https://github.com/github/github-mcp-server/issues/2)_. (Yet.)
+
+Many of the MCP servers that have been created over the last few months _didn't take into account remote scenarios_, as
+they were coded and designed purely with these local clients in mind.
+
+So let's turn our attention to an MCP Server that _does_ have HTTP+SSE transport from
+[Semgrep](https://github.com/semgrep/mcp):
+
+```bash
+# There are multiple ways to run this, but to stay consistent we'll run it with docker:
+docker run -i --rm ghcr.io/semgrep/mcp -t sse
+```
+
+![Semgrep MCP Server sse screenshot](/assets/images/semgrep-mcp-server-sse.png)
+
+The examples above just show how to _run_ the servers, but in reality when consuming via something like Visual Studio
+Code, you would wire things up in something like `.vscode/mcp.json` so your IDE is aware of how to start it up when you
+open a project.
+
+### 2.1. Why No Auth Feels Okay
+
+You may see this as a developer and think "I don't get it, this seems totally fine so far" -- and you may actually be
+correct. See, running things locally has certain aspects to it:
+
+* **Physical access is implicit authentication.**
+
+  If you can hit `localhost`, you're already inside the blast radius (your laptop).
+
+* **One tenant = one permission set.**
+
+  There's no question whose the user is in this scenario, it's all just you.
+
+  The server can safely assume "allow everything."
+
+To be honest, this is what developers like: developer ergonomics reign supreme when there is zero OAuth dance, no JWT
+debugging, no credential managers to deal with. It's the fastest path from idea to working prototype. But it is these
+same ease of use tendencies for working on our local machine that can make us blind to the very real issues of trying to
+make these types of MCP servers work in a remote setting.
+
+### 2.2. The Boundaries of "Safe Enough"
+
+The moment you expose that port beyond loopback—say, you port-forward via ngrok so a coworker can demo your
+MCP server—**all bets are off**. Anyone who has the URL owns your MCP, and by that, any permissions you granted to that
+GitHub personal access token. That's fine for a five-minute demo, catastrophic for anything longer.
+
+If all MCP was is a way to wrap external resources (be they your local file system, or remote database or REST API,
+etc.) with your own local MCP servers to provide it to your own local agent tools, then there would be pretty much zero
+issues here, and no need for this blog post—it would just developers doing their thing on their local dev machines—but
+the issue with MCP right now is it is trying to be _more_ than that, and this is where pretty much any off-the-shelf MCP
+server is going to struggle in a remote setting.
+
+## 3. Remote MCP – Welcome to Multi-User Reality
+
+Move the same MCP server to `https://mcp.acme.dev` and everything changes.
+
+### 3.1. Authentication is Now Mandatory
+
+Every request must identify who is calling. The mainstream way is **OAuth 2 / OpenID Connect**:
+
+```text
+POST /query
+Authorization: Bearer eyJhbGciOiJSUzI1N...
+...
+```
+
+This:
+
+* Validates the JWT access_token's signature against your identity provider's (IdP's) `jwks_uri` which provides the
+  public keys and is discoverable via the OpenID Connect metadata endpoint.
+* Rejects expired JWT access_tokens (concretely, ensuring the current date time is not past the  `exp` claim in the token,
+  represented Unix epoch time).
+* Checks that the JWT access_tokens `aud` claim is in fact the string you expect that represents your MCP resource, not
+  an arbitrary API. (The `aud` is often represented as a GUID, or some type of unique identifier for your target
+  resource.)
+* In cases where there is a human user involved, it _should_ the user's `sub` (subject) claim from the JWT access_token,
+  to understand who the user is for filtering for downstream calls (which, no server I've ever see so far does -- the
+  validation typically _stops_ with only the checks above, and doesn't implement further authorization logic, because
+  frankly that gets enterprise-specific and is difficult to assume).
+
+A reverse proxy (→ Envoy, Traefik) _can_ handle this so your app code can assume a verified user context -- but again,
+you may _need that user context_ to make further authorization determinations which most off-the-shelf MCP servers do
+not, and often cannot, make for you.
+
+### 3.2. Authorization & Security Trimming
+
+Authentication (AuthN) only says "Alice is Alice." Authorization (AuthZ) answers "Which docs/repos/items/objects can
+Alice actually read?"
+
+An enterprise MCP ecosystem could often fan out to things like GitHub, Jira, Confluence, Artifactory, Microsoft Graph,
+or a vector DB keyed by user or security group ID's. That means:
+
+* **Row-level filters**: `SELECT … WHERE tenant_id = :aliceTenant`
+* **Search ACLs**: e.g. Elasticsearch or OpenSearch query-time filters
+* **Downstream**: [on-behalf-of (OBO)](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
+  flows; exchange Alice's inbound JWT access_token scoped for the MCP server resource with your IdP for another JWT
+  access_token to access an API that accepts user-scoped tokens from your IdP for purposes of security trimming.
+
+Fail to trim, and your nice AI agent becomes a data-leak vending machine.
+
+### 3.3. Multi-tenant Isolation
+
+Thus far we have approached local and remote scenarios only from the standpoint of a developer who us using local tools
+to connect to local and remote MCP servers.
+
+But MCP servers are not destined just for developer tools—they can and will be used in things like enterprise chatbot
+assistants, where a lot of the same remote lessons apply with regards to user identity and trimming, etc.
+
+But what about when you're running a multi-tenant SaaS product that has agentic capabilities that wish to consume MCP
+Servers?
+
+You are now storing embeddings, indexes, caches, and data for many customers. Everything needs a partition key.
+Consider:
+
+* `$TENANT_ID:$DOC_ID` keys in Redis.
+* Distinct Milvus/Xata collections per tenant.
+* S3 prefix per tenant (`s3://mcp-prod/tenants/$id/`).
+* Database filters based on tenant ID.
+
+When it comes to running products, you are now firmly _out of the realm of off-the-shelf MCP servers_ and now in a place
+where you are creating them from scratch—sure, you can derive some "inspo" from some of the MCP servers out there, but
+what you're creating inherently now has to be catered to your products and SaaS ecosystem.
+
+These considerations even extend to scenarios _beyond_ your core products and into things your customers may be using,
+like Microsoft 365 Copilot, where they may want to connect their own enterprise Copilot chat to MCP Servers that wrap
+various APIs of your products, and you have to provide facilities for users at your customer's enterprise to
+authenticate to provide proper trimming, in much the same way that you authenticate to anyone of a number of Slack apps
+as a user to connect to various tools.
+
+## 4. Consumer Patterns Drive Security Posture
+
+This table gives a brief breakdown of some of the remote authentication patterns for various scenarios.
+
+| Pattern                                           | Who calls MCP?            | Typical Auth Flow                                                                                   |
+|---------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------------------|
+| IDE plugin (VS Code, JetBrains)                   | The developer's desktop   | Often local MCP → no auth. If remote: OAuth device flow with PKCE; store refresh token in keychain. |
+| Web/Mobile app feature ("Summarize this ticket")  | Product backend           | Backend ⇢ MCP: service credential (client cred). User context propagated as JWT or user ID header.  |
+| Pure unattended (nightly batch, scheduled agents) | Job runner / microservice | Service-to-service token only. User context often absent or deferred via signed job token.          |
+
+The security envelope expands as soon as humans _other than the owner_ are involved.
+
+When it comes to local and remote MCP servers in an enterprise setting, the reality is you will wind up forking or
+wrapping off-the-shelf MCP servers to accommodate your authentication/authorization needs.
+
+But when it comes to building SaaS products, it gets a little bit more involved, and warrants some more ideation and
+discussion.
+
+Not much of what is described in this blog post is unique to MCP—you could easily replace "MCP Server" with "Rest
+API" and most of these considerations still apply—it's simply that we are _re-learning these lessons_ in the realm of
+MCP as the spec and implementations and thought leadership evolves around it.
+
+## 5. Propagating Identity – Dual Tokens & OBO
+
+Imagine your MCP server receives a call from a product backend. In an _ideal_ world (which we are so often very far away
+from), that backend authorizes itself in with its own token issued through client credentials grant flow and forwards
+the end-user's JWT so the MCP server can do user-level trimming.
+
+![Sequence Diagram of an on-behalf-of / token exchange flow](/assets/images/mcp-product-obo-sequence-diagram.svg)
+
+Key points:
+
+* Two tokens travel together (`Authorization: Bearer <serviceJWT>` and `x-user-token: Bearer <userJWT>`).
+* MCP validates _both_.
+* If CalendarAPI trusts your IdP, MCP can perform and **On-Behalf-Of** exchange to get a new access token valid for
+  CalendarAPI.
+
+As always, treat user tokens as PII; never log them.
+
+## 6. Long-Running & Async Tasks
+
+Finally we arrive at the very complex scenario of long-running (perhaps hours or days long) tasks that may be initiated
+by humans. I am _going out on a limb_ when describing the approaches that can be taken here, because they are not very
+standardized, but I believe I have some ideas that can assist in making call chains like this more cryptographically
+secure.
+
+Example: A user kicks off an AI-driven data export that runs for two hours. The original access token expires after 60
+minutes. Options:
+
+### 6.1 Refresh Tokens
+
+* The agent (acting as an MCP client in this case) stores an **encrypted refresh_token**.
+* Background worker swaps it for fresh access tokens as needed.
+
+Trade-off: high privilege; must protect at rest. Revoke on user off-boarding.
+
+### 6.2 Signed Job Token
+
+* At task creation, the agent itself issues a JWT, perhaps by using the original user's JWT or its signature to sign
+  the new JWT with a timestamp, with storage mechanisms for both user + newly issued JWT for later verification (think
+  along the lines of how we use code signing certs to sign source code—the code signing cert may be long expired, but as
+  long as it was valid _at signing time_, it provides those integrity assurances):
+
+  `{"sub":"alice", "scope":"export:1234", "exp":now+3h, ...}`
+
+* Worker presents that token to MCP endpoints dedicated to the job.
+
+No long-lived refresh_token required; scope is tightly bounded.
+
+### 6.3 Service account with embedded user claims
+
+* Worker runs with service auth only.
+* It stores userID + allowed resources in job metadata.
+* Every downstream query constrains rows by that userID.
+
+Pick the approach that aligns with your org's security model and compliance burdens. The tolerance level for using basic
+strings to represent user context throughout short-lived and long-lived call chains depends on many factors. Your
+ecosystem may or may not be tolerant to simple user id strings that could potentially be spoofed if someone had an
+anchor point to call a backend service in your ecosystem. Therefore, some type of cryptographic material representing
+the user (a refresh_token potentially that could be exchanged for fresh JWT access_tokens for a given user when needed)
+will always be stronger than just representing the user in an HTTP header like `x-user-id: <userId>`.
+
+## 7. State of Today's MCP Servers – A Gentle Rant
+
+Most open-source MCP implementations assume a trusted localhost and a single user. Spin one up for a hackathon and it's
+magic; deploy it in prod and you'll suddenly need:
+
+* Plug-and-play OAuth/OIDC support (ideally configurable with an IdP).
+* Multi-tenant storage abstractions out of the box for product scenarios.
+* Hooks for per-request security trimming.
+* Token exchange helpers (OBO, OAuth 2 Token Exchange draft).
+* Auditing and rate limits.
+
+Today you'll find yourself bolting these on—or writing a custom gateway—because upstream doesn't ship them. That's not a
+knock on the maintainers; it's a sign the ecosystem grew up in a local-first culture. But the demand for _hosted_ MCP is
+exploding, so the tooling, and more importantly the _patterns and practices_, need to catch up.
+
+## 8. Conclusion
+
+Context in MCP isn't just the corpus you feed the model—it's the environment your server inhabits. Keeping everything on
+your laptop? Enjoy the blissful simplicity. The second you move to a team, a customer, or the public cloud, bring your
+security A-game:
+
+* Authenticate every request.
+* Authorize _every_ slice of data.
+* Propagate identity with care.
+* Design for token lifecycles, not solely one-shot calls.
+
+If you’re building an MCP server, plan a two-mode strategy:
+
+* **Dev mode**: Runs wide open on localhost for fast iteration.
+* **Prod mode**: Pluggable OAuth, per-tenant isolation, audit logs, and the rest.
+
+Your future self—and your security team—will thank you.
+
+Ultimately, context is everything — not just in prompts, but in the infrastructure that serves them. Let's make our MCP
+tools as context-aware as the models they power.
