@@ -264,7 +264,7 @@ Key points:
 
 * Two tokens travel together (`Authorization: Bearer <serviceJWT>` and `x-user-token: Bearer <userJWT>`).
 * MCP validates _both_.
-* If CalendarAPI trusts your IdP, MCP can perform and **On-Behalf-Of** exchange to get a new access token valid for
+* If CalendarAPI trusts your IdP, MCP can perform an **On-Behalf-Of** exchange to get a new access token valid for
   CalendarAPI.
 
 As always, treat user tokens as PII; never log them.
