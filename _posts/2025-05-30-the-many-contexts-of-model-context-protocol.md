@@ -255,8 +255,8 @@ complexity involved in properly propagating user context through a call chain fr
 through a set of collaborating services, which in this case includes an MCP server.
 
 Imagine your MCP server receives a call from your SaaS product backend. In an _ideal_ world (which we are so often very
-far away from), that backend authorizes itself in with its own token issued through client credentials grant flow and
-forwards the end-user's JWT so the MCP server can do user-level validation and security trimming.
+far away from), that backend authorizes itself in with its own token issued through client credentials grant flow, _and_
+forwards the end-user's JWT access_token, so the MCP server can do user-level validation and security trimming.
 
 ![Sequence Diagram of an on-behalf-of / token exchange flow](/assets/images/mcp-product-obo-sequence-diagram.svg)
 
