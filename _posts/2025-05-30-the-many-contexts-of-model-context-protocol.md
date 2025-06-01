@@ -291,9 +291,9 @@ options:
 
 This is likely the most "proper" approach to this today, and has precedence in various services out there. But there is
 a trade-off: storing a person's refresh_token is essentially storing a session for them, and is inherently
-high-privilege; thus these refresh_tokens should (and I would say) must be protected at rest. They can also be revoked
-on user off-boarding, which is usually the responsibility of the IdP, but your implementation should gracefully handle
-if/when a refresh_token is revoked.
+high-privilege; thus these refresh_tokens should (and I would say, _must_) be protected at rest. They can also be
+revoked on user off-boarding, which is usually the responsibility of the IdP, but your implementation should gracefully
+handle if/when a refresh_token is revoked.
 
 ### 6.2. Signed Job Token
 
