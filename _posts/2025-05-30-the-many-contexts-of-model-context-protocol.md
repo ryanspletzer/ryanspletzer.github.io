@@ -126,9 +126,9 @@ GitHub personal access token. That's fine for a five-minute demo, catastrophic f
 
 If all MCP was is a way to wrap external resources (be they your local file system, or remote database or REST API,
 etc.) with your own local MCP servers to provide it to your own local agent tools, then there would be pretty much zero
-issues here, and no need for this blog post—it would just developers doing their thing on their local dev machines. But
-the issue with MCP right now is it is trying to be _more_ than that, and this is where pretty much any off-the-shelf MCP
-server is going to struggle in a remote setting.
+issues here, and no need for this blog post—it would just be developers doing their thing on their local dev machines.
+But the issue with MCP right now is it is trying to be _more_ than that, and this is where pretty much any off-the-shelf
+MCP server is going to struggle in a remote setting.
 
 In a very real way, _many available MCP servers today are at about the same level as a "Hello World" local web app or
 API_ running on `localhost` with no authentication (and without auth, further you really have no concept of multiple
