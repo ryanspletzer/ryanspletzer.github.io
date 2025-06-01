@@ -39,8 +39,8 @@ Those two worlds demand radically different security and architecture choices.
 
 MCP has only existed as a "thing" since late 2024, and has only really gotten popular (and only gotten serious with auth
 specs) as of the last couple of months, and the mere ~6 or so months of its existence is part of the reason why the
-state of affairs with respect to running these in advanced remote scenarios is relatively immature. (Yes, I said it—
-for those on the agentic hype trains, don't @ me.)
+state of affairs with respect to running these in advanced remote scenarios is relatively immature. (Yes, I said it—for
+those on the agentic hype trains, don't @ me.)
 
 ## 2. Local MCP – The Joy of Single-User Simplicity
 
