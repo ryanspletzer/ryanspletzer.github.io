@@ -276,7 +276,7 @@ by humans. I am _going out on a limb_ when describing the approaches that can be
 standardized, but I believe I have some ideas that can assist in making call chains like this more cryptographically
 secure.
 
-Example: A user kicks off, or configures, an AI-driven data work that runs for multiple hours and needs to utilize the
+Example: A user kicks off, or configures, an AI-driven workflow that runs for multiple hours and needs to utilize the
 user's identity to access various services. This workflow may even run in some type of scheduled way unattended from
 there on out. The original JWT access_token representing the user expires after an hour, as is typical and proper in
 most IdP's. (Note: this is not unlike scenarios you can find in low-code tools like Power Platform.) We have some
