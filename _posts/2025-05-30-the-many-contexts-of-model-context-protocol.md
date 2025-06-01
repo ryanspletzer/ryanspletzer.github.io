@@ -189,7 +189,7 @@ Alice actually read?"
 An enterprise MCP ecosystem could often fan out to services like GitHub, Jira, Confluence, Artifactory, Microsoft Graph,
 or a vector DB keyed by user or security group ID's. That means:
 
-* **Row-level filters**: `SELECT … WHERE tenant_id = :aliceTenant`
+* **Row-level filters**: `SELECT … WHERE user_id = <aliceUserId> OR group_id = <securityGroupIdAliceIsIn>`
 * **Search ACLs**: e.g. Elasticsearch or OpenSearch query-time filters
 * **Downstream**: [on-behalf-of (OBO)](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
   flows; exchange Alice's inbound JWT access_token scoped for the MCP server resource with your IdP for another JWT
