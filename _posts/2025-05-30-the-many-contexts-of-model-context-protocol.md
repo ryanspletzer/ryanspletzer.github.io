@@ -212,7 +212,7 @@ You are now storing embeddings, indexes, caches, and data for many customers. Ev
 Consider:
 
 * `$TENANT_ID:$DOC_ID` keys in Redis.
-* Distinct Milvus/Xata collections per tenant.
+* Distinct Milvus/Mongo/Postgres collections/tables/databases per tenant.
 * S3 prefix per tenant (`s3://mcp-prod/tenants/$id/`).
 * Database filters based on tenant ID.
 
