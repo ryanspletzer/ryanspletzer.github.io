@@ -46,9 +46,9 @@ those on the agentic hype trains, don't @ me.)
 
 I am going to pick on the [GitHub MCP Server](https://github.com/github/github-mcp-server) as an example, because
 despite it being relatively popular—with GitHub being one of the first things developers would likely want to connect to
-with agentic tools—it is imbued with all the naïveté I've observed in the MCP servers that I've looked at thus far,
-making it effectively a non-starter for sophisticated enterprises who would wish to run it remotely (unless you applied
-some serious elbow grease—more on that later).
+with agentic tools—it is imbued with all the naïveté I've come to expect in the MCP servers that I've looked at thus
+far, making it effectively a non-starter for sophisticated enterprises who would wish to run it remotely (unless you
+applied some serious elbow grease—more on that later).
 
 Running the GitHub MCP Server locally could like the following:
 
