@@ -113,7 +113,10 @@ correct. See, running these MCP servers locally has certain aspects to it:
 To be honest, this is what developers like: developer ergonomics reign supreme when there is zero OAuth dance, no JWT
 debugging, no credential managers to deal with. It's the fastest path from idea to working prototype. But it is these
 same ease of use tendencies for working on our local machine that can make us blind to the very real issues of trying to
-make these types of MCP servers work in a remote setting.
+make these types of MCP servers work in a remote setting. For example, lack of HTTP transport aside, if you attempted to
+move the GitHub MCP Server into a remote setting, whose personal access token are you going to use? And if it's a
+privileged personal access token, how do you know the user behind calling client isn't accessing repos or other data
+that they don't have access to natively?
 
 ### 2.2. The Boundaries of "Safe Enough"
 
