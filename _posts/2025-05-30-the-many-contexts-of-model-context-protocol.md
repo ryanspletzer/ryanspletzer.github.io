@@ -167,14 +167,15 @@ This:
   an arbitrary API. (The `aud` is often represented as a GUID, or some type of unique identifier for your target
   resource.)
 * In cases where there is a human user involved, it _should_ utilize something like the user's `sub` (subject) claim
-  from the JWT access_token, to understand who the user is for filtering for downstream calls (which, no server I've
+  from the JWT access_token, to understand who the user is for filtering for downstream calls. (Which, no server I've
   ever seen so far does this—the validation typically _stops_ with only the checks above, if you're lucky that they've
-  done all of them right and not missed something, and doesn't implement further authorization logic, because frankly
-  that gets enterprise-specific and is difficult to assume).
+  done all of them right and not missed something. Beyond this authorization check, they typically don't implement
+  further fine-grained authorization logic for security trimming, because frankly that can get enterprise-specific and
+  is difficult to assume or make configurable for a wide variety of scenarios.)
 
 A reverse proxy (→ Envoy, Traefik) _can_ handle this so your app code can assume a verified user context—but again,
-you may _need that user context_ to make further authorization determinations. Most off-the-shelf MCP servers do
-not—and often cannot—make those authorization decisions for you.
+you may _need that user context_ in your actual MCP server code to make further authorization determinations. Most
+off-the-shelf MCP servers do not—and often cannot—make those authorization decisions for you.
 
 Note that we just say "Authorization" here and not "Authentication"—that is because technically the authentication
 portion happens between the client and the identity provider (IdP) you're talking to, like Okta or Microsoft Entra ID or
