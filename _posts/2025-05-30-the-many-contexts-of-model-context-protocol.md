@@ -148,6 +148,9 @@ the spec after many individuals and companies pointed out the issues of not defi
 since not only would it likely lead to naïve security hazards, but would hurt the interoperability and discoverability
 aspects of the ecosystem.
 
+A call to an MCP server with authorization would look something like the following with a JWT access_token passed in
+the `Authorization` HTTP header with the `Bearer` scheme:
+
 ```text
 POST /query
 Authorization: Bearer eyJhbGciOiJSUzI1N...
