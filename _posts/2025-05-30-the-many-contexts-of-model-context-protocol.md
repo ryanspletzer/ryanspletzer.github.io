@@ -250,9 +250,9 @@ MCP as the spec and implementations and thought leadership evolves around it.
 
 ## 5. Propagating Identity – Dual Tokens & OBO
 
-It is worth digging into an example of real world SaaS product to illustrate the inherent unavoidable complexity
-involved in properly propagating user context through a call chain from a frontend through a backend and through a set
-of collaborating services, which in this case includes an MCP server.
+It is worth digging into a hypothetical example of a real world SaaS product to illustrate the inherent unavoidable
+complexity involved in properly propagating user context through a call chain from a frontend through a backend and
+through a set of collaborating services, which in this case includes an MCP server.
 
 Imagine your MCP server receives a call from your SaaS product backend. In an _ideal_ world (which we are so often very
 far away from), that backend authorizes itself in with its own token issued through client credentials grant flow and
