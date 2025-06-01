@@ -278,7 +278,7 @@ there on out. The original JWT access_token representing the user expires after 
 most IdP's. (Note: this is not unlike scenarios you can find in low-code tools like Power Platform.) We have some
 options:
 
-### 6.1 Refresh Tokens
+### 6.1. Refresh Tokens
 
 * The agent process (acting as an MCP client in this case) stores an (ideally encrypted at rest) **refresh_token**
   representing the user.
@@ -291,7 +291,7 @@ high-privilege; thus these refresh_tokens should (and I would say) must be prote
 on user off-boarding, which is usually the responsibility of the IdP, but your implementation should gracefully handle
 if/when a refresh_token is revoked.
 
-### 6.2 Signed Job Token
+### 6.2. Signed Job Token
 
 * At task creation, the agent itself issues a JWT, perhaps by using the original user's JWT or its signature to sign
   the new JWT with a timestamp claim inside of it, with storage mechanisms for both user + newly issued JWT for later
@@ -311,7 +311,7 @@ requires any endpoints that might receive such a JWT to implement very sophistic
 token based on its signature from another JWT, which many off-the-shelf JWT validation libraries will struggle to do
 (which means you may be rolling up your sleeves to implement some of this).
 
-### 6.3 Service account with embedded user claims
+### 6.3. Service account with embedded user claims
 
 * Worker runs with service auth only.
 * It stores userID + allowed resources in job metadata.
