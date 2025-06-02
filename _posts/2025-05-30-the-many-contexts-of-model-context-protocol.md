@@ -380,6 +380,8 @@ around those in a future blog post.
 
 I wrote this post mostly to address a lot of FUD (Fear, Uncertainty, and Doubt) around how MCP servers operate today and
 their AuthN/AuthZ strategies (or lack thereof), and should the need arise I can take a similar stab at addressing A2A
-and ACP. The world of AI is moving fast, and on the one hand it is great that we are getting open standards and specs
-so quickly, but on the other hand it will take a little time for them to become fully "fleshed out" with
-enterprise-grade patterns and practices.
+and ACP.
+
+The world of AI is moving fast, and on the one hand it is great that we are getting open standards and specs so quickly,
+but on the other hand it will take a little time for them to become fully "fleshed out" with enterprise-grade patterns
+and practices.
