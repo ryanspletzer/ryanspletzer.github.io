@@ -314,6 +314,26 @@ read them:
   wonderful series of YouTube videos that depicts visually what is happening inside of today's advanced transformer
   models.
 
+* [Semantic Line Feeds](https://rhodesmill.org/brandon/2012/one-sentence-per-line/) - Being an avid Markdown user,
+  including using it to make this website through GitHub Pages and Jekyll,
+  I was surprised by how long it took me to stumble upon this post from 2012.
+  It's a quick read and will forever influence the way I write raw text / Markdown files from here on out.
+  The tl;dr is to have one sentence per line,
+  or even further, putting each *clause* on its own line.
+  This has many, many benefits, which are described in the post.
+  I don't stick to 80 character line feeds like the UNIX days of yore,
+  but GitHub and many other interfaces (at least, for the longest time did) tend to have a wraparound at about 120
+  characters.
+  Github aside, the reality is we only have so much screen real estate,
+  and for many IDE's, with your file tree on the left and your text file in the center,
+  and AI chat assistant on the right,
+  it is helpful to try to stay within 120 characters for purposes of viewing text and code.
+  If you want an example of this in action,
+  browse to
+  [this link](https://raw.githubusercontent.com/ryanspletzer/ryanspletzer.github.io/refs/heads/master/linkfarm.md)
+  and view the raw text of this page,
+  and specifically look at how I am writing the text that goes along with this line item on the linkfarm page.
+
 ## Other
 
 These are books of any other category that don't fit above.
