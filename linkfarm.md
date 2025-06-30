@@ -314,7 +314,7 @@ read them:
   wonderful series of YouTube videos that depicts visually what is happening inside of today's advanced transformer
   models.
 
-* [Semantic Line Feeds](https://rhodesmill.org/brandon/2012/one-sentence-per-line/) - Being an avid Markdown user,
+* [Semantic Linefeeds](https://rhodesmill.org/brandon/2012/one-sentence-per-line/) - Being an avid Markdown user,
   including using it to make this website through GitHub Pages and Jekyll,
   I was surprised by how long it took me to stumble upon this post from 2012.
   It's a quick read and will forever influence the way I write raw text / Markdown files from here on out.
