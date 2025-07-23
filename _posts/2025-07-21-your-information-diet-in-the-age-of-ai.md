@@ -74,8 +74,8 @@ Having a healthy info diet is as much about **avoiding bad info** as it is about
 The term "Gish Gallop" I mentioned is a warning sign:
 when you notice you're being inundated with a **firehose of arguments or facts of questionable quality**,
 step back and assess.
-This can happen when scrolling through algorithm-driven feeds that prioritize engagement over accuracy—
-you get spammed with clickbait, outrage, and half-truths all mixed together.
+This can happen when scrolling through algorithm-driven feeds that prioritize engagement over accuracy—you
+get spammed with clickbait, outrage, and half-truths all mixed together.
 It can even happen when using AI tools if you treat their output as gospel.
 AI might confidently present information that is **incorrect**—but
 I would argue there's a worse scenario than blatantly incorrect info (which can be fact-checked),
