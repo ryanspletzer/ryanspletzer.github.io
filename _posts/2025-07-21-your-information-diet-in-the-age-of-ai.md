@@ -191,7 +191,7 @@ cloud computing, DevOps, containerization, serverless, machine learning—pick
 any tech trend, and early on there were plenty of naysayers saying it's all hype or not worth the effort.
 But those who took the time to explore new approaches often reaped huge benefits,
 while the skeptics were left scrambling to adapt once the change became inevitable.
-
+f
 A very current example is AI-assisted development.
 When GPT-based tools first emerged, a lot of folks (understandably) pushed back:
 "Can we trust the code it writes?",
@@ -229,9 +229,11 @@ is a bit like eating your vegetables—not always the most immediately fun part,
 but it makes you stronger in the long run.
 (And steering away from AI hype for a second,
 if you want some critical thinking and de-hyping of quantum computing,
+especially as it relates to un-founded fears about it "breaking cryptography,"
 take a look at **[this paper](https://eprint.iacr.org/2025/1237.pdf)** which is dense and mathy,
 but basically dissects how factorisation exercises in quantum computers have been a sleight-of-hand magic trick,
-or watch 30-minutes of **[this YouTube video at 14:49](https://youtu.be/kNhtonFK_1o?t=889)** from Security Now.)
+or watch 30-minutes of **[this YouTube video at 14:49](https://youtu.be/kNhtonFK_1o?t=889)** from Security Now
+which explains these quantum factorisation sleight-of-hand tricks in a relatable way.)
 
 ## Beyond the Headlines: Choose Trusted Voices
 
