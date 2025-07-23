@@ -17,11 +17,12 @@ tags:
 ---
 
 I was on a call with a colleague,
-walking through some [Wardley Maps](https://learnwardleymapping.com/book/) I'd drawn for various AI tools.
+walking through some **[Wardley Maps](https://learnwardleymapping.com/book/)** I'd drawn for various AI tools.
 Partway through my overview, he stopped me and asked a question I've heard a couple of times before:
 **"How do you find out about these things?"**
-I paused, realizing that the answer has less to do with any magic trick and more to do with habits—
-essentially, what I choose to read, watch, and listen to on a daily basis.
+I paused, realizing that the answer has less to do with any magic trick
+and more to do with habits—essentially,
+what I choose to read, watch, and listen to on a daily basis.
 In other words, it comes down to my **information diet**.
 
 We live in an age where AI can answer questions, recommend content, and even generate entire articles for us.
@@ -32,8 +33,8 @@ Or are you unwittingly on the receiving end of the [*Gish gallop*](https://en.wi
 If you're not familiar with that term,
 the **Gish gallop** is a rhetorical technique where someone overwhelms you with a barrage of arguments
 (often of dubious quality) with no regard for accuracy.
-In an era of infinite content—much of it auto-generated or spammy—
-it's dangerously easy to get galloped by misinformation or superficial noise.
+In an era of infinite content—much of it auto-generated or spammy—it's
+dangerously easy to get galloped by misinformation or superficial noise.
 
 ![A stylized illustration of an 'Information Diet' pyramid. The pyramid is divided into four layers from bottom to top: books, speech bubbles, and newspapers at the base; social media icons and short-form content in the middle; the Twitter bird icon in the upper tier; and a microchip labeled 'AI' at the top. The design uses muted shades of beige, blue, and orange to convey different types of information sources.](
   /assets/images/your-information-diet-in-the-age-of-ai.png)
@@ -42,9 +43,9 @@ it's dangerously easy to get galloped by misinformation or superficial noise.
 
 Just like your body needs a balanced diet of nutritious food, your mind needs a balanced intake of information.
 The core message I want to share is that for your day-to-day work and life,
-it's vital to cultivate a **healthy information diet**—
-especially if you work in tech or any fast-moving field like AI.
-Even if you don't work directly on AI, you're almost certainly using it indirectly.
+it's vital to cultivate a **healthy information diet**—especially
+if you work in tech or any fast-moving field like AI.
+Even if you don't work directly on AI, there's a good chance you're using it indirectly.
 If you're not consciously mixing the right information into your brain and applying it to your day-to-day decisions,
 you risk stagnating in your approach.
 In the tech world, things change quickly and **the moment you stop learning is the moment you start losing your edge**.
@@ -53,10 +54,13 @@ Think of it this way: you are what you eat, and by the same token
 "**[you are how you search](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=Perhaps%20you%20can%27t%20afford%20to,you%20are%20how%20you%20search)**."
 Feeding solely on easy, processed info—the equivalent of junk food—can leave your knowledge malnourished.
 Sure, an AI-generated summary or the top Google result might be a quick fix for a simple question,
+or a Yahoo News headline might leave you feeling like you've gotten a real picture of some type of new advancement
+in some space,
 but be cautious about making that your main sustenance.
 One information scientist aptly compared
 **[AI's instant answers to fast food](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=AI%20Overviews%20is%20like%20fast,longer%20and%20may%20cost%20more)**:
 convenient and tasty, but not the healthiest choice in the long run.
+But this goes beyond AI and into your everyday information intake habits:
 If you only consume bite-sized, context-free tidbits
 (think of those sensational one-line news alerts or random social media takes),
 you're likely missing the vitamins and fiber of deeper understanding.
@@ -73,8 +77,12 @@ step back and assess.
 This can happen when scrolling through algorithm-driven feeds that prioritize engagement over accuracy—
 you get spammed with clickbait, outrage, and half-truths all mixed together.
 It can even happen when using AI tools if you treat their output as gospel.
-AI might confidently present information that is **incorrect or oversimplified**
-(remember, these models predict plausible answers; they don't guarantee truthful ones).
+AI might confidently present information that is **incorrect**—but
+I would argue there's a worse scenario than blatantly incorrect info (which can be fact-checked),
+and this is when you're getting answers and information that is woefully **oversimplified**.
+(Remember, these models predict plausible answers; they don't guarantee truthful ones,
+or further ones with all the necessary context for you to understand a topic,
+*unless* you ask the right questions—more on that later...).
 If you rely on these without critique, you might end up with a head full of fluff or outright falsehoods,
 which is the intellectual equivalent of subsisting on cotton candy.
 
@@ -89,7 +97,7 @@ but you don't want every meal to be from the drive-through.
 Taking the time to read in-depth sources or multiple perspectives is more like cooking a balanced meal at home:
 it's slower and requires effort, but you know exactly what you're getting.
 This extra effort
-"[gives you back the ability to examine multiple sources... and leaves open the possibilities for learning, discovery and serendipity](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=take%20a%20little%20work%2C%20but,for%20learning%2C%20discovery%20and%20serendipity)"
+"**[gives you back the ability to examine multiple sources... and leaves open the possibilities for learning, discovery and serendipity](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=take%20a%20little%20work%2C%20but,for%20learning%2C%20discovery%20and%20serendipity)**"
 that a one-and-done info snippet would never provide.
 
 In short, be vigilant about info quality.
@@ -97,13 +105,14 @@ If something smells fishy or too hypey, question it.
 Develop a bit of a BS filter.
 Over time, you'll get better at distinguishing a well-researched piece from a regurgitated press release,
 or a genuine expert opinion from a performative rant.
-High-quality inputs lead to high-quality outputs in your own work and decisions—
-*garbage in, garbage out*, as the saying goes.
+(Oh hey, maybe this blog post is a performative rant—check and question your sources!)
+High-quality inputs lead to high-quality outputs in your own work and decisions—*garbage in, garbage out*,
+as the saying goes...
 
 ## Curate What You Consume
 
-Since there's an infinite amount of content out there, a key skill is **curation**—
-deliberately choosing what to read/watch/listen to.
+Since there's an infinite amount of content out there, a key skill is **curation**—deliberately
+choosing what to read/watch/listen to.
 Don't passively scroll whatever the algorithm shoves at you.
 Take control of the menu.
 For me, a big part of curation is on social platforms.
@@ -121,10 +130,16 @@ not random influencers or click-chasers.
 Social media can be a double-edged sword.
 It's where a lot of breaking info and niche discussions happen first, but it's also a source of endless junk.
 The trick is aggressively filtering who you follow.
+(Sidebar: this is a great trick to use with Slack/Teams channels and email in your inbox as well—aggressively
+mute/leave channels to reduce noise,
+organize them with something like the **[PARA](https://fortelabs.com/blog/para/)** method,
+and follow some tips on
+**[how to get control of your inbox](https://www.hanselman.com/blog/the-three-most-important-outlook-rules-for-processing-mail)**—I
+learned all these things from people I follow...)
 If someone consistently adds value (teaches you something, makes you think, points you to good resources), keep them.
 If they mostly spout hot takes or amplify noise, mute or unfollow.
-**The information you consume is just as important as the food you eat**—
-doomscrolling Twitter aimlessly is the mental equivalent of chowing down on candy bars all day.
+**The information you consume is just as important as the food you eat**—doomscrolling
+Twitter aimlessly is the mental equivalent of chowing down on candy bars all day.
 I try to limit the empty calories and focus on accounts and publications that are more like a balanced meal.
 
 Curating your information diet goes beyond just who you follow on Twitter.
@@ -169,24 +184,25 @@ We've all seen colleagues who refused to learn the new tool or ignored the new t
 a year or two later, they find themselves playing catch-up.
 Don't let that be you.
 The tech landscape moves fast.
-*"[If you're not moving forward, you're falling behind](https://mccricardo.com/engineering-evolution-the-antidote-to-career-stagnation/#:~:text=Stagnation%2C%20the%20antithesis%20of%20growth%2C,moment%20you%20start%20losing%20value),"*
+**[If you're not moving forward, you're falling behind](https://mccricardo.com/engineering-evolution-the-antidote-to-career-stagnation/#:~:text=Stagnation%2C%20the%20antithesis%20of%20growth%2C,moment%20you%20start%20losing%20value)**,"
 as one engineer wrote about avoiding stagnation.
 We see this over and over:
-cloud computing, DevOps, containerization, serverless, machine learning—
-pick any tech trend, and early on there were plenty of naysayers saying it's all hype or not worth the effort.
+cloud computing, DevOps, containerization, serverless, machine learning—pick
+any tech trend, and early on there were plenty of naysayers saying it's all hype or not worth the effort.
 But those who took the time to explore new approaches often reaped huge benefits,
 while the skeptics were left scrambling to adapt once the change became inevitable.
 
 A very current example is AI-assisted development.
-When GPT-based tools first emerged, a lot of folks (understandably) pushed back—"Can we trust the code it writes?",
+When GPT-based tools first emerged, a lot of folks (understandably) pushed back:
+"Can we trust the code it writes?",
 "Won't this take our jobs?", etc.
 Yet here we are a short time later, and such tools have gone mainstream.
 In fact,
 **[three-quarters of workers are now using AI in their jobs](https://www.geekwire.com/2024/microsoft-study-finds-75-of-knowledge-workers-using-ai-at-work-nearly-doubling-in-six-months/#:~:text=Among%20the%20findings%20this%20year%3A,research%20conducted%20with%20big%20companies)**,
 one way or another
-(if this [Microsoft study](https://news.microsoft.com/annual-wti-2024/) referenced in that prior link is to be believed—
-again, check and question your sources!).
-The initial fears and objections are giving way to "Okay, how do we actually leverage this properly?".
+(if this **[Microsoft study](https://news.microsoft.com/annual-wti-2024/)** referenced in that prior link
+is to be believed—again, check and question your sources!).
+The initial fears and objections are giving way to "Okay, how do we actually leverage this properly?"
 Those who kept an open mind early on are now ahead of the curve in using AI to be more productive.
 The point is, don't reject a new idea just because it's new. Sample it.
 Even if it ends up not to your taste, at least you made an informed decision.
@@ -203,14 +219,14 @@ It inoculates you against groupthink.
 Sure, most of the time I read my preferred tech sources,
 but every now and then I deliberately read an opposing viewpoint or an analysis from a different domain.
 Despite working in AI, I recently read
-*[The AI Con: How to Fight Big Tech's Hype and Create the Future We Want](https://thecon.ai/).
+**[_The AI Con: How to Fight Big Tech's Hype and Create the Future We Want_](https://thecon.ai/)**.
 Did I agree with 100% of that book? No.
 But much of it did resonate with me,
-and it has helped me to hone in my BS filter when I see some new, over-hyped headline
+and it has helped me to hone my BS filter when I see some new, over-hyped headline
 about something that's going to "change everything."
 Forcing yourself to read things that run counter to your world view or challenge the prevailing mainstream media hype
-is a bit like eating your vegetables—
-not always the most immediately fun part, but it makes you stronger in the long run.
+is a bit like eating your vegetables—not always the most immediately fun part,
+but it makes you stronger in the long run.
 
 ## Beyond the Headlines: Choose Trusted Voices
 
@@ -219,8 +235,8 @@ especially when it comes to news and analysis.
 We've all seen how a story can get distorted as it's rehashed across the internet.
 A company might release a nuanced research paper, and by the time it makes it to a Yahoo News headline,
 it's been dumbed down to "Scientists Create Monster AI That Will Take Your Job!"
-Getting your tech news solely from generic mainstream outlets is like trying to sustain yourself on popcorn—
-it's mostly air, with a bit of salt and butter.
+Getting your tech news solely from generic mainstream outlets is like trying to sustain yourself on popcorn—it's
+mostly air, with a bit of salt and butter.
 **[It's easy to fall for sensational headlines and bite-size news that lack context](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=It%27s%20easy%20to%20fall%20for,for%20food%20and%20for%20information)**,
 because they're designed to grab attention, not to inform deeply.
 So when possible, go beyond the headline.
@@ -238,8 +254,8 @@ Perhaps one of the following:
 
 For me, the choice is obvious: I'd call up the friend (or read their texts about it).
 Why? Because I know *how* they think and I trust their perspective.
-*The Today Show* might give a superficial take aimed at a broad audience ("It's a fun summer romp for the family!")—
-that's like a headline with no depth.
+*The Today Show* might give a superficial take aimed at a broad audience
+("It's a fun summer romp for the family!")—that's like a headline with no depth.
 Rotten Tomatoes is more informative, but it's an impersonal crowd score.
 My friend, on the other hand, will tell me candidly,
 "Yeah, it's a decent throwback but the plot was weak,
@@ -263,8 +279,10 @@ consider the sources of info in a similar vein:
   a blog post by an engineer who implemented the tool in a project,
   a conversation with someone at a meetup who has hands-on experience,
   or an in-depth YouTube review by a respected techie.
-  These sources are often the most valuable because they can tell you the **nuances**—
-  the gotchas, the unexpected benefits, how it compares to similar tools, etc.,
+  These sources are often the most valuable
+  because they can tell you the **nuances**—the "gotchas,"
+  the unexpected benefits,
+  how it compares to similar tools, etc.,
   all from a point of view you recognize as honest.
 
 Whenever possible, **put more weight on the voices that have proven trustworthy and aligned with your context**.
@@ -279,13 +297,13 @@ Dive in and experiment so **you** can share first-hand knowledge.
 It's the principle of "trust but verify" in action:
 take in others' opinions, but validate through your own exploration when you can.
 Not only will you get a better understanding,
-you'll also be contributing back to the information ecosystem with your findings—
-maybe writing your own blog post or giving your colleagues the real scoop around the proverbial water cooler.
+you'll also be contributing back to the information ecosystem with your findings—maybe
+writing your own blog post or giving your colleagues the real scoop around the proverbial water cooler.
 
 ## Final Thoughts: You Are What You Read (So Choose Wisely)
 
-Circling back to that question that started it all—*"How do you find out about these things?"*—
-the answer boils down to cultivating and maintaining a healthy information diet.
+Circling back to that question that started it all—*"How do you find out about these things?"*—the
+answer boils down to cultivating and maintaining a healthy information diet.
 In the age of AI, this is both more challenging and more important than ever.
 More challenging, because there's an overwhelming buffet of content being served up, not all of it healthy or even true.
 More important, because the pace of change is blistering;
@@ -297,8 +315,8 @@ Feed your mind with high-quality information from a variety of sources.
 with the slower digestion of books, articles, and thoughtful conversations.
 **Curate** who you listen to, so that you're hearing from people who inspire and educate you,
 not just echo chambers that amplify hype.
-**Experiment** and taste new ideas, even if they seem strange at first—
-you might discover something game-changing, or at least you'll expand your palate.
+**Experiment** and taste new ideas, even if they seem strange at first—you
+might discover something game-changing, or at least you'll expand your palate.
 And above all, **stay curious**.
 A curious mind naturally seeks out better information and resists the junk food of shallow content.
 
