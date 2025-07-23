@@ -184,7 +184,7 @@ We've all seen colleagues who refused to learn the new tool or ignored the new t
 a year or two later, they find themselves playing catch-up.
 Don't let that be you.
 The tech landscape moves fast.
-**[If you're not moving forward, you're falling behind](https://mccricardo.com/engineering-evolution-the-antidote-to-career-stagnation/#:~:text=Stagnation%2C%20the%20antithesis%20of%20growth%2C,moment%20you%20start%20losing%20value)**,"
+"**[If you're not moving forward, you're falling behind](https://mccricardo.com/engineering-evolution-the-antidote-to-career-stagnation/#:~:text=Stagnation%2C%20the%20antithesis%20of%20growth%2C,moment%20you%20start%20losing%20value)**,"
 as one engineer wrote about avoiding stagnation.
 We see this over and over:
 cloud computing, DevOps, containerization, serverless, machine learning—pick
