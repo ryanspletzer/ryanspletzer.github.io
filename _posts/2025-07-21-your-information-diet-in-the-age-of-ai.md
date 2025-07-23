@@ -229,9 +229,9 @@ is a bit like eating your vegetables—not always the most immediately fun part,
 but it makes you stronger in the long run.
 (And steering away from AI hype for a second,
 if you want some critical thinking and de-hyping of quantum computing,
-take a look at [this paper](https://eprint.iacr.org/2025/1237.pdf) which is dense and mathy,
+take a look at **[this paper](https://eprint.iacr.org/2025/1237.pdf)** which is dense and mathy,
 but basically dissects how factorisation exercises in quantum computers have been a sleight-of-hand magic trick,
-or watch 30-minutes of [this YouTube video at 14:49](https://youtu.be/kNhtonFK_1o?t=889) from Security Now.)
+or watch 30-minutes of **[this YouTube video at 14:49](https://youtu.be/kNhtonFK_1o?t=889)** from Security Now.)
 
 ## Beyond the Headlines: Choose Trusted Voices
 
