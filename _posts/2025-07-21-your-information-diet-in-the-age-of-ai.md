@@ -29,7 +29,7 @@ We live in an age where AI can answer questions, recommend content, and even gen
 You might lean on these AI tools for quick answers,
 but at the end of the day **you are still the one reading, watching, and listening** to information sources.
 The critical question is: are those sources high quality?
-Or are you unwittingly on the receiving end of the [*Gish gallop*](https://en.wikipedia.org/wiki/Gish_gallop)?
+Or are you unwittingly on the receiving end of the **[*Gish gallop*](https://en.wikipedia.org/wiki/Gish_gallop)**?
 If you're not familiar with that term,
 the **Gish gallop** is a rhetorical technique where someone overwhelms you with a barrage of arguments
 (often of dubious quality) with no regard for accuracy.
