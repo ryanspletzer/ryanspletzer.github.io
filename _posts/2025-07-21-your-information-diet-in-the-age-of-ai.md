@@ -19,7 +19,7 @@ tags:
 I was on a call with a colleague,
 walking through some **[Wardley Maps](https://learnwardleymapping.com/book/)** I'd drawn for various AI tools.
 Partway through my overview, he stopped me and asked a question I've heard a couple of times before:
-**"How do you find out about these things?"**
+"**How do you find out about these things?**"
 I paused, realizing that the answer has less to do with any magic trick
 and more to do with habits—essentially,
 what I choose to read, watch, and listen to on a daily basis.
@@ -64,8 +64,8 @@ But this goes beyond AI and into your everyday information intake habits:
 If you only consume bite-sized, context-free tidbits
 (think of those sensational one-line news alerts or random social media takes),
 you're likely missing the vitamins and fiber of deeper understanding.
-A healthy information diet means balancing those quick bites with more substantive meals—
-the reports, articles, books, and conversations that challenge and grow your thinking,
+A healthy information diet means balancing those quick bites with more substantive meals—the
+reports, articles, books, and conversations that challenge and grow your thinking,
 and add to your repertoire of skills.
 
 ## Quality Over Quantity: Beware the Flood of Junk Info
