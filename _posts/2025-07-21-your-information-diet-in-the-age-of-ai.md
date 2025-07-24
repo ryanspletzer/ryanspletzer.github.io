@@ -71,7 +71,7 @@ and add to your repertoire of skills.
 ## Quality Over Quantity: Beware the Flood of Junk Info
 
 Having a healthy info diet is as much about **avoiding bad info** as it is about finding good info.
-The term "Gish Gallop" I mentioned is a warning sign:
+The term "Gish gallop" I mentioned is a warning sign:
 when you notice you're being inundated with a **firehose of arguments or facts of questionable quality**,
 step back and assess.
 This can happen when scrolling through algorithm-driven feeds that prioritize engagement over accuracy—you
@@ -191,7 +191,6 @@ cloud computing, DevOps, containerization, serverless, machine learning—pick
 any tech trend, and early on there were plenty of naysayers saying it's all hype or not worth the effort.
 But those who took the time to explore new approaches often reaped huge benefits,
 while the skeptics were left scrambling to adapt once the change became inevitable.
-f
 A very current example is AI-assisted development.
 When GPT-based tools first emerged, a lot of folks (understandably) pushed back:
 "Can we trust the code it writes?",
