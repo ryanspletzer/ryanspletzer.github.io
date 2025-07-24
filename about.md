@@ -30,8 +30,8 @@ internal delivery platforms and open-source initiatives.
 
 Our team name changed one more time in 2023 to Enterprise AI after we built an internal version of ChatGPT for the
 company backed by Azure OpenAI, and we pivoted our focus over to AI initiatives for the enterprise. As we speak I am
-currently getting deep on data and AI solutions and participating in broader company-wide platform initiatives for
-Autodesk.
+currently getting deep on data and AI solutions and automation, providing technical leadership for our AIDA (AI, Data
+and Automation) org, and participating in broader company-wide platform initiatives for Autodesk.
 
 ## Things I Think About
 
