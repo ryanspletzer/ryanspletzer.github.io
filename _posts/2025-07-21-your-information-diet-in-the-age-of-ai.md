@@ -48,7 +48,8 @@ if you work in tech or any fast-moving field like AI.
 Even if you don't work directly on AI, there's a good chance you're using it indirectly.
 If you're not consciously mixing the right information into your brain and applying it to your day-to-day decisions,
 you risk stagnating in your approach.
-In the tech world, things change quickly and **the moment you stop learning is the moment you start losing your edge**.
+In the tech world, things change quickly and **the moment you stop learning is the moment you start
+[losing your edge](https://www.youtube.com/watch?v=6xG4oFny2Pk)**.
 
 Think of it this way: you are what you eat, and by the same token
 "**[you are how you search](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=Perhaps%20you%20can%27t%20afford%20to,you%20are%20how%20you%20search)**."
