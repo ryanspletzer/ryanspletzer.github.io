@@ -22,7 +22,7 @@ I keep hearing versions of:
 
 > "Sweet, so with Slack MCP I can just ask Claude to give me all links anyone ever posted in the #eng channel, right?"
 
-Sure. This is like saying you "just" drink from a firehose with a paper straw.
+Sure. This is like saying you "just" drink from a firehose with a coffee straw.
 
 This post is my attempt to de-hype MCP—not because it's bad (it's actually great!),
 but because it's being asked to do jobs it was never designed for,
