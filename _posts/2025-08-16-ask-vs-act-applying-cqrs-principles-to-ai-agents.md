@@ -490,7 +490,7 @@ and act responsibly.
 
 [^5]: [LangChain](https://www.langchain.com/)
 
-[^6]: [CQRS Pattern - Azure Architecture Center | Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+[^6]: [CQRS Pattern - Azure Architecture Center on Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
 
 [^7]: [Moveworks Policy Validators: Agentic AI, Built for Compliance](https://www.moveworks.com/us/en/resources/blog/how-policy-validators-help-ai-compliance#:~:text=Read%20whitepaper)
 
