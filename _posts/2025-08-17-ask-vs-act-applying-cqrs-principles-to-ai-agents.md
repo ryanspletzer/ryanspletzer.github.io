@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Ask vs Act: Applying CQRS Principles to AI Agents"
-date: 2025-08-16 00:00:00
+date: 2025-08-17 00:00:00
 description: >
   Asking an AI agent a question is a whole different ballgame from letting it take action.
 tags:
+ - agents
  - ai
  - cqrs
 ---
@@ -109,14 +110,14 @@ An AI agent's retrieval step can tap into all sorts of sources:
 
 * **Analytical or external knowledge bases:**
   Other times the agent might query analytical data products or data warehouses—
-  for example, to get aggregated metrics or historical trends—
-  or use a vector search index populated with company documents for semantic search.
+  for example, to get aggregated metrics or historical trends—or
+  use a vector search index populated with company documents for semantic search.
   The key is that for reads,
   *it's fair game to pull from either operational or analytical stores*.
   (But there are considerations as to when to go to one versus the other.)
   The agent could query a Snowflake dataset for last quarter's sales number
   and also query a vector DB for the latest policy document text.
-  As long as the data is accessible (and not too stale to be relevant),
+  As long as the data is accessible (and not too stale to be irrelevant),
   the agent can use it.
 
 One thing to keep in mind is that the quality of these read-side sources
@@ -133,10 +134,11 @@ But from a *system design* perspective,
 reads are the "easy" part:
 they're *fast, parallelizable, and forgiving*.
 You can cache results,
-pre-compute indexes (like embeddings for vector search),
+pre-compute indexes (which in a way is analogous to embeddings for vector search),
 and generally throw engineering tricks at making reads as efficient as possible.
 If a read query hits a slightly stale replica,
-usually no one dies—you might just get a slightly outdated answer,
+usually it's not the end of the world (but this depends on the scenario)—you
+might just get a slightly outdated answer,
 which can be corrected next time or with a refresh.
 This tolerance is one reason CQRS often allows the read model
 to be eventually consistent with the write model.
@@ -166,7 +168,7 @@ so that the action is real and persistent.
 
 (As an aside:
 lately I've also been referring to the source of truth
-using an alternative term that may familiar to those who know DNS:
+using an alternative term that may be familiar to those who know DNS:
 the **source of authority**.
 DNS records have a source of authority on the internet—often
 at a domain registrar—and
@@ -183,15 +185,21 @@ Relating this back to data:
 I find there is often confusion around what data is "true."
 Data may very well be replicated to multiple places in a given ecosystem,
 very typically to analytical data platforms—and
-the data at all those locations all may be "true"!—however,
-there's only *one* place where they data is "authoritative."
-Another way to think of this is,
-where the data is *authored* is typically where it is *authoritative*.
-And much like DNS, when an authoring change is made to data,
+the data at all those locations all is typically "true"!—however,
+there's only *one* place where the data is "authoritative."
+Inside the words "authoritative" and "authority" is the word "author,"
+so another way to think of this is:
+the source of authority for data is typically
+where the data is *authored*,
+and that typically makes it the "authoritative" source of the data.
+Following this, much like DNS records,
+when an authoring change is made to data,
 it takes a little bit of time for it to eventually replicate
-and become consistent in a given ecosystem.)
+and become consistent in a given ecosystem,
+typically through combinations of periodic ELT jobs
+or event-driven syncs.)
 
-Because these actions actually do things,
+Because actions carried by agents actually change the state of our systems,
 they come with a lot more responsibility and required care:
 
 * **Business Logic and Validation:**
@@ -226,7 +234,7 @@ they come with a lot more responsibility and required care:
   Many agent frameworks build this in.
   For instance, Amazon's agent toolkit suggests requiring the user's explicit confirmation
   before an agent executes certain functions,
-  precisely to safeguard against malicious or unintended commands. [^3]
+  precisely to safeguard against malicious or unintended commands.[^3]
   In our PTO example, the agent should probably respond with
   "I can submit a PTO request for you from Sept 25 to Sept 29, 2025.
   Shall I go ahead and do that?"—only
@@ -318,7 +326,7 @@ Based on that, it forms a plan and then triggers the *write* step:
 calling the procurement system's API to place the order.
 By separating these concerns,
 you can even choose to run them on different infrastructure—the
-retrieval might run on a vector search service or analytical database,
+retrieval might run against a vector search service or analytical database,
 whereas the action might run via a secure connector to the operational system.
 (It should go without saying that reading from an out-of-date analytical database
 *may* be a bad idea if you need that data to be accurate up-to-the-minute
@@ -326,9 +334,9 @@ for the subsequent write operation;
 therefore in agents with action capabilities,
 it may be better to read from the operational system first
 before performing the action,
-but other standalone read prompts may be just fine.
+but other standalone read prompts may be just fine reading from an analytic system.
 Use your best judgment here,
-and always do a sanity check read of the operational data store
+and always do a "sanity check" read of the operational data store
 before doing a write!)
 In a way, this mirrors the idea of having separate read and write databases
 in advanced CQRS implementations[^6]
@@ -401,16 +409,20 @@ when handling "reads" versus "writes" in an agent:
   In essence, write operations in an agent should be treated like transactions—with
   commit/rollback semantics or compensating actions if possible
   (this is analogous to how a robust CQRS command side
-  might use techniques like sagas to handle failures).
+  might use techniques like sagas[^8] to handle failures,
+  especially for very complex actions that could span multiple systems).
   One of your agent's actions *will* fail at some point,
   whether it's due to an upstream outage or a transient failure,
-  and you want to be able to show the best possible error message you can to the user,
-  and further see if there is a graceful way to provide them an alternative.
+  and you want to ensure you leave your systems in a consistent state,
+  and also be able to show the best possible error message you can to the user,
+  and further see if there is a graceful way to provide them an alternative method
+  for carrying out their task.
   For example: if the agentic action fails,
   maybe you can provide the means to retry if it was a transient error,
   or maybe you can redirect the user to a viable non-agentic alternative,
   or send them to a relevant support channel,
-  or one of many other potential alternatives.
+  connect them with a human,
+  or many other potential alternatives.
 
 * **User Confirmation and Trust:**
   *Reads* can usually be executed automatically without user intervention—you
@@ -471,12 +483,24 @@ that seasoned software architects have known for years:
 handling each properly makes all the difference**.
 Adopting a CQRS-like approach for AI won't stifle their abilities;
 on the contrary, it will let us scale up their knowledge powers
-and automation powers side by side, safely and effectively.[^8]
+and automation powers side by side, safely and effectively.[^9]
 So the next time you design an AI agent, remember to ask yourself:
 *Which parts of this are queries, and which are commands?*
 By designing with that question answered,
 you'll be well on your way to an agent that can both speak intelligently
 and act responsibly.
+
+(For more information on the patterns in this space,
+I encourage the reader to dig into the following software engineering principles, in this order:
+SOLID, Domain Driven Design, CQRS and Event Sourcing.
+These principles build on each other and
+will help you to find your way through building these complex agentic systems.
+Some of the best books on these subject that brings this all together are oldies but a goodies,
+and one I have them listed on my [linkfarm](/linkfarm) page:
+[Adaptive Code: Agile coding with design patterns and SOLID principles (2nd Edition) (Developer Best Practices)](https://www.amazon.com/Adaptive-Code-principles-Developer-Practices/dp/1509302581/) and
+[Microsoft .NET - Architecting Applications for the Enterprise (2nd Edition) (Developer Reference)](https://www.amazon.com/Microsoft-NET-Architecting-Applications-Enterprise/dp/0735685355).
+Whether or not you've worked in the Microsoft ecosystem and with the languages described within those texts,
+the patterns are relevant to many languages and frameworks and software stacks.)
 
 ## References
 
@@ -494,4 +518,6 @@ and act responsibly.
 
 [^7]: [Moveworks Policy Validators: Agentic AI, Built for Compliance](https://www.moveworks.com/us/en/resources/blog/how-policy-validators-help-ai-compliance#:~:text=Read%20whitepaper)
 
-[^8]: [AI agent vs RAG: how the two differ and where they overlap](https://www.merge.dev/blog/rag-vs-ai-agent#:~:text=RAG%20allows%20users%20to%20ask,doesn%E2%80%99t%20use%20an%20AI%20agent)
+[^8]: [Saga Design Pattern - Azure Architecture Center on Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga)
+
+[^9]: [AI agent vs RAG: how the two differ and where they overlap](https://www.merge.dev/blog/rag-vs-ai-agent#:~:text=RAG%20allows%20users%20to%20ask,doesn%E2%80%99t%20use%20an%20AI%20agent)
