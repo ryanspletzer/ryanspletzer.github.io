@@ -109,8 +109,8 @@ An AI agent's retrieval step can tap into all sorts of sources:
   in addition to unstructured docs.[^2]
 
 * **Analytical or external knowledge bases:**
-  Other times the agent might query analytical data products or data warehouses—
-  for example, to get aggregated metrics or historical trends—or
+  Other times the agent might query analytical data products or data warehouses—for
+  example, to get aggregated metrics or historical trends—or
   use a vector search index populated with company documents for semantic search.
   The key is that for reads,
   *it's fair game to pull from either operational or analytical stores*.
