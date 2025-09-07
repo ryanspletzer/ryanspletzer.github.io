@@ -43,7 +43,7 @@ I know HTML, CSS and enough raw JavaScript
 with accompanying design patterns to be dangerous,
 and I know enough about the fundamentals of the web
 and about tracing down errors and bugs with browser web developer tools
-to even pair with an actual frontend developer to identify and fix a problem;
+to even to identify and fix a problem;
 but most of my web work is from 12+ years ago—back
 when [SPA](https://en.wikipedia.org/wiki/Single-page_application) frameworks were
 still figuring themselves out.[^2]
