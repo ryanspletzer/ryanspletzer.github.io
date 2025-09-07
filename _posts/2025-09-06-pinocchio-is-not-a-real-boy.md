@@ -333,7 +333,7 @@ is very much like holding a mirror up to yourself.
 Yes, it will allow you to do things you never thought possible.
 
 But it will also reflect back the gaps in your own understanding,
-especially if you are lack the self-awareness to recognize your own weaknesses
+especially if you lack the self-awareness to recognize your own weaknesses
 that prevent you from asking the right questions.
 
 Just because you can will something into existence,
