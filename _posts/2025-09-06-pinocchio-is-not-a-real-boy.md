@@ -238,8 +238,8 @@ on another level he takes the FAA rules around drones very seriously.
 Further, he will likely never lose his drone in a lake
 like you've see in those many funny YouTube videos.
 
-He enjoys flying drones, but at the same time takes it seriously—and
-of course, he does **not** trust them like a real aircraft.
+He enjoys flying drones, but at the same time
+he does **not** trust them like a real aircraft.
 
 He understands capability versus consequence.
 
