@@ -334,7 +334,7 @@ Yes, it will allow you to do things you never thought possible.
 
 But it will also reflect back the gaps in your own understanding,
 especially if you lack the self-awareness to recognize your own weaknesses
-that prevent you from asking the right questions.
+that prevent you from fostering curiosity and asking the right questions.
 
 Just because you can will something into existence,
 does not mean that you are absolved of personal responsibility over what you created.
