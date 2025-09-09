@@ -162,7 +162,7 @@ commit often so you have coherent states to roll back to
 (and you can leverage the tools here by craft more detailed commit messages, too),
 take some suggestions from the tools;
 but sometimes,
-you need to let the tool sit their quietly while you read.
+you need to let the tool sit there quietly while you read.
 
 In any case,
 **you** own the responsibility of comprehension afterwards.
