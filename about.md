@@ -78,6 +78,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - OpenAPI
 - JSONSchema
 - Collection+JSON
+- JSON-RPC
 - OData
 - GraphQL
 - Server-sent Events (SSE)
@@ -191,9 +192,12 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Retry Strategies
 - Machine Learning
 - AI
+- LLMs (Large Language Models)
+- MCP (Model Context Protocol)
 - Anomaly Detection
 - Generative AI
 - OpenAI
+- Anthropic
 - Azure PowerShell
 - Azure Functions
 - Azure OpenAI Service
