@@ -334,6 +334,9 @@ read them:
   and view the raw text of this page,
   and specifically look at how I am writing the text that goes along with this line item on the linkfarm page.
 
+* [No Prizes for Pessimism: Letters from a Messy Tech Optimist](https://www.amazon.com/No-Prize-Pessimism-Letters-Optimist/dp/B0DMQKV6ZP) - This
+  is a collection of great wisdom and insights from Sam Schillace who has been in the industry a number of years.
+
 ## Other
 
 These are books of any other category that don't fit above.
