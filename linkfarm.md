@@ -335,7 +335,9 @@ read them:
   and specifically look at how I am writing the text that goes along with this line item on the linkfarm page.
 
 * [No Prizes for Pessimism: Letters from a Messy Tech Optimist](https://www.amazon.com/No-Prize-Pessimism-Letters-Optimist/dp/B0DMQKV6ZP) - This
-  is a collection of great wisdom and insights from Sam Schillace who has been in the industry a number of years.
+  is a collection of great wisdom and insights from Sam Schillace who has been in the industry a number of years and
+  saw the beginnings of touchstone products like Google Docs, which gives him a unique perspective and a plethora of
+  higher order advice for how to think about and approach change in the technology landscape.
 
 ## Other
 
