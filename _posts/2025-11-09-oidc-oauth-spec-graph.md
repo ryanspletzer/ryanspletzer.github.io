@@ -97,6 +97,7 @@ I grouped the nodes by category to make it clearer:
 Crucially, each node in the graph is clickable, linking directly to the official spec document or RFC text.
 
 By visualizing the web of specs, this fun weekend project aims to turn that intimidating tangle into a navigable map.
+
 For me, this has already been a huge help in regaining context quickly when diving back into OAuth land
 to read up on the dynamic client registration and other specs referenced by MCP,
 after having read the core OIDC and OAuth and JWT specs many years ago...
@@ -130,7 +131,7 @@ Here are some of the key relationships visualized:
 - **OAuth 2.0 is the foundation** – Nearly every other spec extends or references
   the core OAuth 2.0 framework (RFC 6749).
   If you're dealing with tokens or authorization flows, OAuth2 is the base context.
-- **JOSE is the crypto backbone** – JSON Web Signature, Encryption, Keys, etc., and JWT
+- **JOSE is the cryptographic foudnation** – JSON Web Signature, Encryption, Keys, etc., and JWT
   all provide the security underpinnings.
   Many higher-level specs depend on these for signing/encrypting tokens.
 - **OpenID Connect builds on OAuth + JWT** – OIDC uses OAuth 2.0 for its authentication flows
@@ -158,15 +159,27 @@ you start to see an architecture emerge: a few foundational layers, and many opt
 
 ## Beyond Tabs: Gaining Insight and Context
 
-Ultimately, this spec graph isn't just about avoiding browser tab overload – it's about building a mental model of the OAuth/OIDC landscape.
+Ultimately, this spec graph isn't just about avoiding browser tab overload—it's about
+building a mental model of the OAuth/OIDC landscape.
 
-Instead of treating each RFC or spec as an isolated piece of the puzzle, you start to see how the whole puzzle fits together.
+Instead of treating each RFC or spec as an isolated piece of the puzzle,
+you start to see how the whole puzzle fits together.
+
 This has several benefits:
 
-- **Faster learning:** If you're new to these standards, a visual map helps you decide where to begin (perhaps start with OIDC to see a full use-case, then drill down into OAuth 2.0, then JWT... rather than reading specs in a random order).
-- **Implementing with confidence:** When working on a feature (say, adding device login to your app), you can consult the map to ensure you've pulled in all the relevant specs (Device Authorization Grant, PKCE, maybe OAuth Security Best Practices) and understand their dependencies.
-- **Better communication:** As a developer or architect, you can use this diagram to explain the ecosystem to colleagues. It's a lot easier to justify "we need to support spec X" when you can show how X connects to the standards you already use.
-- **Keeping up to date:** The OAuth/OIDC world is still evolving (OAuth 2.1, new best practices, etc.). A living graph can be updated, so you can visually track new additions or changes in the framework over time.
+- **Faster learning:** If you're new to these standards,
+  a visual map helps you decide where to begin
+  (perhaps start with OIDC to see a full use-case,
+  then drill down into OAuth 2.0, then JWT... rather than reading specs in a random order).
+- **Implementing with confidence:** When working on a feature (say, adding device login to your app),
+  you can consult the map to ensure you've pulled in all the relevant specs
+  (Device Authorization Grant, PKCE, maybe OAuth Security Best Practices) and understand their dependencies.
+- **Better communication:** As a developer or architect,
+  you can use this diagram to explain the ecosystem to colleagues.
+  It's a lot easier to justify "we need to support spec X"
+  when you can show how X connects to the standards you already use.
+- **Keeping up to date:** The OAuth/OIDC world is still evolving (OAuth 2.1, new best practices, etc.).
+  A living graph can be updated, so you can visually track new additions or changes in the framework over time.
 
 I open-sourced the OIDC/OAuth Spec Graph with the hope that it will be a useful reference for others, not just myself.
 If you think I missed an important spec or got a relationship wrong,
