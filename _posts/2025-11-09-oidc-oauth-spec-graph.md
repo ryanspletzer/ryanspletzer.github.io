@@ -99,7 +99,7 @@ Crucially, each node in the graph is clickable, linking directly to the official
 By visualizing the web of specs, this fun weekend project aims to turn that intimidating tangle into a navigable map.
 For me, this has already been a huge help in regaining context quickly when diving back into OAuth land
 to read up on the dynamic client registration and other specs referenced by MCP,
-after having read the core OIDC and OAuth and JWT specs many time ago...
+after having read the core OIDC and OAuth and JWT specs many years ago...
 
 ## Building the Spec Graph (with a Little AI Help)
 
