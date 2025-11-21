@@ -13,8 +13,7 @@ called "free time."
 ## Bio
 
 I received a bachelor's degree in Supply Chain Management along with minors in Computer Science and Information
-Technology from Michigan State University in 2012, and I will be forever kicking myself and living with imposter
-syndrome for having not gotten a full degree in Computer Science.
+Technology from Michigan State University in 2012.
 
 I was a software engineer at Dow Chemical from 2012 to 2014 in Information Systems working on SharePoint development,
 and from 2014 to 2018 in R&D working on applications for research and running our source control and CI/CD environments
