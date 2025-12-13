@@ -130,7 +130,31 @@ Which is why I flinch a little every time I see a certain phrase making the roun
 >
 > \- _A trite saying [floating around the internet](https://www.google.com/search?q=this+is+the+worst+ai+is+ever+going+to+be&oq=this+is+the+worst+ai+is+ever+going+to+be&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIHCAEQ6wcYQNIBCDU4MzZqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8)_
 
-I find AI immensely useful.
+Dissecting that annoying line could fill up a whole additional blog post.
+(Is it just the models getting better? And purely through more data?
+Or is it new type of model techniques?
+Or is it techniques we use _around_ the models that gets better?
+[What do you mean?!](https://giphy.com/gifs/sonypictures-jennifer-lawrence-hot-ones-no-hard-feelings-h58E0JsuK3h3d8B1do))
+
+This utterly useless phrase basically amounts to: "Things improve over time."
+
+Wow.
+
+Beyond the Infinite(ly) stupid.
+
+Everything tends to improve over time, not just AI...
+For example, model weights are one thing,
+but no one appreciates the immense amount of work that goes into model _serving_ technologies
+like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
+and improvements _will_ be realized in the surrounding technologies that may not get their full due.
+
+But the worst thing about this phrase is
+the simultaneous sense of wonder and awe and existential dread it instills in people,
+and it is completely unnecessary...
+
+***
+
+If it is truly the worst it is ever going to be, I still at this time find AI immensely useful.
 
 But to find AI useful does not automatically negate the utility of everything else in the technology world
 that has come before it, and is still alive and well and being used today.
@@ -139,7 +163,7 @@ My coffee maker at home is useful.
 
 This blog that I am writing right now and host on GitHub Pages with Cloudflare in front of it is (hopefully) useful,
 and fueled by 100% organic pure human thought and creativity—the
-only AI help came from creating alt text for the images, improving accessibility
+only AI help for this post came from creating alt text for the images, improving accessibility
 (which is a great use case for AI).
 
 My [dev machine setup scripts](https://github.com/ryanspletzer/dev-machine-setup) are useful, to me and to others.
@@ -168,7 +192,7 @@ and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_
 Thankfully, I don't think I will be smote by a bolt of lightning
 if I write a future blog post that has nothing to do with AI.
 
-(And I won't be smote for this one because there are 51 mentions of AI in this blog post.)
+(And I won't be smote for this one because there are 52 mentions of AI in this blog post.)
 
 AI didn't create our current set of technology—rather, our existing of technology helped us create AI.
 
