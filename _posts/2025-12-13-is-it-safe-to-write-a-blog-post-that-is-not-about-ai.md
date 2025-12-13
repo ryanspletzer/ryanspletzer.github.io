@@ -161,7 +161,8 @@ that has come before it, and is still alive and well and being used today.
 
 My coffee maker at home is useful.
 
-This blog that I am writing right now and host on GitHub Pages with Cloudflare in front of it is (hopefully) useful,
+This blog post that I am writing right now
+and host on GitHub Pages with Cloudflare in front of it is (hopefully) useful,
 and fueled by 100% organic pure human thought and creativity—the
 only AI help for this post came from creating alt text for the images, improving accessibility
 (which is a great use case for AI).
