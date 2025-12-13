@@ -169,6 +169,7 @@ only AI help for this post came from creating alt text for the images, improving
 
 My [dev machine setup scripts](https://github.com/ryanspletzer/dev-machine-setup) are useful, to me and to others.
 (AI helped me write the latest versions of those, but AI didn't instill the philosophy of design,
+nor did it provide the years of learning of what "good" looks like to hone my approach,
 nor does it perform the actual setup.)
 
 And for the time of all these decades of useful technologies that we've accumulated,
