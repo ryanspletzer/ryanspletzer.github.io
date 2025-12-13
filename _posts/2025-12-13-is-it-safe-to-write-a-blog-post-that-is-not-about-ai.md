@@ -133,7 +133,7 @@ Which is why I flinch a little every time I see a certain phrase making the roun
 Dissecting that annoying line could fill up a whole additional blog post.
 (Is it just the models getting better? And purely through more data?
 Or is it new type of model techniques?
-Or is it techniques we use _around_ the models that gets better?
+Or is it techniques we use _around_ the models that get better?
 [What do you mean?!](https://giphy.com/gifs/sonypictures-jennifer-lawrence-hot-ones-no-hard-feelings-h58E0JsuK3h3d8B1do))
 
 This utterly useless phrase basically amounts to: "Things improve over time."
