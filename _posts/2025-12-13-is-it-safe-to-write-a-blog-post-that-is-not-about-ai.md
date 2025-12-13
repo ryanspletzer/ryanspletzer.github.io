@@ -201,7 +201,7 @@ The introduction of AI is additive, not subtractive, to the existing technology 
 
 And AI is more than likely going to help us do amazing things in the future.
 
-With this in mind, just maybe, the mental model of how we got here, and where we're going,
+With this in mind, maybe, just maybe, the mental model of how we got here, and where we're going,
 needs to be thought about a little bit differently,
 and should allow more space for more discussion about all types of technology, not just AI.
 
