@@ -83,7 +83,7 @@ I also believe, like Mark, that [hope is not a strategy](https://youtu.be/7FhoUA
 and I am not going to make decisions based on the pure dream that "One day, AI will handle all of this."
 
 In addition to that, we already have _so much existing technology_ today
-that has made what would have used to be considered the impossible, possible.
+that has made what would have used to be considered "the impossible," possible.
 
 ## An Alien From Outer Space 👽
 
@@ -91,7 +91,7 @@ that has made what would have used to be considered the impossible, possible.
 >
 > \- _Arthur C. Clarke's [Third Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
 
-This debate about the possible versus the impossible happens in many corners,
+This debate about the possible versus the impossible happens in many corners of the internet,
 but typically many technical folks who delve into aspects of AI tend to debate the most intensely.
 
 Which begs the question:
@@ -99,7 +99,7 @@ Where does this leave the rest of humanity that may not be technical,
 and for whom AI is a totally foreign entity?
 
 Many are now trying to (or perhaps, due to fear, in many cases, consciously or unconsciously, trying _not_ to)
-wrap their heads around this brand new "thing"?
+wrap their heads around this brand new "thing."
 
 Folks often liken the arrival of modern LLM-based AI to the creation of something analogous to HAL 9000
 from the movie _2001: A Space Odyssey_.
@@ -160,8 +160,8 @@ is essential to produce something that is not a walking security hazard with no 
 that vibe coded its way out of Lovable or Replit.
 
 In fact, most of the time I've spent at work with our teams _delivering_ AI for the enterprise involves using
-technologies and techniques around data and automation and full-stack software engineering
-that _have nothing to do with AI whatsoever_.
+technologies and techniques around data engineering and data science and automation and full-stack software engineering
+and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_.
 
 ***
 
