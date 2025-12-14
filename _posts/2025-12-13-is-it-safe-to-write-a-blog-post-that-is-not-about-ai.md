@@ -196,7 +196,9 @@ and fueled by 100% organic pure human thought and creativity—the
 only AI help for this post came from creating alt text for the images, to improve accessibility
 (which is a great use case for AI).
 
-My [dev machine setup](https://github.com/ryanspletzer/dev-machine-setup) scripts are useful, to me and to others.
+My [dev machine setup](https://github.com/ryanspletzer/dev-machine-setup) scripts are useful
+in saving days setting up a machine by hand,
+both for me and for others I know that are using them.
 (AI helped me write the latest versions of those,
 but AI didn't instill the philosophy of design
 nor the essence of simplicity I wanted to achieve in the latest iterations of them,
