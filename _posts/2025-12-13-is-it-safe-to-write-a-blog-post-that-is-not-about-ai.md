@@ -90,7 +90,11 @@ And so have others:
 >
 > \- [Mark Russinovich](https://youtu.be/PjInF4wbmxM?si=Ampik7G3IV3V0naA&t=1231)
 
-I would rather be confident in my opinions and be wrong, and change my mind in the future,
+It is ironic that the relatively mild and reserved hot takes about this technology
+have suddenly become the "provocative" or "controversial" ones.
+
+I would rather be confident in my (rather mild and grounded) opinions and be wrong,
+and change my mind in the future,
 than to forever remain waffle-y about what is possible (or not possible).
 
 I also believe, like Mark, that [hope is not a strategy](https://youtu.be/7FhoUAidsFg?si=GtiAZejmK8c0IwkC),
