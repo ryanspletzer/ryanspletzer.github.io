@@ -84,7 +84,7 @@ and will have in the future.
 
 In 2025, I've seen enough of AI the past couple of years to form some opinions.
 
-And so have others.
+And so have others:
 
 > "I see no line of sight into AI completely replacing programmers."
 >
