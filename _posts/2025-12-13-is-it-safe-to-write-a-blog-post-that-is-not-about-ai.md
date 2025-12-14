@@ -37,7 +37,8 @@ are an absolute game-changer and life-saver for me).
 My lack of great conversational photographic memory is definitely a "me" thing,
 because I have other colleagues who have an almost spooky ability
 to remember every single aspect of what was said in a conversation—in many ways,
-those types of folks are their own personal Copilot.
+those types of folks are their own personal Copilot,
+(whereas for folks like me, I very much need to lean on note-taking and tools and systems to help me stay organized).
 
 I am telling you this because the conversations I _do_ tend to remember the most
 are ones tied to emotions that lodge themselves into my amygdala.
@@ -167,7 +168,7 @@ The humble washing machine has improved over time.
 
 I could cite a ton of additional mundane examples here, but you get the idea...
 
-Bringing it back to something less mundane:
+Bringing it back to an example that is less mundane:
 Models will improve over time, and model layers and weights are one thing,
 but few appreciate the immense amount of work that goes into model _serving_ technologies
 like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
