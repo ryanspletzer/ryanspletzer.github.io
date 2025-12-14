@@ -174,9 +174,9 @@ but few appreciate the immense amount of work that goes into model _serving_ tec
 like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
 and improvements _will_ be realized in the surrounding technologies
 that are all absolutely essential to making AI possible to use,
-but may not get their full due.
+but may not get their full due, nor the meaningful amount of mind share to discuss openly.
 
-But the worst thing about this idiotic phrase is
+But the most insidious thing about this idiotic phrase is
 the simultaneous sense of wonder and awe and existential dread it instills in people,
 and it is completely unnecessary...
 
