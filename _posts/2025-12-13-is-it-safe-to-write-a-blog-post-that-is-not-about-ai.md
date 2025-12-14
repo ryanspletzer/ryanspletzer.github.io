@@ -151,7 +151,7 @@ or a myriad of other potential issues.
 (This is yet another entire rabbit hole suitable for another blog post).
 
 Maybe the alien life form not only gave us something perceived as "magic,"
-but perhaps by extension gave us a disease in the form of "AI Rabies,"
+but perhaps by extension we contracted a disease from it in the form of "AI Rabies,"
 where we are metaphorically foaming at the mouth about what is possible
 and losing our sense of rationality and once again, _hallucinate_ about the possible,
 or barring that just lose our common sense about what can be helpful to meet real user needs.
