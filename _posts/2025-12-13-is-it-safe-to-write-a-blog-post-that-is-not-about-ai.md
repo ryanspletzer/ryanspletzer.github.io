@@ -172,7 +172,9 @@ Bringing it back to an example that is less mundane:
 Models will improve over time, and model layers and weights are one thing,
 but few appreciate the immense amount of work that goes into model _serving_ technologies
 like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
-and improvements _will_ be realized in the surrounding technologies that may not get their full due.
+and improvements _will_ be realized in the surrounding technologies
+that are all absolutely essential to making AI possible to use,
+but may not get their full due.
 
 But the worst thing about this idiotic phrase is
 the simultaneous sense of wonder and awe and existential dread it instills in people,
