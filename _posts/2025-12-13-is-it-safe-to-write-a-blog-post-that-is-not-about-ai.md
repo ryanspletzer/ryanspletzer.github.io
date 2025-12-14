@@ -116,7 +116,7 @@ not just about what is possible, but also on what timeframes, and in what ways.
 > \- _Arthur C. Clarke's [Third Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
 
 This debate about the possible versus the impossible happens in many corners of the internet,
-but typically many technical folks who delve into aspects of AI tend to engage in debate the most intensely.
+but typically many technical folks who delve into aspects of AI tend to engage in conversations the most intensely.
 
 Which begs the question:
 Where does this leave the rest of humanity that may not be technical,
