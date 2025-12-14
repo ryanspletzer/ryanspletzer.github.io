@@ -56,6 +56,8 @@ because any hint of skepticism about what AI could or couldn't do was often met 
 
 ## What Has Been Possible for a Long Time
 
+![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child’s image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets//images/2001-video-call.jpg)
+
 > "The only way of discovering the limits of the possible is to venture a little way past them into the impossible."
 >
 > \- _Arthur C. Clarke's [Second Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
@@ -93,6 +95,8 @@ and we have folks engaging in wild speculation about what happens _way_ beyond t
 not just about what is possible, but also on what timeframes, and in what ways.
 
 ## An Alien From Outer Space 👽
+
+![A meme-style image inspired by 2001: A Space Odyssey: a group of early hominids stand and crouch among rocky terrain at sunrise, surrounding a tall black monolith in the center. Overlaid white Impact-style text reads at the top, "SOON YOU WON’T BE MANAGING GATHERERS,"" and at the bottom, "YOU'LL BE MANAGING AGENTS—ER, I MEAN HUNTERS,"" humorously comparing modern AI agent hype to prehistoric evolution.](/assets/images/2001-a-Space-Odyssey-apes-monolith.jpg)
 
 > "Any sufficiently advanced technology is indistinguishable from magic."
 >
@@ -215,6 +219,6 @@ and should allow more space for more discussion about all types of technology, n
 
 And maybe, we can try to take some things a little less seriously and remember to have a
 [little bit](https://www.ocregister.com/wp-content/uploads/migration/mnb/mnbih3-b781115628z.120130524122745000ga11e4tlo.3.jpg?w=620)
-of [fun](https://www.youtube.com/watch?v=F9-zi-qKg8I) along the way, too.
+of [fun](https://www.youtube.com/watch?v=F9-zi-qKg8I) along the way, too—let's flip the script:
 
 ![A meme-style reinterpretation of Michelangelo's The Creation of Adam. On the left, Adam reclines with the label "AI" in bold white text. On the right, God reaches out from a cloud of figures labeled "THE REST OF TECHNOLOGY." Their outstretched hands nearly touch, parodying the original composition to suggest AI is not above the rest of technology.](/assets/images/Michelangelo_-_Creation_of_Adam_(cropped)_meme_reversed.jpg)
