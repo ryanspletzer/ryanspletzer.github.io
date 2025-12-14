@@ -61,7 +61,7 @@ and further the pushed notion that AI would solve 'X'—where
 dismissing all the years of innovation and approaches
 that have been around solving problems for people for many, many years;
 the humble IF/ELSE deterministic logic has propelled us as a society forward
-and shouldn't be tossed out with the bath water.
+and shouldn't be tossed out with the proverbial bath water.
 
 ## What Has Been Possible for a Long Time
 
