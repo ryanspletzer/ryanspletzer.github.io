@@ -177,8 +177,9 @@ that are all absolutely essential to making AI possible to use,
 but may not get their full due, nor the meaningful amount of mind share to discuss openly.
 
 But the most insidious thing about this idiotic phrase is
-the simultaneous sense of wonder and awe and existential dread it instills in people,
-and it is completely unnecessary...
+the simultaneous sense of wonder and awe and existential dread it instills in people
+while we are all collectively barreling through the psychological daily onslaught of new AI advancements,
+and it is completely uncalled for and unnecessary...
 
 ***
 
