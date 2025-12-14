@@ -147,7 +147,7 @@ And it's not because the technology doesn't have potential,
 but rather because it was deployed in a "wishful thinking" way that dead-ended
 either due to very real data or technical or even economical constraints,
 or perhaps simply due to the fact that it didn't solve real problems for real people,
-or myriads of other potential issues.
+or a myriad of other potential issues.
 (This is yet another entire rabbit hole suitable for another blog post).
 
 And this is also how you get to one of the weirdest parts of this moment:
