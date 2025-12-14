@@ -65,7 +65,7 @@ and shouldn't be tossed out with the bath water.
 
 ## What Has Been Possible for a Long Time
 
-![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child’s image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets//images/2001-video-call.jpg)
+![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child's image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets//images/2001-video-call.jpg)
 
 > "The only way of discovering the limits of the possible is to venture a little way past them into the impossible."
 >
@@ -105,7 +105,7 @@ not just about what is possible, but also on what timeframes, and in what ways.
 
 ## An Alien From Outer Space 👽
 
-![A meme-style image inspired by 2001: A Space Odyssey: a group of early hominids stand and crouch among rocky terrain at sunrise, surrounding a tall black monolith in the center. Overlaid white Impact-style text reads at the top, "SOON YOU WON’T BE MANAGING GATHERERS,"" and at the bottom, "YOU'LL BE MANAGING AGENTS—ER, I MEAN HUNTERS,"" humorously comparing modern AI agent hype to prehistoric evolution.](/assets/images/2001-a-Space-Odyssey-apes-monolith.jpg)
+![A meme-style image inspired by 2001: A Space Odyssey: a group of early hominids stand and crouch among rocky terrain at sunrise, surrounding a tall black monolith in the center. Overlaid white Impact-style text reads at the top, "SOON YOU WON'T BE MANAGING GATHERERS,"" and at the bottom, "YOU'LL BE MANAGING AGENTS—ER, I MEAN HUNTERS,"" humorously comparing modern AI agent hype to prehistoric evolution.](/assets/images/2001-a-Space-Odyssey-apes-monolith.jpg)
 
 > "Any sufficiently advanced technology is indistinguishable from magic."
 >
@@ -135,7 +135,9 @@ they pin all of their hopes and dreams onto the technology, and _hallucinate_ th
 
 The problem is that these human hallucinations aren't just incorrect—they're expensive.
 They turn into roadmaps, budgets, and organizational decisions.
-And that’s when the "magic" stops being fun.
+And that's when the "magic" stops being fun,
+and often turns into a CFO discussion of "What ROI and/or value are we getting out of this?"
+(which is yet a whole other rabbit hole suitable for another blog post).
 
 And it is also how you get the weirdest part of this moment:
 not the technology itself, but the mythology we're building around it.
