@@ -192,11 +192,13 @@ My coffee maker at home is useful.
 This blog post that I am writing right now
 and host on GitHub Pages with Cloudflare in front of it is (hopefully) useful,
 and fueled by 100% organic pure human thought and creativity—the
-only AI help for this post came from creating alt text for the images, improving accessibility
+only AI help for this post came from creating alt text for the images, to improve accessibility
 (which is a great use case for AI).
 
-My [dev machine setup scripts](https://github.com/ryanspletzer/dev-machine-setup) are useful, to me and to others.
-(AI helped me write the latest versions of those, but AI didn't instill the philosophy of design,
+My [dev machine setup](https://github.com/ryanspletzer/dev-machine-setup) scripts are useful, to me and to others.
+(AI helped me write the latest versions of those,
+but AI didn't instill the philosophy of design
+nor the essence of simplicity I wanted to achieve in the latest iterations of them,
 nor did it provide the years of learning and the acquired taste of what "good" looks like to hone my approach,
 nor does it perform the actual setup.)
 
@@ -225,18 +227,19 @@ if I write a future blog post that has nothing to do with AI.
 (And I won't be smote for this one because there are 36 mentions of the word "AI" in this blog post,
 including that most recent one.)
 
-AI didn't create our current set of technology—rather, our existing of technology helped us create AI.
+AI didn't create our current set of technology—rather, our existing technology helped us create AI.
 
 The introduction of AI is additive, not subtractive, to the existing technology we have.
 
-And AI is more than likely going to help us do amazing things in the future.
+And, coupled with existing technology, AI is more than likely going to help us do amazing things in the future.
 
 With this in mind, maybe, just maybe, the mental model of how we got here, and where we're going,
 needs to be thought about a little bit differently,
 and should allow more space for more discussion about all types of technology, not just AI.
 
-And maybe, we can try to take some things a little less seriously and remember to have a
+And perhaps we can try to take some things a little less seriously and remember to have a
 [little bit](https://www.ocregister.com/wp-content/uploads/migration/mnb/mnbih3-b781115628z.120130524122745000ga11e4tlo.3.jpg?w=620)
-of [fun](https://www.youtube.com/watch?v=F9-zi-qKg8I) along the way, too—let's flip the script:
+of [fun](https://www.youtube.com/watch?v=F9-zi-qKg8I) along the way, too—so in the spirit of fun,
+let's flip this script:
 
 ![A meme-style reinterpretation of Michelangelo's The Creation of Adam. On the left, Adam reclines with the label "AI" in bold white text. On the right, God reaches out from a cloud of figures labeled "THE REST OF TECHNOLOGY." Their outstretched hands nearly touch, parodying the original composition to suggest AI is not above the rest of technology.](/assets/images/Michelangelo_-_Creation_of_Adam_(cropped)_meme_reversed.jpg)
