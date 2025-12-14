@@ -143,7 +143,7 @@ They turn into roadmaps, budgets, and organizational decisions.
 And that's when the "magic" stops being fun,
 and often turns into a CFO discussion of "What ROI and/or value are we getting out of this?"
 
-And it's not because the technology doesn't add value,
+And it's not because the technology doesn't have potential,
 but rather because it was deployed in a "wishful thinking" way that dead-ended
 either due to very real data or technical or even economical constraints,
 or perhaps simply due to the fact that it didn't solve real problems for real people,
