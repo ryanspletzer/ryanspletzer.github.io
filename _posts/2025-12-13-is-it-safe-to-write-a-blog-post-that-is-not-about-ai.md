@@ -29,7 +29,7 @@ Or will it pull me further away from the Light?
 >
 > \- _Arthur C. Clarke's [First Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
 
-I often tell colleagues that I don't have a great photographic memory for verbal conversations
+I often let colleagues know that I don't have a great photographic memory for verbal conversations
 (and therefore tools like Teams meetings with recordings, transcripts, AI recaps
 and the ability to ask questions retroactively about the meeting
 are an absolute game-changer and life-saver for me).
