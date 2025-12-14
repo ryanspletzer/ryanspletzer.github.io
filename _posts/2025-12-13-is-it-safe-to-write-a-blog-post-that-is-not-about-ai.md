@@ -150,7 +150,13 @@ or perhaps simply due to the fact that it didn't solve real problems for real pe
 or a myriad of other potential issues.
 (This is yet another entire rabbit hole suitable for another blog post).
 
-And this is also how you get to one of the weirdest parts of this moment:
+Maybe the alien life form not only gave us something perceived as "magic,"
+but perhaps by extension gave us a disease in the form of "AI Rabies,"
+where we are metaphorically foaming at the mouth about what is possible
+and losing our sense of rationality and once again, _hallucinate_ about the possible,
+or barring that just lose our common sense about what can be helpful to meet real user needs.
+
+Deployed use case issues aside, this is also how you get to one of the weirdest parts of this moment:
 not the technology itself, but the mythology we're building around it.
 
 Which is why I flinch a little bit every time I see a certain phrase making the rounds…
