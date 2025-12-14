@@ -68,6 +68,9 @@ Further, computer science and software engineering are not new,
 and have been deployed for many years in many facets of our existence to help solve real problems
 and (hopefully, but not always) make our lives better and improve the human condition.
 
+But it always begets the question of what else is possible given the technology we have now,
+and will have in the future.
+
 In 2025, I've seen enough of AI the past couple of years to form some opinions.
 
 And so have others.
@@ -84,6 +87,10 @@ and I am not going to make decisions based on the pure dream that "One day, AI w
 
 In addition to that, we already have _so much existing technology_ today
 that has made what would have used to be considered "the impossible," possible.
+
+However most of that progress happens by venturing a little bit beyond today's limits,
+and we have folks engaging in wild speculation about what happens _way_ beyond today's limits,
+not just about what is possible, but also on what timeframes, and in what ways.
 
 ## An Alien From Outer Space 👽
 
