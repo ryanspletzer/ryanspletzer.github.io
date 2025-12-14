@@ -246,7 +246,7 @@ and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_
 Thankfully, I don't think I will be smote by a bolt of lightning
 if I write a future blog post that has nothing to do with AI.
 
-(And I won't be smote for this one because by my count there are 37 mentions of the word "AI" in this blog post,
+(And I won't be smote for this one because by my count there are 38 mentions of the word "AI" in this blog post,
 including the one in this sentence—but please count for yourself, because I am a human that can make mistakes!)
 
 AI didn't create our current set of technology—rather, our existing technology helped us create AI.
