@@ -90,7 +90,7 @@ And so have others:
 >
 > \- [Mark Russinovich](https://youtu.be/PjInF4wbmxM?si=Ampik7G3IV3V0naA&t=1231)
 
-It is ironic that the relatively mild and reserved hot takes about this technology
+It is ironic that the relatively mild and reserved hot takes about AI technology
 have suddenly become the "provocative" or "controversial" ones.
 
 I would rather be confident in my (rather mild and grounded) opinions and be wrong,
@@ -233,8 +233,8 @@ and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_
 Thankfully, I don't think I will be smote by a bolt of lightning
 if I write a future blog post that has nothing to do with AI.
 
-(And I won't be smote for this one because there are 36 mentions of the word "AI" in this blog post,
-including that most recent one.)
+(And I won't be smote for this one because there are 37 mentions of the word "AI" in this blog post,
+including that most recent one—but please count for yourself, because I am a human that can make mistakes!)
 
 AI didn't create our current set of technology—rather, our existing technology helped us create AI.
 
