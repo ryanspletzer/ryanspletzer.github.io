@@ -148,7 +148,7 @@ but rather because it was deployed in a "wishful thinking" way that dead-ended
 either due to very real data or technical or even economical constraints,
 or perhaps simply due to the fact that it didn't solve real problems for real people,
 or a myriad of other potential issues.
-(This is yet another entire rabbit hole suitable for another blog post).
+(This is yet another entire rabbit hole suitable for another blog post.)
 
 Maybe the alien life form not only gave us something perceived as "magic,"
 but perhaps by extension we contracted a disease from it in the form of "AI Rabies,"
