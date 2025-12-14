@@ -55,7 +55,7 @@ because any hint of skepticism about what AI could or couldn't do was often met 
 
 "Well, it's not possible _yet_."
 
-This dead end line of discourse, I felt, wasn't helpful,
+This dead end line of discussion, I felt, wasn't helpful,
 and further the pushed notion that AI would solve X
 (which in many cases was a solved problem already with existing technology)
 was also very dismissive of all the years of innovation and approaches
