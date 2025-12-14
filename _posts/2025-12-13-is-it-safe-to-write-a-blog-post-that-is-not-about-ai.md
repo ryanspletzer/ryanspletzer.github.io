@@ -167,7 +167,8 @@ The humble washing machine has improved over time.
 
 I could cite a ton of additional mundane examples here, but you get the idea...
 
-Back to something more concrete: Models will improve over time, and model layers and weights are one thing,
+Bringing it back to something less mundane:
+Models will improve over time, and model layers and weights are one thing,
 but few appreciate the immense amount of work that goes into model _serving_ technologies
 like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
 and improvements _will_ be realized in the surrounding technologies that may not get their full due.
