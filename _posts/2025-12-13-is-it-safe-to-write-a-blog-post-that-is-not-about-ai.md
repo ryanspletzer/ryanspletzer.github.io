@@ -57,7 +57,7 @@ because any hint of skepticism about what AI could or couldn't do was often met 
 
 This dead end line of discussion, I felt, wasn't helpful,
 and further the pushed notion that AI would solve X
-(which in many cases was a solved problem already with existing technology)
+(where X was in many cases was an already solved problem with existing technology)
 was also very dismissive of all the years of innovation and approaches
 that have been around solving problems for people for many, many years;
 the humble IF/ELSE deterministic logic has propelled us as a society forward
