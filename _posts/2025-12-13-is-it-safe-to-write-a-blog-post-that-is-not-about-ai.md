@@ -54,6 +54,14 @@ because any hint of skepticism about what AI could or couldn't do was often met 
 
 "Well, it's not possible _yet_."
 
+This dead end line of discourse, I felt, wasn't helpful,
+and further the pushed notion that AI would solve X
+(which in many cases was a solved problem already with existing technology)
+was also very dismissive of all the years of innovation and approaches
+that have been around solving problems for people for many, many years;
+the humble IF/ELSE deterministic logic has propelled us as a society forward
+and shouldn't be tossed out with the bath water.
+
 ## What Has Been Possible for a Long Time
 
 ![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child’s image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets//images/2001-video-call.jpg)
@@ -81,17 +89,17 @@ And so have others.
 >
 > \- [Mark Russinovich](https://youtu.be/PjInF4wbmxM?si=Ampik7G3IV3V0naA&t=1231)
 
-I would rather be confident in my opinions and be wrong and change my mind in the future,
-than to forever remain waffle-y about what is possible.
+I would rather be confident in my opinions and be wrong, and change my mind in the future,
+than to forever remain waffle-y about what is possible (or not possible).
 
 I also believe, like Mark, that [hope is not a strategy](https://youtu.be/7FhoUAidsFg?si=GtiAZejmK8c0IwkC),
 and I am not going to make decisions based on the pure dream that "One day, AI will handle all of this."
 
 In addition to that, we already have _so much existing technology_ today
-that has made what would have used to be considered "the impossible," possible.
+that has made what used to be considered "the impossible," possible.
 
-However most of that progress happens by venturing a little bit beyond today's limits,
-and we have folks engaging in wild speculation about what happens _way_ beyond today's limits,
+However most of that progress happens by venturing a _little_ bit beyond today's limits;
+in stark contrast, we have folks engaging in wild speculation about what _could_ happen _way_ beyond today's limits,
 not just about what is possible, but also on what timeframes, and in what ways.
 
 ## An Alien From Outer Space 👽
@@ -103,7 +111,7 @@ not just about what is possible, but also on what timeframes, and in what ways.
 > \- _Arthur C. Clarke's [Third Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
 
 This debate about the possible versus the impossible happens in many corners of the internet,
-but typically many technical folks who delve into aspects of AI tend to debate the most intensely.
+but typically many technical folks who delve into aspects of AI tend to engage in debate the most intensely.
 
 Which begs the question:
 Where does this leave the rest of humanity that may not be technical,
@@ -121,17 +129,17 @@ and more like the Monolith that appears in multiple parts of that movie.
 In many ways it feels like an alien technology showed up in our neck of the woods in this Milky Way galaxy,
 and everyone is trying to wrap their heads around it.
 
-Another unfortunate byproduct of this is that, because AI may feel like "magic" to many people,
+Another unfortunate byproduct of this is, because AI may feel like "magic" to many people,
 they pin all of their hopes and dreams onto the technology, and _hallucinate_ things that AI can and can't do.
 
 The problem is that these human hallucinations aren't just incorrect—they're expensive.
 They turn into roadmaps, budgets, and organizational decisions.
-And that’s when "magic" stops being fun.
+And that’s when the "magic" stops being fun.
 
 And it is also how you get the weirdest part of this moment:
 not the technology itself, but the mythology we're building around it.
 
-Which is why I flinch a little every time I see a certain phrase making the rounds…
+Which is why I flinch a little bit every time I see a certain phrase making the rounds…
 
 ## Beyond the Infinite ♾️
 
@@ -154,12 +162,17 @@ Wow.
 Beyond the Infinite(ly) stupid.
 
 Everything tends to improve over time, not just AI...
-For example, model weights are one thing,
-but no one appreciates the immense amount of work that goes into model _serving_ technologies
+
+The humble washing machine has improved over time.
+
+I could cite a ton of additional mundane examples here, but you get the idea...
+
+Back to something more concrete: Models will improve over time, and model layers and weights are one thing,
+but few appreciate the immense amount of work that goes into model _serving_ technologies
 like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
 and improvements _will_ be realized in the surrounding technologies that may not get their full due.
 
-But the worst thing about this phrase is
+But the worst thing about this idiotic phrase is
 the simultaneous sense of wonder and awe and existential dread it instills in people,
 and it is completely unnecessary...
 
@@ -180,10 +193,10 @@ only AI help for this post came from creating alt text for the images, improving
 
 My [dev machine setup scripts](https://github.com/ryanspletzer/dev-machine-setup) are useful, to me and to others.
 (AI helped me write the latest versions of those, but AI didn't instill the philosophy of design,
-nor did it provide the years of learning of what "good" looks like to hone my approach,
+nor did it provide the years of learning and the acquired taste of what "good" looks like to hone my approach,
 nor does it perform the actual setup.)
 
-And for the time of all these decades of useful technologies that we've accumulated,
+And in consideration of the time span of all these decades of useful technologies that we've accumulated,
 and will continue to accumulate independently of AI,
 _we need to be able to have open ways to talk about them_,
 and not have those discussions be dismissed out of hand because they are somehow "boring" and not aligned
@@ -193,8 +206,8 @@ For example, to get MCP to work properly,
 you have to build up an understanding
 of a [web of interrelated IETF specifications around OAuth and adjacent technologies](https://github.com/ryanspletzer/oidc-oauth-spec-graph/blob/main/graph.md),
 which to some may feel "boring," but for us engineers,
-is essential to produce something that is not a walking security hazard with no auth
-that vibe coded its way out of Lovable or Replit.
+is essential to produce something that is not a walking security hazard with no auth (or dubious auth)
+that vibe coded its way out of its containment zone of Lovable or Replit.
 
 In fact, most of the time I've spent at work with our teams _delivering_ AI for the enterprise involves using
 technologies and techniques around data engineering and data science and automation and full-stack software engineering
@@ -205,7 +218,8 @@ and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_
 Thankfully, I don't think I will be smote by a bolt of lightning
 if I write a future blog post that has nothing to do with AI.
 
-(And I won't be smote for this one because there are 52 mentions of AI in this blog post.)
+(And I won't be smote for this one because there are 36 mentions of the word "AI" in this blog post,
+including that most recent one.)
 
 AI didn't create our current set of technology—rather, our existing of technology helped us create AI.
 
