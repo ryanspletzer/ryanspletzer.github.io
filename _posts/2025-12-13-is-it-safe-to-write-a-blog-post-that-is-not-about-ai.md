@@ -139,11 +139,18 @@ they pin all of their hopes and dreams onto the technology, and _hallucinate_ th
 
 The problem is that these human hallucinations aren't just incorrect—they're expensive.
 They turn into roadmaps, budgets, and organizational decisions.
+
 And that's when the "magic" stops being fun,
 and often turns into a CFO discussion of "What ROI and/or value are we getting out of this?"
-(which is yet a whole other rabbit hole suitable for another blog post).
 
-And it is also how you get the weirdest part of this moment:
+And it's not because the technology doesn't add value,
+but rather because it was deployed in a "wishful thinking" way that dead-ended
+either due to very real data or technical or even economical constraints,
+or perhaps simply due to the fact that it didn't solve real problems for real people,
+or myriads of other potential issues.
+(This is yet another entire rabbit hole suitable for another blog post).
+
+And this is also how you get to one of the weirdest parts of this moment:
 not the technology itself, but the mythology we're building around it.
 
 Which is why I flinch a little bit every time I see a certain phrase making the rounds…
