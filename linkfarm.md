@@ -339,6 +339,9 @@ read them:
   saw the beginnings of touchstone products like Google Docs, which gives him a unique perspective and a plethora of
   higher order advice for how to think about and approach change in the technology landscape.
 
+* [The Modern JavaScript Tutorial](https://javascript.info/) - I was getting back into learning frontend development and
+  needed a really deep dive into modern JavaScript and the DOM, etc., and this did the trick.
+
 ## Other
 
 These are books of any other category that don't fit above.
