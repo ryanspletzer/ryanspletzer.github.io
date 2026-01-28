@@ -1,0 +1,17 @@
+{
+  "name": "ryanspletzer-github-io",
+  "version": "1.0.0",
+  "description": "Visual regression tests for Jekyll blog",
+  "private": true,
+  "scripts": {
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "test:visual:ui": "playwright test --ui",
+    "test:visual:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
