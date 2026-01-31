@@ -1,0 +1,70 @@
+# Workflow to generate/update visual regression baselines on Linux
+# Run this manually when you need to establish or update baseline screenshots
+
+name: Update Visual Baselines
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'Commit message for baseline update'
+        required: false
+        default: 'Update visual regression baselines'
+
+permissions:
+  contents: write
+
+jobs:
+  update-baselines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          # Need to use a token with write access to push commits
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Tags
+        shell: pwsh
+        run: ./.tag_generator.ps1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Bundle Install
+        run: bundle install
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Generate baseline screenshots
+        run: npm run test:visual:update
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push baselines
+        run: |
+          git add e2e/__snapshots__/
+          if git diff --staged --quiet; then
+            echo "No changes to baselines"
+          else
+            git commit -m "${{ github.event.inputs.commit_message }}"
+            git push
+          fi
