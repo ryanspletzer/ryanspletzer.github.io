@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a Jekyll-based personal blog/website deployed to GitHub Pages. The site is built automatically via GitHub Actions on every push to the master branch.
+This is a Jekyll-based personal blog/website deployed to GitHub Pages. The site is built automatically via GitHub Actions on every push to the main branch.
 
 ## Build and Development Commands
 
@@ -81,7 +81,7 @@ Key configuration in `_config.yml`:
 
 ## Important Notes
 
-- The master branch is the default and deployment branch
+- The main branch is the default and deployment branch
 - All posts must be in `_posts/` with the naming convention: `YYYY-MM-DD-title-slug.md`
 - Tags are case-sensitive and should use lowercase with hyphens for multi-word tags
 - The site uses kramdown with GitHub Flavored Markdown for content processing

@@ -9,11 +9,11 @@ name: Deploy Jekyll site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
-  # Run visual tests on pull requests to master
+  # Run visual tests on pull requests to main
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

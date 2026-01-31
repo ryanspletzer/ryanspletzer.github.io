@@ -330,7 +330,7 @@ read them:
   it is helpful to try to stay within 120 characters for purposes of viewing text and code.
   If you want an example of this in action,
   browse to
-  [this link](https://raw.githubusercontent.com/ryanspletzer/ryanspletzer.github.io/refs/heads/master/linkfarm.md)
+  [this link](https://raw.githubusercontent.com/ryanspletzer/ryanspletzer.github.io/refs/heads/main/linkfarm.md)
   and view the raw text of this page,
   and specifically look at how I am writing the text that goes along with this line item on the linkfarm page.
 
