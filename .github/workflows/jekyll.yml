@@ -31,8 +31,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Check which files changed to determine if visual tests are needed
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      visual: ${{ steps.filter.outputs.visual }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            visual:
+              - '_layouts/**'
+              - '_includes/**'
+              - '_sass/**'
+              - 'css/**'
+              - 'assets/css/**'
+              - '_config.yml'
+              - 'e2e/**'
+              - 'playwright.config.ts'
+              - 'package.json'
+              - 'package-lock.json'
+
   # Visual regression tests job
   visual-tests:
+    needs: changes
+    if: needs.changes.outputs.visual == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -87,9 +112,12 @@ jobs:
 
   # Build job
   build:
-    needs: visual-tests
-    # Only run build/deploy on push to master, not on PRs
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: [changes, visual-tests]
+    # Run if: (push/dispatch) AND (visual-tests passed OR was skipped because no visual changes)
+    if: |
+      always() &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      (needs.visual-tests.result == 'success' || needs.visual-tests.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
