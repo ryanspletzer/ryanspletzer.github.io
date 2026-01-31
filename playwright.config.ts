@@ -1,8 +1,14 @@
 import { defineConfig } from '@playwright/test';
 
+// Platform-specific snapshot directory (darwin for macOS, linux for CI)
+const platform = process.platform;
+
 /**
  * Playwright configuration for visual regression testing.
  * Tests run against the local Jekyll development server.
+ *
+ * Snapshots are stored per-platform to allow both local (macOS) and CI (Linux)
+ * testing with their own baselines.
  */
 export default defineConfig({
   testDir: './e2e',
@@ -36,8 +42,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
 
-  // Configure snapshot settings
-  snapshotPathTemplate: '{testDir}/{testFileDir}/__snapshots__/{testFileName}/{arg}-{projectName}{ext}',
+  // Configure snapshot settings (platform-specific directories)
+  snapshotPathTemplate: `{testDir}/{testFileDir}/__snapshots__/${platform}/{arg}-{projectName}{ext}`,
   expect: {
     toHaveScreenshot: {
       // Allow 0.2% pixel difference for cross-platform font rendering differences
