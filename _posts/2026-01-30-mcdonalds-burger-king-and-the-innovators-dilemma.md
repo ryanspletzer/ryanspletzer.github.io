@@ -49,7 +49,7 @@ Sometimes they eat the startup's lunch.
 Sometimes there's room for both.
 And sometimes—the interesting case—the big company can't reproduce the magic, even with all their resources.
 
-## Beating the Lunch Rush
+## Beating the Lunch Rush 🍟
 
 [GitHub Copilot launched as a technical preview](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/) in June 2021—earlier than most people remember.
 It was genuinely pioneering, the first major AI pair programmer.
@@ -61,150 +61,132 @@ and a bet that AI shouldn't be bolted onto an existing editor—it should _be_ t
 Co-founder Sualeh Asif [explained](https://newsletter.pragmaticengineer.com/p/cursor):
 "We needed to own our editor and could not 'just' be an extension, because we wanted to change the way people program."[^cursor-irony]
 
-The feature gap opened fast.
-Cursor shipped with chat integration at launch;
+What happened next is wild.
+Cursor shipped chat integration at launch;
 [GitHub Copilot Chat didn't reach GA](https://github.blog/news-insights/product-news/github-copilot-chat-now-generally-available-for-organizations-and-individuals/) until December 2023—nine months later.
 Cursor had codebase-wide context from day one.
-Agent mode? Cursor shipped it in late 2024; [GitHub's version landed in February 2025](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode).
+Agent mode? Cursor shipped it in late 2024;
+[GitHub's version landed in February 2025](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode).
 [One analysis noted](https://medium.com/@Arihant15/cursor-vs-copilot-let-the-results-speak-413f1ad48c99) that Copilot's multi-file edits were "heavily inspired by another editor called Cursor."
+
+Read that again:
+Microsoft—one of the largest, most well-resourced technology companies on Earth—was,
+for a time, trailing four guys with a fork.
 
 The pattern repeated in the terminal.
 [Aider](https://github.com/paul-gauthier/aider) pioneered CLI-based agentic coding in 2023.[^aider-shame]
 Claude Code launched in February 2025 and
 [hit $1 billion run-rate in six months](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone).
+Dario Amodei says some Anthropic engineers "don't write any code anymore"—they just let the model do it.
+The devs I know who ride every wave have moved to Claude Code;
+those less terminal-inclined may stay parked on Cursor
+(or wait until there's a GUI to accompany or wrap tools like Claude Code—something I don't recommend waiting for).
 
-The scoreboard shifted fast. [GitHub Copilot's market share dropped](https://www.secondtalent.com/resources/github-copilot-statistics/) from near-100% to roughly 42% in a year.
+The result: [GitHub Copilot's market share dropped](https://www.secondtalent.com/resources/github-copilot-statistics/) from near-100% to roughly 42% in a year.
 [Cursor crossed $1 billion ARR faster](https://www.saastr.com/cursor-hit-1b-arr-in-17-months-the-fastest-b2b-to-scale-ever-and-its-not-even-close/) than any B2B software company in history.
 
-## The Copycats 😼
+This is not normal. This is not how markets usually work.
 
-Amjad Masad, Replit's CEO, [described the dynamic](https://www.vanta.com/resources/replit-future-of-code) with candor:
-"I used to feel really bad. I take it for granted now that it'll happen.
-It's still annoying—especially when people don't know we innovated that.
-A lot of Microsoft products are designed by Replit."
+## Why Can't Giants Keep Up? 🦕
 
-He added: "Within a week we see competitors copying UI innovations.
-It's sad because we have a great design team and stress over every pixel."
+So why can't a $3 trillion company stay ahead of four MIT grads?
 
-What _can't_ be copied quickly?
-"Things that are trial through fire," Masad said. "Things with a lot of pain associated with them, especially on the infrastructure side."
-
-That's the startup's moat: not features, but scar tissue from shipping fast and learning hard.
-
-## Why Giants Move Slow
-
-Bureaucracy isn't a bug—it's a feature. (Sometimes.) Just not one that helps you innovate.
+Because bureaucracy isn't a bug—it's a feature. Just not one that helps you ship fast.
 
 Microsoft's own leadership knows this.
 Satya Nadella reportedly told employees that [Microsoft's size is a "massive disadvantage."](https://www.windowscentral.com/microsoft/satya-nadella-calls-microsofts-size-a-massive-disadvantage-in-ai)
 In a December 2025 internal email, he [criticized Copilot programs](https://the-decoder.com/microsoft-ceo-nadella-tells-managers-copilots-gmail-and-outlook-integrations-dont-really-work-and-steps-in-to-fix-them/) as not "really work[ing]" and being "not smart."
+The CEO of Microsoft is saying his own AI products don't work. Let that sink in.
 
 Former GitHub CEO Thomas Dohmke [admitted](https://sequoiacap.com/podcast/training-data-thomas-dohmke/):
 "You can always move faster and be more convicted.
 In the beginning we kept the team intentionally small. Small teams can move fast."
 
-Jeff Bezos went to great lengths to keep Amazon nimble—edicts like the [API mandate](https://konghq.com/blog/enterprise/api-mandate) forced teams to expose service APIs to each other, preserving startup-style independence even at scale.
+Amjad Masad, Replit's CEO, [described the copying dynamic](https://www.vanta.com/resources/replit-future-of-code) with candor:
+"I used to feel really bad. I take it for granted now that it'll happen.
+It's still annoying—especially when people don't know we innovated that.
+A lot of Microsoft products are designed by Replit."
+
+Within a week, he says, competitors copy UI innovations. A week!
+
+What _can't_ be copied that fast?
+"Things that are trial by fire," Masad said. "Things with a lot of pain associated with them, especially on the infrastructure side."
+
+That's the startup's real moat: not features, but scar tissue. The hard-won knowledge from shipping fast and breaking things and fixing them at 2am.
 
 [Research suggests](https://www.signium.com/news/breaking-down-barriers-transforming-bureaucracy-into-agility/) approval processes and org complexity delay innovation timelines by 30-50%.
 [Technical debt may represent 40%](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/tech-debt-reclaiming-tech-equity) of tech estate in large enterprises.
 Startups don't have legacy architecture to protect.
-Microsoft has to weigh every decision against Azure, Office, Windows, and existing Copilot pricing baked into the code.
+Microsoft has to weigh every decision against Azure, Office, Windows, and existing Copilot pricing baked into the codebase.
 
-The big-company strategy often boils down to: "Add AI to the thing we already have."
+The big-company playbook: "Add AI to the thing we already have."
 
 That's not nothing. Microsoft has [20 million Copilot users and 90% of Fortune 100 companies](https://techcrunch.com/2025/07/30/github-copilot-crosses-20-million-all-time-users/) as customers.
-The distribution moat is real.
+The distribution moat is real. But distribution doesn't help you when the product itself is nine months behind.
 
-But it's a different motion than "start from scratch with AI as the foundation."
+## They're All Burgers 🍔
 
-## The Drive-Thru Window 🚗
-
-How did we arrive at the current menu?
-
-**GitHub Copilot → Cursor → GitHub Copilot.**
-Copilot pioneered AI autocomplete.
-Cursor bet developers would want an AI-native IDE—one where the AI isn't a plugin, it's the point.
-They shipped agent mode, multi-file editing, and model choice
-(making a big deal about [Merkle Trees](https://cursor.com/blog/secure-codebase-indexing))
-months before GitHub followed with similar features.
-Cursor now serves the majority of Fortune 500 companies and has reportedly rejected acquisition approaches from Big Tech.
-But focus has shifted to a new tool...
-
-**Claude Code → Everyone else's CLI.**
-Anthropic ships a command-line coding agent.
-Six months later: $1 billion run-rate.
-Dario Amodei says some Anthropic engineers "don't write any code anymore"—they just let the model do it.
-Suddenly everyone's got a CLI story.
-The devs I know who ride every wave have moved to Claude Code; those less terminal-inclined stay parked on Cursor.
-
-**ChatGPT → M365 Copilot.**
-Not a dev tools example, but relevant: OpenAI scouted the terrain of "just talk to an AI."
-Microsoft followed with Copilot everywhere.
+And the copying isn't slowing down.
 
 The next frontier is orchestration—factories of agents coordinating work across codebases.
-Bleeding-edge community approaches exist now (bring your checkbook),
+Bleeding-edge [community approaches](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) exist now
+(bring your checkbook),
 but the minute a big player ships something polished, everyone copies it.
 Anthropic already borrows community ideas and brings them into Claude Code.
 The first-party tasks feature is evidence: the community invented persistent memory hacks for agents, and Anthropic productized it.
 
-Commoditization has never moved this fast.
-
-At some point, you're just deciding: Quarter Pounder or Whopper?
-
-## They're All Burgers 🍔
+Commoditization has never moved this fast. At some point, you're just deciding: Quarter Pounder or Whopper?
 
 Once the market matures, the differences shrink.
-
 The startups that scouted the territory proved it was real.
 Now everyone's competing on execution, distribution, and brand loyalty—not fundamental product vision.
-
-In a very real way, all these companies are figuring this out together,
-and it will all converge into very similar sets of features over time.
 
 [Golder and Tellis](https://www.ideatovalue.com/inno/nickskillicorn/2022/04/first-mover-or-fast-follower-which-is-the-right-innovation-strategy-for-you/) analyzed 500 companies across 50 product categories: 47% of first movers failed versus 8% of fast followers.
 [Steve Blank](https://steveblank.com/2010/10/04/why-pioneers-are-the-ones-with-the-arrows-in-their-backs/) put it bluntly:
 "The jury is in. There's no advantage to being first.
 Astute fast-followers learn from first-movers by looking at the arrows in their backs."
 
-But in platform markets with ecosystem lock-in, incumbents can recover.
-Developer tools sit in between—individuals choose freely, but enterprises face procurement friction favoring established vendors.
-[VS Code still holds 75.9% market share](https://survey.stackoverflow.co/2025/).
-GitHub is still where the code lives.
+So does that mean Microsoft wins in the end? They have [VS Code at 75.9% market share](https://survey.stackoverflow.co/2025/). GitHub is where all the code lives. They have enterprise procurement on their side.
 
 I used to work at a company that was a Microsoft shop, full stop.
-They chose the Microsoft option first; you only ventured outside the ecosystem with a compelling reason.
+They always chose the Microsoft option first; you only ventured outside the ecosystem with a compelling reason.
+Some people only eat McDonald's.[^amazon-fanbois]
 
-Some people are picky and only eat McDonald's.[^amazon-fanbois]
+But here's what I think everyone's missing: **the model matters more than the wrapper.**
 
-The burger wars didn't end with one chain winning and the others going home.
-They ended with multiple billion-dollar franchises serving similar food to different customer segments.
+Cursor can ship the slickest editor in the world (which, they don't),
+but if Claude Code or Codex or whatever comes next is dramatically better,
+it doesn't matter whose IDE you're using.
+The intelligence is the product.
+Everything else is a delivery vehicle.
 
-## The Sodium Hangover
+That's why I think the real winners in this market aren't the tool makers—they're the model makers. Anthropic, OpenAI, and whatever comes next. Cursor and GitHub Copilot are fighting over who gets to put the burger in your hand. But they don't control the beef.
 
-The Innovator's Dilemma isn't about bad companies.
-It's about structural forces that constrain even excellent companies from responding to disruption.
+The burger wars didn't end with one chain winning. They ended with multiple billion-dollar franchises serving similar food to different customer segments. That's probably where we're headed.
 
-If you're a startup, your job is to be McDonald's—do the hard work of scouting, figure out what the market wants before the fast followers arrive.
-Ship features. Accumulate scar tissue. Build things that can't be copied in a week.
+## The Sodium Hangover 🧂
 
-If you're a big company, maybe the honest move is to admit you're playing Burger King's game.
-Drafting off good ideas isn't shameful—it's a different strategy.
-But your size is, as Nadella put it, a "massive disadvantage" when the technology itself is shifting fast.
+So what do you actually do with this information?
 
-Cursor CEO [Michael Truell](https://www.maginative.com/article/anysphere-raises-60m-for-ai-powered-coding-tool-cursor/) articulated the bet:
+If you're a developer: stop worrying about picking the "right" tool. They're all converging. Use whatever makes you productive today, switch when something better comes along, and don't build your identity around your editor. The tool wars are a spectator sport.
+
+If you're building a startup in this space: you're in a foot race where the giants are nine months behind you. That's your window. Ship fast, accumulate scar tissue, build the things that can't be copied in a week. And know that your real competition isn't Microsoft—it's the next startup that hasn't launched yet.
+
+If you're at a big company: maybe the honest move is to admit you're playing Burger King's game. Drafting off good ideas isn't shameful—it's a strategy. But your size is, as Nadella put it, a "massive disadvantage" when the underlying technology is shifting this fast. You're not going to out-innovate four people in a room who don't have to schedule a meeting to make a decision.
+
+Cursor CEO [Michael Truell](https://www.maginative.com/article/anysphere-raises-60m-for-ai-powered-coding-tool-cursor/) articulated the startup bet:
 "The goal is to replace coding with something much better.
 Our aim is to build a magical tool that will one day write all the world's software."
 
 That's not acquisition-speak. That's someone who thinks they're McDonald's.
 
-Competition has been unambiguously good for developers.
+And yet: competition has been unambiguously good for all of us.
 [GitHub Copilot has a free tier now](https://github.blog/news-insights/product-news/github-copilot-in-vscode-free/).
 [Amazon CodeWhisperer](https://aws.amazon.com/codewhisperer/) is free for individuals.
 Pricing pressure has driven Pro tiers down while features accelerate.[^chatgpt-ad-supported]
-Whether Cursor's momentum compounds or GitHub's integration depth reasserts dominance,
-developers capture the surplus.[^wardley-maps]
+Developers capture the surplus.[^wardley-maps]
 
-The burger wars didn't produce a winner. They produced an industry.
+The burger wars didn't produce a winner. They produced an industry where everyone eats well.
 
 Pick your burger. They're all pretty good now.[^my-preferred-burger]
 
@@ -213,6 +195,6 @@ Pick your burger. They're all pretty good now.[^my-preferred-burger]
 [^cursor-irony]: There's irony in that statement. Being a VS Code fork, Cursor will always be tracking upstream and stuck with an alternate extension marketplace. They also don't own any models or have advantageous positions around them like the cloud providers do. That puts them in a precarious spot, IMO. But I digress!
 [^amazon-fanbois]: I've also seen the opposite: Amazon fanbois who have an unending, irrational hatred of Microsoft. Can't we all just agree to hate Oracle?
 [^aider-shame]: I'm ashamed to say I had never heard of Aider before researching this post.
-[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commoditization in various markets having services driven to free means inevitably _you_ become the product. So don't be surprised if Mickey D's shows up in your sidebar on ChatGPT touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
+[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commoditization in various markets, having services driven to "Free," means inevitably _you_ become the product. So don't be surprised if Mickey D's shows up inline in your ChatGPT response touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
 [^wardley-maps]: Go read [Wardley Maps](https://medium.com/wardleymaps) if you want to understand the forces behind why commoditization comes for everything eventually.
 [^my-preferred-burger]: I prefer the [Bacon King](https://www.burgerking.ee/en/menu/flame-grilled-burgers/bacon-king/), and my current Bacon King is Claude Code. But I also like some modifiers. No ketchup, light mayo, add light mustard, add pickles. (Fun fact: I have a former manager who cannot tolerate anything in the cucumber realm—hello, Augusto—in almost violent ways where he'd flip over the restaurant table and walk out if you serve him this particular strain of gourd. We've had to restrain him several times.) I'm currently working on modifying Claude Code to my liking, and figuring out if I want regular fries or chicken fries (flavors of orchestration) and my choice of dipping sauce, probably ranch (my personal taste injected into these tools). I wish Burger King had caffeine free Diet Dr Pepper, then everything would be perfect. Where did Dr Pepper get his PhD from? Ok this ADHD footnote is getting weird. Bye!
