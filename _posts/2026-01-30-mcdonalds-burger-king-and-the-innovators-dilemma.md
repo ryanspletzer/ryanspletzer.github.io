@@ -3,7 +3,7 @@ layout: post
 title: McDonald's, Burger King, and the Innovator's Dilemma
 date: 2026-01-30 00:00:00
 description: >
-  Startups scout, big companies follow.
+  Startups scout ahead, big companies follow.
   The AI developer tools market is playing out the Innovator's Dilemma in real-time—and
   we're all just deciding between Quarter Pounders and Whoppers.
 tags:
@@ -20,7 +20,7 @@ Why wouldn't you draft off their homework?
 
 I grew up down the street from one of these pairings:
 a McDonald's with a Burger King _literally_ adjacent to it.
-(My childhood diet is between me and my cardiologist. The 90's were a different time.)
+(My childhood diet is between me and my cardiologist. The '90s were a different time.)
 
 Lately, I've been thinking about this dynamic in a different context: AI developer tools.
 
@@ -28,7 +28,7 @@ Lately, I've been thinking about this dynamic in a different context: AI develop
 
 ## Startups Scout Ahead, Big Companies Follow
 
-This is the Innovator's Dilemma in miniature, playing out in real-time.
+This is the Innovator's Dilemma, playing out in real-time.
 
 [Clayton Christensen's thesis](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)
 wasn't that big companies are dumb or poorly managed—it's
@@ -158,7 +158,7 @@ Once the market matures, the differences shrink.
 The startups that scouted the territory proved it was real.
 Now everyone's competing on execution, distribution, and brand loyalty—not fundamental product vision.
 
-In a very real way, all these companies are figuring this all out together,
+In a very real way, all these companies are figuring this out together,
 and it will all converge into very similar sets of features over time.
 
 [Golder and Tellis](https://www.ideatovalue.com/inno/nickskillicorn/2022/04/first-mover-or-fast-follower-which-is-the-right-innovation-strategy-for-you/) analyzed 500 companies across 50 product categories: 47% of first movers failed versus 8% of fast followers.
@@ -213,6 +213,6 @@ Pick your burger. They're all pretty good now.[^my-preferred-burger]
 [^cursor-irony]: There's irony in that statement. Being a VS Code fork, Cursor will always be tracking upstream and stuck with an alternate extension marketplace. They also don't own any models or have advantageous positions around them like the cloud providers do. That puts them in a precarious spot, IMO. But I digress!
 [^amazon-fanbois]: I've also seen the opposite: Amazon fanbois who have an unending, irrational hatred of Microsoft. Can't we all just agree to hate Oracle?
 [^aider-shame]: I'm ashamed to say I had never heard of Aider before researching this post.
-[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commodization in various markets having services driven to free means inevitably _you_ become the product. So don't be surprised if Mickey D's shows up in your sidebar on ChatGPT touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
+[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commoditization in various markets having services driven to free means inevitably _you_ become the product. So don't be surprised if Mickey D's shows up in your sidebar on ChatGPT touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
 [^wardley-maps]: Go read [Wardley Maps](https://medium.com/wardleymaps) if you want to understand the forces behind why commoditization comes for everything eventually.
-[^my-preferred-burger]: I prefer the [Bacon King](https://www.burgerking.ee/en/menu/flame-grilled-burgers/bacon-king/), and my current Bacon King is Claude Code. But I also like some modifiers. No ketchup, light mayo, add light mustard, add pickles. (Fun fact: I have a former manager who cannot tolerate anything in the cucumber based—hello, Augusto—in almost violent ways where he'd flip over the restaurant table and walk out if you serve him this particular strand of gourd. We've had to restrain him several times.) I'm currently working on modifying Claude Code to my liking, and figuring out if I want regular fries or chicken fries (flavors of orchestration) and my choice of dipping sauce, probably ranch (my personal taste injected into these tools). I wish Burger King had caffeine free Diet Dr Pepper, then everything would be perfect. Where did Dr Pepper get his PhD from? Ok this ADHD footnote is getting weird. Bye!
+[^my-preferred-burger]: I prefer the [Bacon King](https://www.burgerking.ee/en/menu/flame-grilled-burgers/bacon-king/), and my current Bacon King is Claude Code. But I also like some modifiers. No ketchup, light mayo, add light mustard, add pickles. (Fun fact: I have a former manager who cannot tolerate anything in the cucumber realm—hello, Augusto—in almost violent ways where he'd flip over the restaurant table and walk out if you serve him this particular strain of gourd. We've had to restrain him several times.) I'm currently working on modifying Claude Code to my liking, and figuring out if I want regular fries or chicken fries (flavors of orchestration) and my choice of dipping sauce, probably ranch (my personal taste injected into these tools). I wish Burger King had caffeine free Diet Dr Pepper, then everything would be perfect. Where did Dr Pepper get his PhD from? Ok this ADHD footnote is getting weird. Bye!
