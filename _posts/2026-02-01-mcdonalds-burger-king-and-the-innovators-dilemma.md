@@ -1,7 +1,7 @@
 ---
 layout: post
 title: McDonald's, Burger King, and the Innovator's Dilemma
-date: 2026-01-30 00:00:00
+date: 2026-02-01 00:00:00
 description: >
   Startups scout ahead, big companies follow.
   The AI developer tools market is playing out the Innovator's Dilemma in real-time—and
