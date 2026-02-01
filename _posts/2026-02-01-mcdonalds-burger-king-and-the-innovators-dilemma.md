@@ -72,7 +72,7 @@ that Copilot's multi-file edits were "heavily inspired by another editor called 
 
 Read that again:
 Microsoft—one of the largest, most well-resourced technology companies on Earth—was,
-for a time, trailing four guys with a fork.
+for a time, trailing four guys with a fork.[^merkle-tree-secret-sauce]
 
 The pattern repeated in the terminal.
 [Aider](https://github.com/paul-gauthier/aider) pioneered CLI-based agentic coding in 2023.[^aider-shame]
@@ -244,6 +244,7 @@ Pick your burger. They're all pretty good now.[^my-preferred-burger]
 ## Footnotes
 
 [^cursor-irony]: There's irony in that statement. Being a VS Code fork, Cursor will always be tracking upstream and stuck with an alternate extension marketplace. They also don't own any models or have advantageous positions around them like the cloud providers do. That puts them in a precarious spot, IMO. But I digress!
+[^merkle-tree-secret-sauce]: Cursor's secret sauce seemed to revolved around [Merkle Trees](https://cursor.com/blog/secure-codebase-indexing) as an efficient way to index your codebase, which was cool, but ultimately an approach that can be copied, and we've quickly trotted past with Claude Code; though Claude Code doesn't do it directly built-in, it does have an extensive community and you can get code search going quickly with a [plugin](https://github.com/zilliztech/claude-context).
 [^aider-shame]: I'm ashamed to say I had never heard of Aider before researching this post.
 [^flock-to-claude-code]: Even though they should, since despite the fact that better things may come from well-known players, they're losing valuable time that could have helped them learn how to wrangle agents in higher-order potentially GUI-ful tools in the future.
 [^amazon-fanbois]: I've also seen the opposite: Amazon fanbois who have an unending, irrational hatred of Microsoft. Can't we all just agree to hate Oracle?
