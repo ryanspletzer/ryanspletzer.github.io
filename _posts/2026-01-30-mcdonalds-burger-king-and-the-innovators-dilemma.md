@@ -49,7 +49,7 @@ Sometimes they eat the startup's lunch.
 Sometimes there's room for both.
 And sometimes—the interesting case—the big company can't reproduce the magic, even with all their resources.
 
-## The Timeline Tells the Story
+## Beating the Lunch Rush
 
 [GitHub Copilot launched as a technical preview](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/) in June 2021—earlier than most people remember.
 It was genuinely pioneering, the first major AI pair programmer.
@@ -117,7 +117,9 @@ The distribution moat is real.
 
 But it's a different motion than "start from scratch with AI as the foundation."
 
-## The Current Scoreboard
+## The Drive-Thru Window 🚗
+
+How did we arrive at the current menu?
 
 **GitHub Copilot → Cursor → GitHub Copilot.**
 Copilot pioneered AI autocomplete.
@@ -177,7 +179,7 @@ Some people are picky and only eat McDonald's.[^amazon-fanbois]
 The burger wars didn't end with one chain winning and the others going home.
 They ended with multiple billion-dollar franchises serving similar food to different customer segments.
 
-## So What?
+## The Sodium Hangover
 
 The Innovator's Dilemma isn't about bad companies.
 It's about structural forces that constrain even excellent companies from responding to disruption.
