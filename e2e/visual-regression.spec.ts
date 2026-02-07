@@ -55,7 +55,7 @@ test.describe('Homepage', () => {
 test.describe('Blog Post', () => {
   test('post with code blocks', async ({ page }) => {
     // Test a post that contains code blocks to verify syntax highlighting
-    await page.goto('/2024/04/a-no-nonense-guide-to-setting-up-python-environments/');
+    await page.goto('/2024/04/a-no-nonsense-guide-to-setting-up-python-environments/');
     await takeFullPageScreenshot(page, 'post-with-code');
   });
 

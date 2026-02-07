@@ -9,6 +9,8 @@ description: >
 tags:
  - vendor-lock-in
  - build-vs-buy
+redirect_from:
+  - /2023/08/real-vendor-lockin/
 ---
 
 In a previous post, I discussed the topic of [vendor lock-in](https://www.spletzer.com/2023/03/vendor-lock-in/) with

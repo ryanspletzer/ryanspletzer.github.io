@@ -11,6 +11,8 @@ description: >
 tags:
  - python
  - environments
+redirect_from:
+  - /2024/04/a-no-nonense-guide-to-setting-up-python-environments/
 ---
 
 Python has become the lingua franca for developing various AI/ML solutions (and more), but getting started with setting
