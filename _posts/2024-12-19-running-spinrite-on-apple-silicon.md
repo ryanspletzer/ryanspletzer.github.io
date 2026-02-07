@@ -75,7 +75,7 @@ QEMU, macOS will immediately re-mount the drive...
 
 Finally, run QEMU (with `sudo`, which is necessary so it can get at the drive -- as always do this with caution and only
 if you're comfortable), providing the correct path to `SpinRite.iso`. Note that the ISO path is _case-sensitive_ --
-beyond the obviousness of macOS being a case-sensitive file system, I say this because `spinrite.exe` will output
+beyond the fact that terminal commands on macOS are case-sensitive, I say this because `spinrite.exe` will output
 `SpinRite.iso` with uppercase `S` and `R`, and that might trip someone up.
 
 ```bash
