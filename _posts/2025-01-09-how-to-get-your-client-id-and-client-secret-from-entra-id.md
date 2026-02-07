@@ -29,7 +29,7 @@ find that it is helpful to describe how to do this in my own words.
 
 These steps assume that there is an app registration waiting for you in the Azure Portal that you own.
 
-(Many/most enterprises are likely restrict who can create app registrations, for good security reasons, so one would
+(Many/most enterprises are likely to restrict who can create app registrations, for good security reasons, so one would
 likely be created for you upon request to your admins.)
 
 ## Steps

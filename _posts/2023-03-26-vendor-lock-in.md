@@ -92,7 +92,7 @@ cloud to another, right?
 
 Well, let's hope you have a backend network set up to do that to avoid the insane amount of internet network egress
 costs you're likely to incur during the floating process. And even with a private network set up, you still may run into
-these type of egress costs.
+these types of egress costs.
 
 And then, minus the application workloads that you have migrated from one source cloud provider to another, what do you
 do with all the footprint of network infrastructure that's leftover on the source cloud provider? Would you delete it

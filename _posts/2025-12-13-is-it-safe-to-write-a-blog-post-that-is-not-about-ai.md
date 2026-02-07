@@ -65,7 +65,7 @@ and shouldn't be tossed out with the proverbial bath water.
 
 ## What Has Been Possible for a Long Time
 
-![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child's image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets//images/2001-video-call.jpg)
+![A meme-style still from 2001: A Space Odyssey shows a man seated at a futuristic video console, smiling as he speaks to a child on a screen. Overlaid text on the left reads, "CAN'T YOU THINK OF ANYTHING ELSE YOU WANT FOR YOUR BIRTHDAY? SOMETHING VERY SPECIAL?" Overlaid text on the right, next to the child's image, reads, "SOMETHING THAT OUTPERFORMS HUMANS ON COMPLEX REASONING BENCHMARKS."](/assets/images/2001-video-call.jpg)
 
 > "The only way of discovering the limits of the possible is to venture a little way past them into the impossible."
 >

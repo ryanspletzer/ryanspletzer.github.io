@@ -50,7 +50,7 @@ with agentic tools—it is imbued with all the naïveté I've come to expect in 
 far, making it effectively a non-starter for sophisticated enterprises who would wish to run it remotely (unless you
 applied some serious elbow grease—more on that later).
 
-Running the GitHub MCP Server locally could like the following:
+Running the GitHub MCP Server locally could look like the following:
 
 ```bash
 # Provide your GitHub (preferably Fine-Grained) Personal Access Token
@@ -106,7 +106,7 @@ correct. See, running these MCP servers locally has certain aspects to it:
 
 * **One tenant = one permission set.**
 
-  There's no question whose the user is in this scenario, it's all just you.
+  There's no question who the user is in this scenario, it's all just you.
 
   The server can safely assume "allow everything."
 
@@ -199,7 +199,7 @@ Fail to trim, and your nice AI agent becomes a data-leak vending machine.
 
 ### 3.3. Multi-Tenant Isolation
 
-Thus far we have approached local and remote scenarios only from the standpoint of a developer who us using local tools
+Thus far we have approached local and remote scenarios only from the standpoint of a developer who is using local tools
 to connect to local and remote MCP servers.
 
 But MCP servers are not destined just for developer tools—they can and will be used in scenarios like enterprise chatbot
@@ -223,7 +223,7 @@ what you're creating inherently now has to be catered to your products and SaaS 
 These considerations even extend to scenarios _beyond_ your core products and into tools your customers may be using,
 like Microsoft 365 Copilot, where they may want to connect their own enterprise Copilot chat to MCP Servers that wrap
 various APIs of your products, and you have to provide facilities for users at your customer's enterprise to
-authenticate to provide proper security trimming, in much the same way that you authenticate to anyone of a number of
+authenticate to provide proper security trimming, in much the same way that you authenticate to any one of a number of
 Slack apps as a user to connect to various tools.
 
 ## 4. Consumer Patterns Drive Security Posture

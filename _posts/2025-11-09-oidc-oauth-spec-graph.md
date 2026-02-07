@@ -131,7 +131,7 @@ Here are some of the key relationships visualized:
 - **OAuth 2.0 is the foundation** – Nearly every other spec extends or references
   the core OAuth 2.0 framework (RFC 6749).
   If you're dealing with tokens or authorization flows, OAuth2 is the base context.
-- **JOSE is the cryptographic foudnation** – JSON Web Signature, Encryption, Keys, etc., and JWT
+- **JOSE is the cryptographic foundation** – JSON Web Signature, Encryption, Keys, etc., and JWT
   all provide the security underpinnings.
   Many higher-level specs depend on these for signing/encrypting tokens.
 - **OpenID Connect builds on OAuth + JWT** – OIDC uses OAuth 2.0 for its authentication flows

@@ -32,7 +32,7 @@ installed packages, and _avoid_ using a global Python environment and set of glo
 ## Credits and Caveats
 
 My own internet research aside, I would like to credit my teammates who are experts in this area who have given me a lot
-of pointers and helpful opinons on what works well. My first exposure to Python was well over a decade ago in college
+of pointers and helpful opinions on what works well. My first exposure to Python was well over a decade ago in college
 with 2.7, before `pyenv` even existed, and thus I've been up-revving my mental models of Python environment management
 to match the current state of the world and how many developers prefer to set up their local Python dev environments.
 
@@ -270,7 +270,7 @@ pyenv-venv install 3.12.3 my-repo-virtualenv-3.12.3
 pyenv-venv local my-repo-virtualenv-3.12.3
 
 # NOTE that pyenv-win is currently limited and does *not* support auto-activation via `cd` or changing into the
-# directory, it only supports auto-activation when you open a shell directly in the given directly via Explorer. See:
+# directory, it only supports auto-activation when you open a shell directly in the given directory via Explorer. See:
 # https://github.com/pyenv-win/pyenv-win-venv/issues/12
 # If you follow the steps above, you can activate a virtualenv at any time in a given directory by running
 pyenv-venv init

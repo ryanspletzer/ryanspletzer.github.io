@@ -31,7 +31,7 @@ host this thing (so that I can remember it all years from now).
 ## Backstory
 
 I first made my own personal static website back in college in the
-pre-responsive web design days, back when I was looking for a my first full-time
+pre-responsive web design days, back when I was looking for my first full-time
 job. It had a couple basic pages and that was it. That site got very
 embarrassing after a while. I finally decided to take it down and just forward
 my domain to an about.me page while I worked on getting a new blog-based site
@@ -45,13 +45,13 @@ now.
 
 At the time of this initial writing, this site is definitely in a 'first pass'
 mode and I fully expect aspects of it, especially the design, to change over
-time, but  I wanted to get started and establish a presence so I can write
+time, but I wanted to get started and establish a presence so I can write
 content about some of the things I see day to day in the software development
 and DevOps spheres.
 
 ## Jekyll
 
-Yes, I did the typical developer thing and wen with a
+Yes, I did the typical developer thing and went with a
 [Jekyll](https://jekyllrb.com/)-generated site hosted on GitHub pages. This
 required me to roll up my sleeves and get a Linux VM up at home (chose Ubuntu
 so I could VNC to the nice Unity desktop for serving Jekyll in a browser), so I

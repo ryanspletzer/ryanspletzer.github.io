@@ -117,7 +117,7 @@ and how essential that work was to success. In the early days of enterprise sear
 information architects or knowledge managers on the intranet team. These folks would create taxonomies, define metadata
 standards, and even manually curate search results for popular queries. (Who else remembers setting up "**Best Bets**"
 or "Key Results" for certain keywords? I kid you not, at one point our old intranet had something akin to
-[AOL keywords](https://news.ycombinator.com/item?id=37416005) where you would type a word and hit "Enter" it would take
+[AOL keywords](https://news.ycombinator.com/item?id=37416005) where you would type a word and hit "Enter" and it would take
 you directly to a certain page -- and people were upset when we replaced that with "Best bets" in enterprise search
 because it involved one more click on a top result. 🙃 Retro indeed. And also: first world problems. But I digress...)
 This highly curated approach to search ensured that content was well-organized and annotated, which in turn made search

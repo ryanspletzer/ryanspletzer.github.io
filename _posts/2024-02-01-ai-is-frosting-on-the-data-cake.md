@@ -11,7 +11,7 @@ tags:
 ---
 
 Chefs have a saying: _mise en place_, or "putting in place," which means to organize your ingredients and tools before
-cooking begins, and not just in any generic way, but in a specific ways that allows for the maximization of efficiency
+cooking begins, and not just in any generic way, but in a specific way that allows for the maximization of efficiency
 and movement for the individual so they can produce dishes at a desired cadence and speed.
 
 This is a great analogy and philosophy for data in an enterprise as well, as data's proper placement and movement is key
@@ -31,7 +31,7 @@ result there has never been a better time to dust off those data initiatives and
 efforts.
 
 You will only be as successful as you can be with AI, to a point, unless you get your data house in order. (Or, to keep
-the analogy going: unless you get your your data _kitchen_ in order.)
+the analogy going: unless you get your data _kitchen_ in order.)
 
 In that vein, one key thing does need to be pointed out: if data is the ingredients for this bake, realize that not all
 ingredients are "fresh." Data can not only be non-authoritative, but it also has a "best by" date that you need to be

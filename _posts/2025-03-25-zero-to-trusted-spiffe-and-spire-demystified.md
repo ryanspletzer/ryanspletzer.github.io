@@ -72,7 +72,7 @@ slip out.
 Now you must inject that secret into an app or service. Do you store it in a password manager or a secrets vault? Do you
 put it in your CI/CD pipeline in an encrypted variable? Or do you manually configure it into each environment? Each
 approach is a trade-off -- how many copies of the secret are you comfortable with existing at once, and how often do you
-rotate them to reduce risk? At large scale, all of these these philosophically different approaches can become a real
+rotate them to reduce risk? At large scale, all of these philosophically different approaches can become a real
 source of friction, especially when hundreds of services each need secret management.
 
 ### 4. Rotating an In-Service Secret Manually
@@ -157,7 +157,7 @@ For the uninitiated, here's a quick terminology guide:
 
 ### What the Heck is an SVID?
 
-An SVID is just a short-lived X.509 certificate with a SPIFFE ID inside one if its fields -- like
+An SVID is just a short-lived X.509 certificate with a SPIFFE ID inside one of its fields -- like
 `spiffe://mycompany.com/prod/serviceA` -- that can be used to establish mutual TLS (mTLS) between workloads. Once its
 lifetime approaches expiration (often minutes or hours), the SPIRE agent automatically fetches a fresh SVID from SPIRE
 server for the workload to retrieve. (More on that in a moment.)
@@ -226,7 +226,7 @@ Let's walk through that step-by-step with a concrete example:
    manual rotation.
 
 *Note that attestation in Kubernetes is highly flexible and can work off of multiple types of metadata and signals
-around the pod to prove identity; in other words, there options available to the implementers to decide precisely how
+around the pod to prove identity; in other words, there are options available to the implementers to decide precisely how
 they wish to identify the workload in Kubernetes.
 
 Understanding this architecture without a visual can admittedly be a challenge, and while I could insert a visual here,
@@ -310,7 +310,7 @@ As the reference implementation, SPIRE does the heavy lifting of making SPIFFE a
 
 * It boots up agents (node agents) that run on each machine/VM/node.
 * Those agents validate workloads (workload attestation).
-* They issue SVIDs with short lifetimes so that every service request or mTLS handshake uses a a very fresh,
+* They issue SVIDs with short lifetimes so that every service request or mTLS handshake uses a very fresh,
   automatically rotated credential.
 
 In short, SPIRE weaves a dynamic web of trust across your environment.

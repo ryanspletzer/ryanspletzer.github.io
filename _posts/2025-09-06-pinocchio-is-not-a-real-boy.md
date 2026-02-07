@@ -43,7 +43,7 @@ I know HTML, CSS and enough raw JavaScript
 with accompanying design patterns to be dangerous,
 and I know enough about the fundamentals of the web
 and about tracing down errors and bugs with browser web developer tools
-to even to identify and fix a problem;
+to even identify and fix a problem;
 but most of my web work is from 12+ years ago—back
 when [SPA](https://en.wikipedia.org/wiki/Single-page_application) frameworks were
 still figuring themselves out.[^2]
@@ -113,7 +113,7 @@ Yes,
 you can ask an LLM to explain a codebase to you.
 
 You can be diligent with Cursor or GitHub Copilot rules,
-ensuring that it always generate docstrings and Mermaid diagrams (token consumption galore).
+ensuring that it always generates docstrings and Mermaid diagrams (token consumption galore).
 
 Some people will do that.
 
@@ -159,7 +159,7 @@ ask relevant questions to the tool first to gain an understanding,
 then based on that understanding try some approaches that tightly scope the autonomy of
 the agent as possible for the problem at hand,
 commit often so you have coherent states to roll back to
-(and you can leverage the tools here by craft more detailed commit messages, too),
+(and you can leverage the tools here by crafting more detailed commit messages, too),
 take some suggestions from the tools;
 but sometimes,
 you need to let the tool sit there quietly while you read.
@@ -236,7 +236,7 @@ and while he knows it is on some level a fun toy,
 on another level he takes the FAA rules around drones very seriously.
 
 Further, he will likely never lose his drone in a lake
-like you've see in those many funny YouTube videos.
+like you've seen in those many funny YouTube videos.
 
 He enjoys flying drones, but at the same time
 he does **not** trust them like a real aircraft.

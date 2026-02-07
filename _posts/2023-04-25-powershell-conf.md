@@ -26,7 +26,7 @@ I quickly learned that SharePoint Server begets SQL Server, which begets learnin
 connected to Exchange Online, which is connected to Office 365 and Azure AD, and Azure subscriptions and resources can
 help to run to automate all these things -- it's all connected!
 
-And how do we manage and automate all these things without an excrutiating click-next experience?
+And how do we manage and automate all these things without an excruciating click-next experience?
 
 PowerShell.
 
@@ -51,7 +51,7 @@ called "DevOps."
 
 Were it not for PowerShell, I'd be a humble C# developer that is still utterly dependent on a different set of mouse
 clicks in the full Visual Studio IDE, with little to no ability to perform all the surrounding things that it takes to
-delivery infrastructure and software atop it. PowerShell took me beyond the IDE and into the terminal (which, let's be
+deliver infrastructure and software atop it. PowerShell took me beyond the IDE and into the terminal (which, let's be
 frank, is where most of us are at today for software development), and got me introduced to some of the tools that
 inspired PowerShell like bash, zsh and more. But most importantly, the _concepts_ that I got introduced to through
 PowerShell, like Automation, Scripting, CI/CD, CLI's, and way too many more to list, are really what broadened my
@@ -68,7 +68,7 @@ objects there with a nicer REST-based approach. With any luck, we may be able to
 community can leverage it as well.
 
 It's important to take moments like these and reflect back on how far you've come. I'm getting to meet many of the folks
-in industry here that I've looked up to for a number of years. It's a cool full-circle type of feeling that which is
-making me feel incredible grateful for my career path -- yes, even those early years as a SharePoint developer, which
+in industry here that I've looked up to for a number of years. It's a cool full-circle type of feeling that is
+making me feel incredibly grateful for my career path -- yes, even those early years as a SharePoint developer, which
 turns out, were quite critical for getting me to where I'm at now -- and the important role that PowerShell has played
 in helping me get to where I am today.

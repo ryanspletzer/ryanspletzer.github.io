@@ -100,7 +100,7 @@ would solve for this in the future.
 
 Is this the most performant way to run SpinRite? Maybe not. I'm not certain of the performance hit that might occur going
 through the x86 translation layer of QEMU. But regardless, if utter performance is not a concern, (meaning, you're maybe
-willing ot wait a little longer for SpinRite to process a drive), it certainly is a great fallback approach to having to
+willing to wait a little longer for SpinRite to process a drive), it certainly is a great fallback approach to having to
 seek out x86 hardware in an increasingly ARM-based world.
 
 Happy spinning, and Happy Holidays! 💿
