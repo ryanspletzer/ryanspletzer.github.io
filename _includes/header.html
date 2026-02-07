@@ -6,6 +6,17 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
   <meta name="theme-color" content="#222222">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{ site.author }}">
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% elsif site.description %}
+  <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  {% if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+  {% else %}
+  <meta name="robots" content="index, follow">
+  {% endif %}
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
@@ -33,6 +44,7 @@
   <link rel="canonical" href="{{ site.url | append:page.url }}">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="me" href="https://hachyderm.io/@ryanspletzer">
+  {% include json-ld.html %}
 </head>
 
 <body>

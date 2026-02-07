@@ -1,0 +1,77 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}"
+}
+</script>
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  }{% if page.description %},
+  "description": "{{ page.description | escape }}"{% endif %}{% if page.header %},
+  "image": "{{ site.url }}{{ page.header }}"{% endif %},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  }
+}
+</script>
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    }{% if page.title %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }{% endif %}
+  ]
+}
+</script>
+
+{% if page.url == '/about/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author }}",
+  "url": "{{ site.url }}/about/",
+  "jobTitle": "Distinguished Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Autodesk"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/ryanspletzer/",
+    "https://github.com/ryanspletzer",
+    "https://bsky.app/profile/ryan.spletzer.com",
+    "https://spletzer.com/@ryan"
+  ]
+}
+</script>
+{% endif %}
