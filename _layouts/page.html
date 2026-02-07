@@ -5,22 +5,25 @@
     <div class="container container-center">
       <div class="row">
         <div class="col-md-9">
-          <div class="article">
-            <div class="well">
-              <h1>{{ page.title }}</h1>
-              <div class="post-content">
-                {{ content }}
+          <main id="main-content">
+            <article>
+              <div class="well">
+                <h1>{{ page.title }}</h1>
+                <div class="post-content">
+                  {{ content }}
+                </div>
               </div>
-            </div>
-          </div>
+            </article>
+          </main>
         </div>
         <div class="col-md-3">
-          {% include sidebar.html %}
+          <aside aria-label="Sidebar">
+            {% include sidebar.html %}
+          </aside>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 {% include footer.html %}
 </body>

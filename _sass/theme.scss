@@ -90,83 +90,6 @@ a:hover, a:focus {
 }
 
 //********************************************************
-//                    Social Links
-//********************************************************
-ul.social-media {
-  text-align: center;
-  padding: 0 0 10px 0;
-  li {
-    display: inline-block;
-  }
-  li > a {
-    width: 45px;
-    height: 45px;
-    @include transition(color 0.2s);
-    display: inline-block;
-    color: white;
-    &:hover {
-      color: $accent-color;
-    }
-  }
-}
-
-
-//********************************************************
-//                    Share
-//********************************************************
-.share-bar{
-  text-align: right;
-}
-
-ul.share-buttons {
-  list-style: none;
-  padding: 0;
-  li {
-    display: inline-block;
-    .fa-facebook,
-    .fa-twitter,
-    .fa-google-plus,
-    .fa-linkedin,
-    .fa-envelope-o,
-    .fa-pinterest {
-      color: #ffffff
-    }
-    a {
-      text-decoration: none;
-    }
-
-    -webkit-transition: -webkit-transform .4s;
-    -moz-transition: -moz-transform .4s;
-    -ms-transition: -ms-transform .4s;
-    -o-transition: -o-transform .4s;
-    transition: transform .4s;
-  }
-
-  // Square frame
-  li.share-facebook .fa-square-o { color: #3B5998;}
-  li.share-twitter .fa-square-o { color: #55acee;}
-  li.share-google-plus .fa-square-o { color: #dd4b39;}
-  li.share-linkedin .fa-square-o { color: #4875B4;}
-  li.share-pinterest .fa-square-o { color: #BD081C;}
-  li.share-envelope .fa-square-o { color: #3B5998;}
-  // Circle frame
-  li.share-facebook .fa-circle-thin { color: #3B5998;}
-  li.share-twitter .fa-circle-thin { color: #55acee;}
-  li.share-google-plus .fa-circle-thin { color: #dd4b39;}
-  li.share-linkedin .fa-circle-thin { color: #4875B4;}
-  li.share-pinterest .fa-circle-thin { color: #BD081C;}
-  li.share-envelope .fa-circle-thin { color: #3B5998;}
-
-  li:hover {
-    -webkit-transform: scale(1.3,1.3);
-    -moz-transform: scale(1.3,1.3);
-    -ms-transform: scale(1.3,1.3);
-    -o-transform: scale(1.3,1.3);
-    transform: scale(1.3,1.3);
-  }
-}
-
-//********************************************************
 //                    Sidebar
 //********************************************************
 .sidebar h2 {
@@ -181,16 +104,6 @@ ul.share-buttons {
   margin-top: .7em;
   line-height: 1em;
 }
-ul.sideBarTags {
-  list-style: none;
-  li:before {
-    content: '\f02b';
-    font-family: 'FontAwesome';
-    float: left;
-    margin-left: -1.5em;
-  }
-}
-
 //********************************************************
 //                    Post
 //********************************************************
@@ -247,21 +160,24 @@ div.post-meta {
 //                    Note / Warning
 //********************************************************
 .note {
-  position:relative;
+  position: relative;
   border: 0;
+  border-left: 4px solid $note-color;
   padding-left: 30px;
 }
 .note:before {
-  content: "\f06a";
-  font-size: 2em;
-  font-family: FontAwesome;
-  left: 0px;
-  position:absolute;
+  content: "\2139";
+  font-size: 1.5em;
+  left: 6px;
+  position: absolute;
   top: 0;
   color: $note-color;
 }
+.warning {
+  border-left-color: $warning-color;
+}
 .warning:before {
-  content: "\f071";
+  content: "\26A0";
   color: $warning-color;
 }
 

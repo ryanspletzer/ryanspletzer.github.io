@@ -14,7 +14,7 @@ permalink: /archive/
    {% capture year %}{{currentyear}}{% endcapture %}
    {% endif %}
    <li>
-      <time>{{ post.date | date: "%B %d, %Y" }}</time>:
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>:
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
    </li>
    {% endfor %}

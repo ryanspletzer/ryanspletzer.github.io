@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,27 +6,25 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
   <meta name="theme-color" content="#222222">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="og:locale" content="en_us">
-  <meta name="og:type" content="website">
-  <meta name="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
-  <meta name="og:url" content="{{ site.url | append:page.url }}">
-  <meta name="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
+  <meta property="og:url" content="{{ site.url | append:page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
   {% if page.header %}
-  <meta name="og:image" content="{{ site.url | append:page.header }}">
+  <meta property="og:image" content="{{ site.url | append:page.header }}">
   {% endif %}
   {% if page.headerwidth and page.headerheight %}
-  <meta name="og:image:width" content="{{ page.headerwidth }}">
-  <meta name="og:image:height" content="{{ page.headerheight }}">
+  <meta property="og:image:width" content="{{ page.headerwidth }}">
+  <meta property="og:image:height" content="{{ page.headerheight }}">
   {% endif %}
   {% if page.description %}
-  <meta name="og:description" content="{{ page.description }}">
+  <meta property="og:description" content="{{ page.description }}">
   {% endif %}
   {% if page.header %}
   <meta name="twitter:image" content="{{ site.url | append:page.header }}">
   <meta name="twitter:card" content="summary_large_image">
   {% endif %}
-  <meta name="twitter:site" content="@{{ site.social.twitter}}">
-  <meta name="twitter:creator" content="@{{ site.social.twitter}}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
   {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">
@@ -39,22 +38,25 @@
 <body>
 
   {% include google-analytics.html %}
-  {% include yandex-metrica.html %}
 
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{ site.baseurl}}/">{{ site.name }}</a>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header role="banner">
+    <nav class="navbar navbar-inverse" aria-label="Main">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ site.baseurl}}/">{{ site.name }}</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="{{ site.baseurl}}/">home</a></li>
+            <li><a href="{{ site.baseurl}}/archive/">archive</a></li>
+            <li><a href="{{ site.baseurl}}/tags/">tags</a></li>
+            <li><a href="{{ site.baseurl}}/about/">about</a></li>
+            <li><a href="{{ site.baseurl}}/linkfarm/">linkfarm</a></li>
+            <li><a href="{{ site.baseurl}}/feed.xml">rss</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <ul class="nav navbar-nav">
-          <li><a href="{{ site.baseurl}}/">home</a></li>
-          <li><a href="{{ site.baseurl}}/archive/">archive</a></li>
-          <li><a href="{{ site.baseurl}}/tags/">tags</a></li>
-          <li><a href="{{ site.baseurl}}/about/">about</a></li>
-          <li><a href="{{ site.baseurl}}/linkfarm/">linkfarm</a></li>
-          <li><a href="{{ site.baseurl}}/feed.xml">rss</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </header>

@@ -4,28 +4,36 @@
     <div class="container container-center">
       <div class="row">
         <div class="col-md-9">
-          <div class="article">
-            <div class="well">
-              <h1>{{ page.title }}</h1>
-              <div class="post-meta">
-                <div class="post-time">
-                  <time>{{ page.date | date: "%B %d, %Y" }}</time>
+          <main id="main-content">
+            <article>
+              <div class="well">
+                <header>
+                  <h1>{{ page.title }}</h1>
+                  <div class="post-meta">
+                    <div class="post-time">
+                      <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                    </div>
+                    <nav aria-label="Post tags">
+                      <ul>
+                        {% for tag in page.tags %}
+                        <li><a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </nav>
+                  </div>
+                </header>
+                <div class="post-content">
+                  <div id="toc" class="toc"></div>
+                  {{ content }}
                 </div>
-                <ul>
-                  {% for tag in page.tags %}
-                  <li><a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
-                  {% endfor %}
-                </ul>
               </div>
-              <div class="post-content">
-                <div id="toc" class="toc"></div>
-                {{ content }}
-              </div>
-            </div>
-          </div>
+            </article>
+          </main>
         </div>
         <div class="col-md-3">
-          {% include sidebar.html %}
+          <aside aria-label="Sidebar">
+            {% include sidebar.html %}
+          </aside>
         </div>
       </div>
     </div>
