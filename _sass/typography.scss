@@ -1,0 +1,90 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-size: var(--size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background: var(--color-bg) url(/assets/images/squares.png);
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-body);
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.75em; }
+
+img {
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+img + em {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+blockquote {
+  color: var(--color-blockquote);
+  font-size: 1em;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-table-bg);
+  color: #e0e0e0;
+  border: 1px solid var(--color-table-border);
+  margin: 0 0 10px;
+}
+
+table th,
+table td {
+  border: 1px solid var(--color-table-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #2a2a2a;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-table-alt);
+}
+
+table tr:hover {
+  background-color: var(--color-table-hover);
+  cursor: pointer;
+}
+
+table a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}

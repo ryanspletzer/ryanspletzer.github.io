@@ -1,0 +1,31 @@
+:root {
+  --color-accent: #35B4DE;
+  --color-text: rgb(231, 233, 234);
+  --color-bg: #292929;
+  --color-panel: #222;
+  --color-footer-bg: #222;
+  --color-note: #87CEFA;
+  --color-warning: #ffff00;
+  --color-border: #666666;
+  --color-blockquote: #bbb;
+  --color-link-hover: #fff;
+  --color-code-bg: #333;
+  --color-table-bg: #202020;
+  --color-table-alt: #252525;
+  --color-table-hover: #353535;
+  --color-table-border: #333;
+
+  --font-body: Georgia, 'Times New Roman', Times, serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  --size-body: 19px;
+  --line-height-body: 1.75;
+
+  --layout-max-width: 1170px;
+  --layout-content-ratio: 9fr;
+  --layout-sidebar-ratio: 3fr;
+  --layout-gap: 30px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+}
