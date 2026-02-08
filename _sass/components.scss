@@ -1,5 +1,6 @@
-// Main content panel (replaces Bootstrap .well)
-.panel {
+// Shared panel base (content panel + sidebar panel)
+.panel,
+.sidebar-panel {
   background-color: var(--color-panel);
   box-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
   border: 0;
@@ -9,6 +10,7 @@
   min-height: 1.25rem;
 }
 
+// Main content panel
 .panel h1 {
   margin-top: 0.625rem;
 }
@@ -28,30 +30,20 @@
 }
 
 // Sidebar panels
-aside {
-  .sidebar-panel {
-    background-color: var(--color-panel);
-    box-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
-    border: 0;
-    border-radius: 0.375rem;
-    padding: 1.1875rem;
-    min-height: 1.25rem;
-    margin-bottom: 1.25rem;
+.sidebar-panel {
+  h2 {
+    margin-top: 0.625rem;
+  }
 
-    h2 {
-      margin-top: 0.625rem;
-    }
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-family: var(--font-body);
+  }
 
-    ul {
-      list-style-type: none;
-      padding-inline-start: 0;
-      font-family: var(--font-body);
-    }
-
-    li {
-      margin-top: 0.7em;
-      line-height: 1em;
-    }
+  li {
+    margin-top: 0.7em;
+    line-height: 1em;
   }
 }
 
