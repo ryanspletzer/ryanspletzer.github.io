@@ -17,11 +17,12 @@ $linenos: #A9B7C6;
     overflow-x: auto;
     word-wrap: normal;
     border: none;
-    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     background-color: #333;
     color: #ddd !important;
     code {
-      white-space: pre;
+      white-space: pre-wrap;
       color: #ddd;
     }
   }
