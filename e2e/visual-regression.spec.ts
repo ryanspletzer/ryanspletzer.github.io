@@ -19,7 +19,8 @@ async function preparePageForScreenshot(page: Page): Promise<void> {
   // Wait for network to settle
   await page.waitForLoadState('networkidle');
 
-  // Disable animations and transitions for consistent screenshots
+  // Disable animations, transitions, scrollbar flicker, and caret blink
+  // for deterministic screenshots
   await page.addStyleTag({
     content: `
       *, *::before, *::after {
@@ -27,12 +28,19 @@ async function preparePageForScreenshot(page: Page): Promise<void> {
         animation-delay: 0s !important;
         transition-duration: 0s !important;
         transition-delay: 0s !important;
+        caret-color: transparent !important;
+      }
+      *::-webkit-scrollbar {
+        display: none !important;
+      }
+      * {
+        scrollbar-width: none !important;
       }
     `,
   });
 
-  // Small delay to ensure styles are applied
-  await page.waitForTimeout(100);
+  // Wait for styles to apply and rendering to fully settle
+  await page.waitForTimeout(500);
 }
 
 /**
@@ -40,8 +48,22 @@ async function preparePageForScreenshot(page: Page): Promise<void> {
  */
 async function takeFullPageScreenshot(page: Page, name: string): Promise<void> {
   await preparePageForScreenshot(page);
+
+  // Force a full layout pass by scrolling to the bottom and back.
+  // This ensures the browser resolves the final page height before
+  // Playwright's stability check resizes the viewport for full-page capture.
+  await page.evaluate(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+  await page.waitForTimeout(200);
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+  });
+  await page.waitForTimeout(200);
+
   await expect(page).toHaveScreenshot(`${name}.png`, {
     fullPage: true,
+    timeout: 15000,
   });
 }
 
