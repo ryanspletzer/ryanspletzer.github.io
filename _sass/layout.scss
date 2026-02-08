@@ -18,7 +18,7 @@ html {
 // We replicate this by putting padding on grid children instead of the grid.
 .site-content {
   max-width: var(--layout-max-width);
-  margin: 80px auto 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 9fr 3fr;
   gap: 0;
@@ -56,6 +56,7 @@ html {
   background-color: #222;
   padding: 0;
   min-height: 50px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #080808;
 
   .site-nav-inner {

@@ -74,6 +74,10 @@ div.post-meta {
   display: flow-root;
   font-family: var(--font-sans);
 
+  nav {
+    display: contents;
+  }
+
   ul {
     display: inline;
     padding-left: 0;
