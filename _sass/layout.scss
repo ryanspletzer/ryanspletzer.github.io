@@ -21,10 +21,12 @@ body {
 
   > main {
     padding: 0 0.9375rem;
+    min-width: 0;
   }
 
   > aside {
     padding: 0 0.9375rem;
+    min-width: 0;
   }
 
   @media (max-width: 74.9375em) {
