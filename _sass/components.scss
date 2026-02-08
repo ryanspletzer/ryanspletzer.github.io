@@ -21,6 +21,11 @@
   font-family: var(--font-body);
 }
 
+// Underline links in content for WCAG 2.0 link-in-text-block compliance
+.post-content a {
+  text-decoration: underline;
+}
+
 .panel .post-meta ul {
   font-family: var(--font-sans);
 }

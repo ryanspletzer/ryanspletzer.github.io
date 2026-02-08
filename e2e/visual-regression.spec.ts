@@ -1,4 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 
 /**
  * Visual regression tests for the Jekyll blog.
@@ -82,10 +83,22 @@ async function takeViewportScreenshot(page: Page, name: string): Promise<void> {
   });
 }
 
+/**
+ * Run axe-core accessibility checks against the current page.
+ * Checks WCAG 2.0 Level A and AA conformance.
+ */
+async function checkAccessibility(page: Page): Promise<void> {
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa'])
+    .analyze();
+  expect(results.violations).toEqual([]);
+}
+
 test.describe('Homepage', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/');
     await takeViewportScreenshot(page, 'homepage');
+    await checkAccessibility(page);
   });
 });
 
@@ -94,12 +107,14 @@ test.describe('Blog Post', () => {
     // Test a post that contains code blocks to verify syntax highlighting
     await page.goto('/2024/04/a-no-nonsense-guide-to-setting-up-python-environments/');
     await takeFullPageScreenshot(page, 'post-with-code');
+    await checkAccessibility(page);
   });
 
   test('standard post', async ({ page }) => {
     // Test a standard text-heavy post
     await page.goto('/2023/03/the-return/');
     await takeFullPageScreenshot(page, 'post-standard');
+    await checkAccessibility(page);
   });
 });
 
@@ -107,6 +122,7 @@ test.describe('Archive', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/archive/');
     await takeViewportScreenshot(page, 'archive');
+    await checkAccessibility(page);
   });
 });
 
@@ -114,12 +130,14 @@ test.describe('Tags', () => {
   test('tags index page', async ({ page }) => {
     await page.goto('/tags/');
     await takeViewportScreenshot(page, 'tags-index');
+    await checkAccessibility(page);
   });
 
   test('individual tag page', async ({ page }) => {
     // Test a tag page with multiple posts
     await page.goto('/tag/ai/');
     await takeViewportScreenshot(page, 'tag-ai');
+    await checkAccessibility(page);
   });
 });
 
@@ -127,6 +145,7 @@ test.describe('About', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/about/');
     await takeFullPageScreenshot(page, 'about');
+    await checkAccessibility(page);
   });
 });
 
@@ -134,6 +153,7 @@ test.describe('Linkfarm', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/linkfarm/');
     await takeFullPageScreenshot(page, 'linkfarm');
+    await checkAccessibility(page);
   });
 });
 
@@ -141,5 +161,6 @@ test.describe('404 Page', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/404.html');
     await takeFullPageScreenshot(page, '404');
+    await checkAccessibility(page);
   });
 });
