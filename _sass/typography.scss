@@ -22,7 +22,7 @@ body {
 
 p {
   font-family: var(--font-body);
-  margin: 0 0 10px;
+  margin: 0 0 0.625rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,12 +32,12 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
-h1 { font-size: 36px; margin-top: 20px; margin-bottom: 10px; }
-h2 { font-size: 30px; margin-top: 20px; margin-bottom: 10px; }
-h3 { font-size: 24px; margin-top: 20px; margin-bottom: 10px; }
-h4 { font-size: 18px; margin-top: 10px; margin-bottom: 10px; }
-h5 { font-size: 14px; margin-top: 10px; margin-bottom: 10px; }
-h6 { font-size: 12px; margin-top: 10px; margin-bottom: 10px; }
+h1 { font-size: 2.25rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h2 { font-size: 1.875rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h3 { font-size: 1.5rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h4 { font-size: 1.125rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+h5 { font-size: 0.875rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+h6 { font-size: 0.75rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
 
 img {
   display: inline-block;
@@ -57,8 +57,8 @@ img + em {
 blockquote {
   color: var(--color-blockquote);
   font-size: 1em;
-  margin: 0 0 20px;
-  padding: 10px 20px;
+  margin: 0 0 1.25rem;
+  padding: 0.625rem 1.25rem;
   border-left: 5px solid var(--color-border);
 }
 
@@ -75,12 +75,12 @@ a:focus {
 
 ul, ol {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 dl {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 dd {
@@ -93,8 +93,8 @@ dt {
 }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   border: 0;
   border-top: 1px solid var(--color-border);
 }
@@ -105,13 +105,13 @@ table {
   background-color: var(--color-table-bg);
   color: #e0e0e0;
   border: 1px solid var(--color-table-border);
-  margin: 0 0 10px;
+  margin: 0 0 0.625rem;
 }
 
 table th,
 table td {
   border: 1px solid var(--color-table-border);
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   text-align: left;
 }
 

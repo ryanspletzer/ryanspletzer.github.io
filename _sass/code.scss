@@ -596,7 +596,7 @@ pre > code {
   border: 1px solid #333;
 }
 
-.lineno { border-right: dashed 1px $linenos !important; color: $linenos; padding-right: 5px; padding-left: 0 !important; }
+.lineno { border-right: dashed 1px $linenos !important; color: $linenos; padding-right: 0.3125rem; padding-left: 0 !important; }
 
 .hll { background-color: #49483e }
 .c { color: $comments }
@@ -739,6 +739,6 @@ pre > code {
 // Table of contents
 .toc {
   background-color: #2c2c2c;
-  margin-left: -19px;
-  margin-right: -19px;
+  margin-left: -1.1875rem;
+  margin-right: -1.1875rem;
 }
