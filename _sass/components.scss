@@ -71,6 +71,10 @@ div.post-meta {
   display: flow-root;
   font-family: var(--font-sans);
 
+  a {
+    text-decoration: none;
+  }
+
   nav {
     display: contents;
   }
