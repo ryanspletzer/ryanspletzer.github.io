@@ -31,7 +31,7 @@ I always had a feeling that modern CSS had made frameworks like Bootstrap largel
 for a site this simple,
 but Rob's course confirmed this for me.
 
-![Minimalist infographic comparing a website before and after a refactor. Left side ("Before") shows a generic webpage labeled Bootstrap 3.2.0 with a large "143 KB CSS" file. Right side ("After") shows an HTML5-based page labeled WCAG 2.0 AA with a much smaller "10.7 KB CSS" file and checklist icons indicating accessibility improvements. Title at top reads: "One Day, Nine Phases, 93% Less CSS.""](/assets/images/website-refactor-before-after.png)
+![Minimalist infographic comparing a website before and after a refactor. Left side ("Before") shows a generic webpage labeled Bootstrap 3.2.0 with a large "143 KB CSS" file. Right side ("After") shows an HTML5-based page labeled WCAG 2.0 AA with a much smaller "10.7 KB CSS" file and checklist icons indicating accessibility improvements. Title at top reads: "One Day, Nine Phases, 93% Less CSS."](/assets/images/website-refactor-before-after.png)
 
 ## The Philosophy
 
