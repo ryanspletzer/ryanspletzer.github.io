@@ -79,7 +79,7 @@ assets/images/       Post images
 tag/                 Auto-generated tag pages (git-ignored)
 _site/               Build output (git-ignored)
 e2e/                 Playwright visual regression tests
-  __snapshots__/     Platform-specific baseline screenshots (in Git LFS)
+  __snapshots__/     Platform-specific baseline screenshots
 .github/workflows/   CI/CD (jekyll.yml, update-visual-baselines.yml)
 ```
 
@@ -183,7 +183,7 @@ testing)
 - Posts go in `_posts/` with naming `YYYY-MM-DD-title-slug.md`
 - Tags are case-sensitive; use lowercase with hyphens for multi-word tags
 - The `tag/` directory is git-ignored and regenerated on every build
-- Visual test baselines in `e2e/__snapshots__/` are tracked in Git LFS
+- Visual test baselines are in `e2e/__snapshots__/`
 - After CSS/layout changes, run `npm run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
 - The theme is dark (background #292929, text #e7e9ea, accent #35B4DE)

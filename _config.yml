@@ -14,20 +14,6 @@ url: https://www.spletzer.com
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
 baseurl: ''
 
-share:
-  twitter: true
-  facebook: true
-  gplus: true
-  linkedin: true
-  reddit: true
-  email: true
-  pinterest: false
-
-social:
-  github: ryanspletzer
-  linkedin: ryanspletzer
-  rss: feed.xml
-
 links:
   - text: Mastodon
     url: https://spletzer.com/@ryan
@@ -40,14 +26,6 @@ links:
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: G-92E8FVFHFW
-# Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
-yandex_metrica:
-
-# Set this to your disqus shortname to enable comments. Note that the 'comments'
-# setting below must also be true. Individual posts can override 'comments' to
-# disable on a post-by-post basis
-disqus: www-spletzer-com
-comments: true
 
 permalink: /:year/:month/:title/
 

@@ -1,0 +1,138 @@
+// Minimal reset (replaces Bootstrap 3 normalize)
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background: var(--color-bg) url(/assets/images/squares.png);
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-body);
+  margin: 0 0 0.625rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1 { font-size: 2.25rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h2 { font-size: 1.875rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h3 { font-size: 1.5rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
+h4 { font-size: 1.125rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+h5 { font-size: 0.875rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+h6 { font-size: 0.75rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+
+img {
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+img + em {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+blockquote {
+  color: var(--color-blockquote);
+  font-size: 1em;
+  margin: 0 0 1.25rem;
+  padding: 0.625rem 1.25rem;
+  border-left: 5px solid var(--color-border);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+dd {
+  margin-left: 0;
+  line-height: var(--line-height-body);
+}
+
+dt {
+  font-weight: bold;
+}
+
+hr {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-table-bg);
+  color: #e0e0e0;
+  border: 1px solid var(--color-table-border);
+  margin: 0 0 0.625rem;
+}
+
+table th,
+table td {
+  border: 1px solid var(--color-table-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #2a2a2a;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-table-alt);
+}
+
+table tr:hover {
+  background-color: var(--color-table-hover);
+}
+
+table a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}

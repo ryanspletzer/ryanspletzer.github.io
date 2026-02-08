@@ -1,0 +1,157 @@
+// Sticky footer via flexbox on body
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-wrapper {
+  flex: 1;
+}
+
+// Grid layout matching Bootstrap 3 column model
+// Bootstrap's .row had negative margins that extended into container padding,
+// so columns split the FULL container width, not the padded content area.
+// We replicate this by putting padding on grid children instead of the grid.
+.site-content {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  gap: 0;
+
+  > main {
+    padding: 0 0.9375rem;
+    min-width: 0;
+  }
+
+  > aside {
+    padding: 0 0.9375rem;
+    min-width: 0;
+  }
+
+  @media (max-width: 74.9375em) {
+    max-width: 60.625rem;
+  }
+
+  @media (max-width: 61.9375em) {
+    max-width: 46.875rem;
+    grid-template-columns: 1fr;
+    padding: 0 0.9375rem;
+
+    > main,
+    > aside {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 47.9375em) {
+    max-width: none;
+  }
+}
+
+// Navigation
+.site-nav {
+  background-color: #222;
+  padding: 0;
+  min-height: 3.125rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #080808;
+
+  .site-nav-inner {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 74.9375em) {
+      max-width: 60.625rem;
+    }
+
+    @media (max-width: 61.9375em) {
+      max-width: 46.875rem;
+    }
+
+    @media (max-width: 47.9375em) {
+      max-width: none;
+    }
+  }
+
+  .site-title {
+    font-size: 1.875rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 1.25rem 0;
+    line-height: 1.25rem;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+  }
+
+  .site-nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      display: block;
+      padding: 0.9375rem;
+      color: #9d9d9d;
+      text-decoration: none;
+      font-size: 1.125rem;
+      line-height: 1.25rem;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media (max-width: 47.9375em) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+    }
+    .site-nav-links {
+      flex-wrap: wrap;
+    }
+    .site-nav-links li a {
+      padding: 0.625rem;
+    }
+  }
+
+  @media (max-width: 28.4375em) {
+    .site-nav-links li a {
+      padding: 0.625rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 25em) {
+    .site-nav-links li a {
+      padding: 0.5rem 0.375rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: var(--color-footer-bg);
+  font: normal 1.1875rem sans-serif;
+  padding: 1.25rem 1.5625rem;
+  margin-top: 5rem;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font: normal 1.1875rem sans-serif;
+  }
+}

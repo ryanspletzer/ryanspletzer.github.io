@@ -1,0 +1,144 @@
+// Shared panel base (content panel + sidebar panel)
+.panel,
+.sidebar-panel {
+  background-color: var(--color-panel);
+  box-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 0;
+  border-radius: 0.375rem;
+  padding: 1.1875rem;
+  margin-bottom: 1.25rem;
+  min-height: 1.25rem;
+}
+
+// Main content panel
+.panel h1 {
+  margin-top: 0.625rem;
+}
+
+.panel .post-content p,
+.panel .post-content ul,
+.panel .post-content ol {
+  font-family: var(--font-body);
+}
+
+// Underline links in content for WCAG 2.0 link-in-text-block compliance
+.post-content a {
+  text-decoration: underline;
+}
+
+.panel .post-meta ul {
+  font-family: var(--font-sans);
+}
+
+.panel-padded {
+  padding-bottom: 3.75rem;
+}
+
+// Sidebar panels
+.sidebar-panel {
+  h2 {
+    margin-top: 0.625rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-family: var(--font-body);
+  }
+
+  li {
+    margin-top: 0.7em;
+    line-height: 1em;
+  }
+}
+
+// Post title on homepage listing
+h2.post-title {
+  padding-top: 0.625rem;
+  text-align: left;
+}
+
+h2.post-title:first-of-type {
+  margin-top: 0;
+}
+
+// Post meta bar (date + tags)
+div.post-meta {
+  border-width: 1px 0;
+  border-color: var(--color-border);
+  border-style: solid;
+  margin: 0 0 1.25rem;
+  display: flow-root;
+  font-family: var(--font-sans);
+
+  a {
+    text-decoration: none;
+  }
+
+  nav {
+    display: contents;
+  }
+
+  ul {
+    display: inline;
+    padding-left: 0;
+    float: right;
+    list-style: none;
+    margin: 0;
+  }
+
+  ul > li {
+    display: inline;
+    padding: 0 0 0.3125rem 1.25rem;
+  }
+
+  .post-time {
+    display: inline;
+  }
+}
+
+// Post description on homepage
+.post-descr {
+  font-family: var(--font-body);
+}
+
+// Post footer / archive link
+.post-footer {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+// Skip navigation link
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: #000;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 62.5em) {
+  div.post-meta .post-time {
+    display: block;
+  }
+  div.post-meta ul {
+    float: left;
+  }
+  div.post-meta ul > li {
+    padding: 0 0.625rem 0.3125rem 0;
+  }
+}

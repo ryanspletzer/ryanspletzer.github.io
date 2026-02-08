@@ -1,6 +1,9 @@
 ---
 ---
 
-// Imports
-@use "bootstrap.min" as *;
-@use "theme" as *;
+@use "variables" as *;
+@use "typography" as *;
+@use "layout" as *;
+@use "components" as *;
+@use "code" as *;
+@use "utilities" as *;
