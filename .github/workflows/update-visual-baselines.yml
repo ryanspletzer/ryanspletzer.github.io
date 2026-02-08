@@ -21,7 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          lfs: true
           # Need to use a token with write access to push commits
           token: ${{ secrets.GITHUB_TOKEN }}
 

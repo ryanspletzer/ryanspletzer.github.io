@@ -62,8 +62,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - name: Generate Tags
         shell: pwsh
@@ -124,8 +122,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true
       - name: Generate Tags
         shell: pwsh
         run: ./.tag_generator.ps1

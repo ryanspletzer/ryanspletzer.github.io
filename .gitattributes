@@ -20,30 +20,3 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
-
-# https://gist.github.com/ma-al/019f7f76498c55f0061120a5b13c6d88
-# ------------------------------------------------
-# Python-related
-*.pkl filter=lfs diff=lfs merge=lfs -text
-*.npz filter=lfs diff=lfs merge=lfs -text
-
-# ------------------------------------------------
-# Usual image types
-*.png filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.bmp filter=lfs diff=lfs merge=lfs -text
-*.svg filter=lfs diff=lfs merge=lfs -text
-*.sketch filter=lfs diff=lfs merge=lfs -text
-
-# ------------------------------------------------
-# Office binaries
-*.ppt filter=lfs diff=lfs merge=lfs -text
-*.pptx filter=lfs diff=lfs merge=lfs -text
-*.doc filter=lfs diff=lfs merge=lfs -text
-*.docx filter=lfs diff=lfs merge=lfs -text
-*.xls filter=lfs diff=lfs merge=lfs -text
-*.xlsx filter=lfs diff=lfs merge=lfs -text
-*.odt filter=lfs diff=lfs merge=lfs -text
-*.odf filter=lfs diff=lfs merge=lfs -text
-*.odp filter=lfs diff=lfs merge=lfs -text
