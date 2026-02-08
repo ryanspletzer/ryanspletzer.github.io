@@ -45,6 +45,7 @@ async function preparePageForScreenshot(page: Page): Promise<void> {
 
 /**
  * Take a full-page screenshot with a descriptive name.
+ * Use for pages with fixed content (individual posts, about, 404, linkfarm).
  */
 async function takeFullPageScreenshot(page: Page, name: string): Promise<void> {
   await preparePageForScreenshot(page);
@@ -67,10 +68,24 @@ async function takeFullPageScreenshot(page: Page, name: string): Promise<void> {
   });
 }
 
+/**
+ * Take a viewport-only screenshot with a descriptive name.
+ * Use for content-listing pages (homepage, archive, tags) whose length
+ * changes when new posts are published. This avoids baseline churn
+ * while still catching CSS/layout regressions in the visible area.
+ */
+async function takeViewportScreenshot(page: Page, name: string): Promise<void> {
+  await preparePageForScreenshot(page);
+
+  await expect(page).toHaveScreenshot(`${name}.png`, {
+    timeout: 15000,
+  });
+}
+
 test.describe('Homepage', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/');
-    await takeFullPageScreenshot(page, 'homepage');
+    await takeViewportScreenshot(page, 'homepage');
   });
 });
 
@@ -91,20 +106,20 @@ test.describe('Blog Post', () => {
 test.describe('Archive', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/archive/');
-    await takeFullPageScreenshot(page, 'archive');
+    await takeViewportScreenshot(page, 'archive');
   });
 });
 
 test.describe('Tags', () => {
   test('tags index page', async ({ page }) => {
     await page.goto('/tags/');
-    await takeFullPageScreenshot(page, 'tags-index');
+    await takeViewportScreenshot(page, 'tags-index');
   });
 
   test('individual tag page', async ({ page }) => {
     // Test a tag page with multiple posts
     await page.goto('/tag/ai/');
-    await takeFullPageScreenshot(page, 'tag-ai');
+    await takeViewportScreenshot(page, 'tag-ai');
   });
 });
 
