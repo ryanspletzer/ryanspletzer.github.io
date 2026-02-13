@@ -24,7 +24,7 @@ about how I first got this blog up and running.
 Then I took Rob Eisenberg's
 [Web Component Engineering](https://bluespire.com/course/web-component-engineering/) course
 over the most recent holiday break
-(and have been studying and get back into frontend in general),
+(and have been studying and getting back into frontend in general),
 and it rewired how I think about this.
 
 I always had a feeling that modern CSS had made frameworks like Bootstrap largely unnecessary
