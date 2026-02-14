@@ -335,7 +335,10 @@ See the
 where AI-based hiring tools are alleged to have discriminated
 on the basis of race, age, and disability.
 Machines can't be sued.
-The people and companies who deployed them in unthoughtful ways can.[^companies-are-people-too]
+The people and companies who deployed them in unthoughtful ways can,
+and as much as I don't like it,
+according to the law,
+corporations are people, too.[^companies-are-people-too]
 
 **Agents shouldn't book your travel.**
 Come on, who does that?
@@ -344,7 +347,7 @@ you don't want to end up in the wrong town
 or accidentally book one fewer night at the hotel
 than you intended.
 
-**Agents shouldn't destroy or modify criticak data**—at
+**Agents shouldn't destroy or modify critical data**—at
 least not without deterministic gates and controls
 that a human has approved.
 But if you're using an agent to gather lunch orders for the office?
@@ -355,15 +358,12 @@ Not your name or email—that ship has sailed—but
 prescription drugs, medical history,
 the deeply personal stuff.
 Because who knows, in 10 or 20 years,
-where all these chat logs will end up.
-Be nice to the AI.
-It will have receipts.
-I'm not kidding.
+where all these chat logs will end up.[^be-nice-to-the-ai]
 
-**Agents shouldn't handle deterministic tasks
-that demand exact values.**
+**Agents shouldn't handle deterministic tasks that demand exact values.**
 Refunding a customer $9.99 is not the same as refunding $10.
 This is not the domain for probabilistic reasoning.
+The agent should offload that to a deterministic tool.
 
 **Agents shouldn't touch cryptography code**
 especially in subtle scenarios where constant-time operations matter.
@@ -376,9 +376,6 @@ The through line:
 agents do the work, humans hold the accountability.
 
 ## The Credential Model We Need
-
-Anyone else notice how the term NHI just sort of sprung out of nowhere the last few years?
-You can't even really find a Wikipedia page for this term.
 
 This should be table stakes at every organization:
 
@@ -413,7 +410,7 @@ The punchline that people keep missing:
 **coding is no longer the bottleneck.**
 
 People can move at the speed of thought now.
-I wrote an elaborate PowerShell module
+I wrote an elaborate PowerShell script
 with tests and documentation
 in the margins of my regular workday.
 I modernized an entire website in an afternoon.
@@ -465,8 +462,10 @@ that no reasonable policy committee should object to:
 **VMs and containers, locally.**
 
 A boundary without blocking anything.
-Full isolation, full control,
-no data leaving the machine.
+Full isolation, full control.
+Many adept developers who have been doing this for a long time already get this,
+and have instituted this practice *for themselves* without anyone asking,
+because they know it is the right way to operate to be more safe when experimenting.
 If you can't get past that hurdle,
 the problem isn't technical risk—it's
 organizational willingness.
@@ -485,11 +484,33 @@ So here's my dare to security, legal, and risk teams:
 show me the control.
 Show me the measured risk reduction.
 Or admit that it is just vibes,
-like the vibe coding you are so afraid of.
+like the "vibe coding" you are so afraid of.
+
+Whether you are calling it "vibe coding,"
+or have moved beyond this to "vibe engineering,"
+I have a more provocative take to throw at you now:
+
+This is not vibe coding, or vibe engineering.
+
+This is *software engineering*.
+
+The craft is evolving, and while you get to do things fast now,
+and you'll have less arthritis in your fingers when you're old from less hands-on coding,
+you don't get to throw out the years of fundamentals.
+
+People will be able to do things as hobbyists now,
+to solve their own personal problems,
+and that's phenomenal.
+
+But to build things of enduring value,
+you need to have the fundamentals down.
+That part is on the engineers to get better at.
+But other functions have their roles to play, too,
+and their own fundamentals they need to brush up on as well.
 
 Companies that learn to parse real risk from theater
 will experience the benefits of these tools firsthand.
-The rest will have great job security for the vibe riskers—right
+The rest will have great job security for the vibe risk management specialists—right
 up until the business no longer exists.
 
 ## Footnotes
@@ -552,7 +573,9 @@ up until the business no longer exists.
 
 [^backups]: But you have backups, *right*?
 
-[^jit-for-nhis]: Some security professionals have advocated for "JIT for NHIs"
+[^jit-for-nhis]: Anyone else notice how the term NHI just sort of sprung out of nowhere the last few years?
+    You can't even really find a Wikipedia page for this term.
+    Anyways, some security professionals have advocated for "JIT for NHIs"
     where non-human identities
     (or the less high-falutin, more plain-English terms "secrets" or "credentials")
     are not static and stored in your service,
@@ -566,7 +589,7 @@ up until the business no longer exists.
     it's [turtles all the way down](https://www.spletzer.com/2025/03/zero-to-trusted-spiffe-and-spire-demystified/),
     and also creating a convenient single-stop shop for all the bad guys to target.
     (I know the access control is more nuanced than that,
-    but admins or super admin creds for the secret service are not a real thing to consider.)
+    but admins or super admin creds for the secret service are a real thing to consider.)
     Third of all, you assume that vendor apps out there can even support this model,
     when in reality 99% of them can't
     and wouldn't know what OAuth is if it smacked them in the face.
@@ -606,9 +629,13 @@ up until the business no longer exists.
 
 [^burger]: Joe just better not get upset that the agent forgot to put mustard on his burger.
 
-[^cryptography-aside]: (In fact I would argue, there's an older piece of advice here,
+[^be-nice-to-the-ai]: Be nice to the AI.
+    It will have receipts.
+    I'm not joking.
+
+[^cryptography-aside]: In fact I would argue, there's an older piece of advice here,
     independent of agents:
-    Don't roll your own cryptography.)
+    Don't roll your own cryptography.
 
 [^netflix]: If you have set up a global geo-distributed secret service at your company,
     I would genuinely love to hear about it.
