@@ -32,10 +32,8 @@ But there's no place for it anymore.
 ---
 
 In the last 30 days,
-I [refactored my entire blog](/2026/02/one-day-nine-phases-93-percent-less-css/)—nine
-phases, 93% CSS reduction, Bootstrap removal,
-WCAG accessibility compliance—all
-within the bounds of a single day of casual work with an AI coding agent
+I [refactored my entire blog](/2026/02/one-day-nine-phases-93-percent-less-css/)
+all within the bounds of a single day of casual work with Claude Code
 while I perambulated around the house getting other things done
 and only occasionally checking in on the progress.
 
@@ -59,8 +57,7 @@ I posit a different question:
 
 ## Unknown Does Not Equal Unsafe
 
-The core misconception I keep running into:
-people equate "things I don't understand" with "risky."
+I frequently observe people equate "things I don't understand" with "risky."
 
 That's not risk.
 That's fear.
@@ -92,19 +89,9 @@ I keep thinking about that old line:
 >
 > \- *Garfinkel & Stuart, ["Sharpening Your Tools", Comm. of the ACM (Aug 2023)](https://dl.acm.org/doi/10.1145/3600098?__cf_chl_tk=14gM00TNM4nBnoff.ist0dDkLnPUNixDui5BF4pDSwM-1771088037-1.0.1.1-.fu3WRAUU3wI_us_XH.5E7xnyDSYZnuXnLsw0VDmJJg)*
 
-When organizations refuse to actually *articulate*
-a concrete risk—when the objection
-is just "but what if?"—then any behavior from the agent
-can't be "risky."
-It can just be *surprising*,
-to people who never *actually* specified what they expected.
-That's a specification problem, *not* a security problem.
-
-And the flip side cuts just as hard:
-unspecified doesn't mean *safe*, either.
-If you can't articulate what the agent should and shouldn't do,
-that's a prompt to do the specification work—not
-a reason to ban the tool.
+When organizations refuse to actually *articulate* a concrete risk—when
+the objection is just "but what if?"—then
+any behavior from the agent is difficult to designate as "risky."
 
 A recent (semi-absurd) example of fake risk I've encountered:
 refusing to connect AI tools to content sources
@@ -129,7 +116,7 @@ The rocks we put in place in the enterprise need to be moved.
 You need to let the bats fly out of the hole,
 so we can deal with them.
 There's a ship full of treasure (and skeletons) at the end of that hole,
-and some spare rare jewels from the hoard are going to save the town
+and some spare rare jewels from the captain's hoard are going to save the town
 from some jerk 1980's country club developers
 who want to turn the joint into a golf course.
 
@@ -149,7 +136,7 @@ many of which are abstracted from the user
 to the point where they would never notice,
 or in some cases, even provide a better user experience!
 
-**Real controls** that reduce blast radius, likelihood,
+A sampling of **real controls** that reduce blast radius, likelihood,
 or detection time:
 
 - **Phishing-resistant auth** (YubiKeys)—nearly
@@ -539,15 +526,15 @@ up until the business no longer exists.
 ## Footnotes
 
 [^also-wrote]: I also wrote an even more elaborate setup
-  over the course of a few days
-  where I had a local MCP server
-  and several types of MCP clients
-  as well as a mock Entra ID identity provider / token issuer
-  (or you could bring your own Entra ID tenant)
-  to show how the MCP ecosystem interacted and used OAuth with an identity provider
-  in an enterprise setting.
-  You can build *very real* things with these tools,
-  not just scripts or refactors.
+    over the course of a few days
+    where I had a local MCP server
+    and several types of MCP clients
+    as well as a mock Entra ID identity provider / token issuer
+    (or you could bring your own Entra ID tenant)
+    to show how the MCP ecosystem interacted and used OAuth with an identity provider
+    in an enterprise setting.
+    You can build *very real* things with these tools,
+    not just scripts or refactors.
 
 [^smishing]: But not smishing. Sigh.
     But again, if you have no passwords anymore with your identity provider,
