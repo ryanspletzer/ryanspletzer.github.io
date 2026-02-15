@@ -43,7 +43,7 @@ In an even smaller time span,
 I wrote an elaborate PowerShell script with unit tests,
 integration tests, and documentation
 for gathering information from deployed Azure OpenAI model deployments
-so my team could plan for model retirements.
+so my team could plan for model retirements.[^also-wrote]
 
 Both of these happened in my *spare time*.
 Not dedicated sprints, not hackathon weeksâ€”rather,
@@ -54,6 +54,8 @@ or after the kids go to bed.
 So when someone asks whether we can accept the risks associated with these tools,
 I posit a different question:
 *can we afford not to?*
+
+![A landscape, movie-poster-style illustration inspired by 1980s adventure films. On the left, a rocky cave opening frames a bright moon as dozens of bats fly outward into the night sky. On the right, inside a dusty wooden closet, a grinning pirate skeleton wearing a hat and medallion holds a cutlass beside scattered gold coins and an old lantern. Bold retro lettering across the top reads "Fear, Paranoia, and Vibe Risk Management."](/assets/images/fear-paranoia-and-vibe-risk-management.png)
 
 ## Unknown Does Not Equal Unsafe
 
@@ -120,8 +122,8 @@ To quote one of my favorite movies:
 The rocks we put in place in the enterprise need to be moved.
 You need to let the bats fly out of the hole,
 so we can deal with them.
-There's a ship full of treasure at the end of that hole
-and some spare rare jewels from it are going to save the town
+There's a ship full of treasure (and skeletons) at the end of that hole,
+and some spare rare jewels from the hoard are going to save the town
 from some jerk 1980's country club developers
 who want to turn the joint into a golf course.
 
@@ -514,6 +516,17 @@ The rest will have great job security for the vibe risk management specialistsâ€
 up until the business no longer exists.
 
 ## Footnotes
+
+[^also-wrote]: I also wrote an even more elaborate setup
+  over the course of a few days
+  where I had a local MCP server
+  and several types of MCP clients
+  as well as a mock Entra ID identity provider / token issuer
+  (or you could bring your own Entra ID tenant)
+  to show how the MCP ecosystem interacted and used OAuth with an identity provider
+  in an enterprise setting.
+  You can build *very real* things with these tools,
+  not just scripts or refactors.
 
 [^smishing]: But not smishing. Sigh.
     But again, if you have no passwords anymore with your identity provider,
