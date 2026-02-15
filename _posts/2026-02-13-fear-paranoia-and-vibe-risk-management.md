@@ -90,7 +90,7 @@ I keep thinking about that old line:
 > "A system that has not been specified cannot be incorrect;
 > it can only be surprising."
 >
-> \- _Garfinkel & Stuart, ["Sharpening Your Tools", Comm. of the ACM (Aug 2023)](https://dl.acm.org/doi/10.1145/3600098?__cf_chl_tk=14gM00TNM4nBnoff.ist0dDkLnPUNixDui5BF4pDSwM-1771088037-1.0.1.1-.fu3WRAUU3wI_us_XH.5E7xnyDSYZnuXnLsw0VDmJJg)_
+> \- *Garfinkel & Stuart, ["Sharpening Your Tools", Comm. of the ACM (Aug 2023)](https://dl.acm.org/doi/10.1145/3600098?__cf_chl_tk=14gM00TNM4nBnoff.ist0dDkLnPUNixDui5BF4pDSwM-1771088037-1.0.1.1-.fu3WRAUU3wI_us_XH.5E7xnyDSYZnuXnLsw0VDmJJg)*
 
 When organizations refuse to actually *articulate*
 a concrete risk—when the objection
@@ -99,6 +99,12 @@ can't be "risky."
 It can just be *surprising*,
 to people who never *actually* specified what they expected.
 That's a specification problem, *not* a security problem.
+
+And the flip side cuts just as hard:
+unspecified doesn't mean *safe*, either.
+If you can't articulate what the agent should and shouldn't do,
+that's a prompt to do the specification work—not
+a reason to ban the tool.
 
 A recent (semi-absurd) example of fake risk I've encountered:
 refusing to connect AI tools to content sources
@@ -117,7 +123,7 @@ To quote one of my favorite movies:
 > "Brand, God put that rock there for a purpose,
 > and um, I'm not so sure you should, um, move it."
 >
-> \- _Stef, [The Goonies](https://www.youtube.com/watch?v=kKbQm0cENc4)_
+> \- *Stef, [The Goonies](https://www.youtube.com/watch?v=kKbQm0cENc4)*
 
 The rocks we put in place in the enterprise need to be moved.
 You need to let the bats fly out of the hole,
@@ -167,10 +173,14 @@ or detection time:
   for production environments—separate
   the workstation that browses the internet
   from the one that touches prod[^single-identity-device]
-- **Diff-based code review + protected branches +
-  mandatory human approval**—the
+- **Diff-based code review + protected branches + mandatory human approval**—the
   agent writes the code,
   a human reviews and merges it.[^moving-away-from-this]
+
+To be clear:
+controls with measurable justification
+or binding regulatory requirements aren't theater.
+What follows is aimed at the rest.
 
 **Theater controls** that increase friction
 without improving security:
@@ -178,7 +188,7 @@ without improving security:
 - Arbitrary blanket blocks on entire categories of tools
 - Allowlisting strategies that block everything by default[^allowlisting]
 - Endless review rituals that don't change outcomes
-  and exist to produce a paper trail
+  and exist to produce a paper trail[^regulation-invoked]
 - "Secure by inconvenience"—the
   belief that if something is hard to use,
   it must be safe
@@ -216,7 +226,7 @@ and yet has ways for developers to bring their own home-built towers into their 
 (You have to accept the MDM, EDR, etc., that comes with that, but the pathway exists).
 Not everyone will do that, but the point is: it's possible,
 and they don't harden the living crap out of their client endpoints,
-because they know engineers need the leeway to be creative (within reason).
+because they know engineers need the leeway to be creative (within reason).[^microsoft-layers]
 
 A very wise head architect once told me something along these lines:
 "You need to consider the development/operational divide;
@@ -261,12 +271,20 @@ people have been opening malicious scripts from the internet
 for as long as the internet has existed.
 VBA macros in Excel attachments
 have been weaponized since the '90s.
-The mitigation playbook—sandboxing,
-least privilege, don't trust input—is
-the same playbook we've been running.
-The agent doesn't change the fundamentals;
-it changes the surface area,
-and that surface area can be measured and bounded.
+The mitigation *principles*—sandboxing,
+least privilege, don't trust input—carry
+over from that same playbook.
+But I'll give the skeptics this:
+prompt injection is genuinely different
+from traditional code injection.
+The instruction/data boundary in an LLM is blurred
+in ways that classic sandboxing alone doesn't fully address,
+and the mitigations are still maturing.[^context-poisoning-nuance]
+That said, "still maturing" is not the same as "impossible."
+The surface area can be measured and bounded—it
+just requires treating it as a new class of problem
+rather than pretending the old playbook covers it completely
+or throwing your hands up and blocking everything.
 
 Anthropic published
 [a thoughtful piece on sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing)
@@ -485,7 +503,10 @@ and arrive at better outcomes.
 So here's my dare to security, legal, and risk teams:
 show me the control.
 Show me the measured risk reduction.
-Or admit that it is just vibes,
+If the control has a measurable justification,
+I'm with you—keep it, strengthen it, fund it.
+But if you can't point to what it reduces,
+admit that it is just vibes,
 like the "vibe coding" you are so afraid of.
 
 Whether you are calling it "vibe coding,"
@@ -649,6 +670,46 @@ up until the business no longer exists.
 [^cryptography-aside]: In fact I would argue, there's an older piece of advice here,
     independent of agents:
     Don't roll your own cryptography.
+
+[^regulation-invoked]: Regulation is often invoked
+    as the reason these rituals exist,
+    but it's worth checking the actual clauses.
+    Frameworks like HIPAA, PCI-DSS, SOX, and FedRAMP
+    regulate data handling, access controls, and audit trails—they
+    don't prohibit developers from using AI coding tools
+    on their machines.
+    When someone cites "regulatory requirements"
+    to block developer productivity tools,
+    ask them to point to the specific clause.
+    More often than not,
+    the regulation doesn't say what they think it says—which
+    actually *strengthens* the theater argument.
+
+[^microsoft-layers]: Microsoft can afford this posture
+    because of the layered infrastructure behind it—the
+    EDR, the compliant device gating, the identity controls.
+    The advice to "facilitate rather than block"
+    assumes you've already built the foundational controls
+    listed earlier in this section.
+    Notably they are hardcore about PAWs—Privileged Access Workstations—which
+    are a completely separate machine
+    which is very locked down
+    and only used for accessing commercial production environments.
+    They also enforce JIT access with secondary approval for prod elevation
+    and more alongside that.
+    If you haven't, start there—but
+    start *now*,
+    because those controls are what enable velocity.
+
+[^context-poisoning-nuance]: The subtler risk is worth naming:
+    an agent could write code that looks correct,
+    passes review,
+    but contains a flaw introduced by a poisoned context—and
+    that's genuinely harder to catch
+    than a malicious VBA macro.
+    This is why the "diff-based code review" control
+    listed earlier matters *more*, not less,
+    in a world of agent-generated code.
 
 [^netflix]: If you have set up a global geo-distributed secret service at your company,
     I would genuinely love to hear about it.
