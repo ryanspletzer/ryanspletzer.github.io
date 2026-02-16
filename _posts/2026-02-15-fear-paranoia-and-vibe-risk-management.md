@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fear, Paranoia, and Vibe Risk Management
-date: 2026-02-13 00:00:00
+date: 2026-02-15 00:00:00
 description: >
   Risk-oriented enterprise teams may block AI coding agents (and agents in general)
   based on fear of the unknown while ignoring fundamental
