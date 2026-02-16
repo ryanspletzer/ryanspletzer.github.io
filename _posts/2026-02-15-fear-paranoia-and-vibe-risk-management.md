@@ -124,7 +124,7 @@ so we can deal with them.
 There's a ship full of treasure (and skeletons) at the end of that hole,
 and some spare rare jewels from the captain's hoard are going to save the town
 from some jerk 1980s country club developers
-who want to turn the place into a golf course.
+who want to turn the neighborhood into a golf course.
 
 I want to be direct about this:
 the fear, the paranoia, the anxiety about things
