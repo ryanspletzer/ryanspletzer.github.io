@@ -23,7 +23,7 @@ and this core memory came back to me from over a decade ago.
 
 Now, I love the X-Files just as much as the next person,
 and I hope this individual is someday able to get in touch with Mulder and Scully,
-because "The truth is out there."
+because "[The truth is out there](https://www.youtube.com/watch?v=Qz2wnSVeITg)."
 
 Maybe we could afford this type of paranoia in a previous era of inefficiency.
 
@@ -31,7 +31,7 @@ But there's no place for it anymore.
 
 ---
 
-In the last 30 days,
+In the last month,
 I [refactored my entire blog](/2026/02/one-day-nine-phases-93-percent-less-css/)
 all within the bounds of a single day of casual work with Claude Code
 while I perambulated around the house getting other things done
@@ -42,6 +42,8 @@ I wrote an elaborate PowerShell script with unit tests,
 integration tests, and documentation
 for gathering information from deployed Azure OpenAI model deployments
 so my team could plan for model retirements.[^also-wrote]
+
+Just to touch on a couple of examples.
 
 Both of these happened in my *spare time*.
 Not dedicated sprints, not hackathon weeks—rather,
@@ -62,7 +64,16 @@ I frequently observe people equate "things I don't understand" with "risky."
 That's not risk.
 That's fear.
 
-And fear is a perfectly valid human emotion.
+Call it what it is:
+**vibe risk management**—the
+organizational equivalent of "vibe coding,"
+where gut feeling replaces rigor
+and nobody can point to what the control actually reduces.
+Or in some cases,
+no one can point to the reason why we shouldn't pursue a use case
+besides, "I'm scared."
+
+Now, fear is a perfectly valid human emotion.
 I get it—new things are uncomfortable,
 especially when they touch code, data, and credentials.
 But feelings aren't controls,
@@ -76,11 +87,6 @@ Let me offer a framework:
   and verifiable mitigations
 - **Business risk** = slowing down so much you lose the market
   while your competitors ship
-
-There's fake mint flavored ice cream,
-and there's ice cream with real mint in it.
-You can taste the difference.
-We need to apply the same palate to risk evaluation.
 
 I keep thinking about that old line:
 
@@ -117,8 +123,8 @@ You need to let the bats fly out of the hole,
 so we can deal with them.
 There's a ship full of treasure (and skeletons) at the end of that hole,
 and some spare rare jewels from the captain's hoard are going to save the town
-from some jerk 1980's country club developers
-who want to turn the joint into a golf course.
+from some jerk 1980s country club developers
+who want to turn the place into a golf course.
 
 I want to be direct about this:
 the fear, the paranoia, the anxiety about things
@@ -128,7 +134,7 @@ But they don't belong in your risk model.
 
 ## The Controls That Actually Matter
 
-This inversion drives me crazy:
+This is where vibe risk management does its worst damage:
 teams obsess over friction-heavy hardening theater
 while ignoring foundational controls
 that actually reduce blast radius,
@@ -206,22 +212,18 @@ require a service ticket.
 Nobody should be opening a request
 to install something that helps them move windows around on a screen.
 
-You would think that the biggest companies out there are the worst offenders here,
-but au contraire, mon frère:
-Microsoft is gigantic at over 200,000 people
-and yet has ways for developers to bring their own home-built towers into their ecosystem.
-(You have to accept the MDM, EDR, etc., that comes with that, but the pathway exists).
-Not everyone will do that, but the point is: it's possible,
-and they don't harden the living crap out of their client endpoints,
-because they know engineers need the leeway to be creative (within reason).[^microsoft-layers]
+You might assume the biggest companies are the worst offenders,
+but Microsoft—over 200,000 people—lets
+developers bring their own home-built towers into their ecosystem.
+You accept the MDM, EDR, and compliance that comes with it,
+but the pathway exists.
+They don't lock down client endpoints into oblivion
+because they know engineers need leeway to be creative.[^microsoft-layers]
 
-A very wise head architect once told me something along these lines:
-"You need to consider the development/operational divide;
-on the development side you want to enable collaboration
-and be a little more loose to allow for experimentation and exploration and learning and innovation, and more;
-but once you cross the operational divide and are deploying something,
-especially into a commercial production scenario,
-you want all sorts of automated scans and controls to happen to give you lots of sanity checks."
+A wise head architect once put it simply:
+be loose on the development side to enable experimentation and innovation,
+but once you cross the operational divide into production,
+layer on the automated scans and controls.
 
 Focus your energy on enabling the valuable use cases and collaboration and innovation.
 And build a value framework to size the "opportunities"
@@ -230,15 +232,14 @@ rather than treating every inbound request as a threat.
 
 ## A Practical Risk Model for Agents
 
-If fake risk is "what if something bad happens,"
-real risk modeling gives you a mechanical way
+Vibe risk management asks "what if something bad happens?"
+Real risk modeling gives you a mechanical way
 to reason about what an agent can actually do:
 
 1. **Capability risk**: What can the agent touch?
    File writes, command execution, network egress.
    These are measurable, sandbox-able, auditable.
 2. **Credential risk**: What secrets does it have access to?
-   Secrets exposure, token replay, privilege escalation.
    Scope and duration matter here.[^jit-for-nhis]
 3. **Business impact**: What happens if it goes wrong?
    Money movement, data poisoning, irreversible state changes.
@@ -330,10 +331,10 @@ that says it better than I ever could:
 > therefore a computer must never make a management decision."
 
 Forty-seven years old and still exactly right.
-Now, people will argue with me that machines have been making management decisions of various kinds for a long time.
-Maybe the nuance here should be: management decisions that impact humans.
+Machines have been making management decisions of various kinds for a long time.
+The nuance (in my opinion) is management decisions that impact humans.
 If you're going to lay off 10% of your workforce,
-maybe don't have an agent decide that, mmmkay?
+that decision needs human(s) behind it.
 
 **Agents shouldn't be put in a position to do something potentially illegal.**
 Accountability, again.
@@ -348,9 +349,7 @@ according to the law,
 corporations are people, too.[^companies-are-people-too]
 
 **Agents shouldn't book your travel.**
-Come on, who does that?
-But also, practically:
-you don't want to end up in the wrong town
+You don't want to end up in the wrong town
 or accidentally book one fewer night at the hotel
 than you intended.
 
@@ -372,7 +371,7 @@ Refunding a customer $9.99 is not the same as refunding $10.
 This is not the domain for probabilistic reasoning.
 The agent should offload that to a deterministic tool.
 
-**Agents shouldn't touch cryptography code**
+**Agents shouldn't touch cryptography code**,
 especially in subtle scenarios where constant-time operations matter.
 Side-channel attacks are real,
 and an LLM doesn't *necessarily* understand timing guarantees,
@@ -404,6 +403,8 @@ That's it. That's the credential model.
 It's not complicated.
 The tooling exists on every platform
 and at every layer of the stack.
+(Well SPIFFE/SPIRE is a bit of a lift,
+but I digress.)
 The problem isn't technical—it's
 that people don't know these tools exist,
 and agents aren't going to teach them.
@@ -470,21 +471,19 @@ that no reasonable policy committee should object to:
 
 A boundary without blocking anything.
 Full isolation, full control.
-Many adept developers who have been doing this for a long time already get this,
-and have instituted this practice *for themselves* without anyone asking,
-because they know it is the right way to operate to be more safe when experimenting.
+Many seasoned developers already do this.
+They've set up local VMs and containers *for themselves*,
+without anyone asking,
+because they know it's the right way to experiment safely.
 If you can't get past that hurdle,
 the problem isn't technical risk—it's
 organizational willingness.
 
-The fear, the paranoia,
-the anxiety about things we don't fully understand—all
-of that is real,
-and I'm not asking anyone to pretend otherwise.
-But we all need to be working hard right now
-to build better understanding,
-because those who invest in learning
-will reduce their fear
+I said earlier that fear and paranoia are real emotions,
+and I meant it.
+But the antidote isn't more gatekeeping—it's
+better understanding.
+Those who invest in learning will reduce their fear
 and arrive at better outcomes.
 
 So here's my dare to security, legal, and risk teams:
@@ -493,35 +492,12 @@ Show me the measured risk reduction.
 If the control has a measurable justification,
 I'm with you—keep it, strengthen it, fund it.
 But if you can't point to what it reduces,
-admit that it is just vibes,
-like the "vibe coding" you are so afraid of.
+admit that it's vibe risk management—and
+drop it before it costs you more than the risk ever would.
 
-Whether you are calling it "vibe coding,"
-or have moved beyond this to "vibe engineering,"
-I have a more provocative take to throw at you now:
+Because the business will be perfectly "safe"...
 
-This is not vibe coding, or vibe engineering.
-
-This is *software engineering*.
-
-The craft is evolving, and while you get to do things fast now,
-and you'll have less arthritis in your fingers when you're old from less hands-on coding,
-you don't get to throw out the years of fundamentals.
-
-People will be able to do things as hobbyists now,
-to solve their own personal problems,
-and that's phenomenal.
-
-But to build things of enduring value,
-you need to have the fundamentals down.
-That part is on the engineers to get better at.
-But other functions have their roles to play, too,
-and their own fundamentals they need to brush up on as well.
-
-Companies that learn to parse real risk from theater
-will experience the benefits of these tools firsthand.
-The rest will have great job security for the vibe risk management specialists—right
-up until the business no longer exists.
+... right up until it stops being competitive enough to exist.
 
 ## Footnotes
 
@@ -549,22 +525,16 @@ up until the business no longer exists.
     Skeletons *are* in your closets
     and bats *will* fly out of your caves.
 
-[^moving-away-from-this]: I know this one is likely making the hairs raise on some necks out there,
-    from people who will readily tell me "we're moving away from this."
-    And I actually agree, we are moving away from this with orchestrators
-    like [Gas Town](https://github.com/steveyegge/gastown) and the like,
-    which I'm sure soon, perhaps even this year, will be commoditized as patterns into the tools themselves.
-    But unless your name is Steve Yegge or Geoffrey Huntley, you need to ask yourself:
-    as you take your hand more and more off the wheel,
-    what are the *patterns and practices for verification* you are using.
-    Unit, integration (e2e, whatever the heck you want to call them), load tests, and tests of all kinds
-    are so super critical now and *are becoming easier to generate for free*,
-    so there is becoming no excuse.
-    If you don't implement those things,
-    and take the rigor and fundamentals and non-functional aspects of engineering super seriously—which
-    again is becoming more *free* to specify and make a reality as time goes on—you
-    may be taking your hand off the wheel with cruise control and lane assist only
-    and will get flattened by that semi that is desperately trying merge into your lane.
+[^moving-away-from-this]: Yes, we're moving away from manual code review
+    with orchestrators like [Gas Town](https://github.com/steveyegge/gastown)
+    and patterns that will soon be commoditized into the tools themselves.
+    But as you take your hand off the wheel,
+    the question becomes:
+    what are your *patterns and practices for verification*?
+    Tests of all kinds are becoming easier to generate for free,
+    so there's no excuse not to have them.
+    Cruise control and lane assist alone
+    will not prevent you from getting flattened by the semi merging into your lane.
 
 [^allowlisting]: Instead of blocking everything by default
     and making people justify each tool
@@ -583,7 +553,7 @@ up until the business no longer exists.
     if you consider VPN your only protection,
     you're asking for a cyber punch in the face.
     To my prior point in this post,
-    VPN's alone are merely just an inconvenience for threat actors,
+    VPNs alone are merely an inconvenience for threat actors,
     not a full control unto itself.
     Ask me how I know...
 
@@ -594,34 +564,11 @@ up until the business no longer exists.
 
 [^backups]: But you have backups, *right*?
 
-[^jit-for-nhis]: Anyone else notice how the term NHI just sort of sprung out of nowhere the last few years?
-    You can't even really find a Wikipedia page for this term.
-    Anyways, some security professionals have advocated for "JIT for NHIs"
-    where non-human identities
-    (or the less high-falutin, more plain-English terms "secrets" or "credentials")
-    are not static and stored in your service,
-    but retrieved from somewhere else.
-    First of all, you've been sold a bill of goods based on a new fear
-    in an industry has invented, because "NHIs" have been around a long time,
-    and *now* only suddenly there's a new dearth of companies slinging around this term
-    in an eager attempt to sell you something to address this? Hmm...
-    Second of all, by moving a sensitive credential into some secret service,
-    you are just replacing one cred for another;
-    it's [turtles all the way down](https://www.spletzer.com/2025/03/zero-to-trusted-spiffe-and-spire-demystified/),
-    and also creating a convenient single-stop shop for all the bad guys to target.
-    (I know the access control is more nuanced than that,
-    but admins or super admin creds for the secret service are a real thing to consider.)
-    Third of all, you assume that vendor apps out there can even support this model,
-    when in reality 99% of them can't
-    and wouldn't know what OAuth is if it smacked them in the face.
-    *What are we even talking about here?*
-    JIT is for humans to prove authenticity
-    and at times have a second person in the loop for approval.
-    JIT for NHIs is like saying to a robot:
-    "Now the gun is locked in this safe over here,
-    and you need to put this pin in to get in."
-    Whether you hand the robot a gun,
-    or tell it where the gun is and how to get it,
+[^jit-for-nhis]: "JIT for NHIs" sounds rigorous
+    until you realize it just moves the credential—it's
+    [turtles all the way down](https://www.spletzer.com/2025/03/zero-to-trusted-spiffe-and-spire-demystified/).
+    Whether you hand a robot a gun
+    or tell it where the safe is and give it the combination,
     the robot still has access to a gun.
 
 [^seatbelt]: By the way, it appears now that Seatbelt is
@@ -632,9 +579,11 @@ up until the business no longer exists.
 
 [^mcp-data-pipeline]: And no,
     [using MCP inappropriately as a data pipeline](https://www.spletzer.com/2025/08/mcp-is-a-usb-port-not-a-hard-drive/)
-    is not a valid use case to build your own MCP server for a third party service.
-    You're going to hit rate limits anyway, you silly goose.
-    Be an adult and do some real data engineering.
+    is not a valid use case to build your own MCP server for a third-party service.
+    You'll hit rate limits anyway,
+    you silly goose.
+    Be an adult
+    and do some real data engineering.
 
 [^pat-story]: I imagine this will get better over time,
     but it was a vivid reminder that agents optimize for
@@ -644,7 +593,7 @@ up until the business no longer exists.
 [^companies-are-people-too]: [Corporate Personhood](https://en.wikipedia.org/wiki/Corporate_personhood#In_the_United_States)
     has a strange history in the United States (and elsewhere),
     culminating in one of the most terrible recent Supreme Court decisions on this subject
-    in the [Citizen's United](https://en.wikipedia.org/wiki/Citizens_United_v._FEC) case in 2010.
+    in the [Citizens United](https://en.wikipedia.org/wiki/Citizens_United_v._FEC) case in 2010.
     So, as we're worried about agents becoming human-like and the implications of that,
     understand that corporations themselves have been treated as people for a very long time...
 
@@ -654,7 +603,7 @@ up until the business no longer exists.
     It will have receipts.
     I'm not joking.
 
-[^cryptography-aside]: In fact I would argue, there's an older piece of advice here,
+[^cryptography-aside]: In fact, I would argue there's an older piece of advice here,
     independent of agents:
     Don't roll your own cryptography.
 
@@ -678,10 +627,9 @@ up until the business no longer exists.
     The advice to "facilitate rather than block"
     assumes you've already built the foundational controls
     listed earlier in this section.
-    Notably they are hardcore about PAWs—Privileged Access Workstations—which
-    are a completely separate machine
-    which is very locked down
-    and only used for accessing commercial production environments.
+    Notably they are hardcore about PAWs—Privileged Access Workstations—completely
+    separate machines that are locked down
+    and used only for accessing commercial production environments.
     They also enforce JIT access with secondary approval for prod elevation
     and more alongside that.
     If you haven't, start there—but
