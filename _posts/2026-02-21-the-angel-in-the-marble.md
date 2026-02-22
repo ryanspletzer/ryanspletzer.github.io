@@ -42,7 +42,7 @@ I see a block of marble.
 And each file added chips away at that block
 and gets you closer to something resembling a finished work.
 
-![Close-up of a marble angel statue by Michelangelo Buonarroti with a calm, expressionless face and curly hair, warmly lit, with one textured wing visible behind its shoulder.](/assets/images/angel-marble-2.png)
+![Software developer chisels an angel from a marble block while glowing code panels and a robotic hand with a laptop assist.](/assets/images/angel-marble-2.png)
 
 ## Shaping Sound
 
