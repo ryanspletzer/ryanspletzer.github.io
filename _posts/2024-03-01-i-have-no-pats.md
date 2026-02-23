@@ -17,11 +17,11 @@ otherwise) or even an SSH key.
 
 How is this possible?
 
-![alt text](/assets/images/github_pats.png)
+![GitHub personal access tokens (classic) page showing no tokens](/assets/images/github_pats.png)
 
-![alt text](/assets/images/github_fgpats.png)
+![GitHub fine-grained personal access tokens page showing no tokens](/assets/images/github_fgpats.png)
 
-![alt text](/assets/images/github_sshkeys.png)
+![GitHub SSH keys page showing no keys](/assets/images/github_sshkeys.png)
 
 The answer is [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager).
 
