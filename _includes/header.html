@@ -58,11 +58,11 @@
       <div class="site-nav-inner">
         <a class="site-title" href="{{ site.baseurl}}/">{{ site.name }}</a>
         <ul class="site-nav-links">
-          <li><a href="{{ site.baseurl}}/">home</a></li>
-          <li><a href="{{ site.baseurl}}/archive/">archive</a></li>
-          <li><a href="{{ site.baseurl}}/tags/">tags</a></li>
-          <li><a href="{{ site.baseurl}}/about/">about</a></li>
-          <li><a href="{{ site.baseurl}}/linkfarm/">linkfarm</a></li>
+          <li><a href="{{ site.baseurl}}/" {% if page.url == "/" %}aria-current="page"{% endif %}>home</a></li>
+          <li><a href="{{ site.baseurl}}/archive/" {% if page.url == "/archive/" %}aria-current="page"{% endif %}>archive</a></li>
+          <li><a href="{{ site.baseurl}}/tags/" {% if page.url == "/tags/" %}aria-current="page"{% endif %}>tags</a></li>
+          <li><a href="{{ site.baseurl}}/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>about</a></li>
+          <li><a href="{{ site.baseurl}}/linkfarm/" {% if page.url == "/linkfarm/" %}aria-current="page"{% endif %}>linkfarm</a></li>
           <li><a href="{{ site.baseurl}}/feed.xml">rss</a></li>
         </ul>
       </div>

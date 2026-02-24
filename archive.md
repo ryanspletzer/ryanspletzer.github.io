@@ -9,7 +9,7 @@ permalink: /archive/
   {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
   {% if currentyear != year %}
   {% unless forloop.first %}</ul>{% endunless %}
-  <h5>{{ currentyear }}</h5>
+  <h2>{{ currentyear }}</h2>
   <ul class="posts">
    {% capture year %}{{currentyear}}{% endcapture %}
    {% endif %}

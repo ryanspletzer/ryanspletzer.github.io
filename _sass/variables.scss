@@ -6,14 +6,14 @@
   --color-footer-bg: #222;
   --color-note: #87CEFA;
   --color-warning: #ffff00;
-  --color-border: #666666;
+  --color-border: #727272;
   --color-blockquote: #bbb;
   --color-link-hover: #fff;
   --color-code-bg: #333;
   --color-table-bg: #202020;
   --color-table-alt: #252525;
   --color-table-hover: #353535;
-  --color-table-border: #333;
+  --color-table-border: #7e7e7e;
 
   --font-body: Georgia, 'Times New Roman', Times, serif;
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -23,4 +23,12 @@
   --line-height-body: 1.75;
 
   --layout-max-width: 73.125rem;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: #999;
+    --color-table-border: #888;
+    --color-blockquote: #ddd;
+  }
 }
