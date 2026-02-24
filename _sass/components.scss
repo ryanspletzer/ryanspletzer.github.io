@@ -26,6 +26,11 @@
   text-decoration: underline;
 }
 
+// Footnote superscripts are visually distinct without underlines
+.post-content sup a.footnote {
+  text-decoration: none;
+}
+
 .panel .post-meta ul {
   font-family: var(--font-sans);
 }
