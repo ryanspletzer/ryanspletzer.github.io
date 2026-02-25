@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Tale of Acceleration and Compound Engineering
-date: 2026-02-24 00:00:00
+date: 2026-02-28 00:00:00
 description: >
   A dev machine setup script practice I carried across jobs for years
   took me months to modernize with GitHub Copilot last summer.
@@ -79,7 +79,7 @@ even with GitHub Copilot in hand,
 I still had to iterate on this for a while.
 In hindsight I should have set up CI from the get-go,
 but in the initial pass I really needed to be "close to the metal"
-to run things in VM's to work out repeatable setups for macOS, Windows, and Ubuntu.
+to run things in virtual machines to work out repeatable setups for macOS, Windows, and Ubuntu.
 
 Contrast that with now:
 With Claude Code
