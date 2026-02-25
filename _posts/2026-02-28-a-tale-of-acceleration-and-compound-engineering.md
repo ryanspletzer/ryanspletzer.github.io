@@ -1,17 +1,23 @@
 ---
 layout: post
 title: A Tale of Acceleration and Compound Engineering
-date: 2026-02-28 00:00:00
+date: 2026-02-24 00:00:00
 description: >
-  Software has always been a subtractive art—chipping away
-  at possibility until the right shape emerges.
-  AI coding tools gave us faster chisels,
-  but taste is still the thing that separates
-  a statue from a pile of dust.
+  A dev machine setup script practice I carried across jobs for years
+  took me months to modernize with GitHub Copilot last summer.
+  This year, Claude Code wrapped it in CI in ninety minutes
+  and added a new distro in under an hour.
+  The speedup isn't just better models—it's
+  the compounding effect of practices like testing and CI
+  that AI helps you put in place.
+header: /assets/images/johnson-hobbyhorse-1819.jpg
 tags:
   - programming
   - ai
 ---
+
+![A hand-colored print of a gentleman in a top hat and tailcoat riding an early two-wheeled hobbyhorse, with another rider visible in the distance.](/assets/images/johnson-hobbyhorse-1819.jpg)
+*"Johnson, the First Rider on the Pedestrian Hobbyhorse" — published 1819 by R. Ackermann, London. Public domain.*
 
 Last summer I spent about a week or two
 (or three? Or four?
@@ -22,7 +28,7 @@ knows, though,
 and turns out it was a few *months* that I iterated on it,
 funny how the brain does that)
 creating new dev machine setup scripts / approaches
-based on a practice I have done for years in my career
+based on a practice I have done for years in my career,
 and which I wanted to modernize with AI assistance
 and put out there for others to use
 (and selfishly, for myself to use as well).
@@ -45,11 +51,11 @@ PowerShell to the rescue.
 At that time I coded something by hand
 (raw PowerShell, no frills)
 that would automate the setup of their machines,
-and as a practice when the joined I'd walk around with a thumb drive
+and as a practice when they joined I'd walk around with a thumb drive
 (yes, you heard that right)
-and plug it into the intern's machine
-and re-imaged it and dumped the script off and
-ran it while we got to have coffee
+and plug it into the intern's machine,
+dump the script off, and
+run it while we got to have coffee
 and got to know the newest group of folks coming in that summer.
 
 We got a *lot* of leverage out of this little script,
@@ -62,7 +68,7 @@ and this practice has endured to this day.
 Now, I wanted to have a version of this that I could create as open source
 for not just me to use but others out there.
 There were also things that could be improved upon
-as far as better parameterizing the approach with a yaml config file.
+like a YAML config file to better parameterize the setup.
 But the inertia usually always held me back from doing that.
 
 However once AI hit and I got access to GitHub Copilot,
@@ -79,33 +85,47 @@ Contrast that with now:
 With Claude Code
 I was able to wrap the whole thing in CI with GitHub Actions
 [in an hour and a half](https://github.com/ryanspletzer/dev-machine-setup/pull/10),
-and further add Fedora support in an hour.
+and further add
+[Fedora support in an hour](https://github.com/ryanspletzer/dev-machine-setup/pull/14).
 
 This last week,
 [I added Debian support in an hour](https://github.com/ryanspletzer/dev-machine-setup/pull/18)
-(or less, who's counting at this point).
+(or less—who's really counting at this point).
 
-Now, one might say "well Ryan you've been compounding things over time,"
-and yes, yes I have.
+Now, one might say:
+
+"Well Ryan, you've been compounding your engineering practices over time."
+
+And yes, yes I have.
 
 I think this is one of those things that makes developer productivity gains so hard to measure:
-depending on where you come in and start measuring
+depending on where you come in and start measuring,
 you may not have a great reference point of having done something in the past,
-but further as you go along you build compounding wins *beyond* just using AI
-with certain techniques and practices
+but further as you go along you build compounding wins *beyond* just using AI for coding,
+by using certain techniques and practices
 like rigorous testing and linting
 that allow you to move so much faster.
 
-It turns out the TDD people were right.
+(It turns out the TDD people were right.)
 
-The tools and the models have gotten better, but also it's hard to account for practices that an AI tool help you put
-in place to go faster. It's not all just about code throughput, but rather sometimes practices that you set up.
+The tools and the models have gotten better,
+but it's hard to account for practices
+that an AI tool helps you put in place to go *even faster*.
 
-Also you need to go get yourself a platform like GitHub where CI is easy to get going for fast iteration,
-and the pit of success is easy to fall into; the virtuous circle of feedback is real.
+It's not all just about code throughput—often
+it's about the practices you set up.
 
-I’m going to have no retirement projects when I’m old now. I might have to pick up fishing.
+You also need a platform like GitHub
+where CI is easy to get going for fast iteration
+and the pit of success is very easy to fall into;
+the virtuous cycle of feedback is real.
 
-It truly feels like the future, and when Doc Brown said "I'm sure in 1985 plutonium is available at every corner drug store."
+It truly feels like the future—like
+when
+[Doc Brown](https://64.media.tumblr.com/7154b389bddd7ca20048df4876adcbfb/a53a9c3a07649ba5-f2/s540x810/b093fac9d0ef5c2b05217b7c36ff927cb463a399.gif)
+said,
+"I'm sure in 1985 plutonium is available at every corner drug store."
 
-https://64.media.tumblr.com/7154b389bddd7ca20048df4876adcbfb/a53a9c3a07649ba5-f2/s540x810/b093fac9d0ef5c2b05217b7c36ff927cb463a399.gif
+I feel like I have plutonium and I'm blowing up all of my backlog.
+I'm going to have no retirement projects when I'm old now.
+I might have to pick up fishing.
