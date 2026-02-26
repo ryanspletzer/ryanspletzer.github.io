@@ -26,8 +26,9 @@
   text-decoration: underline;
 }
 
-// Footnote superscripts are visually distinct without underlines
-.post-content sup a.footnote {
+// Footnote links are visually distinct without underlines
+.post-content sup a.footnote,
+.post-content a.reversefootnote {
   text-decoration: none;
 }
 
