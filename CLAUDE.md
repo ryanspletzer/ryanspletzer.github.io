@@ -73,7 +73,7 @@ _layouts/            HTML templates (post, page, listing, tag_page, tag_index)
 _includes/           Reusable components (header, footer, sidebar, json-ld,
                      google-analytics)
 _sass/               SCSS partials (variables, typography, layout, components,
-                     code, utilities)
+                     code, syntax, utilities)
 assets/css/          Main style.scss that imports _sass files
 assets/images/       Post images
 tag/                 Auto-generated tag pages (git-ignored)
@@ -160,15 +160,13 @@ regenerates Linux baseline screenshots and commits them.
 - **URL:** `https://www.spletzer.com`
 - **Permalink:** `/:year/:month/:title/`
 - **Markdown:** kramdown with GFM input, hard_wrap false
-- **Plugins:** jekyll-gist
+- **Plugins:** jekyll-gist, jekyll-redirect-from
 - **SASS:** compressed output
 - **Excluded:** README.md, LICENSE
 
 ### Integrations
 
 - **Google Analytics:** GA4 (`G-92E8FVFHFW`)
-- **Disqus comments:** shortname `www-spletzer-com`, enabled globally
-- **Social sharing:** Twitter, Facebook, Google+, LinkedIn, Reddit, Email
 - **Social links:** Mastodon, LinkedIn, GitHub, Bluesky
 
 ### Playwright (`playwright.config.ts`)
@@ -182,13 +180,13 @@ regenerates Linux baseline screenshots and commits them.
 
 ### Ruby (Gemfile)
 
-jekyll, jekyll-gist, kramdown-parser-gfm, jekyll-watch, webrick, colorator,
-concurrent-ruby
+jekyll, jekyll-gist, jekyll-redirect-from, kramdown-parser-gfm, jekyll-watch,
+webrick, colorator, concurrent-ruby
 
 ### Node.js (package.json)
 
-@playwright/test, @types/node, typescript (dev dependencies only, for visual
-testing)
+@axe-core/playwright, @playwright/test, @types/node, typescript (dev
+dependencies only, for visual and accessibility testing)
 
 ## Important Notes
 
@@ -199,5 +197,11 @@ testing)
 - Visual test baselines are in `e2e/__snapshots__/`
 - After CSS/layout changes, run `npm run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
-- The theme is dark (background #292929, text #e7e9ea, accent #35B4DE)
+- The theme is dark (background #292929, text #e7e9ea, accent #35B4DE) with
+  `color-scheme: dark` for native browser UI support
+- All colors and fonts use native CSS custom properties (no SCSS variables);
+  defined in `_sass/variables.scss`
 - CSS Grid layout: content in 9fr, sidebar in 3fr (no Bootstrap)
+- Accessibility: `prefers-reduced-motion` disables transitions,
+  `prefers-contrast: more` increases border/text contrast,
+  visible `:focus-visible` outlines on all interactive elements
