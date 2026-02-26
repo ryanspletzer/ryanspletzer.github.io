@@ -7,10 +7,9 @@
     margin: 0;
     padding: 1em;
     overflow-x: auto;
-    word-wrap: normal;
     border: none;
     white-space: pre-wrap;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     background-color: var(--color-code-bg);
     color: var(--color-code-text) !important;
     code {
