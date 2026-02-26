@@ -1,3 +1,23 @@
+// Shared responsive container — defines the max-width cascade
+// used by .site-content and .site-nav-inner.
+// Applied as a utility class in HTML for visibility in DOM/devtools.
+.layout-container {
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+
+  @media (max-width: 74.9375em) {
+    max-width: 60.625rem;
+  }
+
+  @media (max-width: 61.9375em) {
+    max-width: 46.875rem;
+  }
+
+  @media (max-width: 47.9375em) {
+    max-width: none;
+  }
+}
+
 // Sticky footer via flexbox on body
 body {
   display: flex;
@@ -9,8 +29,6 @@ body {
 // lays out main + aside in a 9/3 grid with child-level padding.
 .site-content {
   flex: 1;
-  max-width: var(--layout-max-width);
-  margin-inline: auto;
   display: grid;
   grid-template-columns: 9fr 3fr;
 
@@ -24,12 +42,7 @@ body {
     min-width: 0;
   }
 
-  @media (max-width: 74.9375em) {
-    max-width: 60.625rem;
-  }
-
   @media (max-width: 61.9375em) {
-    max-width: 46.875rem;
     grid-template-columns: 1fr;
     padding: 0 0.9375rem;
 
@@ -37,10 +50,6 @@ body {
     > aside {
       padding: 0;
     }
-  }
-
-  @media (max-width: 47.9375em) {
-    max-width: none;
   }
 }
 
@@ -53,24 +62,10 @@ body {
   border-bottom: 1px solid #080808;
 
   .site-nav-inner {
-    max-width: var(--layout-max-width);
-    margin: 0 auto;
     padding: 0 0.9375rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @media (max-width: 74.9375em) {
-      max-width: 60.625rem;
-    }
-
-    @media (max-width: 61.9375em) {
-      max-width: 46.875rem;
-    }
-
-    @media (max-width: 47.9375em) {
-      max-width: none;
-    }
   }
 
   .site-title {
