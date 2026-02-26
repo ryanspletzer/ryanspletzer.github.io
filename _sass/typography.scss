@@ -8,7 +8,6 @@
 html {
   position: relative;
   min-height: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -40,11 +39,10 @@ h5 { font-size: 0.875rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
 h6 { font-size: 0.75rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
 
 img {
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
-  vertical-align: middle;
 }
 
 img + em {
@@ -108,7 +106,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--color-table-bg);
-  color: #e0e0e0;
+  color: var(--color-text);
   border: 1px solid var(--color-table-border);
   margin: 0 0 0.625rem;
   table-layout: fixed;
@@ -123,7 +121,7 @@ table td {
 }
 
 table th {
-  background-color: #2a2a2a;
+  background-color: var(--color-bg);
   font-weight: bold;
 }
 
@@ -136,7 +134,7 @@ table tr:hover {
 }
 
 table a {
-  color: #00bcd4;
+  color: var(--color-accent);
   text-decoration: none;
 }
 

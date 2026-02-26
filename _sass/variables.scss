@@ -1,4 +1,6 @@
 :root {
+  color-scheme: dark;
+
   --color-accent: #35B4DE;
   --color-text: rgb(231, 233, 234);
   --color-bg: #292929;
@@ -10,6 +12,9 @@
   --color-blockquote: #bbb;
   --color-link-hover: #fff;
   --color-code-bg: #333;
+  --color-code-lineno: #A9B7C6;
+  --color-code-selection-bg: #214283;
+  --color-nav-link: #9d9d9d;
   --color-table-bg: #202020;
   --color-table-alt: #252525;
   --color-table-hover: #353535;
