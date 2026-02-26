@@ -108,6 +108,11 @@ that allow you to move so much faster.
 
 (It turns out the TDD people were right.)
 
+In fact compound engineering practices are so powerful
+that they have been codified into a
+[Claude Code plugin](https://github.com/EveryInc/compound-engineering-plugin)
+that I encourage people to check out.
+
 The tools and the models have gotten better,
 but it's hard to account for practices
 that an AI tool helps you put in place to go *even faster*.
