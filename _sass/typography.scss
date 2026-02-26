@@ -8,7 +8,6 @@
 html {
   position: relative;
   min-height: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -40,11 +39,10 @@ h5 { font-size: 0.875rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
 h6 { font-size: 0.75rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
 
 img {
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   max-width: 100%;
   max-height: 100%;
-  vertical-align: middle;
 }
 
 img + em {
