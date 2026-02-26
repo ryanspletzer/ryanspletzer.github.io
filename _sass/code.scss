@@ -1,14 +1,6 @@
 // Embedded code snippets
-$foreground: #A9B7C6;
-$background: #2B2B2B;
-$selectionForeground: #A9B7C6;
-$selectionBackground: #214283;
-$linenos: #A9B7C6;
-
 .highlight {
   margin-bottom: 1.5em;
-  color: $foreground;
-  background-color: $background;
   border-radius: 4px;
   pre {
     position: relative;
@@ -20,10 +12,10 @@ $linenos: #A9B7C6;
     white-space: pre-wrap;
     word-wrap: break-word;
     background-color: var(--color-code-bg);
-    color: #ddd !important;
+    color: var(--color-code-text) !important;
     code {
       white-space: pre-wrap;
-      color: #ddd;
+      color: var(--color-code-text);
     }
   }
   pre::-webkit-scrollbar {
@@ -36,8 +28,8 @@ $linenos: #A9B7C6;
     border-radius: 4px;
   }
   ::selection {
-    background-color: $selectionBackground;
-    color: $selectionForeground;
+    background-color: var(--color-code-selection-bg);
+    color: var(--color-code-lineno);
   }
 }
 .highlight > pre {
@@ -59,7 +51,7 @@ pre > code {
   border: 1px solid var(--color-code-bg);
 }
 
-.lineno { border-right: dashed 1px $linenos !important; color: $linenos; padding-right: 0.3125rem; padding-left: 0 !important; }
+.lineno { border-right: dashed 1px var(--color-code-lineno) !important; color: var(--color-code-lineno); padding-right: 0.3125rem; padding-left: 0 !important; }
 
 // Solarized Dark syntax highlighting for code blocks
 .highlight pre { color: #93a1a1 }
