@@ -51,7 +51,7 @@ body {
 
 // Navigation
 .site-nav {
-  background-color: #222;
+  background-color: var(--color-panel);
   padding: 0;
   min-height: 3.125rem;
   margin-bottom: 1.25rem;
@@ -80,7 +80,7 @@ body {
 
   .site-title {
     font-size: 1.875rem;
-    color: #fff;
+    color: var(--color-link-hover);
     text-decoration: none;
     padding: 1.25rem 0;
     line-height: 1.25rem;
@@ -115,7 +115,7 @@ body {
 
       &:hover,
       &:focus {
-        color: #fff;
+        color: var(--color-link-hover);
         text-decoration: none;
       }
 
