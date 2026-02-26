@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: listing
 title: Tags
 permalink: /tags/
 ---

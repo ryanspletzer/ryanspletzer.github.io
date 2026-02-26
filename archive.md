@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: listing
 title: Blog archive
 permalink: /archive/
 ---
