@@ -69,11 +69,11 @@ workflow dispatch in GitHub Actions.
 ```text
 _posts/              Blog posts (YYYY-MM-DD-title-slug.md)
 _drafts/             Unpublished draft posts
-_layouts/            HTML templates (post, page, tag_page, tag_index)
-_includes/           Reusable components (header, footer, sidebar, social,
-                     share, google-analytics, disqus-comments, disqus-counts,
-                     yandex-metrica)
-_sass/               SCSS (bootstrap.min.scss, theme.scss)
+_layouts/            HTML templates (post, page, listing, tag_page, tag_index)
+_includes/           Reusable components (header, footer, sidebar, json-ld,
+                     google-analytics)
+_sass/               SCSS partials (variables, typography, layout, components,
+                     code, utilities)
 assets/css/          Main style.scss that imports _sass files
 assets/images/       Post images
 tag/                 Auto-generated tag pages (git-ignored)
@@ -115,6 +115,19 @@ Post content in markdown...
 
 Optional frontmatter fields: `header` (image path), `headerwidth`,
 `headerheight`, `comments` (override global true/false).
+
+### Layouts
+
+- **`post`** — Individual blog posts with date, tags, and TOC
+- **`page`** — Standalone content pages (about, linkfarm, 404);
+  wraps content in `<article>`
+- **`listing`** — Index and listing pages (homepage, archive, tags);
+  wraps content in `<section>` instead of `<article>`
+- **`tag_page`** / **`tag_index`** — Auto-generated tag pages;
+  extend `listing`
+
+Use `page` for self-contained compositions
+and `listing` for pages that aggregate or index other content.
 
 ### Tag System
 
@@ -187,4 +200,4 @@ testing)
 - After CSS/layout changes, run `npm run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
 - The theme is dark (background #292929, text #e7e9ea, accent #35B4DE)
-- Bootstrap grid: content in `col-md-9`, sidebar in `col-md-3`
+- CSS Grid layout: content in 9fr, sidebar in 3fr (no Bootstrap)
