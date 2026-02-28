@@ -13,12 +13,8 @@ pre {
     padding: 1em;
     overflow-x: auto;
     border: none;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
+    white-space: pre;
     background-color: var(--color-code-bg);
-    code {
-      white-space: pre-wrap;
-    }
   }
   pre::-webkit-scrollbar {
     height: 10px;
@@ -51,6 +47,13 @@ pre > code {
 }
 pre > code {
   font-size: inherit;
+}
+
+@media (forced-colors: active) {
+  .highlight pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
 }
 
 .lineno { border-right: dashed 1px var(--color-code-lineno) !important; color: var(--color-code-lineno); padding-right: 0.3125rem; padding-left: 0 !important; }
