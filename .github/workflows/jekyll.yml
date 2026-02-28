@@ -45,6 +45,7 @@ jobs:
             visual:
               - '_layouts/**'
               - '_includes/**'
+              - '_plugins/**'
               - '_sass/**'
               - 'css/**'
               - 'assets/css/**'
