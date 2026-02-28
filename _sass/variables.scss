@@ -122,16 +122,11 @@
   --syn-inserted: #008000;
 }
 
-// Apply light theme when OS prefers light and user hasn't chosen dark
+// Apply light theme when OS prefers light
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
+  :root {
     @include light-theme;
   }
-}
-
-// Apply light theme when user explicitly chooses light
-:root[data-theme="light"] {
-  @include light-theme;
 }
 
 // High contrast overrides — dark mode
@@ -143,19 +138,9 @@
   }
 }
 
-// High contrast overrides — light mode (OS preference)
+// High contrast overrides — light mode
 @media (prefers-contrast: more) and (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --color-border: #666;
-    --color-table-border: #555;
-    --color-blockquote: #333;
-    --color-text: #1A1A1A;
-  }
-}
-
-// High contrast overrides — light mode (manual toggle)
-@media (prefers-contrast: more) {
-  :root[data-theme="light"] {
+  :root {
     --color-border: #666;
     --color-table-border: #555;
     --color-blockquote: #333;

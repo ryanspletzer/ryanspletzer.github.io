@@ -163,8 +163,7 @@ body {
 // Reduced motion — disable all transitions
 @media (prefers-reduced-motion: reduce) {
   .site-nav .site-title,
-  .site-nav .site-nav-links li a,
-  .site-nav .theme-toggle {
+  .site-nav .site-nav-links li a {
     transition: none;
   }
 }
