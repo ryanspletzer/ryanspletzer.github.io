@@ -58,6 +58,11 @@
     <nav class="site-nav" aria-label="Main">
       <div class="site-nav-inner layout-container">
         <a class="site-title" href="{{ site.baseurl}}/">{{ site.name }}</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label" role="button"
+               aria-expanded="false" aria-label="Menu">
+          <span></span>
+        </label>
         <ul class="site-nav-links">
           <li><a href="{{ site.baseurl}}/" {% if page.url == "/" %}aria-current="page"{% endif %}>home</a></li>
           <li><a href="{{ site.baseurl}}/archive/" {% if page.url == "/archive/" %}aria-current="page"{% endif %}>archive</a></li>
