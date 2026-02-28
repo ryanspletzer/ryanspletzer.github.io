@@ -180,7 +180,7 @@ regenerates Linux baseline screenshots and commits them.
 
 ### Ruby (Gemfile)
 
-jekyll, jekyll-gist, jekyll-redirect-from, kramdown-parser-gfm, jekyll-watch,
+jekyll, jekyll-redirect-from, kramdown-parser-gfm, jekyll-watch,
 webrick, colorator, concurrent-ruby
 
 ### Node.js (package.json)
