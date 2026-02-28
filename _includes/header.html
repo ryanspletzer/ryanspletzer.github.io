@@ -58,12 +58,11 @@
     <nav class="site-nav" aria-label="Main">
       <div class="site-nav-inner layout-container">
         <a class="site-title" href="{{ site.baseurl}}/">{{ site.name }}</a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label" role="button"
-               aria-expanded="false" aria-label="Menu">
+        <button class="nav-toggle-btn" popovertarget="nav-menu"
+                aria-expanded="false" aria-label="Menu">
           <span></span>
-        </label>
-        <ul class="site-nav-links">
+        </button>
+        <ul class="site-nav-links" id="nav-menu" popover="auto">
           <li><a href="{{ site.baseurl}}/" {% if page.url == "/" %}aria-current="page"{% endif %}>home</a></li>
           <li><a href="{{ site.baseurl}}/archive/" {% if page.url == "/archive/" %}aria-current="page"{% endif %}>archive</a></li>
           <li><a href="{{ site.baseurl}}/tags/" {% if page.url == "/tags/" %}aria-current="page"{% endif %}>tags</a></li>
@@ -73,4 +72,11 @@
         </ul>
       </div>
     </nav>
+    <script>
+      document.getElementById('nav-menu')
+        .addEventListener('toggle', function(e) {
+          document.querySelector('.nav-toggle-btn')
+            .setAttribute('aria-expanded', e.newState === 'open');
+        });
+    </script>
   </header>
