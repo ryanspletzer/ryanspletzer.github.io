@@ -30,7 +30,6 @@ google_analytics_key: G-92E8FVFHFW
 permalink: /:year/:month/:title/
 
 plugins:
-  - jekyll-gist
   - jekyll-redirect-from
 
 # Enable for using pages, more details are here: http://jekyllrb.com/docs/pagination/
