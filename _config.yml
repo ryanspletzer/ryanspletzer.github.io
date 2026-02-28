@@ -15,14 +15,14 @@ url: https://www.spletzer.com
 baseurl: ''
 
 links:
-  - text: Mastodon
-    url: https://spletzer.com/@ryan
-  - text: LinkedIn
-    url: https://www.linkedin.com/in/ryanspletzer/
   - text: GitHub
     url: https://github.com/ryanspletzer
   - text: Bluesky
     url: https://bsky.app/profile/ryan.spletzer.com
+  - text: LinkedIn
+    url: https://www.linkedin.com/in/ryanspletzer/
+  - text: Mastodon
+    url: https://spletzer.com/@ryan
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: G-92E8FVFHFW
