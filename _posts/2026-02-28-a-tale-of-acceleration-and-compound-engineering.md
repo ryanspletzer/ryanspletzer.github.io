@@ -79,7 +79,12 @@ even with GitHub Copilot in hand,
 I still had to iterate on this for a while.
 In hindsight I should have set up CI from the get-go,
 but in the initial pass I really needed to be "close to the metal"
-to run things in virtual machines to work out repeatable setups for macOS, Windows, and Ubuntu.
+to run things in virtual machines
+to work out repeatable setups for macOS, Windows, and Ubuntu
+and get a feel for what the developer experience is really like
+running this these dev machine setups from scratch multiple times.
+(Pro tip for folks in enterprise who design developer experiences:
+make sure you dog food these processes yourself to build true empathy.)
 
 Contrast that with now:
 With Claude Code
@@ -102,28 +107,52 @@ I think this is one of those things that makes developer productivity gains so h
 depending on where you come in and start measuring,
 you may not have a great reference point of having done something in the past,
 but further as you go along you build compounding wins *beyond* just using AI for coding,
-by using certain techniques and practices
+by using certain *techniques* and practices
 like rigorous testing and linting
 that allow you to move so much faster.
 
-(It turns out the TDD people were right.)
+It turns out the people advocating
+for more linting, testing, TDD and more over the years
+were right—the
+difference now is it's easier than ever to get these practices
+and workflows going.
 
 In fact compound engineering practices are so powerful
 that they have been codified into a
 [Claude Code plugin](https://github.com/EveryInc/compound-engineering-plugin)
 that I encourage people to check out.
+This is certainly not the only way to experience these benefits—there
+are thousands of ways to to approach this from,
+and they very well will vary by type of workload you're building—but
+the important thing to do is *start*.
 
 The tools and the models have gotten better,
 but it's hard to account for practices
 that an AI tool helps you put in place to go *even faster*.
 
-It's not all just about code throughput—often
-it's about the practices you set up.
+It's not all just about code throughput—more
+often than not,
+it's about the *practices* you set up *around* the code.
 
-You also need a platform like GitHub
-where CI is easy to get going for fast iteration
-and the pit of success is very easy to fall into;
-the virtuous cycle of feedback is real.
+I will add this as well:
+You really need a platform like GitHub
+where CI is *right there*
+and is easy to get going for fast iteration
+and the pit of success is very easy to fall into.
+The virtuous cycle of feedback with these tools being able
+to read out results from builds in real time is real,
+and if your CI is clunky / disjointed / cumbersome / slow / unreliable / inaccessible
+from being read by local tools
+and doesn't allow for this virtuous cycle,
+it's simple to understand why it's less ideal:
+you're stretching out the developer loop into
+adjacent tools that don't provide as seamless of an experience.
+This is not to say that you can't accomplish great DX
+with adjacent tools—you
+just have to work harder to provide the means
+for developers to consume them in fast, iterative loops.
+
+---
 
 It truly feels like the future—like
 when
