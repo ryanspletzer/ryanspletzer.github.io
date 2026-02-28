@@ -54,12 +54,15 @@ export default defineConfig({
   },
 
   // Projects for different viewport sizes (all use Chromium for consistency)
+  // Dark mode is explicitly set to prevent OS light-mode preference from
+  // affecting baseline screenshots.
   projects: [
     {
       name: 'Desktop',
       use: {
         browserName: 'chromium',
         viewport: { width: 1280, height: 720 },
+        colorScheme: 'dark',
       },
     },
     {
@@ -67,6 +70,7 @@ export default defineConfig({
       use: {
         browserName: 'chromium',
         viewport: { width: 768, height: 1024 },
+        colorScheme: 'dark',
       },
     },
     {
@@ -75,6 +79,7 @@ export default defineConfig({
         browserName: 'chromium',
         viewport: { width: 375, height: 667 },
         isMobile: true,
+        colorScheme: 'dark',
       },
     },
   ],

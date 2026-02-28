@@ -1,3 +1,57 @@
 <footer class="site-footer">
   <p>&copy; Ryan Spletzer 2026</p>
 </footer>
+
+<script>
+  {
+    const toggle = document.getElementById('theme-toggle');
+    const meta = document.querySelector('meta[name="theme-color"]');
+
+    if (toggle) {
+      const getEffectiveTheme = () => {
+        const explicit = document.documentElement.getAttribute('data-theme');
+        if (explicit) return explicit;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      };
+
+      const updateMeta = (theme) => {
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#FFFFFF' : '#222222');
+      };
+
+      const updateLabel = (theme) => {
+        toggle.setAttribute('aria-label',
+          theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      };
+
+      const applyTheme = () => {
+        const theme = getEffectiveTheme();
+        updateMeta(theme);
+        updateLabel(theme);
+      };
+
+      toggle.addEventListener('click', () => {
+        const current = getEffectiveTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        const osPrefers = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+        if (next === osPrefers) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem('theme');
+        } else {
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        }
+
+        applyTheme();
+      });
+
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+        if (!localStorage.getItem('theme')) {
+          applyTheme();
+        }
+      });
+
+      applyTheme();
+    }
+  }
+</script>

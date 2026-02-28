@@ -59,7 +59,7 @@ body {
   padding: 0;
   min-height: 3.125rem;
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid #080808;
+  border-bottom: 1px solid var(--color-nav-border);
 
   .site-nav-inner {
     padding: 0 0.9375rem;
@@ -145,7 +145,8 @@ body {
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {
   .site-title,
-  .site-nav-links li a {
+  .site-nav-links li a,
+  .theme-toggle {
     transition: none;
   }
 }
