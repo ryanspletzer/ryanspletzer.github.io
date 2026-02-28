@@ -53,13 +53,16 @@ export default defineConfig({
     },
   },
 
-  // Projects for different viewport sizes (all use Chromium for consistency)
+  // Projects for different viewport sizes and color schemes.
+  // All use Chromium for consistency. Color scheme is set explicitly
+  // so baselines are deterministic regardless of OS preference.
   projects: [
     {
       name: 'Desktop',
       use: {
         browserName: 'chromium',
         viewport: { width: 1280, height: 720 },
+        colorScheme: 'dark',
       },
     },
     {
@@ -67,6 +70,7 @@ export default defineConfig({
       use: {
         browserName: 'chromium',
         viewport: { width: 768, height: 1024 },
+        colorScheme: 'dark',
       },
     },
     {
@@ -75,6 +79,32 @@ export default defineConfig({
         browserName: 'chromium',
         viewport: { width: 375, height: 667 },
         isMobile: true,
+        colorScheme: 'dark',
+      },
+    },
+    {
+      name: 'Desktop-Light',
+      use: {
+        browserName: 'chromium',
+        viewport: { width: 1280, height: 720 },
+        colorScheme: 'light',
+      },
+    },
+    {
+      name: 'Tablet-Light',
+      use: {
+        browserName: 'chromium',
+        viewport: { width: 768, height: 1024 },
+        colorScheme: 'light',
+      },
+    },
+    {
+      name: 'Mobile-Light',
+      use: {
+        browserName: 'chromium',
+        viewport: { width: 375, height: 667 },
+        isMobile: true,
+        colorScheme: 'light',
       },
     },
   ],

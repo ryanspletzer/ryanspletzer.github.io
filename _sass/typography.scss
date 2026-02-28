@@ -15,7 +15,7 @@ body {
   font-size: var(--size-body);
   line-height: var(--line-height-body);
   color: var(--color-text);
-  background: var(--color-bg) url(/assets/images/squares.png);
+  background: var(--color-bg) var(--bg-image);
   margin: 0;
 }
 

@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
-  <meta name="theme-color" content="#222222">
+  <meta name="theme-color" content="#222222" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{ site.author }}">
   {% if page.description %}

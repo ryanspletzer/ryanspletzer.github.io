@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 gem 'jekyll'
+gem 'logger'
 gem "kramdown-parser-gfm"
 gem 'jekyll-watch'
 gem 'webrick'

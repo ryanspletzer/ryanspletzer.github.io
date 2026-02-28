@@ -59,7 +59,7 @@ body {
   padding: 0;
   min-height: 3.125rem;
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid #080808;
+  border-bottom: 1px solid var(--color-nav-border);
 
   .site-nav-inner {
     padding: 0 0.9375rem;
@@ -142,10 +142,28 @@ body {
   }
 }
 
-// Reduced motion
+// Theme switch animation (disabled when reduced motion is preferred)
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .site-nav,
+  .site-footer,
+  .panel,
+  .sidebar-panel,
+  .toc,
+  .highlight,
+  pre,
+  li > code,
+  p > code,
+  .note > code {
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+// Reduced motion — disable all transitions
 @media (prefers-reduced-motion: reduce) {
-  .site-title,
-  .site-nav-links li a {
+  .site-nav .site-title,
+  .site-nav .site-nav-links li a {
     transition: none;
   }
 }

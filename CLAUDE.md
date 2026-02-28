@@ -35,7 +35,8 @@ pwsh ./.tag_generator.ps1
 ### Visual Regression Tests
 
 Playwright-based screenshot comparison across three viewports (Desktop 1280x720,
-Tablet 768x1024, Mobile 375x667). The test suite starts a local Jekyll server
+Tablet 768x1024, Mobile 375x667) in both dark and light color schemes (6
+projects, 54 tests total). The test suite starts a local Jekyll server
 automatically.
 
 ```bash
@@ -160,7 +161,7 @@ regenerates Linux baseline screenshots and commits them.
 - **URL:** `https://www.spletzer.com`
 - **Permalink:** `/:year/:month/:title/`
 - **Markdown:** kramdown with GFM input, hard_wrap false
-- **Plugins:** jekyll-gist, jekyll-redirect-from
+- **Plugins:** jekyll-redirect-from
 - **SASS:** compressed output
 - **Excluded:** README.md, LICENSE
 
@@ -171,6 +172,8 @@ regenerates Linux baseline screenshots and commits them.
 
 ### Playwright (`playwright.config.ts`)
 
+- Six projects: Desktop, Tablet, Mobile (dark) + Desktop-Light, Tablet-Light,
+  Mobile-Light (light)
 - Sequential execution, single worker for deterministic screenshots
 - Max diff pixel ratio: 0.2%, threshold: 0.2
 - Platform-specific snapshot directories
@@ -197,11 +200,18 @@ dependencies only, for visual and accessibility testing)
 - Visual test baselines are in `e2e/__snapshots__/`
 - After CSS/layout changes, run `npm run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
-- The theme is dark (background #292929, text #e7e9ea, accent #35B4DE) with
-  `color-scheme: dark` for native browser UI support
+- Dark theme by default (background #303030, text #e7e9ea, accent #35B4DE);
+  light theme activates automatically via `prefers-color-scheme: light`
+  (background #EAEAEA, text #383A42, accent #0969DA)
+- No manual theme toggle — the site follows the OS color scheme preference
 - All colors and fonts use native CSS custom properties (no SCSS variables);
-  defined in `_sass/variables.scss`
+  defined in `_sass/variables.scss` with a `light-theme` mixin
+- Syntax highlighting uses VS Code Dark Modern (dark) and VS Code Light Modern
+  (light) color palettes via `--syn-*` custom properties
 - CSS Grid layout: content in 9fr, sidebar in 3fr (no Bootstrap)
-- Accessibility: `prefers-reduced-motion` disables transitions,
+- Theme transitions (background-color, color, border-color, box-shadow)
+  animate on color scheme changes, gated behind
+  `prefers-reduced-motion: no-preference`
+- Accessibility: `prefers-reduced-motion` disables all transitions,
   `prefers-contrast: more` increases border/text contrast,
   visible `:focus-visible` outlines on all interactive elements

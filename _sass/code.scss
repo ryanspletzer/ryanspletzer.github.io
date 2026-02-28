@@ -18,11 +18,11 @@ pre {
   }
   pre::-webkit-scrollbar {
     height: 10px;
-    background-color: #1E1E1E;
+    background-color: var(--color-scrollbar-bg);
     border-radius: 0 0 4px 4px;
   }
   pre::-webkit-scrollbar-thumb {
-    background-color: #424242;
+    background-color: var(--color-scrollbar-thumb);
     border-radius: 4px;
   }
   ::selection {
@@ -37,7 +37,7 @@ p > code,
   color: var(--color-text);
   background-color: var(--color-code-bg);
   border-radius: 5px;
-  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: var(--color-code-shadow);
 }
 pre,
 pre > code {
