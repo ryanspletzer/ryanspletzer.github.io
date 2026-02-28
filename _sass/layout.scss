@@ -142,11 +142,29 @@ body {
   }
 }
 
-// Reduced motion
+// Theme switch animation (disabled when reduced motion is preferred)
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .site-nav,
+  .site-footer,
+  .panel,
+  .sidebar-panel,
+  .toc,
+  .highlight,
+  pre,
+  li > code,
+  p > code,
+  .note > code {
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+// Reduced motion — disable all transitions
 @media (prefers-reduced-motion: reduce) {
-  .site-title,
-  .site-nav-links li a,
-  .theme-toggle {
+  .site-nav .site-title,
+  .site-nav .site-nav-links li a,
+  .site-nav .theme-toggle {
     transition: none;
   }
 }
