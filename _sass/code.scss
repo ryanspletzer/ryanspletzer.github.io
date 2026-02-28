@@ -1,3 +1,8 @@
+code,
+pre {
+  font-size: 85%;
+}
+
 // Embedded code snippets
 .highlight {
   margin-bottom: 1.5em;
@@ -43,6 +48,9 @@ pre > code {
   color: var(--color-text);
   background-color: var(--color-code-bg);
   border: 1px solid var(--color-code-bg);
+}
+pre > code {
+  font-size: inherit;
 }
 
 .lineno { border-right: dashed 1px var(--color-code-lineno) !important; color: var(--color-code-lineno); padding-right: 0.3125rem; padding-left: 0 !important; }
