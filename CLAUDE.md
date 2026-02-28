@@ -209,6 +209,9 @@ dependencies only, for visual and accessibility testing)
 - Syntax highlighting uses VS Code Dark Modern (dark) and VS Code Light Modern
   (light) color palettes via `--syn-*` custom properties
 - CSS Grid layout: content in 9fr, sidebar in 3fr (no Bootstrap)
+- Mobile navigation uses a CSS-only hamburger menu (checkbox hack, zero JS)
+  that activates at `≤ 47.9375em` (~767px); the three-bar icon animates to
+  an X on open and a vertical dropdown panel pushes content down
 - Theme transitions (background-color, color, border-color, box-shadow)
   animate on color scheme changes, gated behind
   `prefers-reduced-motion: no-preference`
