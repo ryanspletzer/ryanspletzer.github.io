@@ -209,9 +209,11 @@ dependencies only, for visual and accessibility testing)
 - Syntax highlighting uses VS Code Dark Modern (dark) and VS Code Light Modern
   (light) color palettes via `--syn-*` custom properties
 - CSS Grid layout: content in 9fr, sidebar in 3fr (no Bootstrap)
-- Mobile navigation uses a CSS-only hamburger menu (checkbox hack, zero JS)
-  that activates at `≤ 47.9375em` (~767px); the three-bar icon animates to
-  an X on open and a vertical dropdown panel pushes content down
+- Mobile navigation uses the Popover API (`popover`/`popovertarget`
+  attributes, Baseline 2024) with a 4-line inline script for
+  `aria-expanded` sync; activates at `≤ 47.9375em` (~767px); the
+  three-bar icon animates to an X via `:has()` (Baseline 2023) and the
+  dropdown overlays content in the browser's top layer
 - Theme transitions (background-color, color, border-color, box-shadow)
   animate on color scheme changes, gated behind
   `prefers-reduced-motion: no-preference`

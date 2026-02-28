@@ -164,3 +164,18 @@ test.describe('404 Page', () => {
     await checkAccessibility(page);
   });
 });
+
+test.describe('Mobile Navigation', () => {
+  test('hamburger menu open state', async ({ page }, testInfo) => {
+    if (!testInfo.project.name.includes('Mobile')) {
+      test.skip();
+      return;
+    }
+    await page.goto('/');
+    await page.click('.nav-toggle-btn');
+    await page.waitForSelector('.site-nav-links:popover-open',
+                               { state: 'visible' });
+    await takeViewportScreenshot(page, 'mobile-nav-open');
+    await checkAccessibility(page);
+  });
+});
