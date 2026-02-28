@@ -45,8 +45,8 @@ npm run test:visual
 
 - [ ] Body text (#e7e9ea) on background (#292929): 13.3:1
 - [ ] Link text (#35b4de) on panel background (#333): 5.8:1
-- [ ] Code comment tokens meet 4.5:1 against #333 background
-- [ ] All syntax highlighting tokens meet 4.5:1 against #333
+- [ ] Code comment tokens meet 4.5:1 against #1E1E1E background
+- [ ] All syntax highlighting tokens meet 4.5:1 against #1E1E1E
 - [ ] Navigation text (#9d9d9d) on dark header (#222): 4.6:1
 - [ ] Blockquote text meets 4.5:1 against background
 
