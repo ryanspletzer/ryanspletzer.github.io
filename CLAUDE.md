@@ -203,7 +203,11 @@ dependencies only, for visual and accessibility testing)
 - Dark theme by default (background #303030, text #e7e9ea, accent #35B4DE);
   light theme activates automatically via `prefers-color-scheme: light`
   (background #EAEAEA, text #383A42, accent #0969DA)
-- No manual theme toggle — the site follows the OS color scheme preference
+- Pill-shaped theme toggle (`role="switch"`, `aria-checked`) in the nav bar;
+  uses `data-theme` attribute + `localStorage` persistence;
+  `ThemeToggle` class with `handleEvent()` in `footer.html`;
+  FOUC prevention via inline `<script>` in `<head>`;
+  clears override when user picks the same theme as OS preference
 - All colors and fonts use native CSS custom properties (no SCSS variables);
   defined in `_sass/variables.scss` with a `light-theme` mixin
 - Syntax highlighting uses VS Code Dark Modern (dark) and VS Code Light Modern
