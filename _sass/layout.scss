@@ -77,7 +77,7 @@ body {
     text-decoration: none;
     padding: 1.25rem 0;
     line-height: 1.25rem;
-    transition: color 0.3s ease;
+    transition: color var(--transition-base);
 
     &:hover,
     &:focus {
@@ -114,7 +114,7 @@ body {
       text-decoration: none;
       font-size: 1rem;
       line-height: 1.25rem;
-      transition: color 0.3s ease;
+      transition: color var(--transition-base);
 
       &:hover,
       &:focus {
@@ -167,7 +167,7 @@ body {
     height: 2px;
     background: var(--color-nav-link);
     border-radius: 1px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform var(--transition-base), opacity var(--transition-base);
   }
 
   .nav-toggle-btn span {
@@ -260,12 +260,12 @@ body {
   p > code,
   .note > code,
   .toggle-track {
-    transition: background-color 0.3s ease, color 0.3s ease,
-      border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color var(--transition-base), color var(--transition-base),
+      border-color var(--transition-base), box-shadow var(--transition-base);
   }
 
   .toggle-thumb {
-    transition: left 0.2s ease;
+    transition: left var(--transition-fast);
   }
 }
 
@@ -286,14 +286,14 @@ body {
   background-color: var(--color-footer-bg);
   border-top: 1px solid var(--color-border);
   color: var(--color-footer-text);
-  font: normal 1.1875rem sans-serif;
+  font: normal var(--size-body) var(--font-sans);
   padding: 1.25rem 1.5625rem;
   margin-top: 2rem;
   text-align: center;
 
   p {
     margin: 0;
-    font: normal 1.1875rem sans-serif;
+    font: normal var(--size-body) var(--font-sans);
   }
 }
 

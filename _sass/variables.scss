@@ -61,8 +61,13 @@
   --size-body: 1.1875rem;
   --line-height-body: 1.75;
 
+  --size-code: 85%;
+
   --radius-inline: 0.1875em;
   --radius-block: 0.3125rem;
+
+  --transition-base: 0.3s ease;
+  --transition-fast: 0.2s ease;
 
   --layout-max-width: 73.125rem;
 }

@@ -19,7 +19,7 @@ kbd {
   background-color: var(--color-code-bg);
   color: var(--color-filename-text);
   font-family: var(--font-mono);
-  font-size: 85%;
+  font-size: var(--size-code);
   border-radius: var(--radius-block) var(--radius-block) 0 0;
   box-shadow: var(--color-code-shadow);
   clip-path: inset(-10px -10px 0 -10px);
