@@ -24,17 +24,16 @@ kbd {
   box-shadow: var(--color-code-shadow);
   clip-path: inset(-10px -10px 0 -10px);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .filename + .highlighter-rouge {
   margin-top: -4px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   background-color: var(--color-code-bg);
   border-radius: 0 0 5px 5px;
   box-shadow: var(--color-code-shadow);
-  clip-path: inset(0 -10px -10px -10px);
 
   .highlight {
     border-radius: 0 0 5px 5px;
