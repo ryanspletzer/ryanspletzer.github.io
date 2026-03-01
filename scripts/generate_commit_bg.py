@@ -66,11 +66,11 @@ def create_alpha_image(grid):
 
     # Muted alpha levels — visible but not distracting
     alpha_map = {
-        0: 8,     # barely there
-        1: 25,    # hint of green
-        2: 50,    # soft green
-        3: 85,    # medium green
-        4: 120,   # strongest, but still subdued
+        0: 6,     # barely there
+        1: 18,    # hint of green
+        2: 35,    # soft green
+        3: 58,    # medium green
+        4: 85,    # strongest, but still subdued
     }
 
     for row in range(GRID):
