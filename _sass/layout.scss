@@ -40,6 +40,9 @@ body {
   > aside {
     padding: 0 0.9375rem;
     min-width: 0;
+    position: sticky;
+    top: 1.25rem;
+    align-self: start;
   }
 
   @media (max-width: 61.9375em) {
