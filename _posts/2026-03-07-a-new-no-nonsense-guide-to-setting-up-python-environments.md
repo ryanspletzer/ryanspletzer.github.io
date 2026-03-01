@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A New No-Nonsense Guide to Setting Up Python Environments
-date: 2026-03-01 00:00:00
+date: 2026-03-07 00:00:00
 description: >
   Almost two years ago I wrote a guide to setting up Python environments
   with pyenv and pyenv-virtualenv,
