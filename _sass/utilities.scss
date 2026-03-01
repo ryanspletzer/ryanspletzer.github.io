@@ -32,7 +32,7 @@ kbd {
   position: relative;
   z-index: 1;
   background-color: var(--color-code-bg);
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   box-shadow: var(--color-code-shadow);
 
   .highlight {
