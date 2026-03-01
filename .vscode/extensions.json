@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "mhutchie.git-graph",
+    "ms-vscode.powershell",
+    "oderwat.indent-rainbow",
+    "redhat.vscode-yaml",
+    "sibiraj-s.vscode-scss-formatter",
+    "streetsidesoftware.code-spell-checker",
+    "timonwong.shellcheck",
+    "usernamehw.errorlens",
+    "codezombiech.gitignore",
+    "github.vscode-github-actions"
+  ]
+}
