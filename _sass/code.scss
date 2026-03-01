@@ -30,14 +30,21 @@ pre {
     color: var(--color-code-lineno);
   }
 }
-.highlight,
+.highlight {
+  color: var(--color-text);
+  background-color: var(--color-code-bg);
+  border-radius: 5px;
+  box-shadow: var(--color-code-shadow);
+}
+
+// Inline code
 li > code,
 p > code,
 .note > code {
   color: var(--color-text);
   background-color: var(--color-code-bg);
-  border-radius: 5px;
-  box-shadow: var(--color-code-shadow);
+  border-radius: 3px;
+  padding: 0.125em 0.375em;
 }
 pre,
 pre > code {
