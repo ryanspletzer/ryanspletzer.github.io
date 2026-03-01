@@ -50,12 +50,12 @@ def generate_grid():
     return [[weighted_level() for _ in range(GRID)] for _ in range(GRID)]
 
 
-def create_alpha_image(grid):
+def create_alpha_image(grid, alpha_map):
     """
-    Approach 1: Alpha image.
+    Alpha image approach.
 
     Bright green (#39d353) squares at varying alpha on a transparent background.
-    Pair with a CSS background-color (dark: #0d1117, light: #ebedf0) so the
+    Pair with a CSS background-color (dark: #303030, light: #ebedf0) so the
     color bleeds through.  Low-alpha bright green over a dark bg reads as dark
     green; full-alpha reads as bright green — same trick GitHub could use.
     """
@@ -63,15 +63,6 @@ def create_alpha_image(grid):
     draw = ImageDraw.Draw(img)
 
     GREEN = (57, 211, 83)  # #39d353
-
-    # Muted alpha levels — visible but not distracting
-    alpha_map = {
-        0: 6,     # barely there
-        1: 18,    # hint of green
-        2: 35,    # soft green
-        3: 58,    # medium green
-        4: 85,    # strongest, but still subdued
-    }
 
     for row in range(GRID):
         for col in range(GRID):
@@ -120,12 +111,22 @@ def create_standalone_image(grid, mode="dark"):
 
 grid = generate_grid()
 
-# Approach 1: alpha PNG (one image, works with both themes via bg-color)
-alpha_img = create_alpha_image(grid)
-alpha_img.save("assets/images/commits-alpha.png")
-print(f"commits-alpha.png: {TILE_SIZE}x{TILE_SIZE}px (alpha)")
+# Dark alpha: boosted to compensate for bright green on dark background
+DARK_ALPHA = {0: 5, 1: 14, 2: 26, 3: 42, 4: 62}
 
-# Approach 2: standalone PNGs (theme-specific, no bg-color needed)
+# Light alpha: dialed back so green on light background isn't too vivid
+LIGHT_ALPHA = {0: 5, 1: 14, 2: 26, 3: 42, 4: 62}
+
+# Theme-specific alpha PNGs (pair with CSS background-color)
+dark_alpha_img = create_alpha_image(grid, DARK_ALPHA)
+dark_alpha_img.save("assets/images/commits-alpha-dark.png")
+print(f"commits-alpha-dark.png:  {TILE_SIZE}x{TILE_SIZE}px (alpha, dark)")
+
+light_alpha_img = create_alpha_image(grid, LIGHT_ALPHA)
+light_alpha_img.save("assets/images/commits-alpha-light.png")
+print(f"commits-alpha-light.png: {TILE_SIZE}x{TILE_SIZE}px (alpha, light)")
+
+# Standalone PNGs (theme-specific, no bg-color needed)
 dark_img = create_standalone_image(grid, "dark")
 dark_img.save("assets/images/commits-dark.png")
 print(f"commits-dark.png:  {TILE_SIZE}x{TILE_SIZE}px (standalone dark)")
