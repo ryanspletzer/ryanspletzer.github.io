@@ -40,6 +40,9 @@ body {
   > aside {
     padding: 0 0.9375rem;
     min-width: 0;
+    position: sticky;
+    top: 1.25rem;
+    align-self: start;
   }
 
   @media (max-width: 61.9375em) {
@@ -65,16 +68,16 @@ body {
     padding: 0 0.9375rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   .site-title {
+    margin-right: auto;
     font-size: 1.875rem;
     color: var(--color-link-hover);
     text-decoration: none;
     padding: 1.25rem 0;
     line-height: 1.25rem;
-    transition: color 0.3s ease;
+    transition: color var(--transition-base);
 
     &:hover,
     &:focus {
@@ -109,9 +112,9 @@ body {
       padding: 0.9375rem;
       color: var(--color-nav-link);
       text-decoration: none;
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 1.25rem;
-      transition: color 0.3s ease;
+      transition: color var(--transition-base);
 
       &:hover,
       &:focus {
@@ -123,6 +126,12 @@ body {
         outline: 2px solid var(--color-accent);
         outline-offset: 2px;
       }
+    }
+
+    .theme-toggle-item {
+      display: flex;
+      align-items: center;
+      padding: 0 0.9375rem;
     }
   }
 
@@ -158,7 +167,7 @@ body {
     height: 2px;
     background: var(--color-nav-link);
     border-radius: 1px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform var(--transition-base), opacity var(--transition-base);
   }
 
   .nav-toggle-btn span {
@@ -208,6 +217,13 @@ body {
     font-size: 1.125rem;
   }
 
+  .site-nav .site-nav-links .theme-toggle-item {
+    border-top: 1px solid var(--color-nav-border);
+    padding: 0.75rem 0.9375rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
   // X animation via :has() (Baseline 2023)
   .site-nav-inner:has(.site-nav-links:popover-open) .nav-toggle-btn span {
     background: transparent;
@@ -242,9 +258,14 @@ body {
   pre,
   li > code,
   p > code,
-  .note > code {
-    transition: background-color 0.3s ease, color 0.3s ease,
-      border-color 0.3s ease, box-shadow 0.3s ease;
+  .note > code,
+  .toggle-track {
+    transition: background-color var(--transition-base), color var(--transition-base),
+      border-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .toggle-thumb {
+    transition: left var(--transition-fast);
   }
 }
 
@@ -254,7 +275,8 @@ body {
   .site-nav .site-nav-links li a,
   .nav-toggle-btn span,
   .nav-toggle-btn span::before,
-  .nav-toggle-btn span::after {
+  .nav-toggle-btn span::after,
+  .toggle-thumb {
     transition: none;
   }
 }
@@ -262,14 +284,16 @@ body {
 // Footer
 .site-footer {
   background-color: var(--color-footer-bg);
-  font: normal 1.1875rem sans-serif;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-footer-text);
+  font: normal var(--size-body) var(--font-sans);
   padding: 1.25rem 1.5625rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   text-align: center;
 
   p {
     margin: 0;
-    font: normal 1.1875rem sans-serif;
+    font: normal var(--size-body) var(--font-sans);
   }
 }
 

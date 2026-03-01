@@ -7,26 +7,43 @@ kbd {
   font-family: var(--font-mono);
   font-size: 0.875em;
   background-color: var(--color-code-bg);
-  border-radius: 3px;
+  border-radius: var(--radius-inline);
   box-shadow: 1px 0 1px 0 var(--color-kbd-shadow-1), 0 1px 0 2px var(--color-kbd-shadow-2), 0 2px 0 2px var(--color-kbd-shadow-3);
   margin: 0.125rem 0.1875rem;
   padding: 0.125rem 0.375rem;
 }
 
 .filename {
-  padding: 0;
   margin: 0;
-  background-color: var(--color-bg);
+  padding: 0.5em 1em;
+  background-color: var(--color-code-bg);
   color: var(--color-filename-text);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  margin-bottom: 0;
-  padding-left: 1em;
   font-family: var(--font-mono);
-  border-left: 0;
-  bottom: -2px;
+  font-size: var(--size-code);
+  border-radius: var(--radius-block) var(--radius-block) 0 0;
+  box-shadow: var(--color-code-shadow);
+  clip-path: inset(-10px -10px 0 -10px);
   position: relative;
-  padding-bottom: 2px;
+  z-index: 2;
+}
+
+.filename + .highlighter-rouge {
+  margin-top: -4px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-code-bg);
+  border-radius: var(--radius-block);
+  box-shadow: var(--color-code-shadow);
+
+  .highlight {
+    border-radius: 0 0 var(--radius-block) var(--radius-block);
+    box-shadow: none;
+
+    pre {
+      border-radius: 0 0 var(--radius-block) var(--radius-block);
+      box-shadow: none;
+    }
+  }
 }
 
 .note {

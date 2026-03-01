@@ -1,12 +1,16 @@
 code,
 pre {
-  font-size: 85%;
+  font-family: var(--font-mono);
+  font-size: var(--size-code);
 }
 
 // Embedded code snippets
 .highlight {
+  color: var(--color-text);
+  background-color: var(--color-code-bg);
+  border-radius: var(--radius-block);
+  box-shadow: var(--color-code-shadow);
   margin-bottom: 1.5em;
-  border-radius: 4px;
   pre {
     position: relative;
     margin: 0;
@@ -19,25 +23,26 @@ pre {
   pre::-webkit-scrollbar {
     height: 10px;
     background-color: var(--color-scrollbar-bg);
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 var(--radius-block) var(--radius-block);
   }
   pre::-webkit-scrollbar-thumb {
     background-color: var(--color-scrollbar-thumb);
-    border-radius: 4px;
+    border-radius: var(--radius-block);
   }
   ::selection {
     background-color: var(--color-code-selection-bg);
     color: var(--color-code-lineno);
   }
 }
-.highlight,
+
+// Inline code
 li > code,
 p > code,
 .note > code {
   color: var(--color-text);
   background-color: var(--color-code-bg);
-  border-radius: 5px;
-  box-shadow: var(--color-code-shadow);
+  border-radius: var(--radius-inline);
+  padding: 0.125em 0.375em;
 }
 pre,
 pre > code {

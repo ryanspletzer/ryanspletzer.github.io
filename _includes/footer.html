@@ -1,3 +1,73 @@
 <footer class="site-footer">
   <p>&copy; Ryan Spletzer 2026</p>
 </footer>
+
+<script>
+  class ThemeToggle {
+    #toggle;
+    #mql;
+    #metaDark;
+    #metaLight;
+
+    constructor() {
+      this.#toggle = document.getElementById('theme-toggle');
+      if (!this.#toggle) return;
+
+      this.#mql = matchMedia('(prefers-color-scheme: light)');
+      this.#metaDark = document.querySelector(
+        'meta[name="theme-color"][media*="dark"]'
+      );
+      this.#metaLight = document.querySelector(
+        'meta[name="theme-color"][media*="light"]'
+      );
+
+      this.#toggle.addEventListener('click', this);
+      this.#mql.addEventListener('change', this);
+      this.#sync();
+      this.#toggle.classList.add('js-ready');
+    }
+
+    handleEvent(e) {
+      if (e.type === 'click') {
+        const next = this.#effective() === 'dark' ? 'light' : 'dark';
+        const os = this.#mql.matches ? 'light' : 'dark';
+
+        if (next === os) {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem('theme');
+        } else {
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        }
+        this.#sync();
+      } else if (e.type === 'change') {
+        if (!localStorage.getItem('theme')) this.#sync();
+      }
+    }
+
+    #effective() {
+      return document.documentElement.getAttribute('data-theme')
+        ?? (this.#mql.matches ? 'light' : 'dark');
+    }
+
+    #sync() {
+      const theme = this.#effective();
+      const isLight = theme === 'light';
+      this.#toggle.setAttribute('aria-checked', String(isLight));
+      this.#toggle.setAttribute('aria-label',
+        isLight ? 'Light mode (switch to dark)' : 'Dark mode (switch to light)'
+      );
+      const explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit) {
+        const c = isLight ? '#FFFFFF' : '#222222';
+        this.#metaDark?.setAttribute('content', c);
+        this.#metaLight?.setAttribute('content', c);
+      } else {
+        this.#metaDark?.setAttribute('content', '#222222');
+        this.#metaLight?.setAttribute('content', '#FFFFFF');
+      }
+    }
+  }
+
+  new ThemeToggle();
+</script>

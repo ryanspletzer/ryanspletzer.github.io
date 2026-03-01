@@ -1,20 +1,20 @@
 <section class="sidebar-panel">
-  <h2>Elsewhere Online</h2>
-  <nav aria-label="External links">
+  <h2>Recent Posts</h2>
+  <nav aria-label="Recent posts">
     <ul>
-      {% for link in site.links%}
-      <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.text }}</a></li>
+      {% for post in site.posts limit:5 %}
+      <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
 </section>
 
 <section class="sidebar-panel">
-  <h2>Recent Posts</h2>
-  <nav aria-label="Recent posts">
+  <h2>Elsewhere Online</h2>
+  <nav aria-label="External links">
     <ul>
-      {% for post in site.posts limit:5 %}
-      <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+      {% for link in site.links%}
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.text }}</a></li>
       {% endfor %}
     </ul>
   </nav>

@@ -5,7 +5,8 @@
   --color-text: rgb(231, 233, 234);
   --color-bg: #303030;
   --color-panel: #222;
-  --color-footer-bg: #222;
+  --color-footer-bg: #1a1a1a;
+  --color-footer-text: #bbb;
   --color-note: #87CEFA;
   --color-warning: #ffff00;
   --color-border: #727272;
@@ -14,7 +15,7 @@
   --color-code-bg: #1E1E1E;
   --color-code-lineno: #858C94;
   --color-code-selection-bg: #264F78;
-  --color-nav-link: #9d9d9d;
+  --color-nav-link: #8EA8B4;
   --color-table-bg: #202020;
   --color-table-alt: #252525;
   --color-table-hover: #353535;
@@ -24,15 +25,14 @@
   --color-toc-bg: #2c2c2c;
   --color-scrollbar-bg: #1E1E1E;
   --color-scrollbar-thumb: #424242;
-  --color-code-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+  --color-code-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   --color-panel-shadow: 0 0 0 0, 0 8px 16px rgba(0, 0, 0, 0.2);
   --color-kbd-shadow-1: #555;
   --color-kbd-shadow-2: #888;
   --color-kbd-shadow-3: #777;
   --color-filename-text: lightgrey;
   --color-skip-link-text: #000;
-  --bg-image: url(/assets/images/squares.png);
+  --bg-image: url(/assets/images/commits-alpha-dark.png);
 
   // Syntax highlighting — VS Code Dark Modern defaults
   --syn-default: #D4D4D4;
@@ -54,12 +54,20 @@
   --syn-deleted: #CE9178;
   --syn-inserted: #6A9955;
 
-  --font-body: Georgia, 'Times New Roman', Times, serif;
+  --font-body: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
+  --font-mono: ui-monospace, "Cascadia Mono", Menlo, Consolas, "Ubuntu Mono", "DejaVu Sans Mono", monospace;
 
   --size-body: 1.1875rem;
   --line-height-body: 1.75;
+
+  --size-code: 85%;
+
+  --radius-inline: 0.1875em;
+  --radius-block: 0.3125rem;
+
+  --transition-base: 0.3s ease;
+  --transition-fast: 0.2s ease;
 
   --layout-max-width: 73.125rem;
 }
@@ -70,9 +78,10 @@
 
   --color-accent: #0969DA;
   --color-text: #383A42;
-  --color-bg: #EAEAEA;
+  --color-bg: #ebedf0;
   --color-panel: #FFFFFF;
   --color-footer-bg: #F6F8FA;
+  --color-footer-text: #57606A;
   --color-note: #0969DA;
   --color-warning: #9B6700;
   --color-border: #D0D7DE;
@@ -99,7 +108,7 @@
   --color-kbd-shadow-3: #D5D5D5;
   --color-filename-text: #57606A;
   --color-skip-link-text: #FFFFFF;
-  --bg-image: url(/assets/images/squares.png);
+  --bg-image: url(/assets/images/commits-alpha-light.png);
 
   // Syntax highlighting — VS Code Light Modern
   --syn-default: #383A42;
@@ -122,11 +131,16 @@
   --syn-inserted: #008000;
 }
 
-// Apply light theme when OS prefers light
+// Apply light theme when OS prefers light, unless user chose dark
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     @include light-theme;
   }
+}
+
+// Apply light theme when user explicitly chose light
+:root[data-theme="light"] {
+  @include light-theme;
 }
 
 // High contrast overrides — dark mode
@@ -135,12 +149,23 @@
     --color-border: #999;
     --color-table-border: #888;
     --color-blockquote: #ddd;
+    --bg-image: none;
   }
 }
 
-// High contrast overrides — light mode
+// High contrast overrides — light mode (OS preference, unless user chose dark)
 @media (prefers-contrast: more) and (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
+    --color-border: #666;
+    --color-table-border: #555;
+    --color-blockquote: #333;
+    --color-text: #1A1A1A;
+  }
+}
+
+// High contrast overrides — light mode (user explicit choice)
+@media (prefers-contrast: more) {
+  :root[data-theme="light"] {
     --color-border: #666;
     --color-table-border: #555;
     --color-blockquote: #333;
