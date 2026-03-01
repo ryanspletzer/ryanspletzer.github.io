@@ -16,6 +16,7 @@ body {
   line-height: var(--line-height-body);
   color: var(--color-text);
   background: var(--color-bg) var(--bg-image);
+  background-attachment: fixed;
   margin: 0;
 }
 
