@@ -33,9 +33,8 @@ The short answer is [uv](https://docs.astral.sh/uv/).
 by [Astral](https://astral.sh/),
 the same folks behind the
 [Ruff](https://docs.astral.sh/ruff/) linter and formatter.
-It is absurdly fast—we're
-talking "did it actually do anything?" fast—and
-it replaces `pyenv`, `pyenv-virtualenv`, `pip`, `pip-tools`,
+It is absurdly fast,
+and it replaces `pyenv`, `pyenv-virtualenv`, `pip`, `pip-tools`,
 `pipx`, `poetry`, `virtualenv`,
 and arguably `conda` for most use cases,
 all in one tool.
@@ -78,38 +77,37 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### Linux
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+pipx install uv
 ```
 
-Or via `pipx` if you already have it:
+Or via the standalone installer:
 
 ```bash
-pipx install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Windows
 
 ```powershell
-# Via the standalone installer in PowerShell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-Or if you prefer a package manager:
-
-```powershell
-# Via WinGet
-winget install --id=astral-sh.uv -e
-
 # Via Chocolatey
 choco install uv
+
+# Via WinGet
+winget install --id=astral-sh.uv -e
 
 # Via Scoop
 scoop install main/uv
 ```
 
+Or via the standalone installer:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
 That's the entire platform-specific section of this guide.
 Compare that to the original post
-where macOS, Linux, and Windows each had their own novel-length chapter.
+where macOS, Linux, and Windows each had their own lengthy section.
 
 ## Managing Python Versions
 
@@ -150,7 +148,13 @@ source .venv/bin/activate  # macOS/Linux
 But here's the thing:
 you often don't even need to activate the virtual environment.
 `uv` will automatically use the `.venv` in the current directory
-when you run commands through it.
+when you run commands through it:
+
+```bash
+# No need to activate first — uv finds the .venv automatically
+uv run python my_script.py
+uv run pytest
+```
 
 ## Installing Packages
 
@@ -196,17 +200,20 @@ is up to date with your lockfile,
 and runs your command in it.
 No more "did I activate the venv?" moments.
 
-## Replacing pipx with uvx
+## Running and Installing Standalone Tools
 
 In my old guide I mentioned `pipx` for installing standalone CLI tools.
-`uv` replaces that too:
+`uv` covers this use case too,
+though the mapping isn't a direct 1:1—`uvx`
+is shorthand for `uv tool run`
+and `uv tool install` handles persistent installs:
 
 ```bash
-# Run a tool without installing it (like pipx run)
+# Run a tool without installing it (similar to pipx run)
 uvx ruff check .
 uvx black --check .
 
-# Install a tool globally (like pipx install)
+# Install a tool persistently (similar to pipx install)
 uv tool install ruff
 uv tool install httpie
 ```
@@ -232,7 +239,8 @@ The old approach involved:
 With `uv`:
 
 ```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+# Or install with your preferred package manager / approach
+choco install uv
 uv python install 3.13
 uv venv
 uv pip install requests
@@ -283,18 +291,15 @@ with its deterministic lockfile and fast installs.
 ---
 
 When I wrote the original guide in 2024,
-the Python tooling ecosystem felt like it was held together with duct tape and good intentions—a
-different tool for every job,
-different tools on every OS,
-and Windows always getting the short end of the stick.
+you needed a different tool for every job,
+a different set of tools on every OS,
+and Windows was always the weird one.
 
-`uv` showed up
-and made the whole thing feel like one tool
-instead of six duct-taped together.
+`uv` showed up and collapsed all of that into one tool.
 It's 10-100x faster for package resolution and installation
 (those aren't my numbers, those are from
 [Astral's benchmarks](https://docs.astral.sh/uv/)),
 and it works the same on every OS.
 
 I reserved the right to change my mind,
-and I'm glad I did.
+and I'm glad I did!
