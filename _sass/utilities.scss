@@ -7,7 +7,7 @@ kbd {
   font-family: var(--font-mono);
   font-size: 0.875em;
   background-color: var(--color-code-bg);
-  border-radius: 3px;
+  border-radius: var(--radius-inline);
   box-shadow: 1px 0 1px 0 var(--color-kbd-shadow-1), 0 1px 0 2px var(--color-kbd-shadow-2), 0 2px 0 2px var(--color-kbd-shadow-3);
   margin: 0.125rem 0.1875rem;
   padding: 0.125rem 0.375rem;
@@ -20,7 +20,7 @@ kbd {
   color: var(--color-filename-text);
   font-family: var(--font-mono);
   font-size: 85%;
-  border-radius: 5px 5px 0 0;
+  border-radius: var(--radius-block) var(--radius-block) 0 0;
   box-shadow: var(--color-code-shadow);
   clip-path: inset(-10px -10px 0 -10px);
   position: relative;
@@ -32,15 +32,15 @@ kbd {
   position: relative;
   z-index: 1;
   background-color: var(--color-code-bg);
-  border-radius: 5px;
+  border-radius: var(--radius-block);
   box-shadow: var(--color-code-shadow);
 
   .highlight {
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 var(--radius-block) var(--radius-block);
     box-shadow: none;
 
     pre {
-      border-radius: 0 0 5px 5px;
+      border-radius: 0 0 var(--radius-block) var(--radius-block);
       box-shadow: none;
     }
   }
