@@ -55,6 +55,11 @@
   }
 }
 
+// Post entries on homepage listing
+.post-content > article + article {
+  margin-top: 2rem;
+}
+
 // Post title on homepage listing
 h2.post-title {
   padding-top: 0.625rem;
