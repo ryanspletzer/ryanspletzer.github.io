@@ -149,5 +149,6 @@ h2.post-title:first-of-type {
 @media (max-width: 62.5em) {
   .post-meta {
     flex-direction: column;
+    padding: 0.5rem 0;
   }
 }
