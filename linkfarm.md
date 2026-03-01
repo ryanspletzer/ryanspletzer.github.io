@@ -50,6 +50,14 @@ read them:
   Code, I recommend people read this book. It builds on those core concepts but takes them up a level into application
   architectural patterns including DDD and the Domain Model, CQRS, Event Sourcing and more.
 
+* [Domain-Driven Design: Tackling Complexity in the Heart of Software](
+  https://www.amazon.com/dp/0321125215) - Eric Evans' seminal book
+  on DDD is the source material for the domain modeling concepts introduced in the .NET architecture book above.
+  Reading the original gave me a much deeper understanding of bounded contexts,
+  ubiquitous language,
+  and strategic design,
+  which are concepts that become increasingly important the larger and more complex the systems you work on become.
+
 * [Building Microservices](http://shop.oreilly.com/product/0636920033158.do) - After reading the previous two books I
   highly recommend folks read this one, as it further builds on those concepts.
 
@@ -113,6 +121,13 @@ read them:
 
 * [Mastering Business Email: How to write emails that get read](https://masteringbusinessemail.com/) - This is a great
   read to get you thinking about how to write effective emails.
+
+* [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) - I took a course on this
+  framework and earned an AWS Certified Solutions Architect - Associate certification.
+  The Well-Architected Framework's pillars
+  (operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability)
+  provide a very solid mental model for evaluating cloud architecture decisions,
+  and the principles translate well across cloud providers.
 
 * [Learn SQL Server in a Month of Lunches](https://www.manning.com/books/learn-sql-server-administration-in-a-month-of-lunches) -
   A good, no-nonsense introduction to managing SQL Server.
