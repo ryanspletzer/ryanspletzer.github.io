@@ -6,8 +6,11 @@ pre {
 
 // Embedded code snippets
 .highlight {
-  margin-bottom: 1.5em;
+  color: var(--color-text);
+  background-color: var(--color-code-bg);
   border-radius: var(--radius-block);
+  box-shadow: var(--color-code-shadow);
+  margin-bottom: 1.5em;
   pre {
     position: relative;
     margin: 0;
@@ -30,12 +33,6 @@ pre {
     background-color: var(--color-code-selection-bg);
     color: var(--color-code-lineno);
   }
-}
-.highlight {
-  color: var(--color-text);
-  background-color: var(--color-code-bg);
-  border-radius: var(--radius-block);
-  box-shadow: var(--color-code-shadow);
 }
 
 // Inline code

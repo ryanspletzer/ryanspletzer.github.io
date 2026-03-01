@@ -111,18 +111,17 @@ def create_standalone_image(grid, mode="dark"):
 
 grid = generate_grid()
 
-# Dark alpha: boosted to compensate for bright green on dark background
-DARK_ALPHA = {0: 5, 1: 14, 2: 26, 3: 42, 4: 62}
-
-# Light alpha: dialed back so green on light background isn't too vivid
-LIGHT_ALPHA = {0: 5, 1: 14, 2: 26, 3: 42, 4: 62}
+# Alpha levels per contribution intensity.
+# Same values work for both themes — the CSS background-color (dark: #303030,
+# light: #ebedf0) shifts how the green reads without needing separate maps.
+ALPHA = {0: 5, 1: 14, 2: 26, 3: 42, 4: 62}
 
 # Theme-specific alpha PNGs (pair with CSS background-color)
-dark_alpha_img = create_alpha_image(grid, DARK_ALPHA)
+dark_alpha_img = create_alpha_image(grid, ALPHA)
 dark_alpha_img.save("assets/images/commits-alpha-dark.png")
 print(f"commits-alpha-dark.png:  {TILE_SIZE}x{TILE_SIZE}px (alpha, dark)")
 
-light_alpha_img = create_alpha_image(grid, LIGHT_ALPHA)
+light_alpha_img = create_alpha_image(grid, ALPHA)
 light_alpha_img.save("assets/images/commits-alpha-light.png")
 print(f"commits-alpha-light.png: {TILE_SIZE}x{TILE_SIZE}px (alpha, light)")
 
