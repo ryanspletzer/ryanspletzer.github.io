@@ -15,7 +15,8 @@ body {
   font-size: var(--size-body);
   line-height: var(--line-height-body);
   color: var(--color-text);
-  background: var(--color-bg) var(--bg-image);
+  background-color: var(--color-bg);
+  background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--bg-image);
   background-attachment: fixed;
   margin: 0;
 }
