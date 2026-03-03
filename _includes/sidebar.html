@@ -14,7 +14,7 @@
   <nav aria-label="External links">
     <ul>
       {% for link in site.links%}
-      <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.text }}</a></li>
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.text }} <span class="sr-only">(opens in new tab)</span></a></li>
       {% endfor %}
     </ul>
   </nav>
