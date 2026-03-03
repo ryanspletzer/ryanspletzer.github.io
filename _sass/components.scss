@@ -163,8 +163,6 @@ h2.post-title:first-of-type {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
     border-radius: 1rem;
   }
 }
