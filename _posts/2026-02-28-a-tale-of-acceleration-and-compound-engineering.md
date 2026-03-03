@@ -10,7 +10,6 @@ description: >
   The speedup isn't just better models—it's
   the compounding effect of practices like testing and CI
   that AI helps you put in place.
-header: /assets/images/johnson-hobbyhorse-1819.jpg
 tags:
   - programming
   - ai
