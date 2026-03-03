@@ -63,7 +63,7 @@
 // Post title on homepage listing
 h2.post-title {
   padding-top: 0.625rem;
-  text-align: left;
+  text-align: start;
 }
 
 h2.post-title:first-of-type {
@@ -95,7 +95,7 @@ h2.post-title:first-of-type {
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
-    padding-left: 0;
+    padding-inline-start: 0;
     list-style: none;
     margin: 0;
     font-family: var(--font-sans);
@@ -134,7 +134,7 @@ h2.post-title:first-of-type {
 .skip-link {
   position: absolute;
   top: -100%;
-  left: 0;
+  inset-inline-start: 0;
   padding: 0.5rem 1rem;
   background: var(--color-accent);
   color: var(--color-skip-link-text);
@@ -150,8 +150,7 @@ h2.post-title:first-of-type {
 // Table of contents
 .toc {
   background-color: var(--color-toc-bg);
-  margin-left: -1.75rem;
-  margin-right: -1.75rem;
+  margin-inline: -1.75rem;
 }
 
 // Theme toggle — pill-shaped light/dark switch
@@ -192,7 +191,7 @@ h2.post-title:first-of-type {
 .toggle-thumb {
   position: absolute;
   top: 50%;
-  left: 0.125rem;
+  inset-inline-start: 0.125rem;
   width: 1.125rem;
   height: 1.125rem;
   background: var(--color-accent);
@@ -203,18 +202,18 @@ h2.post-title:first-of-type {
 // Thumb position: OS prefers light (unless user chose dark)
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) .toggle-thumb {
-    left: calc(100% - 1.25rem);
+    inset-inline-start: calc(100% - 1.25rem);
   }
 }
 
 // Thumb position: user explicitly chose light
 :root[data-theme="light"] .toggle-thumb {
-  left: calc(100% - 1.25rem);
+  inset-inline-start: calc(100% - 1.25rem);
 }
 
 // Thumb position: user explicitly chose dark
 :root[data-theme="dark"] .toggle-thumb {
-  left: 0.125rem;
+  inset-inline-start: 0.125rem;
 }
 
 .toggle-icon {

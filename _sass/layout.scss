@@ -71,7 +71,7 @@ body {
   }
 
   .site-title {
-    margin-right: auto;
+    margin-inline-end: auto;
     font-size: 1.875rem;
     color: var(--color-link-hover);
     text-decoration: none;
@@ -195,8 +195,7 @@ body {
   .site-nav .site-nav-links:popover-open {
     inset: unset;
     top: 3.75rem;
-    left: 0;
-    right: 0;
+    inset-inline: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -265,7 +264,7 @@ body {
   }
 
   .toggle-thumb {
-    transition: left var(--transition-fast);
+    transition: inset-inline-start var(--transition-fast);
   }
 }
 
