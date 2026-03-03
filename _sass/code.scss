@@ -6,6 +6,7 @@ pre {
 
 // Embedded code snippets
 .highlight {
+  direction: ltr;
   color: var(--color-text);
   background-color: var(--color-code-bg);
   border-radius: var(--radius-block);

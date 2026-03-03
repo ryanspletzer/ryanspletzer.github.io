@@ -49,21 +49,21 @@ kbd {
 .note {
   position: relative;
   border: 0;
-  border-left: 4px solid var(--color-note);
-  padding-left: 1.875rem;
+  border-inline-start: 4px solid var(--color-note);
+  padding-inline-start: 1.875rem;
 }
 
 .note:before {
   content: "\2139";
   font-size: 1.5em;
-  left: 0.375rem;
+  inset-inline-start: 0.375rem;
   position: absolute;
   top: 0;
   color: var(--color-note);
 }
 
 .warning {
-  border-left-color: var(--color-warning);
+  border-inline-start-color: var(--color-warning);
 }
 
 .warning:before {
