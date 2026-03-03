@@ -7,8 +7,8 @@ permalink: /about/
 I'm a Distinguished Engineer at [Autodesk](https://www.autodesk.com).
 I try my best to blog here as well as post my thoughts to [LinkedIn](https://www.linkedin.com/in/ryanspletzer/),
 [BlueSky](https://bsky.app/profile/ryan.spletzer.com), and [Mastodon](https://spletzer.com/@ryan).
-I dabble and aspire to do more open-source side projects on [GitHub](https://github.com/ryanspletzer)
-whenever I find this elusive thing called "free time."
+I do a lot of side projects on [GitHub](https://github.com/ryanspletzer),
+now more than ever with the help of AI coding tools.
 
 ## Bio
 
@@ -71,6 +71,7 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Testing
 - Unit Testing
 - Integration Testing
+- Playwright
 - Serverless
 - Serverless Framework
 - Terraform
@@ -93,11 +94,15 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Homebrew
 - Pester
 - Dev Machine Setup Scripts
+- Dotfiles as Code
 - Bash
 - Zsh
+- Fish Shell
 - iTerm
 - Windows Terminal
 - Terminal Customization
+- tmux
+- Oh My Posh
 - Terminal History Prompts
 - VDI
 - Splunk
@@ -129,6 +134,8 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - Microservices
 - Cross-platform Development
 - Visual Studio Code
+- Neovim
+- Emacs
 - Visual Studio
 - PKI
 - SSL/TLS, mTLS
@@ -155,6 +162,9 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - MSAL (Microsoft Authentication Library)
 - CSS
 - SCSS
+- Jekyll
+- Semantic HTML
+- Web Accessibility (WCAG)
 - Bootstrap
 - JavaScript
 - TypeScript
@@ -193,10 +203,14 @@ them down by category, this is a non-comprehensive set of things I think about, 
 - AI
 - LLMs (Large Language Models)
 - MCP (Model Context Protocol)
+- MCP Servers and Plugins
 - Anomaly Detection
 - Generative AI
 - OpenAI
 - Anthropic
+- Claude Code
+- AI Coding Agents
+- AI-Assisted Development
 - Azure PowerShell
 - Azure Functions
 - Azure OpenAI Service
