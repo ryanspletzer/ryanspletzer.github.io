@@ -103,7 +103,7 @@ h2.post-title:first-of-type {
 
   li a {
     display: block;
-    background-color: var(--color-toc-bg);
+    background-color: var(--color-surface-subtle);
     border-radius: var(--radius-inline);
     padding: 0.125em 0.5em;
     font-size: 0.875em;
@@ -147,12 +147,6 @@ h2.post-title:first-of-type {
   }
 }
 
-// Table of contents
-.toc {
-  background-color: var(--color-toc-bg);
-  margin-inline: -1.75rem;
-}
-
 // Theme toggle — pill-shaped light/dark switch
 // Hidden by default; JS adds .js-ready to reveal it
 .theme-toggle {
@@ -182,7 +176,7 @@ h2.post-title:first-of-type {
   position: relative;
   width: 3rem;
   height: 1.5rem;
-  background: var(--color-toc-bg);
+  background: var(--color-surface-subtle);
   border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   padding: 0 0.25rem;
