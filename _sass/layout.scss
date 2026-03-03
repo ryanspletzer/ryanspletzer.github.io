@@ -84,11 +84,6 @@ body {
       color: var(--color-accent);
       text-decoration: none;
     }
-
-    &:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
   }
 
   .site-nav-links {
@@ -120,11 +115,6 @@ body {
       &:focus {
         color: var(--color-link-hover);
         text-decoration: none;
-      }
-
-      &:focus-visible {
-        outline: 2px solid var(--color-accent);
-        outline-offset: 2px;
       }
     }
 
@@ -238,11 +228,6 @@ body {
     transform: rotate(-45deg);
   }
 
-  // Focus indicator — direct on button
-  .nav-toggle-btn:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-  }
 }
 
 // Theme switch animation (disabled when reduced motion is preferred)
