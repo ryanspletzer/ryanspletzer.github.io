@@ -11,7 +11,7 @@ pre {
   background-color: var(--color-code-bg);
   border-radius: var(--radius-block);
   box-shadow: var(--color-code-shadow);
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
   pre {
     position: relative;
     margin: 0;
@@ -62,4 +62,4 @@ pre > code {
   }
 }
 
-.lineno { border-right: dashed 1px var(--color-code-lineno) !important; color: var(--color-code-lineno); padding-right: 0.3125rem; padding-left: 0 !important; }
+.lineno { border-inline-end: dashed 1px var(--color-code-lineno) !important; color: var(--color-code-lineno); padding-inline-end: 0.3125rem; padding-inline-start: 0 !important; }

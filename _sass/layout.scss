@@ -41,7 +41,7 @@ body {
     padding: 0 0.9375rem;
     min-width: 0;
     position: sticky;
-    top: 1.25rem;
+    inset-block-start: 1.25rem;
     align-self: start;
   }
 
@@ -61,8 +61,8 @@ body {
   background-color: var(--color-panel);
   padding: 0;
   min-height: 3.125rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-nav-border);
+  margin-block-end: 1.25rem;
+  border-block-end: 1px solid var(--color-nav-border);
 
   .site-nav-inner {
     padding: 0 0.9375rem;
@@ -167,13 +167,13 @@ body {
   .nav-toggle-btn span::before {
     content: "";
     position: absolute;
-    top: -0.5rem;
+    inset-block-start: -0.5rem;
   }
 
   .nav-toggle-btn span::after {
     content: "";
     position: absolute;
-    top: 0.5rem;
+    inset-block-start: 0.5rem;
   }
 
   // Override desktop display:flex when popover is closed
@@ -184,15 +184,15 @@ body {
   // Dropdown panel in top layer when popover is open
   .site-nav .site-nav-links:popover-open {
     inset: unset;
-    top: 3.75rem;
+    inset-block-start: 3.75rem;
     inset-inline: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: var(--color-panel);
-    border-top: 1px solid var(--color-nav-border);
-    border-bottom: 1px solid var(--color-nav-border);
+    border-block-start: 1px solid var(--color-nav-border);
+    border-block-end: 1px solid var(--color-nav-border);
     padding: 0.5rem 0;
   }
 
@@ -207,9 +207,9 @@ body {
   }
 
   .site-nav .site-nav-links .theme-toggle-item {
-    border-top: 1px solid var(--color-nav-border);
+    border-block-start: 1px solid var(--color-nav-border);
     padding: 0.75rem 0.9375rem;
-    margin-top: 0.5rem;
+    margin-block-start: 0.5rem;
     justify-content: center;
   }
 
@@ -219,12 +219,12 @@ body {
   }
 
   .site-nav-inner:has(.site-nav-links:popover-open) .nav-toggle-btn span::before {
-    top: 0;
+    inset-block-start: 0;
     transform: rotate(45deg);
   }
 
   .site-nav-inner:has(.site-nav-links:popover-open) .nav-toggle-btn span::after {
-    top: 0;
+    inset-block-start: 0;
     transform: rotate(-45deg);
   }
 
@@ -267,11 +267,11 @@ body {
 // Footer
 .site-footer {
   background-color: var(--color-footer-bg);
-  border-top: 1px solid var(--color-border);
+  border-block-start: 1px solid var(--color-border);
   color: var(--color-footer-text);
   font: normal var(--size-body) var(--font-sans);
   padding: 1.25rem 1.5625rem;
-  margin-top: 2rem;
+  margin-block-start: 2rem;
   text-align: center;
 
   p {
