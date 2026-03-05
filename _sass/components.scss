@@ -6,13 +6,13 @@
   border: 0;
   border-radius: var(--radius-block);
   padding: 1.75rem;
-  margin-bottom: 1.25rem;
+  margin-block-end: 1.25rem;
   min-height: 1.25rem;
 }
 
 // Main content panel
 .panel h1 {
-  margin-top: 0.625rem;
+  margin-block-start: 0.625rem;
 }
 
 // Post content area — typography and link behavior for rendered Markdown.
@@ -34,13 +34,13 @@
 }
 
 .panel-padded {
-  padding-bottom: 3.75rem;
+  padding-block-end: 3.75rem;
 }
 
 // Sidebar panels
 .sidebar-panel {
   h2 {
-    margin-top: 0.625rem;
+    margin-block-start: 0;
   }
 
   ul {
@@ -50,24 +50,28 @@
   }
 
   li {
-    margin-top: 0.7em;
+    margin-block-start: 0.7em;
     line-height: 1em;
   }
 }
 
 // Post entries on homepage listing
 .post-content > article + article {
-  margin-top: 2rem;
+  margin-block-start: 2rem;
 }
 
 // Post title on homepage listing
 h2.post-title {
-  padding-top: 0.625rem;
+  padding-block-start: 0.625rem;
   text-align: start;
 }
 
 h2.post-title:first-of-type {
-  margin-top: 0;
+  margin-block-start: 0;
+}
+
+.post-content > article:first-child h2.post-title {
+  padding-block-start: 0;
 }
 
 // Post meta bar (date + tags)
@@ -126,14 +130,14 @@ h2.post-title:first-of-type {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 2rem;
+  margin-block-start: 2rem;
   text-align: center;
 }
 
 // Skip navigation link
 .skip-link {
   position: absolute;
-  top: -100%;
+  inset-block-start: -100%;
   inset-inline-start: 0;
   padding: 0.5rem 1rem;
   background: var(--color-accent);
@@ -143,7 +147,7 @@ h2.post-title:first-of-type {
   font-weight: bold;
 
   &:focus {
-    top: 0;
+    inset-block-start: 0;
   }
 }
 
@@ -182,7 +186,7 @@ h2.post-title:first-of-type {
 
 .toggle-thumb {
   position: absolute;
-  top: 50%;
+  inset-block-start: 50%;
   inset-inline-start: 0.125rem;
   width: 1.125rem;
   height: 1.125rem;

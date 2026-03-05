@@ -33,14 +33,14 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
-h1 { font-size: 2.25rem; margin-top: 1.25rem; margin-bottom: 0.625rem;
+h1 { font-size: 2.25rem; margin-block-start: 1.25rem; margin-block-end: 0.625rem;
   @media (max-width: 47.9375em) { font-size: 1.75rem; }
 }
-h2 { font-size: 1.875rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
-h3 { font-size: 1.5rem; margin-top: 1.25rem; margin-bottom: 0.625rem; }
-h4 { font-size: 1.125rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
-h5 { font-size: 0.875rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
-h6 { font-size: 0.75rem; margin-top: 0.625rem; margin-bottom: 0.625rem; }
+h2 { font-size: 1.875rem; margin-block-start: 1.25rem; margin-block-end: 0.625rem; }
+h3 { font-size: 1.5rem; margin-block-start: 1.25rem; margin-block-end: 0.625rem; }
+h4 { font-size: 1.125rem; margin-block-start: 0.625rem; margin-block-end: 0.625rem; }
+h5 { font-size: 0.875rem; margin-block-start: 0.625rem; margin-block-end: 0.625rem; }
+h6 { font-size: 0.75rem; margin-block-start: 0.625rem; margin-block-end: 0.625rem; }
 
 img {
   display: block;
@@ -80,13 +80,13 @@ a:focus {
 }
 
 ul, ol {
-  margin-top: 0;
-  margin-bottom: 0.625rem;
+  margin-block-start: 0;
+  margin-block-end: 0.625rem;
 }
 
 dl {
-  margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-block-start: 0;
+  margin-block-end: 1.25rem;
 }
 
 dd {
@@ -99,10 +99,10 @@ dt {
 }
 
 hr {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-block-start: 1.25rem;
+  margin-block-end: 1.25rem;
   border: 0;
-  border-top: 1px solid var(--color-border);
+  border-block-start: 1px solid var(--color-border);
 }
 
 table {
