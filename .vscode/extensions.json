@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "shopify.ruby-lsp",
+    "sissel.shopify-liquid",
+    "redhat.vscode-yaml",
+    "davidanson.vscode-markdownlint",
+    "ms-playwright.playwright",
+    "ms-vscode.powershell",
+    "dbaeumer.vscode-eslint",
+    "oderwat.indent-rainbow",
+    "esbenp.prettier-vscode"
+  ]
+}
