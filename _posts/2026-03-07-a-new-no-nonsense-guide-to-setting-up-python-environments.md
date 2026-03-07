@@ -302,3 +302,17 @@ and it works the same on every OS.
 
 I reserved the right to change my mind,
 and I'm glad I did!
+
+Bonus tip: update your CLAUDE.md / AGENTS.md and hooks
+for whatever for your various AI coding tools are
+to use `uv` instead of `pyenv` and native `pip`, etc.—you'll
+be happy you did.
+I often see these AI tools try to `pip install` things using system Python,
+which just emits an error
+and a reference to [PEP668](https://peps.python.org/pep-0668/),
+and then they try 2-3 more steps before they know they have to spin up a virtual Python environment.
+These tools/models haven't exactly caught up to the fact that
+we've moved beyond this,
+but if however you use instructions and hooks to steer them towards `uv`,
+it becomes a lot simpler
+with fewer false starts and errors for them to get going.
