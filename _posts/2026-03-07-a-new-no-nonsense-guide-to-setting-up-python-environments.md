@@ -8,7 +8,6 @@ description: >
   and I reserved the right to change my mind later.
   uv came along and I'm cashing in that reservation—it's
   faster, simpler, and finally makes Windows not weird.
-header: /assets/images/veteran-in-a-new-field-winslow-homer-1865.jpg
 tags:
   - python
   - environments
