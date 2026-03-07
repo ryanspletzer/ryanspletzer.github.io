@@ -1,13 +1,22 @@
 {
   "recommendations": [
-    "shopify.ruby-lsp",
-    "sissel.shopify-liquid",
-    "redhat.vscode-yaml",
+    "anthropic.claude-code",
+    "codezombiech.gitignore",
     "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions",
+    "mhutchie.git-graph",
     "ms-playwright.playwright",
     "ms-vscode.powershell",
-    "dbaeumer.vscode-eslint",
     "oderwat.indent-rainbow",
-    "esbenp.prettier-vscode"
+    "redhat.vscode-yaml",
+    "shopify.ruby-lsp",
+    "sibiraj-s.vscode-scss-formatter",
+    "sissel.shopify-liquid",
+    "streetsidesoftware.code-spell-checker",
+    "timonwong.shellcheck",
+    "usernamehw.errorlens"
   ]
 }
