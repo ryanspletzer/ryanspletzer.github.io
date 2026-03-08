@@ -224,8 +224,9 @@ Before you go uninstalling everything,
 there's an important nuance.
 
 Not all plugins are dead context.
-Some actually *reduce* overall token consumption
-by fetching precisely what the model needs
+Some farm out what would otherwise be a token-intensive task to deterministic tools,
+and further some actually reduce overall token consumption
+by fetching *precisely* what the model needs
 without dumping everything into the window.
 
 Think of it this way:
