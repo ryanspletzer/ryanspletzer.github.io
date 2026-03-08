@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shedding Dead Context
-date: 2026-03-14 00:00:00
+date: 2026-03-07 00:00:00
 description: >
   More plugins, more extensions, more context doesn't mean better results.
   It often means worse.
@@ -86,18 +86,18 @@ the model needs to actually think about your code.
 
 Dex Horthy of [HumanLayer](https://humanlayer.dev/)
 has talked about what he calls the
-"[dumb zone](https://devinterrupted.substack.com/p/dex-horthy-on-ralph-rpi-and-escaping)"—the
-middle 40-60% of a large context window
+"[dumb zone](https://devinterrupted.substack.com/p/dex-horthy-on-ralph-rpi-and-escaping),"
+that middle 40-60% of a large context window
 where model reasoning starts to degrade.
 Information placed there is more likely to be ignored or misinterpreted.
-The model drifts, forgets its own instructions, or, *gasp*, hallucinates.
+The model drifts, forgets its own instructions, or, *\*gasp\**, hallucinates.
 (I don't like to anthropomorphize models,
 so instead I'd just like to say it starts to lose details and relevant context
 and generates output without the relevant grounding and background.
 Hallucinations are reserved for those people taking things like peyote.)
 
 If 40% of your context is consumed by dead weight before you start,
-you're beginning every session in the "dumb zone.""
+you're beginning every session in the "dumb zone."
 
 ## Bit Flips in the Context Window
 
