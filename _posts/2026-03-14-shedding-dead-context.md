@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shedding Dead Context
-date: 2026-03-07 00:00:00
+date: 2026-03-14 00:00:00
 description: >
   More plugins, more extensions, more context doesn't mean better results.
   It often means worse.
