@@ -18,7 +18,7 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_A
 
 I have an
 [oh-my-posh](https://ohmyposh.dev/blog/oh-my-posh-claude-code-integration)
-segment in my terminal that shows Claude Code's context window usage
+segment in my Claude Code status line that shows its context window usage
 as a little gauge—five bars that tick down as the session fills up.
 
 The other day I opened a fresh session,
@@ -271,6 +271,13 @@ which matters when you have multiple editor windows open alongside
 multiple Claude Code sessions.
 Zed still has an extension ecosystem you need to be mindful of,
 but the baseline overhead is smaller.
+And with Claude Code,
+the barrier to exploring these editors is lower than it's ever been.
+Neovim and Emacs configs used to be a rite of passage you suffered through alone.
+Now you can ask Claude to set up your LazyVim config,
+get your Emacs exactly where you want it,
+or dial in Zed's themes, settings, and extensions—all
+without spending hours and days on end reading and setting up configs by hand.
 
 ### Audit your CLAUDE.md
 
