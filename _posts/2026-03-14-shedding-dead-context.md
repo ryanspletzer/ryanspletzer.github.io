@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shedding Dead Context
-date: 2026-03-14 00:00:00
+date: 2026-03-14q 00:00:00
 description: >
   More plugins, more extensions, more context doesn't mean better results.
   It often means worse.
@@ -216,7 +216,7 @@ and wondering why I feel like I needed to take a nap.
 Steve Yegge has [recently written](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163)
 about this vampiric effect
 of using so much AI and functioning at a high cognitive level
-and context switching so much that it saps your energy.
+and context switching to such a degree that it saps your energy.
 
 ## The Plugin Paradox
 
