@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jevons Paradox and the Future of Software Engineering"
-date: 2026-03-07 00:00:00
+date: 2026-03-28 00:00:00
 description: >
   When things get cheaper, we use more of them, not less.
   William Stanley Jevons figured this out about coal in 1865.
