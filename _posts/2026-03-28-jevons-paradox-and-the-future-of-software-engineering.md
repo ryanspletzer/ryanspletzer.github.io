@@ -381,6 +381,5 @@ then choosing not to use them
 makes *you* the expensive resource per unit of output.
 You don't want to be the coal-fired pump
 in a world full of steam engines.
-
 We have the greatest of power tools now,
 and it's up to us to use them.
