@@ -1,28 +1,36 @@
 ---
 layout: null
 ---
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[{{ site.title }}]]></title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.url }}{{ site.baseurl }}/" rel="alternate" type="text/html"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <id>{{ site.url }}{{ site.baseurl }}/</id>
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name>{{ site.author | xml_escape }}</name>
+    {% if site.email %}<email>{{ site.email | xml_escape }}</email>{% endif %}
   </author>
-  <generator uri="https://github.com/">GitHub Pages</generator>
+  <generator uri="https://jekyllrb.com/">Jekyll v{{ jekyll.version }}</generator>
 
-  {% for post in site.posts limit: 20 %}
+  {% for post in site.posts limit:20 %}
   {% unless post.redirect %}
   <entry>
-    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="{{ site.url }}{{ post.url }}"/>
+    <title type="html">{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" rel="alternate" type="text/html"/>
+    <published>{{ post.date | date_to_xmlschema }}</published>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | replace:'="/','="https://www.spletzer.com/' | cdata_escape }}]]></content>
+    <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
+    {% if post.description %}
+    <summary type="text">{{ post.description | xml_escape }}</summary>
+    {% endif %}
+    <content type="html">{{ post.content | xml_escape }}</content>
+    {% for tag in post.tags %}
+    <category term="{{ tag | xml_escape }}"/>
+    {% endfor %}
   </entry>
   {% endunless %}
   {% endfor %}
