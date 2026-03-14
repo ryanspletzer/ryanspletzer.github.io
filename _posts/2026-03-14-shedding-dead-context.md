@@ -144,20 +144,29 @@ you might be thinking:
 "You're gonna need a bigger ~~boat~~ context window."
 
 Opus with 1M tokens is available now.
-Maybe the extra usage pricing becomes built into Claude Max plans soon.
-Problem solved, right?
+Things are moving so fast
+that between my first draft and publication,
+Opus 1M went from extra-usage pricing
+to standard Claude Max plans.
+GPT-5.3-Codex landed too, with a 400K context window—a
+sweet spot, if you ask me—and
+GPT-5.4 pushed to 1.05M context,
+because that extra .05 makes a *huge* difference, *right*? 😉
 
-No.
+So with a larger context window,
+this problem is solved, yes?
 
-A bigger context window is more RAM on a machine with a memory leak.
+Maybe.
+
+A bigger context window is analogous
+to more RAM on a machine with a memory leak.
 It delays the symptoms without fixing the cause.
 And worse,
 it removes the pressure to be disciplined.
 
 With 200K you're forced to be thoughtful about what you load.
 With 1M you can be sloppy,
-and it *appears* to work—until
-it doesn't.
+and it *appears* to work—until it doesn't.
 When it fails with a million tokens of context,
 the failures are harder to diagnose
 because you can't easily pinpoint
@@ -176,17 +185,19 @@ even when the extra context is relevant.
 More capacity does not mean better reasoning.
 Sometimes I wish I had something like 300K—a
 modest buffer beyond 200K.
-But 1M, at this stage,
-feels like a guaranteed scenario where you push too far
-and things break down in ways you can't predict.
+I'm interested to play around
+with Opus 1M in a really long conversation
+and see what may or may not break down before compaction.
 
 Between the research and people's own hands-on experience,
-the *vibe* is that the dumb zone is real,
+the *vibe* is that the "dumb zone" is real,
 and the *vibe* is that longer context windows
-may not necessarily yield better results—at
+*may* not necessarily yield better results—at
 least not at this point in history.
 That may change,
-but discipline is a better bet than hope.
+but discipline is a better bet than hope,
+and regardless of window size,
+why not just spend less tokens...
 
 ## Three Layers of the Same Problem
 
