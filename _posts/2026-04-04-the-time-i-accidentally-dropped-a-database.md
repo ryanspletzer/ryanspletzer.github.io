@@ -10,6 +10,7 @@ description: >
 tags:
  - ai
  - security
+ - sre
 ---
 
 ![A pastoral landscape with a farmer plowing in the foreground, a shepherd gazing upward, and ships in a harbor, while in the lower right corner a pair of legs disappears into the sea — the fall of Icarus, unnoticed by all.](/assets/images/Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_&_Culture.jpg)
@@ -18,20 +19,26 @@ Royal Museums of Fine Arts of Belgium.
 Via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_%26_Culture.jpg).*
 
 Around 2014,
-I was working on a web application at my old company,
-a platform that let customers securely view high-resolution images
-of exterior paint test panels from exposure stations at what we called "the paint farm."
-The backend was ASP.NET Web API with Entity Framework and SQL Server,
+I was working on a system in R&D at my old company
+that allowed that let users and lab data acquisition application
+to work with and view high-resolution images
+of exterior paint test panels from exposure stations
+at what we called
+"the [paint farm](https://www.pcimag.com/articles/102269-a-look-at-dows-paint-farm-and-technology-center)."
+The backend that helped to track all of this
+was ASP.NET Web API with Entity Framework and SQL Server,
 and I was working on that part of the stack,
 iterating on the database schema
-and its OData based API.
+and its OData-based API.
 (Sidebar: [OData](https://www.odata.org/) is awesome,
-an actual standard for REST.
-But I digress.)
+an actual standard for REST
+which should have had much more adoption than it did.
+Sigh.
+But I digress...)
 
 If you've worked with Entity Framework code-first migrations,
 you know the drill.
-You're iterating on your data model,
+You're iterating on your data model in C# model classes,
 running migrations,
 and occasionally it's helpful to just blow away your LocalDB
 and let EF recreate it from scratch.
