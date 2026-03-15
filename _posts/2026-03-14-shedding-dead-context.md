@@ -109,11 +109,15 @@ on non-ECC memory:
 repeatedly accessing one row of physical memory
 causes electrical interference
 that flips bits in adjacent rows.
-The data doesn't just disappear—it *corrupts*.
+Whether a bit flips from an unlikely rowhammer attack,
+or just from flaky RAM,
+the data doesn't just disappear—it *corrupts*.
 Values that were correct become wrong,
 and the system doesn't know it happened.
+Or, the system does what happened
+and it causes system instability...
 This is perhaps fine for your gaming PC—oh
-no you crashed during your last Cyberpunk 2077 session,
+no, you crashed during your last Cyberpunk 2077 session,
 no big deal—but
 it's a lot more concerning for critical workloads.
 You don't want to lose your video project mid-render,
@@ -131,7 +135,8 @@ tool descriptions bleed into each other,
 and the model can confidently act on the wrong context
 without any indication that something went sideways.
 
-It's not just forgetting. It's degradation—and
+It's not just forgetting.
+It's degradation—and
 like a bad DIMM,
 you might not realize it's happening
 until the output is already wrong.
@@ -147,10 +152,10 @@ Opus with 1M tokens is available now.
 Things are moving so fast
 that between my first draft and publication,
 Opus 1M went from extra-usage pricing
-to standard Claude Max plans.
+to standard pricing in Claude plans.
 GPT-5.3-Codex landed too, with a 400K context window—a
 sweet spot, if you ask me—and
-GPT-5.4 pushed to 1.05M context,
+GPT-5.4 pushed to 1.05M context;
 because that extra .05 makes a *huge* difference, *right*? 😉
 
 So with a larger context window,
@@ -172,7 +177,7 @@ the failures are harder to diagnose
 because you can't easily pinpoint
 which of your million tokens caused the corruption.
 
-There's also a well-documented phenomenon
+There is a well-documented phenomenon
 of LLMs losing coherence in very large context windows.
 Research like
 "[Lost in the Middle](https://arxiv.org/abs/2307.03172)"
@@ -209,7 +214,9 @@ I had VS Code loaded with dozens of extensions—linters,
 formatters, language packs, themes, tools I tried once and forgot about.
 Each one adds overhead to the extension host process,
 and many spawn their own language server processes on top of that.
-I was carrying weight for projects I wasn't even working on.
+I was carrying weight for projects I wasn't even working on,
+and when you have many VS Code windows open alongside Claude sessions,
+after a while you start to feel it.
 
 Then there was the AI harness itself.
 My global CLAUDE.md had grown into a sprawling instruction manual.
@@ -241,7 +248,7 @@ by fetching *precisely* what the model needs
 without dumping everything into the window.
 
 Think of it this way:
-a plugin that `cat`s an entire file into context is expensive.
+a plugin that `cat`'s an entire file into context is expensive.
 A plugin that searches for the relevant function
 and returns just that? It *saves* context.
 
@@ -325,6 +332,13 @@ Each one is small.
 Over time they add up,
 and one day you notice 40% of your context is gone
 before you've said "hello."
+
+### And More
+
+Even after I wrote this blog post,
+I found more tips out there for reducing dead and unnecessary context.
+Do some research and keep an eye on people out there experimenting,
+since this space is always evolving and changing with new discoveries.
 
 ## The Compaction Dread
 
