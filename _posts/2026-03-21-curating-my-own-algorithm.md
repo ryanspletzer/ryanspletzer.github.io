@@ -152,7 +152,12 @@ and to get the feed URL I took their URL e.g.
 `https://medium.com/feed/airbnb-engineering`
 to get the RSS feed;
 if the Medium blog is using a vanity domain name,
-just appending `/feed` does the trick.)
+just appending `/feed` does the trick.
+Also in vary rare cases there are "blogs" I want to follow
+which come through subreddits,
+and there is a [trick](https://www.howtogeek.com/320264/how-to-get-an-rss-feed-for-any-subreddit/)
+to subscribing to those with RSS as well,
+by appending `.rss` to the subreddit name in the URL.)
 Several of the feeds I follow are Medium or Substack authors
 consumed entirely through Feedbin.
 
