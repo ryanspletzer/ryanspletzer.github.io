@@ -143,16 +143,25 @@ A handy thing worth mentioning:
 you can subscribe to people on [Medium](https://medium.com/) and
 [Substack](https://substack.com/) via RSS too.
 You don't have to use their apps or get their emails.
-Just grab the RSS feed URL by appending `/feed` and add it to your reader.
+Just grab the RSS feed URL by appending `/feed` to Substack URL's
+or inserting `/feed/username` for Medium
+and add it to your reader.
+(For example I recently followed [The Airbnb Tech Blog](https://medium.com/airbnb-engineering) on Medium
+and to get the feed URL I took their URL e.g.
+`https://medium.com/airbnb-engineering` and inserted `feed` e.g.
+`https://medium.com/feed/airbnb-engineering`
+to get the RSS feed.)
 Several of the feeds I follow are Medium or Substack authors
 consumed entirely through Feedbin.
-(Now unlike the good ol' days,
+
+Now, unlike the good ol' days,
 you may not be able to read the full length of every article in the reader app,
 but that isn't really the end of the world—the
 point is to have a feed of high quality content,
 and if you have to pop out to the browser to read something,
 that is fine;
-people need to eat and they often need the clicks.)
+people need to eat,
+and they often need the click-throughs for ad revenue, etc.
 
 ## What It Feels Like
 
