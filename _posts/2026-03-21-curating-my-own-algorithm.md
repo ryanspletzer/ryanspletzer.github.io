@@ -150,7 +150,9 @@ and add it to your reader.
 and to get the feed URL I took their URL e.g.
 `https://medium.com/airbnb-engineering` and inserted `feed` e.g.
 `https://medium.com/feed/airbnb-engineering`
-to get the RSS feed.)
+to get the RSS feed;
+if the Medium blog is using a vanity domain name,
+just appending `/feed` does the trick.)
 Several of the feeds I follow are Medium or Substack authors
 consumed entirely through Feedbin.
 
