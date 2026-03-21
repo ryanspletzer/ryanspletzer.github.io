@@ -163,18 +163,20 @@ You don't have to use their apps or get their emails.
 Just grab the RSS feed URL by appending `/feed` to Substack URLs
 or inserting `/feed/username` for Medium
 and add it to your reader.
-(For example I recently followed [The Airbnb Tech Blog](https://medium.com/airbnb-engineering) on Medium
-and to get the feed URL I took their URL e.g.
-`https://medium.com/airbnb-engineering` and inserted `feed` e.g.
-`https://medium.com/feed/airbnb-engineering`
-to get the RSS feed;
-if the Medium blog is using a vanity domain name,
+
+For example,
+I recently followed [The Airbnb Tech Blog](https://medium.com/airbnb-engineering) on Medium.
+To get the feed URL,
+I took their URL `https://medium.com/airbnb-engineering`
+and inserted `feed` to get `https://medium.com/feed/airbnb-engineering`.
+If the Medium blog uses a vanity domain name,
 just appending `/feed` does the trick.
-Also in very rare cases there are "blogs" I want to follow
-which come through subreddits,
-and there is a [trick](https://www.howtogeek.com/320264/how-to-get-an-rss-feed-for-any-subreddit/)
-to subscribing to those with RSS as well,
-by appending `.rss` to the subreddit name in the URL.)
+In very rare cases there are "blogs" I want to follow
+that come through subreddits—there's
+a [trick](https://www.howtogeek.com/320264/how-to-get-an-rss-feed-for-any-subreddit/)
+for subscribing to those with RSS as well,
+by appending `.rss` to the subreddit name in the URL.
+
 Several of the feeds I follow are Medium or Substack authors
 consumed entirely through Feedbin.
 
