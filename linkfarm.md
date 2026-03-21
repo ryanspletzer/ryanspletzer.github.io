@@ -357,6 +357,15 @@ read them:
 * [The Modern JavaScript Tutorial](https://javascript.info/) - I was getting back into learning frontend development and
   needed a really deep dive into modern JavaScript and the DOM, etc., and this did the trick.
 
+* [Web Component Engineering](https://bluespire.com/course/web-component-engineering/) - I took Rob Eisenberg's course
+  over the 2025-2026 holiday break and into the new year,
+  and it was excellent.
+  It's a masterclass in building with the native web platform,
+  covering the full spectrum from the underlying browser APIs
+  to designing robust,
+  reusable component libraries.
+  Highly recommended for anyone looking to build with or better understand web components.
+
 ## Other
 
 These are books of any other category that don't fit above.
