@@ -12,7 +12,8 @@ tags:
 ---
 
 ![An impressionist oil painting of a woman in a black hat and dark dress reading a newspaper in a sunlit garden.](/assets/images/Édouard_Manet_-_Woman_Reading_-_1933.435_-_Art_Institute_of_Chicago.jpg)
-*"Woman Reading" — Édouard Manet, public domain, via Wikimedia Commons.*
+*"Woman Reading" — Édouard Manet, public domain,
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%C3%89douard_Manet_-_Woman_Reading_-_1933.435_-_Art_Institute_of_Chicago.jpg).*
 
 In a previous post,
 [Your Information Diet in the Age of AI](/2025/07/your-information-diet-in-the-age-of-ai/),
@@ -29,7 +30,7 @@ I was there in the very early days
 when the way you tweeted was by sending an SMS text with your tweet to the phone number 40404.)
 When I finally left,
 I realized something:
-I had given all my time, attention, energy, and thoughts to that platform
+I had given a ton of my time, attention, energy, and thoughts to that platform
 when I could have been making and owning my own content—like writing blog posts.
 
 That stuck with me.
@@ -55,11 +56,11 @@ I don't use it anymore for exactly that reason:
 it's *too* good at keeping you glued to the screen.
 
 Then there are algorithms that are just bad.
-YouTube's recommendation engine, which I otherwise love as a platform,
-has a tunnel vision problem.
+YouTube, which I otherwise love as a platform,
+has a recommendation engine with a tunnel vision problem.
 Watch one cat video and it assumes the next ten things you want to see are more cat videos.
 It lacks the serendipity that makes discovery interesting.
-LinkedIn's feed is similar—you
+LinkedIn's feed has its own issues—you
 still see good things from people you respect,
 but let's be honest: those good things are floating around in a sea of slop.
 
@@ -96,9 +97,23 @@ state follows you everywhere.
 If you remember Google Reader, this kind of setup gets you back to a similar experience.
 (We all miss Google Reader.)
 
-I currently subscribe to about 76 feeds (and counting) organized into two categories:
+I currently subscribe to about 125 feeds
+(and counting—this number will be out-of-date quickly),
+organized into two categories:
 **news** and **tech**.
 I strive to keep it simple.
+
+You would think that the sheer number of feeds would be overwhelming,
+but honestly besides the official news/tech publishing outfits
+(whose headlines you can often gloss over),
+the posts that come from individuals
+and even many organizations like companies' engineering blogs
+are more of a trickle,
+and since they are more well-thought-out blog posts from people,
+it is not the same torrent as an incessant feed of quick thoughts from people
+coming through social feeds.
+The social media companies are *always* going to feed you more,
+whereas with this RSS approach I feel like I control the firehose.
 
 My news category is deliberately lean—just a handful of sources.
 I started with more, but when you add major news outlets into a
@@ -116,13 +131,15 @@ consistently get it right.
 My tech category is where the bulk of my feeds live.
 It's a mix of individual blogs from people I respect,
 tech publications, product and leadership voices,
+company engineering blogs,
 AI-focused sources, and web development resources.
 I won't list them all here—the
 whole point is that you should curate your own.
 Everyone is at a different point in their journey,
 and what I find useful might not be what you need.
 
-I will say that I recently made a deliberate decision
+As an interesting example of curation,
+I recently made a deliberate decision
 to add more product management thought leaders into my mix of feeds.
 That's one of the nice things about this approach—you
 can intentionally expand into new areas rather than waiting for an algorithm
@@ -143,7 +160,7 @@ A handy thing worth mentioning:
 you can subscribe to people on [Medium](https://medium.com/) and
 [Substack](https://substack.com/) via RSS too.
 You don't have to use their apps or get their emails.
-Just grab the RSS feed URL by appending `/feed` to Substack URL's
+Just grab the RSS feed URL by appending `/feed` to Substack URLs
 or inserting `/feed/username` for Medium
 and add it to your reader.
 (For example I recently followed [The Airbnb Tech Blog](https://medium.com/airbnb-engineering) on Medium
@@ -153,7 +170,7 @@ and to get the feed URL I took their URL e.g.
 to get the RSS feed;
 if the Medium blog is using a vanity domain name,
 just appending `/feed` does the trick.
-Also in vary rare cases there are "blogs" I want to follow
+Also in very rare cases there are "blogs" I want to follow
 which come through subreddits,
 and there is a [trick](https://www.howtogeek.com/320264/how-to-get-an-rss-feed-for-any-subreddit/)
 to subscribing to those with RSS as well,
@@ -179,10 +196,11 @@ and it's only filled with things I consider to be high quality.
 
 My routine is a morning and evening scan.
 I can scroll through headlines and be in and out in a couple of minutes.
-If there's a great post from someone I respect, I take the time to read it.
+If there's a great post from someone I respect, I take the time to read it,
+either in the moment or by popping it out into my browser for later.
 But by and large,
 the whole experience takes far less time than social media
-and is far less triggering.
+and is far less agitating.
 
 Compare that to reaching for a social media app—you
 open it for "just a minute" and get sucked into a vortex.
@@ -234,8 +252,8 @@ If any of this resonates, here's the practical version:
    found out that this unconscious reflex subsides after a few days to a week.
 
 That's my information diet.
-No algorithms, no doomscrolling.
+Fewer social algorithms, no doomscrolling.
 Just a feed I built myself, filled with things worth reading.
 
 And reading is good.
-Just ask [LeVar Burton](https://www.youtube.com/watch?v=OAIW5se_cxg).
+Just ask [LeVar Burton](https://www.youtube.com/watch?v=OAIW5se_cxg). 🌈
