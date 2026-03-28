@@ -90,6 +90,7 @@ Jevons published
 The prevailing wisdom at the time
 was reassuring:
 James Watt's far more efficient steam engine
+(yes, the [watt](https://en.wikipedia.org/wiki/Watt) is named after him)
 would *reduce* Britain's coal consumption.
 After all,
 if each engine uses less coal per unit of work,
@@ -362,7 +363,7 @@ If the cost per token keeps dropping
 and engineers around you are multiplying their output with these tools,
 then choosing not to use them
 makes *you* the expensive resource per unit of output.
-You don't want to be the coal-fired pump
-in a world full of steam engines.
+You don't want to be the one still rationing coal
+while everyone else is building steam engines.
 We have the greatest of power tools now,
 and it's up to us to use them.
