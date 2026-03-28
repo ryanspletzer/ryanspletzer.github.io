@@ -14,7 +14,7 @@ tags:
 ---
 
 ![Portrait of William Stanley Jevons.](/assets/images/William_Stanley_Jevons_portrait_extract.jpg)
-*[William Stanley Jevons (via University of Manchester Libraries)](https://commons.wikimedia.org/wiki/File:William_Stanley_Jevons_portrait_extract.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0"), via Wikimedia Commons.*
+*[William Stanley Jevons (via University of Manchester Libraries)](https://commons.wikimedia.org/wiki/File:William_Stanley_Jevons_portrait_extract.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons.*
 
 Here's something that shouldn't be true but is:
 when things get cheaper, we often spend more on them.
@@ -122,7 +122,7 @@ coal powered a narrow set of uses,
 mostly pumping water out of mines.
 After Watt,
 coal powered factories, locomotives, steamships, and heating.
-The efficiency gains didn't reduce demand;
+The efficiency gains didn't reduce demand,
 they *exploded* it.
 
 As Jevons wrote in his book:
@@ -142,7 +142,7 @@ the more uses you find for it,
 and the more of it you consume.
 
 Watt's steam engine wasn't a conservation device.
-It was an *unlocking* device.
+It was a device that *unlocked more value*.
 
 ## The Cloud Proved Him Right
 
@@ -258,6 +258,9 @@ didn't make Britain say
 It made Britain say
 "what *else* can we power with this?"
 
+(I've also seen AI compared to electricity and the printing press.
+Pick your poison / analogy.)
+
 ## I've Seen This in My Own Work
 
 I wrote recently about
@@ -327,7 +330,8 @@ is effectively infinite.
 When the constraint is demand,
 efficiency gains can reduce consumption.
 When the constraint is *supply*,
-efficiency gains blow the doors off.
+efficiency gains
+[blow the doors off](https://www.youtube.com/watch?v=7_PX1cVuaVA).
 Software engineering is firmly in the latter camp.
 
 ## Token Budgets Are the New Cloud Bills
