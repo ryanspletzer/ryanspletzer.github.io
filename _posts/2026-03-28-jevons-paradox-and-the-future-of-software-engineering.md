@@ -196,14 +196,12 @@ and I want to take a clear stance here:
 not decrease it.**
 
 I know that's not the dominant narrative right now.
-The headlines are full of layoffs and hiring slowdowns.
-Jack Dorsey laid off a large portion of Block's workforce,
-ostensibly in an AI-driven efficiency push.
+The headlines are full of
+[layoffs and hiring slowdowns](https://www.theguardian.com/technology/2026/mar/03/jack-dorsey-block-ai-worker-jobs),
+with companies citing AI-driven efficiency as the reason.
 But look closer at these stories
 and the picture gets murkier.
-Block has reportedly had
-[other issues](https://www.theguardian.com/technology/2026/mar/03/jack-dorsey-block-ai-worker-jobs#:~:text=The%20CEO%2C%20and,peak%20in%20October.),
-and it's hard to separate
+It's hard to separate
 "AI made us more efficient"
 from
 "we needed to cut costs anyway and AI is a convenient narrative."
@@ -305,7 +303,17 @@ LED lightbulbs may have actually reduced total electricity
 used for lighting,
 because there's only so much light people want in their homes.
 
-But software?
+But zoom out from lighting
+and look at electricity as a whole.
+Demand for power is surging,
+driven largely by data centers
+that didn't exist at this scale a decade ago.
+LEDs saved watts in the living room;
+AI is consuming megawatts in the server farm.
+Same resource, opposite outcomes,
+depending on where the demand is elastic.
+
+And software?
 Software demand is about as elastic as it gets.
 Every business wants more of it.
 Every industry is being reshaped by it.
@@ -341,7 +349,8 @@ the engineers who learned to automate infrastructure
 were the ones everyone wanted.
 
 Just like cloud bills replaced data center CapEx
-and then grew beyond what anyone expected,
+and then [grew beyond](https://www.cio.com/article/247214/cloud-computing-has-its-jevons-moment.html)
+what [*most* people expected](https://x.com/swardley/status/1884305635476701269),
 token budgets will become a major line item
 that grows year over year.
 As the cost per token comes down,
@@ -364,6 +373,6 @@ and engineers around you are multiplying their output with these tools,
 then choosing not to use them
 makes *you* the expensive resource per unit of output.
 You don't want to be the one still rationing coal
-while everyone else is building steam engines.
+while everyone else is building modern steam engines.
 We have the greatest of power tools now,
 and it's up to us to use them.
