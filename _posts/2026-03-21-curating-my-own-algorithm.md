@@ -177,8 +177,12 @@ a [trick](https://www.howtogeek.com/320264/how-to-get-an-rss-feed-for-any-subred
 for subscribing to those with RSS as well,
 by appending `.rss` to the subreddit name in the URL.
 
+(Or, you know, just ask your favorite AI
+"What is the RSS feed for XYZ blog"
+and it will probably give you the answer.)
+
 Several of the feeds I follow are Medium or Substack authors
-consumed entirely through Feedbin.
+consumed entirely through Feedbin (with NetNewWire atop).
 
 Now, unlike the good ol' days,
 you may not be able to read the full length of every article in the reader app,
