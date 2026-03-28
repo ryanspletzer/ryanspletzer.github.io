@@ -19,7 +19,7 @@ tags:
 Here's something that shouldn't be true but is:
 when things get cheaper, we often spend more on them.
 
-Think about lemons.
+Think about lemons. 🍋
 
 In the 1800s,
 a lemon was an exotic luxury,
@@ -62,31 +62,15 @@ Jevons studied chemistry and mathematics at University College London,
 then spent five years in Sydney, Australia
 as an assayer at the Royal Mint,
 testing the purity of gold during the Australian gold rush.
-It was during those years in Sydney
-that he turned his attention to economics and meteorology,
-and began developing the ideas
-that would change economic theory.
-
 He returned to England
 and became one of the founders
 of the [marginalist revolution](https://en.wikipedia.org/wiki/Marginalism) in economics,
-which changed how economists think about value.
-Before marginalism,
-the dominant theory (from Adam Smith and David Ricardo)
-held that the value of a good
-was determined by the labor required to produce it.
-Jevons argued instead that value comes from *marginal utility*,
-the satisfaction a person gets from one additional unit of a good.
-This seems obvious now,
-but at the time nobody was thinking this way.
-
-He was also a logician
-who built a mechanical reasoning machine
+fundamentally changing how economists think about value.
+He also built a mechanical reasoning machine
 called the
 ["logic piano"](https://old.maa.org/press/periodicals/convergence/mathematical-treasure-jevons-pure-logic-logic-piano),
-essentially an early mechanical computer
-that could solve logical syllogisms.
-This was decades before anything resembling modern computing.
+essentially an early mechanical computer,
+decades before anything resembling modern computing.
 
 Jevons died in 1882 at the age of 46,
 drowning while swimming near Hastings.
@@ -340,31 +324,26 @@ Here's my prediction for how this plays out:
 
 The engineers who learn to wield AI effectively,
 who build the compound practices
-(testing, CI, structured prompting, agentic workflows,
-or even find brand new techniques for delivering software
-that go beyond our traditional concepts of software delivery
-and better suit AI-native workflows),
+(testing, CI, structured prompting, agentic workflows)
+and discover entirely new ways of delivering software,
 will be the ones everyone wants to hire.
 There will be *more to build* than ever before.
 
 And businesses won't spend less on software engineering.
 They'll spend *differently*.
 Where today the cost is primarily headcount,
-tomorrow (or who am I kidding, *right now*) a meaningful chunk will be token budgets,
+a growing share is already token budgets,
 the cost of the AI compute
 that amplifies each engineer's output.
-We saw the same thing happen in cloud computing as well,
-where engineers who learned how to use the cloud effectively
-by automating it with infrastructure as code and various new techniques
-were greatly sought after for these new skills.
+We saw the same shift in cloud computing:
+the engineers who learned to automate infrastructure
+were the ones everyone wanted.
 
 Just like cloud bills replaced data center CapEx
 and then grew beyond what anyone expected,
 token budgets will become a major line item
-that grows year over year
-as companies find more and more uses
-for AI-assisted engineering,
-and as the cost per token comes down over time,
+that grows year over year.
+As the cost per token comes down,
 our consumption will go up.
 
 William Stanley Jevons figured this out
