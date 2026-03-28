@@ -147,8 +147,7 @@ consumption-based, pay-per-call, scaling to actual demand.
 The cost per unit fell so far
 that the side-eye went away.
 
-And what could I do with that newfound freedom,
-if I had the time and space and acceleration to do so?
+And what could I do with that newfound freedom?
 
 I wouldn't run one API gateway more cheaply.
 I would run *a hundred of them* for different use cases,
@@ -286,12 +285,6 @@ It's worth noting
 that Jevons Paradox doesn't *always* hold.
 Economists have identified cases
 where efficiency improvements really do reduce total consumption.
-Economists Harry Saunders and Daniel Khazzoom
-formalized this idea as the
-[Khazzoom-Brookes postulate](https://en.wikipedia.org/wiki/Khazzoom%E2%80%93Brookes_postulate),
-which says that yes,
-sometimes efficiency gains really do just save you money
-and you move on with your life.
 
 The key variable is *elasticity of demand*.
 If demand for a resource is relatively inelastic,
@@ -299,8 +292,8 @@ if people don't actually want much more of it
 even when it's cheap,
 then
 efficiency gains can reduce total consumption.
-LED lightbulbs may have actually reduced total electricity
-used for lighting,
+LED lightbulbs appear to have actually
+[reduced total electricity used for lighting](https://www.iea.org/commentaries/the-next-wave-of-led-lighting-smarter-circular-and-more-efficient),
 because there's only so much light people want in their homes.
 
 But zoom out from lighting
@@ -357,7 +350,7 @@ As the cost per token comes down,
 our consumption will go up.
 
 William Stanley Jevons figured this out
-about coal 161 years ago.
+about coal over 160 years ago.
 The cloud proved him right.
 AI will prove him right again.
 
