@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A No-Nonsense Guide to GPG Signing with YubiKey
+title: A No-Nonsense Guide to GPG Commit Signing with a YubiKey
 date: 2026-03-31 00:00:00
 description: >
   GPG-signed Git commits prove that code actually came from you,
@@ -18,8 +18,9 @@ tags:
 *William Orpen, The Signing of Peace in the Hall of Mirrors, 1919. Imperial War Museum, London. Public domain,
 via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
 
-I'm a big believer in the secure software supply chain,
-and this starts with you on your local machine.
+I'm a big believer in the promise and evolution of the secure software supply chain,
+and I am also of the belief that a secure software supply chain starts with *you*,
+on your local machine.
 
 GPG-signed Git commits help to prove that code actually came from you,
 and storing your signing key on a YubiKey means the private key never touches your filesystem.
@@ -29,7 +30,7 @@ This guide walks through setting it all up on macOS, Windows, and Ubuntu.
 
 If you've ever looked at a commit on GitHub and noticed the green "Verified" badge
 across all the commits on someone's PR,
-that's GPG signing at work.
+that's GPG commit signing at work.
 Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—there's
 really nothing stopping someone from committing as you.
 (It can happen, and
@@ -39,13 +40,17 @@ Signing with GPG attaches a cryptographic proof to each commit
 asserting that it came from the holder of a specific private key.
 (And it also personally gives me a large dopamine hit when I see the green "Verified" badge.)
 If that private key lives on a hardware token like a YubiKey,
-it can't be exfiltrated by malware or accidentally copied --
-the signing operation happens on the YubiKey itself,
-and you physically confirm it by touching the device or entering a PIN
-for the first signing,
-and lest you get annoyed with successive pin entries,
-Git is able to leverage that unlocked YubiKey for all subsequent signings,
-until you log out or shutdown/reboot the machine or remove the YubiKey.
+it can't be exfiltrated by malware or accidentally copied—the
+signing operation happens on the YubiKey itself,
+and you confirm it by entering your YubiKey PIN for the first signing.
+After that, the YubiKey stays unlocked for subsequent signings
+until you log out, shutdown/reboot, or remove the YubiKey.
+(You can optionally enable touch-to-sign for an extra layer of physical confirmation
+for *each and every signing operation*,
+but it's off by default—I
+don't personally use this because I consider the initial PIN unlock to be good enough security for my circumstances,
+and further when I have coding agents working on things autonomously on my machine
+I want them to be able to do signed commits without constant intervention.)
 
 ## Overview / TL;DR
 
@@ -346,8 +351,7 @@ git log --show-signature -1
 ```
 
 You should see output indicating a good signature from your key.
-If your YubiKey is plugged in, you'll be prompted for your PIN (or a touch, depending on your
-YubiKey's touch policy settings).
+If your YubiKey is plugged in, you'll be prompted for your PIN.
 
 If your YubiKey is **not** plugged in, the commit will fail --
 this is the intended behavior, because the private key only exists on the hardware token.
