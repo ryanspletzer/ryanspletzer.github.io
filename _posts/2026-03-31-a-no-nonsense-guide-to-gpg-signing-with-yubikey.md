@@ -204,7 +204,21 @@ pinentry-program /opt/homebrew/bin/pinentry-mac
 
 If you're on an Intel Mac, the path would be `/usr/local/bin/pinentry-mac` instead.
 
-You may also want to set `no-tty` in your GPG config if you use GPG from GUI applications:
+This is worth calling out: using a GUI pinentry like `pinentry-mac` instead of the text-based
+`pinentry-curses` or `pinentry-tty` isn't just a cosmetic preference --
+it's a practical requirement if you use AI coding tools like
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)
+that execute Git commands on your behalf.
+I used to use the text-based pinentry in my terminal,
+but when Claude Code runs `git commit` it spawns the process in a way where the terminal-based
+pinentry can't grab the TTY to prompt you for your PIN.
+With `pinentry-mac`, the PIN dialog pops open as a native macOS window regardless of which process
+triggered the commit, so signing works seamlessly whether you're committing manually or through an
+AI assistant.
+
+You may also want to set `no-tty` in your GPG config,
+which further ensures GPG doesn't try to interact with the terminal directly --
+this complements the GUI pinentry approach:
 
 ```text
 # ~/.gnupg/gpg.conf
