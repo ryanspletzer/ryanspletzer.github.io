@@ -65,8 +65,7 @@ can check against your public key.
 I've been using this setup since 2018 and have accumulated around 920 signatures on my current YubiKey
 (after the one YubiKey I had been using the longest got stolen—more on that in a bit).
 The approach below is opinionated—there are other valid ways to do this,
-including using `ed25519` keys instead of RSA (if you want to be quantum compute-proof in the future),
-or using SSH signing instead of GPG (which GitHub also supports now).
+and there are alternatives like SSH signing instead of GPG (which GitHub also supports now).
 If you already have a workflow that works for you, this guide may not be for you.
 
 I'll break things down between macOS, Linux (Ubuntu), and Windows,
@@ -93,27 +92,38 @@ then add separate subkeys for **Sign**, **Encrypt**, and optionally **Authentica
 This way, if a subkey is ever compromised, you can revoke just that subkey without losing your
 entire identity.
 
+This guide recommends `ed25519` for all keys.
+It's the modern default -- smaller keys, faster signing, and a simpler implementation with fewer
+knobs to misconfigure compared to RSA.
+YubiKey 5 series supports ed25519 natively.
+(My own keys are RSA 4096 from 2018, which is still perfectly secure,
+but if I were starting fresh today I'd go with ed25519.)
+
 ### macOS
 
 ```bash
 # Install GnuPG via Homebrew
 brew install gnupg
 
-# Generate a master key -- choose RSA 4096 and Certify only
+# Generate a master key with ed25519
 # The interactive prompts will walk you through this
 gpg --full-generate-key --expert
 ```
 
 During the interactive prompts:
 
-1. Choose **(8) RSA (set your own capabilities)** and toggle off everything except **Certify**
-2. Set key size to **4096**
+1. Choose **(9) ECC and ECC** (or **(11) ECC (set your own capabilities)** if you want Certify only)
+2. Select **Curve 25519**
 3. Set an expiration (I use 10+ years, but you can always extend it later)
 4. Enter your name and email address
 5. Set a strong passphrase -- you'll need this to manage the key,
    but day-to-day signing will use your YubiKey PIN
 
-Now add a signing subkey:
+If you chose option (9), GPG creates both a master key (certify + sign) and an encryption subkey
+automatically.
+If you want a dedicated signing subkey separate from your master key
+(recommended for the same reason you don't use your root CA to sign leaf certs),
+use option (11) to create a certify-only master, then add subkeys:
 
 ```bash
 # Replace YOUR_KEY_ID with your master key ID from the output above
@@ -121,7 +131,7 @@ gpg --expert --edit-key YOUR_KEY_ID
 
 # In the GPG prompt:
 # gpg> addkey
-# Choose (4) RSA (sign only), 4096 bits, set expiration
+# Choose (10) ECC (sign only), select Curve 25519, set expiration
 # gpg> save
 ```
 
@@ -342,6 +352,154 @@ YubiKey's touch policy settings).
 If your YubiKey is **not** plugged in, the commit will fail --
 this is the intended behavior, because the private key only exists on the hardware token.
 
+## Setting Up on a New Machine
+
+Getting your initial key generated and moved onto the YubiKey is a one-time thing.
+But when you get a new machine -- or reinstall your OS --
+you need to get the new machine to recognize the key that's already on your YubiKey.
+This is the part that tripped me up the first time,
+because the steps are different from the initial setup and not always well-documented.
+
+The core idea is the same on every platform:
+install GPG, import your public key, plug in the YubiKey so GPG discovers the private key stubs,
+set trust, and configure Git and pinentry.
+
+### macOS
+
+```bash
+# Install GnuPG and pinentry-mac
+brew install gnupg pinentry-mac
+
+# Import your public key (from a backup, a keyserver, or export from another machine)
+gpg --import /path/to/your-public-key.asc
+
+# Plug in your YubiKey and tell GPG to discover the private key stubs on the card
+gpg --card-status
+
+# Trust your own key (otherwise GPG will warn on every signature)
+gpg --edit-key YOUR_KEY_ID
+# gpg> trust
+# Choose 5 (ultimate)
+# gpg> save
+```
+
+Then set up the same config files as in
+[Step 3](#step-3-configure-git-for-gpg-signing):
+
+```text
+# ~/.gnupg/gpg-agent.conf
+pinentry-program /opt/homebrew/bin/pinentry-mac
+```
+
+```text
+# ~/.gnupg/gpg.conf
+no-tty
+```
+
+```bash
+# Add to ~/.zshrc or ~/.bashrc
+export GPG_TTY=$(tty)
+
+# Configure Git
+git config --global gpg.program /opt/homebrew/bin/gpg
+git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
+git config --global commit.gpgsign true
+```
+
+### Ubuntu
+
+```bash
+# Install GnuPG and smartcard support
+sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd pinentry-curses
+
+# Import your public key
+gpg --import /path/to/your-public-key.asc
+
+# Plug in your YubiKey and discover the private key stubs
+gpg --card-status
+
+# Trust your own key
+gpg --edit-key YOUR_KEY_ID
+# gpg> trust
+# Choose 5 (ultimate)
+# gpg> save
+```
+
+Then configure pinentry:
+
+```text
+# ~/.gnupg/gpg-agent.conf
+pinentry-program /usr/bin/pinentry-curses
+```
+
+Or for GNOME desktop:
+
+```bash
+sudo apt install -y pinentry-gnome3
+```
+
+```text
+# ~/.gnupg/gpg-agent.conf
+pinentry-program /usr/bin/pinentry-gnome3
+```
+
+```bash
+# Add to ~/.bashrc or ~/.zshrc
+export GPG_TTY=$(tty)
+
+# Configure Git
+git config --global gpg.program gpg
+git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
+git config --global commit.gpgsign true
+```
+
+### Windows
+
+```powershell
+# Install GPG4Win
+choco install gpg4win -y
+
+# Import your public key (from PowerShell, Git Bash, or cmd)
+gpg --import C:\path\to\your-public-key.asc
+
+# Plug in your YubiKey and discover the private key stubs
+gpg --card-status
+
+# Trust your own key
+gpg --edit-key YOUR_KEY_ID
+# gpg> trust
+# Choose 5 (ultimate)
+# gpg> save
+
+# Configure Git
+git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"
+git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
+git config --global commit.gpgsign true
+```
+
+Kleopatra (included with GPG4Win) handles PIN entry automatically on Windows,
+so no separate pinentry configuration is needed.
+
+### A note on public key availability
+
+The steps above assume you have your public key file handy.
+To avoid fumbling for it on a new machine,
+you can export it to a keyserver ahead of time:
+
+```bash
+# Upload to a public keyserver (do this from your current machine)
+gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+```
+
+Then on the new machine, import it directly:
+
+```bash
+gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
+```
+
+Alternatively, keep your public key (not your private key!) in a place you can
+easily access -- a private GitHub gist, a cloud drive, or even committed to your dotfiles repo.
+
 ## Troubleshooting
 
 A few common issues and fixes:
@@ -371,24 +529,6 @@ Then restart the agent:
 
 ```bash
 gpgconf --kill gpg-agent
-```
-
-### Switched computers or reinstalled OS
-
-You'll need to import your public key and then tell GPG to look for the private key on the card:
-
-```bash
-# Import your public key
-gpg --import /path/to/your-public-key.asc
-
-# Tell GPG to check the card for private keys
-gpg --card-status
-
-# Trust the key
-gpg --edit-key YOUR_KEY_ID
-# gpg> trust
-# Choose 5 (ultimate)
-# gpg> save
 ```
 
 ## Bonus: Using Your YubiKey for SSH Authentication
