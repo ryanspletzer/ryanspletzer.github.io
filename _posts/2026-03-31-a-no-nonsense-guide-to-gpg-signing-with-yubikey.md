@@ -14,26 +14,38 @@ tags:
  - git
 ---
 
+![Delegates seated at a long table in the Hall of Mirrors at Versailles, signing the Treaty of Versailles in 1919, with tall arched mirrors and ornate chandeliers reflected behind them.](/assets/images/960px-William_Orpen_-_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)
+*William Orpen, The Signing of Peace in the Hall of Mirrors, 1919. Imperial War Museum, London. Public domain,
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
+
 I'm a big believer in the secure software supply chain,
 and this starts with you on your local machine.
 
-GPG-signed Git commits prove that code actually came from you,
+GPG-signed Git commits help to prove that code actually came from you,
 and storing your signing key on a YubiKey means the private key never touches your filesystem.
 This guide walks through setting it all up on macOS, Windows, and Ubuntu.
 
 ## Why Bother?
 
-If you've ever looked at a commit on GitHub and noticed the green "Verified" badge,
+If you've ever looked at a commit on GitHub and noticed the green "Verified" badge
+across all the commits on someone's PR,
 that's GPG signing at work.
-Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want --
-there's nothing stopping someone from committing as you.
+Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—there's
+really nothing stopping someone from committing as you.
+(It can happen, and
+[has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).)
 
-Signing with GPG attaches a cryptographic proof to each commit that it came from the holder of a
-specific private key.
-And if that private key lives on a hardware token like a YubiKey,
+Signing with GPG attaches a cryptographic proof to each commit
+asserting that it came from the holder of a specific private key.
+(And it also personally gives me a large dopamine hit when I see the green "Verified" badge.)
+If that private key lives on a hardware token like a YubiKey,
 it can't be exfiltrated by malware or accidentally copied --
 the signing operation happens on the YubiKey itself,
-and you physically confirm it by touching the device or entering a PIN.
+and you physically confirm it by touching the device or entering a PIN
+for the first signing,
+and lest you get annoyed with successive pin entries,
+Git is able to leverage that unlocked YubiKey for all subsequent signings,
+until you log out or shutdown/reboot the machine or remove the YubiKey.
 
 ## Overview / TL;DR
 
@@ -44,16 +56,16 @@ The setup involves three layers:
 2. **YubiKey** -- the signing subkey gets moved onto the hardware token so it never exists on disk
 3. **Git configuration** -- tell Git to use GPG and point it at your signing subkey
 
-The end result: every `git commit` triggers a PIN prompt (or touch) on your YubiKey,
-and the commit gets a cryptographic signature that GitHub (or any verifier) can check against your
-public key.
+The end result: every `git commit` triggers a signing operation on your YubiKey,
+and the commit gets a cryptographic signature that GitHub (or any verifier)
+can check against your public key.
 
 ## Credits and Caveats
 
-I've been using this setup since 2018 and have accumulated around 920 signatures on my current
-YubiKey.
-The approach below is opinionated -- there are other valid ways to do this,
-including using `ed25519` keys instead of RSA,
+I've been using this setup since 2018 and have accumulated around 920 signatures on my current YubiKey
+(after the one YubiKey I had been using the longest got stolen—more on that in a bit).
+The approach below is opinionated—there are other valid ways to do this,
+including using `ed25519` keys instead of RSA (if you want to be quantum compute-proof in the future),
 or using SSH signing instead of GPG (which GitHub also supports now).
 If you already have a workflow that works for you, this guide may not be for you.
 
@@ -67,7 +79,7 @@ Before diving in, you'll need:
 
 - A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
   (YubiKey 5 series or newer is recommended; older YubiKey 4 works too)
-- A computer with a USB port (or USB-C, depending on your YubiKey model)
+- A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)
 - Some comfort with the command line
 
 ## Step 1: Generate Your GPG Key Pair
