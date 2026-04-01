@@ -64,7 +64,7 @@ via `ykman openpgp keys set-touch sig on`
 for an extra layer of physical confirmation for *each and every signing operation*,
 but it's off by default—I
 don't personally use this because I consider the initial PIN unlock to be good enough security for my circumstances,
-and further when I have coding agents working on things autonomously on my machine
+and further when I have coding agents working on things on my machine
 I want them to be able to do signed commits without constant intervention.)
 
 I would be remiss in talking about software supply chain
@@ -78,16 +78,22 @@ that are strongly tied to your identity without requiring long-lived keys at all
 Certain organizations may be at the level of maturity where Sigstore + OIDC
 is the right fit for showing provenance,
 but everyone is on their own journey and at different points in that journey.
-Notably, GitHub doesn't currently show the green "Verified" label for Sigstore signatures --
-which my dopamine would be sad about --
-but Sigstore does provide strong cryptographic assurances through its transparency log.
+Notably, GitHub doesn't currently show the green "Verified" label for Sigstore signatures—which
+my dopamine would be sad about—but
+Sigstore does provide strong cryptographic assurances through its transparency log.
 It's also worth noting that Git only supports one signing method at a time,
-so you have to choose between GPG, SSH, S/MIME, or Sigstore --
-you can't layer them.
+so you have to choose between GPG, SSH, S/MIME, or Sigstore—you
+can't layer them.
 In the absence of other options being available to you,
 I recommend setting up GPG commit signing yourself,
 because it is entirely within your control,
+and is also what the Linux and Git open source projects use for signing themselves,
 and is better than nothing.
+If you are someone who prefers using SSH with GitHub,
+then SSH signing may be more appealing for you.
+(And given you know how to get SSH going with GitHub,
+I assume you can figure out how to setup commit signing with that as well,
+and further can figure out how to use an SSH key on a YubiKey.)
 
 ## Overview / TL;DR
 
@@ -256,7 +262,8 @@ This is good practice for FIDO2/WebAuthn
 (where you'd pre-register both keys with your services),
 and it applies equally to GPG signing.
 
-When my primary YubiKey was stolen along with my backpack,
+When my primary YubiKey was stolen
+(along with my backpack—more learnings from that to come in a future blog post),
 I was very glad I had a backup ready to go.
 Without it, I would have needed to generate entirely new keys,
 re-upload them to GitHub, and update every machine I use.
