@@ -50,8 +50,9 @@ really nothing stopping someone from committing as you.
 [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).)
 
 Signing commits with GPG attaches a cryptographic proof to each commit
-asserting that it came from the holder of a specific private key.
+asserting that it came from the holder of a specific private key[^1].
 (And it also personally gives me a large dopamine hit when I see the green "Verified" badge.)
+
 If that private key lives on a hardware token like a YubiKey,
 it can't be exfiltrated by malware or accidentally copied—the
 signing operation happens on the YubiKey itself,
@@ -663,3 +664,8 @@ your signing key never exists as a file that could be stolen or accidentally lea
 The initial setup is admittedly a bit involved, especially the key generation and subkey-to-card
 transfer steps,
 but it's a one-time cost that pays dividends in the form of verified commits and peace of mind.
+
+## Footnotes
+
+[^1]: Technically, GPG signing uses a hash of the commit content, which is then signed with your private key.
+    The verifier re-hashes the commit and checks the signature against your public key.

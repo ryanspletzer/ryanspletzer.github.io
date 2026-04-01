@@ -259,6 +259,51 @@ h2.post-title:first-of-type {
   }
 }
 
+// Footnote hover tooltips
+// JS clones footnote content into a .footnote-tooltip child of each <sup>.
+// CSS handles visibility on hover.
+sup:has(.footnote) {
+  position: relative;
+}
+
+sup .footnote-tooltip {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  width: 25rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-block);
+  box-shadow: var(--color-panel-shadow);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  // Position below the superscript, not constrained by sup width
+  inset-block-start: 1.5em;
+  inset-inline-start: 0;
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-block-start: 0.5rem;
+  }
+
+  // Hide the back-reference arrow inside the tooltip
+  .reversefootnote {
+    display: none;
+  }
+}
+
+@media (min-width: 48em) {
+  sup:has(.footnote):hover .footnote-tooltip {
+    visibility: visible;
+  }
+}
+
 // Responsive adjustments
 @media (max-width: 62.5em) {
   .post-meta {

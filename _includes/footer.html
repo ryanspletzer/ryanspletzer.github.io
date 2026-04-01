@@ -70,4 +70,16 @@
   }
 
   new ThemeToggle();
+
+  // Footnote hover tooltips: clone footnote content next to each <sup> reference.
+  // Content is from the page's own kramdown-rendered footnotes (same-origin, not user input).
+  document.querySelectorAll('sup[id^="fnref:"] a.footnote').forEach(ref => {
+    const id = ref.getAttribute('href')?.replace('#', '');
+    const footnote = id && document.getElementById(id);
+    if (!footnote) return;
+    const tooltip = document.createElement('span');
+    tooltip.className = 'footnote-tooltip';
+    Array.from(footnote.childNodes).forEach(n => tooltip.appendChild(n.cloneNode(true)));
+    ref.closest('sup').appendChild(tooltip);
+  });
 </script>
