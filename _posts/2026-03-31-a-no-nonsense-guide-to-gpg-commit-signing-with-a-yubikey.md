@@ -49,7 +49,7 @@ really nothing stopping someone from committing as you.
 (It can happen, and
 [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).)
 
-Signing with GPG attaches a cryptographic proof to each commit
+Signing commits with GPG attaches a cryptographic proof to each commit
 asserting that it came from the holder of a specific private key.
 (And it also personally gives me a large dopamine hit when I see the green "Verified" badge.)
 If that private key lives on a hardware token like a YubiKey,
@@ -66,6 +66,28 @@ but it's off by default—I
 don't personally use this because I consider the initial PIN unlock to be good enough security for my circumstances,
 and further when I have coding agents working on things autonomously on my machine
 I want them to be able to do signed commits without constant intervention.)
+
+I would be remiss in talking about software supply chain
+if I didn't mention that GPG isn't the only way to sign commits.
+GitHub also shows the green "Verified" badge for commits signed with
+[SSH or S/MIME](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification),
+and it's worth being aware of how
+[Sigstore's Gitsign](https://docs.sigstore.dev/cosign/signing/gitsign/)
+uses OpenID Connect to create keyless signatures
+that are strongly tied to your identity without requiring long-lived keys at all.
+Certain organizations may be at the level of maturity where Sigstore + OIDC
+is the right fit for showing provenance,
+but everyone is on their own journey and at different points in that journey.
+Notably, GitHub doesn't currently show the green "Verified" label for Sigstore signatures --
+which my dopamine would be sad about --
+but Sigstore does provide strong cryptographic assurances through its transparency log.
+It's also worth noting that Git only supports one signing method at a time,
+so you have to choose between GPG, SSH, S/MIME, or Sigstore --
+you can't layer them.
+In the absence of other options being available to you,
+I recommend setting up GPG commit signing yourself,
+because it is entirely within your control,
+and is better than nothing.
 
 ## Overview / TL;DR
 
@@ -96,10 +118,10 @@ similar to my
 
 Before diving in, you'll need:
 
-- A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
+* A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
   (YubiKey 5 series or newer is recommended; older YubiKey 4 works too)
-- A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)
-- Some comfort with the command line
+* A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)
+* Some comfort with the command line
 
 ## Step 1: Generate Your GPG Key Pair
 
@@ -224,6 +246,52 @@ gpg --card-status
 
 You should see your signing key fingerprint listed under "Signature key"
 and your subkey listing should show `ssb>` (the `>` indicates the key is on a card).
+
+### Loading the same key onto a second YubiKey
+
+I strongly recommend having two YubiKeys --
+a primary that you carry and a backup stored somewhere safe
+(I keep mine in a fireproof safe at home).
+This is good practice for FIDO2/WebAuthn
+(where you'd pre-register both keys with your services),
+and it applies equally to GPG signing.
+
+When my primary YubiKey was stolen along with my backpack,
+I was very glad I had a backup ready to go.
+Without it, I would have needed to generate entirely new keys,
+re-upload them to GitHub, and update every machine I use.
+
+The simplest approach is to load the *same* signing subkey onto both YubiKeys.
+This way your `.gitconfig` doesn't change regardless of which key is plugged in --
+Git just sees the same subkey ID either way.
+The tradeoff is that you can't revoke one without revoking the other
+(since it's the same subkey),
+but for a lost-or-stolen scenario this is usually fine
+because you'd revoke the subkey regardless
+and generate a new one from your backed-up master key.
+
+To do this, **before you discard your local key backup** from the step above,
+move the subkey to your second YubiKey:
+
+```bash
+# After moving the subkey to your first YubiKey and saving,
+# restore the local private key from your backup
+gpg --delete-secret-keys YOUR_KEY_ID
+gpg --import /path/to/secure/backup/master-key.asc
+
+# Insert your second YubiKey and move the subkey onto it
+gpg --edit-key YOUR_KEY_ID
+# gpg> key 1
+# gpg> keytocard
+# Choose (1) Signature key
+# gpg> save
+```
+
+After this, both YubiKeys hold the same signing subkey,
+and you can swap between them seamlessly.
+Just remember that when you plug in a different YubiKey than the one GPG last saw,
+you may need to run `gpg --card-status` so GPG re-discovers the key stub
+on the new card.
 
 ## Step 3: Configure Git for GPG Signing
 
