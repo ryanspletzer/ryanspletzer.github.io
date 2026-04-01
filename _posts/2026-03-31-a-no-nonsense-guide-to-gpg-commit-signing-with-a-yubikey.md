@@ -286,6 +286,34 @@ Just remember that when you plug in a different YubiKey than the one GPG last sa
 you may need to run `gpg --card-status` so GPG re-discovers the key stub
 on the new card.
 
+### Removing the master key from your everyday machine
+
+Once your subkeys are on your YubiKey(s) and your backups are safely stored offline,
+there's no reason to keep the master key's private portion on your local keyring.
+You only need the master key for infrequent key management tasks --
+adding a new UID, extending the expiration date, revoking a subkey,
+or signing someone else's key.
+For day-to-day commit signing, the subkey on your YubiKey is all you need.
+
+```bash
+# Remove the secret master key from your local keyring
+gpg --delete-secret-keys YOUR_KEY_ID
+
+# Re-import the public key so GPG still knows about your key
+gpg --import /path/to/secure/backup/your-public-key.asc
+
+# Plug in your YubiKey so GPG re-discovers the subkey stubs
+gpg --card-status
+```
+
+After this, `gpg --list-secret-keys` will show `sec#` instead of `sec` --
+the `#` indicates the master key's private portion is absent.
+Your signing subkey on the YubiKey still works normally.
+
+When you eventually need to do key management,
+temporarily import your master key from the offline backup,
+do the work, then delete it again.
+
 ## Step 3: Configure Git for GPG Signing
 
 ### macOS
