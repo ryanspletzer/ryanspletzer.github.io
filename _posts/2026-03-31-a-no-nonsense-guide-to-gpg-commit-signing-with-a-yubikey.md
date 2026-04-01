@@ -665,7 +665,9 @@ The initial setup is admittedly a bit involved, especially the key generation an
 transfer steps,
 but it's a one-time cost that pays dividends in the form of verified commits and peace of mind.
 
+<!-- markdownlint-disable-next-line MD022 -->
 ## Footnotes
+{:.no_toc}
 
 [^1]: Technically, GPG signing uses a hash of the commit content, which is then signed with your private key.
     The verifier re-hashes the commit and checks the signature against your public key.
