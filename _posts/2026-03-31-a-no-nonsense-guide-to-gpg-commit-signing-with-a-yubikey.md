@@ -44,13 +44,11 @@ Many of the steps outlined here for YubiKey will be similar for other keys.
 If you've ever looked at a commit on GitHub and noticed the green "Verified" badge
 across all the commits on someone's PR,
 that's GPG commit signing at work.
-Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—there's
-really nothing stopping someone from committing as you.
-(It can happen, and
-[has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).)
+Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want --
+there's really nothing stopping someone from committing as you.[^commit-impersonation]
 
 Signing commits with GPG attaches a cryptographic proof to each commit
-asserting that it came from the holder of a specific private key[^1].
+asserting that it came from the holder of a specific private key.[^gpg-hash-then-sign]
 (And it also personally gives me a large dopamine hit when I see the green "Verified" badge.)
 
 If that private key lives on a hardware token like a YubiKey,
@@ -58,15 +56,7 @@ it can't be exfiltrated by malware or accidentally copied—the
 signing operation happens on the YubiKey itself,
 and you confirm it by entering your YubiKey PIN for the first signing.
 After that, the YubiKey stays unlocked for subsequent signings
-until you log out, shutdown/reboot, or remove the YubiKey.
-(You can optionally
-[enable touch-to-sign](https://docs.yubico.com/software/yubikey/tools/ykman/OpenPGP_Commands.html#ykman-openpgp-keys-set-touch-options-key-policy)
-via `ykman openpgp keys set-touch sig on`
-for an extra layer of physical confirmation for *each and every signing operation*,
-but it's off by default—I
-don't personally use this because I consider the initial PIN unlock to be good enough security for my circumstances,
-and further when I have coding agents working on things on my machine
-I want them to be able to do signed commits without constant intervention.)
+until you log out, shutdown/reboot, or remove the YubiKey.[^touch-to-sign]
 
 I would be remiss in talking about software supply chain
 if I didn't mention that GPG isn't the only way to sign commits.
@@ -78,7 +68,8 @@ uses OpenID Connect to create keyless signatures
 that are strongly tied to your identity without requiring long-lived keys at all.
 Certain organizations may be at the level of maturity where Sigstore + OIDC
 is the right fit for showing provenance,
-but everyone is on their own journey and at different points in that journey.
+but everyone is on their own software supply chain journey
+and organizations and people are at different points in that journey.
 Notably, GitHub doesn't currently show the green "Verified" label for Sigstore signatures—which
 my dopamine would be sad about—but
 Sigstore does provide strong cryptographic assurances through its transparency log.
@@ -89,12 +80,9 @@ In the absence of other options being available to you,
 I recommend setting up GPG commit signing yourself,
 because it is entirely within your control,
 and is also what the Linux and Git open source projects use for signing themselves,
-and is better than nothing.
+and is GPG signing better than nothing.
 If you are someone who prefers using SSH with GitHub,
-then SSH signing may be more appealing for you.
-(And given you know how to get SSH going with GitHub,
-I assume you can figure out how to setup commit signing with that as well,
-and further can figure out how to use an SSH key on a YubiKey.)
+then SSH signing may be more appealing for you.[^ssh-signing]
 
 ## Overview / TL;DR
 
@@ -109,17 +97,7 @@ The end result: every `git commit` triggers a signing operation on your YubiKey,
 and the commit gets a cryptographic signature that GitHub (or any verifier)
 can check against your public key.
 
-## Credits and Caveats
-
-I've been using this setup since 2018 and have accumulated around 920 signatures on my current YubiKey
-(after the one YubiKey I had been using the longest got stolen—more on that in a bit).
-The approach below is opinionated—there are other valid ways to do this,
-and there are alternatives like SSH signing instead of GPG (which GitHub also supports now).
-If you already have a workflow that works for you, this guide may not be for you.
-
-I'll break things down between macOS, Linux (Ubuntu), and Windows,
-similar to my
-[Python environments guide](/2024/04/a-no-nonsense-guide-to-setting-up-python-environments/).
+I'll break things down as we go between macOS, Linux (Ubuntu)[^other-distros], and Windows.
 
 ## Prerequisites
 
@@ -142,11 +120,9 @@ This way, if a subkey is ever compromised, you can revoke just that subkey witho
 entire identity.
 
 This guide recommends `ed25519` for all keys.
-It's the modern default -- smaller keys, faster signing, and a simpler implementation with fewer
-knobs to misconfigure compared to RSA.
-YubiKey 5 series supports ed25519 natively.
-(My own keys are RSA 4096 from 2018, which is still perfectly secure,
-but if I were starting fresh today I'd go with ed25519.)
+It's the modern default—smaller keys, faster signing, and a simpler implementation
+with fewer knobs to misconfigure compared to RSA.
+YubiKey 5 series supports `ed25519` natively.[^rsa-still-fine]
 
 ### macOS
 
@@ -159,20 +135,29 @@ brew install gnupg
 gpg --full-generate-key --expert
 ```
 
-During the interactive prompts:
+During the interactive prompts, you'll see a numbered menu.
+There are two paths:
 
-1. Choose **(9) ECC and ECC** (or **(11) ECC (set your own capabilities)** if you want Certify only)
-2. Select **Curve 25519**
-3. Set an expiration (I use 10+ years, but you can always extend it later)
-4. Enter your name and email address
-5. Set a strong passphrase -- you'll need this to manage the key,
+**Quick path -- option (9) "ECC and ECC":**
+creates a master key that can certify and sign,
+plus an encryption subkey, all in one step.
+
+**Clean path -- option (11) "ECC (set your own capabilities)":**
+lets you toggle capabilities individually so you can create a certify-only master key,
+then add dedicated Sign, Encrypt, and Auth subkeys afterward.[^subkey-separation]
+
+I recommend the clean path (option 11) for the reasons in the footnote,
+but option 9 is perfectly fine if you want to get going quickly.
+
+Whichever you choose, the remaining prompts are the same:
+
+1. Select **Curve 25519**
+2. Set an expiration (I use 10+ years, but you can always extend it later)
+3. Enter your name and email address.[^gpg-email-matching]
+4. Set a strong passphrase -- you'll need this to manage the key,
    but day-to-day signing will use your YubiKey PIN
 
-If you chose option (9), GPG creates both a master key (certify + sign) and an encryption subkey
-automatically.
-If you want a dedicated signing subkey separate from your master key
-(recommended for the same reason you don't use your root CA to sign leaf certs),
-use option (11) to create a certify-only master, then add subkeys:
+If you chose option (11), add your signing subkey now:
 
 ```bash
 # Replace YOUR_KEY_ID with your master key ID from the output above
@@ -669,5 +654,42 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 ## Footnotes
 {:.no_toc}
 
-[^1]: Technically, GPG signing uses a hash of the commit content, which is then signed with your private key.
+[^commit-impersonation]: It can happen, and
+    [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
+
+[^gpg-hash-then-sign]: Technically, GPG signing uses a hash of the commit content,
+    which is then signed with your private key.
     The verifier re-hashes the commit and checks the signature against your public key.
+
+[^touch-to-sign]: You can optionally
+    [enable touch-to-sign](https://docs.yubico.com/software/yubikey/tools/ykman/OpenPGP_Commands.html#ykman-openpgp-keys-set-touch-options-key-policy)
+    via `ykman openpgp keys set-touch sig on`
+    for an extra layer of physical confirmation for *each and every signing operation*,
+    but it's off by default.
+    I don't personally use this because I consider the initial PIN unlock
+    to be good enough security for my circumstances,
+    and further when I have coding agents working on things on my machine
+    I want them to be able to do signed commits without constant intervention.
+
+[^ssh-signing]: And given you know how to get SSH going with GitHub,
+    I assume you can figure out how to set up commit signing with that as well,
+    and further can figure out how to use an SSH key on a YubiKey—just
+    a couple questions to your favorite AI and you'll have that done.
+
+[^other-distros]: I'll assume that if you're well-versed in Linux
+    that you can figure this out for your distro of choice.
+
+[^rsa-still-fine]: My own keys are RSA 4096 from 2018, which is still perfectly secure,
+    but if I were starting fresh today I'd go with ed25519.
+
+[^subkey-separation]: This is recommended for the same reason you don't use your root CA
+    to sign leaf certs -- if a subkey is compromised, you revoke just that subkey
+    without losing your entire identity.
+
+[^gpg-email-matching]: Use the same email address you commit with in Git
+    (i.e. the one in `git config user.email`).
+    GitHub matches the commit's author email against the UIDs on your GPG key
+    to decide whether to show the "Verified" badge.
+    If you commit with multiple email addresses
+    (e.g. personal and work), you can add additional UIDs to the same key
+    with `gpg --edit-key YOUR_KEY_ID` then `adduid`.
