@@ -18,13 +18,26 @@ tags:
 *William Orpen, The Signing of Peace in the Hall of Mirrors, 1919. Imperial War Museum, London. Public domain,
 via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
 
-I'm a big believer in the promise and evolution of the secure software supply chain,
-and I am also of the belief that a secure software supply chain starts with *you*,
+I'm a big believer in the promise and evolution of the secure software supply chain.
+
+I am also of the belief that a secure software supply chain starts with *you*,
 on your local machine.
 
-GPG-signed Git commits help to prove that code actually came from you,
+GPG-signed Git commits help to prove that your code actually came from you (possibly in tandem an AI agent helping you),
 and storing your signing key on a YubiKey means the private key never touches your filesystem.
-This guide walks through setting it all up on macOS, Windows, and Ubuntu.
+
+This guide walks through how to set up GPG commit signing with a YubiKey on macOS, Windows, and Ubuntu.
+
+Though I mention YubiKey explicitly here
+(because that's what I use and seems to be the most popular),
+other brands of hardware security keys can be used,
+like NitroKey, OnlyKey, Token2 and Feitean.
+Notably, while Google's Titan security key supports FIDO2,
+it's important to be aware that it does not support GPG commit signing.
+Many of the steps outlined here for YubiKey will be similar for other keys.
+
+* TOC
+{:toc}
 
 ## Why Bother?
 
@@ -45,8 +58,10 @@ signing operation happens on the YubiKey itself,
 and you confirm it by entering your YubiKey PIN for the first signing.
 After that, the YubiKey stays unlocked for subsequent signings
 until you log out, shutdown/reboot, or remove the YubiKey.
-(You can optionally enable touch-to-sign for an extra layer of physical confirmation
-for *each and every signing operation*,
+(You can optionally
+[enable touch-to-sign](https://docs.yubico.com/software/yubikey/tools/ykman/OpenPGP_Commands.html#ykman-openpgp-keys-set-touch-options-key-policy)
+via `ykman openpgp keys set-touch sig on`
+for an extra layer of physical confirmation for *each and every signing operation*,
 but it's off by default—I
 don't personally use this because I consider the initial PIN unlock to be good enough security for my circumstances,
 and further when I have coding agents working on things autonomously on my machine
