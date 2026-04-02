@@ -779,7 +779,11 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 
 [^commit-impersonation]: It can happen, and
     [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
-    Also credit to Scott Hanselman whose post originally got me into all this.
+    Also credit to Scott Hanselman whose aformentioned linked post originally got me into all this;
+    it's a great guide for Windows.
+    In his case he uses a key he created from [Keybase](https://keybase.io/),
+    which is an awesome service that I've also used,
+    but has been a bit dormant since Zoom acquired them.
 
 [^gpg-hash-then-sign]: Technically, GPG signing uses a hash of the commit content,
     which is then signed with your private key.
