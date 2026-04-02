@@ -818,7 +818,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     but if I were starting fresh today I'd go with ed25519.
 
 [^subkey-separation]: This is recommended for the same reason you don't use your root CA
-    to sign leaf certs -- if a subkey is compromised, you revoke just that subkey
+    to sign leaf certs—if a subkey is compromised, you revoke just that subkey
     without losing your entire identity.
 
 [^gpg-email-matching]: GitHub matches the commit's author email
@@ -837,7 +837,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 
 [^stolen-yubikey-risk]: You might wonder whether I rotated my signing key
     after the YubiKey was stolen.
-    I didn't -- the private key cannot be extracted from a YubiKey,
+    I didn't—the private key cannot be extracted from a YubiKey,
     and the PIN retry counter locks the card after 3 failed attempts,
     so the practical risk was near zero.
     If you want to be extra cautious in a similar situation,
