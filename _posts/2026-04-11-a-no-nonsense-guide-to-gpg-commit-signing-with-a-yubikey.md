@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A No-Nonsense Guide to GPG Commit Signing with a YubiKey
-date: 2026-03-31 00:00:00
+date: 2026-04-11 00:00:00
 description: >
   GPG-signed Git commits prove that code actually came from you,
   and storing your signing key on a YubiKey means the private key
