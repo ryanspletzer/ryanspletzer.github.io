@@ -18,13 +18,25 @@ tags:
 *William Orpen, The Signing of Peace in the Hall of Mirrors, 1919. Imperial War Museum, London. Public domain,
 via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
 
-I'm a big believer in the promise and evolution of the secure software supply chain.
+Anyone who knows me well knows that I nerd out about some specific things,
+like [OAuth](/2025/11/oidc-oauth-spec-graph/) and its adjacent specs like OpenID Connect, JWT, etc.,
+and other auth specs like FIDO2/WebAuthn and SPIFFE/SPIRE,
+[Git itself](https://git-scm.com/book/en/v2),[^pro-git-book]
+CI/CD,
+Zero Trust,
+certain fancy words like "[idempotency](https://en.wikipedia.org/wiki/Idempotence),"
+and in recent years AI and data engineering practices.
 
-I am also of the belief that a secure software supply chain starts with *you*,
+I'm also a big believer in the promise and evolution of the secure software supply chain,
+and am of the firm belief that a secure software supply chain starts with *you*,
 on your local machine.
 
-GPG-signed Git commits help to prove that your code actually came from you (possibly in tandem an AI agent helping you),
-and storing your signing key on a YubiKey means the private key never touches your filesystem.
+Therefore it should come as no surprise
+that I nerd out quite heavily about GPG-signed Git commits
+to help to prove that your code actually came from *you*
+(possibly in tandem an AI agent helping you),
+and taking that an extra step further
+and storing your signing key on a YubiKey so that the private key never touches your filesystem.
 
 This guide walks through how to set up GPG commit signing with a YubiKey on macOS, Windows, and Ubuntu.
 
@@ -32,8 +44,8 @@ Though I mention YubiKey explicitly here
 (because that's what I use and seems to be the most popular),
 other brands of hardware security keys can be used,
 like NitroKey, OnlyKey, Token2 and Feitean.
-Notably, while Google's Titan security key supports FIDO2,
-it's important to be aware that it does not support GPG commit signing.
+Notably, while Google's Titan security key supports FIDO2/WebAuthn,
+it's important to be aware that Titan security keys do *not* support GPG commit signing.
 Many of the steps outlined here for YubiKey will be similar for other keys.
 
 * TOC
@@ -105,7 +117,7 @@ Before diving in, you'll need:
 
 * A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
   (YubiKey 5 series or newer is recommended; older YubiKey 4 works too)
-* A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)
+* A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)[^yubikey-accessories]
 * Some comfort with the command line
 
 ## Step 1: Generate Your GPG Key Pair
@@ -130,6 +142,8 @@ YubiKey 5 series supports `ed25519` natively.[^rsa-still-fine]
 # Install GnuPG via Homebrew
 brew install gnupg
 
+# Or build from source: https://www.gnupg.org/download/
+
 # Generate a master key with ed25519
 # The interactive prompts will walk you through this
 gpg --full-generate-key --expert
@@ -153,8 +167,11 @@ Whichever you choose, the remaining prompts are the same:
 
 1. Select **Curve 25519**
 2. Set an expiration (I use 10+ years, but you can always extend it later)
-3. Enter your name and email address.[^gpg-email-matching]
-4. Set a strong passphrase -- you'll need this to manage the key,
+3. Enter your name and email address—use
+   the same email address you commit with in Git
+   (i.e. the one in `git config user.email`).[^gpg-email-matching]
+4. Set a strong passphrase—you'll
+   need this to manage the key,
    but day-to-day signing will use your YubiKey PIN
 
 If you chose option (11), add your signing subkey now:
@@ -182,7 +199,7 @@ sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd
 gpg --full-generate-key --expert
 ```
 
-The process is identical to macOS from here -- add subkeys with `gpg --expert --edit-key`.
+The process is identical to macOS from here—add subkeys with `gpg --expert --edit-key`.
 
 ### Windows
 
@@ -200,7 +217,7 @@ Same interactive process as above for key generation and subkey creation.
 
 ## Step 2: Move the Signing Subkey to Your YubiKey
 
-This is the critical step -- once you move a subkey to the YubiKey,
+This is the critical step—once you move a subkey to the YubiKey,
 **it is removed from your local keyring**.
 The local keyring will retain a "stub" that points to the YubiKey,
 but the actual private key material only exists on the hardware token.
@@ -213,9 +230,15 @@ gpg --export-secret-keys --armor YOUR_KEY_ID > /path/to/secure/backup/master-key
 gpg --export-secret-subkeys --armor YOUR_KEY_ID > /path/to/secure/backup/subkeys.asc
 ```
 
-Store these backups somewhere secure -- an encrypted USB drive, a safe,
-or another offline location.
+Store these backups somewhere secure.
 You'll need them if your YubiKey is ever lost or broken.
+Some practical options:
+
+* An encrypted USB drive stored in a fireproof safe or safety deposit box
+* As file attachments in a password manager like 1Password or Bitwarden
+  (the keys are already passphrase-protected, and you likely trust your
+  password manager with everything else already)
+* An encrypted archive in a cloud drive
 
 Now, insert your YubiKey and move the signing subkey onto it:
 
@@ -241,27 +264,26 @@ and your subkey listing should show `ssb>` (the `>` indicates the key is on a ca
 
 ### Loading the same key onto a second YubiKey
 
-I strongly recommend having two YubiKeys --
+I strongly recommend having two YubiKeys:
 a primary that you carry and a backup stored somewhere safe
 (I keep mine in a fireproof safe at home).
-This is good practice for FIDO2/WebAuthn
+This is good practice for FIDO2/WebAuthn[^fido2-passkeys] as well
 (where you'd pre-register both keys with your services),
 and it applies equally to GPG signing.
 
 When my primary YubiKey was stolen
-(along with my backpack—more learnings from that to come in a future blog post),
-I was very glad I had a backup ready to go.
+(along with my backpack—more post-mortem learnings from that to come in a future blog post!),
+I was very glad I had a backup ready to go.[^stolen-yubikey-risk]
 Without it, I would have needed to generate entirely new keys,
 re-upload them to GitHub, and update every machine I use.
 
 The simplest approach is to load the *same* signing subkey onto both YubiKeys.
-This way your `.gitconfig` doesn't change regardless of which key is plugged in --
-Git just sees the same subkey ID either way.
+This way your `.gitconfig` doesn't change regardless of which key is plugged in—Git
+just sees the same subkey ID either way.
 The tradeoff is that you can't revoke one without revoking the other
 (since it's the same subkey),
-but for a lost-or-stolen scenario this is usually fine
-because you'd revoke the subkey regardless
-and generate a new one from your backed-up master key.
+but since the private key can't be extracted from a stolen YubiKey,
+this is unlikely to matter in practice.
 
 To do this, **before you discard your local key backup** from the step above,
 move the subkey to your second YubiKey:
@@ -290,8 +312,8 @@ on the new card.
 
 Once your subkeys are on your YubiKey(s) and your backups are safely stored offline,
 there's no reason to keep the master key's private portion on your local keyring.
-You only need the master key for infrequent key management tasks --
-adding a new UID, extending the expiration date, revoking a subkey,
+You only need the master key for infrequent key management tasks—adding
+a new UID, extending the expiration date, revoking a subkey,
 or signing someone else's key.
 For day-to-day commit signing, the subkey on your YubiKey is all you need.
 
@@ -323,6 +345,8 @@ The macOS setup involves a few pieces:
 ```bash
 # Install pinentry-mac for the PIN prompt dialog
 brew install pinentry-mac
+
+# Or build from source: https://github.com/GPGTools/pinentry-mac
 ```
 
 Configure GPG to use `pinentry-mac` for PIN entry --
@@ -336,8 +360,8 @@ pinentry-program /opt/homebrew/bin/pinentry-mac
 If you're on an Intel Mac, the path would be `/usr/local/bin/pinentry-mac` instead.
 
 This is worth calling out: using a GUI pinentry like `pinentry-mac` instead of the text-based
-`pinentry-curses` or `pinentry-tty` isn't just a cosmetic preference --
-it's a practical requirement if you use AI coding tools like
+`pinentry-curses` or `pinentry-tty` isn't just a cosmetic preference—it's
+a practical requirement if you use AI coding tools like
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)
 that execute Git commands on your behalf.
 I used to use the text-based pinentry in my terminal,
@@ -348,8 +372,8 @@ triggered the commit, so signing works seamlessly whether you're committing manu
 AI assistant.
 
 You may also want to set `no-tty` in your GPG config,
-which further ensures GPG doesn't try to interact with the terminal directly --
-this complements the GUI pinentry approach:
+which further ensures GPG doesn't try to interact with the terminal directly—this
+complements the GUI pinentry approach:
 
 ```text
 # ~/.gnupg/gpg.conf
@@ -369,6 +393,12 @@ Set the `GPG_TTY` environment variable in your shell RC file
 ```bash
 # Add to ~/.zshrc or ~/.bashrc
 export GPG_TTY=$(tty)
+
+# Or for fish, add to ~/.config/fish/config.fish
+# set -x GPG_TTY (tty)
+
+# Or for PowerShell, add to your $PROFILE
+# $env:GPG_TTY = (tty)
 ```
 
 Now configure Git:
@@ -393,6 +423,9 @@ sudo apt install -y pinentry-curses
 
 # Add to ~/.bashrc or ~/.zshrc
 export GPG_TTY=$(tty)
+
+# Or for fish, add to ~/.config/fish/config.fish
+# set -x GPG_TTY (tty)
 
 # Configure Git
 git config --global gpg.program gpg
@@ -457,14 +490,14 @@ git log --show-signature -1
 You should see output indicating a good signature from your key.
 If your YubiKey is plugged in, you'll be prompted for your PIN.
 
-If your YubiKey is **not** plugged in, the commit will fail --
-this is the intended behavior, because the private key only exists on the hardware token.
+If your YubiKey is **not** plugged in, the commit will fail—this
+is the intended behavior, because the private key only exists on the hardware token.
 
 ## Setting Up on a New Machine
 
 Getting your initial key generated and moved onto the YubiKey is a one-time thing.
-But when you get a new machine -- or reinstall your OS --
-you need to get the new machine to recognize the key that's already on your YubiKey.
+But when you get a new machine—or reinstall your OS—you
+need to get the new machine to recognize the key that's already on your YubiKey.
 This is the part that tripped me up the first time,
 because the steps are different from the initial setup and not always well-documented.
 
@@ -507,6 +540,12 @@ no-tty
 ```bash
 # Add to ~/.zshrc or ~/.bashrc
 export GPG_TTY=$(tty)
+
+# Or for fish, add to ~/.config/fish/config.fish
+# set -x GPG_TTY (tty)
+
+# Or for PowerShell, add to your $PROFILE
+# $env:GPG_TTY = (tty)
 
 # Configure Git
 git config --global gpg.program /opt/homebrew/bin/gpg
@@ -555,6 +594,9 @@ pinentry-program /usr/bin/pinentry-gnome3
 # Add to ~/.bashrc or ~/.zshrc
 export GPG_TTY=$(tty)
 
+# Or for fish, add to ~/.config/fish/config.fish
+# set -x GPG_TTY (tty)
+
 # Configure Git
 git config --global gpg.program gpg
 git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
@@ -592,7 +634,7 @@ so no separate pinentry configuration is needed.
 
 The steps above assume you have your public key file handy.
 To avoid fumbling for it on a new machine,
-you can export it to a keyserver ahead of time:
+you can *optionally* export it to a keyserver ahead of time:
 
 ```bash
 # Upload to a public keyserver (do this from your current machine)
@@ -605,8 +647,10 @@ Then on the new machine, import it directly:
 gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
 ```
 
-Alternatively, keep your public key (not your private key!) in a place you can
-easily access -- a private GitHub gist, a cloud drive, or even committed to your dotfiles repo.
+Alternatively, keep your public key (not your private key!)
+in a place you can easily access—a
+private GitHub gist, a cloud drive, or even committed to your dotfiles repo (potentially),
+but honestly what I do is just keep this in my password manager, too, for convenience.
 
 ## Troubleshooting
 
@@ -641,49 +685,101 @@ gpgconf --kill gpg-agent
 
 ## Bonus: Using Your YubiKey for SSH Authentication
 
-If you added an authentication subkey to your YubiKey, you can also use it for SSH.
+If you added an authentication subkey to your YubiKey during key generation,
+you can use that same YubiKey for SSH authentication --
+meaning one hardware token handles both GPG commit signing and SSH access.
+
+The way this works is that the GPG agent can act as an SSH agent.
+When you `ssh` into a server or `git push` over SSH,
+the GPG agent intercepts the request and uses the authentication subkey
+on your YubiKey to perform the handshake.
+The SSH private key never exists as a file on disk,
+just like your signing key.
+
+### Setup
+
+First, tell the GPG agent to offer SSH support.
 Add this to your `gpg-agent.conf`:
 
 ```text
 enable-ssh-support
 ```
 
-And add this to your shell RC:
+Then point your shell's `SSH_AUTH_SOCK` at the GPG agent's socket
+instead of the default SSH agent:
 
 ```bash
+# Add to ~/.zshrc or ~/.bashrc
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+# Or for fish, add to ~/.config/fish/config.fish
+# set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 ```
 
-Then add your authentication key's "keygrip" to `~/.gnupg/sshcontrol`:
+Next, tell the GPG agent which key to offer for SSH.
+Each GPG key has a "keygrip" -- a hash that identifies it independently of the key ID.
+You need to add your authentication subkey's keygrip to `~/.gnupg/sshcontrol`:
 
 ```bash
-# Find the keygrip
+# Find the keygrips for your key
 gpg --list-keys --with-keygrip YOUR_KEY_ID
 
-# Add the authentication subkey's keygrip to sshcontrol
+# Look for the keygrip on the line after your [A] (authentication) subkey
+# and add it to sshcontrol
 echo "YOUR_AUTH_KEYGRIP" >> ~/.gnupg/sshcontrol
 ```
 
-Now `ssh-add -L` will show your GPG-backed SSH key,
-which you can add to GitHub, servers, etc.
+Restart the GPG agent for changes to take effect:
+
+```bash
+gpgconf --kill gpg-agent
+```
+
+### Verifying it works
+
+With your YubiKey plugged in, you should now see your GPG-backed SSH key:
+
+```bash
+ssh-add -L
+```
+
+This outputs a public key in SSH format that you can add to GitHub
+(**Settings > SSH and GPG keys > New SSH key**),
+paste into a server's `~/.ssh/authorized_keys`,
+or use anywhere else you'd use an SSH key.
+
+The difference is that when you actually authenticate,
+the private key operation happens on the YubiKey --
+you'll see the PIN prompt (or touch, if you enabled it)
+just like with commit signing.
 
 ## Closing Thoughts
 
 This setup has served me well for years.
 The day-to-day experience is simple: plug in the YubiKey, commit code, enter the PIN when prompted.
-The security benefit is significant --
-your signing key never exists as a file that could be stolen or accidentally leaked.
+The security benefit is significant—your
+signing key never exists as a file that could be stolen or accidentally leaked.
 
-The initial setup is admittedly a bit involved, especially the key generation and subkey-to-card
-transfer steps,
-but it's a one-time cost that pays dividends in the form of verified commits and peace of mind.
+The initial setup is admittedly a bit involved,
+especially the key generation and subkey-to-card transfer steps,
+but it's a one-time cost that pays dividends in the form of verified commits and peace of mind
+(and dopamine hits from green "Verified" commit labels in GitHub—gets me every time).
 
 <!-- markdownlint-disable-next-line MD022 -->
 ## Footnotes
 {:.no_toc}
 
+[^pro-git-book]: I highly recommend
+    [Pro Git](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub.
+    It's free to read online,
+    and it's the most thorough resource on Git internals and workflows
+    I've come across.
+    If you want to understand how Git actually works under the hood
+    rather than just memorizing commands, this is the book.
+
 [^commit-impersonation]: It can happen, and
     [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
+    Also credit to Scott Hanselman whose post originally got me into all this.
 
 [^gpg-hash-then-sign]: Technically, GPG signing uses a hash of the commit content,
     which is then signed with your private key.
@@ -707,6 +803,17 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 [^other-distros]: I'll assume that if you're well-versed in Linux
     that you can figure this out for your distro of choice.
 
+[^yubikey-accessories]: A couple of practical accessories I use:
+    I keep a pair of
+    [magnetic USB-C adapters](https://www.amazon.com/dp/B0CGLM6PYN)
+    on each of my machines so I can pull the YubiKey off MagSafe-style
+    when moving between them—this
+    also alleviates the fear of snapping a YubiKey off in a USB port.
+    And since YubiKeys are small and easy to misplace,
+    I attached an AirTag on a key ring
+    (yes, I like the Apple Finewoven AirTag key rings)
+    along with a small [hand strap](https://www.amazon.com/dp/B08RX4V4CM) to make it easier to keep track of.
+
 [^rsa-still-fine]: My own keys are RSA 4096 from 2018, which is still perfectly secure,
     but if I were starting fresh today I'd go with ed25519.
 
@@ -714,10 +821,25 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     to sign leaf certs -- if a subkey is compromised, you revoke just that subkey
     without losing your entire identity.
 
-[^gpg-email-matching]: Use the same email address you commit with in Git
-    (i.e. the one in `git config user.email`).
-    GitHub matches the commit's author email against the UIDs on your GPG key
+[^gpg-email-matching]: GitHub matches the commit's author email
+    against the UIDs on your GPG key
     to decide whether to show the "Verified" badge.
     If you commit with multiple email addresses
     (e.g. personal and work), you can add additional UIDs to the same key
     with `gpg --edit-key YOUR_KEY_ID` then `adduid`.
+
+[^fido2-passkeys]: FIDO2 and WebAuthn are the underlying standards behind
+    what most people now know as
+    [passkeys](https://fidoalliance.org/passkeys/).
+    A YubiKey can act as a hardware-bound passkey for logging into services
+    like GitHub, Google, and Microsoft—separate
+    from GPG signing, but using the same physical device.
+
+[^stolen-yubikey-risk]: You might wonder whether I rotated my signing key
+    after the YubiKey was stolen.
+    I didn't -- the private key cannot be extracted from a YubiKey,
+    and the PIN retry counter locks the card after 3 failed attempts,
+    so the practical risk was near zero.
+    If you want to be extra cautious in a similar situation,
+    you should revoke the subkey and generate a new one
+    from your backed-up master key.
