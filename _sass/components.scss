@@ -261,21 +261,6 @@ h2.post-title:first-of-type {
   }
 }
 
-// Wide viewport: float TOC into left margin as sticky nav
-@media (min-width: 96em) {
-  #markdown-toc {
-    position: sticky;
-    inset-block-start: 1.25rem;
-    float: left;
-    width: 14rem;
-    margin-inline-start: -16rem;
-    margin-block-start: 0;
-    max-height: calc(100vh - 2.5rem);
-    overflow-y: auto;
-    font-size: 0.8rem;
-  }
-}
-
 // Footnote hover tooltips
 // JS clones footnote content into a .footnote-tooltip child of each <sup>.
 // CSS handles visibility on hover.
