@@ -129,7 +129,9 @@ And immediately realized what I'd done.
 (You may be asking why we weren't using IaC—well,
 we were, but in those early days of Azure OpenAI
 things could get quite finnicky,
-and sometimes we'd need to intervene manually.)
+and sometimes we'd need to intervene manually,
+and while IaC is helpful for *standing up* infrastructure,
+tearing it down doesn't get exercised quite as often.)
 
 Luckily,
 we were able to recreate the resource group
@@ -138,8 +140,14 @@ and restore the exact same resources inside it with some scripting
 before it caused too much disruption.
 But the outcome was the same as before:
 we didn't just move on and hope it wouldn't happen again.
-We introduced resource locks on the critical resources in Azure
-to prevent accidental deletion going forward.
+We introduced
+[resource locks](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json)
+on the resource group and resources in our Azure OpenAI sandbox
+to prevent accidental deletion going forward
+(because, really, how often do you ever need to be able to delete a whole resource group,
+even a non-prod one;
+and even when you do,
+you can take a moment to remove the locks).
 
 ## So what does this have to do with AI?
 
