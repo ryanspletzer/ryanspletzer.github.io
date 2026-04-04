@@ -20,7 +20,7 @@ Via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_t
 
 Around 2014,
 I was working on a system in R&D at my old company
-that allowed that let users and lab data acquisition application
+that allowed lab data acquisition applications and users
 to work with and view high-resolution images
 of exterior paint test panels from exposure stations
 at what we called
@@ -44,7 +44,7 @@ and occasionally it's helpful to just blow away your LocalDB
 and let EF recreate it from scratch.
 Clean slate,
 fresh seed data
-(where it's usually helpful to add at least one record or more
+(where it's usually helpful to add one or more records
 to each table for testing),
 move on with your day.
 
@@ -119,8 +119,8 @@ that many folks across the organization were using day-to-day
 for proofs of concept.
 
 The Azure Portal has an undesirable UI paradigm
-where the "Delete resource group" button lives dangerously in the same position
-to the "Delete resource" button.
+where the "Delete resource group" button lives dangerously close to the same position
+as the "Delete resource" button.
 You can probably see where this is going.
 
 I clicked the wrong one at the wrong screen.
@@ -134,7 +134,7 @@ and sometimes we'd need to intervene manually.)
 Luckily,
 we were able to recreate the resource group
 and restore the exact same resources inside it with some scripting
-(which, there's nothing like scripting under pressure)
+(and there's nothing like scripting under pressure)
 before it caused too much disruption.
 But the outcome was the same as before:
 we didn't just move on and hope it wouldn't happen again.
@@ -147,7 +147,7 @@ I keep thinking about these experiences
 now that we're handing AI agents the keys to real systems.
 
 The principle of least privilege isn't new.
-From when I first started working with AWS,
+Since I first started working with AWS,
 we've always stressed crafting IAM roles
 with only the permissions a service actually needs.
 But there's something worth stating plainly:
@@ -158,14 +158,20 @@ then simply don't grant it.
 That's it.
 Same lesson I learned the hard way in 2014.
 
-What's different now is that AI can actually help you
-craft those tightly scoped IAM roles with infrastructure as code.
+What's different now is that AI is actually good at the tedious part:
+writing tightly scoped IAM policies in infrastructure as code,
+the kind of work people skip because it's boring.
 And it's going to matter a lot more
-when the services using those roles
-are themselves running AI agents.
+when the services behind those roles
+are themselves AI agents.
 
-Sandboxing for AI is still being iterated on.
-But the principle is the same one
-I stumbled into with a dropped dev database:
+The industry is still in the throes of discussing sandboxing for AI,
+but even the most sandboxed agent,
+when given a permission it doesn't need,
+in the absence of additional checks on commands it would run,
+still has the potential to do bad things,
+like drop a database...
+So the principle is the same one
+I stumbled into when I, as a human, dropped a dev database:
 don't give yourself, or your agents,
 permissions you don't really need.
