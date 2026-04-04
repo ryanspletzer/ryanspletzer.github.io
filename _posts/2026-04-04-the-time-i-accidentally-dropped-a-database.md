@@ -18,15 +18,14 @@ tags:
 Royal Museums of Fine Arts of Belgium.
 Via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_%26_Culture.jpg).*
 
-Around 2014,
-I was working on a system in R&D at my old company
-that allowed lab data acquisition applications and users
-to work with and view high-resolution images
+Over a decade ago,
+I was working on a system
+that allowed users to work with images
 of exterior paint test panels from exposure stations
 at what we called
 "the [paint farm](https://www.pcimag.com/articles/102269-a-look-at-dows-paint-farm-and-technology-center)."
 The backend that helped to track all of this
-was ASP.NET Web API with Entity Framework and SQL Server,
+was an ASP.NET Web API with Entity Framework and SQL Server,
 and I was working on that part of the stack,
 iterating on the database schema
 and its OData-based API.
