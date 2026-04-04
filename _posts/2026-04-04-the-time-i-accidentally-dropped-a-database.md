@@ -119,8 +119,8 @@ that many folks across the organization were using day-to-day
 for proofs of concept.
 
 The Azure Portal has an undesirable UI paradigm
-where the "Delete resource group" button lives dangerously close to the same position
-as the "Delete resource" button.
+where the "Delete resource group" button lives dangerously close to
+the "Delete resource" button.
 You can probably see where this is going.
 
 I clicked the wrong one at the wrong screen.
