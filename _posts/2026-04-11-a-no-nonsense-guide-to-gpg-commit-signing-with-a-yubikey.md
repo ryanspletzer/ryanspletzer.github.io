@@ -679,7 +679,14 @@ importing it on the new machine is one command:
 gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
 ```
 
-Otherwise, import it from your password manager, a file, or another machine.
+Otherwise, import it from a file
+(downloaded from your password manager, cloud drive, etc.)
+or export it from another machine that already has it:
+
+```bash
+# From a file
+gpg --import /path/to/your-public-key.asc
+```
 
 ### macOS – New Machine
 
