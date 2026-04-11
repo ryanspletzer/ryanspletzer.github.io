@@ -186,7 +186,7 @@ Before diving in, you'll need:
 * A computer with a USB port
   (which depends on your YubiKey model,
   but on modern computers I'd opt for USB Type-C if you can)
-* Some comfort with the command line
+* Some comfort with the command line[^windows-cmd]
 
 ## Step 1: Generate Your GPG Key Pair
 
@@ -695,7 +695,7 @@ or export it from another machine that already has it:
 
 ```bash
 # From a file
-gpg --import /path/to/public-key.asc
+gpg --import ~/gpg-export/public-key.asc
 ```
 
 ### macOS – New Machine
@@ -707,7 +707,7 @@ gpg --import /path/to/public-key.asc
 brew install gnupg pinentry-mac
 
 # Import your public key (from a backup, a keyserver, or export from another machine)
-gpg --import /path/to/public-key.asc
+gpg --import ~/gpg-export/public-key.asc
 
 # Plug in your YubiKey and tell GPG to discover the private key stubs on the card
 gpg --card-status
@@ -763,7 +763,7 @@ sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd pinentry-gnome3
 # Or headless: replace pinentry-gnome3 with pinentry-curses
 
 # Import your public key
-gpg --import /path/to/public-key.asc
+gpg --import ~/gpg-export/public-key.asc
 
 # Plug in your YubiKey and discover the private key stubs
 gpg --card-status
@@ -814,7 +814,7 @@ git config --global commit.gpgsign true
 choco install gpg4win -y
 
 # Import your public key (from PowerShell, Git Bash, or cmd)
-gpg --import C:\path\to\public-key.asc
+gpg --import ~/gpg-export/public-key.asc
 
 # Plug in your YubiKey and discover the private key stubs
 gpg --card-status
@@ -895,7 +895,7 @@ so verifiers (like GitHub) know about the change:
 
 ```bash
 # Export the updated public key
-gpg --armor --export YOUR_MASTER_KEY_ID > updated-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > ~/gpg-export/public-key.asc
 ```
 
 Then replace the key in GitHub under
@@ -984,7 +984,7 @@ The revocation needs to reach anyone who might verify your signatures:
 
 ```bash
 # Export the updated public key (now containing the revocation)
-gpg --armor --export YOUR_MASTER_KEY_ID > revoked-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > ~/gpg-export/public-key.asc
 
 # Push to keyserver if you use one
 gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
@@ -1062,8 +1062,10 @@ Sometimes you need to start from scratch with an entirely new GPG identity.
 
 Scenarios where a complete re-key makes sense:
 
-* Your **master key** was compromised (not just a subkey)
-* You want to **switch algorithms** (e.g. RSA 4096 to ed25519)
+* Your **master key** was compromised (not just a subkey)—practically
+  this means someone obtained your key material along with the passphrase,
+  or obtained your key material and your passphrase was weak enough to be guessed
+* You want to **switch algorithms** (e.g. `RSA 4096` to `ed25519`)
 * You've **lost both YubiKeys and your secure backup**—you
   have no way to recover the old key
 * Your key has **expired** and you'd rather start fresh
@@ -1108,7 +1110,8 @@ Previously-verified commits keep their "Verified" badge regardless.
 If you've lost access to both the master key *and* the revocation certificate,
 you can't revoke it—just
 remove the old public key from GitHub and move on.
-The old key will eventually expire on its own
+Previously-verified commits still keep their "Verified" badge,
+and the old key will eventually expire on its own
 (assuming you set an expiration date, which is one more reason to always set one).
 
 ### Generate New Keys and Set Up from Scratch
@@ -1187,7 +1190,7 @@ so that verifiers know about the new dates:
 
 ```bash
 # Export the updated public key
-gpg --armor --export YOUR_MASTER_KEY_ID > updated-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > ~/gpg-export/public-key.asc
 
 # Push to keyserver if you use one
 gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
@@ -1395,6 +1398,11 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     I attached an AirTag on a key ring
     (I like the Apple Finewoven AirTag key rings)
     along with a small [hand strap](https://www.amazon.com/dp/B08RX4V4CM) to make it easier to keep track of.
+
+[^windows-cmd]: On Windows, all commands in this post work in PowerShell and Git Bash.
+    If you use cmd, you'll need to substitute `%USERPROFILE%` for `~`
+    and use backslashes for paths—but
+    I'd recommend using PowerShell or Git Bash instead.
 
 [^rsa-still-fine]: My own keys are RSA 4096 from 2018, which is still perfectly secure,
     but if I were starting fresh today I'd go with ed25519.
