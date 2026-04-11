@@ -63,19 +63,21 @@ So while this post covers the initial setup,
 it also serves as a reference you can come back to
 when those additional scenarios inevitably arise.
 Feel free to jump to the section(s) that are relevant for your situation.
-I'll keep adding to this as I think of more scenarios to address—so
-that you can refer back, and so that I can, too!
+I'll keep adding to this as I think of more scenarios to address,
+so you can refer back to this post when needed, and so I can, too![^unaddressed-scenarios]
 
 * TOC
 {:toc}
 
 ## Why Bother?
 
-If you've ever looked at a commit on GitHub and noticed the green "Verified" badge
-across all the commits on someone's PR,
+If you've ever looked at at someone's activity on GitHub and noticed the green "Verified" badge
+across all the commits on their PR,
 that's GPG commit signing at work.
-Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—there's
-really nothing stopping someone from committing as you.[^commit-impersonation]
+Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—though
+it would be coming from a different GitHub account,
+there's really nothing stopping someone from "committing as you"
+with this commit metadata set in their Git config.[^commit-impersonation]
 
 Signing commits with GPG attaches a cryptographic proof to each commit
 asserting that it came from the holder of a specific private key.[^gpg-hash-then-sign]
@@ -116,12 +118,12 @@ then SSH signing may be more appealing for you.[^ssh-signing]
 
 ## Overview / TL;DR
 
-The setup involves three layers:
+The setup involves three parts:
 
-1. **GPG key pair** — a master key (certify) with subkeys for signing, encryption, and optionally
-   authentication
-2. **YubiKey** — the signing subkey gets moved onto the hardware token so it never exists on disk
-3. **Git configuration** — tell Git to use GPG and point it at your signing subkey
+1. **Generating a GPG key pair** – generating a master key (certify) with subkeys for signing, encryption,
+   and optionally authentication
+2. **Moving to the YubiKey** – moving the signing subkey gets onto the hardware token so it doesn't persist on disk
+3. **Configuring Git** – telling Git to use GPG and point it at your signing subkey
 
 The end result: every `git commit` triggers a signing operation on your YubiKey,
 and the commit gets a cryptographic signature that GitHub (or any verifier)
@@ -139,7 +141,7 @@ That's one identity per YubiKey—you
 can't load a second, separate GPG key alongside the first.
 
 If you use multiple email addresses—say,
-a personal address and a work address—you
+a personal email address and a work email address—you
 have two options:
 
 **One key, multiple UIDs (recommended):**
@@ -159,16 +161,16 @@ each on its own YubiKey (ideally a pair of YubiKeys per GPG identity, for redund
 This gives you full isolation between identities—revoking
 your work key doesn't touch your personal one—but
 it means more hardware to buy and manage,
-separate Git signing configs per repo or directory,
+separate Git signing configs per repo or directory or machine,
 and separate public keys to upload to GitHub.
 
 For most people, the single-key approach is the pragmatic choice.
 The separate-keys approach makes more sense
-if your organization requires dedicated hardware tokens,
-or if you want an absolute firewall between identities.
+if your organization absolutely requires dedicated hardware tokens,
+or if you just personally want an absolute firewall between identities.
 
 If you ever need to change an email address down the road—a
-new job, a domain change—you
+new job, a domain change, etc.—you
 add the new UID to your existing key, optionally revoke the old one,
 and re-upload your public key to GitHub.
 I cover that process in
@@ -179,15 +181,19 @@ I cover that process in
 Before diving in, you'll need:
 
 * A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
-  (YubiKey 5 series or newer is recommended; older YubiKey 4 works too)
-* A computer with a USB port (depends on your YubiKey model—mine is a YubiKey 5C FIPS one)[^yubikey-accessories]
+  (YubiKey 5 series or newer is recommended, but older YubiKey 4 works too;
+  I use a pair of [YubiKey 5C FIPS](https://www.yubico.com/product/yubikey-5c-fips/) models)[^yubikey-accessories]
+* A computer with a USB port
+  (which depends on your YubiKey model,
+  but on modern computers I'd opt for USB Type-C if you can)
 * Some comfort with the command line
 
 ## Step 1: Generate Your GPG Key Pair
 
 If you don't already have a GPG key pair, you'll need to generate one.
-If you already have one, skip ahead to
-[Step 2: Move the Signing Subkey to Your YubiKey](#step-2-move-the-signing-subkey-to-your-yubikey).
+If you already have one, you can skip ahead to
+[Step 2: Move the Signing Subkey to Your YubiKey](#step-2-move-the-signing-subkey-to-your-yubikey),
+but you may want to keep reading to compare your generation method with this one.
 
 The recommended approach is to generate a master key with **Certify** capability only,
 then add separate subkeys for **Sign**, **Encrypt**, and optionally **Authenticate**.
@@ -199,7 +205,7 @@ It's the modern default—smaller keys, faster signing, and a simpler implementa
 with fewer knobs to misconfigure compared to RSA.
 YubiKey 5 series supports `ed25519` natively.[^rsa-still-fine]
 
-### macOS — Key Generation
+### macOS – Key Generation
 
 ```bash
 # Install GnuPG via Homebrew
@@ -215,21 +221,27 @@ gpg --full-generate-key --expert
 During the interactive prompts, you'll see a numbered menu.
 There are two paths:
 
-**Quick path — option (9) "ECC and ECC":**
+**Quick path – option (9) "ECC and ECC":**
 creates a master key that can certify and sign,
 plus an encryption subkey, all in one step.
 
-**Clean path — option (11) "ECC (set your own capabilities)":**
+**Clean path – option (11) "ECC (set your own capabilities)":**
 lets you toggle capabilities individually so you can create a certify-only master key,
-then add dedicated Sign, Encrypt, and Auth subkeys afterward.[^subkey-separation]
+then add dedicated Sign, Encrypt, and Auth subkeys afterward.
 
-I recommend the clean path (option 11) for the reasons in the footnote,
+I recommend the clean path (option 11)[^subkey-separation],
 but option 9 is perfectly fine if you want to get going quickly.
 
 Whichever you choose, the remaining prompts are the same:
 
 1. Select **Curve 25519**
-2. Set an expiration (I use 10+ years, but you can always extend it later)
+2. Set an expiration—I
+   recommend 2 years for subkeys and 5–10 years for the master key.
+   Shorter subkey expirations act as a safety net
+   (if you lose access, the key auto-expires rather than lingering forever),
+   and you can always
+   [extend the expiration](#extending-key-expiration) later
+   without generating new keys
 3. Enter your name and email address—use
    the same email address you commit with in Git
    (i.e. the one in `git config user.email`)
@@ -252,7 +264,7 @@ gpg --expert --edit-key YOUR_KEY_ID
 You can also add encryption and authentication subkeys the same way if you want those capabilities
 on your YubiKey.
 
-### Ubuntu — Key Generation
+### Ubuntu – Key Generation
 
 ```bash
 # Install GnuPG
@@ -264,7 +276,7 @@ gpg --full-generate-key --expert
 
 The process is identical to macOS from here—add subkeys with `gpg --expert --edit-key`.
 
-### Windows — Key Generation
+### Windows – Key Generation
 
 ```powershell
 # Install GPG4Win via Chocolatey
@@ -401,7 +413,7 @@ do the work, then delete it again.
 
 ## Step 3: Configure Git for GPG Signing
 
-### macOS — Git Config
+### macOS – Git Config
 
 The macOS setup involves a few pieces:
 
@@ -477,7 +489,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Ubuntu — Git Config
+### Ubuntu – Git Config
 
 ```bash
 # Install pinentry for terminal or GUI
@@ -509,7 +521,7 @@ Or for GNOME desktop:
 pinentry-program /usr/bin/pinentry-gnome3
 ```
 
-### Windows — Git Config
+### Windows – Git Config
 
 ```powershell
 # If using GPG4Win, Kleopatra handles PIN entry automatically
@@ -568,7 +580,7 @@ The core idea is the same on every platform:
 install GPG, import your public key, plug in the YubiKey so GPG discovers the private key stubs,
 set trust, and configure Git and pinentry.
 
-### macOS — New Machine
+### macOS – New Machine
 
 ```bash
 # Install GnuPG and pinentry-mac
@@ -616,7 +628,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Ubuntu — New Machine
+### Ubuntu – New Machine
 
 ```bash
 # Install GnuPG and smartcard support
@@ -666,7 +678,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Windows — New Machine
+### Windows – New Machine
 
 ```powershell
 # Install GPG4Win
@@ -916,6 +928,146 @@ git commit --allow-empty -m "Test new signing subkey"
 git log --show-signature -1
 ```
 
+## Starting Over: Complete Re-Key
+
+The sections above cover lighter-weight changes—updating
+UIDs or revoking a single subkey while keeping the same master key.
+Sometimes you need to start from scratch with an entirely new GPG identity.
+
+Scenarios where a complete re-key makes sense:
+
+* Your **master key** was compromised (not just a subkey)
+* You want to **switch algorithms** (e.g. RSA 4096 to ed25519)
+* You've **lost both YubiKeys and your secure backup**—you
+  have no way to recover the old key
+* Your key has **expired** and you'd rather start fresh
+  than extend it
+
+### Revoke the old key (if you still have access)
+
+If you still have your master key's private portion,
+generate and publish a revocation before moving on:
+
+```bash
+# Import the master key from your secure backup
+gpg --import /path/to/secure/backup/master-key.asc
+
+# Generate a revocation certificate
+gpg --gen-revoke YOUR_OLD_KEY_ID > revocation.asc
+
+# Import the revocation into your keyring
+gpg --import revocation.asc
+
+# Publish the revoked key to keyserver
+gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_KEY_ID
+```
+
+On GitHub, you can leave the old (now-revoked) key in place or remove it.
+Previously-verified commits keep their "Verified" badge regardless.
+
+If you've lost access to the master key entirely,
+you can't revoke it—just
+remove the old public key from GitHub and move on.
+The old key will eventually expire on its own
+(assuming you set an expiration date, which is one more reason to always set one).
+
+### Generate new keys and set up from scratch
+
+From here, the process is the same as a first-time setup.
+Walk through each step with your new key:
+
+1. [Generate your new GPG key pair](#step-1-generate-your-gpg-key-pair)
+2. [Move the signing subkey to your YubiKey(s)](#step-2-move-the-signing-subkey-to-your-yubikey)
+3. [Configure Git](#step-3-configure-git-for-gpg-signing)—update
+   `user.signingKey` to point to your new signing subkey ID
+4. [Upload your new public key to GitHub](#step-4-upload-your-public-key-to-github)
+5. [Test it](#step-5-test-it)
+
+Don't forget to store your new master key and subkey backups securely,
+just like the first time around.
+
+### Updating other machines
+
+Any machine that was configured with the old key will need to be updated.
+Follow the [Setting Up on a New Machine](#setting-up-on-a-new-machine) steps,
+importing the *new* public key instead of the old one.
+
+You'll also want to clean out the old key from those machines:
+
+```bash
+# Remove the old key from your keyring
+gpg --delete-keys YOUR_OLD_KEY_ID
+```
+
+## Extending Key Expiration
+
+Expiration dates on GPG keys aren't permanent—they're
+metadata that can be updated at any time,
+as long as you have the master key's private portion.
+This applies to both the master key *and* subkeys.
+
+This is one of the reasons shorter subkey expirations (like 2 years) are practical:
+you're not committing to a hard deadline,
+just setting a safety net that you periodically push forward.
+
+### Extending your master key's expiration
+
+```bash
+# Import your master key from your secure backup
+gpg --import /path/to/secure/backup/master-key.asc
+
+# Edit the key (the master key is selected by default)
+gpg --edit-key YOUR_KEY_ID
+
+# gpg> expire
+# Enter the new expiration period (e.g. 5y for 5 years from today)
+# gpg> save
+```
+
+### Extending a subkey's expiration
+
+```bash
+gpg --edit-key YOUR_KEY_ID
+
+# Select the subkey you want to extend (check the index)
+# gpg> key 1
+# gpg> expire
+# Enter the new expiration period (e.g. 2y for 2 years from today)
+# gpg> save
+```
+
+You can extend multiple subkeys in one session—select
+each one with `key N`, run `expire`, then `save` when you're done.
+
+### After extending
+
+Once you've updated expiration dates,
+re-export and re-upload your public key
+so that verifiers know about the new dates:
+
+```bash
+# Export the updated public key
+gpg --armor --export YOUR_KEY_ID > updated-public-key.asc
+
+# Push to keyserver if you use one
+gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+```
+
+On GitHub, add the updated export under
+**Settings > SSH and GPG keys**, then remove the old entry.
+
+Then clean up: remove the master key's private portion from your local keyring,
+and update your secure backup with the new export.
+
+```bash
+gpg --delete-secret-keys YOUR_KEY_ID
+gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --card-status
+```
+
+No changes are needed to your YubiKey, Git config, or signing subkey ID—the
+subkeys themselves haven't changed, just their expiration metadata.
+
 ## Troubleshooting
 
 A few common issues and fixes:
@@ -1049,6 +1201,10 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     Titan keys do *not* support GPG commit signing.
     Many of the steps outlined here for YubiKey will be similar for other keys.
 
+[^unaddressed-scenarios]: For the diligent and eagle-eyed readers out there,
+    if you think of a scenario that I haven't addressed and would like me to add it,
+    feel free to message me on LinkedIn.
+
 [^commit-impersonation]: It can happen, and
     [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
     Also credit to Scott Hanselman whose aforementioned linked post originally got me into all this;
@@ -1074,7 +1230,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 [^ssh-signing]: And given you know how to get SSH going with GitHub,
     I assume you can figure out how to set up commit signing with that as well,
     and further can figure out how to use an SSH key on a YubiKey—just
-    a couple questions to your favorite AI and you'll have that done.
+    ask a couple of questions to your favorite AI and you'll have that done.
 
 [^other-distros]: I'll assume that if you're well-versed in Linux
     that you can figure this out for your distro of choice.
@@ -1109,7 +1265,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     [reasons](https://eprint.iacr.org/2025/1237.pdf) to be
     [skeptical](https://www.schneier.com/blog/archives/2025/07/cheating-on-quantum-computing-benchmarks.html)
     about how far along we really are with quantum computing.)
-    When post-quantum algorithms land in GnuPG, everyone re-keys regardless.
+    When post-quantum algorithms land in GnuPG, everyone needs to re-key regardless.
     In the meantime, the "harvest now, decrypt later" concern
     applies primarily to *encrypted* data, not *signatures*.
     For commit signing, the threat from a recovered private key
