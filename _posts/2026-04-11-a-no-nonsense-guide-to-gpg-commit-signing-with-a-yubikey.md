@@ -111,6 +111,51 @@ can check against your public key.
 
 I'll break things down as we go between macOS, Linux (Ubuntu)[^other-distros], and Windows.
 
+## Planning Your Key Identity
+
+Before you generate anything,
+it's worth understanding a constraint that will shape your setup:
+a YubiKey's OpenPGP applet holds exactly one key slot each
+for signing, encryption, and authentication.
+That's one identity per YubiKey—you
+can't load a second, separate GPG key alongside the first.
+
+If you use multiple email addresses—say,
+a personal address and a work address—you
+have two options:
+
+**One key, multiple UIDs (recommended):**
+Add all your email addresses as UIDs on a single GPG key.
+Git and GitHub match the commit's author email against the UIDs on your key
+to decide whether to show the "Verified" badge,
+so as long as every address you commit with is listed as a UID,
+you're covered.[^gpg-email-matching]
+This is what I do—one GPG key with both my personal and work emails attached,
+loaded onto one pair of YubiKeys (primary + secondary).
+It's simpler to manage,
+and you only need one set of hardware tokens.
+
+**Separate keys per identity:**
+Generate a completely independent GPG key for each email/identity,
+each on its own YubiKey (ideally a pair of YubiKeys per GPG identity, for redundancy).
+This gives you full isolation between identities—revoking
+your work key doesn't touch your personal one—but
+it means more hardware to buy and manage,
+separate Git signing configs per repo or directory,
+and separate public keys to upload to GitHub.
+
+For most people, the single-key approach is the pragmatic choice.
+The separate-keys approach makes more sense
+if your organization requires dedicated hardware tokens,
+or if you want an absolute firewall between identities.
+
+If you ever need to change an email address down the road—a
+new job, a domain change—you
+add the new UID to your existing key, optionally revoke the old one,
+and re-upload your public key to GitHub.
+I cover that process in
+[Re-Keying: Updating Your Email Addresses](#re-keying-updating-your-email-addresses) below.
+
 ## Prerequisites
 
 Before diving in, you'll need:
@@ -169,7 +214,7 @@ Whichever you choose, the remaining prompts are the same:
 2. Set an expiration (I use 10+ years, but you can always extend it later)
 3. Enter your name and email address—use
    the same email address you commit with in Git
-   (i.e. the one in `git config user.email`).[^gpg-email-matching]
+   (i.e. the one in `git config user.email`)
 4. Set a strong passphrase—you'll
    need this to manage the key,
    but day-to-day signing will use your YubiKey PIN
@@ -265,7 +310,7 @@ and your subkey listing should show `ssb>` (the `>` indicates the key is on a ca
 ### Loading the same key onto a second YubiKey
 
 I strongly recommend having two YubiKeys:
-a primary that you carry and a backup stored somewhere safe
+a primary YubiKey that you carry and a secondary YubiKey stored somewhere safe
 (I keep mine in a fireproof safe at home).
 This is good practice for FIDO2/WebAuthn[^fido2-passkeys] as well
 (where you'd pre-register both keys with your services),
@@ -273,7 +318,7 @@ and it applies equally to GPG signing.
 
 When my primary YubiKey was stolen
 (along with my backpack—more post-mortem learnings from that to come in a future blog post!),
-I was very glad I had a backup ready to go.[^stolen-yubikey-risk]
+I was very glad I had a secondary ready to go.[^stolen-yubikey-risk]
 Without it, I would have needed to generate entirely new keys,
 re-upload them to GitHub, and update every machine I use.
 
@@ -651,6 +696,109 @@ Alternatively, keep your public key (not your private key!)
 in a place you can easily access—a
 private GitHub gist, a cloud drive, or even committed to your dotfiles repo (potentially),
 but honestly what I do is just keep this in my password manager, too, for convenience.
+
+## Re-Keying: Updating Your Email Addresses
+
+At some point you'll likely need to update the email addresses on your GPG key—you
+switch jobs, your company changes its domain,
+or you retire an old personal address.
+Because your YubiKey holds your *subkeys* (signing, encryption, authentication)
+and UIDs live on the *master key*,
+the good news is that re-keying doesn't require touching the YubiKey at all.
+It's purely a master-key operation.
+
+You'll need your master key's private portion for this,
+so temporarily import it from your secure backup
+(from your password manager or wherever you've securely stored it):
+
+```bash
+# Import the master key from your secure backup
+gpg --import /path/to/secure/backup/master-key.asc
+```
+
+### Adding a new UID
+
+```bash
+gpg --edit-key YOUR_KEY_ID
+
+# In the GPG prompt:
+# gpg> adduid
+# Enter your new name and email address
+# gpg> save
+```
+
+### Revoking an old UID (optional)
+
+If the old address is no longer valid and you don't want it associated with your key,
+you can revoke it.
+A revoked UID stays visible on the key (GPG doesn't truly delete UIDs)
+but is marked as no longer valid:
+
+```bash
+gpg --edit-key YOUR_KEY_ID
+
+# Select the UID to revoke (UIDs are numbered starting at 1)
+# gpg> uid 2
+# gpg> revuid
+# Confirm the revocation
+# gpg> save
+```
+
+If you'd rather keep the old UID active—maybe
+the address still works as an alias,
+or you have historical commits signed under it—that's
+fine too.
+GitHub will still show "Verified" for commits made under any non-revoked UID on the key.
+
+### Re-uploading your public key
+
+After modifying UIDs, you need to re-export and re-upload your public key
+so verifiers (like GitHub) know about the change:
+
+```bash
+# Export the updated public key
+gpg --armor --export YOUR_KEY_ID > updated-public-key.asc
+```
+
+Then replace the key in GitHub under
+**Settings > SSH and GPG keys**—add
+the new export first, then delete the old entry.
+GitHub will re-verify your existing commits against the updated key.
+Commits signed under a revoked UID will lose their "Verified" badge,
+while commits under the new or still-active UIDs remain verified.
+
+If you use a keyserver, push the update there too:
+
+```bash
+gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+```
+
+### Cleaning up
+
+Once you're done, remove the master key's private portion from your local keyring again
+(just like in
+[Removing the master key from your everyday machine](#removing-the-master-key-from-your-everyday-machine)):
+
+```bash
+gpg --delete-secret-keys YOUR_KEY_ID
+gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --card-status
+```
+
+And don't forget to update your offline backup with the new export,
+since the master key now has updated UIDs.
+
+### Updating Git config
+
+If your new email address is the one you want to commit with going forward,
+update your Git config:
+
+```bash
+git config --global user.email "your-new-email@example.com"
+```
+
+No change is needed for `user.signingKey`—that
+points to your signing subkey, which hasn't changed.
 
 ## Troubleshooting
 
