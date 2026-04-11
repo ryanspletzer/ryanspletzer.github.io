@@ -180,7 +180,7 @@ I cover that process in
 
 Before diving in, you'll need:
 
-* A [YubiKey](https://www.yubico.com/products/) that supports OpenPGP
+* At least one (but very preferably two) [YubiKey](https://www.yubico.com/products/)(s) that supports OpenPGP
   (YubiKey 5 series or newer is recommended, but older YubiKey 4 works too;
   I use a pair of [YubiKey 5C FIPS](https://www.yubico.com/product/yubikey-5c-fips/) models)[^yubikey-accessories]
 * A computer with a USB port
@@ -274,21 +274,20 @@ sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd
 gpg --full-generate-key --expert
 ```
 
-The process is identical to macOS from here—add subkeys with `gpg --expert --edit-key`.
+The process is identical to macOS from here (see above)—add subkeys with `gpg --expert --edit-key`.
 
 ### Windows – Key Generation
 
 ```powershell
 # Install GPG4Win via Chocolatey
-choco install gpg4win -y
-
 # Or download from https://www.gpg4win.org/
+choco install gpg4win -y
 
 # Generate keys from a terminal (Git Bash, PowerShell, or cmd)
 gpg --full-generate-key --expert
 ```
 
-Same interactive process as above for key generation and subkey creation.
+Same interactive process as macOS above for key generation and subkey creation.
 
 ## Step 2: Move the Signing Subkey to Your YubiKey
 
@@ -369,7 +368,10 @@ and it applies equally to GPG signing.
 When my primary YubiKey was stolen
 (along with my backpack—more post-mortem learnings from that to come in a future blog post!),
 I was very glad I had a secondary ready to go.[^stolen-yubikey-risk]
-Without it, I would have needed to generate entirely new keys,
+Without it, I would have left hanging while I waited for a new YubiKey to arrive
+(not to mention since I rely on it for sign-in for many services, beyond just the GPG use case),
+and further without secure backups of the GPG master and sub keys
+I would have to generate entirely new keys,
 re-upload them to GitHub, and update every machine I use.
 
 The simplest approach is to load the *same* signing subkey onto both YubiKeys.
@@ -411,6 +413,9 @@ You only need the master key for infrequent key management tasks—adding
 a new UID, extending the expiration date, revoking a subkey,
 or signing someone else's key.
 For day-to-day commit signing, the subkey on your YubiKey is all you need.
+Assuming you performed all the correct secure backup steps for your master and subkeys
+mentioned during key generation above,
+you are free to safely remove the master key from your keyring.
 
 ```bash
 # Remove the secret master key from your local keyring
@@ -430,6 +435,7 @@ Your signing subkey on the YubiKey still works normally.
 When you eventually need to do key management,
 temporarily import your master key from your secure backup,
 do the work, then delete it again.
+This is elaborated on in several scenarios described later in this blog post.
 
 ## Step 3: Configure Git for GPG Signing
 
@@ -439,9 +445,8 @@ The macOS setup involves a few pieces:
 
 ```bash
 # Install pinentry-mac for the PIN prompt dialog
-brew install pinentry-mac
-
 # Or build from source: https://github.com/GPGTools/pinentry-mac
+brew install pinentry-mac
 ```
 
 Configure GPG to use `pinentry-mac` for PIN entry—this
@@ -466,7 +471,7 @@ With `pinentry-mac`, the PIN dialog pops open as a native macOS window regardles
 triggered the commit, so signing works seamlessly whether you're committing manually or through an
 AI assistant.
 
-You may also want to set `no-tty` in your GPG config,
+You may also want to set `no-tty` in your GPG config (which I personally do),
 which further ensures GPG doesn't try to interact with the terminal directly—this
 complements the GUI pinentry approach:
 
@@ -475,7 +480,7 @@ complements the GUI pinentry approach:
 no-tty
 ```
 
-If you're using the newer keyboxd (GnuPG 2.4+), add this:
+If you're using the newer keyboxd (GnuPG 2.4+), add this (which I also personally do):
 
 ```text
 # ~/.gnupg/common.conf
@@ -499,7 +504,8 @@ export GPG_TTY=$(tty)
 Now configure Git:
 
 ```bash
-# Point Git at your GPG binary
+# Point Git at your GPG binary, homebrew path shown below
+# If you installed via a different method this may be a different path
 git config --global gpg.program /opt/homebrew/bin/gpg
 
 # Set your signing key (use the signing *subkey* ID, not the master key)
@@ -512,9 +518,10 @@ git config --global commit.gpgsign true
 ### Ubuntu – Git Config
 
 ```bash
-# Install pinentry for terminal or GUI
-sudo apt install -y pinentry-curses
-# Or for GNOME: sudo apt install -y pinentry-gnome3
+# Install a GUI pinentry (recommended) or terminal pinentry
+sudo apt install -y pinentry-gnome3
+# Or for KDE: sudo apt install -y pinentry-qt
+# Or terminal-only: sudo apt install -y pinentry-curses
 
 # Add to ~/.bashrc or ~/.zshrc
 export GPG_TTY=$(tty)
@@ -528,17 +535,45 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-For Ubuntu, the `gpg-agent.conf` pinentry line would be:
+For the `gpg-agent.conf` pinentry line,
+I recommend a GUI pinentry on desktop Ubuntu for the same reason
+as `pinentry-mac` on macOS—if
+you use AI coding tools like Claude Code that run `git commit` on your behalf,
+a terminal-based pinentry like `pinentry-curses` can't grab the TTY
+to prompt for your PIN.
+A GUI pinentry pops up a dialog window regardless of which process triggered the commit.
 
 ```text
 # ~/.gnupg/gpg-agent.conf
+pinentry-program /usr/bin/pinentry-gnome3
+```
+
+Or for KDE:
+
+```text
+pinentry-program /usr/bin/pinentry-qt
+```
+
+If you're on a headless server with no desktop environment,
+`pinentry-curses` is your only option:
+
+```text
 pinentry-program /usr/bin/pinentry-curses
 ```
 
-Or for GNOME desktop:
+You may also want to set `no-tty` in your GPG config,
+just like on macOS, to ensure GPG doesn't try to interact with the terminal directly:
 
 ```text
-pinentry-program /usr/bin/pinentry-gnome3
+# ~/.gnupg/gpg.conf
+no-tty
+```
+
+If you're using GnuPG 2.4+ with keyboxd:
+
+```text
+# ~/.gnupg/common.conf
+use-keyboxd
 ```
 
 ### Windows – Git Config
@@ -553,6 +588,9 @@ git config --global commit.gpgsign true
 ```
 
 If you installed GPG4Win, the Kleopatra application manages PIN entry via a GUI dialog.
+This works well with AI coding tools like Claude Code for the same reason
+as `pinentry-mac` on macOS and `pinentry-gnome3` on Ubuntu—the
+PIN dialog pops up as a native window regardless of which process triggered the commit.
 If you installed GPG standalone via Chocolatey, you may need to configure pinentry separately.
 
 ## Step 4: Upload Your Public Key to GitHub
@@ -585,7 +623,8 @@ git log --show-signature -1
 You should see output indicating a good signature from your key.
 If your YubiKey is plugged in, you'll be prompted for your PIN.
 
-If your YubiKey is **not** plugged in, the commit will fail—this
+If your YubiKey is **not** plugged in, the commit will fail
+and/or the pinentry terminal prompt or GUI will indicate you need to insert your card—this
 is the intended behavior, because the private key only exists on the hardware token.
 
 ## Setting Up on a New Machine
@@ -600,10 +639,21 @@ The core idea is the same on every platform:
 install GPG, import your public key, plug in the YubiKey so GPG discovers the private key stubs,
 set trust, and configure Git and pinentry.
 
+One step you'll notice here that wasn't needed during initial setup is setting trust.
+When you generate a key, GPG automatically assigns "ultimate" trust to it
+because it knows you created it yourself.
+When you import a key on a new machine,
+GPG doesn't automatically know it's *yours*—it
+just sees an imported public key—so
+you need to explicitly tell GPG to trust it.
+Without this, GPG will warn you on every signing operation.
+
 ### macOS – New Machine
 
 ```bash
 # Install GnuPG and pinentry-mac
+# Or build from source: https://www.gnupg.org/download/
+# Or build from source: https://github.com/GPGTools/pinentry-mac
 brew install gnupg pinentry-mac
 
 # Import your public key (from a backup, a keyserver, or export from another machine)
@@ -632,6 +682,11 @@ pinentry-program /opt/homebrew/bin/pinentry-mac
 no-tty
 ```
 
+```text
+# ~/.gnupg/common.conf (GnuPG 2.4+)
+use-keyboxd
+```
+
 ```bash
 # Add to ~/.zshrc or ~/.bashrc
 export GPG_TTY=$(tty)
@@ -643,6 +698,7 @@ export GPG_TTY=$(tty)
 # $env:GPG_TTY = (tty)
 
 # Configure Git
+# If you installed via a different method this may be a different path
 git config --global gpg.program /opt/homebrew/bin/gpg
 git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
@@ -651,8 +707,10 @@ git config --global commit.gpgsign true
 ### Ubuntu – New Machine
 
 ```bash
-# Install GnuPG and smartcard support
-sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd pinentry-curses
+# Install GnuPG and smartcard support with a GUI pinentry
+sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd pinentry-gnome3
+# Or for KDE: replace pinentry-gnome3 with pinentry-qt
+# Or headless: replace pinentry-gnome3 with pinentry-curses
 
 # Import your public key
 gpg --import /path/to/your-public-key.asc
@@ -667,22 +725,22 @@ gpg --edit-key YOUR_KEY_ID
 # gpg> save
 ```
 
-Then configure pinentry:
-
-```text
-# ~/.gnupg/gpg-agent.conf
-pinentry-program /usr/bin/pinentry-curses
-```
-
-Or for GNOME desktop:
-
-```bash
-sudo apt install -y pinentry-gnome3
-```
+Then configure the same config files as in
+[Step 3](#step-3-configure-git-for-gpg-signing):
 
 ```text
 # ~/.gnupg/gpg-agent.conf
 pinentry-program /usr/bin/pinentry-gnome3
+```
+
+```text
+# ~/.gnupg/gpg.conf
+no-tty
+```
+
+```text
+# ~/.gnupg/common.conf (GnuPG 2.4+)
+use-keyboxd
 ```
 
 ```bash
@@ -702,6 +760,7 @@ git config --global commit.gpgsign true
 
 ```powershell
 # Install GPG4Win
+# Or download from https://www.gpg4win.org/
 choco install gpg4win -y
 
 # Import your public key (from PowerShell, Git Bash, or cmd)
