@@ -356,7 +356,7 @@ gpg --card-status
 You should see your signing key fingerprint listed under "Signature key"
 and your subkey listing should show `ssb>` (the `>` indicates the key is on a card).
 
-### Loading the same key onto a second YubiKey
+### Loading the Same Key onto a Second YubiKey
 
 I strongly recommend having two YubiKeys:
 a primary YubiKey that you carry and a secondary YubiKey stored somewhere safe
@@ -405,7 +405,7 @@ Just remember that when you plug in a different YubiKey than the one GPG last sa
 you may need to run `gpg --card-status` so GPG re-discovers the key stub
 on the new card.
 
-### Removing the master key from your machine
+### Removing the Master Key from Your Machine
 
 Once your subkeys are on your YubiKey(s) and your backups are safely stored offline,
 there's no reason to keep the master key's private portion on your local keyring.
@@ -608,7 +608,7 @@ Copy the output (including the `-----BEGIN PGP PUBLIC KEY BLOCK-----` and
 
 This step is the same regardless of your operating system.
 
-### Making your public key easy to find later
+### Making Your Public Key Easy to Find Later
 
 While you're generating your public key,
 this is a good time to make sure you can easily retrieve it
@@ -843,7 +843,7 @@ so temporarily import it from your secure backup
 gpg --import /path/to/secure/backup/master-key.asc
 ```
 
-### Adding a new UID
+### Adding a New UID
 
 ```bash
 gpg --edit-key YOUR_KEY_ID
@@ -854,7 +854,7 @@ gpg --edit-key YOUR_KEY_ID
 # gpg> save
 ```
 
-### Revoking an old UID (optional)
+### Revoking an Old UID (Optional)
 
 If the old address is no longer valid and you don't want it associated with your key,
 you can revoke it.
@@ -878,7 +878,7 @@ GitHub stores verification records at push time,
 so commits that were already verified keep their "Verified" badge
 regardless of UID revocations.
 
-### Re-uploading your public key
+### Re-Uploading Your Public Key
 
 After modifying UIDs, you need to re-export and re-upload your public key
 so verifiers (like GitHub) know about the change:
@@ -902,7 +902,7 @@ If you use a keyserver, push the update there too:
 gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 ```
 
-### Cleaning up
+### Cleaning Up
 
 Once you're done, remove the master key's private portion from your local keyring again
 (just like in
@@ -917,7 +917,7 @@ gpg --card-status
 And don't forget to update your secure backup with the new export,
 since the master key now has updated UIDs.
 
-### Updating Git config
+### Updating Git Config
 
 If your new email address is the one you want to commit with going forward,
 update your Git config:
@@ -942,7 +942,7 @@ secure master key backup was exposed,
 or you suspect the key material was somehow extracted—here's
 how to revoke and recover.
 
-### Revoke the subkey
+### Revoke the Subkey
 
 Import your master key from your secure backup,
 then revoke the compromised signing subkey:
@@ -961,7 +961,7 @@ gpg --edit-key YOUR_KEY_ID
 # gpg> save
 ```
 
-### Publish the revocation
+### Publish the Revocation
 
 The revocation needs to reach anyone who might verify your signatures:
 
@@ -981,7 +981,7 @@ your previously-verified commits keep their "Verified" badge—the
 revocation prevents *new* signatures from being verified under the old subkey,
 but doesn't retroactively invalidate past ones.
 
-### Generate a new signing subkey
+### Generate a New Signing Subkey
 
 ```bash
 # Still in edit mode with the master key imported
@@ -992,14 +992,14 @@ gpg --expert --edit-key YOUR_KEY_ID
 # gpg> save
 ```
 
-### Load the new subkey onto your YubiKey(s)
+### Load the New Subkey onto Your YubiKey(s)
 
 Follow the same process as
 [Step 2: Move the Signing Subkey to Your YubiKey](#step-2-move-the-signing-subkey-to-your-yubikey)—move
 the new subkey to your primary YubiKey,
 then restore from backup and move to your secondary if you have one.
 
-### Update Git config and GitHub
+### Update Git Config and GitHub
 
 ```bash
 # Point Git at the new signing subkey ID
@@ -1010,7 +1010,7 @@ Upload the new public key export to GitHub
 (the one containing both the revoked old subkey and the new active one).
 Future commits will be signed with the new subkey and show "Verified."
 
-### Clean up
+### Clean Up
 
 Remove the master key's private portion from your local keyring,
 update your secure backup with the new key state,
@@ -1041,7 +1041,7 @@ Scenarios where a complete re-key makes sense:
 * Your key has **expired** and you'd rather start fresh
   than extend it
 
-### Revoke the old key (if you still have access)
+### Revoke the Old Key (if You Still Have Access)
 
 If you still have your master key's private portion,
 generate and publish a revocation before moving on:
@@ -1069,7 +1069,7 @@ remove the old public key from GitHub and move on.
 The old key will eventually expire on its own
 (assuming you set an expiration date, which is one more reason to always set one).
 
-### Generate new keys and set up from scratch
+### Generate New Keys and Set Up from Scratch
 
 From here, the process is the same as a first-time setup.
 Walk through each step with your new key:
@@ -1084,7 +1084,7 @@ Walk through each step with your new key:
 Don't forget to store your new master key and subkey backups securely,
 just like the first time around.
 
-### Updating other machines
+### Updating Other Machines
 
 Any machine that was configured with the old key will need to be updated.
 Follow the [Setting Up on a New Machine](#setting-up-on-a-new-machine) steps,
@@ -1108,7 +1108,7 @@ This is one of the reasons shorter subkey expirations (like 2 years) are practic
 you're not committing to a hard deadline,
 just setting a safety net that you periodically push forward.
 
-### Extending your master key's expiration
+### Extending Your Master Key's Expiration
 
 ```bash
 # Import your master key from your secure backup
@@ -1122,7 +1122,7 @@ gpg --edit-key YOUR_KEY_ID
 # gpg> save
 ```
 
-### Extending a subkey's expiration
+### Extending a Subkey's Expiration
 
 ```bash
 gpg --edit-key YOUR_KEY_ID
@@ -1137,7 +1137,7 @@ gpg --edit-key YOUR_KEY_ID
 You can extend multiple subkeys in one session—select
 each one with `key N`, run `expire`, then `save` when you're done.
 
-### After extending
+### After Extending
 
 Once you've updated expiration dates,
 re-export and re-upload your public key
@@ -1188,7 +1188,7 @@ gpg --card-status
 This means `GPG_TTY` isn't set. Add `export GPG_TTY=$(tty)` to your shell RC file and restart
 your terminal.
 
-### PIN entry dialog doesn't appear on macOS
+### PIN Entry Dialog Doesn't Appear on macOS
 
 Make sure `pinentry-mac` is installed and configured in `~/.gnupg/gpg-agent.conf`.
 Then restart the agent:
@@ -1249,7 +1249,7 @@ Restart the GPG agent for changes to take effect:
 gpgconf --kill gpg-agent
 ```
 
-### Verifying it works
+### Verifying It Works
 
 With your YubiKey plugged in, you should now see your GPG-backed SSH key:
 
