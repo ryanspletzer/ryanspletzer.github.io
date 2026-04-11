@@ -245,9 +245,14 @@ Whichever you choose, the remaining prompts are the same:
 3. Enter your name and email address—use
    the same email address you commit with in Git
    (i.e. the one in `git config user.email`)
-4. Set a strong passphrase—you'll
-   need this to manage the key,
-   but day-to-day signing will use your YubiKey PIN
+4. Set a strong passphrase—make
+   it long (I'd say 20+ characters), unique, and stored in your password manager.
+   This passphrase protects your key backups;
+   if someone obtains your exported key files,
+   the passphrase is the only thing standing between them and your identity.
+   Day-to-day signing uses your YubiKey PIN, not this passphrase,
+   so you won't be typing it often—only
+   during key management operations
 
 If you chose option (11), add your signing subkey now:
 
@@ -929,18 +934,25 @@ git config --global user.email "your-new-email@example.com"
 No change is needed for `user.signingKey`—that
 points to your signing subkey, which hasn't changed.
 
-## Revoking a Compromised Key
+## Revoking a Compromised Subkey
 
 To be clear: if your YubiKey is lost or stolen,
-your signing key is almost certainly *not* compromised.
+your signing subkey is almost certainly *not* compromised.
 The private key cannot be extracted from the hardware token,
 and the PIN retry counter locks the card after 3 failed attempts.
 A lost YubiKey is not analogous to a leaked private key file.
 
-That said, if your key is genuinely compromised—your
-secure master key backup was exposed,
-or you suspect the key material was somehow extracted—here's
-how to revoke and recover.
+That said, if you believe a *subkey* was compromised—for
+example, your subkey backup was obtained by a third party
+along with the passphrase—you
+can revoke just that subkey and generate a new one
+while keeping your master key and identity intact.
+
+If the compromise extends to your *master key*
+(your secure backup was exposed along with the passphrase),
+use the revocation certificate you generated in
+[Step 2](#step-2-move-the-signing-subkey-to-your-yubikey) and follow the
+[Starting Over: Complete Re-Key](#starting-over-complete-re-key) process instead.
 
 ### Revoke the Subkey
 
@@ -1043,8 +1055,22 @@ Scenarios where a complete re-key makes sense:
 
 ### Revoke the Old Key (if You Still Have Access)
 
-If you still have your master key's private portion,
-generate and publish a revocation before moving on:
+If you generated a revocation certificate during
+[Step 2](#step-2-move-the-signing-subkey-to-your-yubikey)
+(or GnuPG generated one for you in `~/.gnupg/openpgp-revocs.d/`),
+this is the fastest path—you
+don't need the master key's private portion at all:
+
+```bash
+# Import the pre-generated revocation certificate
+gpg --import /path/to/secure/backup/revocation.asc
+
+# Publish the revoked key to keyserver
+gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_KEY_ID
+```
+
+Alternatively, if you have the master key but not the revocation certificate,
+you can generate one now:
 
 ```bash
 # Import the master key from your secure backup
@@ -1063,7 +1089,7 @@ gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_KEY_ID
 On GitHub, you can leave the old (now-revoked) key in place or remove it.
 Previously-verified commits keep their "Verified" badge regardless.
 
-If you've lost access to the master key entirely,
+If you've lost access to both the master key *and* the revocation certificate,
 you can't revoke it—just
 remove the old public key from GitHub and move on.
 The old key will eventually expire on its own
