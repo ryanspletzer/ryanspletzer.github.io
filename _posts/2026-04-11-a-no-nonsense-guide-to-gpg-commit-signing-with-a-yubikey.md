@@ -405,7 +405,7 @@ Just remember that when you plug in a different YubiKey than the one GPG last sa
 you may need to run `gpg --card-status` so GPG re-discovers the key stub
 on the new card.
 
-### Removing the master key from your everyday machine
+### Removing the master key from your machine
 
 Once your subkeys are on your YubiKey(s) and your backups are safely stored offline,
 there's no reason to keep the master key's private portion on your local keyring.
@@ -614,7 +614,7 @@ While you're generating your public key,
 this is a good time to make sure you can easily retrieve it
 when [setting up a new machine](#setting-up-on-a-new-machine) down the road.
 
-You can *optionally* upload it to a public keyserver:
+You can *optionally* upload it to a public keyserver:[^keys-openpgp-org]
 
 ```bash
 gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
@@ -865,10 +865,11 @@ gpg --edit-key YOUR_KEY_ID
 ```
 
 If you'd rather keep the old UID active—maybe
-the address still works as an alias,
-or you have historical commits signed under it—that's
-fine too.
-GitHub will still show "Verified" for commits made under any non-revoked UID on the key.
+the address still works as an alias—that's fine too.
+Either way, historical commits aren't affected:
+GitHub stores verification records at push time,
+so commits that were already verified keep their "Verified" badge
+regardless of UID revocations.
 
 ### Re-uploading your public key
 
@@ -898,7 +899,7 @@ gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 
 Once you're done, remove the master key's private portion from your local keyring again
 (just like in
-[Removing the master key from your everyday machine](#removing-the-master-key-from-your-everyday-machine)):
+[Removing the master key from your machine](#removing-the-master-key-from-your-machine)):
 
 ```bash
 gpg --delete-secret-keys YOUR_KEY_ID
@@ -1383,3 +1384,15 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     If you want to be extra cautious in a similar situation,
     you should revoke the subkey and generate a new one
     from your backed-up master key.
+
+[^keys-openpgp-org]: I recommend `keys.openpgp.org` specifically
+    because it requires email verification before publishing your identity.
+    When you upload a key, the server strips all UIDs (email addresses)
+    and sends a verification email to each address on the key.
+    Only after you click the confirmation link
+    does the server associate that email with your key
+    and make it searchable by email address.
+    This means no one can upload a key claiming to be you
+    without access to your inbox.
+    Traditional SKS keyservers (like `pgp.mit.edu`) have no such verification,
+    which led to issues like the 2019 certificate flooding attack.
