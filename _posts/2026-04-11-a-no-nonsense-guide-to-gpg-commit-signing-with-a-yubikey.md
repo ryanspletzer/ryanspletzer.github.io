@@ -608,6 +608,29 @@ Copy the output (including the `-----BEGIN PGP PUBLIC KEY BLOCK-----` and
 
 This step is the same regardless of your operating system.
 
+### Making your public key easy to find later
+
+While you're generating your public key,
+this is a good time to make sure you can easily retrieve it
+when [setting up a new machine](#setting-up-on-a-new-machine) down the road.
+
+You can *optionally* upload it to a public keyserver:
+
+```bash
+gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+```
+
+Then on any new machine, you can import it directly:
+
+```bash
+gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
+```
+
+Alternatively, keep your public key (not your private key!)
+in a place you can easily access—a
+private GitHub gist, a cloud drive, or even committed to your dotfiles repo (potentially),
+but honestly what I do is just keep this in my password manager, too, for convenience.
+
 ## Step 5: Test It
 
 Make a test commit and verify it:
@@ -647,6 +670,16 @@ GPG doesn't automatically know it's *yours*—it
 just sees an imported public key—so
 you need to explicitly tell GPG to trust it.
 Without this, GPG will warn you on every signing operation.
+
+If you uploaded your public key to a keyserver
+[earlier](#making-your-public-key-easy-to-find-later),
+importing it on the new machine is one command:
+
+```bash
+gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
+```
+
+Otherwise, import it from your password manager, a file, or another machine.
 
 ### macOS – New Machine
 
@@ -783,28 +816,6 @@ git config --global commit.gpgsign true
 
 Kleopatra (included with GPG4Win) handles PIN entry automatically on Windows,
 so no separate pinentry configuration is needed.
-
-### A note on public key availability
-
-The steps above assume you have your public key file handy.
-To avoid fumbling for it on a new machine,
-you can *optionally* export it to a keyserver ahead of time:
-
-```bash
-# Upload to a public keyserver (do this from your current machine)
-gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
-```
-
-Then on the new machine, import it directly:
-
-```bash
-gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
-```
-
-Alternatively, keep your public key (not your private key!)
-in a place you can easily access—a
-private GitHub gist, a cloud drive, or even committed to your dotfiles repo (potentially),
-but honestly what I do is just keep this in my password manager, too, for convenience.
 
 ## Re-Keying: Updating Your Email Addresses
 
