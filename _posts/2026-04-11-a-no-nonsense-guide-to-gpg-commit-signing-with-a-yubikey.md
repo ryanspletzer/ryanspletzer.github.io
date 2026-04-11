@@ -1242,6 +1242,43 @@ Then restart the agent:
 gpgconf --kill gpg-agent
 ```
 
+### GPG Can't Find Keys After Upgrading to GnuPG 2.4+
+
+If GPG stops finding your keys after an upgrade
+(e.g. `gpg --list-keys` shows nothing, or signing fails with "No secret key"),
+you may need to enable keyboxd.
+GnuPG 2.4+ uses a new key storage backend (`keyboxd`)
+that replaces the older `pubring.kbx` file,
+but it won't activate unless you opt in:
+
+```text
+# ~/.gnupg/common.conf
+use-keyboxd
+```
+
+After adding this, restart the agent and re-import your public key:
+
+```bash
+gpgconf --kill gpg-agent
+gpg --import ~/gpg-export/public-key.asc
+gpg --card-status
+```
+
+### "Please Insert Card with Serial Number..."
+
+This often means your YubiKey isn't plugged in.
+
+However it can also mean or you've swapped to a different YubiKey
+than the one GPG last saw,
+perhaps your secondary one.
+GPG remembers the serial number of the last card
+and asks for that specific one.
+If you've swapped Yubikeys, force GPG to re-learn the current card:
+
+```bash
+gpg-connect-agent "scd serialno" "learn --force" /bye
+```
+
 ## Bonus: Using Your YubiKey for SSH Authentication
 
 If you added an authentication subkey to your YubiKey during key generation,
@@ -1261,6 +1298,7 @@ First, tell the GPG agent to offer SSH support.
 Add this to your `gpg-agent.conf`:
 
 ```text
+# ~/.gnupg/gpg-agent.conf
 enable-ssh-support
 ```
 
