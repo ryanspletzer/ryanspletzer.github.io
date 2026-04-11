@@ -305,14 +305,34 @@ gpg --export-secret-keys --armor YOUR_KEY_ID > /path/to/secure/backup/master-key
 gpg --export-secret-subkeys --armor YOUR_KEY_ID > /path/to/secure/backup/subkeys.asc
 ```
 
-Store these backups somewhere secure.
+Also generate a revocation certificate now, while you have easy access to the master key:
+
+```bash
+gpg --gen-revoke YOUR_KEY_ID > /path/to/secure/backup/revocation.asc
+```
+
+A revocation certificate is a pre-signed statement that says "this key is no longer valid."
+If you ever lose access to your master key entirely—lose
+the secure backup, forget the passphrase,
+or worse, a third party obtains control of the key and passphrase—this
+certificate is your only way to tell the world the key is dead.
+It's tied to your key's fingerprint, not its expiration date,
+so it never needs to be regenerated
+(not when you extend expiration, add UIDs, or make any other key changes).
+
+Note that GnuPG 2.1+ actually generates a revocation certificate automatically
+during key creation and stores it in `~/.gnupg/openpgp-revocs.d/`,
+but you should copy it into your secure backup location alongside your key exports
+rather than relying on it being on a single machine.
+
+Store all of these backups somewhere secure.
 You'll need them if your YubiKey is ever lost or broken.
 Some practical options:
 
-* An encrypted USB drive stored in a fireproof safe or safety deposit box
 * As file attachments in a password manager like 1Password or Bitwarden
   (the keys are already passphrase-protected, and you likely trust your
   password manager with everything else already)
+* An encrypted USB drive stored in a fireproof safe or safety deposit box
 * An encrypted archive in a cloud drive
 
 Now, insert your YubiKey and move the signing subkey onto it:
