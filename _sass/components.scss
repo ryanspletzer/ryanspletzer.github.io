@@ -272,7 +272,8 @@ sup .footnote-tooltip {
   visibility: hidden;
   position: absolute;
   z-index: 10;
-  width: 25rem;
+  width: max-content;
+  max-width: min(25rem, calc(100vw - 2rem));
   padding: 0.75rem 1rem;
   background-color: var(--color-surface-subtle);
   border: 1px solid var(--color-border);
@@ -303,6 +304,12 @@ sup .footnote-tooltip {
     inset-inline-start: 0;
     width: 2em;
     height: 1.5em;
+  }
+
+  // Flip to extend leftward when JS detects right-edge overflow
+  &.flip-inline {
+    inset-inline-start: auto;
+    inset-inline-end: 0;
   }
 
   // Hide the back-reference arrow inside the tooltip

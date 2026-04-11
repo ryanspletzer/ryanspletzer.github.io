@@ -88,6 +88,9 @@
         tip.setAttribute('aria-hidden', 'true');
         Array.from(source.childNodes).forEach(n => tip.appendChild(n.cloneNode(true)));
         ref.closest('sup').appendChild(tip);
+        if (tip.getBoundingClientRect().right > document.documentElement.clientWidth) {
+          tip.classList.add('flip-inline');
+        }
       });
 
       document.addEventListener('keydown', this);
