@@ -257,8 +257,8 @@ Whichever you choose, the remaining prompts are the same:
 If you chose option (11), add your signing subkey now:
 
 ```bash
-# Replace YOUR_KEY_ID with your master key ID from the output above
-gpg --expert --edit-key YOUR_KEY_ID
+# Replace YOUR_MASTER_KEY_ID with your master key ID from the output above
+gpg --expert --edit-key YOUR_MASTER_KEY_ID
 
 # In the GPG prompt:
 # gpg> addkey
@@ -305,14 +305,14 @@ but the actual private key material only exists on the hardware token.
 
 ```bash
 # Export your full key (public + private) to a safe location
-gpg --export-secret-keys --armor YOUR_KEY_ID > /path/to/secure/backup/master-key.asc
-gpg --export-secret-subkeys --armor YOUR_KEY_ID > /path/to/secure/backup/subkeys.asc
+gpg --export-secret-keys --armor YOUR_MASTER_KEY_ID > ~/gpg-export/master-secret-key.asc
+gpg --export-secret-subkeys --armor YOUR_MASTER_KEY_ID > ~/gpg-export/secret-subkeys.asc
 ```
 
 Also generate a revocation certificate now, while you have easy access to the master key:
 
 ```bash
-gpg --gen-revoke YOUR_KEY_ID > /path/to/secure/backup/revocation.asc
+gpg --gen-revoke YOUR_MASTER_KEY_ID > ~/gpg-export/revocation-certificate.asc
 ```
 
 A revocation certificate is a pre-signed statement that says "this key is no longer valid."
@@ -329,9 +329,12 @@ during key creation and stores it in `~/.gnupg/openpgp-revocs.d/`,
 but you should copy it into your secure backup location alongside your key exports
 rather than relying on it being on a single machine.
 
-Store all of these backups somewhere secure.
-You'll need them if your YubiKey is ever lost or broken.
-Some practical options:
+Move these exported files into a secure storage location,
+then delete the local `~/gpg-export/` directory.
+These files should not persist on your filesystem—the
+whole point is that the private key material lives on your YubiKey, not on disk.
+
+Some practical storage options:
 
 * As file attachments in a password manager like 1Password or Bitwarden
   (the keys are already passphrase-protected, and you likely trust your
@@ -339,11 +342,13 @@ Some practical options:
 * An encrypted USB drive stored in a fireproof safe or safety deposit box
 * An encrypted archive in a cloud drive
 
+You'll need these backups if your YubiKey is ever lost or broken.
+
 Now, insert your YubiKey and move the signing subkey onto it:
 
 ```bash
 # Edit your key
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # Select the signing subkey (check the index -- usually key 1 or 2)
 # gpg> key 1
@@ -393,11 +398,11 @@ move the subkey to your second YubiKey:
 ```bash
 # After moving the subkey to your first YubiKey and saving,
 # restore the local private key from your backup
-gpg --delete-secret-keys YOUR_KEY_ID
-gpg --import /path/to/secure/backup/master-key.asc
+gpg --delete-secret-keys YOUR_MASTER_KEY_ID
+gpg --import ~/gpg-export/master-secret-key.asc
 
 # Insert your second YubiKey and move the subkey onto it
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 # gpg> key 1
 # gpg> keytocard
 # Choose (1) Signature key
@@ -424,10 +429,10 @@ you are free to safely remove the master key from your keyring.
 
 ```bash
 # Remove the secret master key from your local keyring
-gpg --delete-secret-keys YOUR_KEY_ID
+gpg --delete-secret-keys YOUR_MASTER_KEY_ID
 
 # Re-import the public key so GPG still knows about your key
-gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --import ~/gpg-export/public-key.asc
 
 # Plug in your YubiKey so GPG re-discovers the subkey stubs
 gpg --card-status
@@ -604,7 +609,7 @@ For GitHub to show the "Verified" badge, it needs your public key:
 
 ```bash
 # Export your public key
-gpg --armor --export YOUR_KEY_ID
+gpg --armor --export YOUR_MASTER_KEY_ID
 ```
 
 Copy the output (including the `-----BEGIN PGP PUBLIC KEY BLOCK-----` and
@@ -622,13 +627,13 @@ when [setting up a new machine](#setting-up-on-a-new-machine) down the road.
 You can *optionally* upload it to a public keyserver:[^keys-openpgp-org]
 
 ```bash
-gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
 ```
 
 Then on any new machine, you can import it directly:
 
 ```bash
-gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --recv-keys YOUR_MASTER_KEY_ID
 ```
 
 Alternatively, keep your public key (not your private key!)
@@ -681,7 +686,7 @@ If you uploaded your public key to a keyserver
 importing it on the new machine is one command:
 
 ```bash
-gpg --keyserver keys.openpgp.org --recv-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --recv-keys YOUR_MASTER_KEY_ID
 ```
 
 Otherwise, import it from a file
@@ -690,7 +695,7 @@ or export it from another machine that already has it:
 
 ```bash
 # From a file
-gpg --import /path/to/your-public-key.asc
+gpg --import /path/to/public-key.asc
 ```
 
 ### macOS – New Machine
@@ -702,13 +707,13 @@ gpg --import /path/to/your-public-key.asc
 brew install gnupg pinentry-mac
 
 # Import your public key (from a backup, a keyserver, or export from another machine)
-gpg --import /path/to/your-public-key.asc
+gpg --import /path/to/public-key.asc
 
 # Plug in your YubiKey and tell GPG to discover the private key stubs on the card
 gpg --card-status
 
 # Trust your own key (otherwise GPG will warn on every signature)
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 # gpg> trust
 # Choose 5 (ultimate)
 # gpg> save
@@ -758,13 +763,13 @@ sudo apt update && sudo apt install -y gnupg2 scdaemon pcscd pinentry-gnome3
 # Or headless: replace pinentry-gnome3 with pinentry-curses
 
 # Import your public key
-gpg --import /path/to/your-public-key.asc
+gpg --import /path/to/public-key.asc
 
 # Plug in your YubiKey and discover the private key stubs
 gpg --card-status
 
 # Trust your own key
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 # gpg> trust
 # Choose 5 (ultimate)
 # gpg> save
@@ -809,13 +814,13 @@ git config --global commit.gpgsign true
 choco install gpg4win -y
 
 # Import your public key (from PowerShell, Git Bash, or cmd)
-gpg --import C:\path\to\your-public-key.asc
+gpg --import C:\path\to\public-key.asc
 
 # Plug in your YubiKey and discover the private key stubs
 gpg --card-status
 
 # Trust your own key
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 # gpg> trust
 # Choose 5 (ultimate)
 # gpg> save
@@ -845,13 +850,13 @@ so temporarily import it from your secure backup
 
 ```bash
 # Import the master key from your secure backup
-gpg --import /path/to/secure/backup/master-key.asc
+gpg --import ~/gpg-export/master-secret-key.asc
 ```
 
 ### Adding a New UID
 
 ```bash
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # In the GPG prompt:
 # gpg> adduid
@@ -867,7 +872,7 @@ A revoked UID stays visible on the key (GPG doesn't truly delete UIDs)
 but is marked as no longer valid:
 
 ```bash
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # Select the UID to revoke (UIDs are numbered starting at 1)
 # gpg> uid 2
@@ -890,7 +895,7 @@ so verifiers (like GitHub) know about the change:
 
 ```bash
 # Export the updated public key
-gpg --armor --export YOUR_KEY_ID > updated-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > updated-public-key.asc
 ```
 
 Then replace the key in GitHub under
@@ -904,7 +909,7 @@ even after you rotate or revoke keys.
 If you use a keyserver, push the update there too:
 
 ```bash
-gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
 ```
 
 ### Cleaning Up
@@ -914,8 +919,8 @@ Once you're done, remove the master key's private portion from your local keyrin
 [Removing the master key from your machine](#removing-the-master-key-from-your-machine)):
 
 ```bash
-gpg --delete-secret-keys YOUR_KEY_ID
-gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --delete-secret-keys YOUR_MASTER_KEY_ID
+gpg --import ~/gpg-export/public-key.asc
 gpg --card-status
 ```
 
@@ -961,10 +966,10 @@ then revoke the compromised signing subkey:
 
 ```bash
 # Import the master key
-gpg --import /path/to/secure/backup/master-key.asc
+gpg --import ~/gpg-export/master-secret-key.asc
 
 # Edit the key and revoke the signing subkey
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # Select the compromised subkey (check the index)
 # gpg> key 1
@@ -979,10 +984,10 @@ The revocation needs to reach anyone who might verify your signatures:
 
 ```bash
 # Export the updated public key (now containing the revocation)
-gpg --armor --export YOUR_KEY_ID > revoked-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > revoked-public-key.asc
 
 # Push to keyserver if you use one
-gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
 ```
 
 On GitHub, go to **Settings > SSH and GPG keys**,
@@ -997,7 +1002,7 @@ but doesn't retroactively invalidate past ones.
 
 ```bash
 # Still in edit mode with the master key imported
-gpg --expert --edit-key YOUR_KEY_ID
+gpg --expert --edit-key YOUR_MASTER_KEY_ID
 
 # gpg> addkey
 # Choose (10) ECC (sign only), select Curve 25519, set expiration
@@ -1024,13 +1029,24 @@ Future commits will be signed with the new subkey and show "Verified."
 
 ### Clean Up
 
-Remove the master key's private portion from your local keyring,
-update your secure backup with the new key state,
-and verify everything works:
+First, export your updated public key
+(which now contains the revoked old subkey and the new active one)
+and update your secure backup:
 
 ```bash
-gpg --delete-secret-keys YOUR_KEY_ID
-gpg --import /path/to/secure/backup/your-public-key.asc
+# Export the updated public key
+gpg --armor --export YOUR_MASTER_KEY_ID > ~/gpg-export/public-key.asc
+```
+
+Then remove the master key's private portion from your local keyring.
+The `--delete-secret-keys` command removes all secret key material,
+so you re-import the public key afterward
+so GPG still knows your key exists
+(and the YubiKey stubs get re-associated when you run `--card-status`):
+
+```bash
+gpg --delete-secret-keys YOUR_MASTER_KEY_ID
+gpg --import ~/gpg-export/public-key.asc
 gpg --card-status
 
 # Test a signed commit
@@ -1063,10 +1079,10 @@ don't need the master key's private portion at all:
 
 ```bash
 # Import the pre-generated revocation certificate
-gpg --import /path/to/secure/backup/revocation.asc
+gpg --import ~/gpg-export/revocation-certificate.asc
 
 # Publish the revoked key to keyserver
-gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_MASTER_KEY_ID
 ```
 
 Alternatively, if you have the master key but not the revocation certificate,
@@ -1074,16 +1090,16 @@ you can generate one now:
 
 ```bash
 # Import the master key from your secure backup
-gpg --import /path/to/secure/backup/master-key.asc
+gpg --import ~/gpg-export/master-secret-key.asc
 
 # Generate a revocation certificate
-gpg --gen-revoke YOUR_OLD_KEY_ID > revocation.asc
+gpg --gen-revoke YOUR_OLD_MASTER_KEY_ID > revocation-certificate.asc
 
 # Import the revocation into your keyring
-gpg --import revocation.asc
+gpg --import revocation-certificate.asc
 
 # Publish the revoked key to keyserver
-gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_OLD_MASTER_KEY_ID
 ```
 
 On GitHub, you can leave the old (now-revoked) key in place or remove it.
@@ -1120,7 +1136,7 @@ You'll also want to clean out the old key from those machines:
 
 ```bash
 # Remove the old key from your keyring
-gpg --delete-keys YOUR_OLD_KEY_ID
+gpg --delete-keys YOUR_OLD_MASTER_KEY_ID
 ```
 
 ## Extending Key Expiration
@@ -1138,10 +1154,10 @@ just setting a safety net that you periodically push forward.
 
 ```bash
 # Import your master key from your secure backup
-gpg --import /path/to/secure/backup/master-key.asc
+gpg --import ~/gpg-export/master-secret-key.asc
 
 # Edit the key (the master key is selected by default)
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # gpg> expire
 # Enter the new expiration period (e.g. 5y for 5 years from today)
@@ -1151,7 +1167,7 @@ gpg --edit-key YOUR_KEY_ID
 ### Extending a Subkey's Expiration
 
 ```bash
-gpg --edit-key YOUR_KEY_ID
+gpg --edit-key YOUR_MASTER_KEY_ID
 
 # Select the subkey you want to extend (check the index)
 # gpg> key 1
@@ -1171,10 +1187,10 @@ so that verifiers know about the new dates:
 
 ```bash
 # Export the updated public key
-gpg --armor --export YOUR_KEY_ID > updated-public-key.asc
+gpg --armor --export YOUR_MASTER_KEY_ID > updated-public-key.asc
 
 # Push to keyserver if you use one
-gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+gpg --keyserver keys.openpgp.org --send-keys YOUR_MASTER_KEY_ID
 ```
 
 On GitHub, add the updated export under
@@ -1184,8 +1200,8 @@ Then clean up: remove the master key's private portion from your local keyring,
 and update your secure backup with the new export.
 
 ```bash
-gpg --delete-secret-keys YOUR_KEY_ID
-gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --delete-secret-keys YOUR_MASTER_KEY_ID
+gpg --import ~/gpg-export/public-key.asc
 gpg --card-status
 ```
 
@@ -1262,7 +1278,7 @@ You need to add your authentication subkey's keygrip to `~/.gnupg/sshcontrol`:
 
 ```bash
 # Find the keygrips for your key
-gpg --list-keys --with-keygrip YOUR_KEY_ID
+gpg --list-keys --with-keygrip YOUR_MASTER_KEY_ID
 
 # Look for the keygrip on the line after your [A] (authentication) subkey
 # and add it to sshcontrol
@@ -1367,7 +1383,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     to decide whether to show the "Verified" badge.
     If you commit with multiple email addresses
     (e.g. personal and work), you can add additional UIDs to the same key
-    with `gpg --edit-key YOUR_KEY_ID` then `adduid`.
+    with `gpg --edit-key YOUR_MASTER_KEY_ID` then `adduid`.
 
 [^yubikey-accessories]: A couple of practical accessories I use:
     I keep a pair of
