@@ -75,13 +75,11 @@
   // Content is from the page's own kramdown-rendered footnotes (same-origin, not user input).
   // CSS handles visibility on hover / focus-within; Escape dismissal per WCAG 1.4.13.
   class FootnoteTooltips {
-    #tips;
+    #tips = [];
 
     constructor() {
       const refs = document.querySelectorAll('sup[id^="fnref:"] a.footnote');
       if (!refs.length) return;
-
-      this.#tips = [];
       refs.forEach(ref => {
         const id = ref.getAttribute('href')?.replace('#', '');
         const source = id && document.getElementById(id);
