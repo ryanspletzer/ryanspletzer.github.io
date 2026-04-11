@@ -957,7 +957,8 @@ If the compromise extends to your *master key*
 (your secure backup was exposed along with the passphrase),
 use the revocation certificate you generated in
 [Step 2](#step-2-move-the-signing-subkey-to-your-yubikey) and follow the
-[Starting Over: Complete Re-Key](#starting-over-complete-re-key) process instead.
+[Starting Over: Complete Re-Key (Fresh Start or Master Key Compromise)](#starting-over-complete-re-key-fresh-start-or-master-key-compromise)
+process instead.
 
 ### Revoke the Subkey
 
@@ -1054,7 +1055,7 @@ git commit --allow-empty -m "Test new signing subkey"
 git log --show-signature -1
 ```
 
-## Starting Over: Complete Re-Key
+## Starting Over: Complete Re-Key (Fresh Start or Master Key Compromise)
 
 The sections above cover lighter-weight changes—updating
 UIDs or revoking a single subkey while keeping the same master key.
