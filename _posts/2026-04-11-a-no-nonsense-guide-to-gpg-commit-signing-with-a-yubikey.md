@@ -5,7 +5,7 @@ date: 2026-04-11 00:00:00
 description: >
   GPG-signed Git commits prove that code actually came from you,
   and storing your signing key on a YubiKey means the private key
-  never touches your filesystem.
+  never persists on your filesystem.
   This guide walks through setting it all up on macOS, Windows, and Ubuntu.
 tags:
  - gpg
@@ -74,8 +74,8 @@ that you can refer back, and so that I can, too!
 If you've ever looked at a commit on GitHub and noticed the green "Verified" badge
 across all the commits on someone's PR,
 that's GPG commit signing at work.
-Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want --
-there's really nothing stopping someone from committing as you.[^commit-impersonation]
+Without it, anyone can set `user.name` and `user.email` in their Git config to whatever they want—there's
+really nothing stopping someone from committing as you.[^commit-impersonation]
 
 Signing commits with GPG attaches a cryptographic proof to each commit
 asserting that it came from the holder of a specific private key.[^gpg-hash-then-sign]
@@ -108,9 +108,9 @@ so you have to choose between GPG, SSH, S/MIME, or Sigstore—you
 can't layer them.
 In the absence of other options being available to you,
 I recommend setting up GPG commit signing yourself,
-because it is entirely within your control,
-and is also what the Linux and Git open source projects use for signing themselves,
-and is GPG signing better than nothing.
+because it is entirely within your control
+and is also what the Linux and Git open source projects use for signing themselves.
+GPG signing is better than nothing.
 If you are someone who prefers using SSH with GitHub,
 then SSH signing may be more appealing for you.[^ssh-signing]
 
@@ -118,10 +118,10 @@ then SSH signing may be more appealing for you.[^ssh-signing]
 
 The setup involves three layers:
 
-1. **GPG key pair** -- a master key (certify) with subkeys for signing, encryption, and optionally
+1. **GPG key pair** — a master key (certify) with subkeys for signing, encryption, and optionally
    authentication
-2. **YubiKey** -- the signing subkey gets moved onto the hardware token so it never exists on disk
-3. **Git configuration** -- tell Git to use GPG and point it at your signing subkey
+2. **YubiKey** — the signing subkey gets moved onto the hardware token so it never exists on disk
+3. **Git configuration** — tell Git to use GPG and point it at your signing subkey
 
 The end result: every `git commit` triggers a signing operation on your YubiKey,
 and the commit gets a cryptographic signature that GitHub (or any verifier)
@@ -215,11 +215,11 @@ gpg --full-generate-key --expert
 During the interactive prompts, you'll see a numbered menu.
 There are two paths:
 
-**Quick path -- option (9) "ECC and ECC":**
+**Quick path — option (9) "ECC and ECC":**
 creates a master key that can certify and sign,
 plus an encryption subkey, all in one step.
 
-**Clean path -- option (11) "ECC (set your own capabilities)":**
+**Clean path — option (11) "ECC (set your own capabilities)":**
 lets you toggle capabilities individually so you can create a certify-only master key,
 then add dedicated Sign, Encrypt, and Auth subkeys afterward.[^subkey-separation]
 
@@ -391,8 +391,8 @@ gpg --import /path/to/secure/backup/your-public-key.asc
 gpg --card-status
 ```
 
-After this, `gpg --list-secret-keys` will show `sec#` instead of `sec` --
-the `#` indicates the master key's private portion is absent.
+After this, `gpg --list-secret-keys` will show `sec#` instead of `sec`—the
+`#` indicates the master key's private portion is absent.
 Your signing subkey on the YubiKey still works normally.
 
 When you eventually need to do key management,
@@ -412,8 +412,8 @@ brew install pinentry-mac
 # Or build from source: https://github.com/GPGTools/pinentry-mac
 ```
 
-Configure GPG to use `pinentry-mac` for PIN entry --
-this gives you a native macOS dialog instead of a terminal prompt:
+Configure GPG to use `pinentry-mac` for PIN entry—this
+gives you a native macOS dialog instead of a terminal prompt:
 
 ```text
 # ~/.gnupg/gpg-agent.conf
@@ -828,7 +828,7 @@ and the PIN retry counter locks the card after 3 failed attempts.
 A lost YubiKey is not analogous to a leaked private key file.
 
 That said, if your key is genuinely compromised—your
-offline master key backup was exposed,
+secure master key backup was exposed,
 or you suspect the key material was somehow extracted—here's
 how to revoke and recover.
 
@@ -950,8 +950,8 @@ gpgconf --kill gpg-agent
 ## Bonus: Using Your YubiKey for SSH Authentication
 
 If you added an authentication subkey to your YubiKey during key generation,
-you can use that same YubiKey for SSH authentication --
-meaning one hardware token handles both GPG commit signing and SSH access.
+you can use that same YubiKey for SSH authentication—meaning
+one hardware token handles both GPG commit signing and SSH access.
 
 The way this works is that the GPG agent can act as an SSH agent.
 When you `ssh` into a server or `git push` over SSH,
@@ -981,7 +981,7 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 ```
 
 Next, tell the GPG agent which key to offer for SSH.
-Each GPG key has a "keygrip" -- a hash that identifies it independently of the key ID.
+Each GPG key has a "keygrip"—a hash that identifies it independently of the key ID.
 You need to add your authentication subkey's keygrip to `~/.gnupg/sshcontrol`:
 
 ```bash
@@ -1013,8 +1013,8 @@ paste into a server's `~/.ssh/authorized_keys`,
 or use anywhere else you'd use an SSH key.
 
 The difference is that when you actually authenticate,
-the private key operation happens on the YubiKey --
-you'll see the PIN prompt (or touch, if you enabled it)
+the private key operation happens on the YubiKey—you'll
+see the PIN prompt (or touch, if you enabled it)
 just like with commit signing.
 
 ## Closing Thoughts
@@ -1022,7 +1022,7 @@ just like with commit signing.
 This setup has served me well for years.
 The day-to-day experience is simple: plug in the YubiKey, commit code, enter the PIN when prompted.
 The security benefit is significant—your
-signing key never exists as a file that could be stolen or accidentally leaked.
+signing key never persists as a file that could be stolen or accidentally leaked.
 
 The initial setup is admittedly a bit involved,
 especially the key generation and subkey-to-card transfer steps,
@@ -1051,7 +1051,7 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 
 [^commit-impersonation]: It can happen, and
     [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
-    Also credit to Scott Hanselman whose aformentioned linked post originally got me into all this;
+    Also credit to Scott Hanselman whose aforementioned linked post originally got me into all this;
     it's a great guide for Windows.
     In his case he uses a key he created from [Keybase](https://keybase.io/),
     which is an awesome service that I've also used,
