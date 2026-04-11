@@ -16,7 +16,8 @@ tags:
 
 ![Delegates seated at a long table in the Hall of Mirrors at Versailles, signing the Treaty of Versailles in 1919, with tall arched mirrors and ornate chandeliers reflected behind them.](/assets/images/960px-William_Orpen_-_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)
 *William Orpen, The Signing of Peace in the Hall of Mirrors, 1919. Imperial War Museum, London. Public domain,
-via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
+via
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Orpen_%E2%80%93_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)*
 
 Anyone who knows me well knows that I nerd out about some specific things,
 like [OAuth](/2025/11/oidc-oauth-spec-graph/) and its adjacent specs like OpenID Connect, JWT, etc.,
@@ -399,7 +400,7 @@ the `#` indicates the master key's private portion is absent.
 Your signing subkey on the YubiKey still works normally.
 
 When you eventually need to do key management,
-temporarily import your master key from the offline backup,
+temporarily import your master key from your secure backup,
 do the work, then delete it again.
 
 ## Step 3: Configure Git for GPG Signing
@@ -784,9 +785,10 @@ gpg --armor --export YOUR_KEY_ID > updated-public-key.asc
 Then replace the key in GitHub under
 **Settings > SSH and GPG keys**—add
 the new export first, then delete the old entry.
-GitHub will re-verify your existing commits against the updated key.
-Commits signed under a revoked UID will lose their "Verified" badge,
-while commits under the new or still-active UIDs remain verified.
+GitHub stores a
+[verification record](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)
+at push time, so previously-verified commits keep their "Verified" badge
+even after you rotate or revoke keys.
 
 If you use a keyserver, push the update there too:
 
@@ -806,7 +808,7 @@ gpg --import /path/to/secure/backup/your-public-key.asc
 gpg --card-status
 ```
 
-And don't forget to update your offline backup with the new export,
+And don't forget to update your secure backup with the new export,
 since the master key now has updated UIDs.
 
 ### Updating Git config
@@ -820,6 +822,103 @@ git config --global user.email "your-new-email@example.com"
 
 No change is needed for `user.signingKey`—that
 points to your signing subkey, which hasn't changed.
+
+## Revoking a Compromised Key
+
+To be clear: if your YubiKey is lost or stolen,
+your signing key is almost certainly *not* compromised.
+The private key cannot be extracted from the hardware token,
+and the PIN retry counter locks the card after 3 failed attempts.
+A lost YubiKey is not analogous to a leaked private key file.
+
+That said, if your key is genuinely compromised—your
+offline master key backup was exposed,
+or you suspect the key material was somehow extracted—here's
+how to revoke and recover.
+
+### Revoke the subkey
+
+Import your master key from your secure backup,
+then revoke the compromised signing subkey:
+
+```bash
+# Import the master key
+gpg --import /path/to/secure/backup/master-key.asc
+
+# Edit the key and revoke the signing subkey
+gpg --edit-key YOUR_KEY_ID
+
+# Select the compromised subkey (check the index)
+# gpg> key 1
+# gpg> revkey
+# Confirm the revocation and provide a reason
+# gpg> save
+```
+
+### Publish the revocation
+
+The revocation needs to reach anyone who might verify your signatures:
+
+```bash
+# Export the updated public key (now containing the revocation)
+gpg --armor --export YOUR_KEY_ID > revoked-public-key.asc
+
+# Push to keyserver if you use one
+gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
+```
+
+On GitHub, go to **Settings > SSH and GPG keys**,
+add the updated public key export (which includes the revocation metadata),
+then remove the old entry.
+Because GitHub stores verification records at push time,
+your previously-verified commits keep their "Verified" badge—the
+revocation prevents *new* signatures from being verified under the old subkey,
+but doesn't retroactively invalidate past ones.
+
+### Generate a new signing subkey
+
+```bash
+# Still in edit mode with the master key imported
+gpg --expert --edit-key YOUR_KEY_ID
+
+# gpg> addkey
+# Choose (10) ECC (sign only), select Curve 25519, set expiration
+# gpg> save
+```
+
+### Load the new subkey onto your YubiKey(s)
+
+Follow the same process as
+[Step 2: Move the Signing Subkey to Your YubiKey](#step-2-move-the-signing-subkey-to-your-yubikey)—move
+the new subkey to your primary YubiKey,
+then restore from backup and move to your secondary if you have one.
+
+### Update Git config and GitHub
+
+```bash
+# Point Git at the new signing subkey ID
+git config --global user.signingKey YOUR_NEW_SIGNING_SUBKEY_ID
+```
+
+Upload the new public key export to GitHub
+(the one containing both the revoked old subkey and the new active one).
+Future commits will be signed with the new subkey and show "Verified."
+
+### Clean up
+
+Remove the master key's private portion from your local keyring,
+update your secure backup with the new key state,
+and verify everything works:
+
+```bash
+gpg --delete-secret-keys YOUR_KEY_ID
+gpg --import /path/to/secure/backup/your-public-key.asc
+gpg --card-status
+
+# Test a signed commit
+git commit --allow-empty -m "Test new signing subkey"
+git log --show-signature -1
+```
 
 ## Troubleshooting
 
