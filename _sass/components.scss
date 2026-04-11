@@ -306,7 +306,7 @@ sup .footnote-tooltip {
     height: 1.5em;
   }
 
-  // Flip to extend leftward when JS detects right-edge overflow
+  // Extend leftward when the tooltip would overflow the viewport
   &.flip-inline {
     inset-inline-start: auto;
     inset-inline-end: 0;

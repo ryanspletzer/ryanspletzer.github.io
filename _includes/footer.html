@@ -75,10 +75,13 @@
   // Content is from the page's own kramdown-rendered footnotes (same-origin, not user input).
   // CSS handles visibility on hover / focus-within; Escape dismissal per WCAG 1.4.13.
   class FootnoteTooltips {
+    #tips;
+
     constructor() {
       const refs = document.querySelectorAll('sup[id^="fnref:"] a.footnote');
       if (!refs.length) return;
 
+      this.#tips = [];
       refs.forEach(ref => {
         const id = ref.getAttribute('href')?.replace('#', '');
         const source = id && document.getElementById(id);
@@ -88,22 +91,33 @@
         tip.setAttribute('aria-hidden', 'true');
         Array.from(source.childNodes).forEach(n => tip.appendChild(n.cloneNode(true)));
         ref.closest('sup').appendChild(tip);
-        if (tip.getBoundingClientRect().right > document.documentElement.clientWidth) {
-          tip.classList.add('flip-inline');
-        }
+        this.#tips.push(tip);
       });
 
+      this.#positionAll();
+      visualViewport.addEventListener('resize', this);
       document.addEventListener('keydown', this);
     }
 
     handleEvent(e) {
-      if (e.key !== 'Escape') return;
-      const tip = document.activeElement?.closest('sup')?.querySelector('.footnote-tooltip');
-      if (!tip) return;
-      tip.classList.add('is-dismissed');
-      document.activeElement.addEventListener(
-        'blur', () => tip.classList.remove('is-dismissed'), { once: true }
-      );
+      if (e.type === 'resize') {
+        this.#positionAll();
+      } else if (e.key === 'Escape') {
+        const tip = document.activeElement?.closest('sup')?.querySelector('.footnote-tooltip');
+        if (!tip) return;
+        tip.classList.add('is-dismissed');
+        document.activeElement.addEventListener(
+          'blur', () => tip.classList.remove('is-dismissed'), { once: true }
+        );
+      }
+    }
+
+    #positionAll() {
+      const vw = document.documentElement.clientWidth;
+      for (const tip of this.#tips) {
+        tip.classList.remove('flip-inline');
+        if (tip.getBoundingClientRect().right > vw) tip.classList.add('flip-inline');
+      }
     }
   }
 
