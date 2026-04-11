@@ -26,7 +26,8 @@ and other auth specs like FIDO2/WebAuthn and SPIFFE/SPIRE,
 CI/CD,
 Zero Trust,
 certain fancy words like "[idempotency](https://en.wikipedia.org/wiki/Idempotence),"
-and in recent years AI and data engineering practices.
+and in recent years AI and data engineering practices
+(just to name a few).
 
 I'm also a big believer in the promise and evolution of the secure software supply chain,
 and am of the firm belief that a secure software supply chain starts with *you*,
@@ -43,7 +44,7 @@ so that the private key never persists on your filesystem.
 This guide walks through how to set up GPG commit signing with a YubiKey on macOS, Windows, and Ubuntu.
 
 Now, you may look at this post and think:
-"Ryan, really, this is long, and it even has a table of contents...
+"Ryan, this is really long, and it even has a table of contents...
 is this truly 'No-Nonsense'?"
 
 Trust me when I say this: the nonsense is as minimized as possible here.
@@ -51,7 +52,8 @@ Going through GPG / YubiKey setups has traditionally been not well-explained,
 and not for the faint of heart
 (hence why many people don't do it!).
 Because I've been doing this for many years,
-I have thought about the many scenarios you *will* run into along the way:
+I have thought beyond initial setup
+and further to the many scenarios you *will* run into along the way:
 for example, not just how to set up your key initially,
 but what you have to do for setting up a second YubiKey,
 what you have to do if you need to re-key,
@@ -59,8 +61,9 @@ and more.
 
 So while this post covers the initial setup,
 it also serves as a reference you can come back to
-when those scenarios inevitably arise.
-I'll keep adding to it as I think of more—so
+when those additional scenarios inevitably arise.
+Feel free to jump to the section(s) that are relevant for your situation.
+I'll keep adding to this as I think of more scenarios to address—so
 that you can refer back, and so that I can, too!
 
 * TOC
