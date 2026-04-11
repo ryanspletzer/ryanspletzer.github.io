@@ -984,11 +984,26 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     also alleviates the fear of snapping a YubiKey off in a USB port.
     And since YubiKeys are small and easy to misplace,
     I attached an AirTag on a key ring
-    (yes, I like the Apple Finewoven AirTag key rings)
+    (I like the Apple Finewoven AirTag key rings)
     along with a small [hand strap](https://www.amazon.com/dp/B08RX4V4CM) to make it easier to keep track of.
 
 [^rsa-still-fine]: My own keys are RSA 4096 from 2018, which is still perfectly secure,
     but if I were starting fresh today I'd go with ed25519.
+    If you're wondering about quantum computing cracking this in the future:
+    neither RSA nor ed25519 (nor any ECC) is post-quantum encryption—Shor's
+    algorithm could theoretically break both.
+    (I say theoretically because I believe there are
+    [reasons](https://eprint.iacr.org/2025/1237.pdf) to be
+    [skeptical](https://www.schneier.com/blog/archives/2025/07/cheating-on-quantum-computing-benchmarks.html)
+    about how far along we really are with quantum computing.)
+    When post-quantum algorithms land in GnuPG, everyone re-keys regardless.
+    In the meantime, the "harvest now, decrypt later" concern
+    applies primarily to *encrypted* data, not *signatures*.
+    For commit signing, the threat from a recovered private key
+    is forward-looking (forging future signatures as you),
+    not retroactive—your
+    past signed commits are already baked into Git's hash chain
+    and can't be altered in-place regardless of what happens to the key.
 
 [^subkey-separation]: This is recommended for the same reason you don't use your root CA
     to sign leaf certs—if a subkey is compromised, you revoke just that subkey
