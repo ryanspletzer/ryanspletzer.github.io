@@ -294,6 +294,17 @@ sup .footnote-tooltip {
     margin-block-start: 0.5rem;
   }
 
+  // Invisible bridge above the tooltip so the cursor can travel from the
+  // superscript to the tooltip without losing :hover on the parent <sup>.
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-end: 100%;
+    inset-inline-start: 0;
+    width: 2em;
+    height: 1.5em;
+  }
+
   // Hide the back-reference arrow inside the tooltip
   .reversefootnote {
     display: none;
@@ -301,7 +312,8 @@ sup .footnote-tooltip {
 }
 
 @media (min-width: 48em) {
-  sup:has(.footnote):hover .footnote-tooltip {
+  sup:has(.footnote):hover .footnote-tooltip,
+  sup:has(.footnote):focus-within .footnote-tooltip:not(.is-dismissed) {
     visibility: visible;
   }
 }
