@@ -1279,6 +1279,103 @@ If you've swapped Yubikeys, force GPG to re-learn the current card:
 gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
+### YubiKey Not Detected After Removing and Reinserting
+
+If you unplug and replug your YubiKey and GPG stops recognizing it
+(signing fails or `gpg --card-status` errors),
+the `scdaemon` process has likely cached the old connection and doesn't notice the card came back.
+Kill it and let GPG restart it automatically:
+
+```bash
+gpgconf --kill scdaemon
+gpg --card-status
+```
+
+### `scdaemon` and `pcscd` Conflict (Linux)
+
+On Linux, both `scdaemon`'s built-in CCID driver and the `pcscd` service
+try to claim exclusive access to the YubiKey.
+Symptoms include "card not found" errors or intermittent failures.
+The fix is to tell `scdaemon` to back off and let `pcscd` handle the hardware:
+
+```text
+# ~/.gnupg/scdaemon.conf
+disable-ccid
+```
+
+Then restart:
+
+```bash
+gpgconf --kill scdaemon
+gpg --card-status
+```
+
+### Wrong `gpg` Binary in Git
+
+If signing fails silently or Git seems to use a different keyring than expected,
+Git may be pointing at the wrong GPG binary.
+This is common on Windows (where Git ships its own GPG 2.2.x alongside GPG4Win)
+and on macOS (where multiple installations can coexist via Homebrew, MacPorts, or GPG Suite).
+
+Check what Git is using:
+
+```bash
+git config --global gpg.program
+```
+
+Then verify it's the right one:
+
+```bash
+# Should show your keys and YubiKey stubs
+$(git config --global gpg.program) --list-secret-keys
+```
+
+If it shows nothing or the wrong keyring, update `gpg.program`
+to point at the correct binary
+(see the platform-specific sections in
+[Step 3](#step-3-configure-git-for-gpg-signing)).
+
+### Accidental OTP Output When Touching YubiKey
+
+If you accidentally touch your YubiKey's sensor and a long string of characters
+gets typed into your terminal or editor,
+that's the OTP (One-Time Password) slot firing.
+It's harmless but annoying.
+You can disable OTP mode entirely if you don't use it.
+This requires [`ykman` (YubiKey Manager CLI)](https://developers.yubico.com/yubikey-manager/):
+
+```bash
+# Install ykman
+# macOS:
+brew install ykman
+# Ubuntu:
+sudo apt install -y yubikey-manager
+# Windows:
+choco install yubikey-manager -y
+
+# Disable OTP
+ykman config usb --disable OTP
+```
+
+This leaves the other interfaces (FIDO2, OpenPGP, PIV) unaffected.
+
+### "Unusable Secret Key" (Expired Subkey)
+
+If GPG gives a generic "unusable secret key" error during signing,
+your signing subkey may have expired.
+GPG doesn't always clearly indicate that expiration is the issue.
+
+Check your key's expiration dates:
+
+```bash
+gpg --list-keys --with-colons YOUR_MASTER_KEY_ID
+```
+
+Look for `exp` (expired) in the output.
+If your signing subkey has expired,
+follow the [Extending Key Expiration](#extending-key-expiration) section
+to renew it from your master key.
+
 ## Bonus: Using Your YubiKey for SSH Authentication
 
 If you added an authentication subkey to your YubiKey during key generation,
@@ -1293,6 +1390,16 @@ The SSH private key never exists as a file on disk,
 just like your signing key.
 
 ### Setup
+
+The steps below work on macOS, Linux, and Git Bash on Windows.
+The native Windows `ssh.exe` doesn't use `SSH_AUTH_SOCK`—it
+communicates via a named pipe (`\\.\pipe\openssh-ssh-agent`) instead.
+Bridging `gpg-agent`'s SSH interface to that named pipe is possible
+(tools like [gpg-bridge](https://github.com/BusyJay/gpg-bridge) exist),
+but the ecosystem here is pretty immature.
+If you primarily use Windows, you may find it simpler
+to use a separate SSH key on your YubiKey via FIDO2/resident keys
+rather than routing SSH through GPG.
 
 First, tell the GPG agent to offer SSH support.
 Add this to your `gpg-agent.conf`:
@@ -1322,8 +1429,11 @@ You need to add your authentication subkey's keygrip to `~/.gnupg/sshcontrol`:
 gpg --list-keys --with-keygrip YOUR_MASTER_KEY_ID
 
 # Look for the keygrip on the line after your [A] (authentication) subkey
-# and add it to sshcontrol
+# and add it to sshcontrol, for zsh, bash, fish:
 echo "YOUR_AUTH_KEYGRIP" >> ~/.gnupg/sshcontrol
+
+# Or for PowerShell on Windows, but see caveat about gpg-bridge above as this is not mature yet:
+# Add-Content -Path "$env:APPDATA\gnupg\sshcontrol" -Value "YOUR_AUTH_KEYGRIP"
 ```
 
 Restart the GPG agent for changes to take effect:
