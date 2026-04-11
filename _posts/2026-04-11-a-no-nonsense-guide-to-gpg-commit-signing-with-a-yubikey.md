@@ -33,21 +33,14 @@ and am of the firm belief that a secure software supply chain starts with *you*,
 on your local machine.
 
 Therefore it should come as no surprise
-that I nerd out quite heavily about GPG-signed Git commits
-to help to prove that your code actually came from *you*
-(possibly in tandem an AI agent helping you),
-and taking that an extra step further
-and storing your signing key on a YubiKey so that the private key never touches your filesystem.
+that I nerd out quite heavily about GPG-signed Git commits—cryptographic
+proof that code actually came from *you*
+(possibly in tandem with an AI agent helping you)—and
+about taking that an extra step further
+by storing your signing key on a YubiKey[^other-hardware-keys]
+so that the private key never persists on your filesystem.
 
 This guide walks through how to set up GPG commit signing with a YubiKey on macOS, Windows, and Ubuntu.
-
-Though I mention YubiKey explicitly here
-(because that's what I use and seems to be the most popular),
-other brands of hardware security keys can be used,
-like NitroKey, OnlyKey, Token2 and Feitean.
-Notably, while Google's Titan security key supports FIDO2/WebAuthn,
-it's important to be aware that Titan security keys do *not* support GPG commit signing.
-Many of the steps outlined here for YubiKey will be similar for other keys.
 
 Now, you may look at this post and think:
 "Ryan, really, this is long, and it even has a table of contents...
@@ -203,7 +196,7 @@ It's the modern default—smaller keys, faster signing, and a simpler implementa
 with fewer knobs to misconfigure compared to RSA.
 YubiKey 5 series supports `ed25519` natively.[^rsa-still-fine]
 
-### macOS
+### macOS — Key Generation
 
 ```bash
 # Install GnuPG via Homebrew
@@ -256,7 +249,7 @@ gpg --expert --edit-key YOUR_KEY_ID
 You can also add encryption and authentication subkeys the same way if you want those capabilities
 on your YubiKey.
 
-### Ubuntu
+### Ubuntu — Key Generation
 
 ```bash
 # Install GnuPG
@@ -268,7 +261,7 @@ gpg --full-generate-key --expert
 
 The process is identical to macOS from here—add subkeys with `gpg --expert --edit-key`.
 
-### Windows
+### Windows — Key Generation
 
 ```powershell
 # Install GPG4Win via Chocolatey
@@ -405,7 +398,7 @@ do the work, then delete it again.
 
 ## Step 3: Configure Git for GPG Signing
 
-### macOS
+### macOS — Git Config
 
 The macOS setup involves a few pieces:
 
@@ -481,7 +474,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Ubuntu
+### Ubuntu — Git Config
 
 ```bash
 # Install pinentry for terminal or GUI
@@ -513,7 +506,7 @@ Or for GNOME desktop:
 pinentry-program /usr/bin/pinentry-gnome3
 ```
 
-### Windows
+### Windows — Git Config
 
 ```powershell
 # If using GPG4Win, Kleopatra handles PIN entry automatically
@@ -572,7 +565,7 @@ The core idea is the same on every platform:
 install GPG, import your public key, plug in the YubiKey so GPG discovers the private key stubs,
 set trust, and configure Git and pinentry.
 
-### macOS
+### macOS — New Machine
 
 ```bash
 # Install GnuPG and pinentry-mac
@@ -620,7 +613,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Ubuntu
+### Ubuntu — New Machine
 
 ```bash
 # Install GnuPG and smartcard support
@@ -670,7 +663,7 @@ git config --global user.signingKey YOUR_SIGNING_SUBKEY_ID
 git config --global commit.gpgsign true
 ```
 
-### Windows
+### Windows — New Machine
 
 ```powershell
 # Install GPG4Win
@@ -1045,6 +1038,14 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     If you want to understand how Git actually works under the hood
     rather than just memorizing commands, this is the book.
 
+[^other-hardware-keys]: I mention YubiKey explicitly here
+    because that's what I use and it seems to be the most popular,
+    but other brands of hardware security keys can be used,
+    like NitroKey, OnlyKey, Token2, and Feitean.
+    Notably, while Google's Titan security key supports FIDO2/WebAuthn,
+    Titan keys do *not* support GPG commit signing.
+    Many of the steps outlined here for YubiKey will be similar for other keys.
+
 [^commit-impersonation]: It can happen, and
     [has happened to some well-known folks out there](https://www.hanselman.com/blog/how-to-setup-signed-git-commits-with-a-yubikey-neo-and-gpg-and-keybase-on-windows#:~:text=I%20just%20want%20to%20be%20able%20to%20sign%20my%20code%20commits%20to%20GitHub%20so%20I%20might%20avoid%20people%20impersonating%20my%20Git%20Commits%20(happens%20more%20than%20you%27d%20think%20and%20has%20happened%20recently.)).
     Also credit to Scott Hanselman whose aformentioned linked post originally got me into all this;
@@ -1074,6 +1075,16 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 
 [^other-distros]: I'll assume that if you're well-versed in Linux
     that you can figure this out for your distro of choice.
+    While Ubuntu is the most popular,
+    and hence why I focus on it in this post and others,
+    I myself tend to lean more towards Fedora these days.
+
+[^gpg-email-matching]: GitHub matches the commit's author email
+    against the UIDs on your GPG key
+    to decide whether to show the "Verified" badge.
+    If you commit with multiple email addresses
+    (e.g. personal and work), you can add additional UIDs to the same key
+    with `gpg --edit-key YOUR_KEY_ID` then `adduid`.
 
 [^yubikey-accessories]: A couple of practical accessories I use:
     I keep a pair of
@@ -1107,13 +1118,6 @@ but it's a one-time cost that pays dividends in the form of verified commits and
 [^subkey-separation]: This is recommended for the same reason you don't use your root CA
     to sign leaf certs—if a subkey is compromised, you revoke just that subkey
     without losing your entire identity.
-
-[^gpg-email-matching]: GitHub matches the commit's author email
-    against the UIDs on your GPG key
-    to decide whether to show the "Verified" badge.
-    If you commit with multiple email addresses
-    (e.g. personal and work), you can add additional UIDs to the same key
-    with `gpg --edit-key YOUR_KEY_ID` then `adduid`.
 
 [^fido2-passkeys]: FIDO2 and WebAuthn are the underlying standards behind
     what most people now know as
