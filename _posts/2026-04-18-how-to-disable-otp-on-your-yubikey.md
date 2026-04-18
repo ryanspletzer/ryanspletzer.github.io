@@ -37,7 +37,7 @@ or they fell asleep with their face on the keys.
 But if you *are* familiar with YubiKeys,
 you know exactly what happened:
 they bumped the sensor on their key,
-and the OTP slot fired a
+and the OTP (One-Time Password) slot fired a
 [Yubico OTP](https://developers.yubico.com/OTP/) string
 directly into whatever text field had focus at the time.
 
@@ -201,7 +201,7 @@ and turning one off doesn't touch the others:
 
 ## Re-Enabling OTP
 
-Disabling OTP is fully reversible. No bridges burned.
+Disabling OTP is fully reversible.
 
 If you ever need OTP back—and
 I'm struggling to imagine why you would,
@@ -395,7 +395,7 @@ OTP was just the part that needed to be put to rest.
     Yubico OTP validation requires network access to YubiCloud
     (or a self-hosted validation server).
     This is another reason the protocol has fallen out of favor—it
-    introduces a cloud dependency for what should be a local authentication event.
+    requires the service to call out to Yubico just to verify the credential.
     Yubico does provide
     [open-source validation server software](https://developers.yubico.com/yubikey-val/)
     for self-hosting, but very few organizations go that route.
