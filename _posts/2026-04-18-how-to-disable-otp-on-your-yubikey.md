@@ -33,7 +33,7 @@ suddenly a message appears in a channel that looks something like this:
 
 If you're not familiar with YubiKeys, this looks like gibberish—maybe
 someone's cat walked across the keyboard,
-or they had a stroke mid-sentence.
+or they fell asleep with their face on the keys.
 But if you *are* familiar with YubiKeys,
 you know exactly what happened:
 they bumped the sensor on their key,
@@ -262,6 +262,13 @@ which decrypts it,
 checks the counter to prevent replay attacks,
 and responds with a pass or fail.[^yubicloud-validation]
 
+That pre-programmed Slot 1 credential is registered with YubiCloud at the factory—which
+is what makes Yubico OTP work out of the box,
+but also means the symmetric key exists on Yubico's servers from day one.
+This is fine for the threat model the protocol was designed around,
+but it's another reason the industry has converged on public-key approaches
+like FIDO2 where no copy of your secret lives anywhere but on the key itself.
+
 This was genuinely useful in the pre-FIDO2 era.
 Before WebAuthn became a standard,
 Yubico OTP was one of the best options available
@@ -346,9 +353,10 @@ that every OTP-based approach has:
   Yubico OTP requires a symmetric key
   shared between the YubiKey and YubiCloud,
   which means there's a copy of the secret on Yubico's servers.
-* **No cloud dependency** — FIDO2 verification happens
-  between the relying party and the authenticator.
-  Yubico OTP requires a roundtrip to YubiCloud.
+* **No third-party validation service** — FIDO2 verification happens
+  directly between the service you're logging into and the authenticator.
+  Yubico OTP requires the service to send the OTP to YubiCloud
+  for validation.
 * **Built into everything** — every major browser, operating system,
   and a rapidly growing number of services support WebAuthn natively.
 
