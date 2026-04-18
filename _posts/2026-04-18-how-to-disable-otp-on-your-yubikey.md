@@ -54,10 +54,33 @@ Good news: it takes about 30 seconds.
 
 If you just want the fix and don't need the backstory,
 here you go.
+The GUI app approach is first because that's what most people will reach for—if
+you're not at home in a terminal,
+clicking a checkbox is the friendlier path.
+If you do live in a terminal,
+scroll past it to the `ykman` approach below.
+
+### Via YubiKey Manager (GUI)
+
+Yubico provides a graphical application called
+[YubiKey Manager](https://www.yubico.com/support/download/yubikey-manager/).
+It runs on macOS, Windows, and Linux,
+and you can also install it through package managers like Homebrew and Chocolatey.
+
+1. Open YubiKey Manager and insert your YubiKey
+2. Click **Interfaces** in the left sidebar
+3. Under **USB**, uncheck **OTP**
+4. If your YubiKey supports NFC, under **NFC**, uncheck **OTP** as well
+5. Click **Save Interfaces**
+
+Done.
+The application will confirm the change,
+and your YubiKey will no longer emit OTP strings on touch.
 
 ### Via ykman (CLI)
 
-First, install the
+If you'd rather use the command line,
+first install the
 [YubiKey Manager CLI](https://developers.yubico.com/yubikey-manager/)
 if you haven't already:
 
@@ -99,29 +122,11 @@ NFC application configuration updated.
 
 That's it.
 No more accidental OTP strings.
-Read on for the GUI method, more context, or to understand what you just did.
-
-### Via YubiKey Manager (GUI)
-
-If you'd rather not use the command line, Yubico provides a graphical application:
-
-1. Download and install
-   [YubiKey Manager](https://www.yubico.com/support/download/yubikey-manager/)
-   (available on macOS, Windows, and Linux,
-   and you can also get this through package managers like Homebrew and Chocolatey)
-2. Open YubiKey Manager and insert your YubiKey
-3. Click **Interfaces** in the left sidebar
-4. Under **USB**, uncheck **OTP**
-5. If your YubiKey supports NFC, under **NFC**, uncheck **OTP** as well
-6. Click **Save Interfaces**
-
-Done.
-The application will confirm the change,
-and your YubiKey will no longer emit OTP strings on touch.
+Read on for more context, and to understand what you just disabled.
 
 ## Disabling OTP vs. Removing the Credential
 
-There are actually two different things you can do here,
+There are actually two different things you can do here to remove OTP,
 and it's worth understanding the distinction.
 
 **Disabling the OTP application** is what the Quick Reference section above does.
@@ -201,7 +206,10 @@ I'm struggling to imagine why you would,
 but who am I to judge—the
 process is straightforward.
 
-Via ykman:
+Via the GUI app: same steps as before in the [Quick Reference](#quick-reference),
+but check the OTP box instead of unchecking it.
+
+Via `ykman`:
 
 ```bash
 # Re-enable OTP over USB
@@ -211,15 +219,16 @@ ykman config usb --enable OTP
 ykman config nfc --enable OTP
 ```
 
-Via the GUI: same steps as before,
-but check the OTP box instead of unchecking it.
-
 If you went the slot-credential route
 and deleted the Yubico OTP credential from Slot 1,
 you can reprogram it:
 
 ```bash
-ykman otp yubiotp 1 --serial-public-id --generate-private-id --generate-key
+$ ykman otp yubiotp 1 --serial-public-id --generate-private-id --generate-key
+Using YubiKey serial as public ID: vvcccbblbgjr
+Using a randomly generated private ID: 7d795b01b50c
+Using a randomly generated secret key: f857d5634a0cf143b7bf88dd0ee6af92
+Program a YubiOTP credential in slot 1? [y/N]: y
 ```
 
 This generates a new Yubico OTP credential
