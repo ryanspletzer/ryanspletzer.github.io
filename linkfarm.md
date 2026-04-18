@@ -14,7 +14,7 @@ read them:
 
 * [Scalable and Modular Architecture for CSS](https://smacss.com/) — I searched high and low for patterns for CSS.
   There's pretty good prescriptive guidance when it comes to most programming languages, but when it came to a logical
-  organization pattern for stylesheets, I wandered in the desert for a long time — until I found this book. I have yet
+  organization pattern for stylesheets, I wandered in the desert for a long time—until I found this book. I have yet
   to find a better approach.
 
 * [Smashing Books](https://shop.smashingmagazine.com/collections/books):
@@ -68,7 +68,7 @@ read them:
 
 * [PowerShell Practice and Style](https://github.com/PoshCode/PowerShellPracticeAndStyle) — I looked around for a long
   time on good conventions for writing PowerShell and came across this from the community. I follow these rules about
-  95-98% of the time, though Microsoft themselves will have slightly different practices — what I wind up doing is
+  95-98% of the time, though Microsoft themselves will have slightly different practices—what I wind up doing is
   following convention based on the project, so that at least within a given project things are consistent. Common
   things that vary per project are, brackets opening on the same line and the use of backticks.
 
