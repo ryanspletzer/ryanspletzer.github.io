@@ -14,7 +14,7 @@ read them:
 
 * [Scalable and Modular Architecture for CSS](https://smacss.com/) — I searched high and low for patterns for CSS.
   There's pretty good prescriptive guidance when it comes to most programming languages, but when it came to a logical
-  organization pattern for stylesheets, I wandered in the desert for a long time -- until I found this book. I have yet
+  organization pattern for stylesheets, I wandered in the desert for a long time — until I found this book. I have yet
   to find a better approach.
 
 * [Smashing Books](https://shop.smashingmagazine.com/collections/books):
@@ -23,9 +23,10 @@ read them:
   [3 + 3 1/3](https://shop.smashingmagazine.com/products/smashing-book-3-digital-edition),
   [4](https://shop.smashingmagazine.com/products/smashing-book-4-ebooks),
   [5](https://shop.smashingmagazine.com/products/smashing-book-5-real-life-responsive-web-design),
-  and [more](https://shop.smashingmagazine.com/) — These books have come out at certain intervals over the years, and
-  although I don't claim to be a Designer of any sort, much of what I do know about web design started with these series
-  of books. Smashing Magazine has also produced other non-numbered books on more specific subjects which are also great.
+  and [more Smashing books](https://shop.smashingmagazine.com/) — These books have come out at certain intervals over
+  the years, and although I don't claim to be a Designer of any sort, much of what I do know about web design started
+  with these series of books. Smashing Magazine has also produced other non-numbered books on more specific subjects
+  which are also great.
 
 * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) — Frontend
   development has changed a lot over the years, but this book first introduced me to some fundamental concepts including
@@ -67,7 +68,7 @@ read them:
 
 * [PowerShell Practice and Style](https://github.com/PoshCode/PowerShellPracticeAndStyle) — I looked around for a long
   time on good conventions for writing PowerShell and came across this from the community. I follow these rules about
-  95-98% of the time, though Microsoft themselves will have slightly different practices -- what I wind up doing is
+  95-98% of the time, though Microsoft themselves will have slightly different practices — what I wind up doing is
   following convention based on the project, so that at least within a given project things are consistent. Common
   things that vary per project are, brackets opening on the same line and the use of backticks.
 
@@ -306,7 +307,7 @@ read them:
   https://spiffe.io/pdf/Solving-the-bottom-turtle-SPIFFE-SPIRE-Book.pdf) — For several years during my career focusing
   on Identity, I from time to time had to field questions about automated password / credential rotation. I ran into the
   same realities as the authors of the SPIFFE standard and SPIRE implementation, in that the only way to accomplish
-  automated credential rotation with traditional means was to introduce yet _another_ credential to rotate the initial
+  automated credential rotation with traditional means was to introduce yet *another* credential to rotate the initial
   credential (or perhaps several initial credentials), and then you have to worry about protecting that credential which
   effectively "owns" those other credential(s), and worry about rotating that credential, too. It becomes "turtles all
   the way down." This is why SPIFFE and its implementation SPIRE resonate very strongly with me. Efforts at several
@@ -388,7 +389,7 @@ These are books of any other category that don't fit above.
   stories. OKR's can be abused and misused, but regardless it's important to understand the methodology behind them.
 
 * [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential](https://www.buildingasecondbrain.com/) —
-  I read David Allen's classic _Getting Things Done_, and while the ideas put forward in that book still resonate, Tiago
+  I read David Allen's classic *Getting Things Done*, and while the ideas put forward in that book still resonate, Tiago
   Forte's approach feels like a much more modern equivalent of that, with the advent of new technologies like
   note-taking apps and the ability to search (whereas Allen's book was written in a paper era). I found the PARA and
   CODE methodologies, and discussions on creativity through divergence and convergence, resonated very strongly with me,
