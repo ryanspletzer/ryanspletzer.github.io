@@ -266,7 +266,7 @@ and responds with a pass or fail.[^yubicloud-validation]
 That pre-programmed Slot 1 credential is registered with YubiCloud at the factory—which
 is what makes Yubico OTP work out of the box,
 but also means the symmetric key exists on Yubico's servers from day one.
-This is fine for the threat model the protocol was designed around,
+This is fine for the threat model the protocol was designed around back in the day,
 but it's another reason the industry has converged on public-key approaches
 like FIDO2 where no copy of your secret lives anywhere but on the key itself.
 
@@ -286,7 +286,7 @@ and the original product, released in 2008, was an OTP token only.
 ### Static Password
 
 A YubiKey OTP slot can also be configured to hold a static password—a
-fixed string that gets typed every time you touch the sensor.
+fixed string that gets typed every time you touch the sensor.[^password-sensitive]
 This is essentially a hardware-stored password.
 
 It's the simplest credential type:
@@ -345,7 +345,8 @@ that every OTP-based approach has:
 
 * **Phishing-resistant by design** — the credential is
   [origin-bound](https://www.w3.org/TR/webauthn-3/#sctn-rp-id),
-  meaning the browser will not submit it to a lookalike domain.
+  meaning the browser will not submit it to a lookalike domain
+  that an attacker may have set up.
   OTP credentials have no concept of origin—they're
   just strings that get pasted wherever you're typing,
   which is, incidentally, the entire problem this post is about.
@@ -361,11 +362,13 @@ that every OTP-based approach has:
 * **Built into everything** — every major browser, operating system,
   and a rapidly growing number of services support WebAuthn natively.
 
+## Conclusion
+
 The OTP application on your YubiKey is a legacy feature.
 It was useful in its time, but that time has largely passed.
 Disabling it doesn't remove any functionality you're likely using—it
-just stops the key from doing the one thing
-that annoys everyone.
+just stops the key from doing the one thing that annoys you,
+and spares your peers from seeing (and making fun of) your gibberish strings.
 
 <!-- markdownlint-disable-next-line MD022 -->
 ## Footnotes
@@ -397,3 +400,7 @@ that annoys everyone.
     you ever need the credential again,
     re-enabling the application restores the original credential
     since it was never deleted from the key.
+
+[^password-sensitive]:
+    And you thought emitting a random string into a Slack channel was bad,
+    imagine doing that with your password. Yikes.
