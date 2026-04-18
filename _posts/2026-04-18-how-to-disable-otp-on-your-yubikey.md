@@ -250,7 +250,6 @@ in different contexts.
 
 ### Yubico OTP
 
-This is the default.
 Every YubiKey ships with a Yubico OTP credential pre-programmed into Slot 1,
 and it's the thing that fires when you accidentally touch the sensor.
 
@@ -388,12 +387,11 @@ that annoys everyone.
     for self-hosting, but very few organizations go that route.
 
 [^re-registration]:
-    The Yubico OTP credential is generated from a unique key pair.
-    If you delete and regenerate it,
-    the new credential will have different keys,
-    so any service that was validating the old credential
-    won't recognize the new one.
-    You would need to re-register the YubiKey with those services.
+    Regenerating the Yubico OTP credential produces fresh secrets—a
+    new private ID and a new AES key.
+    Any service that was validating the old credential
+    won't recognize the new one,
+    so you would need to re-register the YubiKey with those services.
     This is one more reason to prefer disabling the OTP application
     over deleting the slot credential—if
     you ever need the credential again,
