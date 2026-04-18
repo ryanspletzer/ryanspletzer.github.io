@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Disable OTP on Your YubiKey
-date: 2026-04-15 00:00:00
+date: 2026-04-18 00:00:00
 description: >
   That mysterious string of characters someone just pasted into Slack?
   That's a YubiKey's OTP slot firing.
@@ -280,7 +280,7 @@ as the industry has converged on FIDO2/WebAuthn.
 
 The name "YubiKey" itself is a reference to this feature—"Yubi"
 comes from "ubiquitous,"
-and the original product was essentially an OTP token.[^yubikey-name]
+and the original product, released in 2008, was an OTP token only.
 
 ### Static Password
 
@@ -366,21 +366,6 @@ Disabling it doesn't remove any functionality you're likely using—it
 just stops the key from doing the one thing
 that annoys everyone.
 
-## What I Still Use My YubiKey For
-
-The YubiKey itself is still very much essential—it's
-just the OTP application that's vestigial.
-
-I use mine daily for
-[FIDO2/WebAuthn](https://fidoalliance.org/fido2-2/fido2-web-authentication-webauthn/)—hardware-bound
-passkeys for GitHub, Google, Microsoft, and other services—and
-for [GPG commit signing](/2026/04/a-no-nonsense-guide-to-gpg-commit-signing-with-a-yubikey/)
-so that every commit I make is cryptographically signed
-with a key that never persists on my filesystem.
-
-The key has never been more useful.
-OTP was just the part that needed to be put to rest.
-
 <!-- markdownlint-disable-next-line MD022 -->
 ## Footnotes
 {:.no_toc}
@@ -412,11 +397,3 @@ OTP was just the part that needed to be put to rest.
     you ever need the credential again,
     re-enabling the application restores the original credential
     since it was never deleted from the key.
-
-[^yubikey-name]:
-    "Yubi" comes from "ubiquitous."
-    The original YubiKey, released in 2008,
-    was primarily a Yubico OTP token.
-    The hardware security key evolved from there into the
-    multi-protocol device it is today,
-    but the name stuck.
