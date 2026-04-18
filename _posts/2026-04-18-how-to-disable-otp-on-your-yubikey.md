@@ -12,17 +12,10 @@ tags:
  - yubikey
 ---
 
-<!-- TODO: Add header image (telegraph / obsolete tech metaphor from Wikimedia Commons)
-Suggested search: "telegraph operator" or "telegraph key" on Wikimedia Commons.
-Some candidates:
-  - File:Telegrafista.jpg (telegraph operator, 1908)
-  - File:J38TelegraphKey.jpg (telegraph key)
-  - File:Telephone_switchboard.jpg (old switchboard)
-Save to assets/images/ and replace this block with:
-![Alt text](/assets/images/FILENAME.jpg)
-*Attribution, date. Institution. Public domain,
-via [Wikimedia Commons](URL)*
--->
+![A massive unfinished stone tower spiraling into the clouds above a hazy landscape, with tiny figures, buildings, and ships visible at its base; the tower's many arches and tiers are shown in different stages of construction.](/assets/images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg)
+*Pieter Bruegel the Elder, The Tower of Babel, c. 1563. Kunsthistorisches Museum, Vienna. Public domain,
+via
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg)*
 
 If you've spent any amount of time in a Slack workspace
 where people use YubiKeys,
