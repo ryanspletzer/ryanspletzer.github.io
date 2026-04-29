@@ -1425,6 +1425,78 @@ Then restart the agent:
 gpgconf --kill gpg-agent
 ```
 
+### GPG Keeps Prompting for PIN Even With the YubiKey Inserted
+
+*(Thanks again to Samuel Imfeld
+for pointing out the `gpg-agent` cache-ttl mitigation below!)*
+
+The YubiKey only treats the User PIN as "verified"
+for the duration of the current *card session*,
+and that session can drop without you ever unplugging the key.
+Common causes:
+
+* **Sleep/wake** — on setups where system suspend disrupts USB
+  or forces re-enumeration on wake,
+  the card session ends and the next signing operation opens a fresh one.
+  Whether your particular machine does this depends on OS,
+  hardware, and power-management config.
+* **PIV use deselects OpenPGP** — OpenPGP and PIV share the YubiKey's CCID
+  smart-card interface, and only one applet is "selected" at a time.
+  An SSH client using PIV via PKCS#11,
+  or a `ykman piv` command, will switch the selected applet to PIV,
+  which clears OpenPGP's PIN-verified flag per the OpenPGP card spec.
+* **`pcscd` conflicts on Linux** — see
+  [`scdaemon` and `pcscd` Conflict (Linux)](#scdaemon-and-pcscd-conflict-linux) below.
+* **`gpg-agent` restart** — manual `gpgconf --kill gpg-agent`,
+  a system update that swaps the binary, or a crash wipes the agent's state.
+
+The mitigation is to extend gpg-agent's PIN cache window
+so you only enter the PIN once per work session.
+gpg-agent caches the User PIN alongside passphrases
+and silently re-supplies it whenever the card asks for re-verification—both
+when the card session has reset *and*,
+on YubiKeys with `forcesig` turned on,
+on every individual signing operation.
+The defaults are 10 minutes (`default-cache-ttl`) and 2 hours (`max-cache-ttl`).
+You can bump them:
+
+```text
+# ~/.gnupg/gpg-agent.conf
+default-cache-ttl 28800
+max-cache-ttl 86400
+```
+
+That's 8 hours and 24 hours respectively—roughly "one PIN per workday."
+Apply and reload:
+
+```bash
+gpgconf --kill gpg-agent
+```
+
+A note on why some readers never hit this symptom in the first place:
+if your YubiKey has `forcesig` off
+(which lets PW1 stay verified across signatures
+until the OpenPGP applet is deselected)
+*and* your card session is staying alive between signs,
+the card simply isn't asking for re-verification,
+so the cache TTL is moot.
+You'll still be prompted after unplugging the YubiKey
+or restarting the machine,
+but not in between—regardless of what `default-cache-ttl` is set to.
+You can check your own setting in `gpg --card-status`—the
+`Signature PIN` line reads either `forced` or `not forced`.
+Separately on macOS,
+`pinentry-mac` has a "Save in Keychain" checkbox
+that persists the User PIN in your login keychain across reboots—a
+different security tradeoff than the in-memory cache,
+worth knowing about but distinct from gpg-agent's TTL.
+
+The tradeoff for bumping cache-ttl:
+an unlocked, unattended machine can sign on your behalf for as long as the cache is warm.
+If you've enabled touch-to-sign,[^touch-to-sign]
+that concern goes away—every signature still needs a physical YubiKey tap
+regardless of cache state.
+
 ### GPG Can't Find Keys After Upgrading to GnuPG 2.4+
 
 If GPG stops finding your keys after an upgrade
