@@ -344,7 +344,189 @@ Some practical storage options:
 
 You'll need these backups if your YubiKey is ever lost or broken.
 
-Now, insert your YubiKey and move the signing subkey onto it:
+### Change Your YubiKey PINs
+
+*(Thanks to Samuel Imfeld for pointing out to me
+that I should add a section on changing the PINs!)*
+
+Before any key material lands on the card,
+insert your YubiKey and lock down its default PINs.
+Out of the box, your YubiKey's OpenPGP applet ships with two default PINs:
+
+* **User PIN** (`123456`) — entered during everyday operations
+  like commit signing, SSH authentication, or decryption.
+  Minimum 6 characters on modern YubiKeys; 6 digits is typical.
+* **Admin PIN** (`12345678`) — entered for administrative operations
+  like `keytocard`,
+  changing the user PIN,
+  changing card metadata,
+  or unblocking a locked user PIN.
+  Minimum 8 characters.
+
+Setting your own PINs first means the `keytocard` step below
+is authorized with a credential only you know,
+not the factory-default `12345678`.
+
+A third optional credential, the **Reset Code**,
+lets you unblock the user PIN without needing the admin PIN,
+but most people don't use it—the
+admin PIN can also unblock the user PIN,
+so I skip setting a reset code.
+
+I use an 8-digit admin PIN and a 6-digit user PIN,
+both stored in my password manager.
+Numeric PINs are the most common choice
+and what most YubiKey-aware tools and docs assume;
+alphanumeric PINs are supported on recent YubiKey 5 series firmware,
+but sticking with numeric PINs keeps you compatible
+with any hardware pinpad you might encounter later.
+
+**These PINs are separate from your FIDO2/WebAuthn PIN.**
+The OpenPGP applet, the FIDO2 applet, and the PIV applet
+each have their own independent PIN slots on the YubiKey.
+Changing your OpenPGP PIN does not affect your FIDO2 PIN used for passkeys,[^fido2-passkey-pin]
+and vice versa.
+
+**PIN retry counters matter here.**
+Entering the wrong user PIN 3 times in a row locks the user PIN—you'll
+then need the admin PIN to unlock it.
+Entering the wrong admin PIN 3 times in a row locks the admin PIN too,
+at which point the *only* recovery path is
+a full factory reset of the OpenPGP applet
+(`ykman openpgp reset`),
+which wipes all keys on the card.
+This is why I recommend storing both PINs in a password manager
+the moment you set them—forgetting
+them means starting over with a fresh `keytocard` operation
+(assuming you still have your master key backup;
+if not, it means generating entirely new keys).
+
+#### Changing PINs with `ykman` (Recommended)
+
+The most reliable way to change your PINs is with
+[`ykman`](https://developers.yubico.com/yubikey-manager/),
+which talks directly to the YubiKey's smart-card interface
+without routing through `gpg-agent` or `pinentry`:
+
+```bash
+# Install ykman if you haven't already
+# macOS:
+brew install ykman
+# Ubuntu:
+sudo apt install -y yubikey-manager
+# Windows:
+choco install yubikey-manager -y
+
+# Change the user PIN (prompts for current PIN, then new PIN twice)
+ykman openpgp access change-pin
+
+# Change the admin PIN (prompts for current admin PIN, then new admin PIN twice)
+ykman openpgp access change-admin-pin
+```
+
+`ykman` prompts directly in the terminal it's invoked from,
+so it works consistently across Ghostty, Apple Terminal, iTerm2, Windows Terminal, etc.,
+without any pinentry configuration to fight with.
+For anyone who's already configured a GUI pinentry like `pinentry-mac`
+for day-to-day commit signing,
+using `ykman` for PIN changes sidesteps the quirks covered below.
+
+#### Changing PINs with `gpg --card-edit` (Alternative)
+
+You can also change PINs through GPG directly:
+
+```bash
+gpg --card-edit
+
+# At the gpg/card> prompt:
+# gpg/card> admin
+# gpg/card> passwd
+# Choose 1 to change the User PIN
+# Choose 3 to change the Admin PIN
+# Choose Q to quit the passwd menu
+# gpg/card> quit
+```
+
+This works, but how the prompts get displayed
+depends on whichever pinentry program you have configured—and
+that's where the quirks come in.
+
+#### Ghostty Quirk: "Screen or Window Too Small"
+
+If you're using [Ghostty](https://ghostty.org/) as your terminal on macOS
+and try to run `gpg --card-edit` → `passwd`
+(or any other operation that invokes `pinentry-curses`,
+such as `keytocard` itself),
+you may see:
+
+```text
+gpg: KEYTOCARD failed: Screen or window too small
+```
+
+This appears to be a bug where Ghostty doesn't fully propagate its window size
+to the spawned pinentry process,
+so `pinentry-curses` refuses to draw its dialog.
+The simplest workaround is to run the affected command
+from a terminal that reports its size correctly—I've
+had no trouble using stock **Apple Terminal** or **iTerm2**
+for these one-off operations,
+then returning to Ghostty for day-to-day work.
+Ghostty itself works fine for commit signing once a GUI pinentry
+(like `pinentry-mac`) is in place;
+the issue only surfaces with terminal-resident pinentry variants.
+
+You can also skip the issue entirely by using
+`ykman openpgp access change-pin` / `change-admin-pin`,
+which don't invoke pinentry at all.
+
+#### GUI Pinentry Quirk: "Sorry, No Terminal at All Requested"
+
+If you've already configured `pinentry-program` in `~/.gnupg/gpg-agent.conf`
+to point at a GUI pinentry (like `pinentry-mac` or `pinentry-gnome3`)
+and set `no-tty` in `~/.gnupg/gpg.conf`,
+then try to change your PIN with
+`gpg --card-edit` → `admin` → `passwd`,
+you may see something like:
+
+```text
+gpg: OpenPGP card no. D27600012401... detected
+gpg: Sorry, no terminal at all requested - can't get input
+```
+
+This happens because the card-edit `passwd` flow
+expects to display its own "choose 1/3/Q" menu in the terminal
+(separate from the PIN entry prompt itself),
+and `no-tty` combined with a GUI-only pinentry
+leaves GPG with nowhere to show that menu.
+
+Two ways around it:
+
+1. **Use `ykman` instead** —
+   `ykman openpgp access change-pin` and
+   `ykman openpgp access change-admin-pin`
+   don't rely on pinentry or GPG's interactive card-edit,
+   so they're unaffected by this.
+   This is my preferred path.
+2. **Temporarily revert your pinentry settings** —
+   comment out `pinentry-program` in `~/.gnupg/gpg-agent.conf`,
+   comment out `no-tty` in `~/.gnupg/gpg.conf`,
+   restart the agent with `gpgconf --kill gpg-agent`,
+   perform the PIN change,
+   then restore the settings and restart the agent again.
+
+The upshot:
+your GUI pinentry configuration is oriented around *signing*—where
+you want a dialog that works regardless of which process triggered the commit—but
+PIN-management flows in `gpg --card-edit`
+expect a real TTY to display their own interactive menu.
+Decoupling PIN management from GPG entirely,
+via `ykman`,
+avoids having to choose between the two configurations.
+
+### Move the Subkey onto the Card
+
+With your PINs locked down,
+move the signing subkey onto the card:
 
 ```bash
 # Edit your key
@@ -1581,6 +1763,13 @@ but it's a one-time cost that pays dividends in the form of verified commits and
     A YubiKey can act as a hardware-bound passkey for logging into services
     like GitHub, Google, and Microsoft—separate
     from GPG signing, but using the same physical device.
+
+[^fido2-passkey-pin]: The FIDO2 PIN on a YubiKey has its own defaults,
+    minimum lengths, and retry counter,
+    managed separately:
+    `ykman fido access change-pin` to change the FIDO2 PIN,
+    `ykman fido access set-pin` if no PIN is set yet,
+    and `ykman fido info` to see the current state.
 
 [^stolen-yubikey-risk]: You might wonder whether I rotated my signing key
     after the YubiKey was stolen.
