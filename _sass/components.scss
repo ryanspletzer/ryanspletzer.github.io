@@ -34,7 +34,7 @@
 
   sup a.footnote {
     background-color: var(--color-footnote-pill);
-    border-radius: 0.75em;
+    border-radius: var(--radius-block);
     padding: 0.1em 0.35em;
 
     &:hover {
