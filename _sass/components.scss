@@ -266,6 +266,7 @@ h2.post-title:first-of-type {
 // CSS handles visibility on hover.
 sup:has(.footnote) {
   position: relative;
+  cursor: pointer;
 }
 
 sup .footnote-tooltip {
