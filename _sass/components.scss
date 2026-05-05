@@ -31,6 +31,22 @@
   a.reversefootnote {
     text-decoration: none;
   }
+
+  sup a.footnote {
+    background-color: var(--color-footnote-pill);
+    border-radius: 0.75em;
+    padding: 0.1em 0.35em;
+
+    &:hover {
+      background-color: var(--color-footnote-pill-hover);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    sup a.footnote {
+      transition: background-color var(--transition-fast);
+    }
+  }
 }
 
 .panel-padded {
