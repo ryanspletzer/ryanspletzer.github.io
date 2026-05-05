@@ -31,6 +31,17 @@
   a.reversefootnote {
     text-decoration: none;
   }
+
+  sup a.footnote {
+    background-color: var(--color-footnote-pill);
+    border-radius: var(--radius-inline);
+    padding: 0.07em 0.2em;
+
+    &:hover {
+      background-color: var(--color-footnote-pill-hover);
+    }
+  }
+
 }
 
 .panel-padded {
@@ -266,6 +277,7 @@ h2.post-title:first-of-type {
 // CSS handles visibility on hover.
 sup:has(.footnote) {
   position: relative;
+  cursor: pointer;
 }
 
 sup .footnote-tooltip {
@@ -297,6 +309,7 @@ sup .footnote-tooltip {
 
   // Invisible bridge above the tooltip so the cursor can travel from the
   // superscript to the tooltip without losing :hover on the parent <sup>.
+  // pointer-events: none so the bridge doesn't block clicks on the footnote link.
   &::before {
     content: '';
     position: absolute;
@@ -304,6 +317,7 @@ sup .footnote-tooltip {
     inset-inline-start: 0;
     width: 2em;
     height: 1.5em;
+    pointer-events: none;
   }
 
   // Extend leftward when the tooltip would overflow the viewport
