@@ -250,6 +250,10 @@ body {
   .toggle-thumb {
     transition: inset-inline-start var(--transition-fast);
   }
+
+  .post-content sup a.footnote {
+    transition: background-color var(--transition-fast);
+  }
 }
 
 // Reduced motion — disable all transitions

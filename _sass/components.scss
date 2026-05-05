@@ -34,7 +34,7 @@
 
   sup a.footnote {
     background-color: var(--color-footnote-pill);
-    border-radius: var(--radius-block);
+    border-radius: var(--radius-inline);
     padding: 0.07em 0.2em;
 
     &:hover {
@@ -42,11 +42,6 @@
     }
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    sup a.footnote {
-      transition: background-color var(--transition-fast);
-    }
-  }
 }
 
 .panel-padded {
