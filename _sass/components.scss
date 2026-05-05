@@ -298,6 +298,7 @@ sup .footnote-tooltip {
 
   // Invisible bridge above the tooltip so the cursor can travel from the
   // superscript to the tooltip without losing :hover on the parent <sup>.
+  // pointer-events: none so the bridge doesn't block clicks on the footnote link.
   &::before {
     content: '';
     position: absolute;
@@ -305,6 +306,7 @@ sup .footnote-tooltip {
     inset-inline-start: 0;
     width: 2em;
     height: 1.5em;
+    pointer-events: none;
   }
 
   // Extend leftward when the tooltip would overflow the viewport
