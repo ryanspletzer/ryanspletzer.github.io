@@ -10,6 +10,13 @@
   min-height: 1.25rem;
 }
 
+@media (max-width: 47.9375em) {
+  .panel,
+  .sidebar-panel {
+    border-radius: 0;
+  }
+}
+
 // Main content panel
 .panel h1 {
   margin-block-start: 0.625rem;
