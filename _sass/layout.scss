@@ -133,6 +133,14 @@ body {
 }
 
 @media (max-width: 47.9375em) {
+  .site-nav {
+    margin-block-end: 0;
+  }
+
+  .site-content {
+    padding: 0;
+  }
+
   // Show hamburger button on mobile
   .nav-toggle-btn {
     display: flex;
