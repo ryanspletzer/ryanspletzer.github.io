@@ -8,6 +8,10 @@ Jekyll-based personal blog at **<www.spletzer.com>**. Hosted on GitHub Pages
 with Cloudflare in front. Custom domain via `CNAME` file. Licensed under
 CC BY 4.0.
 
+## Compact instructions
+
+When compacting, focus on test output and code changes.
+
 ## Build and Development Commands
 
 ### Local Development
