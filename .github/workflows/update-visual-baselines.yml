@@ -44,12 +44,16 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(npx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+
       - name: Cache Playwright browsers
         uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
 
       - name: Install Playwright Chromium
         if: steps.playwright-cache.outputs.cache-hit != 'true'
@@ -67,11 +71,13 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and push baselines
+        env:
+          COMMIT_MESSAGE: ${{ github.event.inputs.commit_message }}
         run: |
           git add e2e/__snapshots__/
           if git diff --staged --quiet; then
             echo "No changes to baselines"
           else
-            git commit -m "${{ github.event.inputs.commit_message }}"
+            git commit -m "$COMMIT_MESSAGE"
             git push
           fi
