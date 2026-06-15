@@ -367,6 +367,17 @@ read them:
   reusable component libraries.
   Highly recommended for anyone looking to build with or better understand web components.
 
+* [Essential Math for Data Science](https://www.oreilly.com/library/view/essential-math-for/9781098102975/) — A
+  practical and approachable tour of the mathematical concepts that underpin data science and machine learning,
+  covering topics like probability,
+  statistics,
+  linear algebra,
+  and calculus through the lens of Python code examples.
+  Thomas Nield does a good job of making the material accessible without glossing over the intuition behind the math,
+  which is exactly what someone looking to go deeper on the theory behind ML models needs before tackling denser texts
+  like Deep Learning: Foundations and Concepts.
+  (Ask me how I know...)
+
 ## Other
 
 These are books of any other category that don't fit above.
