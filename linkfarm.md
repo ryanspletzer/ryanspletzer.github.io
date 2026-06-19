@@ -367,7 +367,7 @@ read them:
   reusable component libraries.
   Highly recommended for anyone looking to build with or better understand web components.
 
-* [Essential Math for Data Science](https://www.oreilly.com/library/view/essential-math-for/9781098102975/) — A
+* [Essential Math for Data Science](https://www.oreilly.com/library/view/essential-math-for/9781098102920/) — A
   practical and approachable tour of the mathematical concepts that underpin data science and machine learning,
   covering topics like probability,
   statistics,
@@ -377,6 +377,15 @@ read them:
   which is exactly what someone looking to go deeper on the theory behind ML models needs before tackling denser texts
   like Deep Learning: Foundations and Concepts.
   (Ask me how I know...)
+
+* [Building Micro-Frontends](https://www.oreilly.com/library/view/building-micro-frontends/9781492082989/) — A thorough
+  treatment of micro-frontend architectures from Luca Mezzalira,
+  covering the full spectrum of decomposition strategies,
+  routing approaches,
+  and integration patterns for bringing the microservices philosophy to the frontend.
+  If you have read Building Microservices and Pattern: Backends for Frontends and want to carry those ideas all the way
+  to the browser tier,
+  this is the natural next read.
 
 ## Other
 
