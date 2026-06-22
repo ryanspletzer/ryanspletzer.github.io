@@ -198,10 +198,7 @@ dependencies only, for visual and accessibility testing)
 ## Important Notes
 
 - The `main` branch is the deployment branch
-- Posts go in `_posts/` with naming `YYYY-MM-DD-title-slug.md`
 - Tags are case-sensitive; use lowercase with hyphens for multi-word tags
-- The `tag/` directory is git-ignored and regenerated on every build
-- Visual test baselines are in `e2e/__snapshots__/`
 - After CSS/layout changes, run `npm run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
 - Dark theme by default (background #303030, text #e7e9ea, accent #35B4DE);

@@ -91,7 +91,14 @@ async function checkAccessibility(page: Page): Promise<void> {
   const results = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa'])
     .analyze();
-  expect(results.violations).toEqual([]);
+  // Map to a concise shape so failures report rule id, impact, and target
+  // selectors instead of dumping each violation's full HTML node tree.
+  const violations = results.violations.map((v) => ({
+    id: v.id,
+    impact: v.impact,
+    targets: v.nodes.map((n) => n.target.join(' ')),
+  }));
+  expect(violations, 'Accessibility violations found').toEqual([]);
 }
 
 test.describe('Homepage', () => {
