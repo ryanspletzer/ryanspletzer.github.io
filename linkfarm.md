@@ -387,9 +387,9 @@ read them:
   to the browser tier,
   this is the natural next read.
 
-* [Vibe Coding: The Future of Programming](https://www.oreilly.com/library/view/vibe-coding/9798341639890/) — Steve
-  Yegge and Gene Kim's take on the emerging practice of leaning on AI coding agents as a primary mode of software
-  development,
+* [Vibe Coding: Building Production-Grade Software With GenAI, Chat, Agents, and Beyond](
+  https://itrevolution.com/product/vibe-coding-book/) — Steve Yegge and Gene Kim's take on the emerging practice of
+  leaning on AI coding agents as a primary mode of software development,
   rather than as an occasional autocomplete assist.
   My key revelation from this book is that, contrary to the pejorative connotation the term has picked up,
   real vibe coding takes more engineering rigor, not less.
