@@ -387,6 +387,27 @@ read them:
   to the browser tier,
   this is the natural next read.
 
+* [Vibe Coding: Building Production-Grade Software With GenAI, Chat, Agents, and Beyond](
+  https://itrevolution.com/product/vibe-coding-book/) — Steve Yegge and Gene Kim's take on the emerging practice of
+  leaning on AI coding agents as a primary mode of software development,
+  rather than as an occasional autocomplete assist.
+  My key revelation from this book is that, contrary to the pejorative connotation the term has picked up,
+  real vibe coding takes more engineering rigor, not less.
+  Modularity,
+  loose coupling,
+  and sound bounded contexts in your architecture are what let multiple agents work in parallel without stepping on
+  each other,
+  and fast feedback loops plus human taste and judgment are what keep that parallel work pointed in a good direction.
+  In a lot of ways it's everything in The DevOps Handbook mentioned above, but at 100x speed,
+  which means the practices we've known about for years,
+  linting,
+  testing,
+  rigorous verification,
+  CI/CD,
+  and more,
+  matter more now than ever,
+  not less.
+
 ## Other
 
 These are books of any other category that don't fit above.
