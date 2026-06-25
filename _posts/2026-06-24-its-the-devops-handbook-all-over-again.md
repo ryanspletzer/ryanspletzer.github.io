@@ -140,27 +140,30 @@ Tasting the soup matters—not just the final dish,
 but also as it cooks.
 
 The tools have democratized code generation to the point where a director of marketing
-can genuinely commit to git—I've seen it happen.
-But when the "intern" is an AI model embedded in a non-engineering workflow,
+can genuinely commit to Git.[^ive-seen-it-happen]
+But when their "intern" helping them is an AI model embedded in a non-engineering workflow,
 the mistakes don't get caught in code review.
-They get caught in production.
+They get caught in production.[^if-they-have-help]
 
 ## The CFO Is Side-eyeing Your Tokens
 
-Something has shifted in the last few months.
-Finance departments up until now have been much like the Ents of Fangorn[^ents-of-fangorn]—slow to wake,
+Something else has shifted in the last few months
+since *Vibe Coding* was published.
+Finance departments up until now have been much like the Ents of Fangorn[^ents-of-fangorn]:
+slow to wake,
 slow to rouse,
 not quite convinced anything was urgent enough to march on.
 Then Saruman (us engineering wizards) started burning their forest (their cash) at alarming rate.
-Now, finance is awake.[^finance-is-awake]
+Now, Finance is awake.[^finance-is-awake]
 (As is a certain CEO.)[^as-is-a-certain-ceo]
 
 The AI bills are real and visible,
 and the question CFOs are asking—*where is the impact?*—is
-a fair one that deserves a better answer than "trust the process."
+a fair one that deserves a better answer than "trust the process."[^measuring-ai-value]
 
-The instinct that got us here—reach for the biggest, most capable model, fire away—is
-the right instinct if you're trying to maximize quality on a single critical output
+The instinct that got us here,
+namely "reach for the biggest, most capable model, fire away,"
+is the right instinct if you're trying to maximize quality on a single critical output
 and cost is genuinely no object.
 But most organizations aren't in that position,
 and most *tasks* don't warrant firing up a top-tier model.[^model-selection]
@@ -170,25 +173,37 @@ Wiring up some glue code.
 These don't need the heaviest model available—they need a fast, cheap one
 that you can iterate on quickly within tight feedback loops.
 
-Token efficiency *is* the ROI story.
-Finding it means having actual visibility—knowing which models are handling which tasks,
-how much each workflow costs,
-and whether the expensive model is actually justified for that work.
-That's an instrumentation problem,
-and instrumentation is a DevOps problem dressed in different clothes.
+In many ways, token efficiency *is* the ROI story.
+I wish we could say it's as simple as an instrument problem,
+but even if you wanted to
+you can't realistically observe someone
+reflexively reaching for the most powerful model in a chat window or an IDE plugin.
+A lot of that usage is opaque by design,
+and even trying to observe it all will likely create a larger bill just from that effort alone.
+What you *can* control is what your tooling defaults look like.
+The DevOps parallel isn't observability—it's provisioning policy.
+You don't stop over-provisioned EC2 instances by monitoring them after the fact;
+you change the defaults,
+set controls at the provisioning layer,
+and build a culture around right-sizing.
+That's the same problem here: steer toward the right-sized model at the point of configuration,
+not at the point of observation.
+And that's a DevOps problem dressed in different clothes.
 
 The hardware frontier is worth watching here, too.
 Local inference on Apple Silicon—M5 Max and above—is
 becoming increasingly capable,
 and there's an argument hiding in plain sight:
-most developers are getting new laptops anyway.
+most developers are getting new laptops periodically anyway.
 Speccing up to hardware that can run a solid open-source model locally
-costs incrementally more than a baseline machine
-but eliminates the API bill for that developer entirely.
+costs incrementally more than a baseline machine,
+but could vastly reduce the API bill for that developer entirely,
+or give them an escape hatch when they hit their monthly limit with frontier models
+with vendor coding agent tools.
 Contrast that with standing up OSS model hosting on cloud compute,
-which trades the API bill for GPU instance costs and an ops burden.
-There is no free lunch.
-But there is a *right-sized* one.
+which trades the API bill for GPU instance and cloud infra costs and an ops burden.
+There is no free lunch.[^ram-prices]
+But there is likely a *right-sized* one that fits within your proverbial AI per diem.
 
 ## Slow Down to Speed Up
 
@@ -203,14 +218,14 @@ doesn't make the *system* faster—it creates more in-flight work,
 more unverified assumptions,
 and more places for things to go quietly wrong.
 You're shipping code faster.
-You're not necessarily shipping *better* code faster—
-not quality code,
+You're not necessarily shipping *better* code faster—not
+quality code,
 not the kind of modular, decoupled architecture
 that gives you optionality and room to evolve.
 *Vibe Coding* surfaces an old maxim that fits here: "You can't un-blend two frogs."
 Move fast without the feedback infrastructure
 and you're just as likely to end up with a big ball of mud
-that even AI will struggle—and cost you a fortune—to untangle.
+that even AI will struggle with, and cost you a small fortune to untangle.
 
 The missing ingredient is the feedback infrastructure:
 tests that run on every commit,
@@ -221,7 +236,7 @@ observability so you know when something breaks in the dark.
 *Vibe Coding* says it again for the AI era.
 The practices don't care what year it is.
 
-They *enable* speed—the kind that compounds over time
+They *enable* speed, the kind that compounds over time
 rather than the kind that quietly accretes debt
 until the car drives itself backwards out the window.
 
@@ -288,16 +303,35 @@ and it's the lesson now.
     capture those learnings in a durable reference file in the repo.
     Future agents—and future you—can pull from that context rather than deriving it from scratch.
 
+[^ive-seen-it-happen]:
+    I've seen it happen.
+
+[^if-they-have-help]:
+    That is, if anyone even has the time or attention or energy or incentive or willingness to help a non-engineer take
+    what could be a very tangled mess with likely no auth to production...
+    I've become convinced that this type of thing is possible,
+    but only with the help of very streamlined platforms and approaches and best practices talked about here,
+    which even us actual software engineers often struggle to get completely in place organizationally for ourselves,
+    let alone non-engineering folks;
+    and even then they're probably going to need the hand-holding of at least a junior engineer to help them get there.
+
 [^ents-of-fangorn]:
+    (To my Finance partners, understand that this is a light-hearted blog post
+    and I respect you way more than talking trees in a fantasy book.)
     In Tolkien's *The Lord of the Rings*, the Ents are ancient, deliberate tree-herders who dwell in Fangorn Forest.
-    Their most cardinal sin is being *hasty*.
-    In *The Two Towers*, Saruman's forces had been cutting and burning Fangorn to fuel the forges of Isengard—
-    a fact the Ents were slow to notice, and slower still to act on.
+    The most cardinal sin in their eyes is being *hasty*.
+    In *The Two Towers*, Saruman's forces had been cutting and burning Fangorn to fuel the forges of Isengard—a
+    fact the Ents were slow to notice, and slower still to act on.
     When they finally decided something must be done,
     they marched on Isengard and tore it apart stone by stone.
     The moral, for our purposes: don't burn the forest of whoever controls the budget.
     They will notice.
     They will march.
+    Gandalf on the other hand controlled the Flame of Anor,
+    and we can probably all learn a thing or two from him about using some restraint.
+    Maybe you only fire up Fable 5 (if we ever get it back)
+    when you encounter the software engineering equivalent of a Balrog
+    or one of the Witches of Angmar.
 
 [^finance-is-awake]:
     [Uber burned through its entire 2026 AI budget in four months.](
@@ -311,20 +345,41 @@ and it's the lesson now.
     Uber is not alone.
 
 [^as-is-a-certain-ceo]:
-    As is a certain CEO, who just recently
+    It's been reported that a certain CEO just recently
     [yanked all AI out of their company](
     https://ehandbook.com/the-first-company-wide-ai-ban-just-hit-my-inbox-heres-what-it-means-00bf365fa48d)
     due to an extreme deluge of AI slop,
-    some of which went out in customer-facing emails.
+    some of which went out in customer-facing emails
+    and wound its way back to said CEO via a customer support agent.
     Yikes.
 
+[^measuring-ai-value]:
+    Far be it from me to be one of those folks that suggesting some hair-brained endeavor
+    to measure the ROI and/or value of AI,
+    which I believe to be a fool's errand to do in the micro sense
+    (and the realm of fancy suit-and-tie management consultants who need something to do),
+    but in the macro sense I think you can measure it in the more oblique way
+    that we're used to measuring strategic goals and KPI's and OKR's and outcomes, etc.
+    Put simply, are you achieving the strategic intent and strategic scope you're after?
+    Used effectively, AI should be the grease on the wheels to help you achieve your goals.
+    I wasn't old enough to know,
+    but I hear stories about people trying to quantify the value of Spellcheck in word processors back in the day
+    as silly as that sounds now,
+    but the value of spellcheck should be inherently obvious
+    in any public-facing document you've ever published from your company...
+
 [^model-selection]:
-    Tight feedback loops, linting, and validation practices are exactly what make smaller models wildly effective—you
+    Tight feedback loops, linting, and validation practices
+    are exactly what can make smaller models wildly effective—you
     don't need the biggest model when you have a fast enough correction signal.
     A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
     More often than not, it won't recommend the largest one.
     For helping me edit and review this post, Claude Code recommended Sonnet, not Opus—and it was the right call.
     This point was reinforced concretely when Anthropic's Fable 5 model experienced a period of unavailability in
-    mid-2026: anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
+    mid-2026, and is still unavailable at the writing of this post:
+    anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
     blocked, underscoring the value of workflows that can fall back to a smaller, always-available model rather than
     depending on any single one.
+
+[^ram-prices]:
+    Especially with today's RAM prices, jeez.
