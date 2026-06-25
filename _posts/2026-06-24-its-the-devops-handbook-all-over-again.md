@@ -16,32 +16,51 @@ via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_
 
 Back in 2018 when I just started my new job,
 my new manager took the team through the exercise of reading
-[*The DevOps Handbook*](https://itrevolution.com/book/the-devops-handbook/).[^1]
+[*The DevOps Handbook*](https://itrevolution.com/book/the-devops-handbook/).[^second-edition]
 
-I (being the precocious engineer that I was) had actually already read it once before,
+I had actually already read it once before,
 but was happy to do it again as a team exercise,
 because the lessons contained within those pages were quite important,
 and essential to some of the key things the team was trying to accomplish around that time.
 
-Fast-forward to 2026 and I just finished reading a new book by Gene Kim and Steve Yegge,
+Fast-forward to 2026 and I just finished reading a new book
+I'd been meaning to get to since its release in October 2025,
 [*Vibe Coding*](https://itrevolution.com/product/vibe-coding-book/),
-which—much to the surprise of some who still take that term at face value—at
-a certain point during reading it,
-you realize it is actually a quite serious engineering book
-that further underscores the need for many of the practices of *The DevOps Handbook*,
-especially with regards to establishing fast feedback loops.
+by Gene Kim and Steve Yegge.
+The time since its publication seems like forever ago in AI years,
+and while some things have changed
+(like maybe having engineers frivolously spending way too much money to game the token leaderboards at some companies was a bit short-sighted),
+and some things have evolved
+(like coding agent orchestrators, which likewise can be true "gas guzzlers" in terms of token spend),
+almost all the guidance is deeply foundational and remains true now.
 
-This is not a criticism at all—it's the whole point.
+I'm not sure why it took me this long to get to this great book (besides being busy).
+I bought it in January 2026, but I think part of the reason I didn't pick it up right away
+is because upon a skim it seemed like the altitude and level of guidance it was aiming at was old hat for me
+("I already know that"),
+when I was more so seeking concrete and specific guidance on how to make my Claude Code setup better.
+But in retrospect, I was really missing the forest for the trees,
+because this book re-instilled some key lessons with me
+that will continue to shape my approaches for a very long time.
+Much to the surprise of some folks who still take that term, "Vibe Coding,"
+at what could be a pejorative face value,
+this is a quite serious engineering book
+that further underscores the need for many of the practices of *The DevOps Handbook*—especially
+around establishing fast feedback loops.
 
-I'm no stranger to vibe coding,
-but it was comforting reading this book and knowing that my intuition was on the right track,
+I'm no stranger to vibe coding[^software-engineering],
+and like many others I dove in head-first over the 2025-2026 holiday break
+with Claude Code and Opus 4.5.
+But it was comforting reading this book and knowing that my intuition was on the right track,
 and realizing that I wasn't alone—and
 I wasn't crazy—in thinking that the core engineering discipline the DevOps movement
 spent a decade trying to establish
+(and that other parallel movements like SRE have tried to instill)
 is more important right now than it has ever been.
 
 The difference in 2026 is that we are moving at a million miles an hour
-and you are several orders of magnitude more likely to "crash the car" than you were in 2018.
+and you are several orders of magnitude more likely to "crash the car" than you were in 2018,
+and potentially needlessly burn a ton of cash in the process.
 
 These lessons need reinforcing more than ever—and not just for engineers.
 
@@ -57,9 +76,8 @@ These weren't novel ideas on their own.
 The hard part was always execution.
 The book existed because the gap between where teams *were* and where they *needed to be* was enormous.
 
-The *Vibe Coding* book doesn't discard this framework.
-If anything, it accelerates into it.
-The throughline is identical:
+The *Vibe Coding* book doesn't discard this thinking—it doubles down on it.
+The throughline is very similar:
 fast flow, fast feedback, and the discipline to actually look at what's coming out the other end.
 What's new is the speed at which you're now operating
 and the scale at which mistakes compound when you're not watching.
@@ -67,63 +85,75 @@ and the scale at which mistakes compound when you're not watching.
 I wrote about this compounding effect in practice earlier this year
 in [A Tale of Acceleration and Compound Engineering](/2026/02/a-tale-of-acceleration-and-compound-engineering/):
 the same CI workflows I used to wire up by hand over days or weeks
-are now things I can get going in 90 minutes with AI assistance.
+are now things I can stand up in a fraction of the time with AI assistance.
 But the practices themselves—the tests, the linting, the repeatable pipelines—are
 what made the speed possible in the first place.
 The tools and models have gotten better,
 but the engineering practices are the compounding force that *really* multiplies them.
+
+And to be perfectly clear,
+much like compounding financial investments,
+compound engineering can go in one of two directions:
+upward 📈, or downward 📉...
 
 ## The 100mph Crash
 
 Instead of crashing the car at 30 miles per hour,
 you're going to crash it at 100 miles per hour.
 Or perhaps drive it backwards out the window and crash it into the trees,
-like [Cameron](https://youtu.be/FVqqVlW1a34?si=SybyrNVI8TdZrZNZ&t=290) in *Ferris Bueller's Day Off*—except
+like [Cameron in *Ferris Bueller's Day Off*](https://youtu.be/FVqqVlW1a34?si=SybyrNVI8TdZrZNZ&t=290)—except
 instead of a vintage Ferrari,
 the collateral damage is a production system and someone's data.
 
 Steve Yegge's cautionary tales in the book make this viscerally concrete.
-In "The Vanishing Tests," his AI silently deleted 80% of his test files.
+In "The Vanishing Tests" story,
+his AI silently deleted 80% of his test files.
 No warning.
 No confirmation prompt.
-Just—gone.
-In "The Vanishing Repository," the AI nearly wiped his entire codebase,
+Just... gone.
+In "The Vanishing Repository" story,
+the AI nearly wiped his entire codebase,
 with only an open terminal window containing the last unsaved copy standing between him
 and losing weeks of work.
 
 These aren't edge cases invented for dramatic effect.
-They're stories about what happens when you take your eyes off the road
-and let the system drive at highway speed without guardrails.
+They're war stories about what happens when you take your eyes off the road
+and let the system drive at super highway speeds without any verification or validation or sanity checking.[^guardrails]
+Based on my own experience,
+I can confidently say we are quite a ways off from "self-driving" in the vibe coding era,
+and even if we aren't,
+it may mean you can do *semi*-autonomous self-driving with vibe coding
+*only because you took the time and care to put all of these best practices and validation in place*.
 
 I've [written about this from my own experience](/2025/09/pinocchio-is-not-a-real-boy/).
 When I contributed a fix to a React frontend in an area where I'm not strong,
 the AI output looked *great*—polished, confident, complete.
 And that was exactly the problem.
-It took me longer to review than it would have taken me to write by hand,
-precisely because the code felt too good.
-I had to study it 10x more carefully,
+Left to my own devices I would never have attempted this;
+rather, I would have explored the codebase and handed off guidance to a dev who knew the terrain.
+Instead the AI wrote it quickly,
+and I had to study the output 10x more carefully,
 slow down to ask "why did it do *that*,"
 and ultimately catch a couple of mistakes
-that only my gut feeling ("something is not right here") would have flagged.
-Tasting the soup matters—not just reading the final dish,
-but watching it cook.
+that only my gut feeling ("something is not right here") would have flagged.[^durable-files]
+Tasting the soup matters—not just the final dish,
+but also as it cooks.
 
-This is especially true for anyone who isn't an engineer by training,
-and that's an increasingly large group now.
 The tools have democratized code generation to the point where a director of marketing
 can genuinely commit to git—I've seen it happen.
-That's remarkable.
 But when the "intern" is an AI model embedded in a non-engineering workflow,
 the mistakes don't get caught in code review.
 They get caught in production.
-Or they don't get caught at all.
 
-## The CFO Is Looking at Your Tokens
+## The CFO Is Side-eyeing Your Tokens
 
-Something has shifted in the last few months,
-and when I taste the soup on what's happening across the industry right now,
-I keep noticing the same thing:
-finance is awake.
+Something has shifted in the last few months.
+Finance departments up until now have been much like the Ents of Fangorn[^ents-of-fangorn]—slow to wake,
+slow to rouse,
+not quite convinced anything was urgent enough to march on.
+Then Saruman (us engineering wizards) started burning their forest (their cash) at alarming rate.
+Now, finance is awake.[^finance-is-awake]
+(As is a certain CEO.)[^as-is-a-certain-ceo]
 
 The AI bills are real and visible,
 and the question CFOs are asking—*where is the impact?*—is
@@ -133,7 +163,7 @@ The instinct that got us here—reach for the biggest, most capable model, fire 
 the right instinct if you're trying to maximize quality on a single critical output
 and cost is genuinely no object.
 But most organizations aren't in that position,
-and most *tasks* don't warrant firing up a top-tier model.[^2]
+and most *tasks* don't warrant firing up a top-tier model.[^model-selection]
 Summarizing a Jira ticket.
 Drafting a quick email.
 Wiring up some glue code.
@@ -141,25 +171,24 @@ These don't need the heaviest model available—they need a fast, cheap one
 that you can iterate on quickly within tight feedback loops.
 
 Token efficiency *is* the ROI story.
-And finding it requires—you guessed it—measurement,
-instrumentation,
-and the discipline to actually understand what you're spending and why.
-Which is, again, a DevOps problem dressed in different clothes.
+Finding it means having actual visibility—knowing which models are handling which tasks,
+how much each workflow costs,
+and whether the expensive model is actually justified for that work.
+That's an instrumentation problem,
+and instrumentation is a DevOps problem dressed in different clothes.
 
 The hardware frontier is worth watching here, too.
-Local inference on Apple Silicon—M5 Max series,
-and presumably the rumored MacBook Pro Ultra somewhere down the line—is
+Local inference on Apple Silicon—M5 Max and above—is
 becoming increasingly capable,
-and the idea of every developer running a solid open-source model locally
-without touching a cloud API has obvious appeal from a cost standpoint.
-But that requires top-of-the-line hardware per developer,
-which is its own budget conversation.
-Alternatively, your organization standing up OSS model hosting on cloud compute
-trades the API bill for GPU instance costs and an ops burden.
+and there's an argument hiding in plain sight:
+most developers are getting new laptops anyway.
+Speccing up to hardware that can run a solid open-source model locally
+costs incrementally more than a baseline machine
+but eliminates the API bill for that developer entirely.
+Contrast that with standing up OSS model hosting on cloud compute,
+which trades the API bill for GPU instance costs and an ops burden.
 There is no free lunch.
-But there is a *right-sized* lunch,
-and finding it requires the same instrumentation and feedback discipline
-*The DevOps Handbook* was teaching in 2016.
+But there is a *right-sized* one.
 
 ## Slow Down to Speed Up
 
@@ -174,13 +203,19 @@ doesn't make the *system* faster—it creates more in-flight work,
 more unverified assumptions,
 and more places for things to go quietly wrong.
 You're shipping code faster.
-You're not necessarily shipping *working* code faster.
+You're not necessarily shipping *better* code faster—
+not quality code,
+not the kind of modular, decoupled architecture
+that gives you optionality and room to evolve.
+*Vibe Coding* surfaces an old maxim that fits here: "You can't un-blend two frogs."
+Move fast without the feedback infrastructure
+and you're just as likely to end up with a big ball of mud
+that even AI will struggle—and cost you a fortune—to untangle.
 
 The missing ingredient is the feedback infrastructure:
 tests that run on every commit,
 CI that catches regressions before they hit main,
 observability so you know when something breaks in the dark.
-It's the boring stuff that actually works.
 
 *The DevOps Handbook* said this in 2016.
 *Vibe Coding* says it again for the AI era.
@@ -204,9 +239,9 @@ The real takeaway, though,
 is that the practices—tests, CI, fast feedback loops, observability—are the thing.
 Not the books, not the tools, not the models.
 The practices are what let you drive at 100mph
-without ending up like Cameron's Ferrari dangling above the forest floor.
+without ending up like Cameron's Ferrari mangled on the forest floor.
 
-The weeks where I moved *fastest* were always the ones
+The weeks where I personally moved *fastest* were always the ones
 where I had the feedback infrastructure already in place.
 Tests caught what the model got confidently wrong.
 CI ran in minutes and I knew before I merged.
@@ -214,9 +249,82 @@ The loop was tight enough that the AI's mistakes
 were a course correction, not a production incident.
 
 That's the lesson.
+Tokens cost money—but as *Vibe Coding* reminds us,
+time is the resource you can't recover.
+You can optimize your spend and right-size your models.
+You cannot get back the time spent untangling a codebase
+that was shipped fast but built without guardrails.
 It was the lesson in 2018,
 and it's the lesson now.
 
-[^1]: It wasn't even the second edition when we read it as a team—the second edition came out in 2021, and I'm sure it's a great update.
+## Footnotes
 
-[^2]: As of this writing, Fable has been temporarily unavailable—which has only further reinforced the point about right-sizing model selection.
+[^second-edition]:
+    It wasn't even the second edition when we read it as a team—the second edition came out in 2021,
+    and I'm sure it's a great update.
+
+[^software-engineering]:
+    Or as I like to often provocatively call it, "Software Engineering,"
+    because I believe what we're witnessing is the natural evolution of the craft.
+
+[^guardrails]:
+    I almost used the term "Guardrails" here but decided to take it out.
+    The problem with the term "Guardrails" is much like the term "Governance,"
+    in that they mean 12 different things to 12 different people,
+    and some folks often bandy these terms about glibly
+    without actually articulating what they mean;
+    or worse, just to sound smart.
+    I'm a much bigger fan of the concrete terms behind these terms,
+    like "testing" and "linting" and "verification" and "validation" and "evaluation."
+    Otherwise it's an exercise in
+    ["What do you mean?"](https://www.youtube.com/shorts/uU16hjqpcHc).
+    But I digress...
+    Watch out for another blog post on these overloaded pet peeve terms in the future,
+    because I haven't gotten it out of my system yet.
+
+[^durable-files]:
+    One pattern worth building into your workflow:
+    when you work through unfamiliar terrain with an AI and come out the other side with newly captured understanding,
+    capture those learnings in a durable reference file in the repo.
+    Future agents—and future you—can pull from that context rather than deriving it from scratch.
+
+[^ents-of-fangorn]:
+    In Tolkien's *The Lord of the Rings*, the Ents are ancient, deliberate tree-herders who dwell in Fangorn Forest.
+    Their most cardinal sin is being *hasty*.
+    In *The Two Towers*, Saruman's forces had been cutting and burning Fangorn to fuel the forges of Isengard—
+    a fact the Ents were slow to notice, and slower still to act on.
+    When they finally decided something must be done,
+    they marched on Isengard and tore it apart stone by stone.
+    The moral, for our purposes: don't burn the forest of whoever controls the budget.
+    They will notice.
+    They will march.
+
+[^finance-is-awake]:
+    [Uber burned through its entire 2026 AI budget in four months.](
+    https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/)
+    After rolling out Claude Code to engineers in December 2025,
+    per-engineer costs ran between $500–$2,000 per month,
+    and by April the budget was gone.
+    Uber's COO admitted he couldn't connect the token spend to anything customers could actually see.
+    The company has since capped individual spending at $1,500 per tool per month.
+    Microsoft quietly cancelled internal Claude Code licenses around the same time.
+    Uber is not alone.
+
+[^as-is-a-certain-ceo]:
+    As is a certain CEO, who just recently
+    [yanked all AI out of their company](
+    https://ehandbook.com/the-first-company-wide-ai-ban-just-hit-my-inbox-heres-what-it-means-00bf365fa48d)
+    due to an extreme deluge of AI slop,
+    some of which went out in customer-facing emails.
+    Yikes.
+
+[^model-selection]:
+    Tight feedback loops, linting, and validation practices are exactly what make smaller models wildly effective—you
+    don't need the biggest model when you have a fast enough correction signal.
+    A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
+    More often than not, it won't recommend the largest one.
+    For helping me edit and review this post, Claude Code recommended Sonnet, not Opus—and it was the right call.
+    This point was reinforced concretely when Anthropic's Fable 5 model experienced a period of unavailability in
+    mid-2026: anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
+    blocked, underscoring the value of workflows that can fall back to a smaller, always-available model rather than
+    depending on any single one.
