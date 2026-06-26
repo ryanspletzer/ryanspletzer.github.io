@@ -83,7 +83,10 @@ foster a culture of continual learning and experimentation.
 
 These weren't novel ideas on their own.
 The hard part was always execution.
-The book existed because the gap between where teams *were* and where they *needed to be* was enormous.
+The gap between where teams *were* and where they *needed to be* was enormous,
+and the know-how lived in the heads of a handful of elite teams.
+The book's job was to crystallize that scattered knowledge
+into one place the rest of us could learn from.
 
 The *Vibe Coding* book doesn't discard this thinking; it doubles down on it.
 The throughline is very similar:
