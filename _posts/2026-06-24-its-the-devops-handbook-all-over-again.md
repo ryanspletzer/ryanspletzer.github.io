@@ -3,7 +3,9 @@ layout: post
 title: It's the DevOps Handbook All Over Again
 date: 2026-06-24 00:00:00
 description: >
-  The lessons from the DevOps Handbook are even more relevant today than they were in 2018.
+  Gene Kim and Steve Yegge's Vibe Coding makes the case
+  that the DevOps Handbook's lessons—fast flow, fast feedback, discipline—matter
+  more in the AI era, not less.
 tags:
  - devops
  - vibe-coding
@@ -171,8 +173,12 @@ They get caught in production.[^if-they-have-help]
 
 ## The CFO Is Side-Eyeing Your Tokens 👀
 
-Something else has shifted in the last few months
-since *Vibe Coding* was published.
+Production incidents are one kind of expensive.
+There's another bill coming due,
+and it's the literal one.
+
+This shift is recent,
+landing in the months since *Vibe Coding* was published.
 Finance departments up until now have been much like the Ents of Fangorn[^ents-of-fangorn]:
 slow to wake,
 slow to rouse,
@@ -209,6 +215,9 @@ drafting a quick email,
 wiring up some glue code.[^model-selection]
 These don't need the heaviest model available; they need a fast, cheap one
 that you can iterate on quickly within tight feedback loops.
+It's the same judgment as knowing which mode you're in:
+the discipline that tells you when a prototype has graduated and earned real tests
+is the discipline that tells you when a task has earned the bigger model.
 
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
@@ -265,6 +274,17 @@ The missing ingredient is the feedback infrastructure:
 tests that run on every commit (or perhaps even every file save operation),
 CI that catches regressions before they hit main,
 observability so you know when something breaks in the dark.
+
+None of this is free.
+A single engineer can pick up the tools and feel faster almost overnight.
+Building the feedback infrastructure that makes the *team* faster is a different kind of work—slower,
+less glamorous,
+and impossible to do alone.
+It takes a real investment of time and energy,
+and leadership willing to protect that time when the pressure is to just ship.
+That asymmetry is the gap behind Gergely's line:
+the individual gains are cheap,
+and the team gains are expensive.
 
 *The DevOps Handbook* said this years ago.
 *Vibe Coding* says it again for the AI era.
@@ -406,7 +426,7 @@ and it's the lesson now.
     but in the macro sense I think you can measure it in the more oblique way
     that we're used to measuring strategic goals and KPIs and OKRs and outcomes, etc.
     Though I'd caveat even that:
-    the cadence we run these stragegic planning cycles on
+    the cadence we run these strategic planning cycles on
     often feels too antiquated and long-horizon for the pace technology moves at now.
     Some plans still make sense, like quarterly or annual sales targets,
     but I've watched plenty of KPIs and OKRs go irrelevant inside of six weeks
