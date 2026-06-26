@@ -61,6 +61,15 @@ The difference in 2026 is that we are moving at a million miles an hour
 and you are several orders of magnitude more likely to "crash the car" than you were in 2018,
 and potentially needlessly burn a ton of cash in the process.
 
+There's a recent line from Gergely Orosz that resonated with me,
+from his Craft Conference 2026 talk,
+[written up in The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up):
+*individual productivity is up, but team productivity is flat.*
+Everyone feels faster;
+the team isn't necessarily shipping any more than before.
+I'll come back to why that isn't the paradox it sounds like,
+but it's more or less the whole problem in a single sentence.
+
 These lessons need reinforcing more than ever—and not just for engineers.
 
 ## It Turns Out This Is Still a DevOps Problem
@@ -217,12 +226,9 @@ But there is likely a *right-sized* one that fits within your proverbial AI per 
 
 ## Slow Down to Speed Up
 
-Gergely Orosz recently gave a talk at Craft Conference 2026
-and wrote it up in [The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up)
-with what I think is the most useful single observation about AI-assisted development I've heard this year:
-*individual productivity is up, but team productivity is flat.*
+Back to that Orosz line—*individual productivity is up, but team productivity is flat.*
 
-That's not a paradox if you've read *The DevOps Handbook*.
+It's not a paradox if you've read *The DevOps Handbook*.
 An individual moving faster through a system without feedback loops
 doesn't make the *system* faster; it creates more in-flight work,
 more unverified assumptions,
