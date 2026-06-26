@@ -27,21 +27,19 @@ Fast-forward to 2026 and I just finished reading a new book
 I'd been meaning to get to since its release in October 2025:
 [*Vibe Coding*](https://itrevolution.com/product/vibe-coding-book/),
 by Gene Kim and Steve Yegge.
-The time since its publication seems like forever ago in AI years,
-and while some things have changed
-(like engineers frivolously spending way too much money to game the token leaderboards at companies,
-which in hindsight was a bit short-sighted),
-and some things have evolved
-(like coding agent orchestrators, which likewise can be true "gas guzzlers" in terms of token spend),
-almost all the guidance is deeply foundational and remains true now.
+The time since its publication seems like forever ago in AI years.
+Some things have changed:
+engineers frivolously spent way too much money gaming the token leaderboards at their companies,
+which in hindsight was more than a bit short-sighted.
+Some things have evolved:
+coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
+But almost all the guidance is deeply foundational, and remains true now.
 
-I'm not sure why it took me this long to get to this great book (besides being busy).
-I bought it in January 2026, but I think part of the reason I didn't pick it up right away
-is because upon a skim it seemed like the altitude and level of guidance it was aiming at was old hat for me
-("I already know that"),
-when I was more so seeking concrete and specific guidance on how to make my Claude Code setup better.
-But in retrospect, I was really missing the forest for the trees,
-because this book re-instilled some key lessons with me
+I bought it in January 2026 but didn't pick it up right away.
+On a skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
+when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
+That was me missing the forest for the trees.
+The book re-instilled some key lessons
 that will continue to shape my approaches for a very long time.
 Much to the surprise of some folks who still take that term, "Vibe Coding,"
 at what could be a pejorative face value,
@@ -53,8 +51,8 @@ I'm no stranger to vibe coding[^software-engineering],
 and like many others I dove in head-first over the 2025-2026 holiday break
 with Claude Code and Opus 4.5.
 But it was comforting reading this book and knowing that my intuition was on the right track,
-and realizing that I wasn't alone—and
-I wasn't crazy—in thinking that the core engineering discipline the DevOps movement
+and realizing that I wasn't alone (and I wasn't crazy)
+in thinking that the core engineering discipline the DevOps movement
 spent a decade trying to establish
 (and that other parallel movements like SRE have tried to instill)
 is more important right now than it has ever been.
@@ -125,6 +123,18 @@ I can confidently say we are quite a ways off from "self-driving" in the vibe co
 and even if we aren't,
 it may mean you can do *semi*-autonomous self-driving with vibe coding
 *only because you took the time and care to put all of these best practices and validation in place*.
+
+None of this means everything needs the full ceremony.
+If you're spiking a throwaway prototype,
+exploring an unfamiliar API,
+or sketching an idea you'll delete by Friday,
+move fast and loose;
+that's exactly the right speed.
+The discipline isn't something you need on every line of code;
+it's what you put in place once the code stops being an experiment.
+The failure mode is forgetting which mode you're in,
+and letting the weekend prototype quietly graduate into production
+without ever stopping to add the things production demands.
 
 I've [written about this from my own experience](/2025/09/pinocchio-is-not-a-real-boy/).
 When I contributed a fix to a React frontend in an area where I'm not strong,
