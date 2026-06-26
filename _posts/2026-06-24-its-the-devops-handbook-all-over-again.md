@@ -73,7 +73,7 @@ but the team isn't necessarily shipping any more than before.
 
 These DevOps lessons need reinforcing more than ever—and not just for engineers.
 
-## It Turns Out This Is Still a DevOps Problem
+## It Turns Out This Is Still a DevOps Problem 🧑‍💻
 
 *The DevOps Handbook* aggregated and distilled a set of ideas that were already understood
 in the best engineering organizations of the time:
@@ -88,7 +88,7 @@ and the know-how lived in the heads of a handful of elite teams.
 The book's job was to crystallize that scattered knowledge
 into one place the rest of us could learn from.
 
-The *Vibe Coding* book doesn't discard this thinking; it doubles down on it.
+The *Vibe Coding* book doesn't discard this thinking; in fact, it doubles down on it.
 The throughline is very similar:
 fast flow, fast feedback, and the discipline to actually look at what's coming out the other end.
 What's new is the speed at which you're now operating
@@ -108,7 +108,7 @@ much like compounding financial investments,
 compound engineering can go in one of two directions:
 upward 📈, or downward 📉...
 
-## The 100mph Crash
+## The 100mph Crash 💥
 
 Instead of crashing the car at 30 miles per hour,
 you're going to crash it at 100 miles per hour.
@@ -142,16 +142,16 @@ If you're spiking a throwaway prototype,
 exploring an unfamiliar API,
 or sketching an idea you'll delete by Friday,
 move fast and loose;
-that's exactly the right speed.
-The discipline isn't something you need on every line of code;
-it's what you put in place once the code stops being an experiment.
+that's exactly the right speed.[^even-before-vibe-coding]
+The discipline isn't something you need on every line of code in every single endeavor, however small it might be;
+the discipline is what you put in place once the code stops being an experiment.
 The failure mode is forgetting which mode you're in,
 and letting the weekend prototype quietly graduate into production
 without ever stopping to add the things production demands.
 
 I've [written about this from my own experience](/2025/09/pinocchio-is-not-a-real-boy/).
 When I contributed a fix to a React frontend in an area where I'm not strong,
-the AI output looked *great*—polished, confident, complete.
+the AI output looked *great*.
 And that was exactly the problem.
 Left to my own devices I would never have attempted this;
 rather, I would have explored the codebase and handed off guidance to a dev who knew the terrain.
@@ -182,8 +182,8 @@ Now, Finance is awake.[^finance-is-awake]
 (As is a certain CEO.)[^as-is-a-certain-ceo]
 
 The AI bills are real and visible,
-and the question CFOs are asking—*where is the impact?*—is
-a fair one that deserves a better answer than "trust the process."[^measuring-ai-value]
+and CFOs are asking a fair question: *where is the impact?*
+It deserves a better answer than "trust the process."[^measuring-ai-value]
 
 There's a historical echo here worth contemplating.
 From roughly 2020 to 2022,
@@ -191,7 +191,7 @@ cheap capital and a growth-at-all-costs mood pushed a lot of companies to over-h
 treating headcount as a proxy for ambition.
 The correction arrived as layoffs and a sudden corporate religion of "efficiency" and "doing more with less."
 The last six months or so have echoed that arc,
-except this time we over-hired *AI*:
+except this time maybe we over-hired *AI*:
 we provisioned maximum horsepower for everything,
 treated raw token spend as a proxy for being "AI-native,"
 and only later started asking what all of it actually shipped.
@@ -214,7 +214,7 @@ In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
 but even if you wanted to
 you can't realistically observe someone
-reflexively reaching for the most powerful model in a chat window or an IDE plugin.
+reflexively reaching for the most powerful model in their terminal or an IDE plugin.
 A lot of that usage is opaque by design,
 and even trying to observe it all will likely create a larger bill just from that effort alone.
 What you *can* control is what your tooling defaults look like.
@@ -234,16 +234,16 @@ most developers are getting new laptops periodically anyway.
 Speccing up to hardware that can run a solid open-source model locally
 costs incrementally more than a baseline machine,
 but could vastly reduce the API bill for that developer entirely,
-or give them an escape hatch when they hit their monthly limit with frontier models
+or give them an escape hatch when they hit their reasonable monthly limit with frontier models
 with vendor coding agent tools.
 Contrast that with standing up OSS model hosting on cloud compute,
 which trades the API bill for GPU instance and cloud infra costs and an ops burden.
 There is no free lunch.[^ram-prices]
-But there is likely a *right-sized* one that fits within your proverbial AI per diem.
+But there is likely a *right-sized* lunch that fits within your proverbial AI per diem.
 
-## Slow Down to Speed Up
+## Slow Down 🐢 to Speed Up 🐇
 
-Back to that Orosz line—*individual productivity is up, but team productivity is flat.*
+Back to that Gergely Orosz line—*individual productivity is up, but team productivity is flat.*
 
 It's not a paradox if you've read *The DevOps Handbook*.
 An individual moving faster through a system without feedback loops
@@ -253,15 +253,16 @@ and more places for things to quietly go wrong.
 You're shipping code faster.
 You're not necessarily shipping *better* code faster—not
 quality code,
-not the kind of modular, decoupled architecture
+and not the kind of modular, decoupled architecture
 that gives you optionality and room to evolve.
-*Vibe Coding* surfaces an old maxim that fits here: "You can't un-blend two frogs."
+*Vibe Coding* surfaces an old maxim, which I had never heard before, but fits aptly here:
+"You can't un-blend two frogs."
 Move fast without the feedback infrastructure
 and you're just as likely to end up with a big ball of mud
-that even AI will struggle with, and cost you a small fortune to untangle.
+that even AI will struggle with and will cost you a small fortune to untangle.[^untangle]
 
 The missing ingredient is the feedback infrastructure:
-tests that run on every commit,
+tests that run on every commit (or perhaps even every file save operation),
 CI that catches regressions before they hit main,
 observability so you know when something breaks in the dark.
 
@@ -273,7 +274,7 @@ They *enable* speed, the kind that compounds over time
 rather than the kind that quietly accretes debt
 until the car drives itself backwards out the window.
 
-## Read the Books, But Do the Work
+## Read the Books 📚, But Do the Work 🛠️
 
 Reading a book doesn't change behavior on its own.
 If it did, we wouldn't have needed a decade of DevOps books covering the same ideas in different clothes.
@@ -289,7 +290,7 @@ Not the books, not the tools, not the models.
 The practices are what let you drive at 100mph
 without ending up like Cameron's Ferrari mangled on the forest floor.
 
-The weeks where I personally moved *fastest* were always the ones
+The weeks where I personally moved *fastest* with my own hobby projects were always the ones
 where I had the feedback infrastructure already in place.
 Tests caught what the model got confidently wrong.
 CI ran in minutes and I knew before I merged.
@@ -298,10 +299,11 @@ were a course correction, not a production incident.
 
 That's the lesson.
 Tokens cost money, but as *Vibe Coding* reminds us,
-*time* is the resource you can't recover.
+*time* is the resource you can't recover,
+even for personal projects.
 You can optimize your spend and right-size your models.
 You cannot get back the time spent untangling a codebase
-that was shipped fast but built without guardrails.
+that was shipped fast but built without the feedback infrastructure to catch the mistakes.
 It was the lesson in 2018,
 and it's the lesson now.
 
@@ -334,6 +336,9 @@ and it's the lesson now.
     is exactly the concrete thing I have in mind;
     it's the vague buzzword version I'm allergic to.)
 
+[^even-before-vibe-coding]:
+    And arguably, going very fast to prototype was the right speed even before vibe coding existed.
+
 [^durable-files]:
     One pattern worth building into your workflow:
     when you work through unfamiliar terrain with an AI and come out the other side with newly captured understanding,
@@ -353,7 +358,7 @@ and it's the lesson now.
     and even then non-engineers are going to need the hand-holding of at least a junior engineer to help them get there.
 
 [^ents-of-fangorn]:
-    (To my Finance partners, understand that this is a light-hearted blog post
+    (To my Finance partners, understand that this is a light-hearted reference in a blog post
     and I respect you way more than talking trees in a fantasy book.)
     In Tolkien's *The Lord of the Rings*, the Ents are ancient, deliberate tree-herders who dwell in Fangorn Forest.
     The most cardinal sin in their eyes is being *hasty*.
@@ -366,28 +371,31 @@ and it's the lesson now.
     They will march.
     Gandalf on the other hand controlled the Flame of Anor,
     and we can probably all learn a thing or two from him about using some restraint.
-    Maybe you only fire up Fable 5 (if we ever get it back)
+    Maybe you only fire up Fable 5
+    ([if we ever get it back](https://decrypt.co/372004/leaked-code-anthropic-preparing-fable-5-subscription))
     when you encounter the software engineering equivalent of a Balrog
     or one of the Nazgûl.
 
 [^finance-is-awake]:
-    [Uber burned through its entire 2026 AI budget in four months.](
+    As one example, [Uber burned through its entire 2026 AI budget in four months.](
     https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/)
     After rolling out Claude Code to engineers in December 2025,
     per-engineer costs ran between $500–$2,000 per month,
     and by April the budget was gone.
     Uber's COO admitted he couldn't connect the token spend to anything customers could actually see.
     The company has since capped individual spending at $1,500 per tool per month.
-    Microsoft quietly cancelled internal Claude Code licenses around the same time.
+    Microsoft
+    [quietly cancelled internal Claude Code licenses](https://thenextweb.com/news/microsoft-claude-code-retreat-ai-cost)
+    around the same time.
     Uber is not alone.
 
 [^as-is-a-certain-ceo]:
-    It's been reported that a certain CEO just recently
+    It's been reported that a certain unnamed CEO just recently
     [yanked all AI out of their company](
     https://ehandbook.com/the-first-company-wide-ai-ban-just-hit-my-inbox-heres-what-it-means-00bf365fa48d)
     due to an extreme deluge of AI slop,
     some of which went out in customer-facing emails
-    and wound its way back to said CEO via a customer support agent.
+    and wound its way back to said CEO via a (human) customer support agent.
     Yikes.
 
 [^measuring-ai-value]:
@@ -398,8 +406,9 @@ and it's the lesson now.
     but in the macro sense I think you can measure it in the more oblique way
     that we're used to measuring strategic goals and KPIs and OKRs and outcomes, etc.
     Though I'd caveat even that:
-    the cadence we run these on often feels too antiquated and long-horizon for the pace technology moves at now.
-    Some still make sense, like quarterly or annual sales targets,
+    the cadence we run these stragegic planning cycles on
+    often feels too antiquated and long-horizon for the pace technology moves at now.
+    Some plans still make sense, like quarterly or annual sales targets,
     but I've watched plenty of KPIs and OKRs go irrelevant inside of six weeks
     as the industry lurches forward and the business circumstances underneath them shift just as fast.
     Put simply, are you achieving the strategic intent and strategic scope you're after?
@@ -416,12 +425,20 @@ and it's the lesson now.
     you don't need the biggest model when you have a fast enough correction signal.
     A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
     More often than not, it won't recommend the largest one.
-    For helping me edit and review this post, Claude Code recommended Sonnet, not Opus—and it was the right call.
     This point was reinforced concretely when Anthropic's Fable 5 model experienced a period of unavailability in
     mid-2026, and is still unavailable at the writing of this post:
     anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
     blocked, underscoring the value of workflows that can fall back to a smaller, always-available model rather than
-    depending on any single one.
+    depending on the top tier all the time.
+    And it isn't only Anthropic:
+    OpenAI's GPT-5.6 launched into a
+    [deliberately staggered rollout at the U.S. government's request](https://www.engadget.com/2202129/openai-will-initially-only-release-chatgpt-5-6-to-government-approved-customers/),
+    with federal officials approving access one customer at a time before any wider release.
+    The newest, most capable model isn't always the one you can actually get,
+    and it will be interesting to see how this plays out in the future in the U.S. with further model releases.
 
 [^ram-prices]:
     Especially with today's RAM prices, jeez.
+
+[^untangle]:
+    Or it could cost you a small fortune to start over.
