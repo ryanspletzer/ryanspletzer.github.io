@@ -15,7 +15,7 @@ tags:
 via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_the_1920s_(38083620606).png)*
 
 Back in 2018 when I just started my new job,
-my new manager took the team through the exercise of reading
+my manager took the team through the exercise of reading
 [*The DevOps Handbook*](https://itrevolution.com/book/the-devops-handbook/).[^second-edition]
 
 I had actually already read it once before,
@@ -24,12 +24,13 @@ because the lessons contained within those pages were quite important,
 and essential to some of the key things the team was trying to accomplish around that time.
 
 Fast-forward to 2026 and I just finished reading a new book
-I'd been meaning to get to since its release in October 2025,
+I'd been meaning to get to since its release in October 2025:
 [*Vibe Coding*](https://itrevolution.com/product/vibe-coding-book/),
 by Gene Kim and Steve Yegge.
 The time since its publication seems like forever ago in AI years,
 and while some things have changed
-(like maybe having engineers frivolously spending way too much money to game the token leaderboards at some companies was a bit short-sighted),
+(like engineers frivolously spending way too much money to game the token leaderboards at companies,
+which in hindsight was a bit short-sighted),
 and some things have evolved
 (like coding agent orchestrators, which likewise can be true "gas guzzlers" in terms of token spend),
 almost all the guidance is deeply foundational and remains true now.
@@ -45,7 +46,7 @@ that will continue to shape my approaches for a very long time.
 Much to the surprise of some folks who still take that term, "Vibe Coding,"
 at what could be a pejorative face value,
 this is a quite serious engineering book
-that further underscores the need for many of the practices of *The DevOps Handbook*—especially
+that further underscores the need for many of the practices of *The DevOps Handbook*, especially
 around establishing fast feedback loops.
 
 I'm no stranger to vibe coding[^software-engineering],
@@ -76,7 +77,7 @@ These weren't novel ideas on their own.
 The hard part was always execution.
 The book existed because the gap between where teams *were* and where they *needed to be* was enormous.
 
-The *Vibe Coding* book doesn't discard this thinking—it doubles down on it.
+The *Vibe Coding* book doesn't discard this thinking; it doubles down on it.
 The throughline is very similar:
 fast flow, fast feedback, and the discipline to actually look at what's coming out the other end.
 What's new is the speed at which you're now operating
@@ -101,16 +102,16 @@ upward 📈, or downward 📉...
 Instead of crashing the car at 30 miles per hour,
 you're going to crash it at 100 miles per hour.
 Or perhaps drive it backwards out the window and crash it into the trees,
-like [Cameron in *Ferris Bueller's Day Off*](https://youtu.be/FVqqVlW1a34?si=SybyrNVI8TdZrZNZ&t=290)—except
+like [Cameron in *Ferris Bueller's Day Off*](https://youtu.be/FVqqVlW1a34?si=SybyrNVI8TdZrZNZ&t=290), except
 instead of a vintage Ferrari,
 the collateral damage is a production system and someone's data.
 
 Steve Yegge's cautionary tales in the book make this viscerally concrete.
 In "The Vanishing Tests" story,
 his AI silently deleted 80% of his test files.
-No warning.
-No confirmation prompt.
-Just... gone.
+There was no warning,
+and no confirmation prompt;
+it was just... gone.
 In "The Vanishing Repository" story,
 the AI nearly wiped his entire codebase,
 with only an open terminal window containing the last unsaved copy standing between him
@@ -145,7 +146,7 @@ But when their "intern" helping them is an AI model embedded in a non-engineerin
 the mistakes don't get caught in code review.
 They get caught in production.[^if-they-have-help]
 
-## The CFO Is Side-eyeing Your Tokens
+## The CFO Is Side-Eyeing Your Tokens 👀
 
 Something else has shifted in the last few months
 since *Vibe Coding* was published.
@@ -153,7 +154,7 @@ Finance departments up until now have been much like the Ents of Fangorn[^ents-o
 slow to wake,
 slow to rouse,
 not quite convinced anything was urgent enough to march on.
-Then Saruman (us engineering wizards) started burning their forest (their cash) at alarming rate.
+Then Saruman (us engineering wizards) started burning their forest (their cash) at an alarming rate.
 Now, Finance is awake.[^finance-is-awake]
 (As is a certain CEO.)[^as-is-a-certain-ceo]
 
@@ -166,15 +167,15 @@ namely "reach for the biggest, most capable model, fire away,"
 is the right instinct if you're trying to maximize quality on a single critical output
 and cost is genuinely no object.
 But most organizations aren't in that position,
-and most *tasks* don't warrant firing up a top-tier model.[^model-selection]
-Summarizing a Jira ticket.
-Drafting a quick email.
-Wiring up some glue code.
-These don't need the heaviest model available—they need a fast, cheap one
+and most *tasks* don't warrant firing up a top-tier model:
+summarizing a Jira ticket,
+drafting a quick email,
+wiring up some glue code.[^model-selection]
+These don't need the heaviest model available; they need a fast, cheap one
 that you can iterate on quickly within tight feedback loops.
 
 In many ways, token efficiency *is* the ROI story.
-I wish we could say it's as simple as an instrument problem,
+I wish we could say it's as simple as an instrumentation problem,
 but even if you wanted to
 you can't realistically observe someone
 reflexively reaching for the most powerful model in a chat window or an IDE plugin.
@@ -188,7 +189,6 @@ set controls at the provisioning layer,
 and build a culture around right-sizing.
 That's the same problem here: steer toward the right-sized model at the point of configuration,
 not at the point of observation.
-And that's a DevOps problem dressed in different clothes.
 
 The hardware frontier is worth watching here, too.
 Local inference on Apple Silicon—M5 Max and above—is
@@ -214,9 +214,9 @@ with what I think is the most useful single observation about AI-assisted develo
 
 That's not a paradox if you've read *The DevOps Handbook*.
 An individual moving faster through a system without feedback loops
-doesn't make the *system* faster—it creates more in-flight work,
+doesn't make the *system* faster; it creates more in-flight work,
 more unverified assumptions,
-and more places for things to go quietly wrong.
+and more places for things to quietly go wrong.
 You're shipping code faster.
 You're not necessarily shipping *better* code faster—not
 quality code,
@@ -232,7 +232,7 @@ tests that run on every commit,
 CI that catches regressions before they hit main,
 observability so you know when something breaks in the dark.
 
-*The DevOps Handbook* said this in 2016.
+*The DevOps Handbook* said this years ago.
 *Vibe Coding* says it again for the AI era.
 The practices don't care what year it is.
 
@@ -264,8 +264,8 @@ The loop was tight enough that the AI's mistakes
 were a course correction, not a production incident.
 
 That's the lesson.
-Tokens cost money—but as *Vibe Coding* reminds us,
-time is the resource you can't recover.
+Tokens cost money, but as *Vibe Coding* reminds us,
+*time* is the resource you can't recover.
 You can optimize your spend and right-size your models.
 You cannot get back the time spent untangling a codebase
 that was shipped fast but built without guardrails.
@@ -275,7 +275,7 @@ and it's the lesson now.
 ## Footnotes
 
 [^second-edition]:
-    It wasn't even the second edition when we read it as a team—the second edition came out in 2021,
+    It wasn't even the second edition when we read it as a team; the second edition came out in 2021,
     and I'm sure it's a great update.
 
 [^software-engineering]:
@@ -296,6 +296,10 @@ and it's the lesson now.
     But I digress...
     Watch out for another blog post on these overloaded pet peeve terms in the future,
     because I haven't gotten it out of my system yet.
+    (And yes, I see the irony that the photo up top literally praises "guard rails."
+    The physical kind, the sort that stops a careless driver from sailing off a cliff,
+    is exactly the concrete thing I have in mind;
+    it's the vague buzzword version I'm allergic to.)
 
 [^durable-files]:
     One pattern worth building into your workflow:
@@ -313,7 +317,7 @@ and it's the lesson now.
     but only with the help of very streamlined platforms and approaches and best practices talked about here,
     which even us actual software engineers often struggle to get completely in place organizationally for ourselves,
     let alone non-engineering folks;
-    and even then they're probably going to need the hand-holding of at least a junior engineer to help them get there.
+    and even then non-engineers are going to need the hand-holding of at least a junior engineer to help them get there.
 
 [^ents-of-fangorn]:
     (To my Finance partners, understand that this is a light-hearted blog post
@@ -331,7 +335,7 @@ and it's the lesson now.
     and we can probably all learn a thing or two from him about using some restraint.
     Maybe you only fire up Fable 5 (if we ever get it back)
     when you encounter the software engineering equivalent of a Balrog
-    or one of the Witches of Angmar.
+    or one of the Nazgûl.
 
 [^finance-is-awake]:
     [Uber burned through its entire 2026 AI budget in four months.](
@@ -354,24 +358,29 @@ and it's the lesson now.
     Yikes.
 
 [^measuring-ai-value]:
-    Far be it from me to be one of those folks that suggesting some hair-brained endeavor
+    Far be it from me to be one of those folks who suggest some harebrained endeavor
     to measure the ROI and/or value of AI,
     which I believe to be a fool's errand to do in the micro sense
     (and the realm of fancy suit-and-tie management consultants who need something to do),
     but in the macro sense I think you can measure it in the more oblique way
-    that we're used to measuring strategic goals and KPI's and OKR's and outcomes, etc.
+    that we're used to measuring strategic goals and KPIs and OKRs and outcomes, etc.
+    Though I'd caveat even that:
+    the cadence we run these on often feels too antiquated and long-horizon for the pace technology moves at now.
+    Some still make sense, like quarterly or annual sales targets,
+    but I've watched plenty of KPIs and OKRs go irrelevant inside of six weeks
+    as the industry lurches forward and the business circumstances underneath them shift just as fast.
     Put simply, are you achieving the strategic intent and strategic scope you're after?
     Used effectively, AI should be the grease on the wheels to help you achieve your goals.
     I wasn't old enough to know,
-    but I hear stories about people trying to quantify the value of Spellcheck in word processors back in the day
-    as silly as that sounds now,
-    but the value of spellcheck should be inherently obvious
+    but I hear stories about people trying to quantify the value of spellcheck in word processors back in the day.
+    As silly as that sounds now,
+    the value of spellcheck is inherently obvious
     in any public-facing document you've ever published from your company...
 
 [^model-selection]:
     Tight feedback loops, linting, and validation practices
-    are exactly what can make smaller models wildly effective—you
-    don't need the biggest model when you have a fast enough correction signal.
+    are exactly what can make smaller models wildly effective:
+    you don't need the biggest model when you have a fast enough correction signal.
     A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
     More often than not, it won't recommend the largest one.
     For helping me edit and review this post, Claude Code recommended Sonnet, not Opus—and it was the right call.
