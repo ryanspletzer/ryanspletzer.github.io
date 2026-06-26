@@ -21,7 +21,7 @@ my manager took the team through the exercise of reading
 I had actually already read it once before,
 but was happy to do it again as a team exercise,
 because the lessons contained within those pages were quite important,
-and essential to some of the key things the team was trying to accomplish around that time.
+and essential to some of the key initiatives the team was trying to accomplish around that time.
 
 Fast-forward to 2026 and I just finished reading a new book
 I'd been meaning to get to since its release in October 2025:
@@ -29,7 +29,10 @@ I'd been meaning to get to since its release in October 2025:
 by Gene Kim and Steve Yegge.
 The time since its publication seems like forever ago in AI years.
 Some things have changed:
-engineers frivolously spent way too much money gaming the token leaderboards at their companies,
+engineers frivolously spent way too much money
+[gaming the token leaderboards](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)
+at their companies
+("tokenmaxxing," as it came to be called),
 which in hindsight was more than a bit short-sighted.
 Some things have evolved:
 coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
