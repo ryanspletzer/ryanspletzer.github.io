@@ -38,7 +38,7 @@ Some things have evolved:
 coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
 But almost all the guidance is deeply foundational, and remains true now.
 
-I bought it in January 2026 but didn't pick it up right away.
+I bought the book in January 2026 but didn't pick it up right away.
 On a skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
@@ -63,17 +63,15 @@ is more important right now than it has ever been.
 The difference in 2026 is that we are moving at a million miles an hour
 and you are several orders of magnitude more likely to "crash the car" than you were in 2018,
 and potentially needlessly burn a ton of cash in the process.
-
-There's a recent line from Gergely Orosz that resonated with me,
-from his Craft Conference 2026 talk,
-[written up in The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up):
+And there's an added dimension to all this: the individual versus the team.
+A line from Gergely Orosz's recent Craft Conference 2026 talk,
+[written up in The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up),
+really resonated with me:
 *individual productivity is up, but team productivity is flat.*
-Everyone feels faster;
-the team isn't necessarily shipping any more than before.
-I'll come back to why that isn't the paradox it sounds like,
-but it's more or less the whole problem in a single sentence.
+Everyone feels faster,
+but the team isn't necessarily shipping any more than before.
 
-These lessons need reinforcing more than ever—and not just for engineers.
+These DevOps lessons need reinforcing more than ever—and not just for engineers.
 
 ## It Turns Out This Is Still a DevOps Problem
 
@@ -183,6 +181,19 @@ Now, Finance is awake.[^finance-is-awake]
 The AI bills are real and visible,
 and the question CFOs are asking—*where is the impact?*—is
 a fair one that deserves a better answer than "trust the process."[^measuring-ai-value]
+
+There's a historical echo here worth contemplating.
+From roughly 2020 to 2022,
+cheap capital and a growth-at-all-costs mood pushed a lot of companies to over-hire,
+treating headcount as a proxy for ambition.
+The correction arrived as layoffs and a sudden corporate religion of "efficiency" and "doing more with less."
+The last six months or so have echoed that arc,
+except this time we over-hired *AI*:
+we provisioned maximum horsepower for everything,
+treated raw token spend as a proxy for being "AI-native,"
+and only later started asking what all of it actually shipped.
+Right-sizing your model usage may be part of that same type of correction,
+just applied to compute instead of people.
 
 The instinct that got us here,
 namely "reach for the biggest, most capable model, fire away,"
