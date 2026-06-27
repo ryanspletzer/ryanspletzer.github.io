@@ -4,7 +4,7 @@ title: It's the DevOps Handbook All Over Again
 date: 2026-06-24 00:00:00
 description: >
   Gene Kim and Steve Yegge's Vibe Coding makes the case
-  that the DevOps Handbook's lessons—fast flow, fast feedback, discipline—matter
+  that the DevOps Handbook's teachings—fast flow, fast feedback, discipline—matter
   more in the AI era, not less.
 tags:
  - devops
@@ -22,7 +22,7 @@ my manager took the team through the exercise of reading
 
 I had actually already read it once before,
 but was happy to do it again as a team exercise,
-because the lessons contained within those pages were quite important,
+because the practices contained within those pages were quite important,
 and essential to some of the key initiatives that the team was trying to accomplish around that time.
 
 Fast-forward to 2026 and I just finished reading a new book
@@ -44,7 +44,7 @@ I bought the book in January 2026 but didn't pick it up and read it right away.
 On my first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
-The book re-instilled some key lessons
+The book re-instilled a few core principles
 that will continue to shape my approaches for a very long time.
 Much to the surprise of some folks who still take that term, "Vibe Coding,"
 at what could be a pejorative face value,
@@ -73,7 +73,8 @@ really resonated with me:
 Everyone feels faster,
 but the team isn't necessarily shipping any more than before.
 
-These DevOps lessons need reinforcing more than ever—for everyone now in the driver's seat, not just the engineers.
+These DevOps lessons need reinforcing more than ever,
+for everyone now in the driver's seat, engineer and non-engineer alike.
 
 ## It Turns Out This Is Still a DevOps Problem 🧑‍💻
 
@@ -566,7 +567,7 @@ It is so, so not.
     Tight feedback loops, linting, and validation practices
     are exactly what can make smaller models more effective:
     you don't need the biggest model when you have a fast enough correction signal.
-    The same lesson landed concretely when Anthropic's Fable 5 model experienced a period of unavailability in
+    The same point landed concretely when Anthropic's Fable 5 model experienced a period of unavailability in
     mid-2026, and is still unavailable at the writing of this post:
     anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
     blocked, underscoring the value of workflows that can fall back to a smaller, always-available model rather than
