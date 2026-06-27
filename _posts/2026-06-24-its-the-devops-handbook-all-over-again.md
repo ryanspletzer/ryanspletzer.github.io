@@ -192,7 +192,7 @@ The AI bills are real and visible,
 and CFOs are asking a fair question: *where is the impact?*
 It deserves a better answer than "trust the process."[^measuring-ai-value]
 
-There's a historical echo here worth contemplating.
+There's a historical echo here.
 From roughly 2020 to 2022,
 cheap capital and a growth-at-all-costs mood pushed a lot of companies to over-hire,
 treating headcount as a proxy for ambition.
@@ -228,10 +228,10 @@ but the defaults only get you so far.
 Deciding which subagent runs on which model,
 with the heavy reasoning on the top tier and the search, summarization, and boilerplate on something cheap,
 is a deliberate design choice, and one of the bigger levers you have on token efficiency.
-An orchestrator fanning out a dozen sub-tasks to a top-tier model
+An orchestrator fanning out a dozen subtasks to a top-tier model
 is exactly the kind of gas guzzler that can empty the tank;
 and that's just with subagents...
-Higher order coding agent orchestrators can guzzle even quicker.
+Higher-order coding agent orchestrators can guzzle even quicker.
 
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
@@ -249,7 +249,7 @@ and the terrain shifts by the week.
 It is far better to set reasonable caps,
 give people real guidance on how to be efficient,
 and trust them to work within them.
-To put this AI usage micro-managing in terms we've used for a long time: *it doesn't scale.*
+To put this AI usage micromanaging in terms we've used for a long time: *it doesn't scale.*
 
 What you *can* control is what your tooling defaults look like.
 The DevOps parallel isn't observability—it's provisioning policy.
@@ -293,7 +293,7 @@ because renting at that price makes more sense than amortizing the cost of my ow
 Even after it ends I'd keep spending something with the frontier labs;
 they'll still be the sharpest tools for the hardest problems.
 But some months I'd sail well past that number,
-and that's exactly when I'd want a local escape hatch of my own.
+and that's exactly when I'd want a local fallback of my own.
 The minute consumer plans move to pure consumption pricing
 is the minute my calculus flips to "okay, when do I build my next tower PC to run models locally?"
 A local model is also how I'd want to first try a token-hungry agent orchestrator like
@@ -324,7 +324,7 @@ Each tier trades dollars for control and operational burden in a different ratio
 There is no free lunch.[^ram-prices]
 But there is likely a *right-sized* lunch that fits within your proverbial AI per diem.
 
-It's worth being honest that the target keeps moving.
+To be honest, the target keeps moving.
 The best open-source models are already outgrowing what a laptop can hold,
 and they have started outgrowing modest self-hosting too.
 GLM-5.2, released in June 2026 under a permissive MIT license,
