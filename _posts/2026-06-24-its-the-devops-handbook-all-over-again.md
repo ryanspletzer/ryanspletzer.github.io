@@ -73,7 +73,7 @@ really resonated with me:
 Everyone feels faster,
 but the team isn't necessarily shipping any more than before.
 
-These DevOps lessons need reinforcing more than ever—and not just for engineers.
+These DevOps lessons need reinforcing more than ever—for everyone now in the driver's seat, not just the engineers.
 
 ## It Turns Out This Is Still a DevOps Problem 🧑‍💻
 
@@ -221,7 +221,7 @@ is the discipline that tells you when a task has earned the bigger model.
 
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
-but even if you wanted to
+but even if you wanted to,
 you can't realistically observe someone
 reflexively reaching for the most powerful model in their terminal or an IDE plugin.
 A lot of that usage is opaque by design,
@@ -232,8 +232,8 @@ You don't stop over-provisioned EC2 instances by monitoring them after the fact;
 you change the defaults,
 set controls at the provisioning layer,
 and build a culture around right-sizing.
-That's the same problem here: steer toward the right-sized model at the point of configuration,
-not at the point of observation.
+Models are quite similar: steer toward the right-sized one at the point of configuration,
+not at the point of observation.[^provisioning-analogy]
 
 The hardware frontier is worth watching here, too.
 Local inference on Apple Silicon—M5 Max and above—is
@@ -456,6 +456,42 @@ and it's the lesson now.
     with federal officials approving access one customer at a time before any wider release.
     The newest, most capable model isn't always the one you can actually get,
     and it will be interesting to see how this plays out in the future in the U.S. with further model releases.
+
+[^provisioning-analogy]:
+    Notably, spinning up an EC2 instance is a relatively infrequent, deliberate act,
+    whereas choosing a model happens far more often and far more dynamically,
+    sometimes many times within a single working session.
+    The major tools have also drifted toward explicit model selection rather than automatic routing.
+    When GPT-5 launched in ChatGPT in August 2025 it shipped with an automatic router
+    that picked the underlying model and reasoning depth on your behalf,
+    pitched by Sam Altman as a way to retire the confusing model menu.
+    The [backlash was swift, and OpenAI restored manual model selection within days](
+    https://techcrunch.com/2025/08/12/chatgpts-model-picker-is-back-and-its-complicated/).
+    And the compute angle isn't just folklore:
+    The Register read the whole design as a [cost-cutting exercise](
+    https://www.theregister.com/2025/08/13/gpt_5_cost_cutting/),
+    since routing the bulk of traffic to smaller models and toggling reasoning off by default
+    generates fewer tokens and costs less to run;
+    Altman himself noted the router had pushed reasoning-model usage among free users from under 1% to 7%.
+    Automatic routing lingered for the lower tiers, though,
+    and by December 2025 OpenAI was
+    [removing it for free and Go users too](
+    https://www.storyboard18.com/digital/chatgpt-free-users-shifted-to-gpt-5-2-instant-as-openai-scraps-automatic-model-switching-86042.htm)
+    (Go being its cheaper paid plan),
+    defaulting them to GPT-5.2 Instant unless they deliberately reached for the heavier Thinking model—framed
+    publicly as handing control back to users, though the reduced compute sure didn't hurt.
+    As of this writing, ChatGPT exposes effort levels—Instant, Medium, High—and
+    lets you drop from GPT-5.5 down to 5.4, 5.3, or o3,
+    while Codex surfaces additional narrower options for small models like gpt-5.4-mini and gpt-5.3-codex-spark.
+    Anthropic doesn't auto-route either:
+    Claude Code has you choose the model—Opus, Sonnet, or Haiku—and the reasoning effort yourself.
+    Codex can also point directly at a local model;
+    Claude Code currently expects you to stand up a compatible local proxy to do the same.
+    The bottom line, at least for now, is that model and effort selection is very much a real, hands-on decision—unless
+    you wrap them in your own routing layer,
+    or skip these tools and go straight to the API with third-party tools,
+    where the per-token pricing is yours to manage.
+    (Enterprises are already feeling the per-token consumption pricing.)
 
 [^ram-prices]:
     Especially with today's RAM prices, jeez.
