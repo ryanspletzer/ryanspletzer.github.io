@@ -216,6 +216,8 @@ drafting a quick email,
 wiring up some glue code.[^model-selection]
 These don't need the heaviest model available; they need a fast, cheap one
 that you can iterate on quickly within tight feedback loops.
+A practical habit: ask the agent itself which model is best suited for the task;
+more often than not, it won't recommend the largest one.
 It's the same judgment as knowing which mode you're in:
 the discipline that tells you when a prototype has graduated and earned real tests
 is the discipline that tells you when a task has earned the bigger model.
@@ -564,9 +566,7 @@ It is so, so not.
     Tight feedback loops, linting, and validation practices
     are exactly what can make smaller models more effective:
     you don't need the biggest model when you have a fast enough correction signal.
-    A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
-    More often than not, it won't recommend the largest one.
-    This point was reinforced concretely when Anthropic's Fable 5 model experienced a period of unavailability in
+    The same lesson landed concretely when Anthropic's Fable 5 model experienced a period of unavailability in
     mid-2026, and is still unavailable at the writing of this post:
     anyone who had defaulted to routing all their AI work through the newest top-tier model found themselves
     blocked, underscoring the value of workflows that can fall back to a smaller, always-available model rather than
