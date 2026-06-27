@@ -236,6 +236,17 @@ you can't realistically observe someone
 reflexively reaching for the most powerful model in their terminal or an IDE plugin.
 A lot of that usage is opaque by design,
 and even trying to observe it all will likely create a larger bill just from that effort alone.
+
+And there's a deeper problem than cost or observability:
+you simply cannot micromanage the way people use AI,
+prescribing which model for which task, prompt by prompt and person by person.[^goodhart]
+There are too many people, too many tasks,
+and the terrain shifts by the week.
+It is far better to set reasonable caps,
+give people real guidance on how to be efficient,
+and trust them to work within them.
+To put it in terms we've used for a long time: *it doesn't scale.*
+
 What you *can* control is what your tooling defaults look like.
 The DevOps parallel isn't observability—it's provisioning policy.
 You don't stop over-provisioned EC2 instances by monitoring them after the fact;
@@ -541,6 +552,16 @@ It is so, so not.
     with federal officials approving access one customer at a time before any wider release.
     The newest, most capable model isn't always the one you can actually get,
     and it will be interesting to see how this plays out in the future in the U.S. with further model releases.
+
+[^goodhart]:
+    Heavy-handed measurement tends to backfire here for a related reason,
+    one often boiled down to [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law):
+    when a measure becomes a target, it stops being a good measure.
+    (That crisp phrasing is actually Marilyn Strathern's restatement of economist Charles Goodhart's original.)
+    Put a number on each person's token use,
+    and you tend to get people managing the number rather than using AI well—gaming
+    it, hoarding budget, or quietly routing around it—not
+    the judicious efficiency you were after.
 
 [^provisioning-analogy]:
     Notably, spinning up an EC2 instance is a relatively infrequent, deliberate act,
