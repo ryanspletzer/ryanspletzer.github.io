@@ -54,7 +54,7 @@ around establishing fast feedback loops.
 
 I'm no stranger to vibe coding[^software-engineering],
 and like many others I dove in head-first over the 2025-2026 holiday break
-with Claude Code and Opus 4.5.
+with Claude Code and Opus 4.6.[^first-time-trying-claude-code]
 But it was comforting reading this book and knowing that my intuition was on the right track,
 and realizing that I wasn't alone (and I wasn't crazy)
 in thinking that the core engineering discipline the DevOps movement
@@ -448,6 +448,13 @@ It is so, so not.
 [^software-engineering]:
     Or as I like to often provocatively call it, "Software Engineering,"
     because I believe what we're witnessing is the natural evolution of the craft.
+
+[^first-time-trying-claude-code]:
+    My first time trying out Claude Code was very briefly near when it was released in May 2025.
+    I remember thinking "What is this thing?" followed by
+    "Oh my God, this is a very different way of looking at the software engineering world."
+    I knew that for some, getting out of the IDE and the comfort of tools like Cursor would feel unnatural,
+    but it's been worth the leap for me.
 
 [^guardrails]:
     I almost used the term "Guardrails" here but decided to take it out.
