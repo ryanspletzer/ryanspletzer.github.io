@@ -29,7 +29,7 @@ Fast-forward to 2026 and I just finished reading a new book
 I'd been meaning to get to since its release in October 2025:
 [*Vibe Coding*](https://itrevolution.com/product/vibe-coding-book/),
 by Gene Kim and Steve Yegge.
-The time since its publication seems like forever ago in AI years.
+Its publication feels like forever ago in AI years.
 Some things have changed:
 engineers frivolously spent way too much money
 [gaming the token leaderboards](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)
@@ -41,7 +41,7 @@ higher-level coding agent orchestrators can be true "gas guzzlers" in their own 
 But almost all the guidance is deeply foundational, and remains true now.
 
 I bought the book in January 2026 but didn't pick it up and read it right away.
-On my initial first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
+On my first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
 The book re-instilled some key lessons
@@ -308,8 +308,8 @@ most developers are getting new laptops periodically anyway.
 Speccing up to hardware that can run a solid open-source model locally
 costs incrementally more than a baseline machine,
 but could vastly reduce the API bill for that developer entirely,
-or give them an escape hatch when they hit their reasonable monthly limit with frontier models
-with vendor coding agent tools.
+or give them an escape hatch when they hit their reasonable monthly limit on frontier models
+in vendor coding agent tools.
 Contrast that with standing up your own OSS model hosting,
 which trades the API bill for GPU instances and cloud infra costs and an ops burden.
 This is really the old build-versus-buy question wearing new clothes,
@@ -375,8 +375,8 @@ The missing ingredient is the feedback infrastructure:
 tests that run on every commit (or perhaps even every file save operation),
 ideally as close to the developer as possible,
 and CI that catches regressions before they hit main,
-and additionally for live, running systems,
-having observability so you know when something breaks in the dark.[^all-you-need-is-traces]
+and, for live systems,
+observability so you know when something breaks in the dark.[^all-you-need-is-traces]
 
 None of this is free.
 A single engineer can pick up the tools and feel faster almost overnight.
@@ -384,7 +384,7 @@ Building the feedback infrastructure that makes the *team* faster is a different
 less glamorous,
 and impossible to do alone.
 It takes a real investment of time and energy,
-and leadership willing to buy-in and protect that time when the pressure is to just ship.
+and leadership willing to buy in and protect that time when the pressure is to just ship.
 That asymmetry is the gap behind Gergely's line:
 the individual gains are cheap,
 and the team gains are expensive.
@@ -425,12 +425,14 @@ Tokens cost money,
 but misspent tokens cost you something you truly can't get back: time.
 As *Vibe Coding* reminds us,
 time is the one resource you can't recover, even for personal projects.
-You can optimize your spend and right-size your models to rationalize your token spend—using
-the same tight loops from DevOps practices are what make the cheaper models more possible to lean on.
-You can't, however, buy back the *hours* spent untangling a an untested and architecturally jumbled codebase
-that was shipped fast but built without the feedback infrastructure to catch the mistakes.
-It's the guiding hands of humans with the correct judgment
-who keep the codebase testable and in an architecturally sound state where it can actually be iterated on
+You can right-size your models to rationalize your token spend;
+the same tight loops from DevOps are what make the cheaper models viable to lean on.
+You can't, however, buy back the *hours* spent untangling an untested and architecturally jumbled codebase
+that was shipped fast but built without the feedback infrastructure to catch the mistakes;
+not to mention the implications of security issues which I decided to not delve into in this particular post,
+as it's already a pretty lengthy one.
+It's the guiding hands of humans with good judgment
+that keep the codebase testable and in an architecturally sound state where it can actually be iterated on
 by AI, and humans, in the future.
 
 We keep hearing that code is "free" now.
@@ -545,8 +547,8 @@ It is so, so not.
     Some plans still hold, like quarterly or annual sales targets,
     but the durable question is the high-level one, not the quarterly metrics.
     Used effectively, AI should be grease on the wheels toward your goals.
-    I wasn't old enough to know,
-    but I gave heard stories about people trying to quantify the value of spellcheck in word processors back in the day.
+    I wasn't old enough to remember it firsthand,
+    but I have heard stories about people trying to quantify the value of spellcheck in word processors back in the day.
     As silly as that sounds now,
     the value of spellcheck is inherently obvious,
     especially in any public-facing document you've ever published from your company...
