@@ -228,10 +228,10 @@ but the defaults only get you so far.
 Deciding which subagent runs on which model,
 with the heavy reasoning on the top tier and the search, summarization, and boilerplate on something cheap,
 is a deliberate design choice, and one of the bigger levers you have on token efficiency.
-An orchestrator fanning a dozen sub-tasks out to a top-tier model
+An orchestrator fanning out a dozen sub-tasks to a top-tier model
 is exactly the kind of gas guzzler that can empty the tank;
-and that's just with subagents,
-whereas higher order coding agent orchestrators can guzzle even quicker.
+and that's just with subagents...
+Higher order coding agent orchestrators can guzzle even quicker.
 
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
@@ -249,7 +249,7 @@ and the terrain shifts by the week.
 It is far better to set reasonable caps,
 give people real guidance on how to be efficient,
 and trust them to work within them.
-To put it in terms we've used for a long time: *it doesn't scale.*
+To put this AI usage micro-managing in terms we've used for a long time: *it doesn't scale.*
 
 What you *can* control is what your tooling defaults look like.
 The DevOps parallel isn't observability—it's provisioning policy.
@@ -260,6 +260,15 @@ and build a culture around right-sizing.
 Models are quite similar: steer toward the right-sized one at the point of configuration,
 not at the point of observation.[^provisioning-analogy]
 
+Step back, and it's clear we're still in the stick-shift era of these tools.
+You choose the model, dial in the effort, sometimes explicitly route to the subagents—shifting gears by hand
+every time the road changes.
+The automatic hasn't arrived yet:
+tooling that quietly picks the right-sized model and effort for the moment
+and lets you keep your hands on the wheel and your eyes on the road.
+(Full self-driving, where you just state where you want to go and hand over the keys entirely, is further off still.)
+For now, knowing how to drive stick is part of the job.[^driving-stick]
+
 There's a psychological shift underneath all of this that we haven't fully absorbed:
 we are not yet used to paying for software by consumption.
 Enterprises have made their peace with it through cloud,
@@ -267,8 +276,8 @@ where you provision a database or a fleet of instances
 and more or less know you're paying for what you actually use to host something, within reason.
 But day-to-day AI usage is a different animal:
 jagged, unpredictable, and driven by the individual rather than steady infrastructure,
-which makes it much harder to forecast and requires sensible budgets and limits
-(ask me how I know...).
+which makes it much harder to forecast and requires sensible budgets and limits.
+(Ask me how I know...)
 Consumers have even less intuition for any of this.
 Imagine paying for Netflix by the minute;
 the meter running in the background would change how it feels to press play.
@@ -349,7 +358,7 @@ You're not necessarily shipping *better* code faster—not
 quality code,
 and not the kind of modular, decoupled architecture
 that gives you optionality and room to evolve.
-That same modularity is increasingly what lets multiple agents work a codebase in parallel
+That same modularity is increasingly what lets multiple agents, like humans, work on a codebase in parallel
 without stepping on each other and colliding in major merge conflicts;
 the cleaner the boundaries between components, the more safely that parallel work scales.
 The fast-but-careless path does the opposite:
@@ -364,8 +373,10 @@ that even AI will struggle with and will cost you a small fortune to untangle.[^
 
 The missing ingredient is the feedback infrastructure:
 tests that run on every commit (or perhaps even every file save operation),
-CI that catches regressions before they hit main,
-and observability so you know when something breaks in the dark.
+ideally as close to the developer as possible,
+and CI that catches regressions before they hit main,
+and additionally for live, running systems,
+having observability so you know when something breaks in the dark.[^all-you-need-is-traces]
 
 None of this is free.
 A single engineer can pick up the tools and feel faster almost overnight.
@@ -373,7 +384,7 @@ Building the feedback infrastructure that makes the *team* faster is a different
 less glamorous,
 and impossible to do alone.
 It takes a real investment of time and energy,
-and leadership willing to protect that time when the pressure is to just ship.
+and leadership willing to buy-in and protect that time when the pressure is to just ship.
 That asymmetry is the gap behind Gergely's line:
 the individual gains are cheap,
 and the team gains are expensive.
@@ -410,18 +421,17 @@ CI ran in minutes and I knew before I merged.
 The loop was tight enough that the AI's mistakes
 were a course correction, not a production incident.
 
-That's the lesson.
 Tokens cost money,
 but misspent tokens cost you something you truly can't get back: time.
 As *Vibe Coding* reminds us,
 time is the one resource you can't recover, even for personal projects.
-You can optimize your spend and right-size your models—the
-same tight loops are what make the cheaper models easier to lean on.
-You can't buy back the hours spent untangling a codebase
+You can optimize your spend and right-size your models to rationalize your token spend—using
+the same tight loops from DevOps practices are what make the cheaper models more possible to lean on.
+You can't, however, buy back the *hours* spent untangling a an untested and architecturally jumbled codebase
 that was shipped fast but built without the feedback infrastructure to catch the mistakes.
 It's the guiding hands of humans with the correct judgment
 who keep the codebase testable and in an architecturally sound state where it can actually be iterated on
-by AI and others in the future.
+by AI, and humans, in the future.
 
 We keep hearing that code is "free" now.
 
@@ -587,16 +597,18 @@ It is so, so not.
     Altman himself noted the router had pushed reasoning-model usage among free users from under 1% to 7%.
     Automatic routing lingered for the lower tiers, though,
     and by December 2025 OpenAI was
-    [removing it for free and Go users too](
+    [removing it for the Free plan and ChatGPT Go plan too](
     https://www.storyboard18.com/digital/chatgpt-free-users-shifted-to-gpt-5-2-instant-as-openai-scraps-automatic-model-switching-86042.htm)
-    (Go being its cheaper paid plan),
+    (ChatGPT Go being its cheaper paid plan
+    introduced in August 2025 in certain markets and expanded to the U.S. and other countries in January 2026),
     defaulting them to GPT-5.2 Instant unless they deliberately reached for the heavier Thinking model—framed
     publicly as handing control back to users, though the reduced compute sure didn't hurt.
     As of this writing, ChatGPT exposes effort levels—Instant, Medium, High—and
     lets you drop from GPT-5.5 down to 5.4, 5.3, or o3,
     while Codex surfaces additional narrower options for small models like gpt-5.4-mini and gpt-5.3-codex-spark.
     Anthropic doesn't auto-route either:
-    Claude Code has you choose the model—Opus, Sonnet, or Haiku—and the reasoning effort yourself.
+    Claude Code has what they believe are sensible defaults
+    but allows you to choose the model—Opus, Sonnet, or Haiku—and the reasoning effort yourself.
     Codex can also point directly at a local model;
     Claude Code currently expects you to stand up a compatible local proxy to do the same.
     The bottom line, at least for now, is that model and effort selection is very much a real, hands-on decision—unless
@@ -605,8 +617,22 @@ It is so, so not.
     where the per-token pricing is yours to manage.
     (Enterprises are already feeling the per-token consumption pricing.)
 
+[^driving-stick]:
+    I realize I say this as someone who is not at all versed in driving an actual manual automobile IRL.
+    And I feel no need to, really.
+    It feels like a solved problem...
+
 [^ram-prices]:
     Especially with today's RAM prices, jeez.
 
 [^untangle]:
     Or it could cost you a small fortune to start over.
+
+[^all-you-need-is-traces]:
+    This is the subject of a different, future blog post,
+    but the tl;dr on Observability these days from the thought leaders in the space like Charity Majors and others
+    is simply this:
+    All you need is traces:
+    OpenTelemetry spans, which are essentially wide events.
+    I'm slightly over-simplifying, but if you have that, then the world is your oyster
+    and you can slice and dice and report on those wide events to your heart's content.
