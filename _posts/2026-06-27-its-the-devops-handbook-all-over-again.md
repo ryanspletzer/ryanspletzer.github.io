@@ -102,7 +102,7 @@ in [A Tale of Acceleration and Compound Engineering](/2026/02/a-tale-of-accelera
 the same CI workflows I used to wire up by hand over days or weeks
 are now things I can stand up in a fraction of the time with AI assistance.
 But the practices themselves—the tests, the linting, the repeatable pipelines—are
-what made the speed possible in the first place.
+what made the speed benefits durable.
 The tools and models have gotten better,
 but the engineering practices are the compounding force that *really* multiplies them.
 
@@ -156,8 +156,9 @@ I've [written about this from my own experience](/2025/09/pinocchio-is-not-a-rea
 When I contributed a fix to a React frontend in an area where I'm not strong,
 the AI output looked *great*.
 And that was exactly the problem.
-Left to my own devices I would never have attempted this;
-rather, I would have explored the codebase and handed off guidance to a fellow engineer who better knew the terrain
+Left to my own devices I would never have attempted this in the first place;
+rather, I would have explored the codebase and searched around docs online
+and handed off guidance to a fellow engineer who better knew the terrain
 of this project and of frontend engineering with React.
 Instead the AI wrote it quickly,
 and I had to study the output 10x more carefully,
@@ -224,14 +225,15 @@ the discipline that tells you when a prototype has graduated and earned real tes
 is the discipline that tells you when a task has earned the bigger model.
 
 This judgment compounds the moment you're delegating to subagents rather than prompting one at a time.
-A coding agent like Claude Code will sometimes hand the lighter, more mechanical steps—say, a codebase search—to
+A tool like Claude Code will sometimes hand the lighter, more mechanical steps—say, a codebase search—to
 a smaller, faster model on its own,
 the way its built-in Explore subagent runs read-only searches on Haiku,
 but the defaults only get you so far.
 Deciding which subagent runs on which model,
 with the heavy reasoning on the top tier and the search, summarization, and boilerplate on something cheap,
 is a deliberate design choice, and one of the bigger levers you have on token efficiency.
-An orchestrator fanning out a dozen subtasks to a top-tier model
+That said, fanning out a dozen subtasks to a dozen subagents,
+each using a top-tier model,
 is exactly the kind of gas guzzler that can empty the tank;
 and that's just with subagents...
 Higher-order coding agent orchestrators can guzzle even quicker.
@@ -334,8 +336,8 @@ GLM-5.2, released in June 2026 under a permissive MIT license,
 is a 744-billion-parameter mixture-of-experts model that
 [beats GPT-5.5 on several long-horizon coding benchmarks at a sixth of the cost](https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost).
 It activates only about 40 billion parameters per token,
-but you still have to keep all 744 billion resident in memory to serve it—
-and none of that fits on a laptop, or on a single modest GPU box.
+but you still have to keep all 744 billion resident in memory to serve it—and
+none of that fits on a laptop, or on a single modest GPU box.
 Open weights does not mean locally runnable,
 and the OSS frontier is drifting toward the same "someone else has to host this" reality as the closed models,
 which folds it right back into that build-versus-buy spectrum.
@@ -387,7 +389,7 @@ Building the feedback infrastructure that makes the *team* faster is a different
 less glamorous,
 and impossible to do alone.
 It takes a real investment of time and energy,
-and leadership willing to buy in and protect that time when the pressure is to just ship.
+and leadership willing to buy in and protect that time when the pressure is to just ship.[^pressure-to-ship]
 That asymmetry is the gap behind Gergely's line:
 the individual gains are cheap,
 and the team gains are expensive.
@@ -492,7 +494,7 @@ It is so, so not.
 
 [^if-they-have-help]:
     That is, if anyone even has the time or attention or energy or incentive or willingness to help a non-engineer take
-    what could be a very tangled mess with likely no auth to production...
+    what could be a very tangled mess with likely no auth (or flawed auth) to production...
     I've become convinced that this type of thing is possible,
     but only with the help of very streamlined platforms and approaches and best practices talked about here,
     which even us actual software engineers often struggle to get completely in place organizationally for ourselves,
@@ -594,7 +596,8 @@ It is so, so not.
     whereas choosing a model happens far more often and far more dynamically,
     sometimes many times within a single working session.
     The major tools have also drifted toward explicit model selection rather than automatic routing.
-    When GPT-5 launched in ChatGPT in August 2025 it shipped with an automatic router
+    When GPT-5 launched in ChatGPT in August 2025,
+    it shipped with an automatic router
     that picked the underlying model and reasoning depth on your behalf,
     pitched by Sam Altman as a way to retire the confusing model menu.
     The [backlash was swift, and OpenAI restored manual model selection within days](
@@ -642,7 +645,12 @@ It is so, so not.
     This is the subject of a different, future blog post,
     but the tl;dr on Observability these days from the thought leaders in the space like Charity Majors and others
     is simply this:
-    All you need is traces:
-    OpenTelemetry spans, which are essentially wide events.
+    All you need is traces,
+    aka OpenTelemetry spans, which are essentially wide events.
     I'm slightly over-simplifying, but if you have that, then the world is your oyster
     and you can slice and dice and report on those wide events to your heart's content.
+
+[^pressure-to-ship]:
+    And if you are feeling pressure to ship,
+    I recommend carving off a subset of the team to focus on greasing the wheels with better practices
+    while the rest continue to focus on delivery.
