@@ -330,7 +330,8 @@ not the kind that compounds debt until the car drives itself backwards out the w
 ## Read the Books 📚, But Do the Work 🛠️
 
 Reading a book doesn't change behavior on its own.
-If it did, we wouldn't have needed a decade of DevOps books covering the same ideas in different clothes.
+If it did, this post wouldn't need to exist,
+and neither would the long line of books that keep (rightfully) restating the same lessons for each new era.
 
 But if you haven't read [*The DevOps Handbook*](https://itrevolution.com/book/the-devops-handbook/),
 there's no better time.
