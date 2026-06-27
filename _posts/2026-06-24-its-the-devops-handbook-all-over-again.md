@@ -323,9 +323,9 @@ and the team gains are expensive.
 *Vibe Coding* says it again for the AI era.
 The practices don't care what year it is.
 
-They *enable* speed, the kind that compounds over time
-rather than the kind that quietly accretes debt
-until the car drives itself backwards out the window.
+That's the speed they enable:
+the kind that compounds in your favor,
+not the kind that compounds debt until the car drives itself backwards out the window.
 
 ## Read the Books 📚, But Do the Work 🛠️
 
