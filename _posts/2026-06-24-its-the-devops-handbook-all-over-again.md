@@ -245,10 +245,39 @@ costs incrementally more than a baseline machine,
 but could vastly reduce the API bill for that developer entirely,
 or give them an escape hatch when they hit their reasonable monthly limit with frontier models
 with vendor coding agent tools.
-Contrast that with standing up OSS model hosting on cloud compute,
+Contrast that with standing up your own OSS model hosting,
 which trades the API bill for GPU instance and cloud infra costs and an ops burden.
+This is really the old build-versus-buy question wearing new clothes,
+the same spectrum we already know from the rest of cloud:
+consumption-priced serverless at one end
+(call a frontier API, pay per token, run no infrastructure of your own),
+a managed middle
+(a service like Amazon SageMaker that hosts an open model for you),
+and rolling it entirely yourself at the other
+(VMs or Kubernetes in the cloud, or bare metal in your own datacenter).
+Each tier trades dollars for control and operational burden in a different ratio.
 There is no free lunch.[^ram-prices]
 But there is likely a *right-sized* lunch that fits within your proverbial AI per diem.
+
+It's worth being honest that the target keeps moving.
+The best open-source models are already outgrowing what a laptop can hold,
+and they have started outgrowing modest self-hosting too.
+GLM-5.2, released in June 2026 under a permissive MIT license,
+is a 744-billion-parameter mixture-of-experts model that
+[beats GPT-5.5 on several long-horizon coding benchmarks at a sixth of the cost](https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost).
+It activates only about 40 billion parameters per token,
+but you still have to keep all 744 billion resident in memory to serve it—
+and none of that fits on a laptop, or on a single modest GPU box.
+Open weights does not mean locally runnable,
+and the OSS frontier is drifting toward the same "someone else has to host this" reality as the closed models,
+which folds it right back into that build-versus-buy spectrum.
+
+Even so, don't count the laptop out.
+The open models small enough to run locally today
+are already very capable across a wide range of everyday tasks,
+and the efficiency techniques that keep landing—quantization, distillation, smarter sparsity—pull
+more capability down onto hardware you already own.
+The locally feasible ceiling is rising even as the frontier sprints away from it.
 
 ## Slow Down 🐢 to Speed Up 🐇
 
