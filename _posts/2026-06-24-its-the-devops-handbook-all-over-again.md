@@ -358,9 +358,14 @@ As *Vibe Coding* reminds us,
 time is the one resource you can't recover, even for personal projects.
 You can optimize your spend and right-size your models.
 You can't buy back the hours spent untangling a codebase
-that was shipped fast but built without the feedback infrastructure to catch the mistakes.
-It was the lesson in 2018,
-and it's the lesson now.
+that was shipped fast but built without the feedback infrastructure to catch the mistakes
+or without the guiding hands of humans with the correct judgment
+who kept the codebase in a state where it can actually be iterated on
+by AI and others in the future.
+
+I (and perhaps you) keep hearing that code is "free" now.
+
+It is so, so not.
 
 ## Footnotes
 
