@@ -246,7 +246,7 @@ but could vastly reduce the API bill for that developer entirely,
 or give them an escape hatch when they hit their reasonable monthly limit with frontier models
 with vendor coding agent tools.
 Contrast that with standing up your own OSS model hosting,
-which trades the API bill for GPU instance and cloud infra costs and an ops burden.
+which trades the API bill for GPU instances and cloud infra costs and an ops burden.
 This is really the old build-versus-buy question wearing new clothes,
 the same spectrum we already know from the rest of cloud:
 consumption-priced serverless at one end
@@ -293,6 +293,10 @@ You're not necessarily shipping *better* code faster—not
 quality code,
 and not the kind of modular, decoupled architecture
 that gives you optionality and room to evolve.
+The fast-but-careless path does the opposite:
+it quietly backs you into an architectural corner,
+where every decision forecloses the next one
+and each later change costs more than the one before it.
 *Vibe Coding* surfaces an old maxim, which I had never heard before, but fits aptly here:
 "You can't un-blend two frogs."
 Move fast without the feedback infrastructure
@@ -302,7 +306,7 @@ that even AI will struggle with and will cost you a small fortune to untangle.[^
 The missing ingredient is the feedback infrastructure:
 tests that run on every commit (or perhaps even every file save operation),
 CI that catches regressions before they hit main,
-observability so you know when something breaks in the dark.
+and observability so you know when something breaks in the dark.
 
 None of this is free.
 A single engineer can pick up the tools and feel faster almost overnight.
