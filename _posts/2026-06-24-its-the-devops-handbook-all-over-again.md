@@ -272,7 +272,8 @@ But some months I'd sail well past that number,
 and that's exactly when I'd want a local escape hatch of my own.
 The minute consumer plans move to pure consumption pricing
 is the minute my calculus flips to "okay, when do I build my next tower PC to run models locally?"
-A local model is also how I'd want to first try a token-hungry agent orchestrator like Gas Town,
+A local model is also how I'd want to first try a token-hungry agent orchestrator like
+[Gas Town](https://github.com/gastownhall/gastown),
 dipping a toe in without one runaway experiment blowing the whole month's budget.
 
 The hardware frontier is worth watching here, too.
