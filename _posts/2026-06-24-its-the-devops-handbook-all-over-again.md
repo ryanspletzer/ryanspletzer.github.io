@@ -23,7 +23,7 @@ my manager took the team through the exercise of reading
 I had actually already read it once before,
 but was happy to do it again as a team exercise,
 because the lessons contained within those pages were quite important,
-and essential to some of the key initiatives the team was trying to accomplish around that time.
+and essential to some of the key initiatives that the team was trying to accomplish around that time.
 
 Fast-forward to 2026 and I just finished reading a new book
 I'd been meaning to get to since its release in October 2025:
@@ -33,15 +33,15 @@ The time since its publication seems like forever ago in AI years.
 Some things have changed:
 engineers frivolously spent way too much money
 [gaming the token leaderboards](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)
-at their companies
-("tokenmaxxing," as it came to be called),
+at some companies
+(a form of "tokenmaxxing," as it came to be called),
 which in hindsight was more than a bit short-sighted.
 Some things have evolved:
-coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
+higher-level coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
 But almost all the guidance is deeply foundational, and remains true now.
 
-I bought the book in January 2026 but didn't pick it up right away.
-On a skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
+I bought the book in January 2026 but didn't pick it up and read it right away.
+On my initial first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
 The book re-instilled some key lessons
@@ -78,7 +78,7 @@ These DevOps lessons need reinforcing more than ever—for everyone now in the d
 ## It Turns Out This Is Still a DevOps Problem 🧑‍💻
 
 *The DevOps Handbook* aggregated and distilled a set of ideas that were already understood
-in the best engineering organizations of the time:
+in the best engineering organizations and high-performing companies of the time:
 get things flowing fast from idea to production;
 build feedback loops so that your systems tell you quickly when something is wrong;
 foster a culture of continual learning and experimentation.
@@ -156,7 +156,8 @@ When I contributed a fix to a React frontend in an area where I'm not strong,
 the AI output looked *great*.
 And that was exactly the problem.
 Left to my own devices I would never have attempted this;
-rather, I would have explored the codebase and handed off guidance to a dev who knew the terrain.
+rather, I would have explored the codebase and handed off guidance to a fellow engineer who better knew the terrain
+of this project and of frontend engineering with React.
 Instead the AI wrote it quickly,
 and I had to study the output 10x more carefully,
 slow down to ask "why did it do *that*,"
@@ -219,15 +220,18 @@ It's the same judgment as knowing which mode you're in:
 the discipline that tells you when a prototype has graduated and earned real tests
 is the discipline that tells you when a task has earned the bigger model.
 
-This judgment compounds the moment you're orchestrating agents rather than prompting one at a time.
-A coding agent like Claude Code will sometimes hand the lighter, more mechanical steps
-to a smaller, faster model on its own,
+This judgment compounds the moment you're delegating to subagents rather than prompting one at a time.
+A coding agent like Claude Code will sometimes hand the lighter, more mechanical steps—say, a codebase search—to
+a smaller, faster model on its own,
+the way its built-in Explore subagent runs read-only searches on Haiku,
 but the defaults only get you so far.
 Deciding which subagent runs on which model,
 with the heavy reasoning on the top tier and the search, summarization, and boilerplate on something cheap,
 is a deliberate design choice, and one of the bigger levers you have on token efficiency.
 An orchestrator fanning a dozen sub-tasks out to a top-tier model
-is exactly the kind of gas guzzler that can empty the tank.
+is exactly the kind of gas guzzler that can empty the tank;
+and that's just with subagents,
+whereas higher order coding agent orchestrators can guzzle even quicker.
 
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
@@ -447,8 +451,8 @@ It is so, so not.
     But I digress...
     Watch out for another blog post on these overloaded pet peeve terms in the future,
     because I haven't gotten it out of my system yet.
-    (And yes, I see the irony that the photo up top literally praises "guard rails."
-    The physical kind, the sort that stops a careless driver from sailing off a cliff,
+    (And yes, I see the irony that the photo up top literally praises "guard rails,"
+    the physical kind, the sort that stops a careless driver from sailing off a cliff,
     is exactly the concrete thing I have in mind;
     it's the vague buzzword version I'm allergic to.)
 
@@ -470,8 +474,10 @@ It is so, so not.
     I've become convinced that this type of thing is possible,
     but only with the help of very streamlined platforms and approaches and best practices talked about here,
     which even us actual software engineers often struggle to get completely in place organizationally for ourselves,
-    let alone non-engineering folks;
-    and even then non-engineers are going to need the hand-holding of at least a junior engineer to help them get there.
+    let alone for non-engineering folks;
+    and even then non-engineers are going to need the hand-holding of at least a junior engineer,
+    who has a solid set of practices and tooling, etc. to operate on,
+    to help them get there.
 
 [^ents-of-fangorn]:
     (To my Finance partners, understand that this is a light-hearted reference in a blog post
@@ -519,10 +525,10 @@ It is so, so not.
     to measure the ROI and/or value of AI,
     which I believe to be a fool's errand in the micro sense
     (and the realm of fancy suit-and-tie management consultants who need something to do).
-    In the macro sense, I think you can judge it the same oblique way we judge any strategic bet:
+    In the macro sense, I think you can judge it in the same oblique way we judge any strategic bet:
     are you achieving the strategic intent and scope you're after?
     I'd steer away from the granular instruments, though.
-    The cadence we run strategic planning on
+    Additionally, the cadence we run strategic planning on
     often feels too antiquated and long-horizon for the pace technology moves at now;
     I've watched plenty of specific KPIs and OKRs go irrelevant inside of six weeks
     as the industry lurches forward and the business circumstances underneath them shift just as fast.
@@ -530,10 +536,10 @@ It is so, so not.
     but the durable question is the high-level one, not the quarterly metrics.
     Used effectively, AI should be grease on the wheels toward your goals.
     I wasn't old enough to know,
-    but I hear stories about people trying to quantify the value of spellcheck in word processors back in the day.
+    but I gave heard stories about people trying to quantify the value of spellcheck in word processors back in the day.
     As silly as that sounds now,
-    the value of spellcheck is inherently obvious
-    in any public-facing document you've ever published from your company...
+    the value of spellcheck is inherently obvious,
+    especially in any public-facing document you've ever published from your company...
 
 [^model-selection]:
     Tight feedback loops, linting, and validation practices
