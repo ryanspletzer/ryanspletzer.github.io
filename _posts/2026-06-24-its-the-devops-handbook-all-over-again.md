@@ -464,18 +464,18 @@ It is so, so not.
 [^measuring-ai-value]:
     Far be it from me to be one of those folks who suggest some harebrained endeavor
     to measure the ROI and/or value of AI,
-    which I believe to be a fool's errand to do in the micro sense
-    (and the realm of fancy suit-and-tie management consultants who need something to do),
-    but in the macro sense I think you can measure it in the more oblique way
-    that we're used to measuring strategic goals and KPIs and OKRs and outcomes, etc.
-    Though I'd caveat even that:
-    the cadence we run these strategic planning cycles on
-    often feels too antiquated and long-horizon for the pace technology moves at now.
-    Some plans still make sense, like quarterly or annual sales targets,
-    but I've watched plenty of KPIs and OKRs go irrelevant inside of six weeks
+    which I believe to be a fool's errand in the micro sense
+    (and the realm of fancy suit-and-tie management consultants who need something to do).
+    In the macro sense, I think you can judge it the same oblique way we judge any strategic bet:
+    are you achieving the strategic intent and scope you're after?
+    I'd steer away from the granular instruments, though.
+    The cadence we run strategic planning on
+    often feels too antiquated and long-horizon for the pace technology moves at now;
+    I've watched plenty of specific KPIs and OKRs go irrelevant inside of six weeks
     as the industry lurches forward and the business circumstances underneath them shift just as fast.
-    Put simply, are you achieving the strategic intent and strategic scope you're after?
-    Used effectively, AI should be the grease on the wheels to help you achieve your goals.
+    Some plans still hold, like quarterly or annual sales targets,
+    but the durable question is the high-level one, not the quarterly metrics.
+    Used effectively, AI should be grease on the wheels toward your goals.
     I wasn't old enough to know,
     but I hear stories about people trying to quantify the value of spellcheck in word processors back in the day.
     As silly as that sounds now,
@@ -484,7 +484,7 @@ It is so, so not.
 
 [^model-selection]:
     Tight feedback loops, linting, and validation practices
-    are exactly what can make smaller models wildly effective:
+    are exactly what can make smaller models more effective:
     you don't need the biggest model when you have a fast enough correction signal.
     A practical habit when spinning up a coding agent: ask the model itself which model is best suited for the task.
     More often than not, it won't recommend the largest one.
