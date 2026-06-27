@@ -342,9 +342,9 @@ The real takeaway, though,
 is that the practices—tests, CI, fast feedback loops, observability—are the thing.
 Not the books, not the tools, not the models.
 The practices are what let you drive at 100mph
-without ending up like Cameron's Ferrari mangled on the forest floor.
+without ending up like Cameron's dad's Ferrari mangled on the forest floor.
 
-The weeks where I personally moved *fastest* with my own hobby projects were always the ones
+The weeks where I moved *fastest* with my own personal projects were always the ones
 where I had the feedback infrastructure already in place.
 Tests caught what the model got confidently wrong.
 CI ran in minutes and I knew before I merged.
@@ -352,11 +352,12 @@ The loop was tight enough that the AI's mistakes
 were a course correction, not a production incident.
 
 That's the lesson.
-Tokens cost money, but as *Vibe Coding* reminds us,
-*time* is the resource you can't recover,
-even for personal projects.
+Tokens cost money,
+but misspent tokens cost you something you truly can't get back: time.
+As *Vibe Coding* reminds us,
+time is the one resource you can't recover, even for personal projects.
 You can optimize your spend and right-size your models.
-You cannot get back the time spent untangling a codebase
+You can't buy back the hours spent untangling a codebase
 that was shipped fast but built without the feedback infrastructure to catch the mistakes.
 It was the lesson in 2018,
 and it's the lesson now.
