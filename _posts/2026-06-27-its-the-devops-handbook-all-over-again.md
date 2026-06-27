@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It's the DevOps Handbook All Over Again
-date: 2026-06-24 00:00:00
+date: 2026-06-27 00:00:00
 description: >
   Gene Kim and Steve Yegge's Vibe Coding makes the case
   that the DevOps Handbook's teachings—fast flow, fast feedback, discipline—matter
