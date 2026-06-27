@@ -293,6 +293,9 @@ You're not necessarily shipping *better* code faster—not
 quality code,
 and not the kind of modular, decoupled architecture
 that gives you optionality and room to evolve.
+That same modularity is increasingly what lets multiple agents work a codebase in parallel
+without stepping on each other and colliding in major merge conflicts;
+the cleaner the boundaries between components, the more safely that parallel work scales.
 The fast-but-careless path does the opposite:
 it quietly backs you into an architectural corner,
 where every decision forecloses the next one
@@ -358,12 +361,12 @@ As *Vibe Coding* reminds us,
 time is the one resource you can't recover, even for personal projects.
 You can optimize your spend and right-size your models.
 You can't buy back the hours spent untangling a codebase
-that was shipped fast but built without the feedback infrastructure to catch the mistakes
-or without the guiding hands of humans with the correct judgment
-who kept the codebase in a state where it can actually be iterated on
+that was shipped fast but built without the feedback infrastructure to catch the mistakes.
+It's the guiding hands of humans with the correct judgment
+who keep the codebase testable and in an architecturally sound state where it can actually be iterated on
 by AI and others in the future.
 
-I (and perhaps you) keep hearing that code is "free" now.
+We keep hearing that code is "free" now.
 
 It is so, so not.
 
