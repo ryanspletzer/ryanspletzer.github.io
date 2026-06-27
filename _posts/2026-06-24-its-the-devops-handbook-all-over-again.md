@@ -219,6 +219,16 @@ It's the same judgment as knowing which mode you're in:
 the discipline that tells you when a prototype has graduated and earned real tests
 is the discipline that tells you when a task has earned the bigger model.
 
+This judgment compounds the moment you're orchestrating agents rather than prompting one at a time.
+A coding agent like Claude Code will sometimes hand the lighter, more mechanical steps
+to a smaller, faster model on its own,
+but the defaults only get you so far.
+Deciding which subagent runs on which model,
+with the heavy reasoning on the top tier and the search, summarization, and boilerplate on something cheap,
+is a deliberate design choice, and one of the bigger levers you have on token efficiency.
+An orchestrator fanning a dozen sub-tasks out to a top-tier model
+is exactly the kind of gas guzzler that can empty the tank.
+
 In many ways, token efficiency *is* the ROI story.
 I wish we could say it's as simple as an instrumentation problem,
 but even if you wanted to,
