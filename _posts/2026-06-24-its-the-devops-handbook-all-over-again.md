@@ -245,6 +245,36 @@ and build a culture around right-sizing.
 Models are quite similar: steer toward the right-sized one at the point of configuration,
 not at the point of observation.[^provisioning-analogy]
 
+There's a psychological shift underneath all of this that we haven't fully absorbed:
+we are not yet used to paying for software by consumption.
+Enterprises have made their peace with it through cloud,
+where you provision a database or a fleet of instances
+and more or less know you're paying for what you actually use to host something, within reason.
+But day-to-day AI usage is a different animal:
+jagged, unpredictable, and driven by the individual rather than steady infrastructure,
+which makes it much harder to forecast and requires sensible budgets and limits
+(ask me how I know...).
+Consumers have even less intuition for any of this.
+Imagine paying for Netflix by the minute;
+the meter running in the background would change how it feels to press play.
+That's roughly the discomfort of watching a token counter tick up while you work.
+
+For me that sets a concrete threshold.
+A flat monthly subscription, even a pricey one, keeps the meter out of sight,
+and right now it's a great subsidy:
+the labs are still eating a lot of the true compute cost to win the land grab,
+so a flat plan buys far more than the same dollars would at metered rates.
+I'll happily spend $100 or $200 a month while the subsidy lasts,
+because renting at that price makes more sense than amortizing the cost of my own hardware.
+Even after it ends I'd keep spending something with the frontier labs;
+they'll still be the sharpest tools for the hardest problems.
+But some months I'd sail well past that number,
+and that's exactly when I'd want a local escape hatch of my own.
+The minute consumer plans move to pure consumption pricing
+is the minute my calculus flips to "okay, when do I build my next tower PC to run models locally?"
+A local model is also how I'd want to first try a token-hungry agent orchestrator like Gas Town,
+dipping a toe in without one runaway experiment blowing the whole month's budget.
+
 The hardware frontier is worth watching here, too.
 Local inference on Apple Silicon—M5 Max and above—is
 becoming increasingly capable,
