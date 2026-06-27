@@ -400,7 +400,8 @@ Tokens cost money,
 but misspent tokens cost you something you truly can't get back: time.
 As *Vibe Coding* reminds us,
 time is the one resource you can't recover, even for personal projects.
-You can optimize your spend and right-size your models.
+You can optimize your spend and right-size your models—the
+same tight loops are what make the cheaper models easier to lean on.
 You can't buy back the hours spent untangling a codebase
 that was shipped fast but built without the feedback infrastructure to catch the mistakes.
 It's the guiding hands of humans with the correct judgment
