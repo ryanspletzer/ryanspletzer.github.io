@@ -37,14 +37,15 @@ at some companies
 (a form of "tokenmaxxing," as it came to be called),
 which in hindsight was more than a bit short-sighted.
 Some things have evolved:
-higher-level coding agent orchestrators can be true "gas guzzlers" in their own right when it comes to token spend.
+higher-level coding agent orchestrators[^orchestrators]
+can be true "gas guzzlers" in their own right when it comes to token spend.
 But almost all the guidance is deeply foundational, and remains true now.
 
 I bought the book in January 2026 but didn't pick it up and read it right away.
 On my first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
-The book re-instilled a few core principles
+The book re-instilled several core principles
 that will continue to shape my approaches for a very long time.
 Much to the surprise of some folks who still take that term, "Vibe Coding,"
 at what could be a pejorative face value,
@@ -55,12 +56,13 @@ around establishing fast feedback loops.
 I'm no stranger to vibe coding[^software-engineering],
 and like many others I dove in head-first over the 2025-2026 holiday break
 with Claude Code and Opus 4.6.[^first-time-trying-claude-code]
-But it was comforting reading this book and knowing that my intuition was on the right track,
-and realizing that I wasn't alone (and I wasn't crazy)
+But it was comforting reading *Vibe Coding* and knowing that my intuition was on the right track,
+realizing that I wasn't alone (and I wasn't crazy)
 in thinking that the core engineering discipline the DevOps movement
 spent a decade trying to establish
 (and that other parallel movements like SRE have tried to instill)
-is more important right now than it has ever been.
+is more important right now than it has ever been,
+in order to use these approaches effectively and safely.
 
 The difference in 2026 is that we are moving at a million miles an hour
 and you are several orders of magnitude more likely to "crash the car" than you were in 2018,
@@ -87,11 +89,11 @@ foster a culture of continual learning and experimentation.
 These weren't novel ideas on their own.
 The hard part was always execution.
 The gap between where teams *were* and where they *needed to be* was enormous,
-and the know-how lived in the heads of a handful of elite teams.
-The book's job was to crystallize that scattered knowledge
+and the know-how lived in the heads of a set of elite teams at certain companies.
+*The DevOps Handbook*'s job was to distill and crystallize that knowledge
 into one place the rest of us could learn from.
 
-The *Vibe Coding* book doesn't discard this thinking; in fact, it doubles down on it.
+*Vibe Coding* doesn't discard this thinking; rather, it leans into it.
 The throughline is very similar:
 fast flow, fast feedback, and the discipline to actually look at what's coming out the other end.
 What's new is the speed at which you're now operating
@@ -120,16 +122,16 @@ like [Cameron in *Ferris Bueller's Day Off*](https://youtu.be/FVqqVlW1a34?si=Syb
 instead of a vintage Ferrari,
 the collateral damage is a production system and someone's data.
 
-Steve Yegge's cautionary tales in the book make this viscerally concrete.
+Steve Yegge's cautionary tales in *Vibe Coding* make this viscerally concrete.
 In "The Vanishing Tests" story,
-his AI silently deleted 80% of his test files.
+his agent silently deleted 80% of his test files.
 There was no warning,
 and no confirmation prompt;
 it was just... gone.
 In "The Vanishing Repository" story,
-the AI nearly wiped his entire codebase,
+a branch cleanup exercise with his agent nearly tossed his codebase history going back many weeks,
 with only an open terminal window containing the last unsaved copy standing between him
-and losing weeks of work.
+and losing his entire TypeScript client he was writing.
 
 These aren't edge cases invented for dramatic effect.
 They're war stories about what happens when you take your eyes off the road
@@ -293,7 +295,7 @@ A flat monthly subscription, even a pricey one, keeps the meter out of sight,
 and right now it's a great subsidy:
 the labs are still eating a lot of the true compute cost to win the land grab,
 so a flat plan buys far more than the same dollars would at metered rates.
-I'll happily spend $100 or $200 a month while the subsidy lasts,
+I'll happily spend $100 or $200 a month[^dial-up-and-down] while the subsidy lasts,
 because renting at that price makes more sense than amortizing the cost of my own hardware.
 Even after it ends I'd keep spending something with the frontier labs;
 they'll still be the sharpest tools for the hardest problems.
@@ -398,7 +400,7 @@ and the team gains are expensive.
 *Vibe Coding* says it again for the AI era.
 The practices don't care what year it is.
 
-That's the speed they enable:
+That's the speed these practices enable:
 the kind that compounds in your favor,
 not the kind that compounds debt until the car drives itself backwards out the window.
 
@@ -433,10 +435,10 @@ time is the one resource you can't recover, even for personal projects.
 You can right-size your models to rationalize your token spend;
 the same tight loops from DevOps are what make the cheaper models viable to lean on.
 You can't, however, buy back the *hours* spent untangling an untested and architecturally jumbled codebase
-that was shipped fast but built without the feedback infrastructure to catch the mistakes;
-not to mention the implications of security issues which I decided to not delve into in this particular post,
-as it's already a pretty lengthy one.
-It's the guiding hands of humans with good judgment
+that was shipped fast but built without the feedback infrastructure—both
+automated loops and manual inputs from skilled practitioners—to
+keep things on the rails;[^security]
+it's the guiding hands of humans with good judgment
 that keep the codebase testable and in an architecturally sound state where it can actually be iterated on
 by AI, and humans, in the future.
 
@@ -450,12 +452,21 @@ It is so, so not.
     It wasn't even the second edition when we read it as a team; the second edition came out in 2021,
     and I'm sure it's a great update.
 
+[^orchestrators]:
+    [Ruflo](https://github.com/ruvnet/ruflo),
+    [Gas Town](https://github.com/gastownhall/gastown),
+    Claude Code's [Agent Teams](https://code.claude.com/docs/en/agent-teams),
+    Codex's [Symphony](https://github.com/openai/symphony),
+    and [the like](https://rywalker.com/research/autonomous-agentic-engineering-tools).
+
 [^software-engineering]:
     Or as I like to often provocatively call it, "Software Engineering,"
     because I believe what we're witnessing is the natural evolution of the craft.
 
 [^first-time-trying-claude-code]:
-    My first time trying out Claude Code was very briefly near when it was released in May 2025.
+    My first time trying out Claude Code was very briefly near when it was released in general availability
+    in May 2025,
+    when the tool itself was more limited compared to its much more evolved version today.
     I remember thinking "What is this thing?" followed by
     "Oh my God, this is a very different way of looking at the software engineering world."
     I knew that for some, getting out of the IDE and the comfort of tools like Cursor would feel unnatural,
@@ -477,8 +488,8 @@ It is so, so not.
     because I haven't gotten it out of my system yet.
     (And yes, I see the irony that the photo up top literally praises "guard rails,"
     the physical kind, the sort that stops a careless driver from sailing off a cliff,
-    is exactly the concrete thing I have in mind;
-    it's the vague buzzword version I'm allergic to.)
+    is exactly the concrete thing I have in mind.
+    It's the vague buzzword version I'm allergic to.)
 
 [^even-before-vibe-coding]:
     And arguably, going very fast to prototype was the right speed even before vibe coding existed.
@@ -635,6 +646,16 @@ It is so, so not.
     And I feel no need to, really.
     It feels like a solved problem...
 
+[^dial-up-and-down]:
+    The way I do this concretely is I ride the $20/mo Claude Pro plan
+    and upgrade to the $100/mo Claude Max plan as needed,
+    then immediately cancel Claude Max,
+    and re-evaluate when to next upgrade when the plan downgrades the next month.
+    If a particular period ever gets really heavy I can go up to $200
+    (and similarly cancel right away).
+    But there are inevitably lighter months where I don't need all the spend,
+    and just riding a higher tier plan thus becomes wasteful.
+
 [^ram-prices]:
     Especially with today's RAM prices, jeez.
 
@@ -654,3 +675,10 @@ It is so, so not.
     And if you are feeling pressure to ship,
     I recommend carving off a subset of the team to focus on greasing the wheels with better practices
     while the rest continue to focus on delivery.
+
+[^security]:
+    And I didn't even mention the implications of security issues
+    which I decided to not delve into in this particular post,
+    as it's already a pretty lengthy one.
+    Really though, security issues are another form of missed issues from feedback loops that should be in place,
+    namely structured security reviews built into these practices.
