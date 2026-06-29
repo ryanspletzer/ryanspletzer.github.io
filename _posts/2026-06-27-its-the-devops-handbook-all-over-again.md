@@ -274,8 +274,8 @@ Step back, and it's clear we're still in the stick-shift era of these tools.
 You choose the model, dial in the effort, sometimes explicitly route to the subagents—shifting gears by hand
 every time the road changes.
 The automatic hasn't arrived yet:
-tooling that quietly picks the right-sized model and effort for the moment
-and lets you keep your eyes on the road, your hands upon the wheel.[^roadhouse-blues-the-doors]
+tooling that quietly picks the right-sized model and effort for the moment.
+Therefore, keep your eyes on the road, your hands upon the wheel.[^roadhouse-blues-the-doors]
 (Full self-driving, where you just state where you want to go and hand over the keys entirely, is further off still.)
 For now, knowing how to drive stick is part of the job.[^driving-stick]
 
