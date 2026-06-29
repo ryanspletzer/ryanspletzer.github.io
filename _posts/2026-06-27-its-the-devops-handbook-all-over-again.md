@@ -13,8 +13,7 @@ tags:
 ---
 
 ![A colorized 1920s postcard photograph of an automobile perched on a narrow ridge road in Los Angeles County, with a wooden guardrail along the precipitous edge; a caption at the bottom reads "Guard rails sometimes save careless drivers."](/assets/images/Car_accident_in_the_1920s_(38083620606).png)
-*Cassowary Colorizations, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0),
-via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_the_1920s_(38083620606).png)*.
+*Cassowary Colorizations, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_the_1920s_(38083620606).png).*
 
 Back in 2018 when I just started my new job,
 my manager took the team through the exercise of reading
