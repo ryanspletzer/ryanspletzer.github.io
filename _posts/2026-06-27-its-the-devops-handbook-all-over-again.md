@@ -14,22 +14,23 @@ tags:
 
 ![A colorized 1920s postcard photograph of an automobile perched on a narrow ridge road in Los Angeles County, with a wooden guardrail along the precipitous edge; a caption at the bottom reads "Guard rails sometimes save careless drivers."](/assets/images/Car_accident_in_the_1920s_(38083620606).png)
 *Cassowary Colorizations, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0),
-via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_the_1920s_(38083620606).png)*
+via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Car_accident_in_the_1920s_(38083620606).png)*.
 
 Back in 2018 when I just started my new job,
 my manager took the team through the exercise of reading
 [*The DevOps Handbook*](https://itrevolution.com/book/the-devops-handbook/).[^second-edition]
 
-I had actually already read it once before,
+I had actually already read *The DevOps Handbook* once before,
 but was happy to do it again as a team exercise,
 because the practices contained within those pages were quite important,
 and essential to some of the key initiatives that the team was trying to accomplish around that time.
 
-Fast-forward to 2026 and I just finished reading a new book
+Fast-forward to 2026,
+and I just finished reading a new book
 I'd been meaning to get to since its release in October 2025:
 [*Vibe Coding*](https://itrevolution.com/product/vibe-coding-book/),
 by Gene Kim and Steve Yegge.
-Its publication feels like forever ago in AI years.
+October 2025 feels like forever ago in AI years.
 Some things have changed:
 engineers frivolously spent way too much money
 [gaming the token leaderboards](https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/)
@@ -39,15 +40,15 @@ which in hindsight was more than a bit short-sighted.
 Some things have evolved:
 higher-level coding agent orchestrators[^orchestrators]
 can be true "gas guzzlers" in their own right when it comes to token spend.
-But almost all the guidance is deeply foundational, and remains true now.
+But almost all the guidance from this new book is deeply foundational, and remains true now.
 
-I bought the book in January 2026 but didn't pick it up and read it right away.
-On my first skim, the altitude it was aiming at seemed like old hat for me ("I already know that"),
+I bought *Vibe Coding* in January 2026 but didn't pick it up and read it right away.
+On my first flip-through, the altitude it was aiming at seemed like old hat for me ("I already know that"),
 when what I was actually hunting for was concrete guidance on how to make my Claude Code setup better.
 That was me missing the forest for the trees.
 The book re-instilled several core principles
 that will continue to shape my approaches for a very long time.
-Much to the surprise of some folks who still take that term, "Vibe Coding,"
+Much to the surprise of some folks who still take that term, "vibe coding,"
 at what could be a pejorative face value,
 this is a quite serious engineering book
 that further underscores the need for many of the practices of *The DevOps Handbook*, especially
@@ -101,7 +102,7 @@ and the scale at which mistakes compound when you're not watching.
 
 I wrote about this compounding effect in practice earlier this year
 in [A Tale of Acceleration and Compound Engineering](/2026/02/a-tale-of-acceleration-and-compound-engineering/):
-the same CI workflows I used to wire up by hand over days or weeks
+the same CI workflows that I used to wire up by hand over days or weeks
 are now things I can stand up in a fraction of the time with AI assistance.
 But the practices themselves—the tests, the linting, the repeatable pipelines—are
 what made the speed benefits durable.
@@ -147,7 +148,7 @@ If you're spiking a throwaway prototype,
 exploring an unfamiliar API,
 or sketching an idea you'll delete by Friday,
 move fast and loose;
-that's exactly the right speed.[^even-before-vibe-coding]
+that's exactly the right speed.
 The discipline isn't something you need on every line of code in every single endeavor, however small it might be;
 the discipline is what you put in place once the code stops being an experiment.
 The failure mode is forgetting which mode you're in,
@@ -158,17 +159,20 @@ I've [written about this from my own experience](/2025/09/pinocchio-is-not-a-rea
 When I contributed a fix to a React frontend in an area where I'm not strong,
 the AI output looked *great*.
 And that was exactly the problem.
-Left to my own devices I would never have attempted this in the first place;
-rather, I would have explored the codebase and searched around docs online
-and handed off guidance to a fellow engineer who better knew the terrain
+Left to my own devices I maybe wouldn't have attempted this in the first place;
+rather, I would have searched around docs online,
+explored the codebase a bit to try to find the related files,
+attempted to make a minimal viable edit on a branch,
+but ultimately would have handed off guidance to a fellow engineer who better knew the terrain
 of this project and of frontend engineering with React.
 Instead the AI wrote it quickly,
+more than was needed, actually,
 and I had to study the output 10x more carefully,
 slow down to ask "why did it do *that*,"
 and ultimately catch a couple of mistakes
 that only my gut feeling ("something is not right here") would have flagged.[^durable-files]
 Tasting the soup matters—not just the final dish,
-but also as it cooks.
+but also as it simmers.
 
 The tools have democratized code generation to the point where a director of marketing
 can genuinely commit to Git.[^ive-seen-it-happen]
@@ -272,7 +276,7 @@ You choose the model, dial in the effort, sometimes explicitly route to the suba
 every time the road changes.
 The automatic hasn't arrived yet:
 tooling that quietly picks the right-sized model and effort for the moment
-and lets you keep your hands on the wheel and your eyes on the road.
+and lets you keep your eyes on the road, your hands upon the wheel.[^roadhouse-blues-the-doors]
 (Full self-driving, where you just state where you want to go and hand over the keys entirely, is further off still.)
 For now, knowing how to drive stick is part of the job.[^driving-stick]
 
@@ -381,7 +385,7 @@ that even AI will struggle with and will cost you a small fortune to untangle.[^
 The missing ingredient is the feedback infrastructure:
 tests that run on every commit (or perhaps even every file save operation),
 ideally as close to the developer as possible,
-and CI that catches regressions before they hit main,
+and CI that catches issues (perhaps even with additional structured AI review) before they hit main,
 and, for live systems,
 observability so you know when something breaks in the dark.[^all-you-need-is-traces]
 
@@ -460,7 +464,7 @@ It is so, so not.
     and [the like](https://rywalker.com/research/autonomous-agentic-engineering-tools).
 
 [^software-engineering]:
-    Or as I like to often provocatively call it, "Software Engineering,"
+    Or as I often provocatively like to call it, "Software Engineering,"
     because I believe what we're witnessing is the natural evolution of the craft.
 
 [^first-time-trying-claude-code]:
@@ -490,9 +494,6 @@ It is so, so not.
     the physical kind, the sort that stops a careless driver from sailing off a cliff,
     is exactly the concrete thing I have in mind.
     It's the vague buzzword version I'm allergic to.)
-
-[^even-before-vibe-coding]:
-    And arguably, going very fast to prototype was the right speed even before vibe coding existed.
 
 [^durable-files]:
     One pattern worth building into your workflow:
@@ -640,6 +641,9 @@ It is so, so not.
     or skip these tools and go straight to the API with third-party tools,
     where the per-token pricing is yours to manage.
     (Enterprises are already feeling the per-token consumption pricing.)
+
+[^roadhouse-blues-the-doors]:
+    ["Roadhouse Blues" by the Doors](https://www.youtube.com/watch?v=n2_X4VTCoEo).
 
 [^driving-stick]:
     I realize I say this as someone who is not at all versed in driving an actual manual automobile IRL.
