@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem 'jekyll'
+gem 'jekyll', '~> 4.0'
 gem 'logger'
 gem "kramdown-parser-gfm"
 gem 'jekyll-watch'

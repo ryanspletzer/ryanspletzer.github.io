@@ -53,7 +53,7 @@ jobs:
               - 'e2e/**'
               - 'playwright.config.ts'
               - 'package.json'
-              - 'package-lock.json'
+              - 'bun.lock'
 
   # Visual regression tests job
   visual-tests:
@@ -71,22 +71,27 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: '3.4'
           bundler-cache: true
-          cache-version: 0
+          cache-version: 1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Cache bun dependencies
+        uses: actions/cache@v5
         with:
-          node-version: '22'
-          cache: 'npm'
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            bun-${{ runner.os }}-
 
-      - name: Install npm dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
       - name: Get Playwright version
         id: playwright-version
-        run: echo "version=$(npx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+        run: echo "version=$(bunx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
 
       - name: Cache Playwright browsers
         uses: actions/cache@v5
@@ -97,13 +102,19 @@ jobs:
 
       - name: Install Playwright Chromium
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium
+        run: bunx playwright install chromium
 
       - name: Install Playwright system dependencies
-        run: npx playwright install-deps chromium
+        run: bunx playwright install-deps chromium
 
       - name: Run visual regression tests
-        run: npm run test:visual
+        # `bun run` (not `bun --bun run`): bun is the package manager + task runner,
+        # but Playwright executes on the runner's preinstalled Node, its supported runtime.
+        # Forcing bun's runtime (`--bun`) makes Playwright's spec build fail
+        # ("AggregateError: N errors building ...spec.ts" -> "No tests found").
+        # Worked under Playwright 1.60.0 but regressed at 1.61.1; Playwright is not
+        # officially supported on bun. See oven-sh/bun#8222.
+        run: bun run test:visual
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v7
@@ -133,9 +144,9 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Not needed with a .ruby-version file
+          ruby-version: '3.4' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          cache-version: 1 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
