@@ -195,7 +195,10 @@ webrick, colorator, concurrent-ruby
 @axe-core/playwright, @playwright/test, @types/node, typescript (dev
 dependencies only, for visual and accessibility testing). Dependencies are
 managed with [bun](https://bun.sh) (`bun install`, lockfile `bun.lock`); CI runs
-the test suite under the bun runtime via `bun --bun run`.
+the suite via `bun run test:visual`. Bun is the package manager and task runner,
+but Playwright executes on the runner's preinstalled Node (its supported runtime)
+— do not use `bun --bun run`, which forces Playwright onto bun's runtime and
+fails to build the spec (Playwright is not officially supported under bun).
 
 ## Important Notes
 

@@ -108,7 +108,13 @@ jobs:
         run: bunx playwright install-deps chromium
 
       - name: Run visual regression tests
-        run: bun --bun run test:visual
+        # `bun run` (not `bun --bun run`): bun is the package manager + task runner,
+        # but Playwright executes on the runner's preinstalled Node, its supported runtime.
+        # Forcing bun's runtime (`--bun`) makes Playwright's spec build fail
+        # ("AggregateError: N errors building ...spec.ts" -> "No tests found").
+        # Worked under Playwright 1.60.0 but regressed at 1.61.1; Playwright is not
+        # officially supported on bun. See oven-sh/bun#8222.
+        run: bun run test:visual
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v7
