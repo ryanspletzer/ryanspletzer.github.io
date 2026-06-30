@@ -97,7 +97,7 @@ PLATFORMS
 DEPENDENCIES
   colorator
   concurrent-ruby
-  jekyll
+  jekyll (~> 4.0)
   jekyll-redirect-from
   jekyll-watch
   kramdown-parser-gfm
