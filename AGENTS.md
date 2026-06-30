@@ -44,23 +44,23 @@ projects, 54 tests total). The test suite starts a local Jekyll server
 automatically.
 
 ```bash
-# Install npm dependencies (first time or after package-lock changes)
-npm ci
+# Install dependencies (first time or after bun.lock changes)
+bun install
 
 # Install Playwright browser
-npx playwright install chromium
+bunx playwright install chromium
 
 # Run visual tests (starts Jekyll server, takes screenshots, compares)
-npm run test:visual
+bun run test:visual
 
 # Update baseline screenshots after intentional visual changes
-npm run test:visual:update
+bun run test:visual:update
 
 # Open interactive test UI
-npm run test:visual:ui
+bun run test:visual:ui
 
 # View HTML report from last run
-npm run test:visual:report
+bun run test:visual:report
 ```
 
 Baselines are stored per-platform in `e2e/__snapshots__/` (`darwin/` for macOS,
@@ -190,16 +190,18 @@ regenerates Linux baseline screenshots and commits them.
 jekyll, jekyll-redirect-from, kramdown-parser-gfm, jekyll-watch,
 webrick, colorator, concurrent-ruby
 
-### Node.js (package.json)
+### JavaScript (package.json, managed with bun)
 
 @axe-core/playwright, @playwright/test, @types/node, typescript (dev
-dependencies only, for visual and accessibility testing)
+dependencies only, for visual and accessibility testing). Dependencies are
+managed with [bun](https://bun.sh) (`bun install`, lockfile `bun.lock`); CI runs
+the test suite under the bun runtime via `bun --bun run`.
 
 ## Important Notes
 
 - The `main` branch is the deployment branch
 - Tags are case-sensitive; use lowercase with hyphens for multi-word tags
-- After CSS/layout changes, run `npm run test:visual:update` locally to update
+- After CSS/layout changes, run `bun run test:visual:update` locally to update
   macOS baselines, then use the GitHub Actions workflow to update Linux baselines
 - Dark theme by default (background #303030, text #e7e9ea, accent #35B4DE);
   light theme activates automatically via `prefers-color-scheme: light`
