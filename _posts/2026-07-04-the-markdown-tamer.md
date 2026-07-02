@@ -233,5 +233,5 @@ and that beast is tamable.
 
 [dotfiles]: https://github.com/ryanspletzer/macos-dotfiles
 [sembr]: https://sembr.org/
-[house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/CLAUDE.md?plain=1#L9-L15
-[markdown-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/rules/markdown.md
+[house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/81a6ce7bfeb462c2367fd610ca140e9a427aa43c/AGENTS.md?plain=1#L9-L15
+[markdown-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/81a6ce7bfeb462c2367fd610ca140e9a427aa43c/.claude/rules/markdown.md?plain=1
