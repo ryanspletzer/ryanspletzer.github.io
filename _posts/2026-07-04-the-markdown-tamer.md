@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Markdown Tamer
-date: 2026-07-02 00:00:00
+date: 2026-07-04 00:00:00
 description: >
   AI coding tools are fast,
   but they emit feral Markdown—300-character lines, mangled lists,
