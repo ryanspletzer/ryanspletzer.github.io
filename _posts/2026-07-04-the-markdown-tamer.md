@@ -1,11 +1,12 @@
 ---
 layout: post
 title: The Markdown Tamer
-date: 2026-07-04 00:00:00
+date: 2026-07-02 00:00:00
 description: >
-  AI coding tools are fast, but they emit feral Markdown—
-  300-character lines, mangled lists, headings that skip levels,
-  trailing whitespace everywhere.
+  AI coding tools are fast,
+  but they emit feral Markdown—300-character lines, mangled lists,
+  headings that skip levels, jagged tables,
+  and more idiosyncrasies that I can't stand.
   Here are the practices I use to tame it:
   a linter as the source of truth, semantic line breaks,
   and teaching the agent to clean up after itself.
@@ -21,18 +22,19 @@ AI coding tools have gotten remarkably good at a great many things.
 
 Producing tidy Markdown is not one of them.
 
-Ask one to write a README and the prose might be excellent,
+Ask one to write a README and the prose might be good,
 but it arrives wrapped in 300-character lines,
 a mix of `-` and `*` bullet markers,
 headings that leap from `##` straight to `####`,
-and trailing whitespace lurking at the end of half the lines.
+and tables that render correctly but sit jagged in the source,
+their columns wandering out of alignment.
 The content is fine.
 The formatting is feral.
 
-That matters more than it might sound,
-because Markdown has quietly become the lingua franca of working with AI.
-Prompts, plans, design docs, commit bodies, the very rule files that steer the agents—
-an enormous amount of it is Markdown,
+That matters more than it might seem,
+because somewhere along the way Markdown became the lingua franca of working with AI.
+Prompts, plans, design docs, commit bodies, the rule files that steer the agents:
+the overwhelmingly vast majority of it is Markdown,
 read by machines and by humans in equal measure.
 And I am the human.
 I want the stuff I read all day to be pleasant to read
@@ -41,77 +43,116 @@ and clean to diff.
 So over time I've assembled a small kit of practices to keep the beast on a leash.
 None of them are clever.
 Together they are the difference between Markdown I enjoy
-and Markdown I merely tolerate.
+and Markdown that makes my eyes bleed.
+
+Taming the Markdown was the very first thing I did
+when I started working seriously with Claude Code.
+Before any real project, before a single line of application code,
+I sat down and taught it to stop handing me feral output,
+because I could not stand reading what it produced.
 
 ## A linter is the source of truth
 
 The foundation is [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2),
 and the house rule is deliberately blunt:
-Markdown output must pass the linter, and issues get fixed automatically—
+Markdown output must pass the linter, and issues get fixed automatically.
 I never want to be asked whether to lint.
 
 This turns a fuzzy, bikeshed-prone question ("does this look okay?")
-into a boolean the machine can answer.
+into deterministic feedback the model can handle.
 Consistent list markers, heading increments, blank lines around fences,
-the dreaded ordered-list renumbering—
+the dreaded ordered-list renumbering:
 all of it stops being a matter of taste and becomes a check that either passes or doesn't.
+
+And this rule isn't really about Markdown.
+Making a linter the source of truth is the right posture for every language the agent touches;
+Markdown is just the one where the rule often implicitly and lazily gets skipped.
+Nobody ships unlinted TypeScript on purpose,
+yet somehow prose gets a pass.
+It shouldn't.
 
 ## One config, checked in
 
 I keep a `.markdownlint.yaml` at the repo root, committed alongside the code.
-Two opinions travel in it everywhere.
+Two opinions travel with it everywhere.
 
-First, YAML, not JSONC.
-A linting config is prose about prose;
-it should be as readable as the thing it governs.
+The first is YAML over JSONC.
+YAML is easier for humans to read.
 
-Second, I raise the line length:
+The second is a longer line length:
 
 ```yaml
 MD013:
   line_length: 120
 ```
 
-The default of 80 columns is a relic of punch cards and hardware terminals.[^eighty]
+The default of 80 characters is a relic of punch cards and hardware terminals.[^eighty]
 On a modern screen it forces prose into a cramped little gutter
 and, worse, fights the next practice on this list.
-120 gives sentences room to breathe.
+120 gives sentences room to breathe.[^one-twenty]
 
 ## Semantic line breaks
 
-This is the single highest-leverage habit I have,
+This is the habit I would keep if I had to give up all the others,
 and it is the one AI tools never adopt on their own:
 write one sentence per line,
-and add a break after a clause when it aids readability.
+and add a break after a clause when it aids readability,
+which mostly means keeping the line length in check.
+The habit is older than the robots
+and even has a [formal specification][sembr].[^spec-eighty]
 
-The trick is that these breaks change the *source*, not the *rendered output*—
+These breaks change the *source*, not the *rendered output*.
 Markdown collapses single newlines into flowing paragraphs,
 so the reader on the web sees no difference at all.
 But the reader in the diff sees everything.
 
-Edit one sentence and the diff is one line,
+Edit one sentence or clause and the diff is one line,
 not a re-wrapped paragraph where every line shifted
 and the reviewer has to squint to find the actual change.
-Prose reviews start to feel like code reviews:
-tight, local, obvious.
+Prose reviews start to feel closer to code reviews:
+tighter, more local, and more obvious.
 Once you have read a pull request this way,
-the wall-of-text alternative feels genuinely hostile.
+the sheer length of the wall-of-text alternative feels hostile.
 
-## Teach the agent, don't just clean up after it
+## Teach the agent instead of cleaning up after it
 
 A linter catches sloppiness after the fact.
-It is better not to emit it in the first place.
+It is better not to emit the mess in the first place.
 
-So I put the rules where the agent actually reads them—
-in the instruction files it loads at the start of every session—
-and let a path-scoped rule carry the full Markdown conventions
-so they surface exactly when a Markdown file is in play.
-The agent writes clean Markdown from the start
-and fixes its own lint findings without stopping to ask.
+So I put the rules where the agent actually reads them:
+in the instruction files it loads at the start of every session.
+A short house rule goes in the always-on file,
+and the full conventions live in a path-scoped rule
+that only wakes up when there's a Markdown file to work on,
+so a session spent editing TypeScript never has to load them.
+The agent then tends to write clean Markdown from the start
+and even if it doesn't, it fixes its own lint findings without stopping to ask.
+
+Both of these live in my [dotfiles repo][dotfiles], out in the open.[^secrets]
+The [always-loaded house rule][house-rule] is short enough to quote whole:
+
+```markdown
+When creating or editing any Markdown — including brand-new files —
+the output must pass markdownlint-cli2 (fix issues automatically, never ask)
+and use semantic line breaks (one sentence per line).
+Full conventions live in `~/.claude/rules/markdown.md`,
+loaded automatically when working with existing `.md` files.
+```
+
+The last two lines point at the [path-scoped rule file][markdown-rule],
+which spells out the rest:
+one sentence per line, where to break a clause, a preferred `line_length` of 120,
+and a note to self about the config-discovery trap I am about to describe.
+Both file links are pinned to a specific commit,
+because a dotfiles repo is a living thing
+and mine may have drifted by the time you are reading this.
 
 Notably, I enforce this with *instructions*, not a hard commit-blocking hook.
-A hook fires regardless of intent,
-and every good rule has the occasional case where breaking it on purpose is correct:
+A hook fires regardless of intent.
+It's the electrified perimeter fence at Jurassic Park:
+it can't tell a raptor testing the wire for weak spots
+from a human who needs to scale it intentionally.
+And every good rule has the occasional case where breaking it on purpose is correct:
 a vendored file I should leave untouched,
 a deliberately long line in a table,
 matching the existing style of a file I don't own.
@@ -121,10 +162,11 @@ For a house style, I want the leash, not the cage.
 
 ## The gotcha that bit me
 
-One war story, because it cost me a genuinely confusing half hour.
+One war story deserves its own section,
+because it cost me a confusing half hour.
 
 `markdownlint-cli2` discovers its config by searching from the file being linted
-*up to the directory you invoked it from*—and never any higher.
+*up to the directory you invoked it from*, and never any higher.
 Run it from a subfolder whose config lives at the repo root,
 and it silently forgets your carefully chosen 120
 and reverts to the built-in 80,
@@ -137,19 +179,63 @@ Put the rules where the tool will actually look for them.
 
 ## The payoff
 
-None of this is exotic.
+None of this is all that exotic.
 It is a linter, one config file, a writing habit, and a few lines of instruction.
-But the compounded result is Markdown that reads like a person wrote it,
-diffs that review cleanly,
-and a set of very capable, very fast tools
-kept firmly on their leash.
+But the practices compound.
+The Markdown reads more like a person wrote it,
+the diffs review cleanly,
+and the very capable, very fast AI coding tools stay firmly on their leash.
 
-The beast, it turns out, is quite tamable.
-You just have to hand it the rulebook—
-and keep the whip within reach.
+The beast, of course, was never the Markdown;
+text has no will of its own.
+The beast is the agent that writes it,
+and it is tamable.
+You hand it the rulebook,
+and you keep the whip within reach.
+When a young Indiana Jones tumbled into the lion's car of a circus train,
+the whip was simply the thing hanging within reach,
+and he kept it for the rest of his career.
+Mine is a linter.
+It is less cinematic, but it cracks just as well.
 
 [^eighty]:
     Eighty columns is the width of an IBM punch card,
     which became the width of a terminal,
-    which became the default nobody ever questioned.
+    which became the default nobody questioned for half a century.
     Your Markdown does not run on a punch card.
+
+[^one-twenty]:
+    This is not an argument for endless lines;
+    I still try to stay within 120 characters.
+    GitHub used to make you scroll sideways to read a long line,
+    and though that old annoyance has been resolved,
+    a side-by-side diff or a default-sized terminal still rewards shorter lines.
+    (Apple's Terminal opened at 80×24 out of the box for decades,
+    keeping the punch card alive well past its funeral,
+    but as of macOS Tahoe it opens at 120×30,
+    the same size Windows Terminal has shipped for years.
+    The defaults are converging on 120,
+    so my config is in good company.)
+    Raw text aside, even rendered output in a browser is easier to read
+    when it does not stretch the full width of a monitor;
+    human eyes benefit from a modest line length.
+
+[^spec-eighty]:
+    The pedants in the audience will note that the specification
+    recommends a maximum line length of 80 characters,
+    the very default the previous section dismissed as a punch-card relic.
+    It is a SHOULD, not a MUST,
+    and I am exercising my right to disagree with the optional part.
+
+[^secrets]:
+    A public dotfiles repo is also a marvelous forcing function for keeping your disk honest.
+    Nothing concentrates the mind like knowing the whole world can read your home directory:
+    zero secrets on disk, zero secrets in git.
+    I pull the ngrok token, the npm token, and their friends
+    from the macOS keychain at runtime,
+    like a real adult.
+
+[dotfiles]: https://github.com/ryanspletzer/macos-dotfiles
+[sembr]: https://sembr.org/
+[house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/CLAUDE.md
+[markdown-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/rules/markdown.md
