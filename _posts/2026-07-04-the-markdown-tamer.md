@@ -8,7 +8,7 @@ description: >
   headings that skip levels, jagged tables,
   and more idiosyncrasies that I can't stand.
   Here are the practices I use to tame it:
-  a linter as the source of truth, semantic line breaks,
+  a linter as the feedback loop, semantic line breaks,
   and teaching the agent to clean up after itself.
 tags:
  - markdown
@@ -190,15 +190,6 @@ The beast was never the Markdown;
 text has no will of its own.
 The beast is the agent doing the writing,
 and that beast is tamable.
-You hand it the rulebook,
-and you keep the whip within reach.
-
-When a young Indiana Jones dropped through the roof of a circus train car
-and found himself face to face with a lion,
-the whip was simply the thing hanging within reach,
-and he kept it for the rest of his career.
-My whip is a linter.
-It is less cinematic, but it cracks just as well.
 
 [^eighty]:
     Eighty columns is the width of an IBM punch card,
