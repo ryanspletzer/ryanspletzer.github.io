@@ -186,16 +186,18 @@ The Markdown reads more like a person wrote it,
 the diffs review cleanly,
 and the very capable, very fast AI coding tools stay firmly on their leash.
 
-The beast, of course, was never the Markdown;
+The beast was never the Markdown;
 text has no will of its own.
-The beast is the agent that writes it,
-and it is tamable.
+The beast is the agent doing the writing,
+and that beast is tamable.
 You hand it the rulebook,
 and you keep the whip within reach.
-When a young Indiana Jones tumbled into the lion's car of a circus train,
+
+When a young Indiana Jones dropped through the roof of a circus train car
+and found himself face to face with a lion,
 the whip was simply the thing hanging within reach,
 and he kept it for the rest of his career.
-Mine is a linter.
+My whip is a linter.
 It is less cinematic, but it cracks just as well.
 
 [^eighty]:
