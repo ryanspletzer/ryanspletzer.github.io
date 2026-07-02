@@ -16,7 +16,8 @@ tags:
  - tooling
 ---
 
-<!-- TODO: hero image + italic caption, per site convention. -->
+![A colorful 19th-century chromolithograph of a lion tamer standing calmly inside a circus cage, surrounded by two lions, a lioness, and two tigers posed on pedestals around him.](/assets/images/Lion_tamer_(LOC_pga.03749).jpg)
+*Gibson & Co., publisher, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lion_tamer_(LOC_pga.03749).jpg).*
 
 AI coding tools have gotten remarkably good at a great many things.
 
@@ -191,6 +192,8 @@ text has no will of its own.
 The beast is the agent doing the writing,
 and that beast is tamable.
 
+## Footnotes
+
 [^eighty]:
     Eighty columns is the width of an IBM punch card,
     which became the width of a terminal,
@@ -230,5 +233,5 @@ and that beast is tamable.
 
 [dotfiles]: https://github.com/ryanspletzer/macos-dotfiles
 [sembr]: https://sembr.org/
-[house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/CLAUDE.md
+[house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/CLAUDE.md?plain=1#L9-L15
 [markdown-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/65c98b5ea29f8681ed315177c3abd8757c500788/.claude/rules/markdown.md
