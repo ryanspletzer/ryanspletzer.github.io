@@ -55,7 +55,7 @@ around establishing fast feedback loops.
 
 I'm no stranger to vibe coding[^software-engineering],
 and like many others I dove in head-first over the 2025-2026 holiday break
-with Claude Code and Opus 4.6.[^first-time-trying-claude-code]
+with Claude Code and Opus 4.5.[^first-time-trying-claude-code]
 But it was comforting reading *Vibe Coding* and knowing that my intuition was on the right track,
 realizing that I wasn't alone (and I wasn't crazy)
 in thinking that the core engineering discipline the DevOps movement
