@@ -29,27 +29,26 @@ a mix of `-` and `*` bullet markers,
 headings that leap from `##` straight to `####`,
 and tables that render correctly but sit jagged in the source,
 their columns wandering out of alignment.
-The content is fine.
-The formatting is feral.
+The content is likely fine.
+But the formatting is feral.
 
-That matters more than it might seem,
-because somewhere along the way Markdown became the lingua franca of working with AI.
-Prompts, plans, design docs, commit bodies, the rule files that steer the agents:
+Somewhere along the way Markdown became the lingua franca of working with AI.
+Prompts, plans, design docs, the rule files that steer the agents:
 the overwhelmingly vast majority of it is Markdown,
 read by machines and by humans in equal measure.
 And I am the human.
 I want the stuff I read all day to be pleasant to read
 and clean to diff.
 
-So over time I've assembled a small kit of practices to keep the beast on a leash.
+Over time I've assembled a small kit of practices to keep the beast on a leash.
 None of them are clever.
 Together they are the difference between Markdown I enjoy
 and Markdown that makes my eyes bleed.
 
-Taming the Markdown was the very first thing I did
+Taming Markdown was the very first thing I did
 when I started working seriously with Claude Code.
-Before any real project, before a single line of application code,
-I sat down and taught it to stop handing me feral output,
+Before any real project, before a single line of code,
+I sat down and instructed the agent to stop handing me horrendous Markdown output,
 because I could not stand reading what it produced.
 
 ## A linter is the source of truth
@@ -75,12 +74,8 @@ It shouldn't.
 ## One config, checked in
 
 I keep a `.markdownlint.yaml` at the repo root, committed alongside the code.[^vscode]
-Two opinions travel with it everywhere.
 
-The first is YAML over JSONC.
-YAML is easier for humans to read.
-
-The second is a longer line length:
+One customization I opt for is a longer line length:
 
 ```yaml
 MD013:
@@ -124,7 +119,7 @@ So I put the rules where the agent actually reads them:
 in the instruction files it loads at the start of every session.
 A short house rule goes in the always-on file,
 and the full conventions live in a path-scoped rule
-that only wakes up when there's a Markdown file to work on,
+that only is triggered when there's a Markdown file to work on,
 so a session spent editing TypeScript never has to load them.
 The agent then tends to write clean Markdown from the start
 and even if it doesn't, it fixes its own lint findings without stopping to ask.
@@ -143,10 +138,7 @@ loaded automatically when working with existing `.md` files.
 The last two lines point at the [path-scoped rule file][markdown-rule],
 which spells out the rest:
 one sentence per line, where to break a clause, a preferred `line_length` of 120,
-and a note to self about the config-discovery trap I am about to describe.
-Both file links are pinned to a specific commit,
-because a dotfiles repo is a living thing
-and mine may have drifted by the time you are reading this.
+and a note to self about the config-discovery trap I am about to describe.[^pinned]
 
 Notably, I enforce this with *instructions*, not a hard commit-blocking hook.
 A hook fires regardless of intent.
@@ -161,9 +153,9 @@ Rules keep my judgment in the loop.
 A hook takes it out.
 For a house style, I want the leash, not the cage.
 
-## The gotcha that bit me
+## A small gotcha
 
-One war story deserves its own section,
+One tiny war story deserves its own section,
 because it cost me a confusing half hour.
 
 `markdownlint-cli2` discovers its config by searching from the file being linted
@@ -183,7 +175,7 @@ Put the rules where the tool will actually look for them.
 None of this is all that exotic.
 It is a linter, one config file, a writing habit, and a few lines of instruction.
 But the practices compound.
-The Markdown reads more like a person wrote it,
+The Markdown reads more like a human being wrote it,
 the diffs review cleanly,
 and the very capable, very fast AI coding tools stay firmly on their leash.
 
@@ -220,14 +212,13 @@ and that beast is tamable.
     keeping the punch card alive well past its funeral,
     but as of macOS Tahoe it opens at 120×30,
     the same size Windows Terminal has shipped for years.
-    The defaults are converging on 120,
-    so my config is in good company.)
+    It seems like the new defaults are converging on 120.)
     Raw text aside, even rendered output in a browser is easier to read
     when it does not stretch the full width of a monitor;
     human eyes benefit from a modest line length.
 
 [^spec-eighty]:
-    The pedants in the audience will note that the specification
+    My fellow pedants in the audience will note that the specification
     recommends a maximum line length of 80 characters,
     the very default the previous section dismissed as a punch-card relic.
     It is a SHOULD, not a MUST,
@@ -238,8 +229,13 @@ and that beast is tamable.
     Nothing concentrates the mind like knowing the whole world can read your home directory:
     zero secrets on disk, zero secrets in git.
     I pull the ngrok token, the npm token, and their friends
-    from the macOS keychain at runtime,
+    from the macOS Keychain,
     like a real adult.
+
+[^pinned]:
+    Both file links are pinned to a specific commit,
+    because a dotfiles repo is a living thing
+    and mine may have drifted by the time you are reading this.
 
 [dotfiles]: https://github.com/ryanspletzer/macos-dotfiles
 [vscode-markdownlint]: https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
