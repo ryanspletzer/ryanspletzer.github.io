@@ -74,7 +74,7 @@ It shouldn't.
 
 ## One config, checked in
 
-I keep a `.markdownlint.yaml` at the repo root, committed alongside the code.
+I keep a `.markdownlint.yaml` at the repo root, committed alongside the code.[^vscode]
 Two opinions travel with it everywhere.
 
 The first is YAML over JSONC.
@@ -194,6 +194,16 @@ and that beast is tamable.
 
 ## Footnotes
 
+[^vscode]:
+    The agent is not the only one writing Markdown around here.
+    For the stretches where I am the one typing,
+    the same David Anson behind `markdownlint-cli2` ships a
+    [markdownlint extension for VS Code][vscode-markdownlint],
+    which picks up the same checked-in `.markdownlint.yaml` with no extra configuration
+    and squiggles problems in real time, with quick fixes a keystroke away.
+    I add it to each repo's recommended extensions in `.vscode/extensions.json`,
+    so the same rules follow the humans too.
+
 [^eighty]:
     Eighty columns is the width of an IBM punch card,
     which became the width of a terminal,
@@ -232,6 +242,7 @@ and that beast is tamable.
     like a real adult.
 
 [dotfiles]: https://github.com/ryanspletzer/macos-dotfiles
+[vscode-markdownlint]: https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
 [sembr]: https://sembr.org/
 [house-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/81a6ce7bfeb462c2367fd610ca140e9a427aa43c/AGENTS.md?plain=1#L9-L15
 [markdown-rule]: https://github.com/ryanspletzer/macos-dotfiles/blob/81a6ce7bfeb462c2367fd610ca140e9a427aa43c/.claude/rules/markdown.md?plain=1
