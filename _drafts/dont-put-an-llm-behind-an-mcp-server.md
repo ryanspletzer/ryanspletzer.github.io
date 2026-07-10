@@ -20,22 +20,31 @@ tags:
 
 I've had enough.
 
-I recently tried a productivity assistant from a vendor
-big enough that you have definitely heard of them.
-I asked it a simple question about my own data,
+I recently tried a CLI tool from a vendor
+(who shall not be named, but you have definitely heard of them).
+I used Claude Code to call said CLI
+(which was a *recommended* way to use this tool).
+I asked a simple question about some simple data that comes from the vendor's system behind all this,
 the kind of lookup that any reasonable API answers
-in a few hundred milliseconds.
-Instead the request vanished into a hidden inference loop,
-and I sat there watching one AI wait for another AI to think.
+in a few hundred milliseconds
+(and which the vendor's native direct API's are actually exceedingly good at responding to quickly).
+Instead, the CLI's request to its backing MCP server vanished into a hidden inference loop,
+as I sat there watching one AI wait for another AI to think,
+in the double digits of seconds that gives one enough time to ponder the entirety of the meaning of life.
 
-The Model Context Protocol (MCP) earned its adoption by solving a real problem.
-Agents needed context from external systems—wikis, ticket trackers, databases,
-calendars—and every integration was bespoke
-until MCP gave us one standard way to plug them in.
+When you put an LLM *behind* an MCP server,
+and further call it from an MCP client that is itself an agent with its own LLM,
+what you are inherently doing is breaking a social contract
+of what MCP was originally designed for
+and was supposed to be for users of these tools:
+a way for agent MCP clients to query data provide context to the model.
+It was never intended for it to facilitate communication to yet another model/agent.
+(There have since been protocols that have come up that do this, like A2A, ACP,
+however once again the UX expectation of someone using Claude Code over a CLI/MCP
+is NOT one that where people are expecting an LLM on the other end.)
 
-Then parts of the ecosystem discovered a new trick:
-putting an entire LLM behind the tool call.
-That assistant was one of them.
+Somewhere along the way, some of us in this industry lost our minds.
+I sure hope we find them.
 
 Don't do this.
 Don't put an LLM behind an MCP server.
@@ -56,8 +65,15 @@ and the "tool" is a whole agent with its own loop, tools, and retries.
 It's matryoshka architecture:
 you open the tool and there's another model inside.
 
+It doesn't help that people confuse MCP servers with agents.
+AI hype swirls,
+and in a weird way it works itself into real architecture:
+a leader erroneously asks for an "MCP agent,"
+a development team living under a rock vibe codes the misinterpretation,
+and now they have a Frankenagent on their hands.
+
 On a slide, this looks sophisticated.
-The server isn't a dumb pipe anymore—it's intelligent!
+Why settle for a dumb pipe when the server itself can think?
 In practice it breaks the contract that makes MCP useful in the first place.
 Ian Malcolm had the diagnosis back in 1993:
 your engineers were so preoccupied with whether or not they could,
@@ -115,7 +131,7 @@ serialized inside your agent's loop,
 often several times per task.
 The agent can't do anything with a slow tool except wait on it,
 and neither can you.
-Every question I put to that big-vendor assistant
+Every question I put to that big-vendor CLI
 cost me a coffee break's worth of spinner,
 and no answer quality survives that.
 
@@ -124,16 +140,16 @@ and no answer quality survives that.
 I'll allow that a carve-out might exist.
 If a tool returns large blobs of unstructured data,
 a small, genuinely fast model that condenses them before they hit the wire
-could conceivably earn its place—emphasis on genuinely fast,
+could earn its place—emphasis on genuinely fast,
 and on serving a purpose the client model can't serve itself.
 Even then I'm skeptical.
-A semantic search index that returns the relevant chunks is cheaper,
-faster, and more honest,
+A semantic search index that returns the relevant chunks is cheaper and faster.
+It's also more honest,
 because the client model sees actual source material
 instead of a paraphrase.
 If your justification for embedding a model is "the data is messy,"
-the better fix is almost always better retrieval,
-not hidden summarization.
+the better fix is almost always improving retrieval
+rather than hiding a summarizer in the middle.
 
 ## What to do instead
 
@@ -145,7 +161,7 @@ It's the most capable component in the whole stack,
 and it's the only one holding the user's full conversation,
 which your server will never see.
 
-If your server genuinely needs a model's help mid-request,
+If your server really does need a model's help mid-request,
 the protocol already has an answer: sampling.[^sampling]
 With sampling, the server asks the *client's* model for a completion,
 which points the dependency in the right direction.
