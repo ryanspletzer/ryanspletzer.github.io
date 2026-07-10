@@ -202,6 +202,8 @@ fails to build the spec (Playwright is not officially supported under bun).
 
 ## Important Notes
 
+- Ignore cSpell spell-checker diagnostics from the IDE;
+  do not add cSpell word lists, exceptions, or config to this repo
 - The `main` branch is the deployment branch
 - Tags are case-sensitive; use lowercase with hyphens for multi-word tags
 - After CSS/layout changes, run `bun run test:visual:update` locally to update
