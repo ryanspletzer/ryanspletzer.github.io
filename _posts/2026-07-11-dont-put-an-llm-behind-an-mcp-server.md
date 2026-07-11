@@ -15,8 +15,12 @@ tags:
  - mcp
 ---
 
-![Giovanni Domenico Tiepolo's 18th-century painting of the giant wooden Trojan horse being hauled through a breach in the walls of Troy by a straining crowd, with citizens celebrating around it beneath a cloudy sky.](/assets/images/Giovanni_Domenico_Tiepolo_-_The_Procession_of_the_Trojan_Horse_in_Troy_-_WGA22382.jpg)
-*Giovanni Domenico Tiepolo, Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_The_Procession_of_the_Trojan_Horse_in_Troy_-_WGA22382.jpg).*
+![Giovanni Domenico Tiepolo's 18th-century painting of the giant wooden Trojan horse
+being hauled through a breach in the walls of Troy by a straining crowd,
+with citizens celebrating around it beneath a cloudy sky.](
+    /assets/images/Giovanni_Domenico_Tiepolo_-_The_Procession_of_the_Trojan_Horse_in_Troy_-_WGA22382.jpg)
+*Giovanni Domenico Tiepolo, Public domain, via [Wikimedia Commons](
+    https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_The_Procession_of_the_Trojan_Horse_in_Troy_-_WGA22382.jpg).*
 
 Hi-diddly-ho, neighborino!
 Greetings from the AI ice cream shop,
