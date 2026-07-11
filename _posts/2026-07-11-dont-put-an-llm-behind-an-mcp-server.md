@@ -5,10 +5,9 @@ date: 2026-07-11 00:00:00
 description: >
   MCP took off because it solved a real problem:
   getting context out of external systems and into your agent.
-  Then parts of the ecosystem discovered a new trick—putting
-  an entire LLM behind the tool call.
+  Then people started hiding entire LLMs behind a tool call.
   It's slow, it's opaque, and it inverts the point of the protocol.
-  Here's why the pattern fails and what to build instead:
+  Don't do this.
 tags:
  - ai
  - agents
