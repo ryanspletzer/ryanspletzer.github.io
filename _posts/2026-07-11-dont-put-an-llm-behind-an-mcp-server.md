@@ -205,11 +205,48 @@ It's the most capable component in the whole stack,
 and it's the only one holding the user's full conversation,
 which your MCP server will never see.
 
-If your server really does need a model's help mid-request,
-the protocol already has an answer: sampling.[^sampling]
+For a while the protocol even had an answer
+for servers that really did need a model's help mid-request:
+sampling.[^sampling]
 With sampling, the server asks the *client's* model for a completion,
-which points the dependency in the right direction.
-The user keeps their choice of model, their visibility, and their bill.
+which at least points the dependency in the right direction—the
+user keeps their choice of model, their visibility, and their bill.
+But client support never really showed up,
+and the draft spec now deprecates sampling outright.[^sampling-deprecated]
+The spec's new position is deliberate neutrality:
+MCP core won't standardize nested LLM orchestration,
+and a server that genuinely needs a model is expected to call a provider
+directly,
+the same way it would call any other backend API.
+From the protocol's perspective,
+a tool backed by a model in a loop
+and a tool backed by a database query are now indistinguishable.
+That neutrality is exactly why this post exists.
+No spec is going to stop your tool from masquerading as a data query,
+so the social contract has to.
+The way I see it, that leaves two honest options:
+be a context provider,
+or be a declared agent on a protocol built for agents.
+
+The strongest counterargument I know of is context offloading:
+let a hidden model chew through mountains of raw data
+so that only a tidy digest lands in the calling agent's
+precious context window.
+That benefit is real,
+and it's exactly what client-side subagents in tools like Claude Code deliver.
+But subagents are not in the same realm as MCP servers.
+A subagent runs inside the harness you're already driving,
+on a model you picked,
+with the delegation visible in your terminal,
+and with the orchestrating agent knowingly handing off work.
+When a subagent is running, you know it,
+and you know it's thinking,
+so the wait is an expectation.
+An LLM behind an MCP server attempts the same offload
+across a system boundary,
+where the expectations are entirely different:
+the interface's whole promise is "parameters in, data out,"
+and nobody budgets a coffee break for a tool call.
 
 And if what you actually want is to delegate work to another agent,
 delegate deliberately.
@@ -288,6 +325,22 @@ Somebody [crossed the streams](https://www.youtube.com/watch?v=TEq24JyFWzo).
     As of the 2025-11-25 revision, sampling even supports tool use,
     so a server can run a full agentic loop through the *client's* model—with
     the user having the option to approve each step—rather than hiding its own.
+
+[^sampling-deprecated]: Major clients like Claude Code
+    [never supported sampling](https://github.com/anthropics/claude-code/issues/1785),
+    and the [draft specification](https://modelcontextprotocol.io/specification/draft/client/sampling)
+    deprecates it as of the 2026-07-28 protocol version
+    ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)),
+    with guidance that new implementations should not adopt it,
+    citing low adoption, implementation complexity,
+    human-in-the-loop requirements, and security concerns.
+    The [stated migration path](https://modelcontextprotocol.io/specification/draft/deprecated)
+    is for servers to call LLM provider APIs directly,
+    the way they would call any other backend.
+    This is deliberately neutral guidance
+    that neither encourages nor discourages a model behind your server.
+    The issue this post describes is a model masquerading as a data tool,
+    not a server that touches a model at all.
 
 [^increased-cost]: Especially in the event that you deplete credits and/or pay consumption for said MCP server
     to cover its backing model's expenses.
