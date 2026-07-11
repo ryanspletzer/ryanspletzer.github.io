@@ -18,30 +18,62 @@ tags:
 ![The smallest doll in a set of floral-painted Russian matryoshka nesting dolls, standing nested inside the open lower half of the next doll, with the remaining larger doll halves arranged around it.](/assets/images/Floral_matryoshka_set_2_smallest_doll_nested.JPG)
 *BrokenSphere, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Floral_matryoshka_set_2_smallest_doll_nested.JPG).*
 
-I've had enough.
+Hi-diddly-ho, neighborino!
+Greetings from the AI ice cream shop,
+where I'm sad to say they're all out of the tokenmaxxing flavor,
+and the new flavor of the day is tokenomics.[^the-ai-kind]
+
+But tokenomics is the subject of another blog post.
+
+Today's post is about nerdy technical stuff,
+so if that's not your jam[^ice-cream],
+feel free to bop around to another part of the internet,
+but I promise you there is a gem here worth considering,
+as well as several solid pop culture references, as usual.
+
+With that, let's dig in...
+
+***
+
+Suffice it to say,
+I've had enough with some of the shenanigans
+people have gotten up to
+with MCP servers lately.
 
 I recently tried a CLI tool from a vendor
-(who shall not be named, but you have definitely heard of them).
-I used Claude Code to call said CLI
-(which was a *recommended* way to use this tool).
-I asked a simple question about some simple data that comes from the vendor's system behind all this,
+(who shall not be named, but you have definitely heard of them),
+which essentially wraps an MCP server,
+(so you can either use this tool via CLI or via MCP directly).
+I called the CLI from Claude Code,
+which is a *recommended* way to use this tool.
+I asked a simple question about some simple data
+that lives in the vendor's system behind it all,
 the kind of lookup that any reasonable API answers
 in a few hundred milliseconds
-(and which the vendor's native direct API's are actually exceedingly good at responding to quickly).
-Instead, the CLI's request to its backing MCP server vanished into a hidden inference loop,
-as I sat there watching one AI wait for another AI to think,
-in the double digits of seconds that gives one enough time to ponder the entirety of the meaning of life.
+(and the vendor's own native APIs are exceedingly good at answering quickly).
+Instead, the CLI's request to its backing MCP server
+vanished into a hidden thinking loop behind-the-scenes,
+and I sat there watching one model wait for another model to think,
+for double-digit seconds,
+long enough to ponder the entirety of the meaning of life.
 
-When you put an LLM *behind* an MCP server,
-and further call it from an MCP client that is itself an agent with its own LLM,
-what you are inherently doing is breaking a social contract
-of what MCP was originally designed for
-and was supposed to be for users of these tools:
-a way for agent MCP clients to query data provide context to the model.
-It was never intended for it to facilitate communication to yet another model/agent.
-(There have since been protocols that have come up that do this, like A2A, ACP,
-however once again the UX expectation of someone using Claude Code over a CLI/MCP
-is NOT one that where people are expecting an LLM on the other end.)
+The frustrating part is that I saw this coming.
+Many months ago I was writing an engineering strategy,
+and in it I warned our teams that putting an LLM behind an MCP server
+was the wrong impulse,
+because it would be hella slow.[^orchestration]
+At the time I could only predict the issue on paper.
+This vendor's CLI confirmed my fears in practice,
+and now I point to it as a live example of what *not* to do.
+
+Putting an LLM *behind* a Model Context Protocol (MCP) server,
+then calling it from an MCP client that is itself an agent with its own LLM,
+breaks the social contract of what MCP was designed to be for users of these tools:
+a way for agent clients to query data and provide context to the model.
+It was never meant to facilitate communication with yet another model or agent.
+Protocols for exactly that have since emerged—A2A and ACP among them—but
+nobody driving Claude Code over a CLI and an MCP server
+is expecting an LLM on the other end.
 
 Somewhere along the way, some of us in this industry lost our minds.
 I sure hope we find them.
@@ -49,11 +81,11 @@ I sure hope we find them.
 Don't do this.
 Don't put an LLM behind an MCP server.
 
-## The pattern
+## The anti-est of patterns
 
 The anti-pattern looks like this:
 an MCP server exposes a tool,
-but the tool's implementation is a prompt to another model.
+but the tool's implementation is feeding a prompt to another model.
 Your agent calls something like `get_insights(question)`,
 and behind the curtain a second model—one you didn't choose,
 running a system prompt you can't read,
@@ -72,12 +104,13 @@ a leader erroneously asks for an "MCP agent,"
 a development team living under a rock vibe codes the misinterpretation,
 and now they have a Frankenagent on their hands.
 
-On a slide, this looks sophisticated.
+On a slide, this looks and sounds sophisticated.
 Why settle for a dumb pipe when the server itself can think?
 In practice it breaks the contract that makes MCP useful in the first place.
 Ian Malcolm had the diagnosis back in 1993:
-your engineers were so preoccupied with whether or not they could,
-they didn't stop to think if they should.[^malcolm]
+your engineers
+[were so preoccupied with whether or not they could, they didn't stop to think if they should](
+    https://youtu.be/_oNgyUAEv0Q?si=anwzFPky6Vzy9tdL&t=52).
 
 ## MCP delivers data, not decisions
 
@@ -99,24 +132,22 @@ An LLM behind the tool inverts that relationship.
 The server now decides what your agent gets to know.
 A database row is checkable.
 A search result carries its source with it.[^determinism]
-A hidden model's summary is opinion wearing data's clothes,
+A hidden model's summary is an opinion wearing data's clothes,
 and your agent will treat it as ground truth,
 because tool results land in the context window
-with the authority of facts.
-You've also widened the prompt-injection surface:
-the tool result is now generated text from a model you don't control,
-ingested directly as if it were data.
+with the authority of being a "fact."[^prompt-injection]
 
 ## Two models, compounding failure
 
-Egon Spengler's rule applies here: don't cross the streams.[^egon]
+Egon Spengler's rule applies here:
+[don't cross the streams](https://youtu.be/wyKQe_i9yyo?si=IqzJpws8Az8bLIB3&t=47).
 You accepted one stream of probabilistic inference
 when you built your agent on an LLM.
 An LLM behind a tool crosses it with a second one,
 and the failure modes multiply.
 When the final answer is wrong,
 was it the caller misreading a good tool result,
-or the hidden model hallucinating a bad one?
+or the hidden model making up a bad one?
 You can't tell,
 because you can't see the inner model's prompt,
 its version, its context,
@@ -126,23 +157,30 @@ to get an answer you can debug zero times.
 
 And then there's the speed.
 An LLM call inside a tool call turns a subsecond lookup
-into a ten-, twenty-, thirty-second wait,
-serialized inside your agent's loop,
-often several times per task.
+into a ten-, twenty-, thirty-second (or more[^or-more]) wait,
+inside your calling agent's loop,
+and this could happen several times during the course of your agent
+performing what you asked it to do.
 The agent can't do anything with a slow tool except wait on it,
 and neither can you.
 Every question I put to that big-vendor CLI
-cost me a coffee break's worth of spinner,
-and no answer quality survives that.
+cost me a coffee break's worth of "noodling"
+(or whatever verb Claude Code decided to come up with),
+and despite any appreciable answer quality,
+the wait was not worth it,
+*especially* when I knew that going directly to the vendor's native API
+would get me answers pretty much instantly.
 
 ## The 1% exception
 
 I'll allow that a carve-out might exist.
 If a tool returns large blobs of unstructured data,
-a small, genuinely fast model that condenses them before they hit the wire
-could earn its place—emphasis on genuinely fast,
-and on serving a purpose the client model can't serve itself.
-Even then I'm skeptical.
+a small, *genuinely fast* model that condenses them before they hit the wire
+*could* earn its place—emphasis on genuinely fast,
+and on serving a purpose that the client agent for some reason can't serve itself.
+
+Even then,
+I'm highly skeptical about this.
 A semantic search index that returns the relevant chunks is cheaper and faster.
 It's also more honest,
 because the client model sees actual source material
@@ -153,13 +191,15 @@ rather than hiding a summarizer in the middle.
 
 ## What to do instead
 
-Expose the data.
+Do what MCP is supposed to do:
+provide the context.
+You know, the *Context* in Model *Context* Protocol.
 Build tools that query, search, filter, and fetch,
 and return structured results or relevant chunks.
 Let the calling model do the reasoning.
 It's the most capable component in the whole stack,
 and it's the only one holding the user's full conversation,
-which your server will never see.
+which your MCP server will never see.
 
 If your server really does need a model's help mid-request,
 the protocol already has an answer: sampling.[^sampling]
@@ -172,55 +212,72 @@ delegate deliberately.
 Use a real multi-agent setup where handoffs, streaming,
 and context sharing are designed in,
 instead of smuggling an agent through a tool-shaped trapdoor.
+This is typically the realm of elaborate systems that you've built completely yourself.
+So again,
+ask yourself if,
+outside of the scenario of owning everything end-to-end,
+if the UX expectation of someone using an off-the-shelf client agent
+to call your MCP server's tools
+is really expecting or wanting any of that type of behavior.
 
 ## Context, not conclusions
 
 MCP took off because it gives agents clean access
 to context that lives elsewhere.
 That is the entire job:
-deliver the data, take the parameters, let the client's model think.
+deliver the data, take the parameters, and let the client's model think.
 An MCP server should hand your agent context, not conclusions.
 
-The nested-model version gives you the opposite on every axis:
-slower answers, less visibility, doubled cost,
+The nested-model version gives you the opposite on every dimension:
+slower answers, less visibility,
+increased cost
+(in the event that you deplete credits and/or pay consumption for said MCP server
+to cover the model's expenses on the other end),
 and an agent reasoning over another model's opinions
 instead of over your data.
 
-I hope you're reading this as a smart person
-and thinking, "My God, who on earth would do this?"
+I sincerely hope you're reading this as a smart person
+and thinking,
+"My God, who on earth would do such a thing in the first place?"
 But to quote Roy Batty:
-I've seen things you people wouldn't believe.[^batty]
+[I've seen things you people wouldn't believe](https://youtu.be/NoAzpa1x7jU?si=k4z50eEFEoz0yvDd&t=108).
 
-So the next time a tool call disappears into a hidden inference loop
-and you find yourself watching one AI wait for another AI to think,
-you'll know what got built.
-Somebody crossed the streams.
-Hand your agent context, not conclusions.
+So the next time you see this type of slowness in the wild,
+you'll know what happened.
+
+Somebody [crossed the streams](https://www.youtube.com/watch?v=TEq24JyFWzo).
 
 ## Footnotes
 
-[^malcolm]: Jeff Goldblum as Dr. Ian Malcolm in *Jurassic Park* (1993).
-    The original line indicts scientists rather than engineers,
-    but the failure mode generalizes.
+[^the-ai-kind]: The AI kind, not the crypto kind.
 
-[^determinism]: "Predictable" is doing some work here.
-    A search endpoint isn't perfectly deterministic either—indexes update,
+[^ice-cream]: Get it?
+    In ice cream?
+    I'm here till Thursday!
+
+[^orchestration]: In our case the potential idea was worse,
+    as it was an impulse in the name of putting some potential agentic orchestration
+    behind the MCP server,
+    which would have made things even slower than doing something like a simple summarization
+    of some retrieved content.
+    Also, "hella slow" is the correct technical term here.
+
+[^determinism]: I realize a search endpoint isn't perfectly deterministic either—indexes update,
     rankings shift—but its results are inspectable
     and traceable back to sources.
-    The distinction that matters is verifiable versus generated.
+    The distinction that matters is "verifiable" versus "generated."
 
-[^egon]: Harold Ramis as Dr. Egon Spengler in *Ghostbusters* (1984),
-    on why you never point two proton streams at each other:
-    "It would be bad."
+[^prompt-injection]: You've also obliquely widened the prompt-injection surface:
+    the tool result is now generated text from a model you don't control,
+    ingested directly as if it were data.
+    You put an awful lot of trust in the upstream tool when you're doing this,
+    and hopefully that trust is not misplaced.
+
+[^or-more]: I was seeing 40 to 60 seconds
+    in the case of the vendor I was alluding to in the intro!
 
 [^sampling]: Sampling is part of the
-    [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling):
+    [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/client/sampling):
     the server sends a `sampling/createMessage` request
     and the client's model produces the completion,
     with the user able to review and approve it.
-
-[^batty]: Rutger Hauer as Roy Batty in *Blade Runner* (1982),
-    from the "tears in rain" monologue.
-    He was talking about attack ships on fire off the shoulder of Orion.
-    I'm talking about enterprise software demos.
-    The pain is comparable.
