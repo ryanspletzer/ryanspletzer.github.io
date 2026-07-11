@@ -193,37 +193,7 @@ If your justification for embedding a model is "the data is messy,"
 the better fix is almost always improving retrieval
 rather than hiding a summarizer in the middle.
 
-## What to do instead
-
-Do what MCP is supposed to do:
-provide the context.
-You know, the *Context* in Model *Context* Protocol.
-Build tools that query, search, filter, and fetch,
-and return structured results or relevant chunks.
-Let the calling model do the reasoning.
-It's the most capable component in the whole stack,
-and it's the only one holding the user's full conversation,
-which your MCP server will never see.
-
-For a while the protocol even had an answer
-for servers that really did need a model's help mid-request:
-sampling.[^sampling]
-With sampling, the server asks the *client's* model for a completion,
-which at least points the dependency in the right direction—the
-user keeps their choice of model, their visibility, and their bill.
-But client support never really showed up,
-and the draft spec now deprecates sampling outright,
-leaving deliberate neutrality in its place.[^sampling-deprecated]
-From the protocol's perspective,
-a tool backed by a model in a loop
-and a tool backed by a database query are now indistinguishable.
-No spec is going to stop your tool from masquerading as a data query,
-so the social contract has to.
-The way I see it, that leaves two honest options:
-be a context provider,
-or be a declared agent on a protocol built for agents.
-
-The strongest counterargument I know of is context offloading:
+The strongest version of this argument is context offloading:
 let a hidden model chew through mountains of raw data
 so that only a tidy digest lands in the calling agent's
 precious context window.
@@ -242,6 +212,37 @@ across a system boundary,
 where the expectations are entirely different:
 the interface's whole promise is "parameters in, data out,"
 and nobody budgets a coffee break for a tool call.
+
+## What to do instead
+
+Do what MCP is supposed to do:
+provide the context.
+You know, the *Context* in Model *Context* Protocol.
+Build tools that query, search, filter, and fetch,
+and return structured results or relevant chunks.
+Let the calling agent do the reasoning.
+It's the most capable component in the whole stack,
+and it's the only one holding the user's full conversation,
+which your MCP server will never see.
+
+For a while the protocol even had an answer
+for servers that really did need a model's help mid-request:
+sampling.[^sampling]
+With sampling, the server asks the *client's* model for a completion,
+which at least points the dependency in the right direction—the
+user keeps their choice of model and their visibility,
+and the token spend stays on their own tab.
+But client support never really showed up,
+and the draft spec now deprecates sampling outright,
+leaving deliberate neutrality in its place.[^sampling-deprecated]
+From the protocol's perspective,
+a tool backed by a model in a loop
+and a tool backed by a database query are now indistinguishable.
+No spec is going to stop your tool from masquerading as a data query,
+so the social contract has to.
+The way I see it, that leaves two honest options:
+be a context provider,
+or be a declared agent on a protocol built for agents.
 
 And if what you actually want is to delegate work to another agent,
 delegate deliberately.
@@ -312,7 +313,7 @@ Somebody [crossed the streams](https://www.youtube.com/watch?v=TEq24JyFWzo).
 [^or-more]: I was seeing 40 to 60 seconds
     in the case of the vendor I was alluding to in the intro!
 
-[^sampling]: Sampling is part of the
+[^sampling]: Sampling is (and soon this will be "was"—see next footnote) part of the
     [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/client/sampling):
     the server sends a `sampling/createMessage` request
     and the client's model produces the completion,
