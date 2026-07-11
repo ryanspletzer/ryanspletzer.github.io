@@ -212,16 +212,11 @@ With sampling, the server asks the *client's* model for a completion,
 which at least points the dependency in the right direction—the
 user keeps their choice of model, their visibility, and their bill.
 But client support never really showed up,
-and the draft spec now deprecates sampling outright.[^sampling-deprecated]
-The spec's new position is deliberate neutrality:
-MCP core won't standardize nested LLM orchestration,
-and a server that genuinely needs a model is expected to call a provider
-directly,
-the same way it would call any other backend API.
+and the draft spec now deprecates sampling outright,
+leaving deliberate neutrality in its place.[^sampling-deprecated]
 From the protocol's perspective,
 a tool backed by a model in a loop
 and a tool backed by a database query are now indistinguishable.
-That neutrality is exactly why this post exists.
 No spec is going to stop your tool from masquerading as a data query,
 so the social contract has to.
 The way I see it, that leaves two honest options:
