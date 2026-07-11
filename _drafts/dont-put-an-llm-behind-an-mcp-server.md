@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Don't Put an LLM Behind an MCP Server
-date: 2026-07-09 00:00:00
+date: 2026-07-11 00:00:00
 description: >
   MCP took off because it solved a real problem:
   getting context out of external systems and into your agent.
@@ -25,8 +25,8 @@ and the new flavor of the day is tokenomics.[^the-ai-kind]
 
 But tokenomics is the subject of another blog post.
 
-Today's post is about nerdy technical stuff,
-so if that's not your jam[^ice-cream],
+Today's post is about some nerdy technical stuff,
+so if that's not your jam,[^ice-cream]
 feel free to bop around to another part of the internet,
 but I promise you there is a gem here worth considering,
 as well as several solid pop culture references, as usual.
@@ -36,13 +36,13 @@ With that, let's dig in...
 ***
 
 Suffice it to say,
-I've had enough with some of the shenanigans
+I've had enough of some of the shenanigans
 people have gotten up to
 with MCP servers lately.
 
 I recently tried a CLI tool from a vendor
 (who shall not be named, but you have definitely heard of them),
-which essentially wraps an MCP server,
+which essentially wraps an MCP server
 (so you can either use this tool via CLI or via MCP directly).
 I called the CLI from Claude Code,
 which is a *recommended* way to use this tool.
@@ -52,7 +52,7 @@ the kind of lookup that any reasonable API answers
 in a few hundred milliseconds
 (and the vendor's own native APIs are exceedingly good at answering quickly).
 Instead, the CLI's request to its backing MCP server
-vanished into a hidden thinking loop behind-the-scenes,
+waited on a hidden thinking loop,
 and I sat there watching one model wait for another model to think,
 for double-digit seconds,
 long enough to ponder the entirety of the meaning of life.
@@ -71,7 +71,8 @@ then calling it from an MCP client that is itself an agent with its own LLM,
 breaks the social contract of what MCP was designed to be for users of these tools:
 a way for agent clients to query data and provide context to the model.
 It was never meant to facilitate communication with yet another model or agent.
-Protocols for exactly that have since emerged—A2A and ACP among them—but
+Protocols for exactly that have since emerged—[A2A](https://a2a-protocol.org/latest/)
+and [ACP](https://agentcommunicationprotocol.dev/introduction/welcome) among them—but
 nobody driving Claude Code over a CLI and an MCP server
 is expecting an LLM on the other end.
 
@@ -166,7 +167,7 @@ and neither can you.
 Every question I put to that big-vendor CLI
 cost me a coffee break's worth of "noodling"
 (or whatever verb Claude Code decided to come up with),
-and despite any appreciable answer quality,
+and whatever the answer quality,
 the wait was not worth it,
 *especially* when I knew that going directly to the vendor's native API
 would get me answers pretty much instantly.
@@ -214,11 +215,11 @@ and context sharing are designed in,
 instead of smuggling an agent through a tool-shaped trapdoor.
 This is typically the realm of elaborate systems that you've built completely yourself.
 So again,
-ask yourself if,
-outside of the scenario of owning everything end-to-end,
-if the UX expectation of someone using an off-the-shelf client agent
+ask yourself,
+outside of the scenario of owning everything end-to-end:
+are the UX expectations of someone using an off-the-shelf client agent
 to call your MCP server's tools
-is really expecting or wanting any of that type of behavior.
+really in line with wanting any of that type of behavior?
 
 ## Context, not conclusions
 
@@ -228,11 +229,10 @@ That is the entire job:
 deliver the data, take the parameters, and let the client's model think.
 An MCP server should hand your agent context, not conclusions.
 
-The nested-model version gives you the opposite on every dimension:
+The misguided approach of putting an LLM behind an MCP server
+gives you the opposite on every dimension:
 slower answers, less visibility,
-increased cost
-(in the event that you deplete credits and/or pay consumption for said MCP server
-to cover the model's expenses on the other end),
+increased cost,[^increased-cost]
 and an agent reasoning over another model's opinions
 instead of over your data.
 
@@ -242,7 +242,8 @@ and thinking,
 But to quote Roy Batty:
 [I've seen things you people wouldn't believe](https://youtu.be/NoAzpa1x7jU?si=k4z50eEFEoz0yvDd&t=108).
 
-So the next time you see this type of slowness in the wild,
+So the next time you see this type of slowness in the wild
+from an LLM behind an MCP server,
 you'll know what happened.
 
 Somebody [crossed the streams](https://www.youtube.com/watch?v=TEq24JyFWzo).
@@ -281,3 +282,9 @@ Somebody [crossed the streams](https://www.youtube.com/watch?v=TEq24JyFWzo).
     the server sends a `sampling/createMessage` request
     and the client's model produces the completion,
     with the user able to review and approve it.
+    As of the 2025-11-25 revision, sampling even supports tool use,
+    so a server can run a full agentic loop through the *client's* model—with
+    the user having the option to approve each step—rather than hiding its own.
+
+[^increased-cost]: Especially in the event that you deplete credits and/or pay consumption for said MCP server
+    to cover its backing model's expenses.
