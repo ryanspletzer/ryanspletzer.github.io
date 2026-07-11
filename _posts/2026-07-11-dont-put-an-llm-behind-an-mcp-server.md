@@ -76,8 +76,9 @@ a way for agent clients to query data and provide context to the model.
 It was never meant to facilitate communication with yet another model or agent.
 Protocols for exactly that have since emerged—[A2A](https://a2a-protocol.org/latest/)
 and [ACP](https://agentcommunicationprotocol.dev/introduction/welcome) among them—but
-nobody driving Claude Code over a CLI and an MCP server
-is expecting an LLM on the other end.
+nobody driving a Claude Code session
+that calls out to a CLI or an MCP server
+is expecting an LLM on the other end of that call.
 
 Somewhere along the way, some of us in this industry lost our minds.
 I sure hope we find them.
@@ -173,11 +174,11 @@ cost me a coffee break's worth of "noodling"
 and whatever the answer quality,
 the wait was not worth it,
 *especially* when I knew that going directly to the vendor's native API
-would get me answers pretty much instantly.
+would get me the answers pretty much instantly.
 
 ## The 1% exception
 
-I'll allow that a carve-out might exist.
+I'll allow that a carve-out *might* exist.
 If a tool returns large blobs of unstructured data,
 a small, *genuinely fast* model that condenses them before they hit the wire
 *could* earn its place—emphasis on genuinely fast,
