@@ -56,7 +56,7 @@ in a few hundred milliseconds
 (and the vendor's own native APIs are exceedingly good at answering quickly).
 Instead, the CLI's request to its backing MCP server
 waited on a hidden thinking loop,
-and I sat there watching one model wait for another model to think,
+and I sat there watching my local agent wait for another hidden remote "agent" to think,
 for double-digit seconds,
 long enough to ponder the entirety of the meaning of life.
 
