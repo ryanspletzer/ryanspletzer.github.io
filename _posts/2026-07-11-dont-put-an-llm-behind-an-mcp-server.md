@@ -194,7 +194,8 @@ If your justification for embedding a model is "the data is messy,"
 the better fix is almost always improving retrieval
 rather than hiding a summarizer in the middle.
 
-The strongest version of this argument is context offloading:
+A potentially sane version of the argument for putting a model behind an MCP server
+is context offloading:
 let a hidden model chew through mountains of raw data
 so that only a tidy digest lands in the calling agent's
 precious context window.
