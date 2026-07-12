@@ -6,7 +6,8 @@ author: Ryan Spletzer
 email: ryanspletzer@gmail.com
 description: Personal site of Ryan Spletzer
 
-# Url is currently only used only for the RSS feed in feed.xml
+# Absolute site origin — used for canonical links, og:/twitter meta tags,
+# JSON-LD, both feeds, and the sitemap
 url: https://www.spletzer.com
 #url: https://ryanspletzer.github.io
 #url: http://localhost:4000
