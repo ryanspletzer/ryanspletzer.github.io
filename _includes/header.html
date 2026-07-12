@@ -20,7 +20,7 @@
   {% endif %}
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}">
   <meta property="og:url" content="{{ site.url | append:page.url }}">
   <meta property="og:site_name" content="{{ site.name }}">
   {% if page.header %}
@@ -47,7 +47,7 @@
   {% else %}
   <meta name="twitter:card" content="summary">
   {% endif %}
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}">
   {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">
   {% elsif site.description %}
