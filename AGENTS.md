@@ -40,7 +40,7 @@ pwsh ./.tag_generator.ps1
 
 Playwright-based screenshot comparison across three viewports (Desktop 1280x720,
 Tablet 768x1024, Mobile 375x667) in both dark and light color schemes (6
-projects, 54 tests total). The test suite starts a local Jekyll server
+projects, 60 tests total). The test suite starts a local Jekyll server
 automatically.
 
 ```bash
@@ -98,7 +98,8 @@ e2e/                 Playwright visual regression tests
 | `tags.md` | `/tags/` | Tag index with post counts |
 | `linkfarm.md` | `/linkfarm/` | Curated reading list |
 | `404.md` | `/404.html` | Custom 404 page |
-| `feed.xml` | `/feed.xml` | RSS 2.0 feed (latest 10) |
+| `feed.xml` | `/feed.xml` | RSS 2.0 feed (latest 20) |
+| `atom.xml` | `/atom.xml` | Atom feed (latest 20) |
 | `sitemap.xml` | `/sitemap.xml` | XML sitemap |
 
 ### Post Format
