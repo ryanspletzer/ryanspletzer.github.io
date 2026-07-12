@@ -42,7 +42,20 @@ kramdown:
   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
   hard_wrap: false
 
-exclude: ["README.md", "LICENSE"]
+exclude:
+  - README.md
+  - LICENSE
+  - AGENTS.md
+  - CLAUDE.md
+  - plans
+  - e2e
+  - scripts
+  - package.json
+  - tsconfig.json
+  - playwright.config.ts
+  - bun.lock
+  - playwright-report
+  - test-results
 
 sass:
     sass_dir: _sass
