@@ -16,8 +16,8 @@ permalink: /tags/
 <ul>
 {% for post in site.tags[tag] %}
   <li>
-    <time>{{ post.date | date: "%B %d, %Y" }}</time>:
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time>:
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </li>
 {% endfor %}
 </ul>
