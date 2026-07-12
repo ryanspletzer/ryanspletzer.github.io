@@ -88,6 +88,10 @@
         tip.className = 'footnote-tooltip';
         tip.setAttribute('aria-hidden', 'true');
         Array.from(source.childNodes).forEach(n => tip.appendChild(n.cloneNode(true)));
+        // The tooltip is aria-hidden (the real footnote below carries the
+        // semantics), so cloned links must not become keyboard tab stops
+        // once :focus-within makes the tooltip visible.
+        tip.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '-1'));
         ref.closest('sup').appendChild(tip);
         this.#tips.push(tip);
       });
