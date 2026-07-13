@@ -19,7 +19,9 @@ from pathlib import Path
 
 POSTS_DIR = Path("_posts")
 
-FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+# [ \t]* (not \s*) after the closing delimiter: \s* would swallow the
+# blank line that conventionally follows it, churning every edited post.
+FRONTMATTER_RE = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*\n", re.DOTALL)
 # Markdown image; the URL may start on its own line with leading whitespace
 # (see the Tiepolo image in the 2026-07-11 post) and may contain one level
 # of balanced parens (e.g. Creation_of_Adam_(cropped)_meme.jpg).
