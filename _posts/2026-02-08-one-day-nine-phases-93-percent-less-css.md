@@ -10,6 +10,7 @@ tags:
  - web-standards
  - accessibility
  - css
+header: /assets/images/website-refactor-before-after.png
 ---
 
 For years, this blog

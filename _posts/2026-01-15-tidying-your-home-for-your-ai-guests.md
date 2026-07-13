@@ -7,6 +7,7 @@ description: >
 tags:
  - ai
  - data
+header: /assets/images/robots-untidy-data-house.png
 ---
 
 I want you to imagine the place that you live in.

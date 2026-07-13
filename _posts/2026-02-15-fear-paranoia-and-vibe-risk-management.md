@@ -12,6 +12,7 @@ tags:
   - ai
   - technology
   - security
+header: /assets/images/fear-paranoia-and-vibe-risk-management.png
 ---
 
 "What if aliens arrived and grabbed our documents from this repository?"

@@ -8,6 +8,7 @@ tags:
  - agents
  - ai
  - cqrs
+header: /assets/images/ask-vs-act-applying-cqrs-principles-to-ai-agents.png
 ---
 
 Asking an AI agent a question is a whole different ballgame from letting it take action.

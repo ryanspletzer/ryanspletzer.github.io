@@ -11,6 +11,7 @@ description: >
 tags:
   - python
   - environments
+header: /assets/images/veteran-in-a-new-field-winslow-homer-1865.jpg
 ---
 
 ![An oil painting of a lone farmer seen from behind, harvesting golden wheat with a scythe in a sunlit field, with his discarded Union Army jacket and canteen visible in the lower right corner.](/assets/images/veteran-in-a-new-field-winslow-homer-1865.jpg)

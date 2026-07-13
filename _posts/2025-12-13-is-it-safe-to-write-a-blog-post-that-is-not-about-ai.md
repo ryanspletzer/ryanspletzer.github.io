@@ -7,6 +7,7 @@ description: >
 tags:
  - ai
  - technology
+header: /assets/images/Michelangelo_-_Creation_of_Adam_(cropped)_meme.jpg
 ---
 
 _Warning: Occasional pithy humor and light-hearted sarcasm ahead._

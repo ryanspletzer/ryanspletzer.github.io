@@ -10,6 +10,7 @@ description: >
 tags:
  - ai
  - programming
+header: /assets/images/1024px-Edvard_Munch_-_Anxiety_-_Google_Art_Project.jpg
 ---
 
 ![A crowd of ghostly, pale-faced figures in dark clothing and top hats walk along a pier against a turbulent, swirling sky of deep blues and oranges, their hollow expressions conveying collective dread and unease.](/assets/images/1024px-Edvard_Munch_-_Anxiety_-_Google_Art_Project.jpg)

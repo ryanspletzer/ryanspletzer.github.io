@@ -11,6 +11,7 @@ tags:
  - qemu
  - apple-silicon
  - macOS
+header: /assets/images/spinrite-on-macos.png
 ---
 
 I was trying to run SpinRite 6.1 on some drives from an old Drobo 5N NAS that bit the dust a few years back, but I

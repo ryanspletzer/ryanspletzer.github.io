@@ -7,6 +7,7 @@ description: >
 tags:
  - ai
  - mcp
+header: /assets/images/mcp-is-a-usb-port-not-a-hard-drive.png
 ---
 
 *Or:*

@@ -11,6 +11,7 @@ tags:
  - entra-id
  - app-registration
  - oauth
+header: /assets/images/app_registrations_search_bar.png
 ---
 
 Since I am not a scalable replacement for ChatGPT or Google, and because I felt this would be helpful beyond my own

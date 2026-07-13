@@ -7,6 +7,7 @@ description: >
 tags:
  - ai
  - model-context-protocol
+header: /assets/images/the-many-contexts-of-model-context-protocol.png
 ---
 
 Or: why "where" your MCP server runs matters just as much as "what" it does.

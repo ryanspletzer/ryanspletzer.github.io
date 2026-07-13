@@ -12,6 +12,7 @@ tags:
  - yubikey
  - security
  - git
+header: /assets/images/960px-William_Orpen_-_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg
 ---
 
 ![Delegates seated at a long table in the Hall of Mirrors at Versailles, signing the Treaty of Versailles in 1919, with tall arched mirrors and ornate chandeliers reflected behind them.](/assets/images/960px-William_Orpen_-_The_Signing_of_Peace_in_the_Hall_of_Mirrors.jpg)

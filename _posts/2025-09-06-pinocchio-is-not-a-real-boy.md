@@ -8,6 +8,7 @@ description: >
 tags:
  - vibe-coding
  - ai
+header: /assets/images/pinocchio-is-not-a-real-boy.png
 ---
 
 

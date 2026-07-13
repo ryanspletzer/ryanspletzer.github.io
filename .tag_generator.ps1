@@ -39,7 +39,21 @@ foreach ($filename in $filenames) {
     }
 }
 
-$total_tags = $total_tags | Sort-Object | Get-Unique
+# -CaseSensitive keeps distinct casings intact; the default case-insensitive
+# sort feeding case-sensitive Get-Unique let exact duplicates survive when a
+# different casing sorted between them.
+$total_tags = $total_tags | Sort-Object -CaseSensitive -Unique
+
+# Tags differing only in case generate files that collide on case-insensitive
+# filesystems (macOS), silently dropping one tag page while Linux CI keeps both.
+$case_collisions = $total_tags |
+    Group-Object -Property { $_.ToLowerInvariant() } |
+    Where-Object -FilterScript { $_.Count -gt 1 }
+if ($case_collisions) {
+    $details = ($case_collisions | ForEach-Object -Process { $_.Group -join ', ' }) -join '; '
+    throw "Tags differing only in case found ($details). Unify the casing in post frontmatter."
+}
+
 $old_tags = Get-ChildItem -Path $tag_dir -Filter '*.md' -ErrorAction SilentlyContinue |
     ForEach-Object -Process { $_.FullName }
 foreach ($tag in $old_tags) {
