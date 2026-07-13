@@ -75,6 +75,18 @@ jobs:
           tar xzf actionlint.tar.gz actionlint
           ./actionlint -color
 
+      - name: Audit workflow security (zizmor)
+        env:
+          ZIZMOR_VERSION: 1.26.1
+          ZIZMOR_SHA256: 8556289a64e7aaf2400cd516f61a471aa91c5902cc56ad96a82fd12f90c2ef73
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -fsSLo zizmor.tar.gz \
+            "https://github.com/zizmorcore/zizmor/releases/download/v${ZIZMOR_VERSION}/zizmor-x86_64-unknown-linux-gnu.tar.gz"
+          echo "${ZIZMOR_SHA256}  zizmor.tar.gz" | sha256sum -c
+          tar xzf zizmor.tar.gz zizmor
+          ./zizmor .github/workflows/
+
   # Build the site and verify internal links, images, and scripts resolve
   html-proofer:
     runs-on: ubuntu-latest
