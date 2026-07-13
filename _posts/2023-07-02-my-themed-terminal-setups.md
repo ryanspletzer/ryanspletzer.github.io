@@ -12,6 +12,7 @@ tags:
  - oh-my-posh
  - dotfiles
  - nerd-fonts
+header: /assets/images/my-themed-terminal.png
 ---
 
 People have been wondering about how I created my themed terminal setups, so I thought I'd make a post about it.

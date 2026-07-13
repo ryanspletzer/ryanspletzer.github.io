@@ -9,6 +9,7 @@ description: >
 tags:
  - information-diet
  - rss
+header: /assets/images/Édouard_Manet_-_Woman_Reading_-_1933.435_-_Art_Institute_of_Chicago.jpg
 ---
 
 ![An impressionist oil painting of a woman in a black hat and dark dress reading a newspaper in a sunlit garden.](/assets/images/Édouard_Manet_-_Woman_Reading_-_1933.435_-_Art_Institute_of_Chicago.jpg)

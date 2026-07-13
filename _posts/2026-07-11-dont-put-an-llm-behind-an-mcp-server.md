@@ -12,6 +12,7 @@ tags:
  - ai
  - agents
  - mcp
+header: /assets/images/Giovanni_Domenico_Tiepolo_-_The_Procession_of_the_Trojan_Horse_in_Troy_-_WGA22382.jpg
 ---
 
 ![Giovanni Domenico Tiepolo's 18th-century painting of the giant wooden Trojan horse

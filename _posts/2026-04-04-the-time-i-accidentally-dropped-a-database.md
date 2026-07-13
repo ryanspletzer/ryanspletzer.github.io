@@ -11,6 +11,7 @@ tags:
  - ai
  - security
  - sre
+header: /assets/images/Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_&_Culture.jpg
 ---
 
 ![A pastoral landscape with a farmer plowing in the foreground, a shepherd gazing upward, and ships in a harbor, while in the lower right corner a pair of legs disappears into the sea — the fall of Icarus, unnoticed by all.](/assets/images/Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_&_Culture.jpg)

@@ -9,6 +9,7 @@ tags:
  - zero-trust
  - spiffe
  - spire
+header: /assets/images/turtles-all-the-way-down.png
 ---
 
 I vividly remember one of the first tasks my engineering manager handed to me: figure out how to automate rotating the

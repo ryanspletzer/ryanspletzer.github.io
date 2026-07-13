@@ -11,6 +11,7 @@ tags:
   - ai
   - economics
   - software-engineering
+header: /assets/images/William_Stanley_Jevons_portrait_extract.jpg
 ---
 
 ![Portrait of William Stanley Jevons.](/assets/images/William_Stanley_Jevons_portrait_extract.jpg)

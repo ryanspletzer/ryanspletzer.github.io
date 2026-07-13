@@ -10,6 +10,7 @@ tags:
  - devops
  - vibe-coding
  - ai
+header: /assets/images/Car_accident_in_the_1920s_(38083620606).png
 ---
 
 ![A colorized 1920s postcard photograph of an automobile perched on a narrow ridge road in Los Angeles County, with a wooden guardrail along the precipitous edge; a caption at the bottom reads "Guard rails sometimes save careless drivers."](/assets/images/Car_accident_in_the_1920s_(38083620606).png)

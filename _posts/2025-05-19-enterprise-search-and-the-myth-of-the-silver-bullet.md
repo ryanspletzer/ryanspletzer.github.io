@@ -7,6 +7,7 @@ description: >
 tags:
  - enterprise-search
  - ai
+header: /assets/images/enterprise-search-an-the-myth-of-the-silver-bullet.png
 ---
 
 Enterprise Search has always been a hard problem – one that lacks any "silver bullet" solution. A decade or more ago in

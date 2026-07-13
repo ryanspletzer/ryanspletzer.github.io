@@ -10,6 +10,7 @@ description: >
 tags:
  - security
  - yubikey
+header: /assets/images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg
 ---
 
 ![A massive unfinished stone tower spiraling into the clouds above a hazy landscape, with tiny figures, buildings, and ships visible at its base; the tower's many arches and tiers are shown in different stages of construction.](/assets/images/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project.jpg)

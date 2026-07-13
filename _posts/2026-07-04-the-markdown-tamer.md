@@ -14,6 +14,7 @@ tags:
  - markdown
  - ai
  - tooling
+header: /assets/images/Lion_tamer_(LOC_pga.03749).jpg
 ---
 
 ![A colorful 19th-century chromolithograph of a lion tamer standing calmly inside a circus cage, surrounded by two lions, a lioness, and two tigers posed on pedestals around him.](/assets/images/Lion_tamer_(LOC_pga.03749).jpg)

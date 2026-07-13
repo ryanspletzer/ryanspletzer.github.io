@@ -10,6 +10,7 @@ description: >
 tags:
  - git
  - git-credential-manager
+header: /assets/images/github_pats.png
 ---
 
 I have pushed the content of this blog post to GitHub Pages with zero use of a personal access token (fine-grained or

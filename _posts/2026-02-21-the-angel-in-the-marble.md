@@ -12,6 +12,7 @@ tags:
   - programming
   - art
   - ai
+header: /assets/images/angel-marble-1.jpg
 ---
 
 ![Close-up of a marble angel statue by Michelangelo Buonarroti with a calm, expressionless face and curly hair, warmly lit, with one textured wing visible behind its shoulder.](/assets/images/angel-marble-1.jpg)

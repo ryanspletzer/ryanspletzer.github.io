@@ -8,6 +8,7 @@ tags:
  - openid-connect
  - oauth
  - jwt
+header: /assets/images/oidc-oauth-spec-graph.png
 ---
 
 I have a solid grasp of OAuth 2.0 and OpenID Connect (OIDC) from past projects,

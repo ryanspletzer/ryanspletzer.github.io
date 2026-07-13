@@ -14,6 +14,7 @@ tags:
  - ai
  - information-diet
  - gish-gallop
+header: /assets/images/your-information-diet-in-the-age-of-ai.png
 ---
 
 I was on a call with a colleague,

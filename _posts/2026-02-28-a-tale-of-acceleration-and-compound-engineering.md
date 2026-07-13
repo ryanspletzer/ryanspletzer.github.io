@@ -13,6 +13,7 @@ description: >
 tags:
   - programming
   - ai
+header: /assets/images/johnson-hobbyhorse-1819.jpg
 ---
 
 ![A hand-colored print of a gentleman in a top hat and tailcoat riding an early two-wheeled hobbyhorse, with another rider visible in the distance.](/assets/images/johnson-hobbyhorse-1819.jpg)

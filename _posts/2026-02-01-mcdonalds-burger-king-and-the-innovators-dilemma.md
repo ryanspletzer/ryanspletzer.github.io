@@ -9,6 +9,7 @@ description: >
 tags:
  - ai
  - coding
+header: /assets/images/ronald-and-the-king-vibe-coding.png
 ---
 
 There's a running joke in the fast food industry about Burger King's real estate strategy:
