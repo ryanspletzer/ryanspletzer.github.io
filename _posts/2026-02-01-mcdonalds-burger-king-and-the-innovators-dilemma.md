@@ -20,7 +20,7 @@ McDonald's spends millions on site analysis—traffic patterns, demographics, pa
 Why wouldn't you draft off their homework?
 
 I grew up down the street from one of these pairings:
-a McDonald's with a Burger King _literally_ adjacent to it.
+a McDonald's with a Burger King *literally* adjacent to it.
 (My childhood diet is between me and my cardiologist. The '90s were a different time.)
 
 Lately, I've been thinking about this dynamic in a different context: AI developer tools.
@@ -33,7 +33,7 @@ This is the Innovator's Dilemma, playing out in real-time.
 
 [Clayton Christensen's thesis](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)
 wasn't that big companies are dumb or poorly managed—it's
-that they're _rationally constrained_.
+that they're *rationally constrained*.
 They listen to their best customers.
 They invest in high-margin products.
 They optimize for existing business models.
@@ -52,19 +52,22 @@ And sometimes—the interesting case—the big company can't reproduce the magic
 
 ## Beating the Lunch Rush 🍟
 
-[GitHub Copilot launched as a technical preview](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/) in June 2021—earlier than most people remember.
+[GitHub Copilot launched
+as a technical preview](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/)
+in June 2021—earlier than most people remember.
 It was genuinely pioneering, the first major AI pair programmer.
 General availability came a year later. For a moment, they owned the category. Market share: 100%.
 
 Then [Cursor showed up](https://en.wikipedia.org/wiki/Cursor_(code_editor)) in March 2023.
 Four MIT grads with a VS Code fork
-and a bet that AI shouldn't be bolted onto an existing editor—it should _be_ the editor.
+and a bet that AI shouldn't be bolted onto an existing editor—it should *be* the editor.
 Co-founder Sualeh Asif [explained](https://newsletter.pragmaticengineer.com/p/cursor):
 "We needed to own our editor and could not 'just' be an extension, because we wanted to change the way people program."[^cursor-irony]
 
 What happened next is wild.
 Cursor shipped chat integration at launch;
-[GitHub Copilot Chat didn't reach GA](https://github.blog/news-insights/product-news/github-copilot-chat-now-generally-available-for-organizations-and-individuals/) until December 2023—nine months later.
+[GitHub Copilot Chat didn't reach GA](https://github.blog/news-insights/product-news/github-copilot-chat-now-generally-available-for-organizations-and-individuals/)
+until December 2023—nine months later.
 Cursor had codebase-wide context from day one.
 Agent mode? Cursor shipped it in late 2024;
 [GitHub's version landed in February 2025](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode).
@@ -115,7 +118,7 @@ A lot of Microsoft products are designed by Replit."
 
 Within a week, he says, competitors copy UI innovations. A week!
 
-What _can't_ be copied that fast?
+What *can't* be copied that fast?
 "Things that are trial by fire," Masad said.
 "Things with a lot of pain associated with them, especially on the infrastructure side."
 
@@ -170,7 +173,8 @@ Product vision and execution count for a lot,
 but if the execution is readily clone-able,
 then you find yourself competing to some degree on distribution and brand loyalty.
 
-[Golder and Tellis](https://www.ideatovalue.com/inno/nickskillicorn/2022/04/first-mover-or-fast-follower-which-is-the-right-innovation-strategy-for-you/) analyzed 500 companies across 50 product categories: 47% of first movers failed versus 8% of fast followers.
+[Golder and Tellis](https://www.ideatovalue.com/inno/nickskillicorn/2022/04/first-mover-or-fast-follower-which-is-the-right-innovation-strategy-for-you/)
+analyzed 500 companies across 50 product categories: 47% of first movers failed versus 8% of fast followers.
 [Steve Blank](https://steveblank.com/2010/10/04/why-pioneers-are-the-ones-with-the-arrows-in-their-backs/)
 put it bluntly:
 "The jury is in. There's no advantage to being first.
@@ -225,7 +229,8 @@ Drafting off good ideas isn't shameful—it's a strategy.
 But your size is, as Nadella put it, a "massive disadvantage" when the underlying technology is shifting this fast.
 You're not going to out-innovate four people in a room who don't have to schedule a meeting to make a decision.
 
-Cursor CEO [Michael Truell](https://www.maginative.com/article/anysphere-raises-60m-for-ai-powered-coding-tool-cursor/) articulated the startup bet:
+Cursor CEO [Michael Truell](https://www.maginative.com/article/anysphere-raises-60m-for-ai-powered-coding-tool-cursor/)
+articulated the startup bet:
 "The goal is to replace coding with something much better.
 Our aim is to build a magical tool that will one day write all the world's software."
 
@@ -249,8 +254,8 @@ Pick your burger. They're all pretty good now.[^my-preferred-burger]
 [^aider-shame]: I'm ashamed to say I had never heard of Aider before researching this post.
 [^flock-to-claude-code]: Even though they should, since despite the fact that better things may come from well-known players, they're losing valuable time that could have helped them learn how to wrangle agents in higher-order potentially GUI-ful tools in the future.
 [^amazon-fanbois]: I've also seen the opposite: Amazon fanbois who have an unending, irrational hatred of Microsoft. Can't we all just agree to hate Oracle?
-[^google-advantage]: And perhaps after that, cloud providers that have an advantageous position of hosting models for them and deals to use those models in their own products; Google is in a _very_ interesting position of having both of those things, and while I don't think they have something rivaling Claude Code the tool, or Opus 4.5 the model, _yet_, you know how this cat and mouse game goes. We'll see!
+[^google-advantage]: And perhaps after that, cloud providers that have an advantageous position of hosting models for them and deals to use those models in their own products; Google is in a *very* interesting position of having both of those things, and while I don't think they have something rivaling Claude Code the tool, or Opus 4.5 the model, *yet*, you know how this cat and mouse game goes. We'll see!
 [^wheres-the-beef]: And they need to ensure there is [enough beef](https://www.youtube.com/watch?v=Ug75diEyiA0) to begin with; anecdotally everyone has a CLI now like Claude Code, but some have pointed out to me how other CLI's don't have "the same taste" in terms of it providing as quality of output based on the techniques that are used.
-[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commoditization in various markets, having services driven to "Free," means inevitably _you_ become the product. So don't be surprised if Mickey D's shows up inline in your ChatGPT response touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
+[^chatgpt-ad-supported]: All signs are pointing to you being able to use more features of ChatGPT free soon, [supported by ads](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)—one of the final stops of commoditization in various markets, having services driven to "Free," means inevitably *you* become the product. So don't be surprised if Mickey D's shows up inline in your ChatGPT response touting their newest scientific advances in the Egg McMuffin. (And now this blog post has truly come full circle.)
 [^wardley-maps]: Go read [Wardley Maps](https://medium.com/wardleymaps) if you want to understand the forces behind why commoditization comes for everything eventually.
 [^my-preferred-burger]: I prefer the [Bacon King](https://www.burgerking.ee/en/menu/flame-grilled-burgers/bacon-king/), and my current Bacon King is Claude Code. But I also like some modifiers. No ketchup, light mayo, add light mustard, add pickles. (Fun fact: I have a former manager who cannot tolerate anything in the cucumber realm—hello, Augusto—in almost violent ways where he'd flip over the restaurant table and walk out if you serve him this particular strain of gourd. We've had to restrain him several times.) I'm currently working on modifying Claude Code to my liking, and figuring out if I want regular fries or chicken fries (flavors of orchestration) and my choice of dipping sauce, probably ranch (my personal taste injected into these tools). I wish Burger King had caffeine free Diet Dr Pepper, then everything would be perfect. Where did Dr Pepper get his PhD from? Ok this ADHD footnote is getting weird. Bye!

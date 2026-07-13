@@ -30,16 +30,16 @@ months or years; but rest assured, they will happen.
 
 Therefore, it follows that it makes absolutely zero sense to be naming things -- whether that's code, repositories,
 or artifacts in other systems -- based off of names that will inevitably change. This is especially true of things whose
-names are _hard to change_.
+names are *hard to change*.
 
 Do yourself a massive favor, and do two things:
 
 - Orient systems and services and surrounding artifacts in a way that is assumed that they will change hands at some
   point.
-- When you do orient those systems that way, choose _code names_ for those systems so that they will endure any sorts of
+- When you do orient those systems that way, choose *code names* for those systems so that they will endure any sorts of
   rebranding that may occur either from the team name changing or the service name changing.
 
-Further, when it comes to things that _must_ be named after your team or department, consider employing a code name
+Further, when it comes to things that *must* be named after your team or department, consider employing a code name
 there to endure through potential renames of those things, again especially for things that are hard to change.
 
 Many objects in our systems can have display names that differ from internal names, or abilities to alias a new name

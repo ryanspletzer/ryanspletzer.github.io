@@ -16,8 +16,8 @@ Google and Bing are all marketing silliness.
 Try googling "cis level 1 windows c drive prevent directory creation" and see what you get... I'll wait.
 
 Spoiler alert: it's nothing useful -- mostly just links about CIS Level 1 marketing from various sources as well as
-potentially some interspersed links about how to set this particular thing up manually. There is nothing about _what the
-CIS Level 1 hardening standards actually say on this topic_. I'm sure that info is out there, but I've already given up
+potentially some interspersed links about how to set this particular thing up manually. There is nothing about *what the
+CIS Level 1 hardening standards actually say on this topic*. I'm sure that info is out there, but I've already given up
 at this point.
 
 Meanwhile over in ChatGPT, I plug in a prompt of a similar nature, and can get not only what CIS Level 1 says about

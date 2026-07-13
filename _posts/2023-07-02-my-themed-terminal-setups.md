@@ -46,7 +46,7 @@ The rest of this post assumes you're knowledgeable with these package managers a
 ## Source Controlling Dotfiles
 
 I found an approach for source controlling dotfiles in my home directory with git -- the trick is to do a `.gitignore`
-file that ignores everything _by default_ and selectively _un-ignoring_ files under certain paths.
+file that ignores everything *by default* and selectively *un-ignoring* files under certain paths.
 
 Turning your home directory into a git repo itself is a bit convoluted to get going at first, but once I figured it out,
 I was very happy with it, since I could update my dotfiles and commit changes to them and push them up right away.
@@ -127,7 +127,7 @@ Once you have your preferred font installed, change iTerm2 to use it under Setti
 ### 5. Oh My Posh for macOS
 
 [Oh My Posh](https://ohmyposh.dev/) is an amazing prompt theming engine for any shell. It started as a theming engine
-for PowerShell, then grew from there. I've found it to be _better_ than Oh My Zsh, Oh My Bash, and Oh My Fish, for all
+for PowerShell, then grew from there. I've found it to be *better* than Oh My Zsh, Oh My Bash, and Oh My Fish, for all
 the shells I use, and I love that it is a one-stop-shop solution versus trying to theme individual shells. (I stopped
 trying to set up Fish a while back since between zsh, bash, and PowerShell, I have enough shells.) Update: I set up
 oh-my-posh with Fish, too.

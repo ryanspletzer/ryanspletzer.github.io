@@ -68,14 +68,14 @@ wine spinrite.exe # Opens the SpinRite GUI app and lets you make an ISO; close o
 ```
 
 Before you go fire up your QEMU emulator, first you should insert your storage media you're going to run SpinRite on,
-then _eject_ it through Finder, but leave the physical drive inserted -- yes, it needs to be not mounted to the host
+then *eject* it through Finder, but leave the physical drive inserted -- yes, it needs to be not mounted to the host
 macOS operating system so that QEMU can attach to it. (Alternatively you can do `diskutil list` to see what your disk
 number is -- in my case it was `/dev/disk4` -- then do `diskutil unmount /dev/disk4` to unmount it.) If you forget to do
 this, QEMU will say `qemu-system-x86_64: Could not open '/dev/disk4': Resource busy`. Also note that after quitting
 QEMU, macOS will immediately re-mount the drive...
 
 Finally, run QEMU (with `sudo`, which is necessary so it can get at the drive -- as always do this with caution and only
-if you're comfortable), providing the correct path to `SpinRite.iso`. Note that the ISO path is _case-sensitive_ --
+if you're comfortable), providing the correct path to `SpinRite.iso`. Note that the ISO path is *case-sensitive* --
 beyond the fact that terminal commands on macOS are case-sensitive, I say this because `spinrite.exe` will output
 `SpinRite.iso` with uppercase `S` and `R`, and that might trip someone up.
 

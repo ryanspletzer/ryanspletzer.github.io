@@ -99,7 +99,8 @@ but you don't want every meal to be from the drive-through.
 Taking the time to read in-depth sources or multiple perspectives is more like cooking a balanced meal at home:
 it's slower and requires effort, but you know exactly what you're getting.
 This extra effort
-"**[gives you back the ability to examine multiple sources... and leaves open the possibilities for learning, discovery and serendipity](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=take%20a%20little%20work%2C%20but,for%20learning%2C%20discovery%20and%20serendipity)**"
+"**[gives you back the ability to examine multiple sources... and leaves open the possibilities for learning,
+discovery and serendipity](https://health.economictimes.indiatimes.com/news/health-it/ai-search-answers-are-the-fast-food-of-your-information-diet-convenient-and-tasty-but-no-substitute-for-good-nutrition/110868159#:~:text=take%20a%20little%20work%2C%20but,for%20learning%2C%20discovery%20and%20serendipity)**"
 that a one-and-done info snippet would never provide.
 
 In short, be vigilant about info quality.
@@ -220,7 +221,7 @@ It inoculates you against groupthink.
 Sure, most of the time I read my preferred tech sources,
 but every now and then I deliberately read an opposing viewpoint or an analysis from a different domain.
 Despite working in AI, I recently read
-**[_The AI Con: How to Fight Big Tech's Hype and Create the Future We Want_](https://thecon.ai/)**.
+**[*The AI Con: How to Fight Big Tech's Hype and Create the Future We Want*](https://thecon.ai/)**.
 Did I agree with 100% of that book? No.
 But much of it did resonate with me,
 and it has helped me to hone my BS filter when I see some new, over-hyped headline

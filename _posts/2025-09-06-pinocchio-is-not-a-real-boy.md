@@ -250,7 +250,8 @@ We should, too.
 
 Even before the AI craze and hype hit,
 at multiple companies,
-I've long seen non-software engineering business teams hire a summer intern to build something the org won't prioritize—and on the surface, this is often a perfectly reasonable move to explore.
+I've long seen non-software engineering business teams hire a summer intern to build something the org won't
+prioritize—and on the surface, this is often a perfectly reasonable move to explore.
 
 And the intern might do a great job for their level.
 

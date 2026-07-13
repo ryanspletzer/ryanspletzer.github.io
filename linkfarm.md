@@ -32,19 +32,22 @@ read them:
   development has changed a lot over the years, but this book first introduced me to some fundamental concepts including
   the important AMD pattern.
 
-* [Microsoft Visual C# Step by Step, 9th Edition](https://www.microsoftpressstore.com/store/microsoft-visual-c-sharp-step-by-step-9781509307760) — I read an earlier
-  edition of this book, but you'll want to get the latest available. It's not exactly an earth-shattering book, but I
-  decided to retroactively add it to the list, as in hindsight it is a very good book to give to as an introductory book
-  to the C# language for someone who has not used it before.
+* [Microsoft Visual C# Step by Step, 9th
+  Edition](https://www.microsoftpressstore.com/store/microsoft-visual-c-sharp-step-by-step-9781509307760) — I read an
+  earlier edition of this book, but you'll want to get the latest available. It's not exactly an earth-shattering book,
+  but I decided to retroactively add it to the list, as in hindsight it is a very good book to give to as an
+  introductory book to the C# language for someone who has not used it before.
 
-* [C# Coding Conventions (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions) — Important
-  conventions for C#.
+* [C# Coding Conventions (C# Programming
+  Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions) —
+  Important conventions for C#.
 
 * [Framework Design Guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/) — Dovetailing off
   of C# conventions is overall conventions for library design in conjunction with the .NET Framework.
 
-* [Adaptive Code: Agile coding with design patterns and SOLID principles (2nd Edition) (Developer Best Practices)](https://www.amazon.com/Adaptive-Code-principles-Developer-Practices/dp/1509302581/) — The SOLID principles are well
-  explained this book, and it goes into good depth on the essential concept of Dependency Injection.
+* [Adaptive Code: Agile coding with design patterns and SOLID principles (2nd Edition) (Developer Best
+  Practices)](https://www.amazon.com/Adaptive-Code-principles-Developer-Practices/dp/1509302581/) — The SOLID principles
+  are well explained this book, and it goes into good depth on the essential concept of Dependency Injection.
 
 * [Microsoft .NET - Architecting Applications for the Enterprise (2nd Edition) (Developer Reference)](
   https://www.amazon.com/Microsoft-NET-Architecting-Applications-Enterprise/dp/0735685355) — After reading Adaptive
@@ -73,12 +76,12 @@ read them:
   things that vary per project are, brackets opening on the same line and the use of backticks.
 
 * [Getting Started with PowerShell Desired State Configuration (DSC)](
-  https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672) —
-  A great course for PowerShell DSC and PowerShell in general.
+  https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672)
+  — A great course for PowerShell DSC and PowerShell in general.
 
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](
-  https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702) —
-  Another great course to get deeper on PowerShell DSC and PowerShell in general.
+  https://mva.microsoft.com/en-US/training-courses/advanced-powershell-desired-state-configuration-dsc-and-custom-resources-8702)
+  — Another great course to get deeper on PowerShell DSC and PowerShell in general.
 
 * [The DSC Book by Don Jones et al.](https://leanpub.com/the-dsc-book) — A good evergreen book on PowerShell Desired
   State Configuration that continues to be updated. This book helps to fill in a lot of gaps an answer a lot of the
@@ -87,12 +90,14 @@ read them:
 * [The Imposter's Handbook](https://www.bigmachine.io/products/the-imposters-handbook) — A great read for someone like
   myself who did not get a computer science major in undergrad.
 
-* [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592) — A necessary read for any DevOps
+* [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business
+  Win](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592) — A necessary read for any DevOps
   practitioner.
 
-* [Scaling Git (and some back story)](https://blogs.msdn.microsoft.com/bharry/2017/02/03/scaling-git-and-some-back-story/) — I refer to this seminal blog
-  post by Brian Harry quite often, as it goes into great depth on how a large company like Microsoft standardized around
-  common engineering standards with Git and VSTS (now Azure DevOps).
+* [Scaling Git (and some back
+  story)](https://blogs.msdn.microsoft.com/bharry/2017/02/03/scaling-git-and-some-back-story/) — I refer to this seminal
+  blog post by Brian Harry quite often, as it goes into great depth on how a large company like Microsoft standardized
+  around common engineering standards with Git and VSTS (now Azure DevOps).
 
 * [Pro Git](https://git-scm.com/book/en/v2) — aka the Git Book. You only need to know a handful of commands to get going
   as a normal Git user, but if you really want to understand the full breadth of the tool you need to read this book.
@@ -116,8 +121,9 @@ read them:
   network security and flips them on their head, and presents a model of what modern identity and trust-based security
   looks like.
 
-* [Fearless Salary Negotiation: A Step-By-step Guide to Getting Paid What You're Worth](https://fearlesssalarynegotiation.com/) — If you ever find yourself in the situation where you're interviewing for a
-  new job, this is an excellent reference not only for negotiating salary, but for navigating the entire interview
+* [Fearless Salary Negotiation: A Step-By-step Guide to Getting Paid What You're
+  Worth](https://fearlesssalarynegotiation.com/) — If you ever find yourself in the situation where you're interviewing
+  for a new job, this is an excellent reference not only for negotiating salary, but for navigating the entire interview
   process.
 
 * [Mastering Business Email: How to write emails that get read](https://masteringbusinessemail.com/) — This is a great
@@ -130,32 +136,38 @@ read them:
   provide a very solid mental model for evaluating cloud architecture decisions,
   and the principles translate well across cloud providers.
 
-* [Learn SQL Server in a Month of Lunches](https://www.manning.com/books/learn-sql-server-administration-in-a-month-of-lunches) —
-  A good, no-nonsense introduction to managing SQL Server.
+* [Learn SQL Server in a Month of
+  Lunches](https://www.manning.com/books/learn-sql-server-administration-in-a-month-of-lunches) — A good, no-nonsense
+  introduction to managing SQL Server.
 
-* [Learn Active Directory in a Month of Lunches](https://www.manning.com/books/learn-active-directory-management-in-a-month-of-lunches) —
-  A great book to round out your knowledge of Active Directory.
+* [Learn Active Directory in a Month of
+  Lunches](https://www.manning.com/books/learn-active-directory-management-in-a-month-of-lunches) — A great book to
+  round out your knowledge of Active Directory.
 
 * [Learn Windows IIS in a Month of Lunches](https://www.manning.com/books/learn-windows-iis-in-a-month-of-lunches) —
   A great book to round out your knowledge of IIS.
 
-* [Learn Windows PowerShell in a Month of Lunches (Third Edition, 2017 or newer)](https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition) — I was fairly deep on
-  PowerShell by the time I started to pick up the PowerShell series of "Lunches" books, but I wanted to start with the
-  first introductory one to round out any aspects I may have missed, and understand if it was a good intro book to
-  recommend to others (and it is).
+* [Learn Windows PowerShell in a Month of Lunches (Third Edition, 2017 or
+  newer)](https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition) — I was fairly
+  deep on PowerShell by the time I started to pick up the PowerShell series of "Lunches" books, but I wanted to start
+  with the first introductory one to round out any aspects I may have missed, and understand if it was a good intro book
+  to recommend to others (and it is).
 
-* [Learn PowerShell Scripting in a Month of Lunches (First Edition, 2017 or newer)](https://www.manning.com/books/learn-powershell-scripting-in-a-month-of-lunches) — The next logical book in the
+* [Learn PowerShell Scripting in a Month of Lunches (First Edition, 2017 or
+  newer)](https://www.manning.com/books/learn-powershell-scripting-in-a-month-of-lunches) — The next logical book in the
   PowerShell "Lunches" books was a good insight into creating maintainable PowerShell scripts. I frame these scripts as
   useful pieces of long-lived business logic that could be packaged up and distributed as single Script modules (e.g.
   `Install-Script`).
 
-* [Learn PowerShell Toolmaking in a Month of Lunches (First Edition, 2013 or newer)](https://www.manning.com/books/learn-powershell-toolmaking-in-a-month-of-lunches) — The next logical book in the
-  PowerShell "Lunches" books was a good insight into creating PowerShell modules, including facets of cmdlet design. I
-  frame these modules as useful collections of related and cohesive commands that could be packaged up and distributed
+* [Learn PowerShell Toolmaking in a Month of Lunches (First Edition, 2013 or
+  newer)](https://www.manning.com/books/learn-powershell-toolmaking-in-a-month-of-lunches) — The next logical book in
+  the PowerShell "Lunches" books was a good insight into creating PowerShell modules, including facets of cmdlet design.
+  I frame these modules as useful collections of related and cohesive commands that could be packaged up and distributed
   as cmdlet modules (e.g. `Install-Module`). (Not to be confused with compiled, C# binary cmdlet modules.)
 
-* [The PowerShell Scripting & Toolmaking Book (Leanpub evergreen book, limited print runs)](https://leanpub.com/powershell-scripting-toolmaking) — This is an evergreen, logical continuation of the PowerShell
-  "Lunches" books with additional advanced content.
+* [The PowerShell Scripting & Toolmaking Book (Leanpub evergreen book, limited print
+  runs)](https://leanpub.com/powershell-scripting-toolmaking) — This is an evergreen, logical continuation of the
+  PowerShell "Lunches" books with additional advanced content.
 
 * [The Release Pipeline Model](https://docs.microsoft.com/en-us/powershell/dsc/whitepapers) — This is a seminal
   whitepaper that outlines a Release Pipeline Model that's especially oriented around Infrastructure / Configuration as
@@ -164,19 +176,23 @@ read them:
 * [The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/) — The logical successor to The Phoenix
   Project, but more of a straight-forward handbook instead of a novel.
 
-* [Learning the bash Shell: Unix Shell Programming](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell-ebook/dp/B0043GXMSY) — I'm not going to lie, bash is
-  arcane at times, but this book finally got me a semi-competent understanding of the bash shell (and its siblings ksh,
-  zsh, fish etc.).
+* [Learning the bash Shell: Unix Shell
+  Programming](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell-ebook/dp/B0043GXMSY) — I'm not going to
+  lie, bash is arcane at times, but this book finally got me a semi-competent understanding of the bash shell (and its
+  siblings ksh, zsh, fish etc.).
 
-* [Applied Cryptography: Protocols, Algorithms, and Source Code in C](https://www.amazon.com/Applied-Cryptography-Protocols-Algorithms-Source/dp/0471117099) — This book is a great primer
-  on wrapping your head around the underpinnings of how cryptography works. Reading the entirety is not necessary, as
-  many of the described algorithms in the book have gone by the wayside over the years since it was written in the 90's,
-  but there are a number there that help to establish a good footing for future cryptographic study and application.
+* [Applied Cryptography: Protocols, Algorithms, and Source Code in
+  C](https://www.amazon.com/Applied-Cryptography-Protocols-Algorithms-Source/dp/0471117099) — This book is a great
+  primer on wrapping your head around the underpinnings of how cryptography works. Reading the entirety is not
+  necessary, as many of the described algorithms in the book have gone by the wayside over the years since it was
+  written in the 90's, but there are a number there that help to establish a good footing for future cryptographic study
+  and application.
 
-* [Effective Monitoring and Alerting: For Web Operations](https://www.amazon.com/Effective-Monitoring-Alerting-Web-Operations/dp/1449333524) — This book starts out with
-  slightly run-of-the-mill content on Monitoring and Alerting, and then you get to Chapter 4 and it picks up. This book
-  is not just filled with knowledge on monitoring and alerting at scale, it is also filled with *wisdom*. Real world
-  experience with these scenarios can be hard to come by. Systems that start small at some point suddenly find
+* [Effective Monitoring and Alerting: For Web
+  Operations](https://www.amazon.com/Effective-Monitoring-Alerting-Web-Operations/dp/1449333524) — This book starts out
+  with slightly run-of-the-mill content on Monitoring and Alerting, and then you get to Chapter 4 and it picks up. This
+  book is not just filled with knowledge on monitoring and alerting at scale, it is also filled with *wisdom*. Real
+  world experience with these scenarios can be hard to come by. Systems that start small at some point suddenly find
   themselves in need of scale, and montioring and alerting has to scale with it. This book demystifies how to do this
   with tons of rules of thumb that are born out of tried and tested patterns.
 
@@ -204,9 +220,10 @@ read them:
   description of how the basic sys calls serve as the basic building blocks upon which you can do everything else in the
   OS, and how this idea of composability of simple things to make complex things is very important.
 
-* [Instructional Design for Mortals: Creating Better Adult Learning](https://www.amazon.sg/Instructional-Design-Mortals-Creating-Learning/dp/1983165867) —
-  Was once in print but hard to find now, but if you can get a copy I highly recommend this. It walks through the various
-  levels of learning and how to design instructional material for professional adults in the working world.
+* [Instructional Design for Mortals: Creating Better Adult
+  Learning](https://www.amazon.sg/Instructional-Design-Mortals-Creating-Learning/dp/1983165867) — Was once in print but
+  hard to find now, but if you can get a copy I highly recommend this. It walks through the various levels of learning
+  and how to design instructional material for professional adults in the working world.
 
 * [DNS and BIND](http://shop.oreilly.com/product/9780596100575.do) — I'm not going to lie, this book is a long slog. But
   if you can power through it, you will come out the other end with a much better understanding of the underpinnings of
@@ -262,9 +279,9 @@ read them:
   through Michael Lopp's 30 things in this book, and the way it's laid out. Leadership can come from anywhere, and
   because of that, whether you are in management or not, I strongly implore you to read this one.
 
-* [Managing Humans: More Biting and Humorous Tales of a Software Engineering Manager](https://www.amazon.com/dp/1484271157/) —
-  Another good read from Michael Lopp that has yet more expanded advice on engineering management and leading at
-  organizations.
+* [Managing Humans: More Biting and Humorous Tales of a Software Engineering
+  Manager](https://www.amazon.com/dp/1484271157/) — Another good read from Michael Lopp that has yet more expanded
+  advice on engineering management and leading at organizations.
 
 * [Being Geek: The Software Developer's Career Handbook](https://www.amazon.com/dp/0596155409) — Another good read from
   Michael Lopp, this one being slightly less engineering management focused and speaking more directly to the individual
@@ -279,9 +296,10 @@ read them:
   great book for not just managers but anyone who wants to understand how to align teams in ways to help organizations
   deliver. I personally resonated with a lot of the items around SRE and DevOps and Platform teams, and more.
 
-* [Project Zero Trust: A Story about a Strategy for Aligning Security and the Business](https://www.amazon.com/dp/1119884845) —
-  This book is goofy at times and is not on the same story level as Phoenix Project, but nonetheless walks through a
-  number of key concepts when trying to pursue a Zero Trust Architecture at any organization.
+* [Project Zero Trust: A Story about a Strategy for Aligning Security and the
+  Business](https://www.amazon.com/dp/1119884845) — This book is goofy at times and is not on the same story level as
+  Phoenix Project, but nonetheless walks through a number of key concepts when trying to pursue a Zero Trust
+  Architecture at any organization.
 
 * [Working in Public: The Making and Maintenance of Open Source Software](https://www.amazon.com/dp/0578675862) —
   This is a fascinating deep dive into everything that goes into creating and, critically, maintaining open source
@@ -350,10 +368,11 @@ read them:
   and view the raw text of this page,
   and specifically look at how I am writing the text that goes along with this line item on the linkfarm page.
 
-* [No Prizes for Pessimism: Letters from a Messy Tech Optimist](https://www.amazon.com/No-Prize-Pessimism-Letters-Optimist/dp/B0DMQKV6ZP) — This
-  is a collection of great wisdom and insights from Sam Schillace who has been in the industry a number of years and
-  saw the beginnings of touchstone products like Google Docs, which gives him a unique perspective and a plethora of
-  higher order advice for how to think about and approach change in the technology landscape.
+* [No Prizes for Pessimism: Letters from a Messy Tech
+  Optimist](https://www.amazon.com/No-Prize-Pessimism-Letters-Optimist/dp/B0DMQKV6ZP) — This is a collection of great
+  wisdom and insights from Sam Schillace who has been in the industry a number of years and saw the beginnings of
+  touchstone products like Google Docs, which gives him a unique perspective and a plethora of higher order advice for
+  how to think about and approach change in the technology landscape.
 
 * [The Modern JavaScript Tutorial](https://javascript.info/) — I was getting back into learning frontend development and
   needed a really deep dive into modern JavaScript and the DOM, etc., and this did the trick.
@@ -416,25 +435,28 @@ These are books of any other category that don't fit above.
   matters. In particular the advice around how to reduce social media consumption has been great. I've gained a lot of
   cycles back because of techniques in this book.
 
-* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing](https://konmari.com/products/the-life-changing-magic-of-tidying-up) —
-  Not to be a typical millennial... I first started hearing about Marie Kondo well before her Netflix show, and I would
-  highly recommend reading the books to help frame the reasons behind the methods.
+* [The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and
+  Organizing](https://konmari.com/products/the-life-changing-magic-of-tidying-up) — Not to be a typical millennial... I
+  first started hearing about Marie Kondo well before her Netflix show, and I would highly recommend reading the books
+  to help frame the reasons behind the methods.
 
 * [Spark Joy](https://konmari.com/products/spark-joy) — A great practical guide and addition to Marie's first book above
   for people like me who just never knew how to fold a shirt (or anything) well before. After getting rid of all the
   excess via the KonMari, this comes in very handy for helping to well organize what is important.
 
-* [Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs](https://www.whatmatters.com/book) —
-  I first encountered this concept when our company was adopting OKRs and this book was a recommended read, and I
-  recommend it as well. You'll get the idea early on in the book and much of the latter part dives into specific success
-  stories. OKR's can be abused and misused, but regardless it's important to understand the methodology behind them.
+* [Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with
+  OKRs](https://www.whatmatters.com/book) — I first encountered this concept when our company was adopting OKRs and this
+  book was a recommended read, and I recommend it as well. You'll get the idea early on in the book and much of the
+  latter part dives into specific success stories. OKR's can be abused and misused, but regardless it's important to
+  understand the methodology behind them.
 
-* [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential](https://www.buildingasecondbrain.com/) —
-  I read David Allen's classic *Getting Things Done*, and while the ideas put forward in that book still resonate, Tiago
-  Forte's approach feels like a much more modern equivalent of that, with the advent of new technologies like
-  note-taking apps and the ability to search (whereas Allen's book was written in a paper era). I found the PARA and
-  CODE methodologies, and discussions on creativity through divergence and convergence, resonated very strongly with me,
-  and as a result I re-organized and re-oriented my note-taking approaches with these practices.
+* [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative
+  Potential](https://www.buildingasecondbrain.com/) — I read David Allen's classic *Getting Things Done*, and while the
+  ideas put forward in that book still resonate, Tiago Forte's approach feels like a much more modern equivalent of
+  that, with the advent of new technologies like note-taking apps and the ability to search (whereas Allen's book was
+  written in a paper era). I found the PARA and CODE methodologies, and discussions on creativity through divergence and
+  convergence, resonated very strongly with me, and as a result I re-organized and re-oriented my note-taking approaches
+  with these practices.
 
 * [Surrounded by Idiots: The Four Types of Human Behavior and How to Effectively Communicate with Each in Business (and in Life)](
   https://www.amazon.com/Surrounded-Idiots-Behavior-Effectively-Communicate/dp/1250179947) — Learning about different

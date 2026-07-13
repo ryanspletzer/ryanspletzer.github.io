@@ -498,7 +498,8 @@ These principles build on each other and
 will help you to find your way through building these complex agentic systems.
 Some of the best books on this subject that bring this all together are oldies but goodies,
 and I have them listed on my [linkfarm](/linkfarm) page:
-[Adaptive Code: Agile coding with design patterns and SOLID principles (2nd Edition) (Developer Best Practices)](https://www.amazon.com/Adaptive-Code-principles-Developer-Practices/dp/1509302581/) and
+[Adaptive Code: Agile coding with design patterns and SOLID principles (2nd Edition)
+(Developer Best Practices)](https://www.amazon.com/Adaptive-Code-principles-Developer-Practices/dp/1509302581/) and
 [Microsoft .NET - Architecting Applications for the Enterprise (2nd Edition) (Developer Reference)](https://www.amazon.com/Microsoft-NET-Architecting-Applications-Enterprise/dp/0735685355).
 Whether or not you've worked in the Microsoft ecosystem and with the languages described within those texts,
 the patterns are relevant to many languages and frameworks and software stacks.)

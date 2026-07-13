@@ -18,8 +18,8 @@ The [PowerShell + DevOps Global Summit](https://powershellsummit.org/).
 If you've talked to me at any point, you likely know that PowerShell is a really important language and ecosystem for
 me, and was a real inflection point in my career.
 
-Back in 2014 I was at my first job doing SharePoint Server development in C# -- which, obviously, was the _hippest_,
-_coolest_ type of development a young software engineer could ask to do, especially in the era where mobile apps were
+Back in 2014 I was at my first job doing SharePoint Server development in C# -- which, obviously, was the *hippest*,
+*coolest* type of development a young software engineer could ask to do, especially in the era where mobile apps were
 exploding. :) But I digress.
 
 I quickly learned that SharePoint Server begets SQL Server, which begets learning about Active Directory, which is
@@ -32,7 +32,7 @@ PowerShell.
 
 At my next role I moved into working on R&D applications and the hosting environments and CI/CD around them, and I
 realized pretty quickly that in order to be successful and go beyond the rudimentary GUI approaches of the time (and in
-order to _do the right thing_), I was going to need to get really good at PowerShell, and automation in general. (Mouse
+order to *do the right thing*), I was going to need to get really good at PowerShell, and automation in general. (Mouse
 clicks don't scale.)
 
 I remember early on watching the Microsoft Virtual Academy courses from Jason Helmick and Jeffrey Snover:
@@ -42,7 +42,7 @@ I remember early on watching the Microsoft Virtual Academy courses from Jason He
 * [Getting Started with PowerShell Desired State Configuration (DSC)](https://learn.microsoft.com/en-us/shows/getting-started-with-powershell-dsc/)
 * [Advanced PowerShell Desired State Configuration (DSC) and Custom Resources](https://learn.microsoft.com/en-us/shows/advanced-powershell-dsc-and-custom-resources/)
 
-Learning PowerShell through these courses _changed my life_ (and I got to tell that to Jason Helmick in person here).
+Learning PowerShell through these courses *changed my life* (and I got to tell that to Jason Helmick in person here).
 It altered the trajectory of my career in ways that are difficult to fully appreciate. I started asking questions like:
 "Why can't we automate the setup of that server? Why can't we script out the creation of those cloud resources?" And
 more. These are things we take for granted today, but were game-changing at the time. Azure and AWS were much more
@@ -53,7 +53,7 @@ Were it not for PowerShell, I'd be a humble C# developer that is still utterly d
 clicks in the full Visual Studio IDE, with little to no ability to perform all the surrounding things that it takes to
 deliver infrastructure and software atop it. PowerShell took me beyond the IDE and into the terminal (which, let's be
 frank, is where most of us are at today for software development), and got me introduced to some of the tools that
-inspired PowerShell like bash, zsh and more. But most importantly, the _concepts_ that I got introduced to through
+inspired PowerShell like bash, zsh and more. But most importantly, the *concepts* that I got introduced to through
 PowerShell, like Automation, Scripting, CI/CD, CLI's, and way too many more to list, are really what broadened my
 horizons to new ways of thinking and new technological possibilities.
 
