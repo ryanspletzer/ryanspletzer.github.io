@@ -10,7 +10,7 @@ tags:
  - spinrite
  - qemu
  - apple-silicon
- - macOS
+ - macos
 header: /assets/images/spinrite-on-macos.png
 ---
 
