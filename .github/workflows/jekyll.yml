@@ -31,6 +31,41 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Fast lint gate: markdown, TypeScript, frontmatter contract, workflows
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Cache bun dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            bun-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint Markdown
+        run: bunx markdownlint-cli2
+
+      - name: Typecheck TypeScript
+        run: bun run typecheck
+
+      - name: Check post frontmatter
+        run: bun run check:frontmatter
+
+      - name: Lint GitHub Actions workflows
+        run: |
+          bash <(curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          ./actionlint -color
+
   # Check which files changed to determine if visual tests are needed
   changes:
     runs-on: ubuntu-latest
@@ -91,7 +126,7 @@ jobs:
 
       - name: Get Playwright version
         id: playwright-version
-        run: echo "version=$(bunx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+        run: echo "version=$(bunx playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
 
       - name: Cache Playwright browsers
         uses: actions/cache@v5
@@ -128,11 +163,13 @@ jobs:
 
   # Build job
   build:
-    needs: [changes, visual-tests]
-    # Run if: (push/dispatch) AND (visual-tests passed OR was skipped because no visual changes)
+    needs: [lint, changes, visual-tests]
+    # Run if: (push/dispatch) AND lint passed AND (visual-tests passed OR
+    # was skipped because no visual changes)
     if: |
       always() &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      needs.lint.result == 'success' &&
       (needs.visual-tests.result == 'success' || needs.visual-tests.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
