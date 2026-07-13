@@ -18,11 +18,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Default GITHUB_TOKEN scope for all jobs: read-only. The build and
+# deploy jobs override this with the Pages scopes they need, so
+# PR-triggered jobs (lint, html-proofer, visual-tests) never hold
+# write or OIDC permissions.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -62,8 +63,14 @@ jobs:
         run: bun run check:frontmatter
 
       - name: Lint GitHub Actions workflows
+        env:
+          ACTIONLINT_VERSION: 1.7.12
+          ACTIONLINT_SHA256: 8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
         run: |
-          bash <(curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          curl -fsSLo actionlint.tar.gz \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          echo "${ACTIONLINT_SHA256}  actionlint.tar.gz" | sha256sum -c
+          tar xzf actionlint.tar.gz actionlint
           ./actionlint -color
 
   # Build the site and verify internal links, images, and scripts resolve
@@ -203,6 +210,10 @@ jobs:
       needs.html-proofer.result == 'success' &&
       (needs.visual-tests.result == 'success' || needs.visual-tests.result == 'skipped')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -231,6 +242,9 @@ jobs:
   deploy:
     needs: build
     if: always() && needs.build.result == 'success'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
