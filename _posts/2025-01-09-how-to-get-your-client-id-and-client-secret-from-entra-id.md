@@ -37,7 +37,7 @@ likely be created for you upon request to your admins.)
 
 Here are the steps, illustrated with my test tenant:
 
-1. Navigate to the Azure Portal at [portal.azure.com](portal.azure.com) and sign in with your company identity.
+1. Navigate to the Azure Portal at [portal.azure.com](https://portal.azure.com) and sign in with your company identity.
 2. Search for "App registrations" in the search box at the top and click on the icon with the grid and the
    three-dimensional looking cube:
   ![App registrations logo in the top search bar on the Azure Portal](/assets/images/app_registrations_search_bar.png)

@@ -66,6 +66,36 @@ jobs:
           bash <(curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
           ./actionlint -color
 
+  # Build the site and verify internal links, images, and scripts resolve
+  html-proofer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Generate Tags
+        shell: pwsh
+        run: ./.tag_generator.ps1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+          cache-version: 1
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check internal links, images, and scripts
+        run: >-
+          bundle exec htmlproofer _site
+          --disable-external
+          --no-enforce-https
+          --swap-urls 'https\://www.spletzer.com:'
+
   # Check which files changed to determine if visual tests are needed
   changes:
     runs-on: ubuntu-latest
@@ -163,13 +193,14 @@ jobs:
 
   # Build job
   build:
-    needs: [lint, changes, visual-tests]
-    # Run if: (push/dispatch) AND lint passed AND (visual-tests passed OR
-    # was skipped because no visual changes)
+    needs: [lint, html-proofer, changes, visual-tests]
+    # Run if: (push/dispatch) AND lint and html-proofer passed AND
+    # (visual-tests passed OR was skipped because no visual changes)
     if: |
       always() &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
       needs.lint.result == 'success' &&
+      needs.html-proofer.result == 'success' &&
       (needs.visual-tests.result == 'success' || needs.visual-tests.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
