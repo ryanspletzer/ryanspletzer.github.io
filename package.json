@@ -6,6 +6,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "check:frontmatter": "bun scripts/check-frontmatter.ts",
+    "check:csp": "bun scripts/check-csp.ts",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:ui": "playwright test --ui",

@@ -119,6 +119,12 @@ jobs:
           --no-enforce-https
           --swap-urls 'https\://www.spletzer.com:'
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Check CSP inline-script hashes
+        run: bun run check:csp
+
   # Check which files changed to determine if visual tests are needed
   changes:
     runs-on: ubuntu-latest
