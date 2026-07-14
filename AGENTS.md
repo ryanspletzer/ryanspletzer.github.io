@@ -52,6 +52,13 @@ bun run typecheck
 # lowercase kebab-case tags, header images exist
 bun run check:frontmatter
 
+# CSP contract: inline-script hashes in the built site must match the
+# manifest in scripts/check-csp.ts, which mirrors the
+# Content-Security-Policy header in the Cloudflare "security response
+# headers" Transform Rule. When this fails, update both the manifest
+# and the Cloudflare header (the failure output prints the new value).
+bun run check:csp
+
 # Lint GitHub Actions workflows (brew install actionlint)
 actionlint .github/workflows/*.yml
 
