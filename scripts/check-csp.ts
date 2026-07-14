@@ -58,7 +58,10 @@ function collectInlineScriptHashes(dir: string, found: Map<string, string>): voi
       continue;
     }
     const html = readFileSync(path, 'utf8');
-    for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    // Closing tag matches the HTML parser's rule: "</script" followed by
+    // a word boundary, tolerating whitespace/attributes before ">"
+    // (e.g. "</script >"), so hashed content mirrors what browsers execute.
+    for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)) {
       const attrs = match[1];
       if (/\bsrc\s*=/i.test(attrs) || /application\/ld\+json/i.test(attrs)) {
         continue;
