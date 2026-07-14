@@ -161,9 +161,9 @@ I have noticed a trend lately where Accessibility by various AI tools is not tre
 and from an ethical point of view I strongly resonated with Rob Eisenberg's focus on accessibility
 while watching his course.
 
-The Web is for everyone, and _must_ accommodate for folks with various impairments.
+The Web is for everyone, and *must* accommodate for folks with various impairments.
 
-And now with AI assistance, _there really is no excuse not to do so_.
+And now with AI assistance, *there really is no excuse not to do so*.
 
 I'm not going to pretend that this initial refactor is "perfect" from an accessibility standpoint
 (or even the best from an underlying HTML/CSS cleanliness standpoint)—it's
@@ -190,7 +190,7 @@ making them invisible to anyone who can't perceive the accent color.
 We added underlines to in-content links
 while keeping navigational elements (tags, menus) underline-free.
 
-These are the kinds of issues that exist on _millions_ of websites.
+These are the kinds of issues that exist on *millions* of websites.
 Automated tooling makes them trivially detectable.[^axe-core-everyone]
 
 ## Less Is More

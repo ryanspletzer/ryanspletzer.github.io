@@ -1,2 +1,14 @@
+# Long lines: prose wraps at 120; code blocks and tables are exempt
+# because splitting them changes rendered output
 MD013:
   line_length: 120
+  code_blocks: false
+  tables: false
+
+# Normalize emphasis to asterisks (rendering-identical, auto-fixable)
+MD049:
+  style: asterisk
+
+# Descriptive-link-text flags "[here]" links in published posts;
+# fixing requires rewording published prose, so keep it off for now
+MD059: false

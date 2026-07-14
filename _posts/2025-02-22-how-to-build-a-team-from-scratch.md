@@ -38,7 +38,7 @@ their own environment.
 
 ## Make Your First Hire a Senior Engineer
 
-The most important point is that your first hire _should_ be a senior-level person. This is a strong statement, and frankly
+The most important point is that your first hire *should* be a senior-level person. This is a strong statement, and frankly
 an opinion of mine, but it is the number one misstep I see managers and organizations make when starting a new team. You
 need someone who you can build the team around, and someone who will mentor early-career hires that come next.
 
@@ -48,8 +48,8 @@ of a burden than expected. Your first hire should help set the team's standards,
 CI/CD), and have both knowledge and opinions about infrastructure as code, the cloud, and more. It is unreasonable to
 expect this from a single entry-level engineer on a brand-new team.
 
-It is also important to note that your first hire will help set the tone and _will be responsible for interviewing and
-hiring subsequent team members_. That is why the first hire on your team is so critical.
+It is also important to note that your first hire will help set the tone and *will be responsible for interviewing and
+hiring subsequent team members*. That is why the first hire on your team is so critical.
 
 ## Screen for "Learn-It-Alls" Instead of "Know-It-Alls"
 

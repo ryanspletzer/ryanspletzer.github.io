@@ -10,7 +10,9 @@ tags:
 
 Here's a code block with a filename label:
 
+<!-- markdownlint-disable MD033 -->
 <p class="filename">src/utils/helpers.js</p>
+<!-- markdownlint-enable MD033 -->
 
 ```javascript
 export function formatDate(date) {
@@ -24,7 +26,9 @@ export function formatDate(date) {
 
 And another one:
 
+<!-- markdownlint-disable MD033 -->
 <p class="filename">_sass/variables.scss</p>
+<!-- markdownlint-enable MD033 -->
 
 ```scss
 :root {

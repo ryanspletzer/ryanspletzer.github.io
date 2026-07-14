@@ -32,7 +32,7 @@ achieve a [zero-trust](https://en.wikipedia.org/wiki/Zero_trust_architecture) po
 hosting a collaborating set of services (typically, for one or more products, but potentially for other scenarios as
 well, even CI/CD).
 
-For those that don't know, _zero-trust_ admittedly, can be an overloaded term, and something that can mean different
+For those that don't know, *zero-trust* admittedly, can be an overloaded term, and something that can mean different
 things to different people, and does mean different things in different contexts (say, for end users on a device versus
 a set of services talking to each other); and depending on who you ask, whether they are more network-oriented or
 identity-oriented, they may view controls for zero-trust through different lenses.
@@ -56,13 +56,13 @@ used...
 
 Let's say you need a `client_secret` for your app registration in Microsoft Entra ID. You navigate to the Azure Portal,
 sign in (hopefully with MFA, device compliance, and all the best practices enforced through conditional access!), and
-then generate a random secret with a chosen validity period. Sure, it's not _technically_ difficult. But you've already
+then generate a random secret with a chosen validity period. Sure, it's not *technically* difficult. But you've already
 introduced a significant risk: you're personally handling the secret, and your clipboard or local files might become a
 point of leakage.
 
 ### 2. Keeping a Secret
 
-Next, you have to store that secret _somewhere_. If you copy and paste it, you might momentarily stash it in a text file
+Next, you have to store that secret *somewhere*. If you copy and paste it, you might momentarily stash it in a text file
 or keep it in your clipboard, hoping your machine is secure enough (EDR, compliance, device encryption, etc.). The
 bigger your team or the more frequent the rotations, the higher the odds that someone, somewhere, will accidentally
 commit it to a Git repo or leak it in logs. We rely on our best judgment, but we're all human—and secrets all too easily
@@ -83,7 +83,7 @@ the entire "acquire → store → deploy" process. Any misstep during manual rot
 in downstream services that depend on the secret. This is the primary reason people start asking: "How can we automate
 this?"
 
-### 5. Rotating an In-Service Secret _Automatically_
+### 5. Rotating an In-Service Secret *Automatically*
 
 Here's where the "turtles all the way down" problem really hits. Automation usually requires another identity (and thus
 another credential) with the power to generate new secrets or push them into your environment. That means you end up
@@ -210,7 +210,7 @@ identity (using something like the Kubernetes Service Account token or pod label
 real `Service A` pod in the `production` namespace," and it issues a short-lived SVID certificate with the SPIFFE ID
 `spiffe://mycompany.com/prod/serviceA`. Now `Service A` can make an mTLS connection to `Service B`. `Service B` sees the
 `spiffe://mycompany.com/prod/serviceA` identity in the certificate and decides whether to trust it based on policies
-you've set. _No manual secrets required_.
+you've set. *No manual secrets required*.
 
 Let's walk through that step-by-step with a concrete example:
 
@@ -235,7 +235,7 @@ I think it is better to point to the official
 [SPIFFE website](https://spiffe.io/docs/latest/spire-about/spire-concepts/) where they have great visuals to illustrate
 this.
 
-This process above is how the process works for _workload_ attestation, but at this point you may be asking: "How does
+This process above is how the process works for *workload* attestation, but at this point you may be asking: "How does
 the SPIRE server trust the SPIRE agent in the first place?" This happens prior to workload attestation, through a
 process called "node attestation," and we'll cover how this works in a couple of common scenarios, on EC2 and on
 Kubernetes.
@@ -293,7 +293,7 @@ Once you have cryptographically provable identities for your workloads, you can 
 * What exactly does "production" mean in terms of trust?
 
 Humans still need to define the rules and specify exactly which services are authorized to each other, and that may
-involve your own logic in your services to determine authorization (which is _slightly_ outside the scope of
+involve your own logic in your services to determine authorization (which is *slightly* outside the scope of
 SPIFFE/SPIRE, and it will vary based on your scenario, but there are well-known projects like
 [Open Policy Agent](https://www.openpolicyagent.org/) to take a look at for sophisticated approaches to authorization);
 however, the underlying credentials and authentication are handled automatically, so you're not messing around with

@@ -27,7 +27,7 @@ respective operating system platform to manage global Python version installatio
 environments, respectively.
 
 Why do you want to do this? The answer is: isolation -- you ideally want a standalone Python environment, with its own
-installed packages, and _avoid_ using a global Python environment and set of globally installed packages.
+installed packages, and *avoid* using a global Python environment and set of globally installed packages.
 
 ## Credits and Caveats
 
@@ -82,7 +82,7 @@ a newer version.
 
 With that all said, here's how you directly install a version of Python via Homebrew, noting that this will change the
 global `python3` that is on your path away from the built-in system Python that ships with macOS Xcode tools -- again,
-_YOU DON'T HAVE TO DO THIS_, this is just for illustration:
+*YOU DON'T HAVE TO DO THIS*, this is just for illustration:
 
 ```bash
 # ***YOU DON'T* HAVE TO DO THIS*** -- you can install the latest version of Python via pyenv later, but there may be a

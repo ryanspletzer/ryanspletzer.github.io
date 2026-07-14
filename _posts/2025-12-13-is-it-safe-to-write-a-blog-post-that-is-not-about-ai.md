@@ -10,7 +10,7 @@ tags:
 header: /assets/images/Michelangelo_-_Creation_of_Adam_(cropped)_meme.jpg
 ---
 
-_Warning: Occasional pithy humor and light-hearted sarcasm ahead._
+*Warning: Occasional pithy humor and light-hearted sarcasm ahead.*
 
 I have a confession to make...
 
@@ -28,7 +28,7 @@ Or will it pull me further away from the Light?
 >
 > When he states that something is impossible, he is very probably wrong."
 >
-> \- _Arthur C. Clarke's [First Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
+> \- *Arthur C. Clarke's [First Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)*
 
 I often let colleagues know that I don't have a great photographic memory for verbal conversations
 (and therefore tools like Teams meetings with recordings, transcripts, AI recaps
@@ -41,7 +41,7 @@ to remember every single aspect of what was said in a conversation—in many way
 those types of folks are their own personal Copilot
 (whereas for folks like me, I very much need to lean on note-taking and tools and systems to help me stay organized).
 
-I am telling you this because the conversations I _do_ tend to remember the most
+I am telling you this because the conversations I *do* tend to remember the most
 are ones tied to emotions that lodge themselves into my amygdala.
 
 And because of that, I have a vivid recollection of what I was thinking and how I felt in 2023.
@@ -54,7 +54,7 @@ and what would remain in the realm of "Sci-Fi" (at least, in our lifetimes).
 2023, frankly, was a bit of a mentally scary time for critical thinkers,
 because any hint of skepticism about what AI could or couldn't do was often met with the retort:
 
-"Well, it's not possible _yet_."
+"Well, it's not possible *yet*."
 
 This dead end line of discussion, I felt, wasn't helpful,
 and further the pushed notion that AI would solve 'X'—where
@@ -70,7 +70,7 @@ and shouldn't be tossed out with the proverbial bath water.
 
 > "The only way of discovering the limits of the possible is to venture a little way past them into the impossible."
 >
-> \- _Arthur C. Clarke's [Second Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
+> \- *Arthur C. Clarke's [Second Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)*
 
 Machine learning is [not new](https://en.wikipedia.org/wiki/Machine_learning),
 and has existed in some shape or form for many decades,
@@ -101,11 +101,11 @@ than to forever remain waffle-y about what is possible (or not possible).
 I also believe, like Mark, that [hope is not a strategy](https://youtu.be/7FhoUAidsFg?si=GtiAZejmK8c0IwkC),
 and I am not going to make decisions based on the pure dream that "One day, AI will handle all of this."
 
-In addition to that, we already have _so much existing technology_ today
+In addition to that, we already have *so much existing technology* today
 that has made what used to be considered "the impossible," possible.
 
-However most of that progress happens by venturing a _little_ bit beyond today's limits;
-in stark contrast, we have folks engaging in wild speculation about what _could_ happen _way_ beyond today's limits,
+However most of that progress happens by venturing a *little* bit beyond today's limits;
+in stark contrast, we have folks engaging in wild speculation about what *could* happen *way* beyond today's limits,
 not just about what is possible, but also on what timeframes, and in what ways.
 
 ## An Alien From Outer Space 👽
@@ -114,7 +114,7 @@ not just about what is possible, but also on what timeframes, and in what ways.
 
 > "Any sufficiently advanced technology is indistinguishable from magic."
 >
-> \- _Arthur C. Clarke's [Third Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)_
+> \- *Arthur C. Clarke's [Third Law](https://en.wikipedia.org/wiki/Clarke%27s_three_laws)*
 
 This debate about the possible versus the impossible happens in many corners of the internet,
 but typically many technical folks who delve into aspects of AI tend to engage in conversations the most intensely.
@@ -123,11 +123,11 @@ Which begs the question:
 Where does this leave the rest of humanity that may not be technical,
 and for whom AI is a totally foreign entity?
 
-Many are now trying to (or perhaps, due to fear, in many cases, consciously or unconsciously, trying _not_ to)
+Many are now trying to (or perhaps, due to fear, in many cases, consciously or unconsciously, trying *not* to)
 wrap their heads around this brand new "thing."
 
 Folks often liken the arrival of modern LLM-based AI to the creation of something analogous to HAL 9000
-from the movie _2001: A Space Odyssey_.
+from the movie *2001: A Space Odyssey*.
 
 However, I often wonder if the arrival of AI is less like HAL,
 and more like the Monolith that appears in multiple parts of that movie.
@@ -136,7 +136,7 @@ In many ways it feels like an alien technology showed up in our neck of the wood
 and everyone is trying to wrap their heads around it.
 
 Another unfortunate byproduct of this is, because AI may feel like "magic" to many people,
-they pin all of their hopes and dreams onto the technology, and _hallucinate_ things that AI can and can't do.
+they pin all of their hopes and dreams onto the technology, and *hallucinate* things that AI can and can't do.
 
 The problem is that these human hallucinations aren't just incorrect—they're expensive.
 They turn into roadmaps, budgets, and organizational decisions.
@@ -154,7 +154,7 @@ or a myriad of other potential issues.
 Maybe the alien life form not only gave us something perceived as "magic,"
 but perhaps by extension we contracted a disease from it in the form of "AI Rabies,"
 where we are metaphorically foaming at the mouth about what is possible
-and losing our sense of rationality and once again, _hallucinate_ about the possible,
+and losing our sense of rationality and once again, *hallucinate* about the possible,
 or barring that just lose our common sense about what can be helpful to meet real user needs.
 
 Deployed use case issues aside, this is also how you get to one of the weirdest parts of this moment:
@@ -168,12 +168,12 @@ Which is why I flinch a little bit every time I see a certain phrase making the 
 
 > "This is the worst AI is ever going to be."
 >
-> \- _A trite saying [floating around the internet](https://www.google.com/search?q=this+is+the+worst+ai+is+ever+going+to+be&oq=this+is+the+worst+ai+is+ever+going+to+be&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIHCAEQ6wcYQNIBCDU4MzZqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8)_
+> \- *A trite saying [floating around the internet](https://www.google.com/search?q=this+is+the+worst+ai+is+ever+going+to+be&oq=this+is+the+worst+ai+is+ever+going+to+be&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIHCAEQ6wcYQNIBCDU4MzZqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8)*
 
 Dissecting that annoying line could fill up a whole additional blog post.
 (Is it just the models getting better? And purely through more data?
 Or is it new type of model techniques?
-Or is it techniques we use _around_ the models that get better?
+Or is it techniques we use *around* the models that get better?
 [What do you mean?!](https://giphy.com/gifs/sonypictures-jennifer-lawrence-hot-ones-no-hard-feelings-h58E0JsuK3h3d8B1do))
 
 This utterly useless phrase basically amounts to: "Things improve over time."
@@ -190,9 +190,9 @@ I could cite a ton of additional mundane examples here, but you get the idea...
 
 Bringing it back to an example that is less mundane:
 Models will improve over time, and model layers and weights are one thing,
-but few appreciate the immense amount of work that goes into model _serving_ technologies
-like Ray Serve and other libraries that make models like LLMs _actually_ possible to use,
-and improvements _will_ be realized in the surrounding technologies
+but few appreciate the immense amount of work that goes into model *serving* technologies
+like Ray Serve and other libraries that make models like LLMs *actually* possible to use,
+and improvements *will* be realized in the surrounding technologies
 that are all absolutely essential to making AI possible to use,
 but may not get their full due, nor the meaningful amount of mind share to discuss openly.
 
@@ -227,7 +227,7 @@ nor does it perform the actual setup.)
 
 And in consideration of the time span of all these decades of useful technologies that we've accumulated,
 and will continue to accumulate independently of AI,
-_we need to be able to have open ways to talk about them_,
+*we need to be able to have open ways to talk about them*,
 and not have those discussions be dismissed out of hand because they are somehow "boring" and not aligned
 with the prevailing AI narrative.
 
@@ -238,9 +238,9 @@ which to some may feel "boring," but for us engineers,
 is essential to produce something that is not a walking security hazard with no auth (or dubious auth)
 that vibe coded its way out of its containment zone of Lovable or Replit.
 
-In fact, most of the time I've spent at work with our teams _delivering_ AI for the enterprise involves using
+In fact, most of the time I've spent at work with our teams *delivering* AI for the enterprise involves using
 technologies and techniques around data engineering and data science and automation and full-stack software engineering
-and cloud infrastructure (and more) that _have nothing to do with AI whatsoever_.
+and cloud infrastructure (and more) that *have nothing to do with AI whatsoever*.
 
 ***
 

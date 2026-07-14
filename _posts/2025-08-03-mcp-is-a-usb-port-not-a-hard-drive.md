@@ -156,7 +156,7 @@ Feel free to steal these:
 
 ## A Tiny Visual
 
-```
+```text
 User → LLM Client ──(MCP)──> Tool Server ──> Real System (Slack/Jira/DB)
                ^              ^
            Protocol        All the speed, limits,

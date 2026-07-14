@@ -36,6 +36,33 @@ CI. To generate locally (requires PowerShell and the `powershell-yaml` module):
 pwsh ./.tag_generator.ps1
 ```
 
+### Linting and Verification
+
+All of these run in CI (the `lint` and `html-proofer` jobs) on every PR and
+push; run them locally before pushing:
+
+```bash
+# Lint all Markdown (scope in .markdownlint-cli2.yaml, rules in .markdownlint.yaml)
+bunx markdownlint-cli2
+
+# Typecheck the Playwright specs and scripts
+bun run typecheck
+
+# Frontmatter contract: required fields, date matches filename,
+# lowercase kebab-case tags, header images exist
+bun run check:frontmatter
+
+# Lint GitHub Actions workflows (brew install actionlint)
+actionlint .github/workflows/*.yml
+
+# Verify internal links, images, and scripts on the built site
+bundle exec htmlproofer _site --disable-external --no-enforce-https \
+  --swap-urls 'https\://www.spletzer.com:'
+```
+
+Dependabot opens weekly grouped update PRs for gems, JS dev dependencies,
+and GitHub Actions.
+
 ### Visual Regression Tests
 
 Playwright-based screenshot comparison across three viewports (Desktop 1280x720,
@@ -148,13 +175,18 @@ and `listing` for pages that aggregate or index other content.
 `.github/workflows/jekyll.yml` runs on push to `main`, PRs to `main`, and
 manual dispatch:
 
-1. **changes** - Detects if visual-related files changed (layouts, includes,
+1. **lint** - Runs markdownlint-cli2, `tsc --noEmit`, the frontmatter
+   contract check, and actionlint (always runs)
+2. **html-proofer** - Builds the site and verifies internal links, images,
+   and scripts resolve (always runs)
+3. **changes** - Detects if visual-related files changed (layouts, includes,
    sass, CSS, config, e2e, Playwright config, package files)
-2. **visual-tests** - Runs Playwright screenshot comparison if visual files
+4. **visual-tests** - Runs Playwright screenshot comparison if visual files
    changed (PR gate and pre-deploy check)
-3. **build** - Generates tags, builds Jekyll with `JEKYLL_ENV=production`,
-   uploads artifact (push/dispatch only, requires visual-tests pass or skip)
-4. **deploy** - Deploys to GitHub Pages
+5. **build** - Generates tags, builds Jekyll with `JEKYLL_ENV=production`,
+   uploads artifact (push/dispatch only; requires lint and html-proofer to
+   pass, and visual-tests to pass or skip)
+6. **deploy** - Deploys to GitHub Pages
 
 A separate **update-visual-baselines.yml** workflow (manual dispatch only)
 regenerates Linux baseline screenshots and commits them.
@@ -189,11 +221,11 @@ regenerates Linux baseline screenshots and commits them.
 ### Ruby (Gemfile)
 
 jekyll, jekyll-redirect-from, kramdown-parser-gfm, jekyll-watch,
-webrick, colorator, concurrent-ruby
+webrick, colorator, concurrent-ruby, html-proofer
 
 ### JavaScript (package.json, managed with bun)
 
-@axe-core/playwright, @playwright/test, @types/node, typescript (dev
+@axe-core/playwright, @playwright/test, @types/node, typescript, yaml (dev
 dependencies only, for visual and accessibility testing). Dependencies are
 managed with [bun](https://bun.sh) (`bun install`, lockfile `bun.lock`); CI runs
 the suite via `bun run test:visual`. Bun is the package manager and task runner,

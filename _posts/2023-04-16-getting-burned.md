@@ -19,10 +19,10 @@ and looking like a total dork, and the inception of a
 [colorful term](https://www.techopedia.com/definition/30095/glasshole).
 
 Fast forward to the year 2023, and Google Glass in all its variations is now discontinued. I still have my device in a
-drawer somewhere to show to future generations. Maybe it will make the rounds at _Antiques Roadshow_ one day.
+drawer somewhere to show to future generations. Maybe it will make the rounds at *Antiques Roadshow* one day.
 
 Being an early adopter of various emergent technologies over the years has taught me that healthy skepticism is, well,
-_healthy_.
+*healthy*.
 
 Recent rises and falls of cryptocurrencies and exchanges, web3, NFTs, the metaverse hype and
 [more](https://en.wikipedia.org/wiki/FTX), coupled with a current economic slowdown, are teaching us all a new round

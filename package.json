@@ -4,6 +4,8 @@
   "description": "Visual regression tests for Jekyll blog",
   "private": true,
   "scripts": {
+    "typecheck": "tsc --noEmit",
+    "check:frontmatter": "bun scripts/check-frontmatter.ts",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:ui": "playwright test --ui",
@@ -13,6 +15,7 @@
     "@axe-core/playwright": "^4.12.1",
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.0.0",
-    "typescript": "^6.0.0"
+    "typescript": "^6.0.0",
+    "yaml": "^2.9.0"
   }
 }

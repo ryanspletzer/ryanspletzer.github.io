@@ -20,7 +20,7 @@ conversations seem to be popping up a lot recently... So someone has to give it 
 One important up-front consideration is the distinction between the public OpenAI service and the Azure OpenAI service.
 
 From a deployment model standpoint, it's a familiar story: there is a consumer/prosumer SaaS version of OpenAI's ChatGPT
-and DALL-E and more, and these are inherently multi-tenant services. There is not _yet_ a standalone business offering
+and DALL-E and more, and these are inherently multi-tenant services. There is not *yet* a standalone business offering
 for the OpenAI SaaS service. However, OpenAI does have a private cloud provider hosted version of the service with more
 controls, in the form of Azure OpenAI.
 

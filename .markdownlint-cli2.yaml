@@ -1,0 +1,17 @@
+# Globs and ignores for markdownlint-cli2; rule config lives in
+# .markdownlint.yaml. Run locally with: bunx markdownlint-cli2
+globs:
+  - "*.md"
+  - "_posts/**/*.md"
+  - "_drafts/**/*.md"
+  - "e2e/**/*.md"
+  - ".github/**/*.md"
+ignores:
+  # Liquid/HTML templates, not prose
+  - "archive.md"
+  - "tags.md"
+  # Raw planning notes, generated output, and dependencies
+  - "plans/**"
+  - "_site/**"
+  - "node_modules/**"
+  - "tag/**"

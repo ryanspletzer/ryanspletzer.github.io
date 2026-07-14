@@ -37,7 +37,7 @@ likely be created for you upon request to your admins.)
 
 Here are the steps, illustrated with my test tenant:
 
-1. Navigate to the Azure Portal at [portal.azure.com](portal.azure.com) and sign in with your company identity.
+1. Navigate to the Azure Portal at [portal.azure.com](https://portal.azure.com) and sign in with your company identity.
 2. Search for "App registrations" in the search box at the top and click on the icon with the grid and the
    three-dimensional looking cube:
   ![App registrations logo in the top search bar on the Azure Portal](/assets/images/app_registrations_search_bar.png)
@@ -46,17 +46,17 @@ Here are the steps, illustrated with my test tenant:
   ![The Owned Applications tab in the Azure Portal App registrations view](/assets/images/OwnedApplicationsAzurePortal.png)
 
 4. Filter / select your desired app registration.
-5. On the "Overview" tab, your client_id is in the "Application (client) ID" -- it is _NOT_ the "Object id" nor the
+5. On the "Overview" tab, your client_id is in the "Application (client) ID" -- it is *NOT* the "Object id" nor the
    "Directory (tenant) id." (I'm belaboring this point because this is where a lot of people get tripped up.)
   ![Showing the client_id on an app registration](/assets/images/client_id.png)
 
 6. On the "Certificates & secrets" tab, you can generate a client_secret by clicking the "New client secret" button:
   ![Showing the New client secret button on an app registration](/assets/images/new-client-secret.png)
 
-7. Once you've generated the new client_secret, the client_secret _value_ is in the "Value" column -- the client_secret
-  is _NOT_ the "Secret ID." Also the "Secret ID" is _NOT_ your client_id. The "Secret ID" is not used at all in
+7. Once you've generated the new client_secret, the client_secret *value* is in the "Value" column -- the client_secret
+  is *NOT* the "Secret ID." Also the "Secret ID" is *NOT* your client_id. The "Secret ID" is not used at all in
   authentication flows. (I'm belaboring this point because this is where a lot of people get tripped up.)
-  Also, _importantly_, this client_secret is only shown _once_, so if you navigate away or close this page, you cannot
+  Also, *importantly*, this client_secret is only shown *once*, so if you navigate away or close this page, you cannot
   get it back -- be sure to capture it in a safe, company-approved place like a password manager for safe-keeping and
   later reference. (If you do close or navigate away from this page, when you come back, only the first three letters of
   the client_secret will be shown -- this is to allow you to correlate which client_secret value goes with which listed

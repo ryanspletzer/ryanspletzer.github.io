@@ -18,11 +18,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Default GITHUB_TOKEN scope for all jobs: read-only. The build and
+# deploy jobs override this with the Pages scopes they need, so
+# PR-triggered jobs (lint, html-proofer, visual-tests) never hold
+# write or OIDC permissions.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -31,14 +32,103 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Fast lint gate: markdown, TypeScript, frontmatter contract, workflows
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Cache bun dependencies
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            bun-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint Markdown
+        run: bunx markdownlint-cli2
+
+      - name: Typecheck TypeScript
+        run: bun run typecheck
+
+      - name: Check post frontmatter
+        run: bun run check:frontmatter
+
+      - name: Lint GitHub Actions workflows
+        env:
+          ACTIONLINT_VERSION: 1.7.12
+          ACTIONLINT_SHA256: 8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
+        run: |
+          curl -fsSLo actionlint.tar.gz \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          echo "${ACTIONLINT_SHA256}  actionlint.tar.gz" | sha256sum -c
+          tar xzf actionlint.tar.gz actionlint
+          ./actionlint -color
+
+      - name: Audit workflow security (zizmor)
+        env:
+          ZIZMOR_VERSION: 1.26.1
+          ZIZMOR_SHA256: 8556289a64e7aaf2400cd516f61a471aa91c5902cc56ad96a82fd12f90c2ef73
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -fsSLo zizmor.tar.gz \
+            "https://github.com/zizmorcore/zizmor/releases/download/v${ZIZMOR_VERSION}/zizmor-x86_64-unknown-linux-gnu.tar.gz"
+          echo "${ZIZMOR_SHA256}  zizmor.tar.gz" | sha256sum -c
+          tar xzf zizmor.tar.gz zizmor
+          ./zizmor .github/workflows/
+
+  # Build the site and verify internal links, images, and scripts resolve
+  html-proofer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: Generate Tags
+        shell: pwsh
+        run: ./.tag_generator.ps1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9 # v1.316.0
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+          cache-version: 1
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check internal links, images, and scripts
+        run: >-
+          bundle exec htmlproofer _site
+          --disable-external
+          --no-enforce-https
+          --swap-urls 'https\://www.spletzer.com:'
+
   # Check which files changed to determine if visual tests are needed
   changes:
     runs-on: ubuntu-latest
     outputs:
       visual: ${{ steps.filter.outputs.visual }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@7b450fff21473bca461d4b92ce414b9d0420d706 # v4.0.2
         id: filter
         with:
           filters: |
@@ -62,24 +152,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
 
       - name: Generate Tags
         shell: pwsh
         run: ./.tag_generator.ps1
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9 # v1.316.0
         with:
           ruby-version: '3.4'
           bundler-cache: true
           cache-version: 1
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       - name: Cache bun dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
         with:
           path: ~/.bun/install/cache
           key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
@@ -91,10 +183,10 @@ jobs:
 
       - name: Get Playwright version
         id: playwright-version
-        run: echo "version=$(bunx playwright --version | awk '{print $2}')" >> $GITHUB_OUTPUT
+        run: echo "version=$(bunx playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -117,7 +209,7 @@ jobs:
         run: bun run test:visual
 
       - name: Upload test artifacts
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: failure()
         with:
           name: visual-test-results
@@ -128,41 +220,54 @@ jobs:
 
   # Build job
   build:
-    needs: [changes, visual-tests]
-    # Run if: (push/dispatch) AND (visual-tests passed OR was skipped because no visual changes)
+    needs: [lint, html-proofer, changes, visual-tests]
+    # Run if: (push/dispatch) AND lint and html-proofer passed AND
+    # (visual-tests passed OR was skipped because no visual changes)
     if: |
       always() &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      needs.lint.result == 'success' &&
+      needs.html-proofer.result == 'success' &&
       (needs.visual-tests.result == 'success' || needs.visual-tests.result == 'skipped')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
       - name: Generate Tags
         shell: pwsh
         run: ./.tag_generator.ps1
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9 # v1.316.0
         with:
           ruby-version: '3.4' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 1 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --baseurl "$BASE_PATH"
         env:
           JEKYLL_ENV: production
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
   # Deployment job
   deploy:
     needs: build
     if: always() && needs.build.result == 'success'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -170,4 +275,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

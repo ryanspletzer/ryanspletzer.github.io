@@ -10,7 +10,7 @@ tags:
  - data-engineering
 ---
 
-Chefs have a saying: _mise en place_, or "putting in place," which means to organize your ingredients and tools before
+Chefs have a saying: *mise en place*, or "putting in place," which means to organize your ingredients and tools before
 cooking begins, and not just in any generic way, but in a specific way that allows for the maximization of efficiency
 and movement for the individual so they can produce dishes at a desired cadence and speed.
 
@@ -31,11 +31,11 @@ result there has never been a better time to dust off those data initiatives and
 efforts.
 
 You will only be as successful as you can be with AI, to a point, unless you get your data house in order. (Or, to keep
-the analogy going: unless you get your data _kitchen_ in order.)
+the analogy going: unless you get your data *kitchen* in order.)
 
 In that vein, one key thing does need to be pointed out: if data is the ingredients for this bake, realize that not all
 ingredients are "fresh." Data can not only be non-authoritative, but it also has a "best by" date that you need to be
-aware of, and therefore tossing _all_ your possible data ingredients into a given bake is going to lead to some
+aware of, and therefore tossing *all* your possible data ingredients into a given bake is going to lead to some
 weird-tasting results.
 
 To that end, it's really important to think about which data is ripe for the plucking, and come up with systems to
