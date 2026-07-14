@@ -36,7 +36,10 @@ function buildHeaderValue(hashes: string[]): string {
   const scriptHashes = hashes.map((h) => `'sha256-${h}'`).join(' ');
   return [
     "default-src 'self'",
-    `script-src https://*.googletagmanager.com ${scriptHashes}`,
+    // static.cloudflareinsights.com is Cloudflare Web Analytics, injected
+    // at the edge — it never appears in _site, so this check cannot see
+    // it; its /cdn-cgi/rum beacon POST is same-origin ('self')
+    `script-src https://*.googletagmanager.com https://static.cloudflareinsights.com ${scriptHashes}`,
     "style-src 'self'",
     "img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://www.google.com",
     "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com",
