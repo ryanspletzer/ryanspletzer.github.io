@@ -7,6 +7,7 @@
     "typecheck": "tsc --noEmit",
     "check:frontmatter": "bun scripts/check-frontmatter.ts",
     "check:csp": "bun scripts/check-csp.ts",
+    "check:jsonld": "bun scripts/check-jsonld.ts",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:ui": "playwright test --ui",

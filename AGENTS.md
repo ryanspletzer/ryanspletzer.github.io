@@ -59,6 +59,12 @@ bun run check:frontmatter
 # and the Cloudflare header (the failure output prints the new value).
 bun run check:csp
 
+# JSON-LD contract: every ld+json block in the built site must parse as
+# JSON and declare @context/@type (Liquid renders them, so a stray
+# newline or HTML-escaped value breaks the page's structured data
+# silently)
+bun run check:jsonld
+
 # Lint GitHub Actions workflows (brew install actionlint)
 actionlint .github/workflows/*.yml
 
