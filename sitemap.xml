@@ -3,16 +3,26 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {%- comment -%}
+    Listing pages change whenever a post is published, so their lastmod
+    is the newest post's date. About and linkfarm have no meaningful
+    modification date, so they carry none rather than a misleading
+    build time.
+    {%- endcomment -%}
+    {%- assign latest = site.posts.first %}
     <url>
         <loc>{{ site.url }}</loc>
+        <lastmod>{{ latest.date | date_to_xmlschema }}</lastmod>
     </url>
 
     <url>
         <loc>{{ "/archive/" | prepend: site.url }}</loc>
+        <lastmod>{{ latest.date | date_to_xmlschema }}</lastmod>
     </url>
 
     <url>
         <loc>{{ "/tags/" | prepend: site.url }}</loc>
+        <lastmod>{{ latest.date | date_to_xmlschema }}</lastmod>
     </url>
 
     <url>
@@ -26,6 +36,7 @@ layout: null
     {% for post in site.posts %}
     <url>
         <loc>{{ site.url }}{{ post.url }}</loc>
+        <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
     </url>
     {% endfor %}
 </urlset>

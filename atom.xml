@@ -22,7 +22,7 @@ layout: null
     <title type="html">{{ post.title | xml_escape }}</title>
     <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" rel="alternate" type="text/html"/>
     <published>{{ post.date | date_to_xmlschema }}</published>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
     {% if post.description %}
     <summary type="text">{{ post.description | xml_escape }}</summary>

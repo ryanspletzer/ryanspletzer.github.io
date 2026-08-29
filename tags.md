@@ -2,6 +2,7 @@
 layout: listing
 title: Tags
 permalink: /tags/
+description: Every post on Ryan Spletzer's blog, grouped by tag.
 ---
 
 {% capture tags %}

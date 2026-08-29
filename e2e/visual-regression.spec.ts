@@ -46,7 +46,7 @@ async function preparePageForScreenshot(page: Page): Promise<void> {
 
 /**
  * Take a full-page screenshot with a descriptive name.
- * Use for pages with fixed content (individual posts, about, 404, linkfarm).
+ * Use for pages with fixed content (individual posts, about, linkfarm).
  */
 async function takeFullPageScreenshot(page: Page, name: string): Promise<void> {
   await preparePageForScreenshot(page);
@@ -167,7 +167,8 @@ test.describe('Linkfarm', () => {
 test.describe('404 Page', () => {
   test('visual appearance', async ({ page }) => {
     await page.goto('/404.html');
-    await takeFullPageScreenshot(page, '404');
+    // Lists recent posts, so viewport-only like the other listing pages
+    await takeViewportScreenshot(page, '404');
     await checkAccessibility(page);
   });
 });

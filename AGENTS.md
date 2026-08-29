@@ -59,6 +59,12 @@ bun run check:frontmatter
 # and the Cloudflare header (the failure output prints the new value).
 bun run check:csp
 
+# JSON-LD contract: every ld+json block in the built site must parse as
+# JSON and declare @context/@type (Liquid renders them, so a stray
+# newline or HTML-escaped value breaks the page's structured data
+# silently)
+bun run check:jsonld
+
 # Lint GitHub Actions workflows (brew install actionlint)
 actionlint .github/workflows/*.yml
 
@@ -135,6 +141,7 @@ e2e/                 Playwright visual regression tests
 | `feed.xml` | `/feed.xml` | RSS 2.0 feed (latest 20) |
 | `atom.xml` | `/atom.xml` | Atom feed (latest 20) |
 | `sitemap.xml` | `/sitemap.xml` | XML sitemap |
+| `llms.txt` | `/llms.txt` | [llms.txt](https://llmstxt.org) content map for AI crawlers: every post with its description, plus pages and feeds |
 
 ### Post Format
 
@@ -154,7 +161,11 @@ Post content in markdown...
 ```
 
 Optional frontmatter fields: `header` (image path), `headerwidth`,
-`headerheight`, `comments` (override global true/false).
+`headerheight`, `comments` (override global true/false),
+`last_modified_at` (`YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`, on or after
+`date`; feeds JSON-LD `dateModified`, `article:modified_time`, the
+sitemap `lastmod`, and the Atom `updated` element — all fall back to
+`date` when unset).
 
 ### Layouts
 
@@ -204,6 +215,8 @@ regenerates Linux baseline screenshots and commits them.
 
 - **URL:** `https://www.spletzer.com`
 - **Permalink:** `/:year/:month/:title/`
+- **Timezone:** `UTC`, so zone-less frontmatter dates render identically
+  in CI and in local builds
 - **Markdown:** kramdown with GFM input, hard_wrap false
 - **Plugins:** jekyll-redirect-from
 - **SASS:** compressed output

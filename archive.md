@@ -2,6 +2,7 @@
 layout: listing
 title: Blog archive
 permalink: /archive/
+description: Every post on Ryan Spletzer's blog, grouped by year.
 ---
 {% for post in site.posts %}
 {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
