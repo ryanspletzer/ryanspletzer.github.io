@@ -30,6 +30,11 @@ google_analytics_key: G-92E8FVFHFW
 
 permalink: /:year/:month/:title/
 
+# Frontmatter dates carry no zone, so render them in UTC everywhere — CI
+# already builds in UTC; without this a local build in another zone
+# shifts `date: 2026-07-11 00:00:00` to the evening of July 10
+timezone: UTC
+
 plugins:
   - jekyll-redirect-from
 

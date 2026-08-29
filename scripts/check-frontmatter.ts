@@ -7,6 +7,7 @@
  * - a frontmatter date whose day matches the filename date
  * - lowercase kebab-case tags (dots, +, # allowed for names like c# or .net)
  * - a header image path that exists on disk, when header is set
+ * - a last_modified_at date on or after the publish date, when set
  *
  * Drafts (_drafts/*.md) are checked leniently: empty files are skipped and
  * only fields that are present (tags, header) are validated.
@@ -49,6 +50,24 @@ function checkHeader(file: string, header: unknown): void {
   }
 }
 
+// last_modified_at is optional; when set it feeds dateModified,
+// article:modified_time, the sitemap lastmod, and the Atom <updated>
+// element, so it must be a real date on or after the publish date.
+function checkLastModified(file: string, raw: string, value: unknown): void {
+  if (value === undefined || value === null) {
+    return;
+  }
+  const modifiedMatch = raw.match(/^last_modified_at:\s*(\d{4}-\d{2}-\d{2})(?:[ T]\d{2}:\d{2}:\d{2})?\s*$/m);
+  if (!modifiedMatch) {
+    problems.push(`${file}: last_modified_at must be YYYY-MM-DD or YYYY-MM-DD HH:MM:SS`);
+    return;
+  }
+  const dateMatch = raw.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
+  if (dateMatch && modifiedMatch[1] < dateMatch[1]) {
+    problems.push(`${file}: last_modified_at ${modifiedMatch[1]} is before date ${dateMatch[1]}`);
+  }
+}
+
 function checkPost(file: string): void {
   if (!POST_FILENAME.test(file)) {
     problems.push(`${file}: filename is not YYYY-MM-DD-lowercase-kebab-slug.md`);
@@ -86,6 +105,7 @@ function checkPost(file: string): void {
     checkTags(file, frontmatter.tags);
   }
   checkHeader(file, frontmatter.header);
+  checkLastModified(file, raw, frontmatter.last_modified_at);
 }
 
 function checkDraft(file: string): void {
