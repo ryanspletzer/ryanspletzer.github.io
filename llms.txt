@@ -7,10 +7,8 @@ permalink: /llms.txt
 > {{ site.description | strip }}
 
 Ryan Spletzer is a Distinguished Engineer at Autodesk.
-This site is his personal blog: essays on AI coding agents and MCP,
-identity and security, PowerShell, Python tooling, DevOps, and software
-engineering leadership. All posts are written by Ryan and licensed
-CC BY 4.0.
+This site is his personal blog. All posts are written by Ryan and
+licensed CC BY 4.0.
 
 Every post is a single HTML page at a stable URL of the form
 `{{ site.url }}/YYYY/MM/slug/`. Posts are listed newest first.
