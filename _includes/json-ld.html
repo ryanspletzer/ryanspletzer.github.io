@@ -23,7 +23,7 @@
     "@type": "Person",
     "name": {{ site.author | jsonify }}
   }{% if page.description %},
-  "description": {{ page.description | strip | jsonify }}{% endif %}{% if page.header %},
+  "description": {{ page.description | normalize_whitespace | strip | jsonify }}{% endif %}{% if page.header %},
   "image": "{{ site.url }}{{ page.header }}"{% endif %},
   "mainEntityOfPage": {
     "@type": "WebPage",

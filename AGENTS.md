@@ -141,6 +141,7 @@ e2e/                 Playwright visual regression tests
 | `feed.xml` | `/feed.xml` | RSS 2.0 feed (latest 20) |
 | `atom.xml` | `/atom.xml` | Atom feed (latest 20) |
 | `sitemap.xml` | `/sitemap.xml` | XML sitemap |
+| `llms.txt` | `/llms.txt` | [llms.txt](https://llmstxt.org) content map for AI crawlers: every post with its description, plus pages and feeds |
 
 ### Post Format
 
