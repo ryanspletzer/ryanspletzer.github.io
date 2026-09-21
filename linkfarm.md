@@ -427,6 +427,24 @@ read them:
   matter more now than ever,
   not less.
 
+* [AI Engineering: Building Applications with Foundation Models](
+  https://www.oreilly.com/library/view/ai-engineering/9781098166298/) — I really enjoyed Chip Huyen's book.
+  It rounds out many knowledge areas around building applications on top of foundation models,
+  and gave me a clear picture of taking an AI application from idea to production.
+  It walks through evaluation,
+  prompt engineering,
+  RAG and agents,
+  finetuning,
+  dataset engineering,
+  and inference optimization,
+  and it closes with an end-to-end architecture for an AI application and how to fold user feedback back into it.
+  The world of AI moves fast,
+  and by the time I finished reading this in September of 2026,
+  there were aspects that were already in the rearview mirror
+  given how much models and harnesses and tools have advanced.
+  Despite that, the foundations here are still valuable
+  and give you a footing for interpreting and understanding whatever comes next.
+
 ## Other
 
 These are books of any other category that don't fit above.
