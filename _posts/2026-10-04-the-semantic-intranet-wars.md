@@ -89,12 +89,16 @@ and co-opting the traditional keyword model
 of finding information.[^i-wrote-about-this]
 
 What this meant was,
-it was time to replace our traditional search box on the intranet home page.
+it was time to replace our traditional input box on the upper right of the intranet home page.
 The way it behaved up to that point was,
 if there was a go word hit, it would take you directly to that,
 but if there was no hit it would take you to traditional search results
 from our Google Search Appliance
 (which we were replacing with the better more permission-aware SharePoint Server Search).
+After this change, it would only take you to search,
+which had all the main words loaded as "best bets"
+with a suggested result starred on top when you input certain key terms/phrases,
+and you would have only the DNS-based `go/<keyword>` approach remaining.
 
 To say some people were outraged would be an understatement.
 Many people had this box on the home page deep in their muscle memory
@@ -108,7 +112,7 @@ Progress always has its detractors,
 and I'm sure this person is happily using their agent today
 without a care in the world for this ancient intranet tech.
 
-Fast forward to today,
+Fast forward to now,
 and the intranet home page is still highly sought after by many teams for its real estate,
 but there's a new intranet war I see brewing around semantics,
 that is, beyond owning an individual keyword,
