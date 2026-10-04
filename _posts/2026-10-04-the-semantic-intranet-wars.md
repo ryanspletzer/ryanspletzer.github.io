@@ -12,7 +12,16 @@ description: >
 tags:
  - ai
  - intranet
+header: /assets/images/Arcimboldo_Librarian_Stokholm.jpg
 ---
+
+![Giuseppe Arcimboldo's 16th-century painting The Librarian,
+a portrait of a man composed entirely of books,
+with an open book splayed on top for hair, a bushy beard of dusters,
+and a red-bound volume for an arm, set against a blue-gray curtain.](
+    /assets/images/Arcimboldo_Librarian_Stokholm.jpg)
+*Giuseppe Arcimboldo, Public domain, via [Wikimedia Commons](
+    https://commons.wikimedia.org/wiki/File:Arcimboldo_Librarian_Stokholm.jpg).*
 
 In the 90s,
 the way a number of us got online was with [AOL](https://en.wikipedia.org/wiki/AOL),
@@ -46,7 +55,7 @@ To me the DNS based approach of just typing into the address bar
 was the most useful way to leverage Go Words,
 since I didn't even need to hit the intranet home page to click into and enter it.
 
-Anyone could create one of these go words and it was awesome,
+Anyone could create one of these Go Words and it was awesome,
 and behaved to a degree like the company's own link shortener;
 sure, cruft built up over time,
 and I'm sure someone, somewhere, at some point
@@ -76,7 +85,7 @@ As another example of this from the past,
 our intranet home page way back when had a customizable world clock
 so when you loaded the intranet home it could show you multiple clocks.
 
-Me being the smart aleck that I was suggested:
+Me being the smart aleck that I was at times, suggested:
 "Isn't this built into Windows in the lower right corner with its clock?
 And with widgets on the desktop?"
 This was not met with great reception,
