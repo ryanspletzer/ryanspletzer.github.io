@@ -140,8 +140,7 @@ so there's no collision anyone can see.
 Ironically, the Go Words of yore were more precise than this,
 in a strange way—being
 a deterministic forward at least allowed for predictability in where you'd go and what you'd be shown.
-
-Traditional Go Words worked because it was impossible to have the same word point to two different URLs,
+These traditional Go Words also worked because it was impossible to have the same word point to two different URLs,
 so when two individuals wanted it,
 they had no choice but to talk it out.
 It's the same reason you can't have two coffee shops
@@ -158,7 +157,7 @@ I expect that eventually we'll all move beyond worrying about this issue to this
 An interesting new angle to these new tools is not just how much we can do with them,
 but the extent to which we can customize them,
 and I fully anticipate individuals wanting to personalize their tools to their liking
-so that `benefits` *does* go to the *discounts* page,
+so that `benefits` *does* go to the discounts page,
 because to them, that makes more sense.
 
 After all, the English language is imprecise and ambiguous.
