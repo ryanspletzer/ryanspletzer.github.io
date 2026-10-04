@@ -131,9 +131,46 @@ around your domain's offerings
 which, due to the way the English language works in an imprecise way,
 all have a *very great chance* of overlapping with each other.
 
+Picture the `go/benefits` fight again, but with agents.
+The HR team publishes content and/or an MCP server (often both!)
+that answers questions about benefits,
+and the team that negotiates store discounts publishes another
+whose description says it helps employees find their benefits, too.
+Someone asks the company's assistant what benefits they get,
+and the semantic similarity
+(which may be a combination of lexical similarity
+and nearest neighbor matrix math based on the actual embeddings generated for the phrase)
+picks whichever description looks like the better match at that moment (because content changes),
+and depending on the phrasing and the way the LLM felt that day,
+it may not be the one it picked for the person sitting next to them.
+Nobody claimed a word,
+so there's no collision anyone can see.
+
 Ironically, the Go Words of yore were more precise than this,
 in a strange way—being
 a deterministic forward at least allowed for predictability in where you'd go and what you'd be shown.
+
+Traditional Go Words worked because it was impossible to have the same word point to two different URLs,
+so when two individuals wanted it,
+they had no choice but to talk it out.
+It's the same reason you can't have two coffee shops
+across the street from each other with the same name.[^starbucks]
+
+The war used to be over who got the word,
+and the wars were [small ones](https://youtu.be/cIYIbuot1bw?t=64).
+Now it's over who gets the *meaning*,
+and due to the way these tools work,
+I expect it to be more difficult to work out than who wins the word...
+
+And as with AOL Keywords that rode into the sunset,
+I expect that eventually we'll all move beyond worrying about this issue to this extent.
+An interesting new angle to these new tools is not just how much we can do with them,
+but the extent to which we can customize them,
+and I fully anticipate individuals wanting to personalize their tools to their liking
+so that `benefits` *does* go to the *discounts* page,
+because to them, that makes more sense.
+
+After all, the English language is imprecise and ambiguous.
 
 ## Footnotes
 
@@ -141,3 +178,5 @@ a deterministic forward at least allowed for predictability in where you'd go an
 
 [^i-wrote-about-this]: I wrote about this a bit in a
     [prior post](/2025/05/enterprise-search-and-the-myth-of-the-silver-bullet/).
+
+[^starbucks]: Unless your name is Starbucks.
