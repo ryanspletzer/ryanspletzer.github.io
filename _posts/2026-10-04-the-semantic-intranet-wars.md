@@ -3,7 +3,12 @@ layout: post
 title: The Semantic Intranet Wars
 date: 2026-10-04 00:00:00
 description: >
-  TODO: Write a description.
+  My first job had Go Words,
+  an in-house take on AOL Keywords,
+  and teams fought over who got the good ones.
+  Enterprise search ended that fight,
+  but agents have started a new one over who owns a concept,
+  and concepts overlap far more than keywords ever did.
 tags:
  - ai
  - intranet
@@ -92,7 +97,7 @@ it was time to replace our traditional search box on the intranet home page.
 The way it behaved up to that point was,
 if there was a go word hit, it would take you directly to that.
 
-To say some people were enraged would be an understatement.
+To say some people were outraged would be an understatement.
 Many people had this box on the home page deep in their muscle memory
 and they missed their enterprise version of AOL Keywords,
 even though they could still do `go/<whatever>` in the address bar.
@@ -117,6 +122,8 @@ all have a *very great chance* of overlapping with each other.
 Ironically, the Go Words of yore were more precise than this,
 in a strange way—being
 a deterministic forward at least allowed for predictability in where you'd go and what you'd be shown.
+
+## Footnotes
 
 [^classic-asp]: And everything was written in classic ASP.
 
