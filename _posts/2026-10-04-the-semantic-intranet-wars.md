@@ -104,7 +104,10 @@ of finding information.[^i-wrote-about-this]
 What this meant was,
 it was time to replace our traditional search box on the intranet home page.
 The way it behaved up to that point was,
-if there was a go word hit, it would take you directly to that.
+if there was a go word hit, it would take you directly to that,
+but if there was no hit it would take you to traditional search results
+from our Google Search Appliance
+(which we were replacing with the better more permission-aware SharePoint Server Search).
 
 To say some people were outraged would be an understatement.
 Many people had this box on the home page deep in their muscle memory
