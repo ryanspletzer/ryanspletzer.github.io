@@ -5,10 +5,11 @@ date: 2026-10-04 00:00:00
 description: >
   TODO: Write a description.
 tags:
+ - ai
  - intranet
 ---
 
-In the 90's,
+In the 90s,
 the way a number of us got online was with [AOL](https://en.wikipedia.org/wiki/AOL),
 and there was a gold rush on something called AOL Keywords.
 
@@ -80,7 +81,7 @@ ideally based on SharePoint publishing,
 ye ol' requirements doc still had this ludicrous thing in it:
 "The solution shall be able to allow the user to configure a world clock."
 
-Much how like Google took over the world and AOL Keywords faded,
+Much like how Google took over the world and AOL Keywords faded,
 in the enterprise various search solutions started showing up
 and co-opting the traditional keyword model
 (or other librarian indexed type models)
@@ -95,11 +96,11 @@ To say some people were enraged would be an understatement.
 Many people had this box on the home page deep in their muscle memory
 and they missed their enterprise version of AOL Keywords,
 even though they could still do `go/<whatever>` in the address bar.
-And it wasn't just just the lifers at the company complaining—I
+And it wasn't just the lifers at the company complaining—I
 distinctly remember being at a party with other new hires
 hearing someone complain behind me about how stupid it was that we were changing this.
 I bit my tongue at the time.
-Progress always has it detractors,
+Progress always has its detractors,
 and I'm sure this person is happily using their agent today
 without a care in the world for this ancient intranet tech.
 
