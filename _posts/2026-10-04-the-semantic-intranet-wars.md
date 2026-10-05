@@ -70,7 +70,7 @@ you could talk to the developer of the tool and see about getting it moved,
 and whoever had the better semantic claim for the word tended to win out.
 So the person who wanted `go/benefits` to go to HR benefits
 instead of the other person's desired page on discounts you could get
-at stores that the company worked with,
+at stores that the company worked with *needed* to chat,
 and there would often be a discussion about just using a new go word like "discounts"
 and socializing that instead.
 
