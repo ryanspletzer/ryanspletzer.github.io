@@ -20,7 +20,7 @@ a portrait of a man composed entirely of books,
 with an open book splayed on top for hair, a bushy beard of dusters,
 and a red-bound volume for an arm, set against a blue-gray curtain.](
     /assets/images/Arcimboldo_Librarian_Stokholm.jpg)
-*Giuseppe Arcimboldo, Public domain, via [Wikimedia Commons](
+*The Librarian, Giuseppe Arcimboldo, Public domain, via [Wikimedia Commons](
     https://commons.wikimedia.org/wiki/File:Arcimboldo_Librarian_Stokholm.jpg).*
 
 In the 90s,
