@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 
-I'm a Distinguished Engineer at [Autodesk](https://www.autodesk.com).
+I'm a Distinguished Engineer at [Autodesk](https://www.autodesk.com)
+where I work in our AI, Data and Automation (AIDA) group in Enterprise Technology.
 I try my best to blog here as well as post my thoughts to [LinkedIn](https://www.linkedin.com/in/ryanspletzer/),
 [BlueSky](https://bsky.app/profile/ryan.spletzer.com), and [Mastodon](https://spletzer.com/@ryan).
 I do a lot of side projects on [GitHub](https://github.com/ryanspletzer),
