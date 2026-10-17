@@ -5,6 +5,7 @@ globs:
   - "_posts/**/*.md"
   - "_drafts/**/*.md"
   - "e2e/**/*.md"
+  - "_sass/**/*.md"
   - ".github/**/*.md"
 ignores:
   # Liquid/HTML templates, not prose

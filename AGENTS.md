@@ -118,7 +118,7 @@ _layouts/            HTML templates (post, page, listing, tag_page, tag_index)
 _includes/           Reusable components (header, footer, sidebar, json-ld,
                      google-analytics)
 _sass/               SCSS partials (variables, typography, layout, components,
-                     code, syntax, utilities)
+                     code, syntax, utilities); conventions in _sass/README.md
 assets/css/          Main style.scss that imports _sass files
 assets/images/       Post images
 tag/                 Auto-generated tag pages (git-ignored)
