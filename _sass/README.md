@@ -96,7 +96,7 @@ Put a rule in the earliest file where it belongs, and do not reorder the imports
 | `_sass/components.scss` | Named UI pieces: `.panel` and `.sidebar-panel`, `.post-content` link and footnote rules, `.post-meta`, `.skip-link`, the theme toggle, `#markdown-toc`, footnote tooltips. |
 | `_sass/code.scss` | Code containers: `code`, `pre`, `.highlight`, inline code, line numbers, and the `forced-colors` rule for code blocks. |
 | `_sass/syntax.scss` | Rouge token colors, scoped under `.highlight pre`, using the `--syn-*` properties. |
-| `_sass/utilities.scss` | Author-facing and helper classes: `.center-image`, `kbd`, `.filename`, the `.note` and `.warning` callouts, `.sr-only`. |
+| `_sass/utilities.scss` | Author-facing and helper classes: `kbd`, `.filename`, the `.note` and `.warning` callouts, `.sr-only`. |
 
 ## Specificity rules
 
@@ -304,13 +304,6 @@ The `.filename + .highlighter-rouge` rule joins the label and block visually, so
 
 Use plain inline HTML: `<kbd>Cmd</kbd>`.
 Wrap it in the same markdownlint disable comments if it appears in a post.
-
-### Centered image
-
-Add an inline attribute list after the image: `![alt text](/assets/images/example.png){: .center-image}`.
-The base `img` rule in `typography.scss` already sets `display: block` and `margin: 0 auto`,
-so `.center-image` is currently redundant.
-It is kept pending a decision.
 
 ### Footnotes and table of contents
 
