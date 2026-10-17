@@ -42,10 +42,14 @@ Prefer `min()`, `clamp()`, `minmax()`, logical properties, and content-driven si
 Andy Bell calls this being the browser's mentor, not its micromanager.
 Jeremy Keith describes it as getting the inputs right instead of controlling every output.
 Every Layout puts it as choosing properties, values, and units that let the browser calculate the layout.
-The known exception is the container ladder in `layout.scss`.
-Its widths of 73.125rem, 60.625rem, and 46.875rem, stepping at 74.9375em, 61.9375em, and 47.9375em,
-are Bootstrap's 1170px, 970px, and 750px grid converted to rem.
-They are kept so the pre-refactor look stays pixel-identical.
+The layout follows this.
+`.layout-container` in `layout.scss` is the smaller of full width and `--layout-max-width`, with no breakpoints.
+`.site-content` is Every Layout's Sidebar pattern:
+the aside asks for `20rem`, main takes the rest but never less than `64%`,
+and when both cannot fit the aside wraps below.
+The `h1` size is a `clamp()` between 1.75rem and 2.25rem.
+The one viewport query left in `layout.scss` is the hamburger threshold at 47.9375em,
+which also sends the panels edge to edge on phones.
 
 **The cascade is the tool.**
 Import order and low specificity resolve conflicts.
@@ -63,8 +67,8 @@ The tool chain stays as thin as the output.
 
 **The look is preserved by tests, not by habit.**
 Any change under `_sass/` runs the Playwright suite.
-That is also why the container ladder is still here:
-the Playwright baselines were captured before the refactor, and matching them was the goal.
+A change that moves the baselines is fine when it is intended.
+Update them for both platforms in the same pull request, so the suite proves the new look rather than the old one.
 
 ## File layout and cascade order
 
@@ -92,7 +96,7 @@ Put a rule in the earliest file where it belongs, and do not reorder the imports
 | --- | --- |
 | `_sass/variables.scss` | Every custom property: dark values on `:root`, the `light-theme` mixin, and the `prefers-contrast: more` overrides. |
 | `_sass/typography.scss` | Reset and base element rules: `body`, `p`, headings, `img`, `blockquote`, `a`, `:focus-visible`, lists, `dl`, `hr`, `table`. |
-| `_sass/layout.scss` | Page structure: `.layout-container`, sticky-footer `body`, the `.site-content` grid, `.site-nav` and the Popover-based mobile menu, the transition and reduced-motion blocks, `.site-footer`, print styles. |
+| `_sass/layout.scss` | Page structure: `.layout-container`, sticky-footer `body`, the `.site-content` sidebar layout, `.site-nav` and the Popover-based mobile menu, the transition block, `.site-footer`, print styles. |
 | `_sass/components.scss` | Named UI pieces: `.panel` and `.sidebar-panel`, `.post-content` link and footnote rules, `.post-meta`, `.skip-link`, the theme toggle, `#markdown-toc`, footnote tooltips. |
 | `_sass/code.scss` | Code containers: `code`, `pre`, `.highlight`, inline code, line numbers, and the `forced-colors` rule for code blocks. |
 | `_sass/syntax.scss` | Rouge token colors, scoped under `.highlight pre`, using the `--syn-*` properties. |
@@ -236,21 +240,18 @@ The gates below are where each preference or assistive need is handled.
 | `:focus-visible` outline on interactive elements | `_sass/typography.scss`; the theme toggle adds a radius in `components.scss`. |
 | `.skip-link` | `_sass/components.scss`. |
 | `.sr-only` | `_sass/utilities.scss`. |
-| `prefers-reduced-motion` | `_sass/layout.scss` (two blocks, see below). |
+| `prefers-reduced-motion` | `_sass/layout.scss` (see below). |
 | `prefers-contrast: more` | `_sass/variables.scss`. |
 | `forced-colors: active` | `_sass/code.scss` (code blocks wrap) and `_sass/utilities.scss` (callout border and icon use `CanvasText`). |
 | Underlined links in prose | `.post-content a` in `_sass/components.scss`, for WCAG link-in-text-block. |
 
 ### Transitions
 
-Theme transitions are gated behind `@media (prefers-reduced-motion: no-preference)` in `_sass/layout.scss`.
-That block holds the selector list for color, background, border, and shadow transitions.
-A new selector that transitions on theme change goes into that list.
-Do not give it its own `transition` declaration.
-
-Some navigation rules in `layout.scss` set `transition` unconditionally (`.site-title`, the nav links, the hamburger bars).
-Those are listed in the `prefers-reduced-motion: reduce` block, which sets `transition: none`.
-If you add an unconditional `transition`, add its selector to that block.
+Every transition on the site lives in one `@media (prefers-reduced-motion: no-preference)` block in `_sass/layout.scss`.
+Theme transitions share one selector list for color, background, border, and shadow.
+The nav color and hamburger transitions have their own rules in the same block.
+A new transition goes inside that block, never on a selector outside it.
+Reduced motion disables transitions by omission, so a `transition` declared outside the block would keep animating.
 
 ## Browser support floor
 
