@@ -1,21 +1,9 @@
-// Shared responsive container — defines the max-width cascade
-// used by .site-content and .site-nav-inner.
+// Shared centered container used by .site-content and .site-nav-inner.
+// Fluid up to the max width; the children supply the side gutters.
 // Applied as a utility class in HTML for visibility in DOM/devtools.
 .layout-container {
-  max-width: var(--layout-max-width);
+  inline-size: min(100%, var(--layout-max-width));
   margin-inline: auto;
-
-  @media (max-width: 74.9375em) {
-    max-width: 60.625rem;
-  }
-
-  @media (max-width: 61.9375em) {
-    max-width: 46.875rem;
-  }
-
-  @media (max-width: 47.9375em) {
-    max-width: none;
-  }
 }
 
 // Sticky footer via flexbox on body
@@ -25,34 +13,28 @@ body {
   min-height: 100vh;
 }
 
-// Main content area: fills vertical space (sticky footer) and
-// lays out main + aside in a 9/3 grid with child-level padding.
+// Main content area: fills vertical space (sticky footer) and lays out
+// main + aside as a wrapping sidebar (Every Layout's "Sidebar"). The aside
+// asks for a fixed width; main takes the rest but never less than its
+// minimum share. When both cannot fit, the aside wraps below main.
+// Tune the two knobs below to move the stacking point; there is no breakpoint.
 .site-content {
   flex: 1;
-  display: grid;
-  grid-template-columns: 9fr 3fr;
+  display: flex;
+  flex-wrap: wrap;
 
   > main {
+    flex: 999 1 0;
+    min-inline-size: 64%;
     padding: 0 0.9375rem;
-    min-width: 0;
   }
 
   > aside {
+    flex: 1 1 20rem;
     padding: 0 0.9375rem;
-    min-width: 0;
     position: sticky;
     inset-block-start: 1.25rem;
-    align-self: start;
-  }
-
-  @media (max-width: 61.9375em) {
-    grid-template-columns: 1fr;
-    padding: 0 0.9375rem;
-
-    > main,
-    > aside {
-      padding: 0;
-    }
+    align-self: flex-start;
   }
 }
 
@@ -135,7 +117,9 @@ body {
     margin-block-end: 0;
   }
 
-  .site-content {
+  // Panels run edge to edge on phones; the gutter lives on the children
+  .site-content > main,
+  .site-content > aside {
     padding: 0;
   }
 
