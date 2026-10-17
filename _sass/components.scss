@@ -24,7 +24,10 @@
 
 // Post content area — typography and link behavior for rendered Markdown.
 .post-content {
-  p, ul, ol {
+  // Lists inherit the sans body font; paragraphs already get --font-body
+  // from typography.scss, and repeating it here would outrank class-level
+  // utilities such as .filename.
+  ul, ol {
     font-family: var(--font-body);
   }
 
