@@ -7,7 +7,13 @@
 .highlight pre {
 
   // --- Default text ---
+  // code.scss gives pre > code the page text color; inherit the syntax
+  // default instead so unhighlighted text matches the tokens. Tokens with
+  // no rule below (.o .n .ni .nl .nx .py .l .p .g .go .gp .gr .gt .ge .gs
+  // .err .w .x) inherit this color.
   color: var(--syn-default);
+
+  > code { color: inherit; }
 
   // --- Line numbers ---
   .lineno { color: var(--color-code-lineno); }
@@ -35,20 +41,10 @@
   { color: var(--syn-keyword-namespace); }
 
   // --- Operators ---
-  .o    // operator
-  { color: var(--syn-default); }
-
   .ow   // operator.word (and/or/not/in/is)
   { color: var(--syn-operator-word); }
 
   // --- Names / Identifiers ---
-  .n,   // name
-  .ni,  // name.entity
-  .nl,  // name.label
-  .nx,  // name.other
-  .py   // name.property
-  { color: var(--syn-default); }
-
   .na,  // name.attribute
   .nv   // name.variable
   { color: var(--syn-attribute); }
@@ -112,29 +108,15 @@
   { color: var(--syn-keyword); }
 
   // --- Literals ---
-  .l    // literal
-  { color: var(--syn-default); }
-
   .ld   // literal.date
   { color: var(--syn-string); }
 
-  // --- Punctuation ---
-  .p    // punctuation
-  { color: var(--syn-default); }
-
   // --- Generic (diff output, headings, etc.) ---
-  .g,   // generic
-  .go,  // generic.output
-  .gp,  // generic.prompt
-  .gr,  // generic.error (kept subdued)
-  .gt   // generic.traceback
-  { color: var(--syn-default); }
-
   .gd   // generic.deleted
   { color: var(--syn-deleted); }
 
   .ge   // generic.emph
-  { color: var(--syn-default); font-style: italic; }
+  { font-style: italic; }
 
   .gh   // generic.heading
   { color: var(--syn-keyword); font-weight: bold; }
@@ -143,20 +125,8 @@
   { color: var(--syn-inserted); }
 
   .gs   // generic.strong
-  { color: var(--syn-default); font-weight: bold; }
+  { font-weight: bold; }
 
   .gu   // generic.subheading
   { color: var(--syn-keyword); }
-
-  // --- Errors ---
-  .err  // error (kept subdued — Rouge misclassifies often)
-  { color: var(--syn-default); }
-
-  // --- Whitespace ---
-  .w    // whitespace
-  { color: var(--syn-default); }
-
-  // --- Other ---
-  .x    // other
-  { color: var(--syn-default); }
 }
