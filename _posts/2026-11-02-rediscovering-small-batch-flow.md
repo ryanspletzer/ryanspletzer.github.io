@@ -74,10 +74,30 @@ If you swap car parts and assembly for code changes, the same logic holds.
 A smaller pile means a shorter wait even when nobody works any faster.
 The laundry pile is WIP (work in progress), and our washer's throughput isn't changing.
 
+A product release works the same way.
+Every finished feature that is waiting on the rest of the release is inventory:
+it has been paid for, and it does nothing for anyone until it ships.
+Each feature added to the release makes every feature already in it wait longer.
+A big release also feeds itself,
+because the longer the gap between releases, the more it costs a feature to miss one,
+so everything gets pushed onto the release that is about to leave, which pushes it out further.
+
 Anyone who has been on call also knows the part about errors.
 When a deploy with one change in it breaks something, you already know where to look;
 when a deploy with two hundred changes in it breaks something,
 you spend most of the outage figuring out which change did it.
+
+Product decisions have the same problem,
+and it is harder to notice because it doesn't manifest as an explicit outage or incident.
+When a release with one feature in it moves your adoption numbers
+(or some other proxy measurement for what you're trying to achieve),
+you know what moved them;
+when a release with twenty features in it moves them, or fails to,
+you can't say which of the twenty guesses were right.
+The guesses also stack on each other:
+by the time the release ships,
+the twelfth feature was designed on the assumption that the third one was what people wanted.
+You learn very little from a release like that, and you still have to maintain all twenty features.
 
 Small batches only pay off, though, once each one is cheap to process.
 At Toyota that meant making die changeovers quick;
@@ -113,6 +133,10 @@ The part I enjoy most is that the paper never mentions batch size, the Handbook,
 The authors cite Kaizen as their inspiration instead,
 the continuous improvement practice that Toyota made famous,
 so they arrived at small batch flow by going back to the same factory floor everyone else did.
+
+Product management has the same bottleneck one step further downstream.
+What limits you there is how quickly users can tell you whether a guess was right,
+and producing the code faster does nothing to speed that up.
 
 I think it is worth all of us looking at our own work
 and asking where the batches have gotten too big,
