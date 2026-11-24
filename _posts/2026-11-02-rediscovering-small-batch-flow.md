@@ -144,6 +144,12 @@ The authors cite Kaizen as their inspiration instead,
 the continuous improvement practice that Toyota made famous,
 so they arrived at small batch flow by going back to the same factory floor everyone else did.
 
+We have discovered the same thing in other areas of my day-to-day work.
+Smaller pull requests do in fact help,
+and they help the agents as much as they help the people:
+a small change is easier for a person to review and easier for an agent to get right
+and reason about in version control history later.
+
 Product management has the same bottleneck one step further downstream.
 What limits you there is how quickly users can tell you whether a guess was right,
 and producing the code faster does nothing to speed that up.
