@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rediscovering Small Batch Flow
-date: 2026-11-02 00:00:00
+date: 2026-11-24 00:00:00
 description: >
   Whether it's Toyota's factory floor or the laundry or releasing software features,
   working in small batches is more relevant than ever
