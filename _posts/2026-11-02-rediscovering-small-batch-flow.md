@@ -20,9 +20,7 @@ with the words "SMALL BATCH FLOW" in thin, hand-lettered capitals.](
 *The sign in our laundry room.*
 
 Our house isn't exactly plastered with farmhouse-style word art signs like "Live, Laugh, Love,"
-but we do have this slightly tongue-in-cheek one pictured above hanging in our laundry room,
-custom-made as a gift one year
-to serve as an ever-present reminder to not let our clothes pile up.
+but we do have this slightly tongue-in-cheek one pictured above hanging in our laundry room.
 
 For those who don't know,
 if you do let your clothes pile up over many days or, God forbid, *weeks*,
@@ -43,14 +41,11 @@ Outside of the laundry room,
 I see a lot of people get into trouble lately
 when they don't follow the DevOps principle of small batch flow.[^small-batch-flow]
 
-I see it most in product management spaces.
+I see it most in product management discussions.
 When AI makes code this fast to produce,
 adding one more thing to a release feels free,
-so rather than getting something smaller released at a regular cadence,
-more scope gets tossed in,
-which then requires more communication out to end users and stakeholders
-(who can only absorb so much in one sitting),
-which then further pushes out release dates,
+so more scope gets tossed in,
+the release date slips,
 and all the while you aren't getting feedback from actual users of your system.
 In effect you're pushing out 20 "guesses" at once
 as to what people want
@@ -60,65 +55,36 @@ based on solid prior feedback.
 Small batch flow traces its origins back to the
 [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/) (TPS)
 in Japan after World War II.
-I first learned about it in supply chain classes in college,
-and though I wound up going down a different career path in software engineering,
-I've been surprised at just how applicable this concept is to so many aspects of life and work.
-
-The general principle behind small batch flow in TPS is that,
-instead of stamping out a huge lot of one part because the machine is already set up for it,
+Instead of stamping out a huge lot of one part because the machine is already set up for it,
 you make only what the next step needs, when it needs it,
 and you move each piece through every step to done before starting the next one.
 Toyota called the ideal "one-piece flow."
-The point was never *only* speed:
-a small batch also means a small pile of inventory sitting between steps,[^accounting]
+The point of TPS was never *only* speed:
+a small batch also means a small pile of inventory sitting between steps,
 and a defect gets caught after one part instead of after a thousand.
 
 If you swap car parts for code changes, the same logic holds.
-
-*The DevOps Handbook* sums up the payoff nicely:
+*The DevOps Handbook* sums this up:
 
 > "Small batch sizes result in less WIP, faster lead times, faster detection of errors, and less rework."
 >
 > \- *[The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/), p. 23*
 
-[Little's law](https://en.wikipedia.org/wiki/Little%27s_law) says
-the average time work spends in a system equals the amount of work in the system
-divided by the rate at which work gets finished,
-so a smaller pile means a shorter wait even when nobody works any faster.
+A smaller pile means a shorter wait even when nobody works any faster.
 The laundry pile is WIP, and our washer's throughput isn't changing.
 
-> "...the larger the change going into production,
-> the more difficult the production errors are to diagnose and fix, and the longer they take to remediate."
->
-> \- *[The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/), p. 24*
-
-Anyone who has been on call knows this one.
+Planned release date slips aside,
+anyone who has been on call knows the part about errors.
 When a deploy with one change in it breaks something, you already know where to look;
 when a deploy with two hundred changes in it breaks something,
 you spend most of the outage figuring out which change did it.
 
-> "The equivalent to single piece flow in the technology value stream is realized with continuous deployment,
-> where each change committed to version control is integrated, tested, and deployed into production."
->
-> \- *[The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/), p. 24*
-
-Single-piece flow is the theoretical limit, though, and not a target every team has to hit.
-Donald Reinertsen treats batch size as an economic trade-off
-between holding cost and transaction cost,
-as [Lean Magazine summarized his thinking](http://leanmagazine.net/issues/issue-6/getting-flow-into-your-product-development/):
-every batch costs something to process and costs something more while it sits waiting,
-so small batches only pay off once the cost of processing each one is low.
+Small batches only pay off, though, once each one is cheap to process.
 At Toyota that meant making die changeovers quick;
 for us it means automated tests and a one-step deploy.
 
-> "The batch size is the unit at which work-products move between stages in a development [or DevOps] process.
-> For software, the easiest batch to see is code.
-> Every time an engineer checks in code, they are batching up a certain amount of work."
->
-> \- *Eric Ries, [Startup Lessons Learned](https://www.startuplessonslearned.com/2009/02/work-in-small-batches.html),
-> as quoted in [The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/), p. 24*
-
-Eric wrote that in 2009, when the expensive part of a batch of code was writing it.
+When Eric Ries [wrote about working in small batches](https://www.startuplessonslearned.com/2009/02/work-in-small-batches.html)
+in 2009, the expensive part of a batch of code was writing it.
 Writing is now the cheap part, and the batches have grown to match,
 in pull requests as much as in releases.
 The 2024 DORA report found that delivery stability dropped an estimated 7.2%
@@ -134,16 +100,12 @@ What the field forgets, it can also rediscover.
 Earlier this year, engineers at Bloomberg and researchers at University College London
 published a paper on [Pomona](https://arxiv.org/html/2606.06752v3),
 an agentic tool that scans a codebase for quality improvements
-and then opens deliberately tiny pull requests, targeting about ten lines of diff each.
-The agent often overshot that target (the median diff was 37 lines),
-but over a three-month deployment, one team merged 32 of Pomona's 39 pull requests,
+and then opens deliberately tiny pull requests.
+Over a three-month deployment, one team merged 32 of Pomona's 39 pull requests,
 with a median time-to-close of just over two hours.
-That team also capped Pomona at one pull request per day,
-from which the authors conclude that "human review bandwidth is a far greater bottleneck
+The authors conclude that "human review bandwidth is a far greater bottleneck
 in AI-driven development than code-generation speed,"
 which is another way of saying that the pile between steps is what hurts.
-The team later raised the size limit to 100 lines and enforced it with a deterministic check,
-which is exactly the kind of tuning Donald's trade-off predicts.
 
 The part I enjoy most is that the paper never mentions batch size, the Handbook, or DORA.
 The authors cite Kaizen as their inspiration instead,
@@ -153,7 +115,6 @@ so they arrived at small batch flow by going back to the same factory floor ever
 I think it is worth all of us looking at our own work
 and asking where the batches have gotten too big,
 whether the batch is a pull request, a product release, or a hamper of clothes.
-The sign is still hanging in our laundry room, and I still need the reminder.
 
 ## The Lineage
 
@@ -185,5 +146,3 @@ For anyone who wants to follow the idea from Toyota to today, this is the trail 
     so somewhere along the way I started calling this "small batch flow,"
     as the title of this post suggests,
     because that phrasing seemed to have a better... *flow*.
-
-[^accounting]: This also had the side benefit of tying up less cash in inventory.
