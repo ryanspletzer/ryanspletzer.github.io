@@ -52,6 +52,7 @@ as to what people want
 as opposed to a handful that you're rather sure about
 based on solid prior feedback.
 
+The principle is much older than AI, and older than software for that matter.
 Small batch flow traces its origins back to the
 [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/) (TPS)
 in Japan after World War II.
@@ -63,7 +64,7 @@ The point of TPS was never *only* speed:
 a small batch also means a small pile of inventory sitting between steps,
 and a defect gets caught after one part instead of after a thousand.
 
-If you swap car parts for code changes, the same logic holds.
+If you swap car parts and assembly for code changes, the same logic holds.
 *The DevOps Handbook* sums this up:
 
 > "Small batch sizes result in less WIP, faster lead times, faster detection of errors, and less rework."
@@ -71,22 +72,23 @@ If you swap car parts for code changes, the same logic holds.
 > \- *[The DevOps Handbook](https://itrevolution.com/book/the-devops-handbook/), p. 23*
 
 A smaller pile means a shorter wait even when nobody works any faster.
-The laundry pile is WIP, and our washer's throughput isn't changing.
+The laundry pile is WIP (work in progress), and our washer's throughput isn't changing.
 
-Planned release date slippage aside,
-anyone who has been on call knows the part about errors.
+Anyone who has been on call also knows the part about errors.
 When a deploy with one change in it breaks something, you already know where to look;
 when a deploy with two hundred changes in it breaks something,
 you spend most of the outage figuring out which change did it.
 
 Small batches only pay off, though, once each one is cheap to process.
 At Toyota that meant making die changeovers quick;
-for us it means automated tests and a one-step deploy.
+for us it means automated tests and deployments.
 
-When Eric Ries [wrote about working in small batches](https://www.startuplessonslearned.com/2009/02/work-in-small-batches.html)
+When Eric Ries
+[wrote about working in small batches](https://www.startuplessonslearned.com/2009/02/work-in-small-batches.html)
 in 2009, the expensive part of a batch of code was writing it.
 Writing is now the cheap part, and the batches have grown to match,
 in pull requests as much as in releases.
+
 The 2024 DORA report found that delivery stability dropped an estimated 7.2%
 for every 25% increase in AI adoption, and it offered a hypothesis as to why:
 
@@ -114,7 +116,7 @@ so they arrived at small batch flow by going back to the same factory floor ever
 
 I think it is worth all of us looking at our own work
 and asking where the batches have gotten too big,
-whether the batch is a pull request, a product release, or a hamper of clothes.
+whether the batch is a pull request, a product release, or a hamper of dirty clothes.
 
 ## The Lineage
 
