@@ -73,7 +73,7 @@ If you swap car parts for code changes, the same logic holds.
 A smaller pile means a shorter wait even when nobody works any faster.
 The laundry pile is WIP, and our washer's throughput isn't changing.
 
-Planned release date slips aside,
+Planned release date slippage aside,
 anyone who has been on call knows the part about errors.
 When a deploy with one change in it breaks something, you already know where to look;
 when a deploy with two hundred changes in it breaks something,
@@ -120,10 +120,12 @@ whether the batch is a pull request, a product release, or a hamper of clothes.
 
 For anyone who wants to follow the idea from Toyota to today, this is the trail as I traced it:
 
-- **Toyota Production System** (Taiichi Ohno, postwar Japan) — just-in-time, one-piece flow, and inventory as waste
-- ***Lean Thinking*** (James Womack and Daniel Jones, 1996) — the envelope-stuffing race
-  that one-at-a-time wins
-- ***The Principles of Product Development Flow*** (Donald Reinertsen, 2009) — batch size as an economic trade-off
+- [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/)
+  (Taiichi Ohno, postwar Japan) — just-in-time, one-piece flow, and inventory as waste
+- [Lean Thinking](https://www.lean.org/store/book/lean-thinking-2nd-edition/)
+  (James Womack and Daniel Jones, 1996) — the envelope-stuffing race that one-at-a-time wins
+- [The Principles of Product Development Flow](https://www.goodreads.com/book/show/6278270-the-principles-of-product-development-flow)
+  (Donald Reinertsen, 2009) — batch size as an economic trade-off
 - [Work in small batches](https://www.startuplessonslearned.com/2009/02/work-in-small-batches.html)
   (Eric Ries, 2009) — the idea applied to code and continuous deployment
 - [10+ Deploys Per Day](https://www.slideshare.net/slideshow/10-deploys-per-day-dev-and-ops-cooperation-at-flickr/1628368)
@@ -134,10 +136,18 @@ For anyone who wants to follow the idea from Toyota to today, this is the trail 
   (2016) — reducing batch sizes as a principle of flow
 - [The Small Batches Principle](https://queue.acm.org/detail.cfm?id=2945077)
   (Tom Limoncelli, 2016) — the same principle for operations work
-- ***Accelerate*** (2018) and [DORA](https://dora.dev/capabilities/working-in-small-batches/) —
+- [Accelerate](https://itrevolution.com/product/accelerate/) (2018)
+  and [DORA](https://dora.dev/capabilities/working-in-small-batches/) —
   deployment frequency as the measurable proxy for batch size
 - [2024 DORA Report](https://dora.dev/research/2024/dora-report/2024-dora-accelerate-state-of-devops-report.pdf) —
   AI adoption correlating with worse delivery stability
+- [2025 DORA Report](https://dora.dev/research/2025/dora-report/) —
+  working in small batches as one of seven capabilities that AI's benefits depend on
+- [Where Do AI Coding Agents Fail?](https://arxiv.org/abs/2601.15195)
+  (Ramtin Ehsani et al., 2026) — across 33,000 agent-authored pull requests,
+  the ones that never merged were larger and touched more files
+- [When AI Teammates Meet Code Review](https://arxiv.org/abs/2602.19441)
+  (Costain Nachuma and Minhaz Zibran, 2026) — larger agent changes are less likely to merge
 - [Pomona](https://arxiv.org/html/2606.06752v3) (2026) — small batches, rediscovered for agents
 
 ## Footnotes
