@@ -45,7 +45,7 @@ I see it most in product management discussions.
 When AI makes code this fast to produce,
 adding one more thing to a release feels free,
 so more scope gets tossed in,
-the release date slips,
+the release date slips,[^comms]
 and all the while you aren't getting feedback from actual users of your system.
 In effect you're pushing out 20 "guesses" at once
 as to what people want
@@ -129,7 +129,7 @@ for every 25% increase in AI adoption, and it offered a hypothesis as to why:
 > p. 40*
 
 What the field forgets, it can also rediscover.
-Earlier this year, engineers at Bloomberg and researchers at University College London
+In August of 2026, engineers at Bloomberg and researchers at University College London
 published a paper on [Pomona](https://arxiv.org/html/2606.06752v3),
 an agentic tool that scans a codebase for quality improvements
 and then opens deliberately tiny pull requests.
@@ -139,12 +139,12 @@ The authors conclude that "human review bandwidth is a far greater bottleneck
 in AI-driven development than code-generation speed,"
 which is another way of saying that the pile between steps is what hurts.
 
-The part I enjoy most is that the paper never mentions batch size, the Handbook, or DORA.
+The part I enjoy most is that the paper never mentions batch size, *The DevOps Handbook*, or DORA.
 The authors cite Kaizen as their inspiration instead,
 the continuous improvement practice that Toyota made famous,
 so they arrived at small batch flow by going back to the same factory floor everyone else did.
 
-We have discovered the same thing in other areas of my day-to-day work.
+We have discovered the same concept in other areas of my day-to-day work.
 Smaller pull requests do in fact help,
 and they help the agents as much as they help the people:
 a small change is easier for a person to review and easier for an agent to get right
@@ -152,7 +152,9 @@ and reason about in version control history later.
 
 Product management has the same bottleneck one step further downstream.
 What limits you there is how quickly users can tell you whether a guess was right,
-and producing the code faster does nothing to speed that up.
+and producing the code faster does nothing to speed that up,
+especially when you are hanging on to too many concurrent features for a release
+and not getting them in front of people.
 
 I think it is worth all of us looking at our own work
 and asking where the batches have gotten too big,
@@ -198,3 +200,15 @@ For anyone who wants to follow the idea from Toyota to today, this is the trail 
     so somewhere along the way I started calling this "small batch flow,"
     as the title of this post suggests,
     because that phrasing seemed to have a better... *flow*.
+
+[^comms]: Most people don't factor in the human aspects of releases,
+    including the comms required to let people know what is coming,
+    what has landed,
+    and what the after-effects of the release are having in your product
+    and how they're helping your company.
+    I find that AI only goes so far here,
+    as this is a fundamentally human aspect of releases of
+    trying to convey information to people,
+    and not just data.
+    [Data without information](https://www.jsnover.com/blog/2026/11/24/data-without-information/)
+    is not that useful.
