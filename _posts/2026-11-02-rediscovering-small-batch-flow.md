@@ -99,6 +99,16 @@ by the time the release ships,
 the twelfth feature was designed on the assumption that the third one was what people wanted.
 You learn very little from a release like that, and you still have to maintain all twenty features.
 
+The feedback that settles a guess has to come from people using the deployed feature live in production.
+A feature that originated purely from interviews with stakeholders is still a guess until then,
+because once people see what is running live,
+they often change their minds about what they actually want or need.
+When they change their minds about one feature, you rework one feature;
+when they change their minds about twenty features at once,
+you are in for a lot of rework and toil
+and overhead from communicating out what is changing in the next release,
+which is the opposite of the "less rework" *The DevOps Handbook* describes.
+
 Small batches only pay off, though, once each one is cheap to process.
 At Toyota that meant making die changeovers quick;
 for us it means automated tests and deployments.
